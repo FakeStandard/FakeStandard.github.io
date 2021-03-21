@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on How can I help</title>
+    <link>https://fakestandard.github.io/post/</link>
+    <description>Recent content in Posts on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sun, 21 Mar 2021 14:04:26 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Life Trip】北投享溫泉/石牌老牌肉丸</title>
+      <link>https://fakestandard.github.io/post/lifetrip-1-beitou/</link>
+      <pubDate>Sun, 21 Mar 2021 14:04:26 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/lifetrip-1-beitou/</guid>
+      <description>【紀錄 2021/3/20】
+美好的禮拜六夜晚，最適合小酌一杯再搭配一部電影，結果 W 來電表示想去北投泡溫泉。
+這裡穿插一個小故事，上回去新竹露營回程時找 W 去泡溫泉，毫不猶豫地拒絕我，這次主動提議說要去，理由是溫泉就是要晚上泡，下午泡沒感覺，我也是醉了～
+想了想，也很久沒泡溫泉，再加上下午與妹妹一同去打球運動，懶骨頭差點散光光，不是差點扭到，就是差點閃到腰，跑沒三步就想偷懶休息，既然要運動也是有用力給它動起來，感嘆體力不如從前也。正好體力流失的我，也適合泡一下溫泉，沒有想太多就立馬答應 W，晚上十點啟程，驅車前往北投的「享溫泉」桑一下～
+周末台北的夜晚，終於不那麼塞車，咻一下的就來到北投，不得不說北投這兒的路，不是在地、沒有導航，別輕易嘗試，有導航的我一下高速公路就遺失方向感…
+本想試試看價格略高的客房，出發前先打給店家詢問，因周末的關係生意好到客房已滿位，只剩下湯屋可以享用，但也無妨。兩人就開始一趟悶汗之旅，想辦法把身體毒素通通排出體外～
+正門口
+建築物外觀
+湯屋內設施
+正門木頭椅
+整體上來說算不錯，泡湯時間為 60 + 30 分鐘，走到外面才發現原來這棟建築物不大，樓層也不高，兩人猜測客房數量應該也不多。這裡距離新北投車站及捷運站都還算近，店家介紹內表示步行 10 分鐘能抵達，也是個方便的位置。
+結論，下次想使用客房得提前先預訂。
+BTW 我們是當晚從 KLOOK 上面購買，再前往實體店家使用，不過當天購買當天使用的情況，建議先打電話給店家確認是否可以當天使用票券會比較保險！
+泡完後，兩人肚子相繼演奏起交響樂，便快速地搜尋在地宵夜，找到 石牌老牌肉丸 傳統小吃攤販，位於裕民一路20號，導航路線不算遠，飢腸轆轆的兩人，馬上出發前往石牌夜市來飽食一頓。
+取自網路的招牌
+美食享用
+兩人分別點了兩個肉圓、一碗甜不辣、菜頭貢丸湯和四神湯各一碗，整體上來說算不錯吃，但熱愛四神的我，發現湯裡沒有淮山（山藥）和蓮子，老實說心裡很不是滋味。
+原先預計吃完宵夜想買個鹹酥雞在回程的路上享用，但吃完這頓後，胃已無空間放下任何食物，只好等待下次再來泡溫泉時享用～
+到家時間 am 2:30</description>
+    </item>
+    
+    <item>
+      <title>【Markdown】筆記神器</title>
+      <link>https://fakestandard.github.io/post/markdown-1-heymarkdown/</link>
+      <pubDate>Fri, 19 Mar 2021 09:46:52 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/markdown-1-heymarkdown/</guid>
+      <description>前言 Markdown 易讀易寫，學一次就會，許久不用也不會忘。
+應用 目前越來越多服務支援 Markdown 編寫，而每個環境能接受的語法略有不同，以下則介紹通用的使用方式。
+標題 標題分為六個層級（有些環境只接受三個層級），標題以 # 符號為主，數量越多層級越低，反之則越高
+# 標題一 ## 標題二 ### 標題三 #### 標題四 ##### 標題五 ###### 標題六  根據 HTML 結構，相應的轉換為 &amp;lt;h1&amp;gt; 到 &amp;lt;h6&amp;gt;，呈現效果如下 文字強調 文字可使用粗體、斜體以強調字詞，分別使用 * 和 _ 符號包圍，且必須有頭有尾，意即用什麼符號開啟標籤，就要用什麼符號結束。
+斜體 使用 * 或 _ 包圍文字，被包圍的文字會被轉換成 &amp;lt;em&amp;gt; 標籤包圍
+*Single asterisks* _Single underscores_ 粗體 一樣使用 * 和 _ 標記，與斜體不同的地方為一次需使用兩個標記，最後轉換成 &amp;lt;strong&amp;gt;
+**Double asterisks** __Double underscores__ 粗斜體 根據上面兩個格式衍伸，粗斜體直接使用三個 * 或 _ 即可呈現
+***Bold italic*** ___Bold italic___ 文字段落 一般撰寫未添加任何標記符號時，該區塊文字即為文字段落區塊，當區塊文字與區塊文字之間使用 Enter 鍵換行，會形成兩個段落，段落與段落之間會明顯地保留一行空白，且轉換成 HTML 對應的 &amp;lt;p&amp;gt;。</description>
+    </item>
+    
+    <item>
+      <title>【賀】新開張！</title>
+      <link>https://fakestandard.github.io/post/other-1-newblog/</link>
+      <pubDate>Wed, 17 Mar 2021 17:10:35 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/other-1-newblog/</guid>
+      <description>前言 恭賀本人的部落格又開張了！
+歷經長久思考，最終還是得有個小角落紀錄生活點滴，更多的是工作日常以及技術方面的哩哩叩叩，對 IT 人而言，技術這東西許久不用，那可是大腦折騰三百回合，也會找不到答案的折磨阿…
+OK. 如果你有認真看了第一行，應該會注意到「又」這個字，為何新開張卻是又呢？請聽我娓娓道來…
+正文 本人從小未有筆記的習慣，從學生時期一直到出社會工作以來，都沒有這個良好的習慣，原因很複雜。
+某年某月某一天，心血來潮翻遍各大部落格平台，於是乎選擇主打「IT 技術人的部落格平台」的點部落開啟人生第一個部落格，那時欣喜落狂的想要在部落格上記錄自己所學之技術，最後敵不過懶字…
+接著 WordPress 網站如雨後春筍般地出現，不僅可以建立個人平台、打造商業品牌，甚至使用 WordPress 來接案。於是自己也跳入不需要寫任何一行 Code 即可客製化個人網站的 WordPress，寫了一陣子，還是敵不過懶字…
+過了好陣子，Static site generator 慢慢受到 Frontend 喜愛，身為 Backend Engineer 怎能錯失這塊學習的機會，於是東挑挑西選選，最終選擇 Hexo 且辦了個 Github 帳號，同時還學習 Version Control System - git，再搭配 Markdown 寫作，可謂一箭三雕，對我來說 Github 及 git 當時都還是遲遲未入手的 Skill 阿…
+說了這麼多，Hexo 搭建的 website 依然敵不過懶字又關門大吉了…
+前路多彎折，最終還是需要部落格來擴充大腦記憶體，這次選擇用 Go 寫的 Hugo 搭建，建立過程則沒有像當初碰到 Hexo 那麼多波折（雖然還是很撞牆），因腦中對靜態網站生成器產生的結構已經有點雛形，不管選用哪個 Static site generator 都大同小異，今日花一兩個小時在 install hugo &amp;amp; pick theme，終於大功造成！
+結語 在打造部落格的過程中，自己也嘗試過其他打造部落格的平台，甚至以筆記著名的 One Note 和 Notion 也佔有一席小天地，至於上述所提到的是有經營一陣子且有文章產出的，其餘未有產出的部分則不一一寫出來，實在是太多太囉嗦。</description>
+    </item>
+    
+  </channel>
+</rss>
