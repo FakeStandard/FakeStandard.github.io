@@ -16,9 +16,9 @@
       <description>GitHub 提供一個 Web hosting service（網頁託管服務）為使用者提供存放靜態網頁、文檔等功能，讓其他人可以透過服務端來存取使用者寄放之網頁，那就是 GitHub Pages。
 在開始使用 GitHub Pages 前，必須先擁有一個 GitHub 帳戶，和一些 git 的基礎知識如 pull 、 push 等。目前 GitHub 分別有免費及付費版，付費版更著重於 private repository，而免費版只接受一個私人的倉儲，其餘的 repository 皆會公開，So 若是比較私人的代碼或公開後較有爭議的 project，盡量別推送到 GitHub 上。
 Create a repository 建立一個倉儲的方法不只一種，約有兩三個地方可以進入下圖建立 repository 的畫面。
-首先可以看到最上方的 Owner 為自己的 GitHub 帳戶，緊接在後的 Repository name 就是字面上的意思，但我們要使用的是 GitHub Pages，在這需要使用 github.io 的子域名作為靜態網站的網址，且在 username 的位置需與 GitHub 帳戶相同，如 GitHub 帳戶為 github123，那麼這裡的 Repository name 需填上 github123.github.io，在後續設置中，用戶也可以使用第三方域名。
-下方的 Description 為可選填的項目，接著 public 和 private 的單選項中必須選擇一個，預設為公開，再來還有些倉儲的初始化項目可勾選，決定好後就按下 Create repository 的按鈕吧！
-Git client 先為裝置安裝 git，再從下列選擇一種方式來使用 Git</description>
+首先可以看到最上方的 Owner 為自己的 GitHub 帳戶，Repository name 就是字面上的意思，但我們要使用的是 GitHub Pages，在這需要使用 github.io 的子域名作為靜態網站的網址，且在 username 的位置需與 GitHub 帳戶相同，如 GitHub 帳戶為 github123，那這裡的 Repository name 需填上 github123.github.io，在後續設置中，用戶也可以使用第三方域名。
+下方的 Description 為可選填的項目，public 和 private 的單選項中必須選擇一個，預設為公開，再來還有些倉儲的初始化項目可勾選，決定好後就按下 Create repository 按鈕吧！
+Git client 先為裝置安裝 git CLI，再從下列選擇一種方式來使用 Git</description>
     </item>
     
   </channel>
