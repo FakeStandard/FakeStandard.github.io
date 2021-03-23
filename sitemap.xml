@@ -3,27 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://fakestandard.github.io/categories/</loc>
-    <lastmod>2021-03-22T15:56:58+08:00</lastmod>
+    <lastmod>2021-03-23T11:05:06+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/git/</loc>
-    <lastmod>2021-03-22T15:56:58+08:00</lastmod>
+    <lastmod>2021-03-23T11:05:06+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/github/</loc>
-    <lastmod>2021-03-22T15:56:58+08:00</lastmod>
+    <lastmod>2021-03-23T11:05:06+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/github-pages/</loc>
+    <lastmod>2021-03-23T11:05:06+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/</loc>
+    <lastmod>2021-03-23T11:05:06+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/hugo/</loc>
+    <lastmod>2021-03-23T11:05:06+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/hugo/</loc>
+    <lastmod>2021-03-23T11:05:06+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/hugo/</loc>
+    <lastmod>2021-03-23T11:05:06+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/</loc>
+    <lastmod>2021-03-23T11:05:06+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/hugo/hugo-1-newsite/</loc>
+    <lastmod>2021-03-23T11:05:06+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/categories/github/</loc>
     <lastmod>2021-03-22T15:56:58+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/tags/github-pages/</loc>
-    <lastmod>2021-03-22T15:56:58+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/</loc>
-    <lastmod>2021-03-22T15:56:58+08:00</lastmod>
-  </url><url>
     <loc>https://fakestandard.github.io/post/</loc>
-    <lastmod>2021-03-22T15:56:58+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/</loc>
     <lastmod>2021-03-22T15:56:58+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/post/github-1-githubpage/</loc>
@@ -46,12 +58,6 @@
   </url><url>
     <loc>https://fakestandard.github.io/post/markdown-1-heymarkdown/</loc>
     <lastmod>2021-03-19T09:46:52+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/hugo/</loc>
-    <lastmod>2021-03-17T17:10:35+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/categories/hugo/</loc>
-    <lastmod>2021-03-17T17:10:35+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/post/other-1-newblog/</loc>
     <lastmod>2021-03-17T17:10:35+08:00</lastmod>

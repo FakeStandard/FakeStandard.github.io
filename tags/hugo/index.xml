@@ -6,7 +6,21 @@
     <description>Recent content in Hugo on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 17 Mar 2021 17:10:35 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Mar 2021 11:05:06 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Hugo】從頭使用 Hugo 搭配 GitHub Pages</title>
+      <link>https://fakestandard.github.io/hugo/hugo-1-newsite/</link>
+      <pubDate>Tue, 23 Mar 2021 11:05:06 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/hugo/hugo-1-newsite/</guid>
+      <description>Introduce Hugo 為一款基於 Golang 的靜態網頁生成器，支援 Markdown 語法解析，可快速產生靜態檔案和部署，此部落格也是透過 Hugo + GitHub Pages 打造而成，先前使用 Hexo 在後期打包速度越來越緩慢，耳聞 Hugo 在打包速度上表現非常優異，最後才會選用 Hugo，廢話不多說馬上開始！
+Start 對於不同 OS 安裝的方式有所不同，筆者這邊選擇 Windows 裝置使用的套件管理 Chocolatey 來安裝 Hugo。不同 OS 的請參考 Install Hugo
+打開 Terminal 安裝 Hugo
+$ choco install hugo -confirm 確認 Hugo 版本
+$ hugo version 建立新網站，這邊的 sitename 會成為資料夾的名稱
+$ hugo new site sitename Hugo 本身沒有自帶 theme，所以剛開始建置好是沒辦法 run 的，這邊跟著官方使用的 Ananke 主題來套用到新網站，從 github 上拉下一個主題到 site 的資料夾，使用 git submodule 添加到 Themes folder，也可以到 themes 選擇其他主題再解壓到 themes folder 下。</description>
+    </item>
+    
     <item>
       <title>【賀】新開張！</title>
       <link>https://fakestandard.github.io/post/other-1-newblog/</link>
