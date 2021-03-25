@@ -150,16 +150,16 @@ layui.use('element', function(){
 
                 </blockquote>
                 <div class="layui-card-body markdown-body single-content">
-                    <h2 id="issue">Issue</h2>
+                    <h1 id="issue">Issue</h1>
 <p>最近在 Win10 上使用遠端桌面連線時，需要在本地和遠端進行複製 &amp; 貼上動作，但此功能忽然失效？不論是快捷鍵或介面操作，就是無法使用。</p>
-<h2 id="solution">Solution</h2>
+<h1 id="solution">Solution</h1>
 <h3 id="step1">Step1</h3>
 <p>檢查剪貼簿功能是否有開啟</p>
 <p>【傳送門】<a href="https://fakestandard.github.io/post/windows-1-remotedesktopconnection-rdp/">【Windows】開啟遠端桌面連線剪貼簿功能</a></p>
 <h3 id="step2">Step2</h3>
 <p>可能原因是遠端的檔案複製（File Copy）程序沒有回應，開啟工作管理員找到 <code>Rdpclip.exe</code> 將它關閉，再結束遠端連線，隨後再使用本地主機執行遠端連線即可恢復。</p>
 <p><img src="/images/Windows/Windows-Rdpclip001.png" alt=""></p>
-<h2 id="note">Note</h2>
+<h1 id="note">Note</h1>
 <p>那麼為何 File Copy 會當掉？</p>
 <p>有可能是伺服器的記憶體不足或者記憶體滿載，較忙碌的伺服器也有高機率發生當掉的情況。</p>
 </div>
