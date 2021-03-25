@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Common Sense on How can I help</title>
+    <link>https://fakestandard.github.io/categories/common-sense/</link>
+    <description>Recent content in Common Sense on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Wed, 24 Mar 2021 20:25:01 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/common-sense/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Windows】開啟遠端桌面連線剪貼簿/印表機功能</title>
+      <link>https://fakestandard.github.io/post/windows-1-remotedesktopconnection-rdp/</link>
+      <pubDate>Wed, 24 Mar 2021 20:25:01 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/windows-1-remotedesktopconnection-rdp/</guid>
+      <description>Issue  一般操作電腦複製/貼上功能總少不了，當使用本地機器遠端到其他機器也想使用該功能時，發現不能用？ 當遠端桌面連線想共用本機的印表機資源時，該怎麼辦？  Solution 開啟遠端桌面連線並展開顯示選項，切換到【本機資源】頁簽，在本機和裝置資源的 panel 將欲操作的【印表機】或【剪貼簿】勾選即可
+Note 假設剪貼簿已經開啟，遠端依然無法使用複製/貼上功能？
+【傳送門】【Windows】遠端桌面連線無法複製貼上？</description>
+    </item>
+    
+  </channel>
+</rss>

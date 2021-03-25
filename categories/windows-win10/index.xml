@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Win10 on How can I help</title>
-    <link>https://fakestandard.github.io/tags/win10/</link>
-    <description>Recent content in Win10 on How can I help</description>
+    <title>Windows - Win10 on How can I help</title>
+    <link>https://fakestandard.github.io/categories/windows-win10/</link>
+    <description>Recent content in Windows - Win10 on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 25 Mar 2021 16:13:46 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/win10/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Mar 2021 16:13:46 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/windows-win10/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Windows】遠端桌面連線無法複製貼上？</title>
       <link>https://fakestandard.github.io/post/windows-2-remotedesktopconnection-rdpclip/</link>
