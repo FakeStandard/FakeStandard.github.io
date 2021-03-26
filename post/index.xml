@@ -6,7 +6,21 @@
     <description>Recent content in Posts on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 25 Mar 2021 16:13:46 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 Mar 2021 16:45:48 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Windows】分享本地硬碟供遠端使用</title>
+      <link>https://fakestandard.github.io/post/windows-3-remotedesktopconnection-sharedisk/</link>
+      <pubDate>Fri, 26 Mar 2021 16:45:48 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/windows-3-remotedesktopconnection-sharedisk/</guid>
+      <description>Issue 某次使用遠端桌面時想把 .bak 複製到本地機器，熱鍵 Ctrl + C &amp;amp; Ctrl + V 後跑到一半就不跑了，天真以為這容量不大就可以用【複製/貼上】功能，殊不知有正統的作法。
+Solution 當本地和遠端想要分享檔案時，最好使用 Share Disk，將本地硬碟 Share 給遠端使用，此時遠端就可以存取本地的硬碟。
+Step1 開啟顯示選項，切換到【本機資源】頁簽，在【本機裝置和資源】 panel 按下【其他】
+Step2 展開磁碟機選擇要與遠端分享的硬碟
+Step3 開啟檔案總管就可以在本機下看到本地硬碟已與遠端共享
+Note OK. 如此一來就可以直接在遠端將資源儲存到本地硬碟，當遠端關閉時，Share 的硬碟也會隨之關閉。</description>
+    </item>
+    
     <item>
       <title>【Windows】遠端桌面連線無法複製貼上？</title>
       <link>https://fakestandard.github.io/post/windows-2-remotedesktopconnection-rdpclip/</link>
