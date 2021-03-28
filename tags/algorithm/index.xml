@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algorithm on How can I help</title>
+    <link>https://fakestandard.github.io/tags/algorithm/</link>
+    <description>Recent content in Algorithm on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sun, 28 Mar 2021 13:41:55 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】經典演算法</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-1-classicalgorithm/</link>
+      <pubDate>Sun, 28 Mar 2021 13:41:55 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-1-classicalgorithm/</guid>
+      <description>Introduce 此篇想記錄一些閱讀的筆記，演算法乃是運算思維的基石，藉由紀錄加深一下演算法的概念。
+Start 經典的演算法有以下幾種
+ 分治演算法 疊代演算法 遞迴演算法  分治演算法（Divide and conquer） 分治演算法是一種簡單又重要的演算法，它將複雜的問題逐一拆解成單元較小的問題，問題規模較小則容易求解，最終在合併子問題以得到原問題的解答，在日常生活中也能時時應用到。
+像是以往在進行團體報告時，假設報告主題的章節共有五個章節，當然不可能讓一個人獨立完成五個章節，這時就可以透過分治法，將各章節逐一拆解成較小單元，每位成員負責一個章節，讓五位成員同時進行，在時間上遠遠勝於一個人獨力完成所有章節，且透過分工還可能達到其他效果。
+然而分治演算法還可應用在數字的分類和排序上，舉個例子，手邊有一副順序打亂的撲克牌，現在要將它們復原到起初開封時的排序，依序分類為黑桃、紅心、梅花、方塊，每個分類需從 A-K 逐一排序。此時有兩種做法，第一種為每拿到一張牌，就將它插入到適當的順序中，但缺點是在整理的過程中較繁瑣也較花時間。第二種作法則是應用分治演算法，以不考慮 A-K 順序的情況下，將黑桃分成一堆，紅心分成一堆，以此類推，最終會將黑桃、紅心、梅花、方塊分類出來，此時在逐一將每個分類的 A-K 順序整理好，再將其合併。
+所以透過分治演算法可將複雜的大問題，拆解成規模小的子問題，雖然子問題的數量多，相對的更易於解決，解決的速度上也相對的快。
+疊代演算法（Iterative） 無法使用一次公式就能求解，需透過反覆的運算才能得解的方法稱為疊代演算法，像是透過迴圈去循環重複的程式碼來得到答案。
+舉例：利用 for 迴圈設計 n! 的遞迴程式，n 是透過外部輸入得知，打算 1! ~ n! 所有結果
+// 從外部輸入 n int n = int.Parse(Console.ReadLine()); // 用以計算結果 int sum = 1; // 使用迴圈計算 1! ~ n! for (int i = 1; i &amp;lt;= n; i++) { for (int j = i; j &amp;gt; 0; j--) { sum = sum * j; } Console.</description>
+    </item>
+    
+  </channel>
+</rss>
