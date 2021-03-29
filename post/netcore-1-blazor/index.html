@@ -261,9 +261,11 @@ layui.use('element', function(){
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd TodoList
 </code></pre></div><h2 id="新增-razor-component">新增 Razor Component</h2>
 <p><code>-n</code> 為建立元件的名稱， <code>-o</code> 為輸出的位置，下列該指令會在 <code>Pages</code> 資料夾下建立一個 <code>Todo.razor</code> 的元件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dotnet new razorcomponent -n Todo -o Pages
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet new razorcomponent -n Todo -o Pages
 </code></pre></div><p>到目前為止已經建立一個 Blazor 專案，並為專案內建立 Razor 元件，接下來的程式碼修改如同上述操作，這邊就不再重複介紹。</p>
-<h1 id="reference">Reference</h1>
+<p>完成後使用下列代碼來<strong>啟用本地伺服器瀏覽</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet watch run
+</code></pre></div><h1 id="reference">Reference</h1>
 <p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/build-a-blazor-app?view=aspnetcore-5.0">Build a Blazor todo list app</a></p>
 </div>
             </div>
