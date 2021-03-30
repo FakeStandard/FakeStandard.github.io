@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>.NetCore on How can I help</title>
+    <link>https://fakestandard.github.io/categories/.netcore/</link>
+    <description>Recent content in .NetCore on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sun, 28 Mar 2021 21:47:49 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/.netcore/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【.Net Core】打造 Blazor ToDoList</title>
+      <link>https://fakestandard.github.io/post/netcore-1-blazor/</link>
+      <pubDate>Sun, 28 Mar 2021 21:47:49 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/netcore-1-blazor/</guid>
+      <description>Prerequisites .NET 5.0 SDK 或之後的版本
+Start 使用 VS 2019 建立 Blazor
+建立新專案 選擇【Blazor 應用程式】專案
+選擇【Blazor Server 應用程式】樣板
+建立 Razor 元件 新建立的專案在方案總管下的 Pages 資料夾內，可以看到已經有建立好的預設頁面，在該資料夾下建立 Todo.razor。
+建立 Razor 元件時要注意
+ 檔案名稱開頭第一個字母必須大寫 副檔名為 .razor 結尾  將 Todo 元件添加到導航列 開啟 Pages/Todo.razor 添加相對應的 URL @page &amp;quot;/todo&amp;quot;
+@page &amp;#34;/todo&amp;#34; &amp;lt;h3&amp;gt;Todo&amp;lt;/h3&amp;gt; @code { } 開啟 Shared/NavMenu.razor，此 razor 為應用程式其中一個版面配置，可避免應用程式中使用重複的元件，在此配置中添加以下代碼
+&amp;lt;ul class=&amp;#34;nav flex-column&amp;#34;&amp;gt; ... &amp;lt;li class=&amp;#34;nav-item px-3&amp;#34;&amp;gt; &amp;lt;NavLink class=&amp;#34;nav-link&amp;#34; href=&amp;#34;todo&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;oi oi-list-rich&amp;#34; aria-hidden=&amp;#34;true&amp;#34;&amp;gt;&amp;lt;/span&amp;gt; Todo &amp;lt;/NavLink&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 建立 TodoItem 類別 在專案目錄下建立 /TodoList/TodoItem.</description>
+    </item>
+    
+  </channel>
+</rss>

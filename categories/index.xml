@@ -6,13 +6,40 @@
     <description>Recent content in Categories on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 28 Mar 2021 21:47:49 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Mar 2021 10:42:18 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>.NetCore - Web</title>
-      <link>https://fakestandard.github.io/categories/.netcore-web/</link>
+      <title>Common Sence</title>
+      <link>https://fakestandard.github.io/categories/common-sence/</link>
+      <pubDate>Tue, 30 Mar 2021 10:42:18 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/categories/common-sence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MSSQL</title>
+      <link>https://fakestandard.github.io/categories/mssql/</link>
+      <pubDate>Tue, 30 Mar 2021 10:42:18 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/categories/mssql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>.NetCore</title>
+      <link>https://fakestandard.github.io/categories/.netcore/</link>
       <pubDate>Sun, 28 Mar 2021 21:47:49 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/categories/.netcore-web/</guid>
+      <guid>https://fakestandard.github.io/categories/.netcore/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>https://fakestandard.github.io/categories/web/</link>
+      <pubDate>Sun, 28 Mar 2021 21:47:49 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/categories/web/</guid>
       <description></description>
     </item>
     

@@ -6,7 +6,25 @@
     <description>Recent content in Tags on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 28 Mar 2021 21:47:49 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Mar 2021 10:42:18 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MSSQL</title>
+      <link>https://fakestandard.github.io/tags/mssql/</link>
+      <pubDate>Tue, 30 Mar 2021 10:42:18 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/mssql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Performance</title>
+      <link>https://fakestandard.github.io/tags/performance/</link>
+      <pubDate>Tue, 30 Mar 2021 10:42:18 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/performance/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>.Net Core</title>
       <link>https://fakestandard.github.io/tags/.net-core/</link>

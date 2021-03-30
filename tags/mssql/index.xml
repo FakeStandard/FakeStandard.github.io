@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MSSQL on How can I help</title>
+    <link>https://fakestandard.github.io/tags/mssql/</link>
+    <description>Recent content in MSSQL on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 30 Mar 2021 10:42:18 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/mssql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【MSSQL】如何改善 SQL 常見的效能問題</title>
+      <link>https://fakestandard.github.io/post/mssql-1-performanceissues/</link>
+      <pubDate>Tue, 30 Mar 2021 10:42:18 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/mssql-1-performanceissues/</guid>
+      <description>一直以來筆者在寫 SQL 語法時從不考量效能問題，以為效能調教是等到發生後由高手們來解題，輪不到我們這種小咖來煩惱，殊不知我們這種咖小也可以提前優化效能！所以這篇要來紀錄 SQL 一些常見的效能問題，比如應該避免使用哪些語法，為何要避免使用？在筆者有限的能力下也會盡量寫 Lab 觀察數據。
+查詢優化 同樣的查詢結果會有不同寫法，但哪些寫法是比較好的？其實查詢時，應該要避免全表掃描（Full Table Scan），
+何謂全表掃描？
+簡單來說，就是 SQL Agent 在查詢時會從頭開始掃描整張資料表，無論是否已經取得最終結果，都會掃描到最後一筆資料才結束。
+以下是在 WHERE 條件中應盡量避免使用的語法，會導致 SQL Agent 放棄使用索引，從而進行 Full Table Scan。
+  避免使用 NULL
+SELECT OrderID FROM A WHERE ProductID IS NULL -- 應改為 SELECT OrderID FROM A WHERE ProductID = 0   避免使用 &amp;lt;&amp;gt; 和 !=，使用 &amp;gt;= 或 &amp;lt;= 來取代
+  避免使用 or 來連接條件
+SELECT OrderID FROM [Northwind].[dbo].[Orders] WHERE EmployeeID = 4 OR EmployeeID = 5 -- 將 or 替換成 UNION ALL SELECT OrderID FROM [Northwind].</description>
+    </item>
+    
+  </channel>
+</rss>
