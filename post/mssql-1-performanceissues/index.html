@@ -9,10 +9,10 @@
     <meta content="MSSQL, Performance, Common Sence" name="keywords">
     
     <meta content="How can I help - 一直以來筆者在寫 SQL 語法時從不考量效能問題，以為效能調教是等到發生後由高手們來解題，輪不到我們這種小咖來煩惱，殊不知我們這種咖小也可以提前優化效能！所以這篇要來紀錄 SQL 一些常見的效能問題，比如應該避免使用哪些語法，為何要避免使用？在筆者有限的能力下也會盡量寫 Lab 觀察數據。
-查詢優化 同樣的查詢結果會有不同寫法，但哪些寫法是比較好的？其實查詢時，應該要避免全表掃描（Full Table Scan），
-何謂全表掃描？
+查詢優化 同樣的查詢結果會有不同寫法，但哪些寫法是比較好的？其實查詢時，應該要避免全表掃描（Full Table Scan）
+何謂全表掃描（Full Table Scan）？
 簡單來說，就是 SQL Agent 在查詢時會從頭開始掃描整張資料表，無論是否已經取得最終結果，都會掃描到最後一筆資料才結束。
-以下是在 WHERE 條件中應盡量避免使用的語法，會導致 SQL Agent 放棄使用索引，從而進行 Full Table Scan。
+以下是在 WHERE 條件中應盡量避免使用的語法，它們會導致 SQL Agent 放棄使用索引，從而進行 Full Table Scan。
   避免使用 NULL
 SELECT OrderID FROM A WHERE ProductID IS NULL -- 應改為 SELECT OrderID FROM A WHERE ProductID = 0   避免使用 &lt;&gt; 和 !=，使用 &gt;= 或 &lt;= 來取代
   避免使用 or 來連接條件
@@ -139,10 +139,10 @@ layui.use('element', function(){
                 <div class="layui-card-body markdown-body single-content">
                     <p>一直以來筆者在寫 SQL 語法時從不考量效能問題，以為效能調教是等到發生後由高手們來解題，輪不到我們這種小咖來煩惱，殊不知我們這種咖小也可以提前優化效能！所以這篇要來紀錄 SQL 一些常見的效能問題，比如應該避免使用哪些語法，為何要避免使用？在筆者有限的能力下也會盡量寫 Lab 觀察數據。</p>
 <h2 id="查詢優化">查詢優化</h2>
-<p>同樣的查詢結果會有不同寫法，但哪些寫法是比較好的？其實查詢時，應該要避免全表掃描（Full Table Scan），</p>
-<p><strong>何謂全表掃描？</strong></p>
+<p>同樣的查詢結果會有不同寫法，但哪些寫法是比較好的？其實查詢時，應該要避免全表掃描（Full Table Scan）</p>
+<p><strong>何謂全表掃描（Full Table Scan）？</strong></p>
 <p>簡單來說，就是 SQL Agent 在查詢時會從頭開始掃描整張資料表，無論是否已經取得最終結果，都會掃描到最後一筆資料才結束。</p>
-<p>以下是在 WHERE 條件中應盡量避免使用的語法，會導致 SQL Agent 放棄使用索引，從而進行 Full Table Scan。</p>
+<p>以下是在 WHERE 條件中應盡量避免使用的語法，它們會導致 SQL Agent 放棄使用索引，從而進行 Full Table Scan。</p>
 <ul>
 <li>
 <p><strong>避免使用 <code>NULL</code></strong></p>
@@ -215,7 +215,7 @@ layui.use('element', function(){
 </ul>
 <h2 id="索引優化">索引優化</h2>
 <p>欲對查詢進行優化，首先應考慮在 <code>WHERE</code> 和 <code>ORDER BY</code> 涉及的欄位建立索引。</p>
-<p>但也不是所有索引對查詢都有效，當索引列有大量資料重複時，SQL Agent 會放棄使用索引使用 Full Table scan。如對某欄位建立索引，而該欄位只有 true &amp; false，資料量分別為各半，那該索引在查詢時無法有作用，SQL Agent 最終會走 Full Table scan。</p>
+<p>但也不是所有索引對查詢都有效，當索引列有大量資料重複時，SQL Agent 也會放棄使用索引改為使用 Full Table scan。如對某欄位建立索引，而該欄位只有 true &amp; false，資料量分別為各半，那該索引在查詢時無法有作用，SQL Agent 最終會走 Full Table scan。</p>
 <p>在使用索引欄位為條件時，如果索引為複合式索引，那麼在搜尋時的條件必須以複合式索引中的欄位順序來查詢，否則索引將不會被使用到。</p>
 <p>索引並非越多越好，索引固然能提高查詢效率，但同時也會降低 INSERT 和 UPDATE 的效率，因為這兩個動作有可能會重建索引。一般來說一個資料表的索引不超過六個，若太多則應考慮剔除一些非必要索引。</p>
 <h2 id="其他優化">其他優化</h2>
@@ -251,7 +251,7 @@ layui.use('element', function(){
 </li>
 </ul>
 <h2 id="note">Note</h2>
-<p>前陣子在工作上遇到需要效能優化問題，在解決的過程中得知有些基礎的效能優化方法，就誕生了這篇文章，至於工作上遇到的問題，因模擬情境需要點時間思考，之後有空會在記錄。</p>
+<p>前陣子在工作上遇到需要效能調教問題，在解決的過程中得知有些基礎的效能優化方法，就誕生了這篇文章，至於工作上遇到的問題，模擬情境需要點時間思考，之後有空會在記錄。</p>
 </div>
             </div>
         </div>
