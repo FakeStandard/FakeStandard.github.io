@@ -6,7 +6,23 @@
     <description>Recent content in Windows - Win10 on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 26 Mar 2021 16:45:48 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/windows-win10/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Apr 2021 12:59:03 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/windows-win10/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Windows】如何分割視窗/畫面</title>
+      <link>https://fakestandard.github.io/post/windows-6-cutoverwindows/</link>
+      <pubDate>Thu, 01 Apr 2021 12:59:03 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/windows-6-cutoverwindows/</guid>
+      <description>Issue 我們在使用文件或是檔案時，需同時對兩份文件做比對，所以不想只有一個視窗佔滿整個螢幕，那要如何在 Windows 畫面上同時開啟兩個視窗，並將其視窗放置一左一右？
+Solution 最簡單的方法是調整視窗大小，將視窗大小調成螢幕大小的一半，一個放左，一個放右，讓彼此不重疊。
+如果不常需要這樣的操作倒也還好，但若久久就要一次，這個動作就顯得麻煩許多了，心裡不禁暗自問「有沒有可以直接將視窗分割的辦法」，答案是有的！甚至還可以幫你調整成固定大小！
+視窗分割為兩個畫面 假設有兩份 Word 分別為 A、B 檔
+ 開啟 A 檔案 使用 Win + ← （Windows 鍵 + 方向左鍵）  此時 A 檔案就會以固定的大小開啟在螢幕左側
+ 開啟 B 檔案 使用 Win + → （Windows 鍵 + 方向右鍵）  B 檔案也會以固定大小開啟在螢幕的右側，此時你會發現，兩個檔案已經成功的放置在一左一右，而且還以滿版的方式填滿了螢幕。
+視窗分割為四個畫面 除了左右分割畫面之外，還提供四個等份分割的畫面，分別為左上、左下、右上及右下。方法很簡單，先將前兩個檔案固定好視窗位置
+ 開啟第三個檔案 使用上述的快捷鍵將檔案放置欲放置的其中一側 使用 Win + ↓（Windows 鍵 + 方向下鍵）  此時檔案就會開啟在選定的一側的下方，等同於左側的視窗又被對半切割，而這次切割的方向為上下，與前述不同的地方就是切割方向改變，如此一來第四份檔案也可使用相同的步驟放置到欲擺放的視窗位置。</description>
+    </item>
+    
     <item>
       <title>【Windows】分享本地硬碟供遠端使用</title>
       <link>https://fakestandard.github.io/post/windows-3-remotedesktopconnection-sharedisk/</link>

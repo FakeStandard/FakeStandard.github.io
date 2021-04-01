@@ -3,14 +3,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>How can I help - 【Windows】開啟遠端桌面連線剪貼簿/印表機功能 </title>
+    <title>How can I help - 【Windows】使用 DOS 指令切換當前硬碟 </title>
     
     
-    <meta content="Windows, Win10, Remote Desktop Connection, RDP, Printer, Windows - Win10, Common Sense" name="keywords">
+    <meta content="Windows, Win10, cmd, Windows - cmd, Common Sense" name="keywords">
     
-    <meta content="How can I help - Issue  一般操作電腦複製/貼上功能總少不了，當使用本地機器遠端到其他機器也想使用該功能時，發現不能用？ 當遠端桌面連線想共用本機的印表機資源時，該怎麼辦？  Solution 開啟遠端桌面連線並展開顯示選項，切換到【本機資源】頁簽，在本機和裝置資源的 panel 將欲操作的【印表機】或【剪貼簿】勾選即可
-Note 假設剪貼簿已經開啟，遠端依然無法使用複製/貼上功能？
-【傳送門】【Windows】遠端桌面連線無法複製貼上？" name="description">
+    <meta content="How can I help - 紀錄一下每次使用命令提示字元想從 C:\ 切換到 D:\ 時，都會喪失記憶，一直使用 CD D:\ 都沒有反應，切老半天就是想不起來，每次都依賴谷哥大神。
+其實切換硬碟只要直接下 D: 即可，每每看到切換方法後都捶心肝，這裡也順便紀錄，CD 是切換當前目錄，切換硬碟是另一回事，所以直接對欲切換的硬碟下該硬碟名稱即可。" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -97,8 +96,220 @@ layui.use('element', function(){
             <div class="layui-card single-card">
                 <br />
                 <blockquote class="self-elem-quote self-elem-quote-bg-green markdown-body single-title" >
-                    <h1>【Windows】開啟遠端桌面連線剪貼簿/印表機功能</h1>
+                    <h1>【Windows】使用 DOS 指令切換當前硬碟</h1>
                     <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-03-31</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/windows-cmd/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - cmd</span>
+        </a>
+    
+        <a href="/categories/common-sense/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
+        </a>
+    
+        <a href="/tags/cmd/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">cmd</span>
+        </a>
+    
+    
+</h3>
+
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <p>紀錄一下每次使用命令提示字元想從 C:\ 切換到 D:\ 時，都會喪失記憶，一直使用 <code>CD D:\</code> 都沒有反應，切老半天就是想不起來，每次都依賴谷哥大神。</p>
+<p>其實切換硬碟只要直接下 <code>D:</code> 即可，每每看到切換方法後都捶心肝，這裡也順便紀錄，<code>CD</code> 是切換當前目錄，切換硬碟是另一回事，所以直接對欲切換的硬碟下該硬碟名稱即可。</p>
+<p><img src="/images/Windows/Windows-cmd-CutoverDisk001.png" alt=""></p>
+</div>
+            </div>
+        </div>
+
+        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
+            
+            <div class="layui-card single-card">
+                <h2 class="single-title">Relevant Topics</h2>
+                
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/post/windows-4-cmdadjustmentdefaultsize/">
+                                <h3 class="">【Windows】如何改變命令提示字元(cmd)視窗預設大小</h3>
+                            </a>
+                            
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-03-27</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/windows-cmd/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - cmd</span>
+        </a>
+    
+        <a href="/categories/common-sense/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
+        </a>
+    
+        <a href="/tags/cmd/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">cmd</span>
+        </a>
+    
+    
+</h3>
+
+                        </blockquote>
+                    </div>
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/post/windows-3-remotedesktopconnection-sharedisk/">
+                                <h3 class="">【Windows】分享本地硬碟供遠端使用</h3>
+                            </a>
+                            
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-03-26</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/windows-win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - Win10</span>
+        </a>
+    
+        <a href="/categories/common-sense/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
+        </a>
+    
+        <a href="/tags/share-disk/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Share Disk</span>
+        </a>
+    
+        <a href="/tags/remote-desktop-connection/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Remote Desktop Connection</span>
+        </a>
+    
+    
+</h3>
+
+                        </blockquote>
+                    </div>
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/post/windows-2-remotedesktopconnection-rdpclip/">
+                                <h3 class="">【Windows】遠端桌面連線無法複製貼上？</h3>
+                            </a>
+                            
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-03-25</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/windows-win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - Win10</span>
+        </a>
+    
+        <a href="/categories/troubleshooting/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">TroubleShooting</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
+        </a>
+    
+        <a href="/tags/rdpclip/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Rdpclip</span>
+        </a>
+    
+        <a href="/tags/remote-desktop-connection/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Remote Desktop Connection</span>
+        </a>
+    
+    
+</h3>
+
+                        </blockquote>
+                    </div>
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/post/windows-1-remotedesktopconnection-rdp/">
+                                <h3 class="">【Windows】開啟遠端桌面連線剪貼簿/印表機功能</h3>
+                            </a>
+                            
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
     <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
     <span>2021-03-24</span>
 
@@ -145,24 +356,12 @@ layui.use('element', function(){
     
 </h3>
 
-                </blockquote>
-                <div class="layui-card-body markdown-body single-content">
-                    <h1 id="issue">Issue</h1>
-<ul>
-<li>一般操作電腦複製/貼上功能總少不了，當使用本地機器遠端到其他機器也想使用該功能時，發現不能用？</li>
-<li>當遠端桌面連線想共用本機的印表機資源時，該怎麼辦？</li>
-</ul>
-<h1 id="solution">Solution</h1>
-<p>開啟遠端桌面連線並展開顯示選項，切換到【本機資源】頁簽，在本機和裝置資源的 panel 將欲操作的【印表機】或【剪貼簿】勾選即可</p>
-<p><img src="/images/Windows/Windows-RDP&amp;Printer.png" alt=""></p>
-<h1 id="note">Note</h1>
-<p>假設剪貼簿已經開啟，遠端依然無法使用複製/貼上功能？</p>
-<p>【傳送門】<a href="https://fakestandard.github.io/post/windows-2-remotedesktopconnection-rdpclip/">【Windows】遠端桌面連線無法複製貼上？</a></p>
-</div>
+                        </blockquote>
+                    </div>
+                	
+                
+                <br />
             </div>
-        </div>
-
-        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
             
 
             <div class="layui-card single-card">
