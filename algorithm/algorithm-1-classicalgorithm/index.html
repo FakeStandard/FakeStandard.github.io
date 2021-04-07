@@ -1,0 +1,829 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>How can I help - 【Algorithm】經典演算法 </title>
+    
+    
+    <meta content="Algorithm, Classic Algorithm, C#" name="keywords">
+    
+    <meta content="How can I help - 【3/28 閱讀紀錄】
+Introduce 此篇想記錄一些閱讀的筆記，演算法乃是運算思維的基石之一，藉由紀錄加深一下演算法的概念。
+Start 演算法種類很多，經典的演算法有以下幾種
+ 分治演算法（Divide and conquer） 疊代演算法（Iterative Algorithm） 遞迴演算法（Recursion Algorithm） 動態規劃演算法（Dynamic Programming Algorithm） 枚舉演算法（Exhaustive Searching） 貪心演算法（Greedy Algorithm） 回溯演算法（Backtracking Algorithm）  分治演算法（Divide and conquer） 分治演算法是一種簡單又重要的演算法，它將複雜的問題逐一拆解成單元較小的問題，問題規模較小則容易求解，最終在合併子問題以得到原問題的解答，在日常生活中也能時時應用到。
+像是以往在進行團體報告時，假設報告主題的章節共有五個章節，當然不可能讓一個人獨立完成五個章節，這時就可以透過分治法，將各章節逐一拆解成較小單元，每位成員負責一個章節，讓五位成員同時進行，在時間上遠遠勝於一人獨立完成所有章節，且透過分工還可能達到其他效果。
+然而分治演算法還可應用在數字的分類和排序上，舉個例子，手邊有一副順序打亂的撲克牌，現在要將它們復原到起初開封時的排序，依序分類為黑桃、紅心、梅花、方塊，每個分類需從 A-K 逐一排序。此時有兩種做法，第一種為每拿到一張牌，就將它插入到適當的順序中，但缺點是在整理的過程中較繁瑣也較花時間。第二種作法則是應用分治演算法，以不考慮 A-K 順序的情況下，將黑桃分成一堆，紅心分成一堆，以此類推，最終會將黑桃、紅心、梅花、方塊分類出來，此時在逐一將每個分類的 A-K 順序整理好，再將其合併。
+所以透過分治演算法可將複雜的大問題，拆解成規模小的子問題，雖然子問題的數量多，相對的更易於解決，解決的速度上也相對的快。
+疊代演算法（Iterative Algorithm） 無法使用一次公式就能求解，需透過反覆的運算才能得解的方法稱為疊代演算法，像是透過迴圈去循環重複的程式碼來得到答案。
+舉例：利用 for 迴圈設計 n! 的遞迴程式，n 是透過外部輸入得知，打算 1! ~ n! 所有結果
+// 從外部輸入 n int n = int.Parse(Console.ReadLine()); // 用以計算結果 int sum = 1; // 使用迴圈計算 1! ~ n! for (int i = 1; i &lt;= n; i&#43;&#43;) { for (int j = i; j &gt; 0; j--) { sum = sum * j; } Console." name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script src=" /layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        How can I help
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/hugo/">Hugo</a></li>
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/algorithm/">Algorithm</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/hugo/">Hugo</a></dd>
+                    
+                        <dd><a href="/algorithm/">Algorithm</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md8 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-green markdown-body single-title" >
+                    <h1>【Algorithm】經典演算法</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-05</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/algorithm/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Algorithm</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/algorithm/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Algorithm</span>
+        </a>
+    
+        <a href="/tags/classic-algorithm/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Classic Algorithm</span>
+        </a>
+    
+        <a href="/tags/c/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
+        </a>
+    
+    
+</h3>
+
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <p>【3/28 閱讀紀錄】</p>
+<h1 id="introduce">Introduce</h1>
+<p>此篇想記錄一些閱讀的筆記，演算法乃是運算思維的基石之一，藉由紀錄加深一下演算法的概念。</p>
+<h1 id="start">Start</h1>
+<p>演算法種類很多，經典的演算法有以下幾種</p>
+<ul>
+<li><a href="#%E5%88%86%E6%B2%BB%E6%BC%94%E7%AE%97%E6%B3%95divide-and-conquer">分治演算法（Divide and conquer）</a></li>
+<li><a href="#%E7%96%8A%E4%BB%A3%E6%BC%94%E7%AE%97%E6%B3%95iterative-algorithm">疊代演算法（Iterative Algorithm）</a></li>
+<li><a href="#%E9%81%9E%E8%BF%B4%E6%BC%94%E7%AE%97%E6%B3%95recursion-algorithm">遞迴演算法（Recursion Algorithm）</a></li>
+<li><a href="#%E5%8B%95%E6%85%8B%E8%A6%8F%E5%8A%83%E6%BC%94%E7%AE%97%E6%B3%95dynamic-programming-algorithm">動態規劃演算法（Dynamic Programming Algorithm）</a></li>
+<li><a href="#%E6%9E%9A%E8%88%89%E6%BC%94%E7%AE%97%E6%B3%95exhaustive-searching">枚舉演算法（Exhaustive Searching）</a></li>
+<li><a href="#%E8%B2%AA%E5%BF%83%E6%BC%94%E7%AE%97%E6%B3%95greedy-algorithm">貪心演算法（Greedy Algorithm）</a></li>
+<li><a href="#%E5%9B%9E%E6%BA%AF%E6%BC%94%E7%AE%97%E6%B3%95backtracking-algorithm">回溯演算法（Backtracking Algorithm）</a></li>
+</ul>
+<h2 id="分治演算法divide-and-conquer">分治演算法（Divide and conquer）</h2>
+<p>分治演算法是一種簡單又重要的演算法，它將複雜的問題逐一拆解成單元較小的問題，問題規模較小則容易求解，最終在合併子問題以得到原問題的解答，在日常生活中也能時時應用到。</p>
+<p>像是以往在進行團體報告時，假設報告主題的章節共有五個章節，當然不可能讓一個人獨立完成五個章節，這時就可以透過分治法，將各章節逐一拆解成較小單元，每位成員負責一個章節，讓五位成員同時進行，在時間上遠遠勝於一人獨立完成所有章節，且透過分工還可能達到其他效果。</p>
+<p>然而分治演算法還可應用在數字的分類和排序上，舉個例子，手邊有一副順序打亂的撲克牌，現在要將它們復原到起初開封時的排序，依序分類為黑桃、紅心、梅花、方塊，每個分類需從 A-K 逐一排序。此時有兩種做法，第一種為每拿到一張牌，就將它插入到適當的順序中，但缺點是在整理的過程中較繁瑣也較花時間。第二種作法則是應用分治演算法，以不考慮 A-K 順序的情況下，將黑桃分成一堆，紅心分成一堆，以此類推，最終會將黑桃、紅心、梅花、方塊分類出來，此時在逐一將每個分類的 A-K 順序整理好，再將其合併。</p>
+<p>所以透過分治演算法可將複雜的大問題，拆解成規模小的子問題，雖然子問題的數量多，相對的更易於解決，解決的速度上也相對的快。</p>
+<h2 id="疊代演算法iterative-algorithm">疊代演算法（Iterative Algorithm）</h2>
+<p>無法使用一次公式就能求解，需透過反覆的運算才能得解的方法稱為疊代演算法，像是透過迴圈去循環重複的程式碼來得到答案。</p>
+<p>舉例：利用 for 迴圈設計 n! 的遞迴程式，n 是透過外部輸入得知，打算 1! ~ n! 所有結果</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 從外部輸入 n
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> n = <span style="color:#66d9ef">int</span>.Parse(Console.ReadLine());
+
+<span style="color:#75715e">// 用以計算結果
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> sum = <span style="color:#ae81ff">1</span>;
+
+<span style="color:#75715e">// 使用迴圈計算 1! ~ n!
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">1</span>; i &lt;= n; i++)
+{
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> j = i; j &gt; <span style="color:#ae81ff">0</span>; j--)
+    {
+        sum = sum * j;
+    }
+
+    Console.WriteLine(<span style="color:#e6db74">$&#34;{i} != {sum}&#34;</span>);
+
+    <span style="color:#75715e">// 重設計算結果
+</span><span style="color:#75715e"></span>    sum = <span style="color:#ae81ff">1</span>;
+}
+</code></pre></div><p>執行結果</p>
+<pre><code>1!=1
+2!=2
+3!=6
+4!=24
+5!=120
+</code></pre><p>除了上述介紹固定執行次數的疊代法之外，還可以使用 while 迴圈，來執行不確定執行次數的疊代法。使用 while 迴圈必須注意不可讓迴圈一直循環，若執行無法停止就會導致「無窮迴圈」，所以 while 迴圈結構需要具備三個條件</p>
+<ul>
+<li>變數初始值</li>
+<li>迴圈條件式</li>
+<li>調整變數增減值</li>
+</ul>
+<p>設置一個<strong>變數初始值</strong>使迴圈得以開始，明確設置<strong>迴圈條件式</strong>，在符合該條件下迴圈得以循環執行，最終一定要<strong>調整變數增減值</strong>做為可以離開迴圈的出口。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 變數出使值
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">1</span>;
+
+<span style="color:#75715e">// 迴圈條件式
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">while</span> (i &lt;= <span style="color:#ae81ff">10</span>)
+{
+    Console.WriteLine(i);
+
+    <span style="color:#75715e">// 調整變數增減值
+</span><span style="color:#75715e"></span>    i += <span style="color:#ae81ff">1</span>;
+}
+</code></pre></div><p><strong>巴斯卡三角形</strong> 也是經典中之一，這邊不做進一步介紹。</p>
+<h2 id="遞迴演算法recursion-algorithm">遞迴演算法（Recursion Algorithm）</h2>
+<p>遞迴演算法跟疊代演算法在循環上相似，卻又跟分治演算法的概念類似，遞迴法與分治法相同地將大問題拆解成小問題來解決，又跟疊代法的循環有異曲同工之妙。</p>
+<p>在程式設計裡，設計一種方法並將其封裝起來稱為函數或副程式，通過外部來呼叫函數或副程式執行封裝後的代碼，以定義而言，透過自己來呼叫自己的過程稱為遞迴，可以想像為函數內部又在調用一次函數。遞迴必須具備兩個條件</p>
+<ul>
+<li>可以反覆執行的程式碼</li>
+<li>結束執行過程的出口</li>
+</ul>
+<p>遞迴的經典範例「<strong>階乘</strong>」，階乘的運算式 <code>n! = n*(n-1)*(n-2)...*1</code>，透過階乘運算過程可觀察出一定的規律性，就可以使用遞迴演算法來達成</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> Function(<span style="color:#66d9ef">int</span> n)
+{
+    <span style="color:#66d9ef">if</span> (n == <span style="color:#ae81ff">0</span>) <span style="color:#75715e">// 終止的條件
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">else</span>
+        <span style="color:#66d9ef">return</span> n * Function(n - <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// 遞迴呼叫自己
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>經典的<strong>費伯那序列（Fibonacci Polynomial）</strong></p>
+<p><img src="/images/Algorithm/Algorithm001.png" alt=""></p>
+<p>參照上圖公式，n 為正整數，第零項為 0、第一項為 1、第二項為本身前兩項的值相加所得，第二項可得 1、第三項為 2，以此類推。找出規律後可嘗試設計出遞迴程式。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> Fibonacci(<span style="color:#66d9ef">int</span> n)
+{
+    <span style="color:#66d9ef">if</span> (n == <span style="color:#ae81ff">0</span>)
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (n == <span style="color:#ae81ff">1</span>)
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">else</span>
+        <span style="color:#66d9ef">return</span> Fibonacci(n - <span style="color:#ae81ff">1</span>) + Fibonacci(n - <span style="color:#ae81ff">2</span>);
+}
+</code></pre></div><h2 id="動態規劃演算法dynamic-programming-algorithm">動態規劃演算法（Dynamic Programming Algorithm）</h2>
+<p>動態規劃演算法（DPA）與分治法十分相似，先將大問題拆解成小問題，不同的是動態規劃演算法將每個子問題的答案儲存起來，以供下次求解時直接取用，減少相同子問題再次被計算的時間，所以動態規劃法解決了重複計算的缺點。</p>
+<p><img src="/static/images/Algorithm/Algorithm002.png" alt=""></p>
+<p>依據上述提到的費伯那序列，從上面的路徑圖看到 <code>Fib[2]</code> 被計算過兩次，透過動態規劃演算法將第一次 <code>Fib[2]</code> 的計算結果儲存於陣列，第二次要計算時就可直接從陣列取出結果，不用再計算一次。上述明顯地得知，將每次的計算結果先儲存，供後續使用，以減少效能開銷是其演算法之精神。</p>
+<p>改良先前的費伯那序列代碼</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 計算結果暫存區
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span>[] output = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">100</span>];
+
+<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> Fibonacci(<span style="color:#66d9ef">int</span> n)
+{
+    <span style="color:#66d9ef">int</span> result;
+    result = output[n];
+
+    <span style="color:#66d9ef">if</span> (result == <span style="color:#ae81ff">0</span>)
+    {
+        <span style="color:#66d9ef">if</span> (n == <span style="color:#ae81ff">0</span>)
+            result = <span style="color:#ae81ff">0</span>;
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (n == <span style="color:#ae81ff">1</span>)
+            result = <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">else</span>
+            result = (Fibonacci(n - <span style="color:#ae81ff">1</span>) + Fibonacci(n - <span style="color:#ae81ff">2</span>));
+    }
+
+    <span style="color:#75715e">// 將計算結果儲存到暫存區
+</span><span style="color:#75715e"></span>    output[n] = result;
+
+    <span style="color:#66d9ef">return</span> result;
+}
+</code></pre></div><h2 id="枚舉演算法exhaustive-searching">枚舉演算法（Exhaustive Searching）</h2>
+<p>又稱窮舉法，一種常見的數學基礎方法，高頻率的在日常生活中使用到，主要核心概念為依據問題需求，逐一枚舉出所有解答，達到解決問題的目的，缺點為速度太慢。</p>
+<p>舉例：當 1000 依次減去 1,2,3&hellip;直到結果為負數，代碼如下</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">int</span> num = <span style="color:#ae81ff">1000</span>;
+<span style="color:#66d9ef">int</span> count = <span style="color:#ae81ff">0</span>;
+
+<span style="color:#66d9ef">while</span> (num &gt;= <span style="color:#ae81ff">0</span>)
+{
+    count++;
+    num -= count;
+}
+
+Console.WriteLine(count);
+</code></pre></div><p>上述範例中可看到，每執行一次相減就檢查結果是否為負數，在不遺漏的情況下，一一枚舉出所有項目，在從枚舉的項目中找到自己所需的項目。</p>
+<p>再舉個例：從 1-500 之間列舉出所有 3 的倍數的整數</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> num = <span style="color:#ae81ff">0</span>; num &lt;= <span style="color:#ae81ff">500</span>; num++)
+{
+    <span style="color:#66d9ef">if</span> (num % <span style="color:#ae81ff">3</span> == <span style="color:#ae81ff">0</span>)
+        Console.WriteLine(num);
+}
+
+</code></pre></div><p>枚舉演算法還有一個經典題型，如何得知某數是否為質數，在此推薦使用 Eratosthenes 方法，將某數逐一除以 2 至某數減一之間的所有數字，若有其中一個可以整除，就能斷定某數是否為質數。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">bool</span> IsPrime(<span style="color:#66d9ef">int</span> n)
+{
+    <span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">2</span>;
+
+    <span style="color:#66d9ef">while</span> (i &lt;= n)
+    {
+        <span style="color:#75715e">// 如果整除, i 為 n 的因數
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (n % i == <span style="color:#ae81ff">0</span>)
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+        i++;
+    }
+
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+}
+</code></pre></div><h2 id="貪心演算法greedy-algorithm">貪心演算法（Greedy Algorithm）</h2>
+<p>貪心演算法又稱貪婪演算法，主要核心概念如同名稱一樣，在每個解決問題的步驟遵循貪心原則，採取最有利或最優化的選項，意即只求局部解決辦法，而不考慮大局影響，不斷改進解答。</p>
+<p>雖然貪心演算法都是選擇當前最有利，但不能保證最終結果也是最佳的，因為貪心法在原理上容易過早做決定，此演算法很適合用來尋找最短路徑或是機器學習等方面。</p>
+<h2 id="回溯演算法backtracking-algorithm">回溯演算法（Backtracking Algorithm）</h2>
+<p>最後一個回溯演算法也是枚舉法的一種，顧名思義為步驟可回溯的概念，當枚舉出不正確答案時，可以透過回溯來回到上一層，接著找尋出尚未執行過的路徑，再遞迴至下一層。</p>
+<p>老鼠走迷宮就是經典例子，利用二維陣列模擬出一個迷宮，而老鼠行進時遵循以下三個原則</p>
+<ul>
+<li>一次只能走一格</li>
+<li>遇到牆壁無法前行時，則退回到上一步尋找其他可走路徑</li>
+<li>走過的路不再走第二遍</li>
+</ul>
+<p>二維陣列的迷宮規則為</p>
+<pre><code>Maze[i][j] = 1 --表示該位置為牆壁，無法通行
+Maze[i][j] = 0 --表示該位置為不為牆壁，可前行
+
+Maze[1][1] --該處為入口
+Maze[m][n] --該處為出口
+</code></pre><p><strong>虛擬碼</strong>解析迷宮搜尋概念</p>
+<pre><code>if (上一格可走)
+{
+    加入方格編號到堆疊;
+    往上走;
+    判斷是否為出口;
+}
+else if (下一格可走)
+{
+    加入方格編號到堆疊;
+    往下走;
+    判斷是否為出口;
+}
+else if (左一格可走)
+{
+    加入方格編號到堆疊;
+    往左走;
+    判斷是否為出口;
+}
+else if (右一格可走)
+{
+    加入方格編號到堆疊;
+    往右走;
+    判斷是否為出口;
+}
+else
+{
+    從堆疊中刪除一個方格編號;
+    從堆疊中取出一個方格編號;
+    往回走;
+}
+</code></pre><p><strong>實際代碼</strong></p>
+<p>建立座標類別</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// 座標
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Node</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> X { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Y { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> Node(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y)
+    {
+        <span style="color:#66d9ef">this</span>.X = x;
+        <span style="color:#66d9ef">this</span>.Y = y;
+    }
+}
+</code></pre></div><p>建立記錄路經追蹤的類別</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// 紀錄追蹤路徑類別
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TraceRecord</span>
+{
+    <span style="color:#66d9ef">public</span> Node[] nodes = <span style="color:#66d9ef">new</span> Node[<span style="color:#ae81ff">120</span>];
+    <span style="color:#66d9ef">public</span> Node Pre;
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> num = <span style="color:#ae81ff">1</span>;
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> IsEmpty()
+    {
+        <span style="color:#66d9ef">return</span> nodes[<span style="color:#ae81ff">0</span>] == <span style="color:#66d9ef">null</span>;
+    }
+
+    <span style="color:#75715e">// 新增路徑到堆疊
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Insert(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y)
+    {
+        Node newNode = <span style="color:#66d9ef">new</span> Node(x, y);
+
+        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.IsEmpty()) <span style="color:#75715e">// 剛從入口出發
+</span><span style="color:#75715e"></span>        {
+            nodes[<span style="color:#ae81ff">0</span>] = newNode;
+        }
+        <span style="color:#66d9ef">else</span>
+        {
+            num = num + <span style="color:#ae81ff">1</span>;
+            nodes[num] = newNode;
+        }
+    }
+
+    <span style="color:#75715e">// 刪除堆疊中的路徑
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Delete()
+    {
+        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.IsEmpty())
+        {
+            Console.WriteLine(<span style="color:#e6db74">&#34;佇列已經空了&#34;</span>);
+            <span style="color:#66d9ef">return</span>;
+        }
+
+        nodes[num] = <span style="color:#66d9ef">null</span>;
+        num = num - <span style="color:#ae81ff">1</span>;
+
+        Pre = nodes[num];
+    }
+}
+</code></pre></div><p>建立檢查出口的方法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">bool</span> ChkExit(<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y, <span style="color:#66d9ef">int</span> ex, <span style="color:#66d9ef">int</span> ey)
+{
+    <span style="color:#66d9ef">if</span> (x == ex &amp;&amp; y == ey)
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+}
+</code></pre></div><p>開始前的預定義</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 定義出口 X 座標
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> ExitX = <span style="color:#ae81ff">8</span>;
+<span style="color:#75715e">// 定義出口 Y 座標
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> ExitY = <span style="color:#ae81ff">10</span>;
+<span style="color:#75715e">// 定義二維陣列迷宮
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span>[,] Maze =
+{
+    { <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span> },
+    { <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span> },
+    { <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span> },
+    { <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span> },
+    { <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span> },
+    { <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span> },
+    { <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span> },
+    { <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span> },
+    { <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span> },
+    { <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span> }
+};
+</code></pre></div><p>Main 方法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+{
+    <span style="color:#66d9ef">int</span> i, j;
+    <span style="color:#66d9ef">int</span> x = <span style="color:#ae81ff">1</span>;
+    <span style="color:#66d9ef">int</span> y = <span style="color:#ae81ff">1</span>;
+
+    TraceRecord path = <span style="color:#66d9ef">new</span> TraceRecord();
+
+    Console.WriteLine(<span style="color:#e6db74">&#34;迷宮路徑\n&#34;</span>);
+
+    <span style="color:#66d9ef">for</span> (i = <span style="color:#ae81ff">0</span>; i &lt; <span style="color:#ae81ff">10</span>; i++)
+    {
+        <span style="color:#66d9ef">for</span> (j = <span style="color:#ae81ff">0</span>; j &lt; <span style="color:#ae81ff">12</span>; j++)
+        {
+            Console.Write(Maze[i, j]);
+        }
+
+        Console.WriteLine();
+    }
+
+    Thread.Sleep(<span style="color:#ae81ff">1000</span>);
+
+    Console.WriteLine(<span style="color:#e6db74">&#34;\n老鼠開始走迷宮...\n&#34;</span>);
+
+    <span style="color:#66d9ef">while</span> (x &lt;= ExitX &amp;&amp; y &lt;= ExitY)
+    {
+        <span style="color:#75715e">// 將當前路徑設置成已經走過
+</span><span style="color:#75715e"></span>        Maze[x, y] = <span style="color:#ae81ff">2</span>;
+
+        <span style="color:#66d9ef">if</span> (Maze[x - <span style="color:#ae81ff">1</span>, y] == <span style="color:#ae81ff">0</span>) <span style="color:#75715e">// 左邊
+</span><span style="color:#75715e"></span>        {
+            x -= <span style="color:#ae81ff">1</span>;
+            path.Insert(x, y);
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (Maze[x + <span style="color:#ae81ff">1</span>, y] == <span style="color:#ae81ff">0</span>) <span style="color:#75715e">// 右邊
+</span><span style="color:#75715e"></span>        {
+            x += <span style="color:#ae81ff">1</span>;
+            path.Insert(x, y);
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (Maze[x, y - <span style="color:#ae81ff">1</span>] == <span style="color:#ae81ff">0</span>) <span style="color:#75715e">// 下方
+</span><span style="color:#75715e"></span>        {
+            y -= <span style="color:#ae81ff">1</span>;
+            path.Insert(x, y);
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (Maze[x, y + <span style="color:#ae81ff">1</span>] == <span style="color:#ae81ff">0</span>) <span style="color:#75715e">// 上方
+</span><span style="color:#75715e"></span>        {
+            y += <span style="color:#ae81ff">1</span>;
+            path.Insert(x, y + <span style="color:#ae81ff">1</span>);
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (ChkExit(x, y, ExitX, ExitY)) <span style="color:#75715e">// 判斷是否為出口
+</span><span style="color:#75715e"></span>        {
+            <span style="color:#66d9ef">break</span>;
+        }
+        <span style="color:#66d9ef">else</span> <span style="color:#75715e">// 遇到死路
+</span><span style="color:#75715e"></span>        {
+            path.Delete();
+            x = path.Pre.X;
+            y = path.Pre.Y;
+        }
+    }
+
+    Thread.Sleep(<span style="color:#ae81ff">1000</span>);
+
+    Console.WriteLine(<span style="color:#e6db74">&#34;老鼠走過的路徑(以2表示)\n&#34;</span>);
+
+    <span style="color:#66d9ef">for</span> (i = <span style="color:#ae81ff">0</span>; i &lt; <span style="color:#ae81ff">10</span>; i++)
+    {
+        <span style="color:#66d9ef">for</span> (j = <span style="color:#ae81ff">0</span>; j &lt; <span style="color:#ae81ff">12</span>; j++)
+        {
+            Console.Write(Maze[i, j]);
+        }
+
+        Console.WriteLine();
+    }
+
+    Console.ReadKey();
+}
+</code></pre></div><p>執行結果</p>
+<pre><code>迷宮路徑
+
+111111111111
+100011111111
+111011000011
+111011011011
+111000011011
+111011011011
+111011011011
+111111011011
+110000001001
+111111111111
+
+老鼠開始走迷宮...
+
+老鼠走過的路徑(以2表示)
+
+111111111111
+122211111111
+111211222211
+111211211211
+111222211211
+111211011211
+111211011211
+111111011211
+110000001221
+111111111111
+</code></pre><h1 id="note">Note</h1>
+<p>這次趁著假日時間，回憶一下經典演算法，閱讀過程中，意外發現此書作者有些筆誤的地方，文字的部分到還好，沒特別注意還是能順暢的讀過（中文字就算兩個字顛倒也能辨識，神奇～），倒是老鼠走迷宮代碼的部分，讓筆者疑惑很久，最後依照筆者自己的想法做了些改良，一樣是使用堆疊概念來實作，其實還可進階地使用遞迴，有興趣的人可以試試看。</p>
+<p>收工！</p>
+<h1 id="reference">Reference</h1>
+<p>【圖說演算法 C#】</p>
+</div>
+            </div>
+        </div>
+
+        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
+            
+
+            <div class="layui-card single-card">
+                <h2 class="single-title">Recent Posts</h2>
+            
+                
+                <div style="margin-left: 10px;">
+                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                    <a href="/post/windows-6-cutoverwindows/">
+                        <h3 class="">【Windows】如何分割視窗/畫面</h3>
+                    </a>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/windows-win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - Win10</span>
+        </a>
+    
+        <a href="/categories/common-sense/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
+        </a>
+    
+    
+</h3>
+
+                    </blockquote>
+                </div>
+                
+                <div style="margin-left: 10px;">
+                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                    <a href="/post/windows-5-cmdcutoverdisk/">
+                        <h3 class="">【Windows】使用 DOS 指令切換當前硬碟</h3>
+                    </a>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-03-31</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/windows-cmd/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - cmd</span>
+        </a>
+    
+        <a href="/categories/common-sense/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
+        </a>
+    
+        <a href="/tags/cmd/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">cmd</span>
+        </a>
+    
+    
+</h3>
+
+                    </blockquote>
+                </div>
+                
+                <div style="margin-left: 10px;">
+                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                    <a href="/post/mssql-1-performanceissues/">
+                        <h3 class="">【MSSQL】如何改善 SQL 常見的效能問題</h3>
+                    </a>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-03-30</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/mssql/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">MSSQL</span>
+        </a>
+    
+        <a href="/categories/common-sence/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sence</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/mssql/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">MSSQL</span>
+        </a>
+    
+        <a href="/tags/performance/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Performance</span>
+        </a>
+    
+    
+</h3>
+
+                    </blockquote>
+                </div>
+                
+                <div style="margin-left: 10px;">
+                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                    <a href="/post/netcore-1-blazor/">
+                        <h3 class="">【.Net Core】打造 Blazor ToDoList</h3>
+                    </a>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-03-28</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/.netcore/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NetCore</span>
+        </a>
+    
+        <a href="/categories/web/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Web</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/.net-core/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.Net Core</span>
+        </a>
+    
+        <a href="/tags/blazor/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Blazor</span>
+        </a>
+    
+        <a href="/tags/todolist/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">TodoList</span>
+        </a>
+    
+    
+</h3>
+
+                    </blockquote>
+                </div>
+                
+                <div style="margin-left: 10px;">
+                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                    <a href="/post/windows-4-cmdadjustmentdefaultsize/">
+                        <h3 class="">【Windows】如何改變命令提示字元(cmd)視窗預設大小</h3>
+                    </a>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-03-27</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/windows-cmd/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - cmd</span>
+        </a>
+    
+        <a href="/categories/common-sense/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
+        </a>
+    
+        <a href="/tags/cmd/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">cmd</span>
+        </a>
+    
+    
+</h3>
+
+                    </blockquote>
+                </div>
+                
+            
+            <br />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+        </div>
+
+<footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/categories/"><p class="footer-url">Category</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>
