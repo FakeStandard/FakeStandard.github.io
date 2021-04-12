@@ -6,7 +6,18 @@
     <description>Recent content in Win10 on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 01 Apr 2021 12:59:03 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/win10/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Apr 2021 11:48:04 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/win10/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Windows】開啟運行程式的所在資料夾位置</title>
+      <link>https://fakestandard.github.io/post/windows-7-openwindowsexplorer/</link>
+      <pubDate>Mon, 12 Apr 2021 11:48:04 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/windows-7-openwindowsexplorer/</guid>
+      <description>Issue 應用程式安裝時會讓使用者選擇安裝路徑，假設安裝路徑有天忘記了，或是資料夾位置太深層，需要每個資料夾打開確認。
+還好有個方法可以快速開啟安裝位置，不過有個前提，必須先運行應用程式。
+Solution 該解決方法是針對已經開啟的程式，首先開啟工作管理員，切換到【應用程序】頁簽或是【詳細資料】頁簽也可以，找到運行的應用程式執行右鍵，選擇【開啟檔案位置】就開啟安裝位置囉！</description>
+    </item>
+    
     <item>
       <title>【Windows】如何分割視窗/畫面</title>
       <link>https://fakestandard.github.io/post/windows-6-cutoverwindows/</link>

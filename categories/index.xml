@@ -6,7 +6,25 @@
     <description>Recent content in Categories on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 10 Apr 2021 14:06:07 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Apr 2021 11:48:04 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Common Sense</title>
+      <link>https://fakestandard.github.io/categories/common-sense/</link>
+      <pubDate>Mon, 12 Apr 2021 11:48:04 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/categories/common-sense/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows - Win10</title>
+      <link>https://fakestandard.github.io/categories/windows-win10/</link>
+      <pubDate>Mon, 12 Apr 2021 11:48:04 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/categories/windows-win10/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>.NetCore</title>
       <link>https://fakestandard.github.io/categories/.netcore/</link>
@@ -31,24 +49,6 @@
       <pubDate>Mon, 05 Apr 2021 13:41:55 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/categories/algorithm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Common Sense</title>
-      <link>https://fakestandard.github.io/categories/common-sense/</link>
-      <pubDate>Thu, 01 Apr 2021 12:59:03 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/categories/common-sense/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Windows - Win10</title>
-      <link>https://fakestandard.github.io/categories/windows-win10/</link>
-      <pubDate>Thu, 01 Apr 2021 12:59:03 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/categories/windows-win10/</guid>
       <description></description>
     </item>
     

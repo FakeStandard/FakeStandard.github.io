@@ -285,11 +285,11 @@ Console.WriteLine(count);
 }
 
 </code></pre></div><p>枚舉演算法還有一個經典題型，如何得知某數是否為質數，在此推薦使用 Eratosthenes 方法，將某數逐一除以 2 至某數減一之間的所有數字，若有其中一個可以整除，就能斷定某數是否為質數。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">bool</span> IsPrime(<span style="color:#66d9ef">int</span> n)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">bool</span> IsPrime(<span style="color:#66d9ef">int</span> n)
 {
     <span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">2</span>;
 
-    <span style="color:#66d9ef">while</span> (i &lt;= n)
+    <span style="color:#66d9ef">while</span> (i &lt; n)
     {
         <span style="color:#75715e">// 如果整除, i 為 n 的因數
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (n % i == <span style="color:#ae81ff">0</span>)
@@ -558,6 +558,57 @@ else
                 
                 <div style="margin-left: 10px;">
                     <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                    <a href="/post/windows-7-openwindowsexplorer/">
+                        <h3 class="">【Windows】開啟運行程式的所在資料夾位置</h3>
+                    </a>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-12</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/windows-win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - Win10</span>
+        </a>
+    
+        <a href="/categories/common-sense/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
+        </a>
+    
+        <a href="/tags/windows-explorer/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows Explorer</span>
+        </a>
+    
+        <a href="/tags/task-manager/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Task Manager</span>
+        </a>
+    
+    
+</h3>
+
+                    </blockquote>
+                </div>
+                
+                <div style="margin-left: 10px;">
+                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
                     <a href="/post/netcore-2-mvc-movielist/">
                         <h3 class="">【.Net Core】適合初心者的 .Net Core MVC 實作</h3>
                     </a>
@@ -724,53 +775,6 @@ else
     
         <a href="/tags/performance/">
             <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Performance</span>
-        </a>
-    
-    
-</h3>
-
-                    </blockquote>
-                </div>
-                
-                <div style="margin-left: 10px;">
-                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                    <a href="/post/netcore-1-blazor/">
-                        <h3 class="">【.Net Core】打造 Blazor ToDoList</h3>
-                    </a>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-03-28</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/.netcore/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NetCore</span>
-        </a>
-    
-        <a href="/categories/web/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Web</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/.net-core/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.Net Core</span>
-        </a>
-    
-        <a href="/tags/blazor/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Blazor</span>
-        </a>
-    
-        <a href="/tags/todolist/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">TodoList</span>
         </a>
     
     
