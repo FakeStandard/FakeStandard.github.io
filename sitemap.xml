@@ -38,7 +38,7 @@
     <loc>https://fakestandard.github.io/tags/.net-core/</loc>
     <lastmod>2021-04-10T14:06:07+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/categories/.netcore/</loc>
+    <loc>https://fakestandard.github.io/categories/.net-core/</loc>
     <lastmod>2021-04-10T14:06:07+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/mvc/</loc>
@@ -91,6 +91,9 @@
   </url><url>
     <loc>https://fakestandard.github.io/post/mssql-1-performanceissues/</loc>
     <lastmod>2021-03-30T10:42:18+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/.netcore/</loc>
+    <lastmod>2021-03-28T21:47:49+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/blazor/</loc>
     <lastmod>2021-03-28T21:47:49+08:00</lastmod>

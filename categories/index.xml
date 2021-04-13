@@ -26,11 +26,11 @@
     </item>
     
     <item>
-      <title>.NetCore</title>
-      <link>https://fakestandard.github.io/categories/.netcore/</link>
+      <title>.Net Core</title>
+      <link>https://fakestandard.github.io/categories/.net-core/</link>
       <pubDate>Sat, 10 Apr 2021 14:06:07 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/categories/.netcore/</guid>
+      <guid>https://fakestandard.github.io/categories/.net-core/</guid>
       <description></description>
     </item>
     
@@ -67,6 +67,15 @@
       <pubDate>Tue, 30 Mar 2021 10:42:18 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/categories/mssql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>.NetCore</title>
+      <link>https://fakestandard.github.io/categories/.netcore/</link>
+      <pubDate>Sun, 28 Mar 2021 21:47:49 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/categories/.netcore/</guid>
       <description></description>
     </item>
     

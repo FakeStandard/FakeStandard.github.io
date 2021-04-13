@@ -6,20 +6,7 @@
     <description>Recent content in .NetCore on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 10 Apr 2021 14:06:07 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/.netcore/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>【.Net Core】適合初心者的 .Net Core MVC 實作</title>
-      <link>https://fakestandard.github.io/post/netcore-2-mvc-movielist/</link>
-      <pubDate>Sat, 10 Apr 2021 14:06:07 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/post/netcore-2-mvc-movielist/</guid>
-      <description>此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解如何建立 Web 應用程式、新增及 Scaffold 模型、使用資料庫、資料的 CRUD、新增搜尋和驗證，最後會完成一個有關電影清單的應用程式。
-UI 的介紹會以 IDE 為主，除 UI 外也會介紹 dotnet 指令。
-代碼部分已上傳到 GitHub
-Start  建立 Web app 新增控制器（Controller） 新增檢視器（View）auto 新增模型（Model） 新增 NuGet 套件 建立 DbContext 新增 ConnectionString 使用 Scaffold 進行初始移轉（Initial Migration） 植入資料以初始資料庫 使用資料註釋 Data Annotations 新增搜尋引擎 新增資料驗證 使用 Bootstrap 增強外觀效果  建立 Web app 提供兩種方法，一種透過 Visual Studio IDE，一種是使用 Command shell 操作，兩種皆可達相同結果。
-Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】</description>
-    </item>
-    
+    <lastBuildDate>Sun, 28 Mar 2021 21:47:49 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/.netcore/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【.Net Core】打造 Blazor ToDoList</title>
       <link>https://fakestandard.github.io/post/netcore-1-blazor/</link>
