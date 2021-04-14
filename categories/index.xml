@@ -6,7 +6,16 @@
     <description>Recent content in Categories on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 12 Apr 2021 11:48:04 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Apr 2021 11:19:05 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Other</title>
+      <link>https://fakestandard.github.io/categories/other/</link>
+      <pubDate>Wed, 14 Apr 2021 11:19:05 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/categories/other/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Common Sense</title>
       <link>https://fakestandard.github.io/categories/common-sense/</link>
@@ -103,15 +112,6 @@
       <pubDate>Fri, 19 Mar 2021 09:46:52 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/categories/markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Other</title>
-      <link>https://fakestandard.github.io/categories/other/</link>
-      <pubDate>Wed, 17 Mar 2021 17:10:35 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/categories/other/</guid>
       <description></description>
     </item>
     
