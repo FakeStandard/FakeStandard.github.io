@@ -19,7 +19,7 @@ Solution 該解決方法是針對已經開啟的程式，首先開啟工作管�
     </item>
     
     <item>
-      <title>【.Net Core】適合初心者的 .Net Core MVC 實作</title>
+      <title>【.NET】適合初心者的 .NET Core MVC 實作</title>
       <link>https://fakestandard.github.io/post/netcore-2-mvc-movielist/</link>
       <pubDate>Sat, 10 Apr 2021 14:06:07 +0800</pubDate>
       
@@ -93,7 +93,7 @@ SELECT OrderID FROM [Northwind].[dbo].[Orders] WHERE EmployeeID = 4 OR EmployeeI
     </item>
     
     <item>
-      <title>【.Net Core】打造 Blazor ToDoList</title>
+      <title>【.NET】打造 Blazor ToDoList</title>
       <link>https://fakestandard.github.io/post/netcore-1-blazor/</link>
       <pubDate>Sun, 28 Mar 2021 21:47:49 +0800</pubDate>
       

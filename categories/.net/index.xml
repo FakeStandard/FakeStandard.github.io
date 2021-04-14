@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>.NET on How can I help</title>
+    <link>https://fakestandard.github.io/categories/.net/</link>
+    <description>Recent content in .NET on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sat, 10 Apr 2021 14:06:07 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/.net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【.NET】適合初心者的 .NET Core MVC 實作</title>
+      <link>https://fakestandard.github.io/post/netcore-2-mvc-movielist/</link>
+      <pubDate>Sat, 10 Apr 2021 14:06:07 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/netcore-2-mvc-movielist/</guid>
+      <description>此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解如何建立 Web 應用程式、新增及 Scaffold 模型、使用資料庫、資料的 CRUD、新增搜尋和驗證，最後會完成一個有關電影清單的應用程式。
+UI 的介紹會以 IDE 為主，除 UI 外也會介紹 dotnet 指令。
+代碼部分已上傳到 GitHub
+Start  建立 Web app 新增控制器（Controller） 新增檢視器（View）auto 新增模型（Model） 新增 NuGet 套件 建立 DbContext 新增 ConnectionString 使用 Scaffold 進行初始移轉（Initial Migration） 植入資料以初始資料庫 使用資料註釋 Data Annotations 新增搜尋引擎 新增資料驗證 使用 Bootstrap 增強外觀效果  建立 Web app 提供兩種方法，一種透過 Visual Studio IDE，一種是使用 Command shell 操作，兩種皆可達相同結果。
+Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】</description>
+    </item>
+    
+    <item>
+      <title>【.NET】打造 Blazor ToDoList</title>
+      <link>https://fakestandard.github.io/post/netcore-1-blazor/</link>
+      <pubDate>Sun, 28 Mar 2021 21:47:49 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/netcore-1-blazor/</guid>
+      <description>Prerequisites .NET 5.0 SDK 或之後的版本
+Start 使用 VS 2019 建立 Blazor
+建立新專案 選擇【Blazor 應用程式】專案
+選擇【Blazor Server 應用程式】樣板
+建立 Razor 元件 新建立的專案在方案總管下的 Pages 資料夾內，可以看到已經有建立好的預設頁面，在該資料夾下建立 Todo.razor。
+建立 Razor 元件時要注意
+ 檔案名稱開頭第一個字母必須大寫 副檔名為 .razor 結尾  將 Todo 元件添加到導航列 開啟 Pages/Todo.razor 添加相對應的 URL @page &amp;quot;/todo&amp;quot;
+@page &amp;#34;/todo&amp;#34; &amp;lt;h3&amp;gt;Todo&amp;lt;/h3&amp;gt; @code { } 開啟 Shared/NavMenu.razor，此 razor 為應用程式其中一個版面配置，可避免應用程式中使用重複的元件，在此配置中添加以下代碼
+&amp;lt;ul class=&amp;#34;nav flex-column&amp;#34;&amp;gt; ... &amp;lt;li class=&amp;#34;nav-item px-3&amp;#34;&amp;gt; &amp;lt;NavLink class=&amp;#34;nav-link&amp;#34; href=&amp;#34;todo&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;oi oi-list-rich&amp;#34; aria-hidden=&amp;#34;true&amp;#34;&amp;gt;&amp;lt;/span&amp;gt; Todo &amp;lt;/NavLink&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 建立 TodoItem 類別 在專案目錄下建立 /TodoList/TodoItem.</description>
+    </item>
+    
+  </channel>
+</rss>

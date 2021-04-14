@@ -26,11 +26,11 @@
     </item>
     
     <item>
-      <title>.Net Core</title>
-      <link>https://fakestandard.github.io/categories/.net-core/</link>
+      <title>.NET</title>
+      <link>https://fakestandard.github.io/categories/.net/</link>
       <pubDate>Sat, 10 Apr 2021 14:06:07 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/categories/.net-core/</guid>
+      <guid>https://fakestandard.github.io/categories/.net/</guid>
       <description></description>
     </item>
     
@@ -71,15 +71,6 @@
     </item>
     
     <item>
-      <title>.NetCore</title>
-      <link>https://fakestandard.github.io/categories/.netcore/</link>
-      <pubDate>Sun, 28 Mar 2021 21:47:49 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/categories/.netcore/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>TroubleShooting</title>
       <link>https://fakestandard.github.io/categories/troubleshooting/</link>
       <pubDate>Thu, 25 Mar 2021 16:13:46 +0800</pubDate>
@@ -112,6 +103,15 @@
       <pubDate>Fri, 19 Mar 2021 09:46:52 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/categories/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Other</title>
+      <link>https://fakestandard.github.io/categories/other/</link>
+      <pubDate>Wed, 17 Mar 2021 17:10:35 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/categories/other/</guid>
       <description></description>
     </item>
     
