@@ -40,10 +40,10 @@ Solution 該解決方法是針對已經開啟的程式，首先開啟工作管�
     
     <item>
       <title>【.NET】適合初心者的 .NET Core MVC 實作</title>
-      <link>https://fakestandard.github.io/post/netcore-2-mvc-movielist/</link>
+      <link>https://fakestandard.github.io/post/dotnet-2-mvc-movielist/</link>
       <pubDate>Sat, 10 Apr 2021 14:06:07 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/netcore-2-mvc-movielist/</guid>
+      <guid>https://fakestandard.github.io/post/dotnet-2-mvc-movielist/</guid>
       <description>此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解如何建立 Web 應用程式、新增及 Scaffold 模型、使用資料庫、資料的 CRUD、新增搜尋和驗證，最後會完成一個有關電影清單的應用程式。
 UI 的介紹會以 IDE 為主，除 UI 外也會介紹 dotnet 指令。
 代碼部分已上傳到 GitHub
@@ -96,10 +96,10 @@ SELECT OrderID FROM [Northwind].[dbo].[Orders] WHERE EmployeeID = 4 OR EmployeeI
     
     <item>
       <title>【.NET】打造 Blazor ToDoList</title>
-      <link>https://fakestandard.github.io/post/netcore-1-blazor/</link>
+      <link>https://fakestandard.github.io/post/dotnet-1-blazor/</link>
       <pubDate>Sun, 28 Mar 2021 21:47:49 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/netcore-1-blazor/</guid>
+      <guid>https://fakestandard.github.io/post/dotnet-1-blazor/</guid>
       <description>Prerequisites .NET 5.0 SDK 或之後的版本
 Start 使用 VS 2019 建立 Blazor
 建立新專案 選擇【Blazor 應用程式】專案
