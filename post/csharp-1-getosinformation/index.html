@@ -3,13 +3,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>How can I help - 【Windows】使用 DOS 指令切換當前硬碟 </title>
+    <title>How can I help - 【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊 </title>
     
     
-    <meta content="Windows, Win10, cmd, Windows - cmd, Common Sense" name="keywords">
+    <meta content="C#, Windows, Memory, Culture" name="keywords">
     
-    <meta content="How can I help - 紀錄一下每次使用命令提示字元想從 C:\ 切換到 D:\ 時，都會喪失記憶，一直使用 CD D:\ 都沒有反應，切老半天就是想不起來，每次都依賴谷哥大神。
-其實切換硬碟只要直接下 D: 即可，每每看到切換方法後都捶心肝，這裡也順便紀錄，CD 是切換當前目錄，切換硬碟是另一回事，所以直接對欲切換的硬碟下該硬碟名稱即可。" name="description">
+    <meta content="How can I help - Start 近期為了在客戶的應用程式中添加一些裝置資訊，並將裝置資訊記錄成 LOG，以利下次客戶有問題時，可以先讓客戶提供有用資訊加以判斷。
+引用 Microsoft.VisualBasic.Devices 命名空間，使用該命名空間下的 Computer 類別來取得資訊，Computer 類別提供許多屬性來操作電腦元件，這篇紀錄如何取得裝置資訊。
+Computer computer = new Computer(); // 取得裝置名稱 Console.WriteLine(computer.Name); // 實體記憶體總量 Console.WriteLine(computer.Info.TotalPhysicalMemory); // 虛擬記憶體總量 Console.WriteLine(computer.Info.TotalVirtualMemory); // 可用實體記憶體總量 Console.WriteLine(computer.Info.AvailablePhysicalMemory); // 可用虛擬記憶體總量 Console.WriteLine(computer.Info.AvailableVirtualMemory); // 完整作業系統名稱 Console.WriteLine(computer.Info.OSFullName); // OS 平台識別項 Console.WriteLine(computer.Info.OSPlatform); // OS 版本 Console.WriteLine(computer.Info.OSVersion); // OS 文化特性 Console.WriteLine(computer.Info.InstalledUICulture); 除了使用 Computer 類別之外，也可以使用 ComputerInfo 取得裝置資訊
+ComputerInfo info = new ComputerInfo(); 上述看到 computer.Info.InstalledUICulture 文化特性，在該屬性下還有很多屬性可以使用，如下。
+// 系統所安裝的 UI 文化特性 Console.WriteLine(computer.Info.InstalledUICulture); // 預設行事曆 Console.WriteLine(computer.Info.InstalledUICulture.Calendar); // 該文化特性的曆法集合 foreach (var calendar in computer." name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     
@@ -100,8 +103,319 @@ layui.use('element', function(){
             <div class="layui-card single-card">
                 <br />
                 <blockquote class="self-elem-quote self-elem-quote-bg-green markdown-body single-title" >
-                    <h1>【Windows】使用 DOS 指令切換當前硬碟</h1>
+                    <h1>【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊</h1>
                     <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-19</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/c/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/c/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
+        </a>
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/memory/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Memory</span>
+        </a>
+    
+        <a href="/tags/culture/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Culture</span>
+        </a>
+    
+    
+</h3>
+
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <h1 id="start">Start</h1>
+<p>近期為了在客戶的應用程式中添加一些裝置資訊，並將裝置資訊記錄成 LOG，以利下次客戶有問題時，可以先讓客戶提供有用資訊加以判斷。</p>
+<p>引用 <code>Microsoft.VisualBasic.Devices</code> 命名空間，使用該命名空間下的 <code>Computer</code> 類別來取得資訊，<code>Computer</code> 類別提供許多屬性來操作電腦元件，這篇紀錄如何取得裝置資訊。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">Computer computer = <span style="color:#66d9ef">new</span> Computer();
+
+<span style="color:#75715e">// 取得裝置名稱
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Name);
+
+<span style="color:#75715e">// 實體記憶體總量
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.TotalPhysicalMemory);
+
+<span style="color:#75715e">// 虛擬記憶體總量
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.TotalVirtualMemory);
+
+<span style="color:#75715e">// 可用實體記憶體總量
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.AvailablePhysicalMemory);
+
+<span style="color:#75715e">// 可用虛擬記憶體總量
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.AvailableVirtualMemory);
+
+<span style="color:#75715e">// 完整作業系統名稱
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.OSFullName);
+
+<span style="color:#75715e">// OS 平台識別項
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.OSPlatform);
+
+<span style="color:#75715e">// OS 版本
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.OSVersion);
+
+<span style="color:#75715e">// OS 文化特性
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture);
+</code></pre></div><p>除了使用 <code>Computer</code> 類別之外，也可以使用 <code>ComputerInfo</code> 取得裝置資訊</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">ComputerInfo info = <span style="color:#66d9ef">new</span> ComputerInfo();
+</code></pre></div><p>上述看到 <code>computer.Info.InstalledUICulture</code> 文化特性，在該屬性下還有很多屬性可以使用，如下。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 系統所安裝的 UI 文化特性
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture);
+
+<span style="color:#75715e">// 預設行事曆
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.Calendar);
+
+<span style="color:#75715e">// 該文化特性的曆法集合
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> calendar <span style="color:#66d9ef">in</span> computer.Info.InstalledUICulture.OptionalCalendars)
+{
+    Console.WriteLine(calendar);
+}
+
+
+<span style="color:#75715e">// Culture 是否唯讀
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.IsReadOnly);
+
+<span style="color:#75715e">// 是否套用使用者選取的文化特性
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.UseUserOverride);
+
+<span style="color:#75715e">// 是否為中性文化特性
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.IsNeutralCulture);
+
+<span style="color:#75715e">// 數字、貨幣或百分比顯示格式
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.NumberFormat);
+
+<span style="color:#75715e">// 日期和時間的顯示格式
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.DateTimeFormat);
+
+<span style="color:#75715e">// 文化特性的書寫系統
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.TextInfo);
+
+<span style="color:#75715e">// ISO 639-1 兩個字母代碼
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.TwoLetterISOLanguageName);
+
+<span style="color:#75715e">// ISO 639-2 三個字母代碼
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.ThreeLetterISOLanguageName);
+
+<span style="color:#75715e">// 文化特性名稱
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.Name);
+
+<span style="color:#75715e">// 完整語系文化特性名稱
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.DisplayName);
+
+<span style="color:#75715e">// 英文文化特性名稱
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.EnglishName);
+
+<span style="color:#75715e">// 取得父文化特性
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.Parent);
+
+<span style="color:#75715e">// 語言和國家/地區組成之名稱
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.NativeName);
+
+<span style="color:#75715e">// 該文化特性如何比較字串
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.CompareInfo);
+
+<span style="color:#75715e">// 目前文化特性類型
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.CultureTypes);
+
+<span style="color:#75715e">// RFC 4646 標準識別
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.IetfLanguageTag);
+
+<span style="color:#75715e">// 輸入地區設定識別項
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.KeyboardLayoutId);
+
+<span style="color:#75715e">// 當前文化特性識別項
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.LCID);
+
+<span style="color:#75715e">// Windows API 定義之語言的三個字母代碼
+</span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.ThreeLetterWindowsLanguageName);
+</code></pre></div><h1 id="note">Note</h1>
+<p>有些屬性可直接印出結果，有些則是印出類名，這些類別下尚有許多屬性可使用，有興趣的可深入研究。</p>
+<p>可使用類別</p>
+<ul>
+<li><code>Microsoft.VisualBasic.Devices.Computer</code></li>
+<li><code>Microsoft.VisualBasic.Devices.ComputerInfo</code></li>
+<li><code>System.Globalization.CultureInfo</code></li>
+</ul>
+<h1 id="reference">Reference</h1>
+<p><a href="https://docs.microsoft.com/zh-tw/dotnet/api/microsoft.visualbasic.devices.computer?view=net-5.0">Computer Class</a></p>
+<p><a href="https://docs.microsoft.com/zh-tw/dotnet/api/microsoft.visualbasic.devices.computerinfo?view=net-5.0">ComputerInfo Class</a></p>
+</div>
+            </div>
+        </div>
+
+        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
+            
+            <div class="layui-card single-card">
+                <h2 class="single-title">Relevant Topics</h2>
+                
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/post/windows-7-openwindowsexplorer/">
+                                <h3 class="">【Windows】開啟運行程式的所在資料夾位置</h3>
+                            </a>
+                            
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-12</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/windows-win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - Win10</span>
+        </a>
+    
+        <a href="/categories/common-sense/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
+        </a>
+    
+        <a href="/tags/windows-explorer/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows Explorer</span>
+        </a>
+    
+        <a href="/tags/task-manager/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Task Manager</span>
+        </a>
+    
+    
+</h3>
+
+                        </blockquote>
+                    </div>
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/algorithm/algorithm-1-classicalgorithm/">
+                                <h3 class="">【Algorithm】經典演算法</h3>
+                            </a>
+                            
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-05</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/algorithm/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Algorithm</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/algorithm/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Algorithm</span>
+        </a>
+    
+        <a href="/tags/classic-algorithm/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Classic Algorithm</span>
+        </a>
+    
+        <a href="/tags/c/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
+        </a>
+    
+    
+</h3>
+
+                        </blockquote>
+                    </div>
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/post/windows-6-cutoverwindows/">
+                                <h3 class="">【Windows】如何分割視窗/畫面</h3>
+                            </a>
+                            
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/windows-win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - Win10</span>
+        </a>
+    
+        <a href="/categories/common-sense/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
+        </a>
+    
+    
+</h3>
+
+                        </blockquote>
+                    </div>
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/post/windows-5-cmdcutoverdisk/">
+                                <h3 class="">【Windows】使用 DOS 指令切換當前硬碟</h3>
+                            </a>
+                            
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
     <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
     <span>2021-03-31</span>
 
@@ -140,20 +454,8 @@ layui.use('element', function(){
     
 </h3>
 
-                </blockquote>
-                <div class="layui-card-body markdown-body single-content">
-                    <p>紀錄一下每次使用命令提示字元想從 C:\ 切換到 D:\ 時，都會喪失記憶，一直使用 <code>CD D:\</code> 都沒有反應，切老半天就是想不起來，每次都依賴谷哥大神。</p>
-<p>其實切換硬碟只要直接下 <code>D:</code> 即可，每每看到切換方法後都捶心肝，這裡也順便紀錄，<code>CD</code> 是切換當前目錄，切換硬碟是另一回事，所以直接對欲切換的硬碟下該硬碟名稱即可。</p>
-<p><img src="/images/Windows/Windows-cmd-CutoverDisk001.png" alt=""></p>
-</div>
-            </div>
-        </div>
-
-        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
-            
-            <div class="layui-card single-card">
-                <h2 class="single-title">Relevant Topics</h2>
-                
+                        </blockquote>
+                    </div>
                 	
                     <div style="margin-left: 10px;">
                         <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
@@ -195,166 +497,6 @@ layui.use('element', function(){
     
         <a href="/tags/cmd/">
             <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">cmd</span>
-        </a>
-    
-    
-</h3>
-
-                        </blockquote>
-                    </div>
-                	
-                    <div style="margin-left: 10px;">
-                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                            <a href="/post/windows-3-remotedesktopconnection-sharedisk/">
-                                <h3 class="">【Windows】分享本地硬碟供遠端使用</h3>
-                            </a>
-                            
-                            <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-03-26</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/windows-win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - Win10</span>
-        </a>
-    
-        <a href="/categories/common-sense/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/windows/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
-        </a>
-    
-        <a href="/tags/win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
-        </a>
-    
-        <a href="/tags/share-disk/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Share Disk</span>
-        </a>
-    
-        <a href="/tags/remote-desktop-connection/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Remote Desktop Connection</span>
-        </a>
-    
-    
-</h3>
-
-                        </blockquote>
-                    </div>
-                	
-                    <div style="margin-left: 10px;">
-                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                            <a href="/post/windows-2-remotedesktopconnection-rdpclip/">
-                                <h3 class="">【Windows】遠端桌面連線無法複製貼上？</h3>
-                            </a>
-                            
-                            <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-03-25</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/windows-win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - Win10</span>
-        </a>
-    
-        <a href="/categories/troubleshooting/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">TroubleShooting</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/windows/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
-        </a>
-    
-        <a href="/tags/win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
-        </a>
-    
-        <a href="/tags/rdpclip/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Rdpclip</span>
-        </a>
-    
-        <a href="/tags/remote-desktop-connection/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Remote Desktop Connection</span>
-        </a>
-    
-    
-</h3>
-
-                        </blockquote>
-                    </div>
-                	
-                    <div style="margin-left: 10px;">
-                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                            <a href="/post/windows-1-remotedesktopconnection-rdp/">
-                                <h3 class="">【Windows】開啟遠端桌面連線剪貼簿/印表機功能</h3>
-                            </a>
-                            
-                            <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-03-24</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/windows-win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - Win10</span>
-        </a>
-    
-        <a href="/categories/common-sense/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/windows/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
-        </a>
-    
-        <a href="/tags/win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
-        </a>
-    
-        <a href="/tags/remote-desktop-connection/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Remote Desktop Connection</span>
-        </a>
-    
-        <a href="/tags/rdp/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">RDP</span>
-        </a>
-    
-        <a href="/tags/printer/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Printer</span>
         </a>
     
     

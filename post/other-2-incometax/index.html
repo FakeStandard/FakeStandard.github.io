@@ -19,7 +19,7 @@
 所得總額 所得總額是過去整年度的收入總額（有點饒舌），以一般上班族來說，「薪資所得」佔該總額的絕大部分，基本上可以直接以薪資所得填入，但是！該收入還包含其他林林總總的項目，包括營利、執行業務、利息、租賃、權利金、財產交易、競技競賽、機會中獎之獎金或給予、退職等所得項目，如果個人有以上這些項目收入，也要一併計入。
 假設你今天是包租公/婆，將一套個人房屋出租，每年能收到的租金為 12 萬，該筆收入就得計入租賃項目；假設你今天是一般小職員，在尾牙抽中頭獎 5 萬，該筆收入以機會中獎之獎金項目計入。
 那薪資所得是要填實領薪資還是申報薪資？一般公司年末時會提供扣繳憑單，依照扣繳憑單上的給付總額來填寫，可以注意到該欄位後方註明「結算申報時應按本欄數額填報」，就按單子上所的規範填入；在給付總額後方可以看到「扣繳率」以及「扣繳稅額」，該欄位是公司先預扣稅額的部分，如果有被預先扣除，申報時要記得申報已經被扣的金額，最後結算時若預扣金額大於繳納金額，政府會退稅給納稅義務人喔！
-另外，一般公司年末會發放年終獎金，該項目也是以獎金項目計入，BTW 年終獎金若超過 84,501 元，公司需按全數金額預先扣繳 5% 稅款，所以有被扣除這 5% 的部分也要記得申報。
+另外，一般公司年末會發放年終獎金，通常該項目公司會一起申報成薪資所得部分，如果公司已經申報成薪資部分，千萬不要再以獎金計入囉，不然這個金額就會重複申報兩次，那可是虧大了！BTW 年終獎金若超過 84,501 元，公司需按全數金額預先扣繳 5% 稅款，所以有被扣除這 5% 的部分也要記得申報。
 免稅額 該項目是可扣除的稅額，分為以下兩種，通常以第一項計算，第二項適用年滿 70 歲的納稅義務人
    身份 可扣除額度     納稅義務人、配偶、受扶養親屬（兒童或年長者） 88,000/人   年滿70歲之納稅義務人、配偶、受扶養之直系尊親屬 132,000/人    由上述可知，納稅義務人就是自己本身，未滿 70 歲的納稅義務人可先扣除額 88,000，若有配偶或是有申報扶養眷屬，每一個人頭的額度為 88,000（聽起來像詐騙集團），假設我有扶養一個眷屬，除自身外還可多扣除一人的額度，可扣除的免稅額為 88,000 * 2 = 176,000，以此類推。" name="description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -165,7 +165,7 @@ layui.use('element', function(){
 <p>所得總額是過去整年度的收入總額（有點饒舌），以一般上班族來說，「薪資所得」佔該總額的絕大部分，基本上可以直接以薪資所得填入，但是！該收入還包含其他林林總總的項目，包括營利、執行業務、利息、租賃、權利金、財產交易、競技競賽、機會中獎之獎金或給予、退職等所得項目，如果個人有以上這些項目收入，也要一併計入。</p>
 <p>假設你今天是包租公/婆，將一套個人房屋出租，每年能收到的租金為 12 萬，該筆收入就得計入租賃項目；假設你今天是一般小職員，在尾牙抽中頭獎 5 萬，該筆收入以機會中獎之獎金項目計入。</p>
 <p>那薪資所得是要填實領薪資還是申報薪資？一般公司年末時會提供扣繳憑單，依照扣繳憑單上的<strong>給付總額</strong>來填寫，可以注意到該欄位後方註明「<strong>結算申報時應按本欄數額填報</strong>」，就按單子上所的規範填入；在給付總額後方可以看到「扣繳率」以及「扣繳稅額」，該欄位是公司先預扣稅額的部分，如果有被預先扣除，申報時要記得申報已經被扣的金額，最後結算時若預扣金額大於繳納金額，政府會退稅給納稅義務人喔！</p>
-<p>另外，一般公司年末會發放年終獎金，該項目也是以獎金項目計入，BTW 年終獎金若超過 84,501 元，公司需按全數金額預先扣繳 5% 稅款，所以有被扣除這 5% 的部分也要記得申報。</p>
+<p>另外，一般公司年末會發放年終獎金，通常該項目公司會一起申報成薪資所得部分，如果公司已經申報成薪資部分，千萬不要再以獎金計入囉，不然這個金額就會重複申報兩次，那可是虧大了！BTW 年終獎金若超過 84,501 元，公司需按全數金額預先扣繳 5% 稅款，所以有被扣除這 5% 的部分也要記得申報。</p>
 <h3 id="免稅額">免稅額</h3>
 <p>該項目是可扣除的稅額，分為以下兩種，通常以第一項計算，第二項適用年滿 70 歲的納稅義務人</p>
 <table>
@@ -328,6 +328,53 @@ layui.use('element', function(){
             <div class="layui-card single-card">
                 <h2 class="single-title">Recent Posts</h2>
             
+                
+                <div style="margin-left: 10px;">
+                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                    <a href="/post/csharp-1-getosinformation/">
+                        <h3 class="">【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊</h3>
+                    </a>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-19</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/c/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/c/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
+        </a>
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/memory/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Memory</span>
+        </a>
+    
+        <a href="/tags/culture/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Culture</span>
+        </a>
+    
+    
+</h3>
+
+                    </blockquote>
+                </div>
                 
                 <div style="margin-left: 10px;">
                     <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
@@ -497,53 +544,6 @@ layui.use('element', function(){
     
         <a href="/tags/win10/">
             <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
-        </a>
-    
-    
-</h3>
-
-                    </blockquote>
-                </div>
-                
-                <div style="margin-left: 10px;">
-                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                    <a href="/post/windows-5-cmdcutoverdisk/">
-                        <h3 class="">【Windows】使用 DOS 指令切換當前硬碟</h3>
-                    </a>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-03-31</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/windows-cmd/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - cmd</span>
-        </a>
-    
-        <a href="/categories/common-sense/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/windows/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
-        </a>
-    
-        <a href="/tags/win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
-        </a>
-    
-        <a href="/tags/cmd/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">cmd</span>
         </a>
     
     
