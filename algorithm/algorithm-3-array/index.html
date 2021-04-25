@@ -1,0 +1,699 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>How can I help - 【Algorithm】資料結構—陣列（Array） </title>
+    
+    
+    <meta content="Algorithm, Data Structure, C#, Array" name="keywords">
+    
+    <meta content="How can I help - 【4/11 閱讀紀錄】
+Introduce 選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
+Start 此篇紀錄記錄陣列定義及應用，其餘常見的資料結構如下
+ 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖（Graph） 堆積（Heap） 雜湊表（Hash Table）  陣列（Array） 陣列是一種靜態資料結構，由相同名稱和相同資料型態的集合，使用連續記憶體作為儲存空間，陣列有提供索引功能，用來表示從記憶體起始位置的第幾個位置。
+靜態資料結構在編譯時，就必須配置記憶體空間給變數，所以初期就需宣告變數的固定空間，容易造成記憶體浪費。
+操作 CRUD 等功能時也各有優缺點，首先是設計時相當容易，因索引功能使得讀取和修改元素的時間都固定，但在刪除和加入資料時就必須移動大量資料，例如刪除陣列中某個元素，必須將被刪除元素後方記憶體的資料都往前移動。
+陣列運用可分為一維陣列、二維陣列或多維陣列，一維陣列可想像成一條線，二維陣列則為一個平面，三維陣列（多維陣列）就會是 3D 立體，以此類推。
+使用一維陣列尋找和儲存 1~num 之間的所有質數
+const int num = 300; // true: 質數 false: 非質數 bool[] prime = new bool[num]; // 將 0,1 配置為非質數 prime[0] = false; prime[1] = false; int m = 2; int n = 2; // 找出 1~num 之間所有質數 while (m &lt; num) { prime[m] = IsPrime(m); m&#43;&#43;; } int c = 0; int count = 0; // 列印所有質數 for (int i = 0; i &lt; num; i&#43;&#43;) { if (prime[i]) { if (c == 10) { Console." name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script src=" /layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        How can I help
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/hugo/">Hugo</a></li>
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/algorithm/">Algorithm</a></li>
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/netcore/">.NET Core</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/hugo/">Hugo</a></dd>
+                    
+                        <dd><a href="/algorithm/">Algorithm</a></dd>
+                    
+                        <dd><a href="/netcore/">.NET Core</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md8 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-green markdown-body single-title" >
+                    <h1>【Algorithm】資料結構—陣列（Array）</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-25</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/algorithm/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Algorithm</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/algorithm/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Algorithm</span>
+        </a>
+    
+        <a href="/tags/data-structure/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Data Structure</span>
+        </a>
+    
+        <a href="/tags/c/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
+        </a>
+    
+        <a href="/tags/array/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Array</span>
+        </a>
+    
+    
+</h3>
+
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <p>【4/11 閱讀紀錄】</p>
+<h1 id="introduce">Introduce</h1>
+<p>選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。</p>
+<h1 id="start">Start</h1>
+<p>此篇紀錄記錄<strong>陣列</strong>定義及應用，其餘常見的資料結構如下</p>
+<ul>
+<li><strong>陣列（Array）</strong></li>
+<li>鏈結串列（Linked List）</li>
+<li>堆疊（Stack）</li>
+<li>佇列（Queue）</li>
+<li>樹（Tree）</li>
+<li>圖（Graph）</li>
+<li>堆積（Heap）</li>
+<li>雜湊表（Hash Table）</li>
+</ul>
+<h2 id="陣列array">陣列（Array）</h2>
+<p>陣列是一種靜態資料結構，由相同名稱和相同資料型態的集合，使用連續記憶體作為儲存空間，陣列有提供索引功能，用來表示從記憶體起始位置的第幾個位置。</p>
+<p><strong>靜態資料結構</strong>在編譯時，就必須配置記憶體空間給變數，所以初期就需宣告變數的固定空間，容易造成記憶體浪費。</p>
+<p>操作 CRUD 等功能時也各有優缺點，首先是設計時相當容易，因索引功能使得讀取和修改元素的時間都固定，但在刪除和加入資料時就必須移動大量資料，例如刪除陣列中某個元素，必須將被刪除元素後方記憶體的資料都往前移動。</p>
+<p>陣列運用可分為一維陣列、二維陣列或多維陣列，一維陣列可想像成一條線，二維陣列則為一個平面，三維陣列（多維陣列）就會是 3D 立體，以此類推。</p>
+<p>使用一維陣列尋找和儲存 1~num 之間的所有質數</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> num = <span style="color:#ae81ff">300</span>;
+
+<span style="color:#75715e">// true: 質數 false: 非質數
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span>[] prime = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">bool</span>[num];
+
+<span style="color:#75715e">// 將 0,1 配置為非質數
+</span><span style="color:#75715e"></span>prime[<span style="color:#ae81ff">0</span>] = <span style="color:#66d9ef">false</span>;
+prime[<span style="color:#ae81ff">1</span>] = <span style="color:#66d9ef">false</span>;
+
+<span style="color:#66d9ef">int</span> m = <span style="color:#ae81ff">2</span>;
+<span style="color:#66d9ef">int</span> n = <span style="color:#ae81ff">2</span>;
+
+<span style="color:#75715e">// 找出 1~num 之間所有質數
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">while</span> (m &lt; num)
+{
+    prime[m] = IsPrime(m);
+    m++;
+}
+
+
+<span style="color:#66d9ef">int</span> c = <span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">int</span> count = <span style="color:#ae81ff">0</span>;
+
+<span style="color:#75715e">// 列印所有質數
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; num; i++)
+{
+    <span style="color:#66d9ef">if</span> (prime[i])
+    {
+        <span style="color:#66d9ef">if</span> (c == <span style="color:#ae81ff">10</span>)
+        {
+            Console.WriteLine();
+            c = <span style="color:#ae81ff">0</span>;
+        }
+
+        Console.Write(i + <span style="color:#e6db74">&#34; &#34;</span>);
+        c++;
+        count++;
+    }
+}
+
+Console.WriteLine();
+Console.WriteLine(<span style="color:#e6db74">$&#34;總共 {count} 個質數&#34;</span>);
+</code></pre></div><p>使用先前判斷質數的方法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">bool</span> IsPrime(<span style="color:#66d9ef">int</span> n)
+{
+    <span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">2</span>;
+
+    <span style="color:#66d9ef">while</span> (i &lt; n)
+    {
+        <span style="color:#75715e">// 如果整除, i 為 n 的因數
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span> (n % i == <span style="color:#ae81ff">0</span>)
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span>;
+        i++;
+    }
+
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+}
+</code></pre></div><p>書籍撰寫代碼參考</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> MAX = <span style="color:#ae81ff">300</span>;
+<span style="color:#66d9ef">bool</span>[] prime = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">bool</span>[MAX];
+prime[<span style="color:#ae81ff">0</span>] = <span style="color:#66d9ef">true</span>;
+prime[<span style="color:#ae81ff">1</span>] = <span style="color:#66d9ef">true</span>;
+<span style="color:#66d9ef">int</span> num = <span style="color:#ae81ff">2</span>, i;
+
+<span style="color:#66d9ef">while</span> (num &lt; MAX)
+{
+    <span style="color:#66d9ef">if</span> (!prime[num])
+    {
+        <span style="color:#66d9ef">for</span> (i = num + num; i &lt; MAX; i += num)
+        {
+            <span style="color:#66d9ef">if</span> (prime[i]) <span style="color:#66d9ef">continue</span>;
+            prime[i] = <span style="color:#66d9ef">true</span>;
+        }
+    }
+
+    num++;
+}
+
+<span style="color:#66d9ef">for</span> (i = <span style="color:#ae81ff">2</span>, num = <span style="color:#ae81ff">0</span>; i &lt; MAX; i++)
+{
+    <span style="color:#66d9ef">if</span> (!prime[i])
+    {
+        Console.Write(i + <span style="color:#e6db74">&#34;\t&#34;</span>);
+        num++;
+    }
+}
+
+Console.WriteLine(<span style="color:#e6db74">$&#34;總共 {num} 個質數&#34;</span>);
+</code></pre></div><h1 id="note">Note</h1>
+<p>特性</p>
+<ul>
+<li>空間所配置的儲存方式為連續記憶體</li>
+<li>提供索引功能</li>
+<li>為靜態資料結構，編譯時必須先配置記憶體空間</li>
+</ul>
+<p>優點</p>
+<ul>
+<li>讀取和修改速度快</li>
+</ul>
+<p>缺點</p>
+<ul>
+<li>刪除和新增必須移動大量資料</li>
+</ul>
+<h1 id="reference">Reference</h1>
+<p>【圖說演算法 C#】</p>
+</div>
+            </div>
+        </div>
+
+        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
+            
+            <div class="layui-card single-card">
+                <h2 class="single-title">Relevant Topics</h2>
+                
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/algorithm/algorithm-2-datastructure/">
+                                <h3 class="">【Algorithm】資料結構定義與資料型態</h3>
+                            </a>
+                            
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-25</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/algorithm/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Algorithm</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/algorithm/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Algorithm</span>
+        </a>
+    
+        <a href="/tags/data-structure/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Data Structure</span>
+        </a>
+    
+        <a href="/tags/c/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
+        </a>
+    
+    
+</h3>
+
+                        </blockquote>
+                    </div>
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/algorithm/algorithm-1-classicalgorithm/">
+                                <h3 class="">【Algorithm】經典演算法</h3>
+                            </a>
+                            
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-05</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/algorithm/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Algorithm</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/algorithm/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Algorithm</span>
+        </a>
+    
+        <a href="/tags/classic-algorithm/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Classic Algorithm</span>
+        </a>
+    
+        <a href="/tags/c/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
+        </a>
+    
+    
+</h3>
+
+                        </blockquote>
+                    </div>
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/post/csharp-1-getosinformation/">
+                                <h3 class="">【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊</h3>
+                            </a>
+                            
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-19</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/c/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/c/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
+        </a>
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/memory/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Memory</span>
+        </a>
+    
+        <a href="/tags/culture/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Culture</span>
+        </a>
+    
+    
+</h3>
+
+                        </blockquote>
+                    </div>
+                	
+                
+                <br />
+            </div>
+            
+
+            <div class="layui-card single-card">
+                <h2 class="single-title">Recent Posts</h2>
+            
+                
+                <div style="margin-left: 10px;">
+                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                    <a href="/post/csharp-1-getosinformation/">
+                        <h3 class="">【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊</h3>
+                    </a>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-19</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/c/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/c/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
+        </a>
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/memory/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Memory</span>
+        </a>
+    
+        <a href="/tags/culture/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Culture</span>
+        </a>
+    
+    
+</h3>
+
+                    </blockquote>
+                </div>
+                
+                <div style="margin-left: 10px;">
+                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                    <a href="/post/other-2-incometax/">
+                        <h3 class="">【人森】如何計算個人綜合所得稅？</h3>
+                    </a>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-14</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/other/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Other</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/%e7%b6%9c%e5%90%88%e6%89%80%e5%be%97%e7%a8%85/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">綜合所得稅</span>
+        </a>
+    
+        <a href="/tags/income-tax/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Income Tax</span>
+        </a>
+    
+    
+</h3>
+
+                    </blockquote>
+                </div>
+                
+                <div style="margin-left: 10px;">
+                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                    <a href="/post/windows-7-openwindowsexplorer/">
+                        <h3 class="">【Windows】開啟運行程式的所在資料夾位置</h3>
+                    </a>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-12</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/windows-win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - Win10</span>
+        </a>
+    
+        <a href="/categories/common-sense/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
+        </a>
+    
+        <a href="/tags/windows-explorer/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows Explorer</span>
+        </a>
+    
+        <a href="/tags/task-manager/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Task Manager</span>
+        </a>
+    
+    
+</h3>
+
+                    </blockquote>
+                </div>
+                
+                <div style="margin-left: 10px;">
+                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                    <a href="/post/dotnet-2-mvc-movielist/">
+                        <h3 class="">【.NET】適合初心者的 .NET Core MVC 實作</h3>
+                    </a>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-10</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/.net/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
+        </a>
+    
+        <a href="/categories/web/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Web</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/.net/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
+        </a>
+    
+        <a href="/tags/mvc/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">MVC</span>
+        </a>
+    
+    
+</h3>
+
+                    </blockquote>
+                </div>
+                
+                <div style="margin-left: 10px;">
+                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                    <a href="/post/windows-6-cutoverwindows/">
+                        <h3 class="">【Windows】如何分割視窗/畫面</h3>
+                    </a>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-01</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/windows-win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - Win10</span>
+        </a>
+    
+        <a href="/categories/common-sense/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
+        </a>
+    
+    
+</h3>
+
+                    </blockquote>
+                </div>
+                
+            
+            <br />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+        </div>
+
+<footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/categories/"><p class="footer-url">Category</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>
