@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://fakestandard.github.io/tags/.net/</loc>
+    <lastmod>2021-04-28T14:08:05+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/.net/</loc>
+    <lastmod>2021-04-28T14:08:05+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/c#/</loc>
+    <lastmod>2021-04-28T14:08:05+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/</loc>
+    <lastmod>2021-04-28T14:08:05+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/</loc>
+    <lastmod>2021-04-28T14:08:05+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/npoi/</loc>
+    <lastmod>2021-04-28T14:08:05+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/post/</loc>
+    <lastmod>2021-04-28T14:08:05+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/</loc>
+    <lastmod>2021-04-28T14:08:05+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/post/dotnet-3-npoisimple/</loc>
+    <lastmod>2021-04-28T14:08:05+08:00</lastmod>
+  </url><url>
     <loc>https://fakestandard.github.io/tags/algorithm/</loc>
     <lastmod>2021-04-25T16:34:39+08:00</lastmod>
   </url><url>
@@ -14,19 +41,7 @@
     <loc>https://fakestandard.github.io/tags/array/</loc>
     <lastmod>2021-04-25T16:34:39+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/tags/c#/</loc>
-    <lastmod>2021-04-25T16:34:39+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/categories/</loc>
-    <lastmod>2021-04-25T16:34:39+08:00</lastmod>
-  </url><url>
     <loc>https://fakestandard.github.io/tags/data-structure/</loc>
-    <lastmod>2021-04-25T16:34:39+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/</loc>
-    <lastmod>2021-04-25T16:34:39+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/</loc>
     <lastmod>2021-04-25T16:34:39+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/algorithm/algorithm-3-array/</loc>
@@ -42,9 +57,6 @@
     <lastmod>2021-04-19T18:33:22+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/memory/</loc>
-    <lastmod>2021-04-19T18:33:22+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/post/</loc>
     <lastmod>2021-04-19T18:33:22+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/windows/</loc>
@@ -82,12 +94,6 @@
   </url><url>
     <loc>https://fakestandard.github.io/post/windows-7-openwindowsexplorer/</loc>
     <lastmod>2021-04-12T11:48:04+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/.net/</loc>
-    <lastmod>2021-04-10T14:06:07+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/categories/.net/</loc>
-    <lastmod>2021-04-10T14:06:07+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/mvc/</loc>
     <lastmod>2021-04-10T14:06:07+08:00</lastmod>
