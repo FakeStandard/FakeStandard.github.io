@@ -6,11 +6,11 @@
     <description>Recent content in C# on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 28 Apr 2021 14:08:05 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/c#/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 27 Apr 2021 14:08:05 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/c#/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【.NET】使用 NPOI 匯出 Excel 的基本應用</title>
       <link>https://fakestandard.github.io/post/dotnet/dotnet-3-npoisimple/</link>
-      <pubDate>Wed, 28 Apr 2021 14:08:05 +0800</pubDate>
+      <pubDate>Tue, 27 Apr 2021 14:08:05 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/post/dotnet/dotnet-3-npoisimple/</guid>
       <description>Introduce 開發應用程式或網頁時總是會遇到匯出 Excel 的需求，常見的如匯出報表。然而在眾多匯出 Excel 的套件中，這篇選擇以 NPOI 作為介紹匯出的基本應用和觀念，資料則選擇現成的北風資料庫，這邊就不另外建立資料物件。
