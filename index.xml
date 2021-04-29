@@ -69,10 +69,10 @@ ComputerInfo info = new ComputerInfo(); 上述看到 computer.Info.InstalledUICu
     
     <item>
       <title>【人森】如何計算個人綜合所得稅？</title>
-      <link>https://fakestandard.github.io/post/other-2-incometax/</link>
+      <link>https://fakestandard.github.io/post/other/other-2-incometax/</link>
       <pubDate>Wed, 14 Apr 2021 11:19:05 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/other-2-incometax/</guid>
+      <guid>https://fakestandard.github.io/post/other/other-2-incometax/</guid>
       <description>一年一度的報稅季節即將來臨，過去在申報時並未了解太多資訊，反正申報沒問題即可，有問題再給補差額就好（奶茶加價概念），去年 2020 年所得稅申報的基本規範出現變動，去年的我也只是快速瀏覽過這些變革，並未詳細了解內容，趁著報稅季開始前，依照個人情況順手作個整理。
 首先要了解所得稅分為以下兩種
  綜合所得稅 營利事業所得稅  這篇只探討綜合所得稅的部分，因筆者也沒有營利的事業可以被扣稅，希望有天也能被要求繳納營利事業所得稅，屆時有經驗再分享（笑）
@@ -159,10 +159,10 @@ Solution 最簡單的方法是調整視窗大小，將視窗大小調成螢幕�
     
     <item>
       <title>【MSSQL】如何改善 SQL 常見的效能問題</title>
-      <link>https://fakestandard.github.io/post/mssql-1-performanceissues/</link>
+      <link>https://fakestandard.github.io/post/mssql/mssql-1-performanceissues/</link>
       <pubDate>Tue, 30 Mar 2021 10:42:18 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/mssql-1-performanceissues/</guid>
+      <guid>https://fakestandard.github.io/post/mssql/mssql-1-performanceissues/</guid>
       <description>一直以來筆者在寫 SQL 語法時從不考量效能問題，以為效能調教是等到發生後由高手們來解題，輪不到我們這種小咖來煩惱，殊不知我們這種咖小也可以提前優化效能！所以這篇要來紀錄 SQL 一些常見的效能問題，比如應該避免使用哪些語法，為何要避免使用？在筆者有限的能力下也會盡量寫 Lab 觀察數據。
 查詢優化 同樣的查詢結果會有不同寫法，但哪些寫法是比較好的？其實查詢時，應該要避免全表掃描（Full Table Scan）
 何謂全表掃描（Full Table Scan）？
@@ -244,10 +244,10 @@ Note 假設剪貼簿已經開啟，遠端依然無法使用複製/貼上功能�
     
     <item>
       <title>【GitHub】在 GitHub Pages 建立靜態網站</title>
-      <link>https://fakestandard.github.io/post/github-1-githubpage/</link>
+      <link>https://fakestandard.github.io/post/github/github-1-githubpage/</link>
       <pubDate>Mon, 22 Mar 2021 15:56:58 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/github-1-githubpage/</guid>
+      <guid>https://fakestandard.github.io/post/github/github-1-githubpage/</guid>
       <description>GitHub 提供一個 Web hosting service（網頁託管服務）為使用者提供存放靜態網頁、文檔等功能，讓其他人可以透過服務端來存取使用者寄放之網頁，那就是 GitHub Pages。
 在開始使用 GitHub Pages 前，必須先擁有一個 GitHub 帳戶，和一些 git 的基礎知識如 pull 、 push 等。目前 GitHub 分別有免費及付費版，付費版更著重於 private repository，而免費版只接受一個私人的倉儲，其餘的 repository 皆會公開，So 若是比較私人的代碼或公開後較有爭議的 project，盡量別推送到 GitHub 上。
 Create a repository 建立一個倉儲的方法不只一種，約有兩三個地方可以進入下圖建立 repository 的畫面。
@@ -285,10 +285,10 @@ BTW 我們是當晚從 KLOOK 上面購買，再前往實體店家使用，不過
     
     <item>
       <title>【Markdown】筆記神器</title>
-      <link>https://fakestandard.github.io/post/markdown-1-heymarkdown/</link>
+      <link>https://fakestandard.github.io/post/markdown/markdown-1-heymarkdown/</link>
       <pubDate>Fri, 19 Mar 2021 09:46:52 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/markdown-1-heymarkdown/</guid>
+      <guid>https://fakestandard.github.io/post/markdown/markdown-1-heymarkdown/</guid>
       <description>前言 Markdown 易讀易寫，學一次就會，許久不用也不會忘。
 應用 目前越來越多服務支援 Markdown 編寫，而每個環境能接受的語法略有不同，以下則介紹通用的使用方式。
 標題 標題分為六個層級（有些環境只接受三個層級），標題以 # 符號為主，數量越多層級越低，反之則越高
@@ -301,10 +301,10 @@ BTW 我們是當晚從 KLOOK 上面購買，再前往實體店家使用，不過
     
     <item>
       <title>【賀】新開張！</title>
-      <link>https://fakestandard.github.io/post/other-1-newblog/</link>
+      <link>https://fakestandard.github.io/post/other/other-1-newblog/</link>
       <pubDate>Wed, 17 Mar 2021 17:10:35 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/other-1-newblog/</guid>
+      <guid>https://fakestandard.github.io/post/other/other-1-newblog/</guid>
       <description>前言 恭賀本人的部落格又開張了！
 歷經長久思考，最終還是得有個小角落紀錄生活點滴，更多的是工作日常以及技術方面的哩哩叩叩，對 IT 人而言，技術這東西許久不用，那可是大腦折騰三百回合，也會找不到答案的折磨阿…
 OK. 如果你有認真看了第一行，應該會注意到「又」這個字，為何新開張卻是又呢？請聽我娓娓道來…

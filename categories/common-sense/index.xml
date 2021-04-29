@@ -46,10 +46,10 @@ Solution 最簡單的方法是調整視窗大小，將視窗大小調成螢幕�
     
     <item>
       <title>【MSSQL】如何改善 SQL 常見的效能問題</title>
-      <link>https://fakestandard.github.io/post/mssql-1-performanceissues/</link>
+      <link>https://fakestandard.github.io/post/mssql/mssql-1-performanceissues/</link>
       <pubDate>Tue, 30 Mar 2021 10:42:18 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/mssql-1-performanceissues/</guid>
+      <guid>https://fakestandard.github.io/post/mssql/mssql-1-performanceissues/</guid>
       <description>一直以來筆者在寫 SQL 語法時從不考量效能問題，以為效能調教是等到發生後由高手們來解題，輪不到我們這種小咖來煩惱，殊不知我們這種咖小也可以提前優化效能！所以這篇要來紀錄 SQL 一些常見的效能問題，比如應該避免使用哪些語法，為何要避免使用？在筆者有限的能力下也會盡量寫 Lab 觀察數據。
 查詢優化 同樣的查詢結果會有不同寫法，但哪些寫法是比較好的？其實查詢時，應該要避免全表掃描（Full Table Scan）
 何謂全表掃描（Full Table Scan）？

@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 22 Mar 2021 15:56:58 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/github-pages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【GitHub】在 GitHub Pages 建立靜態網站</title>
-      <link>https://fakestandard.github.io/post/github-1-githubpage/</link>
+      <link>https://fakestandard.github.io/post/github/github-1-githubpage/</link>
       <pubDate>Mon, 22 Mar 2021 15:56:58 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/github-1-githubpage/</guid>
+      <guid>https://fakestandard.github.io/post/github/github-1-githubpage/</guid>
       <description>GitHub 提供一個 Web hosting service（網頁託管服務）為使用者提供存放靜態網頁、文檔等功能，讓其他人可以透過服務端來存取使用者寄放之網頁，那就是 GitHub Pages。
 在開始使用 GitHub Pages 前，必須先擁有一個 GitHub 帳戶，和一些 git 的基礎知識如 pull 、 push 等。目前 GitHub 分別有免費及付費版，付費版更著重於 private repository，而免費版只接受一個私人的倉儲，其餘的 repository 皆會公開，So 若是比較私人的代碼或公開後較有爭議的 project，盡量別推送到 GitHub 上。
 Create a repository 建立一個倉儲的方法不只一種，約有兩三個地方可以進入下圖建立 repository 的畫面。
