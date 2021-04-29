@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 26 Mar 2021 16:45:48 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/remote-desktop-connection/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Windows】分享本地硬碟供遠端使用</title>
-      <link>https://fakestandard.github.io/post/windows-3-remotedesktopconnection-sharedisk/</link>
+      <link>https://fakestandard.github.io/post/windows/windows-3-remotedesktopconnection-sharedisk/</link>
       <pubDate>Fri, 26 Mar 2021 16:45:48 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/windows-3-remotedesktopconnection-sharedisk/</guid>
+      <guid>https://fakestandard.github.io/post/windows/windows-3-remotedesktopconnection-sharedisk/</guid>
       <description>Issue 某次使用遠端桌面時想把 .bak 複製到本地機器，熱鍵 Ctrl + C &amp;amp; Ctrl + V 後跑到一半就不跑了，天真以為這容量不大就可以用【複製/貼上】功能，殊不知有正統的作法。
 Solution 當本地和遠端想要分享檔案時，最好使用 Share Disk，將本地硬碟 Share 給遠端使用，此時遠端就可以存取本地的硬碟。
 Step1 開啟顯示選項，切換到【本機資源】頁簽，在【本機裝置和資源】 panel 按下【其他】
@@ -23,10 +23,10 @@ Note OK. 如此一來就可以直接在遠端將資源儲存到本地硬碟，�
     
     <item>
       <title>【Windows】遠端桌面連線無法複製貼上？</title>
-      <link>https://fakestandard.github.io/post/windows-2-remotedesktopconnection-rdpclip/</link>
+      <link>https://fakestandard.github.io/post/windows/windows-2-remotedesktopconnection-rdpclip/</link>
       <pubDate>Thu, 25 Mar 2021 16:13:46 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/windows-2-remotedesktopconnection-rdpclip/</guid>
+      <guid>https://fakestandard.github.io/post/windows/windows-2-remotedesktopconnection-rdpclip/</guid>
       <description>Issue 最近在 Win10 上使用遠端桌面連線時，需要在本地和遠端進行複製 &amp;amp; 貼上動作，但此功能忽然失效？不論是快捷鍵或介面操作，就是無法使用。
 Solution Step1 檢查剪貼簿功能是否有開啟
 【傳送門】【Windows】開啟遠端桌面連線剪貼簿功能
@@ -37,10 +37,10 @@ Note 那麼為何 File Copy 會當掉？
     
     <item>
       <title>【Windows】開啟遠端桌面連線剪貼簿/印表機功能</title>
-      <link>https://fakestandard.github.io/post/windows-1-remotedesktopconnection-rdp/</link>
+      <link>https://fakestandard.github.io/post/windows/windows-1-remotedesktopconnection-rdp/</link>
       <pubDate>Wed, 24 Mar 2021 20:25:01 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/windows-1-remotedesktopconnection-rdp/</guid>
+      <guid>https://fakestandard.github.io/post/windows/windows-1-remotedesktopconnection-rdp/</guid>
       <description>Issue  一般操作電腦複製/貼上功能總少不了，當使用本地機器遠端到其他機器也想使用該功能時，發現不能用？ 當遠端桌面連線想共用本機的印表機資源時，該怎麼辦？  Solution 開啟遠端桌面連線並展開顯示選項，切換到【本機資源】頁簽，在本機和裝置資源的 panel 將欲操作的【印表機】或【剪貼簿】勾選即可
 Note 假設剪貼簿已經開啟，遠端依然無法使用複製/貼上功能？
 【傳送門】【Windows】遠端桌面連線無法複製貼上？</description>

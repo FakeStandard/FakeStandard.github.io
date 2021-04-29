@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 28 Apr 2021 14:08:05 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【.NET】使用 NPOI 匯出 Excel 的基本應用</title>
-      <link>https://fakestandard.github.io/post/dotnet-3-npoisimple/</link>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-3-npoisimple/</link>
       <pubDate>Wed, 28 Apr 2021 14:08:05 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/dotnet-3-npoisimple/</guid>
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-3-npoisimple/</guid>
       <description>Introduce 開發應用程式或網頁時總是會遇到匯出 Excel 的需求，常見的如匯出報表。然而在眾多匯出 Excel 的套件中，這篇選擇以 NPOI 作為介紹匯出的基本應用和觀念，資料則選擇現成的北風資料庫，這邊就不另外建立資料物件。
 代碼存放於 GitHub
 Start 首先到 NuGet 套件添加 NPOI Package
@@ -22,10 +22,10 @@ Start 首先到 NuGet 套件添加 NPOI Package
     
     <item>
       <title>【.NET】適合初心者的 .NET Core MVC 實作</title>
-      <link>https://fakestandard.github.io/post/dotnet-2-mvc-movielist/</link>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-2-mvc-movielist/</link>
       <pubDate>Sat, 10 Apr 2021 14:06:07 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/dotnet-2-mvc-movielist/</guid>
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-2-mvc-movielist/</guid>
       <description>此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解如何建立 Web 應用程式、新增及 Scaffold 模型、使用資料庫、資料的 CRUD、新增搜尋和驗證，最後會完成一個有關電影清單的應用程式。
 UI 的介紹會以 IDE 為主，除 UI 外也會介紹 dotnet 指令。
 代碼部分已上傳到 GitHub
@@ -35,10 +35,10 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】</description>
     
     <item>
       <title>【.NET】打造 Blazor ToDoList</title>
-      <link>https://fakestandard.github.io/post/dotnet-1-blazor/</link>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-1-blazor/</link>
       <pubDate>Sun, 28 Mar 2021 21:47:49 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/dotnet-1-blazor/</guid>
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-1-blazor/</guid>
       <description>Prerequisites .NET 5.0 SDK 或之後的版本
 Start 使用 VS 2019 建立 Blazor
 建立新專案 選擇【Blazor 應用程式】專案

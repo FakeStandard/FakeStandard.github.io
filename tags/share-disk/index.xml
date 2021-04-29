@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 26 Mar 2021 16:45:48 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/share-disk/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Windows】分享本地硬碟供遠端使用</title>
-      <link>https://fakestandard.github.io/post/windows-3-remotedesktopconnection-sharedisk/</link>
+      <link>https://fakestandard.github.io/post/windows/windows-3-remotedesktopconnection-sharedisk/</link>
       <pubDate>Fri, 26 Mar 2021 16:45:48 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/windows-3-remotedesktopconnection-sharedisk/</guid>
+      <guid>https://fakestandard.github.io/post/windows/windows-3-remotedesktopconnection-sharedisk/</guid>
       <description>Issue 某次使用遠端桌面時想把 .bak 複製到本地機器，熱鍵 Ctrl + C &amp;amp; Ctrl + V 後跑到一半就不跑了，天真以為這容量不大就可以用【複製/貼上】功能，殊不知有正統的作法。
 Solution 當本地和遠端想要分享檔案時，最好使用 Share Disk，將本地硬碟 Share 給遠端使用，此時遠端就可以存取本地的硬碟。
 Step1 開啟顯示選項，切換到【本機資源】頁簽，在【本機裝置和資源】 panel 按下【其他】

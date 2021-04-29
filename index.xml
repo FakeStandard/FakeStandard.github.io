@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 28 Apr 2021 14:08:05 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【.NET】使用 NPOI 匯出 Excel 的基本應用</title>
-      <link>https://fakestandard.github.io/post/dotnet-3-npoisimple/</link>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-3-npoisimple/</link>
       <pubDate>Wed, 28 Apr 2021 14:08:05 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/dotnet-3-npoisimple/</guid>
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-3-npoisimple/</guid>
       <description>Introduce 開發應用程式或網頁時總是會遇到匯出 Excel 的需求，常見的如匯出報表。然而在眾多匯出 Excel 的套件中，這篇選擇以 NPOI 作為介紹匯出的基本應用和觀念，資料則選擇現成的北風資料庫，這邊就不另外建立資料物件。
 代碼存放於 GitHub
 Start 首先到 NuGet 套件添加 NPOI Package
@@ -56,10 +56,10 @@ Reference 【圖說演算法 C#】</description>
     
     <item>
       <title>【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊</title>
-      <link>https://fakestandard.github.io/post/csharp-1-getosinformation/</link>
+      <link>https://fakestandard.github.io/post/csharp/csharp-1-getosinformation/</link>
       <pubDate>Mon, 19 Apr 2021 18:33:22 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/csharp-1-getosinformation/</guid>
+      <guid>https://fakestandard.github.io/post/csharp/csharp-1-getosinformation/</guid>
       <description>Start 近期為了在客戶的應用程式中添加一些裝置資訊，並將裝置資訊記錄成 LOG，以利下次客戶有問題時，可以先讓客戶提供有用資訊加以判斷。
 引用 Microsoft.VisualBasic.Devices 命名空間，使用該命名空間下的 Computer 類別來取得資訊，Computer 類別提供許多屬性來操作電腦元件，這篇紀錄如何取得裝置資訊。
 Computer computer = new Computer(); // 取得裝置名稱 Console.WriteLine(computer.Name); // 實體記憶體總量 Console.WriteLine(computer.Info.TotalPhysicalMemory); // 虛擬記憶體總量 Console.WriteLine(computer.Info.TotalVirtualMemory); // 可用實體記憶體總量 Console.WriteLine(computer.Info.AvailablePhysicalMemory); // 可用虛擬記憶體總量 Console.WriteLine(computer.Info.AvailableVirtualMemory); // 完整作業系統名稱 Console.WriteLine(computer.Info.OSFullName); // OS 平台識別項 Console.WriteLine(computer.Info.OSPlatform); // OS 版本 Console.WriteLine(computer.Info.OSVersion); // OS 文化特性 Console.WriteLine(computer.Info.InstalledUICulture); 除了使用 Computer 類別之外，也可以使用 ComputerInfo 取得裝置資訊
@@ -91,10 +91,10 @@ ComputerInfo info = new ComputerInfo(); 上述看到 computer.Info.InstalledUICu
     
     <item>
       <title>【Windows】開啟運行程式的所在資料夾位置</title>
-      <link>https://fakestandard.github.io/post/windows-7-openwindowsexplorer/</link>
+      <link>https://fakestandard.github.io/post/windows/windows-7-openwindowsexplorer/</link>
       <pubDate>Mon, 12 Apr 2021 11:48:04 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/windows-7-openwindowsexplorer/</guid>
+      <guid>https://fakestandard.github.io/post/windows/windows-7-openwindowsexplorer/</guid>
       <description>Issue 應用程式安裝時會讓使用者選擇安裝路徑，假設安裝路徑有天忘記了，或是資料夾位置太深層，需要每個資料夾打開確認。
 還好有個方法可以快速開啟安裝位置，不過有個前提，必須先運行應用程式。
 Solution 該解決方法是針對已經開啟的程式，首先開啟工作管理員，切換到【應用程序】頁簽或是【詳細資料】頁簽也可以，找到運行的應用程式執行右鍵，選擇【開啟檔案位置】就開啟安裝位置囉！</description>
@@ -102,10 +102,10 @@ Solution 該解決方法是針對已經開啟的程式，首先開啟工作管�
     
     <item>
       <title>【.NET】適合初心者的 .NET Core MVC 實作</title>
-      <link>https://fakestandard.github.io/post/dotnet-2-mvc-movielist/</link>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-2-mvc-movielist/</link>
       <pubDate>Sat, 10 Apr 2021 14:06:07 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/dotnet-2-mvc-movielist/</guid>
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-2-mvc-movielist/</guid>
       <description>此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解如何建立 Web 應用程式、新增及 Scaffold 模型、使用資料庫、資料的 CRUD、新增搜尋和驗證，最後會完成一個有關電影清單的應用程式。
 UI 的介紹會以 IDE 為主，除 UI 外也會介紹 dotnet 指令。
 代碼部分已上傳到 GitHub
@@ -133,10 +133,10 @@ Start 演算法種類很多，經典的演算法有以下幾種
     
     <item>
       <title>【Windows】如何分割視窗/畫面</title>
-      <link>https://fakestandard.github.io/post/windows-6-cutoverwindows/</link>
+      <link>https://fakestandard.github.io/post/windows/windows-6-cutoverwindows/</link>
       <pubDate>Thu, 01 Apr 2021 12:59:03 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/windows-6-cutoverwindows/</guid>
+      <guid>https://fakestandard.github.io/post/windows/windows-6-cutoverwindows/</guid>
       <description>Issue 我們在使用文件或是檔案時，需同時對兩份文件做比對，所以不想只有一個視窗佔滿整個螢幕，那要如何在 Windows 畫面上同時開啟兩個視窗，並將其視窗放置一左一右？
 Solution 最簡單的方法是調整視窗大小，將視窗大小調成螢幕大小的一半，一個放左，一個放右，讓彼此不重疊。
 如果不常需要這樣的操作倒也還好，但若久久就要一次，這個動作就顯得麻煩許多了，心裡不禁暗自問「有沒有可以直接將視窗分割的辦法」，答案是有的！甚至還可以幫你調整成固定大小！
@@ -149,10 +149,10 @@ Solution 最簡單的方法是調整視窗大小，將視窗大小調成螢幕�
     
     <item>
       <title>【Windows】使用 DOS 指令切換當前硬碟</title>
-      <link>https://fakestandard.github.io/post/windows-5-cmdcutoverdisk/</link>
+      <link>https://fakestandard.github.io/post/windows/windows-5-cmdcutoverdisk/</link>
       <pubDate>Wed, 31 Mar 2021 15:53:25 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/windows-5-cmdcutoverdisk/</guid>
+      <guid>https://fakestandard.github.io/post/windows/windows-5-cmdcutoverdisk/</guid>
       <description>紀錄一下每次使用命令提示字元想從 C:\ 切換到 D:\ 時，都會喪失記憶，一直使用 CD D:\ 都沒有反應，切老半天就是想不起來，每次都依賴谷哥大神。
 其實切換硬碟只要直接下 D: 即可，每每看到切換方法後都捶心肝，這裡也順便紀錄，CD 是切換當前目錄，切換硬碟是另一回事，所以直接對欲切換的硬碟下該硬碟名稱即可。</description>
     </item>
@@ -176,10 +176,10 @@ SELECT OrderID FROM [Northwind].[dbo].[Orders] WHERE EmployeeID = 4 OR EmployeeI
     
     <item>
       <title>【.NET】打造 Blazor ToDoList</title>
-      <link>https://fakestandard.github.io/post/dotnet-1-blazor/</link>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-1-blazor/</link>
       <pubDate>Sun, 28 Mar 2021 21:47:49 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/dotnet-1-blazor/</guid>
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-1-blazor/</guid>
       <description>Prerequisites .NET 5.0 SDK 或之後的版本
 Start 使用 VS 2019 建立 Blazor
 建立新專案 選擇【Blazor 應用程式】專案
@@ -193,10 +193,10 @@ Start 使用 VS 2019 建立 Blazor
     
     <item>
       <title>【Windows】如何改變命令提示字元(cmd)視窗預設大小</title>
-      <link>https://fakestandard.github.io/post/windows-4-cmdadjustmentdefaultsize/</link>
+      <link>https://fakestandard.github.io/post/windows/windows-4-cmdadjustmentdefaultsize/</link>
       <pubDate>Sat, 27 Mar 2021 21:56:15 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/windows-4-cmdadjustmentdefaultsize/</guid>
+      <guid>https://fakestandard.github.io/post/windows/windows-4-cmdadjustmentdefaultsize/</guid>
       <description>Issue 常常在使用命令提示字元時，發現視窗大小總是不如我意，原本看順眼的視窗大小，不知道為何會跑掉？視窗太大或太小對我來說的干擾不高，比較麻煩的是每次打開都變成寬度超長的長方形，在下達指令時心裡總是有種不舒服。讓我來改變一下作業系統對命令提示字元預設的視窗大小吧！
 Solution Step1 開啟 cmd.ext，對左上視窗名稱【命令提示字元】左邊的圖標點一下開啟選單，或是右鍵也可以開啟選單，選擇【預設值】
 Step2 切換到【版面配置】頁簽，找到【視窗大小】的控制版（panel），這邊就可以直接對寬度與高度做調整，甚至還有其他控制版的數據可供設定。
@@ -205,10 +205,10 @@ Note 【OS】Win10</description>
     
     <item>
       <title>【Windows】分享本地硬碟供遠端使用</title>
-      <link>https://fakestandard.github.io/post/windows-3-remotedesktopconnection-sharedisk/</link>
+      <link>https://fakestandard.github.io/post/windows/windows-3-remotedesktopconnection-sharedisk/</link>
       <pubDate>Fri, 26 Mar 2021 16:45:48 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/windows-3-remotedesktopconnection-sharedisk/</guid>
+      <guid>https://fakestandard.github.io/post/windows/windows-3-remotedesktopconnection-sharedisk/</guid>
       <description>Issue 某次使用遠端桌面時想把 .bak 複製到本地機器，熱鍵 Ctrl + C &amp;amp; Ctrl + V 後跑到一半就不跑了，天真以為這容量不大就可以用【複製/貼上】功能，殊不知有正統的作法。
 Solution 當本地和遠端想要分享檔案時，最好使用 Share Disk，將本地硬碟 Share 給遠端使用，此時遠端就可以存取本地的硬碟。
 Step1 開啟顯示選項，切換到【本機資源】頁簽，在【本機裝置和資源】 panel 按下【其他】
@@ -219,10 +219,10 @@ Note OK. 如此一來就可以直接在遠端將資源儲存到本地硬碟，�
     
     <item>
       <title>【Windows】遠端桌面連線無法複製貼上？</title>
-      <link>https://fakestandard.github.io/post/windows-2-remotedesktopconnection-rdpclip/</link>
+      <link>https://fakestandard.github.io/post/windows/windows-2-remotedesktopconnection-rdpclip/</link>
       <pubDate>Thu, 25 Mar 2021 16:13:46 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/windows-2-remotedesktopconnection-rdpclip/</guid>
+      <guid>https://fakestandard.github.io/post/windows/windows-2-remotedesktopconnection-rdpclip/</guid>
       <description>Issue 最近在 Win10 上使用遠端桌面連線時，需要在本地和遠端進行複製 &amp;amp; 貼上動作，但此功能忽然失效？不論是快捷鍵或介面操作，就是無法使用。
 Solution Step1 檢查剪貼簿功能是否有開啟
 【傳送門】【Windows】開啟遠端桌面連線剪貼簿功能
@@ -233,10 +233,10 @@ Note 那麼為何 File Copy 會當掉？
     
     <item>
       <title>【Windows】開啟遠端桌面連線剪貼簿/印表機功能</title>
-      <link>https://fakestandard.github.io/post/windows-1-remotedesktopconnection-rdp/</link>
+      <link>https://fakestandard.github.io/post/windows/windows-1-remotedesktopconnection-rdp/</link>
       <pubDate>Wed, 24 Mar 2021 20:25:01 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/windows-1-remotedesktopconnection-rdp/</guid>
+      <guid>https://fakestandard.github.io/post/windows/windows-1-remotedesktopconnection-rdp/</guid>
       <description>Issue  一般操作電腦複製/貼上功能總少不了，當使用本地機器遠端到其他機器也想使用該功能時，發現不能用？ 當遠端桌面連線想共用本機的印表機資源時，該怎麼辦？  Solution 開啟遠端桌面連線並展開顯示選項，切換到【本機資源】頁簽，在本機和裝置資源的 panel 將欲操作的【印表機】或【剪貼簿】勾選即可
 Note 假設剪貼簿已經開啟，遠端依然無法使用複製/貼上功能？
 【傳送門】【Windows】遠端桌面連線無法複製貼上？</description>
@@ -258,10 +258,10 @@ Git client 先為裝置安裝 git CLI，再從下列選擇一種方式來使用 
     
     <item>
       <title>【Life Trip】北投享溫泉/石牌老牌肉丸</title>
-      <link>https://fakestandard.github.io/post/lifetrip-1-xinbei-beitou/</link>
+      <link>https://fakestandard.github.io/post/lifetrip/lifetrip-1-xinbei-beitou/</link>
       <pubDate>Sun, 21 Mar 2021 14:04:26 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/lifetrip-1-xinbei-beitou/</guid>
+      <guid>https://fakestandard.github.io/post/lifetrip/lifetrip-1-xinbei-beitou/</guid>
       <description>【紀錄 2021/3/20】
 美好的禮拜六夜晚，最適合小酌一杯再搭配一部電影，結果 W 來電表示想去北投泡溫泉。
 這裡穿插一個小故事，上回去新竹露營回程時找 W 去泡溫泉，毫不猶豫地拒絕我，這次主動提議說要去，理由是溫泉就是要晚上泡，下午泡沒感覺，我也是醉了～

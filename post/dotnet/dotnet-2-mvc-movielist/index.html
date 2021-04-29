@@ -1,0 +1,957 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>How can I help - 【.NET】適合初心者的 .NET Core MVC 實作 </title>
+    
+    
+    <meta content=".NET, MVC, Web" name="keywords">
+    
+    <meta content="How can I help - 此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解如何建立 Web 應用程式、新增及 Scaffold 模型、使用資料庫、資料的 CRUD、新增搜尋和驗證，最後會完成一個有關電影清單的應用程式。
+UI 的介紹會以 IDE 為主，除 UI 外也會介紹 dotnet 指令。
+代碼部分已上傳到 GitHub
+Start  建立 Web app 新增控制器（Controller） 新增檢視器（View）auto 新增模型（Model） 新增 NuGet 套件 建立 DbContext 新增 ConnectionString 使用 Scaffold 進行初始移轉（Initial Migration） 植入資料以初始資料庫 使用資料註釋 Data Annotations 新增搜尋引擎 新增資料驗證 使用 Bootstrap 增強外觀效果  建立 Web app 提供兩種方法，一種透過 Visual Studio IDE，一種是使用 Command shell 操作，兩種皆可達相同結果。
+Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="/layui/css/layui.css">
+    <link rel="stylesheet" href="/self/css/default.css">
+    <script src=" /layui/layui.js"></script>
+
+    <link rel="stylesheet" async href="/self/css/markdown.min.css">
+    <link rel="stylesheet" async href="/self/css/gallery.css">
+    
+    
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
+
+<body>
+    
+    <header class="layui-header layui-bg-cyan">
+
+    
+    
+    <a class="nav-self-logo" href="/">
+        How can I help
+    </a>
+
+    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
+        
+        
+        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
+        
+
+        
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/hugo/">Hugo</a></li>
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/algorithm/">Algorithm</a></li>
+            
+                <li class="layui-nav-item" id="nav_big"><a href="/netcore/">.NET Core</a></li>
+            
+        
+
+        
+        <li class="layui-nav-item" id="nav_small">
+            <a href="javascript:;">
+                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
+            </a>
+
+            <dl class="layui-nav-child">
+                
+                <dd><a href="/post/">Posts</a></dd>
+                
+
+                
+                    
+                        <dd><a href="/hugo/">Hugo</a></dd>
+                    
+                        <dd><a href="/algorithm/">Algorithm</a></dd>
+                    
+                        <dd><a href="/netcore/">.NET Core</a></dd>
+                    
+                
+            </dl>
+        </li>
+    </ul>
+</header>
+
+<script>
+layui.use('element', function(){
+  var element = layui.element;
+});
+</script>
+
+        <div id="content" style="min-height:80%">
+<div class="layui-container" style="margin-bottom: 10px">
+    
+
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md8 layui-col-sm12 layui-col-xs12">
+            <div class="layui-card single-card">
+                <br />
+                <blockquote class="self-elem-quote self-elem-quote-bg-green markdown-body single-title" >
+                    <h1>【.NET】適合初心者的 .NET Core MVC 實作</h1>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-10</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/.net/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
+        </a>
+    
+        <a href="/categories/web/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Web</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/.net/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
+        </a>
+    
+        <a href="/tags/mvc/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">MVC</span>
+        </a>
+    
+    
+</h3>
+
+                </blockquote>
+                <div class="layui-card-body markdown-body single-content">
+                    <p>此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解<strong>如何建立 Web 應用程式</strong>、<strong>新增及 Scaffold 模型</strong>、<strong>使用資料庫</strong>、<strong>資料的 CRUD</strong>、<strong>新增搜尋和驗證</strong>，最後會完成一個有關電影清單的應用程式。</p>
+<p>UI 的介紹會以 IDE 為主，除 UI 外也會介紹 dotnet 指令。</p>
+<p>代碼部分已上傳到 <a href="https://github.com/FakeStandard/CoreMVCMovieList">GitHub</a></p>
+<h1 id="start">Start</h1>
+<ul>
+<li><a href="#%E5%BB%BA%E7%AB%8B-web-app">建立 Web app</a></li>
+<li><a href="#%E6%96%B0%E5%A2%9E%E6%8E%A7%E5%88%B6%E5%99%A8controller">新增控制器（Controller）</a></li>
+<li><a href="#%E6%96%B0%E5%A2%9E%E6%AA%A2%E8%A6%96%E5%99%A8view">新增檢視器（View）</a>auto</li>
+<li><a href="#%E6%96%B0%E5%A2%9E%E6%A8%A1%E5%9E%8Bmodel">新增模型（Model）</a></li>
+<li><a href="#%E6%96%B0%E5%A2%9E-nuget-%E5%A5%97%E4%BB%B6">新增 NuGet 套件</a></li>
+<li><a href="#%E5%BB%BA%E7%AB%8B-dbcontext">建立 DbContext</a></li>
+<li><a href="#%E6%96%B0%E5%A2%9E-connectionstring">新增 ConnectionString</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-scaffold">使用 Scaffold</a></li>
+<li><a href="#%E9%80%B2%E8%A1%8C%E5%88%9D%E5%A7%8B%E7%A7%BB%E8%BD%89initial-migration">進行初始移轉（Initial Migration）</a></li>
+<li><a href="#%E6%A4%8D%E5%85%A5%E8%B3%87%E6%96%99%E4%BB%A5%E5%88%9D%E5%A7%8B%E8%B3%87%E6%96%99%E5%BA%AB">植入資料以初始資料庫</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E8%B3%87%E6%96%99%E8%A8%BB%E9%87%8B-data-annotations">使用資料註釋 Data Annotations</a></li>
+<li><a href="#%E6%96%B0%E5%A2%9E%E6%90%9C%E5%B0%8B%E5%BC%95%E6%93%8E">新增搜尋引擎</a></li>
+<li><a href="#%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99%E9%A9%97%E8%AD%89">新增資料驗證</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-bootstrap-%E5%A2%9E%E5%BC%B7%E5%A4%96%E8%A7%80%E6%95%88%E6%9E%9C">使用 Bootstrap 增強外觀效果</a></li>
+</ul>
+<h2 id="建立-web-app">建立 Web app</h2>
+<p>提供兩種方法，一種透過 Visual Studio IDE，一種是使用 Command shell 操作，兩種皆可達相同結果。</p>
+<h3 id="visual-studio-ide">Visual Studio IDE</h3>
+<p>建立 【ASP.NET Core Web 應用程式】</p>
+<p><img src="/images/NetCore_MVC/MVCMovie001.png" alt="001"></p>
+<p>選擇 【ASP.NET Core Web 應用程式(Model-View-Controller)】<br>
+下拉選單選擇 <strong>.Net Core</strong> 和 <strong>ASP.NET Core 5.0</strong></p>
+<p><img src="/images/NetCore_MVC/MVCMovie002.png" alt="002"></p>
+<p>執行 <code>Ctrl + F5</code> 啟動 IIS Express 以執行應用程式，並且不執行偵錯。不啟用偵錯工作的好處是可隨時變更程式碼並且隨時儲存，當程式碼變更可重新整理瀏覽器快速查看。</p>
+<p>觀察瀏覽器網址列顯示 <code>localhost:{port}</code>，本機電腦的 hostname 為 <code>localhost</code>，<code>{port}</code> 是當 Visual Studio 建立 Web project 時，會自動分配一個隨機通訊埠號給網頁伺服器。</p>
+<h3 id="command-shell">Command Shell</h3>
+<p>開啟終端機或 VS Code 終端機，切換到欲新增專案的目錄</p>
+<p>在當前目錄建立新的 ASP.NET Core MVC 專案</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet new mvc -o MvcMovie
+</code></pre></div><p>如果是使用 VS Code，下列指令可在 VS Code 直接載入 <code>MvcMovie.csproj</code> 專案檔</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ code -r MvcMovie
+</code></pre></div><p>信任 Https 開發憑證</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet dev-certs https --trust
+</code></pre></div><p>接著同上述執行 <code>Ctrl + F5</code> 啟動應用程式，詳細內容請往回參考。</p>
+<h2 id="新增控制器controller">新增控制器（Controller）</h2>
+<p>在方案總管中，對 Controllers 資料夾執行右鍵→選擇加入→控制器。</p>
+<p><img src="/images/NetCore_MVC/MVCMovie003.png" alt="003"></p>
+<p>選擇【MVC 控制器 - 空白】</p>
+<p><img src="/images/NetCore_MVC/MVCMovie004.png" alt="004"></p>
+<p>將控制器名稱更改為 <code>HelloWorldController.cs</code>，並且新增。</p>
+<p>此時啟動應用程式瀏覽 <code>https://localhost:{Port}/HelloWorld/</code> 會返回錯誤，因為我們還沒建立檢視器（View）。</p>
+<h2 id="新增檢視器view">新增檢視器（View）</h2>
+<p>建立檢視器方法有兩種，一種是從方案總管中建立，一種是快速建立。筆者推薦使用快速建立。</p>
+<h3 id="方案總管">方案總管</h3>
+<p>對 Views 資料夾執行右鍵→加入→資料夾，該資料夾名稱命名為欲建立 View 的控制器名稱，這邊將它命名為 <code>HelloWorld</code>。</p>
+<p>對新增的 HelloWorld 資料夾，執行右鍵→加入→檢視，選擇 <strong>Razor 檢視 - 空白</strong>。</p>
+<p>View 的名稱應命名為控制器之動作方法名稱，與動作方法與之對應。開啟 <code>HelloWorldController.cs</code> 可以看見預設建立的 <code>Index()</code> 動作方法，該方法就是這次要建立檢視器的名稱 <code>Index.cshtml</code>。</p>
+<p><img src="/images/NetCore_MVC/MVCMovie005.png" alt="005"></p>
+<h3 id="快速建立">快速建立</h3>
+<p>開啟 <code>HelloWorldControll.cs</code>，在 <code>Index()</code> 方法上執行右鍵，選擇新增檢視。接著就與上述建立方法相同，選擇 <strong>Razor 檢視 - 空白</strong>，建立名為 <code>Index.cshtml</code> 檢視器。</p>
+<p><img src="/images/NetCore_MVC/MVCMovie006.png" alt="006"></p>
+<h3 id="變更檢視及版面配置">變更檢視及版面配置</h3>
+<p>打開剛剛建立的 View 修改代碼以變更呈現內容</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--index.cshtml--&gt;</span>
+@{
+    ViewData[&#34;Title&#34;] = &#34;Index&#34;;
+}
+
+&lt;<span style="color:#f92672">h2</span>&gt;Index&lt;/<span style="color:#f92672">h2</span>&gt;
+
+&lt;<span style="color:#f92672">p</span>&gt;Hello from our View Template!&lt;/<span style="color:#f92672">p</span>&gt;
+</code></pre></div><p>在版面配置中添加 HelloWorld Controller 的導航配置，開啟 <code>Views/Shared/_Layout.cshtml</code> 找到配置導航的位置添加以下代碼</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-collapse collapse d-sm-inline-flex justify-content-between&#34;</span>&gt;
+    &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-nav flex-grow-1&#34;</span>&gt;
+        
+        ...
+
+        <span style="color:#75715e">&lt;!--要添加的代碼--&gt;</span>
+        &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;
+            &lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link text-dark&#34;</span> <span style="color:#a6e22e">asp-area</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">asp-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;HelloWorld&#34;</span> <span style="color:#a6e22e">asp-action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Index&#34;</span>&gt;HelloIndex&lt;/<span style="color:#f92672">a</span>&gt;
+        &lt;/<span style="color:#f92672">li</span>&gt;
+        <span style="color:#75715e">&lt;!--End--&gt;</span>
+
+        <span style="color:#75715e">&lt;!--先添加 Movies，後續在新增 Movies Controller--&gt;</span>
+        &lt;<span style="color:#f92672">li</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-item&#34;</span>&gt;
+            &lt;<span style="color:#f92672">a</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-link text-dark&#34;</span> <span style="color:#a6e22e">asp-area</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">asp-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Movies&#34;</span> <span style="color:#a6e22e">asp-action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Index&#34;</span>&gt;Movies&lt;/<span style="color:#f92672">a</span>&gt;
+        &lt;/<span style="color:#f92672">li</span>&gt;
+        <span style="color:#75715e">&lt;!--End--&gt;</span>
+    &lt;/<span style="color:#f92672">ul</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>效果</p>
+<p><img src="/images/NetCore_MVC/MVCMovie007.png" alt="007"></p>
+<h2 id="新增模型model">新增模型（Model）</h2>
+<p>模型以實際層面來說即是類別，建立模型實際動作就是建立一個類別，將建立的類別作為 Model 使用。</p>
+<p>Entity Framework Core（EF Core） 是一種<strong>物件關聯式架構</strong>（Object-relational mapping, ORM），在撰寫資料存取的代碼時，透過 ORM 可簡化這些代碼。所以你可以將類別與 EF Core 搭配使用以操作資料庫。</p>
+<p>這些自行建立的類別被稱為 <strong>POCO</strong>（Plain Old CLR Objects），因為它們只定義儲存在資料庫中的資料屬性，對 EF Core 不具有任何相依性。</p>
+<h3 id="建立類別">建立類別</h3>
+<p>在 Models 資料夾執行右鍵→選擇加入→類別，將類別命名為 <code>Movie.cs</code>，在類別內添加下列代碼</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">using</span> System;
+<span style="color:#66d9ef">using</span> System.ComponentModel.DataAnnotations;
+
+<span style="color:#66d9ef">namespace</span> CoreMVCMovieList.Models
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Movie</span>
+    {
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Id { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Title { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">        [DataType(DataType.Date)]</span>
+        <span style="color:#66d9ef">public</span> DateTime ReleaseDate { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Genre { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">decimal</span> Price { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    }
+}
+</code></pre></div><h2 id="新增-nuget-套件">新增 NuGet 套件</h2>
+<p>在 ASP.NET Core 中欲使用 Entity Framework Core 需安裝 <code>Microsfot.EntityFrameworkCore</code> Package，使用下列指令來安裝套件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet add package Microsoft.EntityFrameworkCore
+</code></pre></div><p>EF 通常都是搭配 SQL Server，開啟<strong>套件管理器主控台</strong>，執行下列指令，以添加 EF Core SQL Server Provider</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Install-Package Microsoft.EntityFrameworkCore.SqlServer
+</code></pre></div><h2 id="建立-dbcontext">建立 DbContext</h2>
+<p><code>DbContext</code> 類別為 EF Core 與資料庫的溝通橋樑，在專案下建立 <code>MvcMovieContext.cs</code> 類別，並繼承 <code>DbContext</code> 類別以定義與資料庫的溝通行為，同時建立 <code>DbSet&lt;Movie&gt;</code>　實體集（Entity Set）。</p>
+<p>在 Entity Framework 下，通常實體集（Entity Set）對應於資料表，實體（Entity）對應於資料表中的資料列，EF Core 會自動幫我們轉換實體集與實體的部分。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">using</span> CoreMVCMovieList.Models;
+<span style="color:#66d9ef">using</span> Microsoft.EntityFrameworkCore;
+
+<span style="color:#66d9ef">namespace</span> CoreMVCMovieList
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MvcMovieContext</span> : DbContext
+    {
+        <span style="color:#66d9ef">public</span> MvcMovieContext(DbContextOptions&lt;MvcMovieContext&gt; options)
+            : <span style="color:#66d9ef">base</span>(options) { }
+
+        <span style="color:#66d9ef">public</span> DbSet&lt;Movie&gt; Movie { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    }
+}
+</code></pre></div><h2 id="新增-connectionstring">新增 ConnectionString</h2>
+<p>以往應用程式有 <code>app.config</code> 可以設定，Web 則有 <code>web.config</code> 可以設置連線字串，在 .Net Core 下 <code>.config</code> 配置文件已經消失，改成使用 JSON 格式的 <code>appsettings.json</code> 配置相關設定。</p>
+<p>添加 ConnectionString 節點的代碼</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+  <span style="color:#f92672">&#34;Logging&#34;</span>: {
+    <span style="color:#f92672">&#34;LogLevel&#34;</span>: {
+      <span style="color:#f92672">&#34;Default&#34;</span>: <span style="color:#e6db74">&#34;Information&#34;</span>,
+      <span style="color:#f92672">&#34;Microsoft&#34;</span>: <span style="color:#e6db74">&#34;Warning&#34;</span>,
+      <span style="color:#f92672">&#34;Microsoft.Hosting.Lifetime&#34;</span>: <span style="color:#e6db74">&#34;Information&#34;</span>
+    }
+  },
+  <span style="color:#f92672">&#34;AllowedHosts&#34;</span>: <span style="color:#e6db74">&#34;*&#34;</span>,
+  <span style="color:#f92672">&#34;ConnectionStrings&#34;</span>: {
+    <span style="color:#f92672">&#34;MvcMovieContext&#34;</span>: <span style="color:#e6db74">&#34;Server=(localdb)\\mssqllocaldb;Database=MvcMovieContext;Trusted_Connection=True;MultipleActiveResultSets=true&#34;</span>
+  }
+}
+</code></pre></div><h2 id="註冊-dbcontext">註冊 DbContext</h2>
+<p>ASP.NET Core 建構於相依性注入（Dependency Injection, DI）概念，所有服務必須在應用程式啟動期間向 DI 進行註冊，透過建構函數提供服務給需要服務的元件（如 Razor Page），開啟 <code>Startup.cs</code> 向 DI 容器註冊 DbContext。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 添加引用
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> MvcMovie.Data;
+<span style="color:#66d9ef">using</span> Microsoft.EntityFrameworkCore;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services)
+{
+    services.AddControllersWithViews();
+
+    <span style="color:#75715e">// DI 注入
+</span><span style="color:#75715e"></span>    services.AddDbContext&lt;MvcMovieContext&gt;(options =&gt; 
+            options.UseSqlServer(Configuration.GetConnectionString(<span style="color:#e6db74">&#34;MvcMovieContext&#34;</span>)));
+}
+</code></pre></div><p>在 DbContextOptions 物件上調用方法將連線字串傳遞到 context，而在目前開發中，ASP.NET Core Configuration System 會從 <code>appsetting.json</code> 來取得連線字串。</p>
+<h2 id="使用-scaffold">使用 Scaffold</h2>
+<p>在方案總管對 Controllers 資料夾執行右鍵→加入→選擇 <strong>新增 Scaffold 項目</strong></p>
+<p><img src="/images/NetCore_MVC/MVCMovie008.png" alt="008"></p>
+<p>選擇 <strong>使用 Entity Framework 執行檢視的 MVC 控制器</strong></p>
+<p><img src="/images/NetCore_MVC/MVCMovie009.png" alt="009"></p>
+<p>將<strong>模型類別</strong>與<strong>資料內容類別</strong> 調整為與下圖相同選項，並勾選檢視的三個複選框，控制器名稱為預設。</p>
+<p><img src="/images/NetCore_MVC/MVCMovie010.png" alt="010"></p>
+<p>此時已添加 <code>MoviesController.cs</code> 該控制下項已經添加所有 CRUD 等動作方法（Action），但目前未能使用該頁面，因為資料庫還不存在，下一步我們將會建立資料庫。</p>
+<blockquote>
+<p><strong>如果使用 Scaffold 建立失敗</strong></p>
+<p>嘗試到 NuGet 安裝 <strong>Microsoft.VisualStudio.Web.CodeGeneration.Utils</strong></p>
+</blockquote>
+<h2 id="進行初始移轉initial-migration">進行初始移轉（Initial Migration）</h2>
+<p>使用 EF Core 的遷移功能來建立資料庫，Migration 可建立和更新與資料模型相符的資料庫。在套件管理器主控台輸入下列命令</p>
+<p>產生 <code>/{timestamp}_InitialCreate.cs</code> 遷移檔案，因為是第一次移轉，所以產生的類別會以 <code>MvcMovieContext</code> 類別的資料庫結構為基礎。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Add-Migration InitialCreate
+</code></pre></div><p>此命令會執行 <code>Migrations/{time-stamp}_InitialCreate.cs</code> 檔案中的 <code>Up</code> 方法，以建立資料庫。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Update-Database
+</code></pre></div><p>此時可以啟動應用程式操作新增、刪除、修改等方法，可以發現在執行 CRUD 時都會使用到資料庫，因為在建立 <code>MoviesController.cs</code> 時，已經添加下列的建構函式，然而先前在 DI 容器中已註冊 <code>MvcMovieContext</code>，所以在 Controller 的建構子就可透過 DI 來取得 Context 實例。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> MvcMovieContext _context;
+
+<span style="color:#66d9ef">public</span> MoviesController(MvcMovieContext context)
+{
+    _context = context;
+}
+</code></pre></div><h2 id="植入資料以初始資料庫">植入資料以初始資料庫</h2>
+<p>在 Models 資料夾下建立 <code>SeedData.cs</code> 類別，在類別內添加下列代碼</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SeedData</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Initialize(IServiceProvider serviceProvider)
+    {
+        <span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> context = <span style="color:#66d9ef">new</span> MvcMovieContext(
+            serviceProvider.GetRequiredService&lt;
+                DbContextOptions&lt;MvcMovieContext&gt;&gt;()))
+        {
+            <span style="color:#75715e">// Look for any movies.
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (context.Movie.Any())
+            {
+                <span style="color:#66d9ef">return</span>;   <span style="color:#75715e">// DB has been seeded
+</span><span style="color:#75715e"></span>            }
+
+            context.Movie.AddRange(
+                <span style="color:#66d9ef">new</span> Movie
+                {
+                    Title = <span style="color:#e6db74">&#34;When Harry Met Sally&#34;</span>,
+                    ReleaseDate = DateTime.Parse(<span style="color:#e6db74">&#34;1989-2-12&#34;</span>),
+                    Genre = <span style="color:#e6db74">&#34;Romantic Comedy&#34;</span>,
+                    Price = <span style="color:#ae81ff">7.99</span>M
+                },
+
+                <span style="color:#66d9ef">new</span> Movie
+                {
+                    Title = <span style="color:#e6db74">&#34;Ghostbusters &#34;</span>,
+                    ReleaseDate = DateTime.Parse(<span style="color:#e6db74">&#34;1984-3-13&#34;</span>),
+                    Genre = <span style="color:#e6db74">&#34;Comedy&#34;</span>,
+                    Price = <span style="color:#ae81ff">8.99</span>M
+                },
+
+                <span style="color:#66d9ef">new</span> Movie
+                {
+                    Title = <span style="color:#e6db74">&#34;Ghostbusters 2&#34;</span>,
+                    ReleaseDate = DateTime.Parse(<span style="color:#e6db74">&#34;1986-2-23&#34;</span>),
+                    Genre = <span style="color:#e6db74">&#34;Comedy&#34;</span>,
+                    Price = <span style="color:#ae81ff">9.99</span>M
+                },
+
+                <span style="color:#66d9ef">new</span> Movie
+                {
+                    Title = <span style="color:#e6db74">&#34;Rio Bravo&#34;</span>,
+                    ReleaseDate = DateTime.Parse(<span style="color:#e6db74">&#34;1959-4-15&#34;</span>),
+                    Genre = <span style="color:#e6db74">&#34;Western&#34;</span>,
+                    Price = <span style="color:#ae81ff">3.99</span>M
+                }
+            );
+            context.SaveChanges();
+        }
+    }
+}
+</code></pre></div><p>其中這段代表植入資料前，先判斷資料庫中是否已經資料，沒有資料才初始化資料，有的話直接返回，不新增任何資料。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// Look for any movies.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (context.Movie.Any())
+{
+    <span style="color:#75715e">// DB has been seeded
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span>;
+}
+</code></pre></div><p>開啟 <code>Program.cs</code> 新增初始設定，將 Main 方法內的原始代碼替換成下列代碼</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+    {
+        <span style="color:#75715e">// CreateHostBuilder(args).Build().Run();
+</span><span style="color:#75715e"></span>
+        <span style="color:#66d9ef">var</span> host = CreateHostBuilder(args).Build();
+
+        <span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> scope = host.Services.CreateScope())
+        {
+            <span style="color:#66d9ef">var</span> services = scope.ServiceProvider;
+
+            <span style="color:#66d9ef">try</span>
+            {
+                SeedData.Initialize(services);
+            }
+            <span style="color:#66d9ef">catch</span> (Exception ex)
+            {
+                <span style="color:#66d9ef">var</span> logger = services.GetRequiredService&lt;ILogger&lt;Program&gt;&gt;();
+                logger.LogError(ex, <span style="color:#e6db74">&#34;An error occurred seeding the DB.&#34;</span>);
+            }
+        }
+
+        host.Run();
+
+    }
+
+    ...
+}
+</code></pre></div><p>啟動應用程式，查看上述的設定，資料庫在有資料的情況下，不做新增資料的動作，將所有資料刪除使得資料庫資料為零，這時再啟動應用程式會發現，資料庫會新增預設的資料。</p>
+<h2 id="使用資料註釋-data-annotations">使用資料註釋 Data Annotations</h2>
+<p>目前清單的標題列上顯示的是 Model 的名稱，使用 Data Annotations 來變更顯示名稱。開啟 <code>Models/Movie.cs</code> 替換成下列代碼</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 需引用的命名空間
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.ComponentModel.DataAnnotations;
+<span style="color:#66d9ef">using</span> System.ComponentModel.DataAnnotations.Schema;
+
+...
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Movie</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Id { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [Display(Name = &#34;電影名稱&#34;)]</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Title { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [Display(Name = &#34;放映日期&#34;)]</span>
+<span style="color:#a6e22e">    [DataType(DataType.Date)]</span>
+    <span style="color:#66d9ef">public</span> DateTime ReleaseDate { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [Display(Name = &#34;類型&#34;)]</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Genre { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [Display(Name = &#34;價格&#34;)]</span>
+<span style="color:#a6e22e">    [Column(TypeName = &#34;decimal(18, 2)&#34;)]</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">decimal</span> Price { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+}
+</code></pre></div><p>結果如下</p>
+<p><img src="/images/NetCore_MVC/MVCMovie011.png" alt="011"></p>
+<h2 id="新增搜尋引擎">新增搜尋引擎</h2>
+<p>目前的清單沒有搜尋引擎，當資料量一多，一頁頁的翻找會很耗時，接下來我們要新增一個搜尋引擎，讓使用者可以搜尋「電影名稱」、「類型」以快速查找。</p>
+<h3 id="搜尋電影名稱">搜尋電影名稱</h3>
+<p>開啟 <code>Vies/Movies/Index.cshtml</code> 添加下列 <code>&lt;form&gt;...&lt;/form&gt;</code> 代碼</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span>&gt;
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">asp-action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Create&#34;</span>&gt;Create New&lt;/<span style="color:#f92672">a</span>&gt;
+&lt;/<span style="color:#f92672">p</span>&gt;
+
+<span style="color:#75715e">&lt;!--要添加的代碼--&gt;</span>
+&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">asp-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Movies&#34;</span> <span style="color:#a6e22e">asp-action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Index&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;get&#34;</span>&gt;
+    &lt;<span style="color:#f92672">p</span>&gt;
+        電影名稱: &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SearchString&#34;</span> /&gt;
+        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Filter&#34;</span> /&gt;
+    &lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">form</span>&gt;
+<span style="color:#75715e">&lt;!--End--&gt;</span>
+
+&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table&#34;</span>&gt;
+    &lt;<span style="color:#f92672">thead</span>&gt;
+    ...
+</code></pre></div><p>開啟 <code>MoviesController.cs</code> 變更 <code>Index</code> 動作方法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#a6e22e">[HttpGet]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;IActionResult&gt; Index(<span style="color:#66d9ef">string</span> searchString)
+{
+    <span style="color:#75715e">// LINQ 查詢
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> movies = <span style="color:#66d9ef">from</span> m <span style="color:#66d9ef">in</span> _context.Movie
+                    <span style="color:#66d9ef">select</span> m;
+
+    <span style="color:#66d9ef">if</span> (!String.IsNullOrEmpty(searchString))
+    {
+        movies = movies.Where(k =&gt; k.Title.Contains(searchString));
+    }
+
+    <span style="color:#66d9ef">return</span> View(<span style="color:#66d9ef">await</span> movies.ToListAsync());
+}
+</code></pre></div><p>效果</p>
+<p><img src="/images/NetCore_MVC/MVCMovie012.png" alt="012"></p>
+<h3 id="搜尋類型">搜尋類型</h3>
+<p>搜尋類型要以下拉選單的方式呈現，因此先新增 <code>ViewModels</code> 資料夾，再資料夾下新增 <code>MovieGenerViewModel.cs</code> 類別</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MovieGenerViewModel</span>
+{
+    <span style="color:#66d9ef">public</span> List&lt;Movie&gt; Movies { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> SelectList Genres { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> MovieGenre { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> SearchString { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+}
+</code></pre></div><p>進一步修改剛剛的 <code>MoviesController.cs</code> 的 <code>Index</code> 方法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;IActionResult&gt; Index(<span style="color:#66d9ef">string</span> movieGenre, <span style="color:#66d9ef">string</span> searchString)
+{
+    <span style="color:#66d9ef">var</span> movies = <span style="color:#66d9ef">from</span> m <span style="color:#66d9ef">in</span> _context.Movie
+                    <span style="color:#66d9ef">select</span> m;
+
+    <span style="color:#66d9ef">if</span> (!String.IsNullOrEmpty(searchString))
+    {
+        movies = movies.Where(k =&gt; k.Title.Contains(searchString));
+    }
+
+    <span style="color:#66d9ef">if</span> (!<span style="color:#66d9ef">string</span>.IsNullOrEmpty(movieGenre))
+    {
+        movies = movies.Where(k =&gt; k.Genre == movieGenre);
+    }
+
+    <span style="color:#75715e">// LINQ 取類型資料
+</span><span style="color:#75715e"></span>    IQueryable&lt;<span style="color:#66d9ef">string</span>&gt; genreQuery = <span style="color:#66d9ef">from</span> m <span style="color:#66d9ef">in</span> _context.Movie
+                                    <span style="color:#66d9ef">orderby</span> m.Genre
+                                    <span style="color:#66d9ef">select</span> m.Genre;
+
+    <span style="color:#66d9ef">var</span> movieGenreVM = <span style="color:#66d9ef">new</span> MovieGenerViewModel
+    {
+        Genres = <span style="color:#66d9ef">new</span> SelectList(<span style="color:#66d9ef">await</span> genreQuery.Distinct().ToListAsync()),
+        Movies = <span style="color:#66d9ef">await</span> movies.ToListAsync()
+    };
+
+    <span style="color:#66d9ef">return</span> View(movieGenreVM);
+}
+</code></pre></div><p>更新 <code>Views/Movies/Index.cshtml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--將原本傳入的 Model 替換成 MovieGenerViewModel--&gt;</span>
+@model CoreMVCMovieList.ViewModels.MovieGenerViewModel
+
+...
+
+&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">asp-controller</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Movies&#34;</span> <span style="color:#a6e22e">asp-action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Index&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;get&#34;</span>&gt;
+    &lt;<span style="color:#f92672">p</span>&gt;
+        <span style="color:#75715e">&lt;!--添加下拉選單--&gt;</span>
+        &lt;<span style="color:#f92672">select</span> <span style="color:#a6e22e">asp-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;MovieGenre&#34;</span> <span style="color:#a6e22e">asp-items</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Model.Genres&#34;</span>&gt;
+            &lt;<span style="color:#f92672">option</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;All&lt;/<span style="color:#f92672">option</span>&gt;
+        &lt;/<span style="color:#f92672">select</span>&gt;
+        <span style="color:#75715e">&lt;!--End--&gt;</span>
+
+        電影名稱: &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">asp-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;SearchString&#34;</span> /&gt;
+        &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Filter&#34;</span> /&gt;
+    &lt;/<span style="color:#f92672">p</span>&gt;
+&lt;/<span style="color:#f92672">form</span>&gt;
+
+...
+
+&lt;<span style="color:#f92672">thead</span>&gt;
+    &lt;<span style="color:#f92672">tr</span>&gt;
+        &lt;<span style="color:#f92672">th</span>&gt;
+            <span style="color:#75715e">&lt;!--因傳入的 Model 結構不同，所以將原本 model.Title 替換成 model.Movies[0].Title--&gt;</span>
+            @Html.DisplayNameFor(model =&gt; model.Movies[0].Title)
+        &lt;/<span style="color:#f92672">th</span>&gt;
+        &lt;<span style="color:#f92672">th</span>&gt;
+            <span style="color:#75715e">&lt;!--同理--&gt;</span>
+            @Html.DisplayNameFor(model =&gt; model.Movies[0].ReleaseDate)
+        &lt;/<span style="color:#f92672">th</span>&gt;
+        &lt;<span style="color:#f92672">th</span>&gt;
+            <span style="color:#75715e">&lt;!--同理--&gt;</span>
+            @Html.DisplayNameFor(model =&gt; model.Movies[0].Genre)
+        &lt;/<span style="color:#f92672">th</span>&gt;
+        &lt;<span style="color:#f92672">th</span>&gt;
+            <span style="color:#75715e">&lt;!--同理--&gt;</span>
+            @Html.DisplayNameFor(model =&gt; model.Movies[0].Price)
+        &lt;/<span style="color:#f92672">th</span>&gt;
+        &lt;<span style="color:#f92672">th</span>&gt;&lt;/<span style="color:#f92672">th</span>&gt;
+    &lt;/<span style="color:#f92672">tr</span>&gt;
+&lt;/<span style="color:#f92672">thead</span>&gt;
+
+...
+<span style="color:#75715e">&lt;!--同理將要走訪的數組改為 Model.Movies--&gt;</span>
+@foreach (var item in Model.Movies) {
+    &lt;<span style="color:#f92672">tr</span>&gt;
+        &lt;<span style="color:#f92672">td</span>&gt;
+            @Html.DisplayFor(modelItem =&gt; item.Title)
+        &lt;/<span style="color:#f92672">td</span>&gt;
+
+        ...
+    &lt;/<span style="color:#f92672">tr</span>&gt;
+}
+</code></pre></div><p>觀察效果</p>
+<p><img src="/images/NetCore_MVC/MVCMovie013.png" alt="013"></p>
+<h2 id="新增資料驗證">新增資料驗證</h2>
+<p>使用 <code>DataAnnotations</code> Namespace 提供的的驗證屬性，套用到類別或屬性中，開啟 <code>Movie</code> 類別，將 <code>Required</code>、<code>StringLength</code>、<code>RegularExpression</code>、<code>Range</code> 添加到各個屬性上</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Movie</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Id { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [Required]</span>
+<span style="color:#a6e22e">    [StringLength(60, MinimumLength =3)]</span>
+<span style="color:#a6e22e">    [Display(Name = &#34;電影名稱&#34;)]</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Title { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [Display(Name = &#34;放映日期&#34;)]</span>
+<span style="color:#a6e22e">    [DataType(DataType.Date)]</span>
+    <span style="color:#66d9ef">public</span> DateTime ReleaseDate { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [Required]</span>
+<span style="color:#a6e22e">    [RegularExpression(@&#34;^[A-Z]</span>+[a-zA-Z]*<span style="color:#e6db74">$&#34;)]
+</span><span style="color:#e6db74">    [Display(Name = &#34;</span><span style="color:#960050;background-color:#1e0010">類型</span><span style="color:#e6db74">&#34;)]
+</span><span style="color:#e6db74"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Genre { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [Range(1, 100)]</span>
+<span style="color:#a6e22e">    [DataType(DataType.Currency)]</span>
+<span style="color:#a6e22e">    [Display(Name = &#34;價格&#34;)]</span>
+<span style="color:#a6e22e">    [Column(TypeName = &#34;decimal(18, 2)&#34;)]</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">decimal</span> Price { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+}
+</code></pre></div><p>啟動應用程式新增一筆資料，在未填任何資料的情況下按下「新增」按鈕，觀察結果，同樣在編輯頁面若資料不符合驗證規則，會有錯誤提示產生。</p>
+<p><img src="/images/NetCore_MVC/MVCMovie014.png" alt="014"></p>
+<h3 id="使用-bootstrap-增強外觀效果">使用 Bootstrap 增強外觀效果</h3>
+<p>最後一步，由於 .NET Core 已經不會內建樣式，要添加 Bootstrap 等套件需自行到 NuGet 添加，這邊隨手添加一下 Bootstrap 的 Button 及 Table 樣式，使得外觀好看一點。</p>
+<p>完成！</p>
+<p><img src="/images/NetCore_MVC/MVCMovie015.png" alt="015"></p>
+<h1 id="note">Note</h1>
+<p>在 Step by step 過程中，實作的部分很快就能完成，其中有很多原理必須深入研究，待研究有心得再來記錄。</p>
+<h1 id="reference">Reference</h1>
+<p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-5.0&amp;tabs=visual-studio">Part 1 - Get started with ASP.NET Core MVC</a></p>
+<p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/first-mvc-app/adding-controller?view=aspnetcore-5.0&amp;tabs=visual-studio">Part 2 - Add a controller to an ASP.NET Core MVC app</a></p>
+<p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/first-mvc-app/adding-view?view=aspnetcore-5.0&amp;tabs=visual-studio">Part 3 - Add a view to an ASP.NET Core MVC app</a></p>
+<p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/first-mvc-app/adding-model?view=aspnetcore-5.0&amp;tabs=visual-studio">Part 4 - Add a model to an ASP.NET Core MVC app</a></p>
+<p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/first-mvc-app/working-with-sql?view=aspnetcore-5.0&amp;tabs=visual-studio">Part 5 - Work with a database in an ASP.NET Core MVC app</a></p>
+<p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/first-mvc-app/controller-methods-views?view=aspnetcore-5.0">Part 6 - Controller methods and views in ASP.NET Core</a></p>
+<p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/first-mvc-app/search?view=aspnetcore-5.0">Part 7 - Add search to an ASP.NET Core MVC app</a></p>
+<p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/first-mvc-app/new-field?view=aspnetcore-5.0&amp;tabs=visual-studio">Part 8 - Add a new field to an ASP.NET Core MVC app</a></p>
+<p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/first-mvc-app/validation?view=aspnetcore-5.0">Part 9 - Add validation to an ASP.NET Core MVC app</a></p>
+<p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/first-mvc-app/details?view=aspnetcore-5.0">Part 10 - Examine the Details and Delete methods of an ASP.NET Core app</a></p>
+</div>
+            </div>
+        </div>
+
+        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
+            
+            <div class="layui-card single-card">
+                <h2 class="single-title">Relevant Topics</h2>
+                
+                	
+                    <div style="margin-left: 10px;">
+                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                            <a href="/post/dotnet/dotnet-1-blazor/">
+                                <h3 class="">【.NET】打造 Blazor ToDoList</h3>
+                            </a>
+                            
+                            <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-03-28</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/.net/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
+        </a>
+    
+        <a href="/categories/web/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Web</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/.net/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
+        </a>
+    
+        <a href="/tags/blazor/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Blazor</span>
+        </a>
+    
+        <a href="/tags/todolist/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">TodoList</span>
+        </a>
+    
+    
+</h3>
+
+                        </blockquote>
+                    </div>
+                	
+                
+                <br />
+            </div>
+            
+
+            <div class="layui-card single-card">
+                <h2 class="single-title">Recent Posts</h2>
+            
+                
+                <div style="margin-left: 10px;">
+                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                    <a href="/post/dotnet/dotnet-3-npoisimple/">
+                        <h3 class="">【.NET】使用 NPOI 匯出 Excel 的基本應用</h3>
+                    </a>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-28</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/.net/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/.net/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
+        </a>
+    
+        <a href="/tags/npoi/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">NPOI</span>
+        </a>
+    
+        <a href="/tags/c/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
+        </a>
+    
+    
+</h3>
+
+                    </blockquote>
+                </div>
+                
+                <div style="margin-left: 10px;">
+                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                    <a href="/post/csharp/csharp-1-getosinformation/">
+                        <h3 class="">【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊</h3>
+                    </a>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-19</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/c/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/c/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
+        </a>
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/memory/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Memory</span>
+        </a>
+    
+        <a href="/tags/culture/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Culture</span>
+        </a>
+    
+    
+</h3>
+
+                    </blockquote>
+                </div>
+                
+                <div style="margin-left: 10px;">
+                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                    <a href="/post/other-2-incometax/">
+                        <h3 class="">【人森】如何計算個人綜合所得稅？</h3>
+                    </a>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-14</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/other/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Other</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/%e7%b6%9c%e5%90%88%e6%89%80%e5%be%97%e7%a8%85/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">綜合所得稅</span>
+        </a>
+    
+        <a href="/tags/income-tax/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Income Tax</span>
+        </a>
+    
+    
+</h3>
+
+                    </blockquote>
+                </div>
+                
+                <div style="margin-left: 10px;">
+                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                    <a href="/post/windows/windows-7-openwindowsexplorer/">
+                        <h3 class="">【Windows】開啟運行程式的所在資料夾位置</h3>
+                    </a>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-12</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/windows-win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - Win10</span>
+        </a>
+    
+        <a href="/categories/common-sense/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/windows/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
+        </a>
+    
+        <a href="/tags/win10/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
+        </a>
+    
+        <a href="/tags/windows-explorer/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows Explorer</span>
+        </a>
+    
+        <a href="/tags/task-manager/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Task Manager</span>
+        </a>
+    
+    
+</h3>
+
+                    </blockquote>
+                </div>
+                
+                <div style="margin-left: 10px;">
+                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
+                    <a href="/post/dotnet/dotnet-2-mvc-movielist/">
+                        <h3 class="">【.NET】適合初心者的 .NET Core MVC 實作</h3>
+                    </a>
+                    <h3 style="margin-top:10px; margin-bottom:10px"> 
+    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
+    <span>2021-04-10</span>
+
+    
+     
+    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
+    
+
+    
+        <a href="/categories/.net/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
+        </a>
+    
+        <a href="/categories/web/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Web</span>
+        </a>
+    
+
+    
+    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
+    
+
+    
+        <a href="/tags/.net/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
+        </a>
+    
+        <a href="/tags/mvc/">
+            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">MVC</span>
+        </a>
+    
+    
+</h3>
+
+                    </blockquote>
+                </div>
+                
+            
+            <br />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+        </div>
+
+<footer>
+    
+
+    <div class="layui-container">
+        <div class="layui-row">
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
+                <h3> Related Sites </h3>
+            </div>
+        </div>
+        <div class="layui-row">
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/"><p class="footer-url">home</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/about/"><p class="footer-url">About</p></a>
+            </div>
+            
+            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
+                <a href="/categories/"><p class="footer-url">Category</p></a>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+    <div class="layui-container">
+        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
+    </div>
+</footer>
+</body>
+</html>

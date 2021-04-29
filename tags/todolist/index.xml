@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 28 Mar 2021 21:47:49 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/todolist/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【.NET】打造 Blazor ToDoList</title>
-      <link>https://fakestandard.github.io/post/dotnet-1-blazor/</link>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-1-blazor/</link>
       <pubDate>Sun, 28 Mar 2021 21:47:49 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/dotnet-1-blazor/</guid>
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-1-blazor/</guid>
       <description>Prerequisites .NET 5.0 SDK 或之後的版本
 Start 使用 VS 2019 建立 Blazor
 建立新專案 選擇【Blazor 應用程式】專案
