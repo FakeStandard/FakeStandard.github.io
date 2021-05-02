@@ -6,7 +6,16 @@
     <description>Recent content in Categories on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 29 Apr 2021 21:40:22 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Apr 2021 16:09:07 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algorithm</title>
+      <link>https://fakestandard.github.io/categories/algorithm/</link>
+      <pubDate>Fri, 30 Apr 2021 16:09:07 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/categories/algorithm/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Life Trip</title>
       <link>https://fakestandard.github.io/categories/life-trip/</link>
@@ -22,15 +31,6 @@
       <pubDate>Tue, 27 Apr 2021 14:08:05 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/categories/.net/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Algorithm</title>
-      <link>https://fakestandard.github.io/categories/algorithm/</link>
-      <pubDate>Mon, 26 Apr 2021 16:34:39 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/categories/algorithm/</guid>
       <description></description>
     </item>
     
