@@ -1,14 +1,13 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en" dir="auto">
 
-    <title>How can I help - 【Algorithm】經典演算法 </title>
-    
-    
-    <meta content="Algorithm, Classic Algorithm, C#" name="keywords">
-    
-    <meta content="How can I help - 【3/28 閱讀紀錄】
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>【Algorithm】經典演算法 | How can I help</title>
+<meta name="keywords" content="Algorithm, Classic Algorithm, C#" />
+<meta name="description" content="【3/28 閱讀紀錄】
 此篇想記錄一些閱讀的筆記，演算法乃是運算思維的基石之一，藉由紀錄加深一下演算法的概念。
 Start 演算法種類很多，經典的演算法有以下幾種
  分治演算法（Divide and conquer） 疊代演算法（Iterative Algorithm） 遞迴演算法（Recursion Algorithm） 動態規劃演算法（Dynamic Programming Algorithm） 枚舉演算法（Exhaustive Searching） 貪心演算法（Greedy Algorithm） 回溯演算法（Backtracking Algorithm）  分治演算法（Divide and conquer） 分治演算法是一種簡單又重要的演算法，它將複雜的問題逐一拆解成單元較小的問題，問題規模較小則容易求解，最終在合併子問題以得到原問題的解答，在日常生活中也能時時應用到。
@@ -17,138 +16,224 @@ Start 演算法種類很多，經典的演算法有以下幾種
 所以透過分治演算法可將複雜的大問題，拆解成規模小的子問題，雖然子問題的數量多，相對的更易於解決，解決的速度上也相對的快。
 疊代演算法（Iterative Algorithm） 無法使用一次公式就能求解，需透過反覆的運算才能得解的方法稱為疊代演算法，像是透過迴圈去循環重複的程式碼來得到答案。
 舉例：利用 for 迴圈設計 n! 的遞迴程式，n 是透過外部輸入得知，打算 1! ~ n! 所有結果
-// 從外部輸入 n int n = int.Parse(Console.ReadLine()); // 用以計算結果 int sum = 1; // 使用迴圈計算 1! ~ n! for (int i = 1; i &lt;= n; i&#43;&#43;) { for (int j = i; j &gt; 0; j--) { sum = sum * j; } Console." name="description">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    
+// 從外部輸入 n int n = int.Parse(Console.ReadLine()); // 用以計算結果 int sum = 1; // 使用迴圈計算 1! ~ n! for (int i = 1; i &lt;= n; i&#43;&#43;) { for (int j = i; j &gt; 0; j--) { sum = sum * j; } Console.">
+<meta name="author" content="Polar Bear">
+<link rel="canonical" href="https://fakestandard.github.io/algorithm/algorithm-1-classicalgorithm/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.d1b405b7c6bf1b09aebca33eb6e2d8bd070113d119bdfa2715c32f6408f9fbee.css" integrity="sha256-0bQFt8a/GwmuvKM&#43;tuLYvQcBE9EZvfonFcMvZAj5&#43;&#43;4=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://fakestandard.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://fakestandard.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://fakestandard.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://fakestandard.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.81.0" />
+<meta property="og:title" content="【Algorithm】經典演算法" />
+<meta property="og:description" content="【3/28 閱讀紀錄】
+此篇想記錄一些閱讀的筆記，演算法乃是運算思維的基石之一，藉由紀錄加深一下演算法的概念。
+Start 演算法種類很多，經典的演算法有以下幾種
+ 分治演算法（Divide and conquer） 疊代演算法（Iterative Algorithm） 遞迴演算法（Recursion Algorithm） 動態規劃演算法（Dynamic Programming Algorithm） 枚舉演算法（Exhaustive Searching） 貪心演算法（Greedy Algorithm） 回溯演算法（Backtracking Algorithm）  分治演算法（Divide and conquer） 分治演算法是一種簡單又重要的演算法，它將複雜的問題逐一拆解成單元較小的問題，問題規模較小則容易求解，最終在合併子問題以得到原問題的解答，在日常生活中也能時時應用到。
+像是以往在進行團體報告時，假設報告主題的章節共有五個章節，當然不可能讓一個人獨立完成五個章節，這時就可以透過分治法，將各章節逐一拆解成較小單元，每位成員負責一個章節，讓五位成員同時進行，在時間上遠遠勝於一人獨立完成所有章節，且透過分工還可能達到其他效果。
+然而分治演算法還可應用在數字的分類和排序上，舉個例子，手邊有一副順序打亂的撲克牌，現在要將它們復原到起初開封時的排序，依序分類為黑桃、紅心、梅花、方塊，每個分類需從 A-K 逐一排序。此時有兩種做法，第一種為每拿到一張牌，就將它插入到適當的順序中，但缺點是在整理的過程中較繁瑣也較花時間。第二種作法則是應用分治演算法，以不考慮 A-K 順序的情況下，將黑桃分成一堆，紅心分成一堆，以此類推，最終會將黑桃、紅心、梅花、方塊分類出來，此時在逐一將每個分類的 A-K 順序整理好，再將其合併。
+所以透過分治演算法可將複雜的大問題，拆解成規模小的子問題，雖然子問題的數量多，相對的更易於解決，解決的速度上也相對的快。
+疊代演算法（Iterative Algorithm） 無法使用一次公式就能求解，需透過反覆的運算才能得解的方法稱為疊代演算法，像是透過迴圈去循環重複的程式碼來得到答案。
+舉例：利用 for 迴圈設計 n! 的遞迴程式，n 是透過外部輸入得知，打算 1! ~ n! 所有結果
+// 從外部輸入 n int n = int.Parse(Console.ReadLine()); // 用以計算結果 int sum = 1; // 使用迴圈計算 1! ~ n! for (int i = 1; i &lt;= n; i&#43;&#43;) { for (int j = i; j &gt; 0; j--) { sum = sum * j; } Console." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fakestandard.github.io/algorithm/algorithm-1-classicalgorithm/" /><meta property="article:section" content="Algorithm" />
+<meta property="article:published_time" content="2021-04-05T13:41:55&#43;08:00" />
+<meta property="article:modified_time" content="2021-04-05T13:41:55&#43;08:00" />
 
-    
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="【Algorithm】經典演算法"/>
+<meta name="twitter:description" content="【3/28 閱讀紀錄】
+此篇想記錄一些閱讀的筆記，演算法乃是運算思維的基石之一，藉由紀錄加深一下演算法的概念。
+Start 演算法種類很多，經典的演算法有以下幾種
+ 分治演算法（Divide and conquer） 疊代演算法（Iterative Algorithm） 遞迴演算法（Recursion Algorithm） 動態規劃演算法（Dynamic Programming Algorithm） 枚舉演算法（Exhaustive Searching） 貪心演算法（Greedy Algorithm） 回溯演算法（Backtracking Algorithm）  分治演算法（Divide and conquer） 分治演算法是一種簡單又重要的演算法，它將複雜的問題逐一拆解成單元較小的問題，問題規模較小則容易求解，最終在合併子問題以得到原問題的解答，在日常生活中也能時時應用到。
+像是以往在進行團體報告時，假設報告主題的章節共有五個章節，當然不可能讓一個人獨立完成五個章節，這時就可以透過分治法，將各章節逐一拆解成較小單元，每位成員負責一個章節，讓五位成員同時進行，在時間上遠遠勝於一人獨立完成所有章節，且透過分工還可能達到其他效果。
+然而分治演算法還可應用在數字的分類和排序上，舉個例子，手邊有一副順序打亂的撲克牌，現在要將它們復原到起初開封時的排序，依序分類為黑桃、紅心、梅花、方塊，每個分類需從 A-K 逐一排序。此時有兩種做法，第一種為每拿到一張牌，就將它插入到適當的順序中，但缺點是在整理的過程中較繁瑣也較花時間。第二種作法則是應用分治演算法，以不考慮 A-K 順序的情況下，將黑桃分成一堆，紅心分成一堆，以此類推，最終會將黑桃、紅心、梅花、方塊分類出來，此時在逐一將每個分類的 A-K 順序整理好，再將其合併。
+所以透過分治演算法可將複雜的大問題，拆解成規模小的子問題，雖然子問題的數量多，相對的更易於解決，解決的速度上也相對的快。
+疊代演算法（Iterative Algorithm） 無法使用一次公式就能求解，需透過反覆的運算才能得解的方法稱為疊代演算法，像是透過迴圈去循環重複的程式碼來得到答案。
+舉例：利用 for 迴圈設計 n! 的遞迴程式，n 是透過外部輸入得知，打算 1! ~ n! 所有結果
+// 從外部輸入 n int n = int.Parse(Console.ReadLine()); // 用以計算結果 int sum = 1; // 使用迴圈計算 1! ~ n! for (int i = 1; i &lt;= n; i&#43;&#43;) { for (int j = i; j &gt; 0; j--) { sum = sum * j; } Console."/>
 
-    
 
-    
-
-    <link rel="stylesheet" href="/layui/css/layui.css">
-    <link rel="stylesheet" href="/self/css/default.css">
-    <script src=" /layui/layui.js"></script>
-
-    <link rel="stylesheet" async href="/self/css/markdown.min.css">
-    <link rel="stylesheet" async href="/self/css/gallery.css">
-    
-    
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
-
-<body>
-    
-    <header class="layui-header layui-bg-cyan">
-
-    
-    
-    <a class="nav-self-logo" href="/">
-        How can I help
-    </a>
-
-    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
-        
-        
-        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
-        
-
-        
-            
-                <li class="layui-nav-item" id="nav_big"><a href="/hugo/">Hugo</a></li>
-            
-                <li class="layui-nav-item" id="nav_big"><a href="/algorithm/">Algorithm</a></li>
-            
-                <li class="layui-nav-item" id="nav_big"><a href="/netcore/">.NET Core</a></li>
-            
-        
-
-        
-        <li class="layui-nav-item" id="nav_small">
-            <a href="javascript:;">
-                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
-            </a>
-
-            <dl class="layui-nav-child">
-                
-                <dd><a href="/post/">Posts</a></dd>
-                
-
-                
-                    
-                        <dd><a href="/hugo/">Hugo</a></dd>
-                    
-                        <dd><a href="/algorithm/">Algorithm</a></dd>
-                    
-                        <dd><a href="/netcore/">.NET Core</a></dd>
-                    
-                
-            </dl>
-        </li>
-    </ul>
-</header>
-
-<script>
-layui.use('element', function(){
-  var element = layui.element;
-});
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Algorithms",
+      "item": "https://fakestandard.github.io/algorithm/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "【Algorithm】經典演算法",
+      "item": "https://fakestandard.github.io/algorithm/algorithm-1-classicalgorithm/"
+    }
+  ]
+}
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "【Algorithm】經典演算法",
+  "name": "【Algorithm】經典演算法",
+  "description": "【3/28 閱讀紀錄】\n此篇想記錄一些閱讀的筆記，演算法乃是運算思維的基石之一，藉由紀錄加深一下演算法的概念。\nStart 演算法種類很多，經典的演算法有以下幾種\n 分治演算法（Divide and conquer） 疊代演算法（Iterative Algorithm） 遞迴演算法（Recursion Algorithm） 動態規劃演算法（Dynamic Programming Algorithm） 枚舉演算法（Exhaustive Searching） 貪心演算法（Greedy Algorithm） 回溯演算法（Backtracking Algorithm）  分治演算法（Divide and conquer） 分治演算法是一種簡單又重要的演算法，它將複雜的問題逐一拆解成單元較小的問題，問題規模較小則容易求解，最終在合併子問題以得到原問題的解答，在日常生活中也能時時應用到。\n像是以往在進行團體報告時，假設報告主題的章節共有五個章節，當然不可能讓一個人獨立完成五個章節，這時就可以透過分治法，將各章節逐一拆解成較小單元，每位成員負責一個章節，讓五位成員同時進行，在時間上遠遠勝於一人獨立完成所有章節，且透過分工還可能達到其他效果。\n然而分治演算法還可應用在數字的分類和排序上，舉個例子，手邊有一副順序打亂的撲克牌，現在要將它們復原到起初開封時的排序，依序分類為黑桃、紅心、梅花、方塊，每個分類需從 A-K 逐一排序。此時有兩種做法，第一種為每拿到一張牌，就將它插入到適當的順序中，但缺點是在整理的過程中較繁瑣也較花時間。第二種作法則是應用分治演算法，以不考慮 A-K 順序的情況下，將黑桃分成一堆，紅心分成一堆，以此類推，最終會將黑桃、紅心、梅花、方塊分類出來，此時在逐一將每個分類的 A-K 順序整理好，再將其合併。\n所以透過分治演算法可將複雜的大問題，拆解成規模小的子問題，雖然子問題的數量多，相對的更易於解決，解決的速度上也相對的快。\n疊代演算法（Iterative Algorithm） 無法使用一次公式就能求解，需透過反覆的運算才能得解的方法稱為疊代演算法，像是透過迴圈去循環重複的程式碼來得到答案。\n舉例：利用 for 迴圈設計 n! 的遞迴程式，n 是透過外部輸入得知，打算 1! ~ n! 所有結果\n// 從外部輸入 n int n = int.Parse(Console.ReadLine()); // 用以計算結果 int sum = 1; // 使用迴圈計算 1! ~ n! for (int i = 1; i \u0026lt;= n; i++) { for (int j = i; j \u0026gt; 0; j--) { sum = sum * j; } Console.",
+  "keywords": [
+    "Algorithm", "Classic Algorithm", "C#"
+  ],
+  "articleBody": "【3/28 閱讀紀錄】\n此篇想記錄一些閱讀的筆記，演算法乃是運算思維的基石之一，藉由紀錄加深一下演算法的概念。\nStart 演算法種類很多，經典的演算法有以下幾種\n 分治演算法（Divide and conquer） 疊代演算法（Iterative Algorithm） 遞迴演算法（Recursion Algorithm） 動態規劃演算法（Dynamic Programming Algorithm） 枚舉演算法（Exhaustive Searching） 貪心演算法（Greedy Algorithm） 回溯演算法（Backtracking Algorithm）  分治演算法（Divide and conquer） 分治演算法是一種簡單又重要的演算法，它將複雜的問題逐一拆解成單元較小的問題，問題規模較小則容易求解，最終在合併子問題以得到原問題的解答，在日常生活中也能時時應用到。\n像是以往在進行團體報告時，假設報告主題的章節共有五個章節，當然不可能讓一個人獨立完成五個章節，這時就可以透過分治法，將各章節逐一拆解成較小單元，每位成員負責一個章節，讓五位成員同時進行，在時間上遠遠勝於一人獨立完成所有章節，且透過分工還可能達到其他效果。\n然而分治演算法還可應用在數字的分類和排序上，舉個例子，手邊有一副順序打亂的撲克牌，現在要將它們復原到起初開封時的排序，依序分類為黑桃、紅心、梅花、方塊，每個分類需從 A-K 逐一排序。此時有兩種做法，第一種為每拿到一張牌，就將它插入到適當的順序中，但缺點是在整理的過程中較繁瑣也較花時間。第二種作法則是應用分治演算法，以不考慮 A-K 順序的情況下，將黑桃分成一堆，紅心分成一堆，以此類推，最終會將黑桃、紅心、梅花、方塊分類出來，此時在逐一將每個分類的 A-K 順序整理好，再將其合併。\n所以透過分治演算法可將複雜的大問題，拆解成規模小的子問題，雖然子問題的數量多，相對的更易於解決，解決的速度上也相對的快。\n疊代演算法（Iterative Algorithm） 無法使用一次公式就能求解，需透過反覆的運算才能得解的方法稱為疊代演算法，像是透過迴圈去循環重複的程式碼來得到答案。\n舉例：利用 for 迴圈設計 n! 的遞迴程式，n 是透過外部輸入得知，打算 1! ~ n! 所有結果\n// 從外部輸入 n int n = int.Parse(Console.ReadLine()); // 用以計算結果 int sum = 1; // 使用迴圈計算 1! ~ n! for (int i = 1; i for (int j = i; j  0; j--) { sum = sum * j; } Console.WriteLine($\"{i} != {sum}\"); // 重設計算結果  sum = 1; } 執行結果\n1!=1 2!=2 3!=6 4!=24 5!=120 除了上述介紹固定執行次數的疊代法之外，還可以使用 while 迴圈，來執行不確定執行次數的疊代法。使用 while 迴圈必須注意不可讓迴圈一直循環，若執行無法停止就會導致「無窮迴圈」，所以 while 迴圈結構需要具備三個條件\n 變數初始值 迴圈條件式 調整變數增減值  設置一個變數初始值使迴圈得以開始，明確設置迴圈條件式，在符合該條件下迴圈得以循環執行，最終一定要調整變數增減值做為可以離開迴圈的出口。\n// 變數出使值 int i = 1; // 迴圈條件式 while (i 10) { Console.WriteLine(i); // 調整變數增減值  i += 1; } 巴斯卡三角形 也是經典中之一，這邊不做進一步介紹。\n遞迴演算法（Recursion Algorithm） 遞迴演算法跟疊代演算法在循環上相似，卻又跟分治演算法的概念類似，遞迴法與分治法相同地將大問題拆解成小問題來解決，又跟疊代法的循環有異曲同工之妙。\n在程式設計裡，設計一種方法並將其封裝起來稱為函數或副程式，通過外部來呼叫函數或副程式執行封裝後的代碼，以定義而言，透過自己來呼叫自己的過程稱為遞迴，可以想像為函數內部又在調用一次函數。遞迴必須具備兩個條件\n 可以反覆執行的程式碼 結束執行過程的出口  遞迴的經典範例「階乘」，階乘的運算式 n! = n*(n-1)*(n-2)...*1，透過階乘運算過程可觀察出一定的規律性，就可以使用遞迴演算法來達成\nstatic int Function(int n) { if (n == 0) // 終止的條件  return 1; else return n * Function(n - 1); // 遞迴呼叫自己 } 經典的費伯那序列（Fibonacci Polynomial）\n參照上圖公式，n 為正整數，第零項為 0、第一項為 1、第二項為本身前兩項的值相加所得，第二項可得 1、第三項為 2，以此類推。找出規律後可嘗試設計出遞迴程式。\nstatic int Fibonacci(int n) { if (n == 0) return 0; else if (n == 1) return 1; else return Fibonacci(n - 1) + Fibonacci(n - 2); } 動態規劃演算法（Dynamic Programming Algorithm） 動態規劃演算法（DPA）與分治法十分相似，先將大問題拆解成小問題，不同的是動態規劃演算法將每個子問題的答案儲存起來，以供下次求解時直接取用，減少相同子問題再次被計算的時間，所以動態規劃法解決了重複計算的缺點。\n依據上述提到的費伯那序列，從上面的路徑圖看到 Fib[2] 被計算過兩次，透過動態規劃演算法將第一次 Fib[2] 的計算結果儲存於陣列，第二次要計算時就可直接從陣列取出結果，不用再計算一次。上述明顯地得知，將每次的計算結果先儲存，供後續使用，以減少效能開銷是其演算法之精神。\n改良先前的費伯那序列代碼\n// 計算結果暫存區 static int[] output = new int[100]; static int Fibonacci(int n) { int result; result = output[n]; if (result == 0) { if (n == 0) result = 0; else if (n == 1) result = 1; else result = (Fibonacci(n - 1) + Fibonacci(n - 2)); } // 將計算結果儲存到暫存區  output[n] = result; return result; } 枚舉演算法（Exhaustive Searching） 又稱窮舉法，一種常見的數學基礎方法，高頻率的在日常生活中使用到，主要核心概念為依據問題需求，逐一枚舉出所有解答，達到解決問題的目的，缺點為速度太慢。\n舉例：當 1000 依次減去 1,2,3…直到結果為負數，代碼如下\nint num = 1000; int count = 0; while (num = 0) { count++; num -= count; } Console.WriteLine(count); 上述範例中可看到，每執行一次相減就檢查結果是否為負數，在不遺漏的情況下，一一枚舉出所有項目，在從枚舉的項目中找到自己所需的項目。\n再舉個例：從 1-500 之間列舉出所有 3 的倍數的整數\nfor (int num = 0; num 500; num++) { if (num % 3 == 0) Console.WriteLine(num); } 枚舉演算法還有一個經典題型，如何得知某數是否為質數，在此推薦使用 Eratosthenes 方法，將某數逐一除以 2 至某數減一之間的所有數字，若有其中一個可以整除，就能斷定某數是否為質數。\nstatic bool IsPrime(int n) { int i = 2; while (i // 如果整除, i 為 n 的因數  if (n % i == 0) return false; i++; } return true; } 貪心演算法（Greedy Algorithm） 貪心演算法又稱貪婪演算法，主要核心概念如同名稱一樣，在每個解決問題的步驟遵循貪心原則，採取最有利或最優化的選項，意即只求局部解決辦法，而不考慮大局影響，不斷改進解答。\n雖然貪心演算法都是選擇當前最有利，但不能保證最終結果也是最佳的，因為貪心法在原理上容易過早做決定，此演算法很適合用來尋找最短路徑或是機器學習等方面。\n回溯演算法（Backtracking Algorithm） 最後一個回溯演算法也是枚舉法的一種，顧名思義為步驟可回溯的概念，當枚舉出不正確答案時，可以透過回溯來回到上一層，接著找尋出尚未執行過的路徑，再遞迴至下一層。\n老鼠走迷宮就是經典例子，利用二維陣列模擬出一個迷宮，而老鼠行進時遵循以下三個原則\n 一次只能走一格 遇到牆壁無法前行時，則退回到上一步尋找其他可走路徑 走過的路不再走第二遍  二維陣列的迷宮規則為\nMaze[i][j] = 1 --表示該位置為牆壁，無法通行 Maze[i][j] = 0 --表示該位置為不為牆壁，可前行 Maze[1][1] --該處為入口 Maze[m][n] --該處為出口 虛擬碼解析迷宮搜尋概念\nif (上一格可走) { 加入方格編號到堆疊; 往上走; 判斷是否為出口; } else if (下一格可走) { 加入方格編號到堆疊; 往下走; 判斷是否為出口; } else if (左一格可走) { 加入方格編號到堆疊; 往左走; 判斷是否為出口; } else if (右一格可走) { 加入方格編號到堆疊; 往右走; 判斷是否為出口; } else { 從堆疊中刪除一個方格編號; 從堆疊中取出一個方格編號; 往回走; } 實際代碼\n建立座標類別\n///  /// 座標 ///  public class Node { public int X { get; set; } public int Y { get; set; } public Node(int x, int y) { this.X = x; this.Y = y; } } 建立記錄路經追蹤的類別\n///  /// 紀錄追蹤路徑類別 ///  public class TraceRecord { public Node[] nodes = new Node[120]; public Node Pre; public int num = 1; public bool IsEmpty() { return nodes[0] == null; } // 新增路徑到堆疊  public void Insert(int x, int y) { Node newNode = new Node(x, y); if (this.IsEmpty()) // 剛從入口出發  { nodes[0] = newNode; } else { num = num + 1; nodes[num] = newNode; } } // 刪除堆疊中的路徑  public void Delete() { if (this.IsEmpty()) { Console.WriteLine(\"佇列已經空了\"); return; } nodes[num] = null; num = num - 1; Pre = nodes[num]; } } 建立檢查出口的方法\npublic static bool ChkExit(int x, int y, int ex, int ey) { if (x == ex \u0026\u0026 y == ey) return true; return false; } 開始前的預定義\n// 定義出口 X 座標 public static int ExitX = 8; // 定義出口 Y 座標 public static int ExitY = 10; // 定義二維陣列迷宮 public static int[,] Maze = { { 1,1,1,1,1,1,1,1,1,1,1,1 }, { 1,0,0,0,1,1,1,1,1,1,1,1 }, { 1,1,1,0,1,1,0,0,0,0,1,1 }, { 1,1,1,0,1,1,0,1,1,0,1,1 }, { 1,1,1,0,0,0,0,1,1,0,1,1 }, { 1,1,1,0,1,1,0,1,1,0,1,1 }, { 1,1,1,0,1,1,0,1,1,0,1,1 }, { 1,1,1,1,1,1,0,1,1,0,1,1 }, { 1,1,0,0,0,0,0,0,1,0,0,1 }, { 1,1,1,1,1,1,1,1,1,1,1,1 } }; Main 方法\nstatic void Main(string[] args) { int i, j; int x = 1; int y = 1; TraceRecord path = new TraceRecord(); Console.WriteLine(\"迷宮路徑\\n\"); for (i = 0; i 10; i++) { for (j = 0; j 12; j++) { Console.Write(Maze[i, j]); } Console.WriteLine(); } Thread.Sleep(1000); Console.WriteLine(\"\\n老鼠開始走迷宮...\\n\"); while (x // 將當前路徑設置成已經走過  Maze[x, y] = 2; if (Maze[x - 1, y] == 0) // 左邊  { x -= 1; path.Insert(x, y); } else if (Maze[x + 1, y] == 0) // 右邊  { x += 1; path.Insert(x, y); } else if (Maze[x, y - 1] == 0) // 下方  { y -= 1; path.Insert(x, y); } else if (Maze[x, y + 1] == 0) // 上方  { y += 1; path.Insert(x, y + 1); } else if (ChkExit(x, y, ExitX, ExitY)) // 判斷是否為出口  { break; } else // 遇到死路  { path.Delete(); x = path.Pre.X; y = path.Pre.Y; } } Thread.Sleep(1000); Console.WriteLine(\"老鼠走過的路徑(以2表示)\\n\"); for (i = 0; i 10; i++) { for (j = 0; j 12; j++) { Console.Write(Maze[i, j]); } Console.WriteLine(); } Console.ReadKey(); } 執行結果\n迷宮路徑 111111111111 100011111111 111011000011 111011011011 111000011011 111011011011 111011011011 111111011011 110000001001 111111111111 老鼠開始走迷宮... 老鼠走過的路徑(以2表示) 111111111111 122211111111 111211222211 111211211211 111222211211 111211011211 111211011211 111111011211 110000001221 111111111111 Note 這次趁著假日時間，回憶一下經典演算法，閱讀過程中，意外發現此書作者有些筆誤的地方，文字的部分到還好，沒特別注意還是能順暢的讀過（中文字就算兩個字顛倒也能辨識，神奇～），倒是老鼠走迷宮代碼的部分，讓筆者疑惑很久，最後依照筆者自己的想法做了些改良，一樣是使用堆疊概念來實作，其實還可進階地使用遞迴，有興趣的人可以試試看。\n收工！\nReference 【圖說演算法 C#】\n",
+  "wordCount" : "860",
+  "inLanguage": "en",
+  "datePublished": "2021-04-05T13:41:55+08:00",
+  "dateModified": "2021-04-05T13:41:55+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Polar Bear"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://fakestandard.github.io/algorithm/algorithm-1-classicalgorithm/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "How can I help",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://fakestandard.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
 
-        <div id="content" style="min-height:80%">
-<div class="layui-container" style="margin-bottom: 10px">
-    
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-    <div class="layui-row layui-col-space10">
-        <div class="layui-col-md8 layui-col-sm12 layui-col-xs12">
-            <div class="layui-card single-card">
-                <br />
-                <blockquote class="self-elem-quote self-elem-quote-bg-green markdown-body single-title" >
-                    <h1>【Algorithm】經典演算法</h1>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-05</span>
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
 
-    
-        <a href="/categories/algorithm/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Algorithm</span>
-        </a>
-    
+            .list {
+                background: var(--theme);
+            }
 
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
 
-    
-        <a href="/tags/algorithm/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Algorithm</span>
-        </a>
-    
-        <a href="/tags/classic-algorithm/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Classic Algorithm</span>
-        </a>
-    
-        <a href="/tags/c/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
-        </a>
-    
-    
-</h3>
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
 
-                </blockquote>
-                <div class="layui-card-body markdown-body single-content">
-                    <p>【3/28 閱讀紀錄】</p>
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://fakestandard.github.io/" accesskey="h" title="How can I help (Alt + H)">How can I help</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://fakestandard.github.io/algorithm/" title="Algorithm">
+                    <span>Algorithm</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/netcore/" title=".NET Core">
+                    <span>.NET Core</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      【Algorithm】經典演算法
+    </h1>
+    <div class="post-meta">April 5, 2021&nbsp;·&nbsp;Polar Bear
+</div>
+  </header> 
+  <div class="post-content"><p>【3/28 閱讀紀錄】</p>
 <p>此篇想記錄一些閱讀的筆記，演算法乃是運算思維的基石之一，藉由紀錄加深一下演算法的概念。</p>
-<h1 id="start">Start</h1>
+<h1 id="start">Start<a hidden class="anchor" aria-hidden="true" href="#start">#</a></h1>
 <p>演算法種類很多，經典的演算法有以下幾種</p>
 <ul>
 <li><a href="#%E5%88%86%E6%B2%BB%E6%BC%94%E7%AE%97%E6%B3%95divide-and-conquer">分治演算法（Divide and conquer）</a></li>
@@ -159,12 +244,12 @@ layui.use('element', function(){
 <li><a href="#%E8%B2%AA%E5%BF%83%E6%BC%94%E7%AE%97%E6%B3%95greedy-algorithm">貪心演算法（Greedy Algorithm）</a></li>
 <li><a href="#%E5%9B%9E%E6%BA%AF%E6%BC%94%E7%AE%97%E6%B3%95backtracking-algorithm">回溯演算法（Backtracking Algorithm）</a></li>
 </ul>
-<h2 id="分治演算法divide-and-conquer">分治演算法（Divide and conquer）</h2>
+<h2 id="分治演算法divide-and-conquer">分治演算法（Divide and conquer）<a hidden class="anchor" aria-hidden="true" href="#分治演算法divide-and-conquer">#</a></h2>
 <p>分治演算法是一種簡單又重要的演算法，它將複雜的問題逐一拆解成單元較小的問題，問題規模較小則容易求解，最終在合併子問題以得到原問題的解答，在日常生活中也能時時應用到。</p>
 <p>像是以往在進行團體報告時，假設報告主題的章節共有五個章節，當然不可能讓一個人獨立完成五個章節，這時就可以透過分治法，將各章節逐一拆解成較小單元，每位成員負責一個章節，讓五位成員同時進行，在時間上遠遠勝於一人獨立完成所有章節，且透過分工還可能達到其他效果。</p>
 <p>然而分治演算法還可應用在數字的分類和排序上，舉個例子，手邊有一副順序打亂的撲克牌，現在要將它們復原到起初開封時的排序，依序分類為黑桃、紅心、梅花、方塊，每個分類需從 A-K 逐一排序。此時有兩種做法，第一種為每拿到一張牌，就將它插入到適當的順序中，但缺點是在整理的過程中較繁瑣也較花時間。第二種作法則是應用分治演算法，以不考慮 A-K 順序的情況下，將黑桃分成一堆，紅心分成一堆，以此類推，最終會將黑桃、紅心、梅花、方塊分類出來，此時在逐一將每個分類的 A-K 順序整理好，再將其合併。</p>
 <p>所以透過分治演算法可將複雜的大問題，拆解成規模小的子問題，雖然子問題的數量多，相對的更易於解決，解決的速度上也相對的快。</p>
-<h2 id="疊代演算法iterative-algorithm">疊代演算法（Iterative Algorithm）</h2>
+<h2 id="疊代演算法iterative-algorithm">疊代演算法（Iterative Algorithm）<a hidden class="anchor" aria-hidden="true" href="#疊代演算法iterative-algorithm">#</a></h2>
 <p>無法使用一次公式就能求解，需透過反覆的運算才能得解的方法稱為疊代演算法，像是透過迴圈去循環重複的程式碼來得到答案。</p>
 <p>舉例：利用 for 迴圈設計 n! 的遞迴程式，n 是透過外部輸入得知，打算 1! ~ n! 所有結果</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 從外部輸入 n
@@ -187,12 +272,12 @@ layui.use('element', function(){
 </span><span style="color:#75715e"></span>    sum = <span style="color:#ae81ff">1</span>;
 }
 </code></pre></div><p>執行結果</p>
-<pre><code>1!=1
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">1!=1
 2!=2
 3!=6
 4!=24
 5!=120
-</code></pre><p>除了上述介紹固定執行次數的疊代法之外，還可以使用 while 迴圈，來執行不確定執行次數的疊代法。使用 while 迴圈必須注意不可讓迴圈一直循環，若執行無法停止就會導致「無窮迴圈」，所以 while 迴圈結構需要具備三個條件</p>
+</code></pre></div><p>除了上述介紹固定執行次數的疊代法之外，還可以使用 while 迴圈，來執行不確定執行次數的疊代法。使用 while 迴圈必須注意不可讓迴圈一直循環，若執行無法停止就會導致「無窮迴圈」，所以 while 迴圈結構需要具備三個條件</p>
 <ul>
 <li>變數初始值</li>
 <li>迴圈條件式</li>
@@ -211,7 +296,7 @@ layui.use('element', function(){
 </span><span style="color:#75715e"></span>    i += <span style="color:#ae81ff">1</span>;
 }
 </code></pre></div><p><strong>巴斯卡三角形</strong> 也是經典中之一，這邊不做進一步介紹。</p>
-<h2 id="遞迴演算法recursion-algorithm">遞迴演算法（Recursion Algorithm）</h2>
+<h2 id="遞迴演算法recursion-algorithm">遞迴演算法（Recursion Algorithm）<a hidden class="anchor" aria-hidden="true" href="#遞迴演算法recursion-algorithm">#</a></h2>
 <p>遞迴演算法跟疊代演算法在循環上相似，卻又跟分治演算法的概念類似，遞迴法與分治法相同地將大問題拆解成小問題來解決，又跟疊代法的循環有異曲同工之妙。</p>
 <p>在程式設計裡，設計一種方法並將其封裝起來稱為函數或副程式，通過外部來呼叫函數或副程式執行封裝後的代碼，以定義而言，透過自己來呼叫自己的過程稱為遞迴，可以想像為函數內部又在調用一次函數。遞迴必須具備兩個條件</p>
 <ul>
@@ -227,7 +312,8 @@ layui.use('element', function(){
         <span style="color:#66d9ef">return</span> n * Function(n - <span style="color:#ae81ff">1</span>); <span style="color:#75715e">// 遞迴呼叫自己
 </span><span style="color:#75715e"></span>}
 </code></pre></div><p>經典的<strong>費伯那序列（Fibonacci Polynomial）</strong></p>
-<p><img src="/images/Algorithm/Algorithm001.png" alt=""></p>
+<p><img loading="lazy" src="/images/Algorithm/Algorithm001.png" alt=""  />
+</p>
 <p>參照上圖公式，n 為正整數，第零項為 0、第一項為 1、第二項為本身前兩項的值相加所得，第二項可得 1、第三項為 2，以此類推。找出規律後可嘗試設計出遞迴程式。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> Fibonacci(<span style="color:#66d9ef">int</span> n)
 {
@@ -238,9 +324,10 @@ layui.use('element', function(){
     <span style="color:#66d9ef">else</span>
         <span style="color:#66d9ef">return</span> Fibonacci(n - <span style="color:#ae81ff">1</span>) + Fibonacci(n - <span style="color:#ae81ff">2</span>);
 }
-</code></pre></div><h2 id="動態規劃演算法dynamic-programming-algorithm">動態規劃演算法（Dynamic Programming Algorithm）</h2>
+</code></pre></div><h2 id="動態規劃演算法dynamic-programming-algorithm">動態規劃演算法（Dynamic Programming Algorithm）<a hidden class="anchor" aria-hidden="true" href="#動態規劃演算法dynamic-programming-algorithm">#</a></h2>
 <p>動態規劃演算法（DPA）與分治法十分相似，先將大問題拆解成小問題，不同的是動態規劃演算法將每個子問題的答案儲存起來，以供下次求解時直接取用，減少相同子問題再次被計算的時間，所以動態規劃法解決了重複計算的缺點。</p>
-<p><img src="/static/images/Algorithm/Algorithm002.png" alt=""></p>
+<p><img loading="lazy" src="/static/images/Algorithm/Algorithm002.png" alt=""  />
+</p>
 <p>依據上述提到的費伯那序列，從上面的路徑圖看到 <code>Fib[2]</code> 被計算過兩次，透過動態規劃演算法將第一次 <code>Fib[2]</code> 的計算結果儲存於陣列，第二次要計算時就可直接從陣列取出結果，不用再計算一次。上述明顯地得知，將每次的計算結果先儲存，供後續使用，以減少效能開銷是其演算法之精神。</p>
 <p>改良先前的費伯那序列代碼</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 計算結果暫存區
@@ -266,7 +353,7 @@ layui.use('element', function(){
 
     <span style="color:#66d9ef">return</span> result;
 }
-</code></pre></div><h2 id="枚舉演算法exhaustive-searching">枚舉演算法（Exhaustive Searching）</h2>
+</code></pre></div><h2 id="枚舉演算法exhaustive-searching">枚舉演算法（Exhaustive Searching）<a hidden class="anchor" aria-hidden="true" href="#枚舉演算法exhaustive-searching">#</a></h2>
 <p>又稱窮舉法，一種常見的數學基礎方法，高頻率的在日常生活中使用到，主要核心概念為依據問題需求，逐一枚舉出所有解答，達到解決問題的目的，缺點為速度太慢。</p>
 <p>舉例：當 1000 依次減去 1,2,3&hellip;直到結果為負數，代碼如下</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">int</span> num = <span style="color:#ae81ff">1000</span>;
@@ -302,10 +389,10 @@ Console.WriteLine(count);
 
     <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
 }
-</code></pre></div><h2 id="貪心演算法greedy-algorithm">貪心演算法（Greedy Algorithm）</h2>
+</code></pre></div><h2 id="貪心演算法greedy-algorithm">貪心演算法（Greedy Algorithm）<a hidden class="anchor" aria-hidden="true" href="#貪心演算法greedy-algorithm">#</a></h2>
 <p>貪心演算法又稱貪婪演算法，主要核心概念如同名稱一樣，在每個解決問題的步驟遵循貪心原則，採取最有利或最優化的選項，意即只求局部解決辦法，而不考慮大局影響，不斷改進解答。</p>
 <p>雖然貪心演算法都是選擇當前最有利，但不能保證最終結果也是最佳的，因為貪心法在原理上容易過早做決定，此演算法很適合用來尋找最短路徑或是機器學習等方面。</p>
-<h2 id="回溯演算法backtracking-algorithm">回溯演算法（Backtracking Algorithm）</h2>
+<h2 id="回溯演算法backtracking-algorithm">回溯演算法（Backtracking Algorithm）<a hidden class="anchor" aria-hidden="true" href="#回溯演算法backtracking-algorithm">#</a></h2>
 <p>最後一個回溯演算法也是枚舉法的一種，顧名思義為步驟可回溯的概念，當枚舉出不正確答案時，可以透過回溯來回到上一層，接著找尋出尚未執行過的路徑，再遞迴至下一層。</p>
 <p>老鼠走迷宮就是經典例子，利用二維陣列模擬出一個迷宮，而老鼠行進時遵循以下三個原則</p>
 <ul>
@@ -314,13 +401,13 @@ Console.WriteLine(count);
 <li>走過的路不再走第二遍</li>
 </ul>
 <p>二維陣列的迷宮規則為</p>
-<pre><code>Maze[i][j] = 1 --表示該位置為牆壁，無法通行
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Maze[i][j] = 1 --表示該位置為牆壁，無法通行
 Maze[i][j] = 0 --表示該位置為不為牆壁，可前行
 
 Maze[1][1] --該處為入口
 Maze[m][n] --該處為出口
-</code></pre><p><strong>虛擬碼</strong>解析迷宮搜尋概念</p>
-<pre><code>if (上一格可走)
+</code></pre></div><p><strong>虛擬碼</strong>解析迷宮搜尋概念</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">if (上一格可走)
 {
     加入方格編號到堆疊;
     往上走;
@@ -350,7 +437,7 @@ else
     從堆疊中取出一個方格編號;
     往回走;
 }
-</code></pre><p><strong>實際代碼</strong></p>
+</code></pre></div><p><strong>實際代碼</strong></p>
 <p>建立座標類別</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 座標
@@ -516,7 +603,7 @@ else
     Console.ReadKey();
 }
 </code></pre></div><p>執行結果</p>
-<pre><code>迷宮路徑
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">迷宮路徑
 
 111111111111
 100011111111
@@ -543,278 +630,90 @@ else
 111111011211
 110000001221
 111111111111
-</code></pre><h1 id="note">Note</h1>
+</code></pre></div><h1 id="note">Note<a hidden class="anchor" aria-hidden="true" href="#note">#</a></h1>
 <p>這次趁著假日時間，回憶一下經典演算法，閱讀過程中，意外發現此書作者有些筆誤的地方，文字的部分到還好，沒特別注意還是能順暢的讀過（中文字就算兩個字顛倒也能辨識，神奇～），倒是老鼠走迷宮代碼的部分，讓筆者疑惑很久，最後依照筆者自己的想法做了些改良，一樣是使用堆疊概念來實作，其實還可進階地使用遞迴，有興趣的人可以試試看。</p>
 <p>收工！</p>
-<h1 id="reference">Reference</h1>
+<h1 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h1>
 <p>【圖說演算法 C#】</p>
+
 </div>
-            </div>
-        </div>
-
-        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
-            
-
-            <div class="layui-card single-card">
-                <h2 class="single-title">Recent Posts</h2>
-            
-                
-                <div style="margin-left: 10px;">
-                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                    <a href="/post/lifetrip/lifetrip-2-hsinchu-wufeng/">
-                        <h3 class="">【Life Trip】五峰星空下露營區</h3>
-                    </a>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-29</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/life-trip/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Life Trip</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/hsinchu-wufeng/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Hsinchu - Wufeng</span>
-        </a>
-    
-    
-</h3>
-
-                    </blockquote>
-                </div>
-                
-                <div style="margin-left: 10px;">
-                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                    <a href="/post/dotnet/dotnet-3-npoisimple/">
-                        <h3 class="">【.NET】使用 NPOI 匯出 Excel 的基本應用</h3>
-                    </a>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-27</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/.net/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/.net/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
-        </a>
-    
-        <a href="/tags/npoi/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">NPOI</span>
-        </a>
-    
-        <a href="/tags/c/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
-        </a>
-    
-    
-</h3>
-
-                    </blockquote>
-                </div>
-                
-                <div style="margin-left: 10px;">
-                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                    <a href="/post/csharp/csharp-1-getosinformation/">
-                        <h3 class="">【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊</h3>
-                    </a>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-19</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/c/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/c/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
-        </a>
-    
-        <a href="/tags/windows/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
-        </a>
-    
-        <a href="/tags/memory/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Memory</span>
-        </a>
-    
-        <a href="/tags/culture/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Culture</span>
-        </a>
-    
-    
-</h3>
-
-                    </blockquote>
-                </div>
-                
-                <div style="margin-left: 10px;">
-                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                    <a href="/post/other/other-2-incometax/">
-                        <h3 class="">【人森】如何計算個人綜合所得稅？</h3>
-                    </a>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-14</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/other/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Other</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/%e7%b6%9c%e5%90%88%e6%89%80%e5%be%97%e7%a8%85/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">綜合所得稅</span>
-        </a>
-    
-        <a href="/tags/income-tax/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Income Tax</span>
-        </a>
-    
-    
-</h3>
-
-                    </blockquote>
-                </div>
-                
-                <div style="margin-left: 10px;">
-                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                    <a href="/post/windows/windows-7-openwindowsexplorer/">
-                        <h3 class="">【Windows】開啟運行程式的所在資料夾位置</h3>
-                    </a>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-12</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/windows-win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - Win10</span>
-        </a>
-    
-        <a href="/categories/common-sense/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/windows/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
-        </a>
-    
-        <a href="/tags/win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
-        </a>
-    
-        <a href="/tags/windows-explorer/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows Explorer</span>
-        </a>
-    
-        <a href="/tags/task-manager/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Task Manager</span>
-        </a>
-    
-    
-</h3>
-
-                    </blockquote>
-                </div>
-                
-            
-            <br />
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-        </div>
-
-<footer>
-    
-
-    <div class="layui-container">
-        <div class="layui-row">
-            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
-                <h3> Related Sites </h3>
-            </div>
-        </div>
-        <div class="layui-row">
-            
-            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
-            </div>
-            
-            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/about/"><p class="footer-url">About</p></a>
-            </div>
-            
-            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/categories/"><p class="footer-url">Category</p></a>
-            </div>
-            
-        </div>
-    </div>
-    
-    
-    <div class="layui-container">
-        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
-    </div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://fakestandard.github.io/tags/algorithm/">Algorithm</a></li>
+      <li><a href="https://fakestandard.github.io/tags/classic-algorithm/">Classic Algorithm</a></li>
+      <li><a href="https://fakestandard.github.io/tags/c#/">C#</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://fakestandard.github.io/">How can I help</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
 </footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
 </body>
+
 </html>

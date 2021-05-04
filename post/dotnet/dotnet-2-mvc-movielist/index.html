@@ -1,150 +1,225 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en" dir="auto">
 
-    <title>How can I help - 【.NET】適合初心者的 .NET Core MVC 實作 </title>
-    
-    
-    <meta content=".NET, MVC, Web" name="keywords">
-    
-    <meta content="How can I help - 此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解如何建立 Web 應用程式、新增及 Scaffold 模型、使用資料庫、資料的 CRUD、新增搜尋和驗證，最後會完成一個有關電影清單的應用程式。
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>【.NET】適合初心者的 .NET Core MVC 實作 | How can I help</title>
+<meta name="keywords" content=".NET, MVC" />
+<meta name="description" content="此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解如何建立 Web 應用程式、新增及 Scaffold 模型、使用資料庫、資料的 CRUD、新增搜尋和驗證，最後會完成一個有關電影清單的應用程式。
 UI 的介紹會以 IDE 為主，除 UI 外也會介紹 dotnet 指令。
 代碼部分已上傳到 GitHub
 Start  建立 Web app 新增控制器（Controller） 新增檢視器（View）auto 新增模型（Model） 新增 NuGet 套件 建立 DbContext 新增 ConnectionString 使用 Scaffold 進行初始移轉（Initial Migration） 植入資料以初始資料庫 使用資料註釋 Data Annotations 新增搜尋引擎 新增資料驗證 使用 Bootstrap 增強外觀效果  建立 Web app 提供兩種方法，一種透過 Visual Studio IDE，一種是使用 Command shell 操作，兩種皆可達相同結果。
-Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】" name="description">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    
+Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】">
+<meta name="author" content="Polar Bear">
+<link rel="canonical" href="https://fakestandard.github.io/post/dotnet/dotnet-2-mvc-movielist/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.d1b405b7c6bf1b09aebca33eb6e2d8bd070113d119bdfa2715c32f6408f9fbee.css" integrity="sha256-0bQFt8a/GwmuvKM&#43;tuLYvQcBE9EZvfonFcMvZAj5&#43;&#43;4=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://fakestandard.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://fakestandard.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://fakestandard.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://fakestandard.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.81.0" />
+<meta property="og:title" content="【.NET】適合初心者的 .NET Core MVC 實作" />
+<meta property="og:description" content="此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解如何建立 Web 應用程式、新增及 Scaffold 模型、使用資料庫、資料的 CRUD、新增搜尋和驗證，最後會完成一個有關電影清單的應用程式。
+UI 的介紹會以 IDE 為主，除 UI 外也會介紹 dotnet 指令。
+代碼部分已上傳到 GitHub
+Start  建立 Web app 新增控制器（Controller） 新增檢視器（View）auto 新增模型（Model） 新增 NuGet 套件 建立 DbContext 新增 ConnectionString 使用 Scaffold 進行初始移轉（Initial Migration） 植入資料以初始資料庫 使用資料註釋 Data Annotations 新增搜尋引擎 新增資料驗證 使用 Bootstrap 增強外觀效果  建立 Web app 提供兩種方法，一種透過 Visual Studio IDE，一種是使用 Command shell 操作，兩種皆可達相同結果。
+Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fakestandard.github.io/post/dotnet/dotnet-2-mvc-movielist/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-04-10T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-04-10T14:06:07&#43;08:00" />
 
-    
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="【.NET】適合初心者的 .NET Core MVC 實作"/>
+<meta name="twitter:description" content="此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解如何建立 Web 應用程式、新增及 Scaffold 模型、使用資料庫、資料的 CRUD、新增搜尋和驗證，最後會完成一個有關電影清單的應用程式。
+UI 的介紹會以 IDE 為主，除 UI 外也會介紹 dotnet 指令。
+代碼部分已上傳到 GitHub
+Start  建立 Web app 新增控制器（Controller） 新增檢視器（View）auto 新增模型（Model） 新增 NuGet 套件 建立 DbContext 新增 ConnectionString 使用 Scaffold 進行初始移轉（Initial Migration） 植入資料以初始資料庫 使用資料註釋 Data Annotations 新增搜尋引擎 新增資料驗證 使用 Bootstrap 增強外觀效果  建立 Web app 提供兩種方法，一種透過 Visual Studio IDE，一種是使用 Command shell 操作，兩種皆可達相同結果。
+Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
 
-    
 
-    
-
-    <link rel="stylesheet" href="/layui/css/layui.css">
-    <link rel="stylesheet" href="/self/css/default.css">
-    <script src=" /layui/layui.js"></script>
-
-    <link rel="stylesheet" async href="/self/css/markdown.min.css">
-    <link rel="stylesheet" async href="/self/css/gallery.css">
-    
-    
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
-
-<body>
-    
-    <header class="layui-header layui-bg-cyan">
-
-    
-    
-    <a class="nav-self-logo" href="/">
-        How can I help
-    </a>
-
-    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
-        
-        
-        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
-        
-
-        
-            
-                <li class="layui-nav-item" id="nav_big"><a href="/hugo/">Hugo</a></li>
-            
-                <li class="layui-nav-item" id="nav_big"><a href="/algorithm/">Algorithm</a></li>
-            
-                <li class="layui-nav-item" id="nav_big"><a href="/netcore/">.NET Core</a></li>
-            
-        
-
-        
-        <li class="layui-nav-item" id="nav_small">
-            <a href="javascript:;">
-                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
-            </a>
-
-            <dl class="layui-nav-child">
-                
-                <dd><a href="/post/">Posts</a></dd>
-                
-
-                
-                    
-                        <dd><a href="/hugo/">Hugo</a></dd>
-                    
-                        <dd><a href="/algorithm/">Algorithm</a></dd>
-                    
-                        <dd><a href="/netcore/">.NET Core</a></dd>
-                    
-                
-            </dl>
-        </li>
-    </ul>
-</header>
-
-<script>
-layui.use('element', function(){
-  var element = layui.element;
-});
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://fakestandard.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "【.NET】適合初心者的 .NET Core MVC 實作",
+      "item": "https://fakestandard.github.io/post/dotnet/dotnet-2-mvc-movielist/"
+    }
+  ]
+}
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "【.NET】適合初心者的 .NET Core MVC 實作",
+  "name": "【.NET】適合初心者的 .NET Core MVC 實作",
+  "description": "此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解如何建立 Web 應用程式、新增及 Scaffold 模型、使用資料庫、資料的 CRUD、新增搜尋和驗證，最後會完成一個有關電影清單的應用程式。\nUI 的介紹會以 IDE 為主，除 UI 外也會介紹 dotnet 指令。\n代碼部分已上傳到 GitHub\nStart  建立 Web app 新增控制器（Controller） 新增檢視器（View）auto 新增模型（Model） 新增 NuGet 套件 建立 DbContext 新增 ConnectionString 使用 Scaffold 進行初始移轉（Initial Migration） 植入資料以初始資料庫 使用資料註釋 Data Annotations 新增搜尋引擎 新增資料驗證 使用 Bootstrap 增強外觀效果  建立 Web app 提供兩種方法，一種透過 Visual Studio IDE，一種是使用 Command shell 操作，兩種皆可達相同結果。\nVisual Studio IDE 建立 【ASP.NET Core Web 應用程式】",
+  "keywords": [
+    ".NET", "MVC"
+  ],
+  "articleBody": "此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解如何建立 Web 應用程式、新增及 Scaffold 模型、使用資料庫、資料的 CRUD、新增搜尋和驗證，最後會完成一個有關電影清單的應用程式。\nUI 的介紹會以 IDE 為主，除 UI 外也會介紹 dotnet 指令。\n代碼部分已上傳到 GitHub\nStart  建立 Web app 新增控制器（Controller） 新增檢視器（View）auto 新增模型（Model） 新增 NuGet 套件 建立 DbContext 新增 ConnectionString 使用 Scaffold 進行初始移轉（Initial Migration） 植入資料以初始資料庫 使用資料註釋 Data Annotations 新增搜尋引擎 新增資料驗證 使用 Bootstrap 增強外觀效果  建立 Web app 提供兩種方法，一種透過 Visual Studio IDE，一種是使用 Command shell 操作，兩種皆可達相同結果。\nVisual Studio IDE 建立 【ASP.NET Core Web 應用程式】\n選擇 【ASP.NET Core Web 應用程式(Model-View-Controller)】\n下拉選單選擇 .Net Core 和 ASP.NET Core 5.0\n執行 Ctrl + F5 啟動 IIS Express 以執行應用程式，並且不執行偵錯。不啟用偵錯工作的好處是可隨時變更程式碼並且隨時儲存，當程式碼變更可重新整理瀏覽器快速查看。\n觀察瀏覽器網址列顯示 localhost:{port}，本機電腦的 hostname 為 localhost，{port} 是當 Visual Studio 建立 Web project 時，會自動分配一個隨機通訊埠號給網頁伺服器。\nCommand Shell 開啟終端機或 VS Code 終端機，切換到欲新增專案的目錄\n在當前目錄建立新的 ASP.NET Core MVC 專案\n$ dotnet new mvc -o MvcMovie 如果是使用 VS Code，下列指令可在 VS Code 直接載入 MvcMovie.csproj 專案檔\n$ code -r MvcMovie 信任 Https 開發憑證\n$ dotnet dev-certs https --trust 接著同上述執行 Ctrl + F5 啟動應用程式，詳細內容請往回參考。\n新增控制器（Controller） 在方案總管中，對 Controllers 資料夾執行右鍵→選擇加入→控制器。\n選擇【MVC 控制器 - 空白】\n將控制器名稱更改為 HelloWorldController.cs，並且新增。\n此時啟動應用程式瀏覽 https://localhost:{Port}/HelloWorld/ 會返回錯誤，因為我們還沒建立檢視器（View）。\n新增檢視器（View） 建立檢視器方法有兩種，一種是從方案總管中建立，一種是快速建立。筆者推薦使用快速建立。\n方案總管 對 Views 資料夾執行右鍵→加入→資料夾，該資料夾名稱命名為欲建立 View 的控制器名稱，這邊將它命名為 HelloWorld。\n對新增的 HelloWorld 資料夾，執行右鍵→加入→檢視，選擇 Razor 檢視 - 空白。\nView 的名稱應命名為控制器之動作方法名稱，與動作方法與之對應。開啟 HelloWorldController.cs 可以看見預設建立的 Index() 動作方法，該方法就是這次要建立檢視器的名稱 Index.cshtml。\n快速建立 開啟 HelloWorldControll.cs，在 Index() 方法上執行右鍵，選擇新增檢視。接著就與上述建立方法相同，選擇 Razor 檢視 - 空白，建立名為 Index.cshtml 檢視器。\n變更檢視及版面配置 打開剛剛建立的 View 修改代碼以變更呈現內容\n @{ ViewData[\"Title\"] = \"Index\"; } h2Indexh2 pHello from our View Template!p 在版面配置中添加 HelloWorld Controller 的導航配置，開啟 Views/Shared/_Layout.cshtml 找到配置導航的位置添加以下代碼\ndiv class=\"navbar-collapse collapse d-sm-inline-flex justify-content-between\" ul class=\"navbar-nav flex-grow-1\" ...  li class=\"nav-item\" a class=\"nav-link text-dark\" asp-area=\"\" asp-controller=\"HelloWorld\" asp-action=\"Index\"HelloIndexa li   li class=\"nav-item\" a class=\"nav-link text-dark\" asp-area=\"\" asp-controller=\"Movies\" asp-action=\"Index\"Moviesa li  ul div 效果\n新增模型（Model） 模型以實際層面來說即是類別，建立模型實際動作就是建立一個類別，將建立的類別作為 Model 使用。\nEntity Framework Core（EF Core） 是一種物件關聯式架構（Object-relational mapping, ORM），在撰寫資料存取的代碼時，透過 ORM 可簡化這些代碼。所以你可以將類別與 EF Core 搭配使用以操作資料庫。\n這些自行建立的類別被稱為 POCO（Plain Old CLR Objects），因為它們只定義儲存在資料庫中的資料屬性，對 EF Core 不具有任何相依性。\n建立類別 在 Models 資料夾執行右鍵→選擇加入→類別，將類別命名為 Movie.cs，在類別內添加下列代碼\nusing System; using System.ComponentModel.DataAnnotations; namespace CoreMVCMovieList.Models { public class Movie { public int Id { get; set; } public string Title { get; set; } [DataType(DataType.Date)] public DateTime ReleaseDate { get; set; } public string Genre { get; set; } public decimal Price { get; set; } } } 新增 NuGet 套件 在 ASP.NET Core 中欲使用 Entity Framework Core 需安裝 Microsfot.EntityFrameworkCore Package，使用下列指令來安裝套件\n$ dotnet add package Microsoft.EntityFrameworkCore EF 通常都是搭配 SQL Server，開啟套件管理器主控台，執行下列指令，以添加 EF Core SQL Server Provider\nInstall-Package Microsoft.EntityFrameworkCore.SqlServer 建立 DbContext DbContext 類別為 EF Core 與資料庫的溝通橋樑，在專案下建立 MvcMovieContext.cs 類別，並繼承 DbContext 類別以定義與資料庫的溝通行為，同時建立 DbSet　實體集（Entity Set）。\n在 Entity Framework 下，通常實體集（Entity Set）對應於資料表，實體（Entity）對應於資料表中的資料列，EF Core 會自動幫我們轉換實體集與實體的部分。\nusing CoreMVCMovieList.Models; using Microsoft.EntityFrameworkCore; namespace CoreMVCMovieList { public class MvcMovieContext : DbContext { public MvcMovieContext(DbContextOptions options) : base(options) { } public DbSet Movie { get; set; } } } 新增 ConnectionString 以往應用程式有 app.config 可以設定，Web 則有 web.config 可以設置連線字串，在 .Net Core 下 .config 配置文件已經消失，改成使用 JSON 格式的 appsettings.json 配置相關設定。\n添加 ConnectionString 節點的代碼\n{ \"Logging\": { \"LogLevel\": { \"Default\": \"Information\", \"Microsoft\": \"Warning\", \"Microsoft.Hosting.Lifetime\": \"Information\" } }, \"AllowedHosts\": \"*\", \"ConnectionStrings\": { \"MvcMovieContext\": \"Server=(localdb)\\\\mssqllocaldb;Database=MvcMovieContext;Trusted_Connection=True;MultipleActiveResultSets=true\" } } 註冊 DbContext ASP.NET Core 建構於相依性注入（Dependency Injection, DI）概念，所有服務必須在應用程式啟動期間向 DI 進行註冊，透過建構函數提供服務給需要服務的元件（如 Razor Page），開啟 Startup.cs 向 DI 容器註冊 DbContext。\n// 添加引用 using MvcMovie.Data; using Microsoft.EntityFrameworkCore; public void ConfigureServices(IServiceCollection services) { services.AddControllersWithViews(); // DI 注入  services.AddDbContext(options = options.UseSqlServer(Configuration.GetConnectionString(\"MvcMovieContext\"))); } 在 DbContextOptions 物件上調用方法將連線字串傳遞到 context，而在目前開發中，ASP.NET Core Configuration System 會從 appsetting.json 來取得連線字串。\n使用 Scaffold 在方案總管對 Controllers 資料夾執行右鍵→加入→選擇 新增 Scaffold 項目\n選擇 使用 Entity Framework 執行檢視的 MVC 控制器\n將模型類別與資料內容類別 調整為與下圖相同選項，並勾選檢視的三個複選框，控制器名稱為預設。\n此時已添加 MoviesController.cs 該控制下項已經添加所有 CRUD 等動作方法（Action），但目前未能使用該頁面，因為資料庫還不存在，下一步我們將會建立資料庫。\n 如果使用 Scaffold 建立失敗\n嘗試到 NuGet 安裝 Microsoft.VisualStudio.Web.CodeGeneration.Utils\n 進行初始移轉（Initial Migration） 使用 EF Core 的遷移功能來建立資料庫，Migration 可建立和更新與資料模型相符的資料庫。在套件管理器主控台輸入下列命令\n產生 /{timestamp}_InitialCreate.cs 遷移檔案，因為是第一次移轉，所以產生的類別會以 MvcMovieContext 類別的資料庫結構為基礎。\nAdd-Migration InitialCreate 此命令會執行 Migrations/{time-stamp}_InitialCreate.cs 檔案中的 Up 方法，以建立資料庫。\nUpdate-Database 此時可以啟動應用程式操作新增、刪除、修改等方法，可以發現在執行 CRUD 時都會使用到資料庫，因為在建立 MoviesController.cs 時，已經添加下列的建構函式，然而先前在 DI 容器中已註冊 MvcMovieContext，所以在 Controller 的建構子就可透過 DI 來取得 Context 實例。\nprivate readonly MvcMovieContext _context; public MoviesController(MvcMovieContext context) { _context = context; } 植入資料以初始資料庫 在 Models 資料夾下建立 SeedData.cs 類別，在類別內添加下列代碼\npublic static class SeedData { public static void Initialize(IServiceProvider serviceProvider) { using (var context = new MvcMovieContext( serviceProvider.GetRequiredService())) { // Look for any movies.  if (context.Movie.Any()) { return; // DB has been seeded  } context.Movie.AddRange( new Movie { Title = \"When Harry Met Sally\", ReleaseDate = DateTime.Parse(\"1989-2-12\"), Genre = \"Romantic Comedy\", Price = 7.99M }, new Movie { Title = \"Ghostbusters \", ReleaseDate = DateTime.Parse(\"1984-3-13\"), Genre = \"Comedy\", Price = 8.99M }, new Movie { Title = \"Ghostbusters 2\", ReleaseDate = DateTime.Parse(\"1986-2-23\"), Genre = \"Comedy\", Price = 9.99M }, new Movie { Title = \"Rio Bravo\", ReleaseDate = DateTime.Parse(\"1959-4-15\"), Genre = \"Western\", Price = 3.99M } ); context.SaveChanges(); } } } 其中這段代表植入資料前，先判斷資料庫中是否已經資料，沒有資料才初始化資料，有的話直接返回，不新增任何資料。\n// Look for any movies. if (context.Movie.Any()) { // DB has been seeded  return; } 開啟 Program.cs 新增初始設定，將 Main 方法內的原始代碼替換成下列代碼\npublic class Program { public static void Main(string[] args) { // CreateHostBuilder(args).Build().Run();  var host = CreateHostBuilder(args).Build(); using (var scope = host.Services.CreateScope()) { var services = scope.ServiceProvider; try { SeedData.Initialize(services); } catch (Exception ex) { var logger = services.GetRequiredService(); logger.LogError(ex, \"An error occurred seeding the DB.\"); } } host.Run(); } ... } 啟動應用程式，查看上述的設定，資料庫在有資料的情況下，不做新增資料的動作，將所有資料刪除使得資料庫資料為零，這時再啟動應用程式會發現，資料庫會新增預設的資料。\n使用資料註釋 Data Annotations 目前清單的標題列上顯示的是 Model 的名稱，使用 Data Annotations 來變更顯示名稱。開啟 Models/Movie.cs 替換成下列代碼\n// 需引用的命名空間 using System.ComponentModel.DataAnnotations; using System.ComponentModel.DataAnnotations.Schema; ... public class Movie { public int Id { get; set; } [Display(Name = \"電影名稱\")] public string Title { get; set; } [Display(Name = \"放映日期\")] [DataType(DataType.Date)] public DateTime ReleaseDate { get; set; } [Display(Name = \"類型\")] public string Genre { get; set; } [Display(Name = \"價格\")] [Column(TypeName = \"decimal(18, 2)\")] public decimal Price { get; set; } } 結果如下\n新增搜尋引擎 目前的清單沒有搜尋引擎，當資料量一多，一頁頁的翻找會很耗時，接下來我們要新增一個搜尋引擎，讓使用者可以搜尋「電影名稱」、「類型」以快速查找。\n搜尋電影名稱 開啟 Vies/Movies/Index.cshtml 添加下列 ... 代碼\np a asp-action=\"Create\"Create Newa p  form asp-controller=\"Movies\" asp-action=\"Index\" method=\"get\" p 電影名稱: input type=\"text\" name=\"SearchString\" / input type=\"submit\" value=\"Filter\" / p form  table class=\"table\" thead ... 開啟 MoviesController.cs 變更 Index 動作方法\n[HttpGet] public async Task Index(string searchString) { // LINQ 查詢  var movies = from m in _context.Movie select m; if (!String.IsNullOrEmpty(searchString)) { movies = movies.Where(k = k.Title.Contains(searchString)); } return View(await movies.ToListAsync()); } 效果\n搜尋類型 搜尋類型要以下拉選單的方式呈現，因此先新增 ViewModels 資料夾，再資料夾下新增 MovieGenerViewModel.cs 類別\npublic class MovieGenerViewModel { public List Movies { get; set; } public SelectList Genres { get; set; } public string MovieGenre { get; set; } public string SearchString { get; set; } } 進一步修改剛剛的 MoviesController.cs 的 Index 方法\npublic async Task Index(string movieGenre, string searchString) { var movies = from m in _context.Movie select m; if (!String.IsNullOrEmpty(searchString)) { movies = movies.Where(k = k.Title.Contains(searchString)); } if (!string.IsNullOrEmpty(movieGenre)) { movies = movies.Where(k = k.Genre == movieGenre); } // LINQ 取類型資料  IQueryablestring genreQuery = from m in _context.Movie orderby m.Genre select m.Genre; var movieGenreVM = new MovieGenerViewModel { Genres = new SelectList(await genreQuery.Distinct().ToListAsync()), Movies = await movies.ToListAsync() }; return View(movieGenreVM); } 更新 Views/Movies/Index.cshtml\n @model CoreMVCMovieList.ViewModels.MovieGenerViewModel ... form asp-controller=\"Movies\" asp-action=\"Index\" method=\"get\" p  select asp-for=\"MovieGenre\" asp-items=\"Model.Genres\" option value=\"\"Alloption select  電影名稱: input type=\"text\" asp-for=\"SearchString\" / input type=\"submit\" value=\"Filter\" / p form ... thead tr th  @Html.DisplayNameFor(model = model.Movies[0].Title) th th  @Html.DisplayNameFor(model = model.Movies[0].ReleaseDate) th th  @Html.DisplayNameFor(model = model.Movies[0].Genre) th th  @Html.DisplayNameFor(model = model.Movies[0].Price) th thth tr thead ...  @foreach (var item in Model.Movies) { tr td @Html.DisplayFor(modelItem = item.Title) td ... tr } 觀察效果\n新增資料驗證 使用 DataAnnotations Namespace 提供的的驗證屬性，套用到類別或屬性中，開啟 Movie 類別，將 Required、StringLength、RegularExpression、Range 添加到各個屬性上\npublic class Movie { public int Id { get; set; } [Required] [StringLength(60, MinimumLength =3)] [Display(Name = \"電影名稱\")] public string Title { get; set; } [Display(Name = \"放映日期\")] [DataType(DataType.Date)] public DateTime ReleaseDate { get; set; } [Required] [RegularExpression(@\"^[A-Z]+[a-zA-Z]*$\")] [Display(Name = \"類型\")]  public string Genre { get; set; } [Range(1, 100)] [DataType(DataType.Currency)] [Display(Name = \"價格\")] [Column(TypeName = \"decimal(18, 2)\")] public decimal Price { get; set; } } 啟動應用程式新增一筆資料，在未填任何資料的情況下按下「新增」按鈕，觀察結果，同樣在編輯頁面若資料不符合驗證規則，會有錯誤提示產生。\n使用 Bootstrap 增強外觀效果 最後一步，由於 .NET Core 已經不會內建樣式，要添加 Bootstrap 等套件需自行到 NuGet 添加，這邊隨手添加一下 Bootstrap 的 Button 及 Table 樣式，使得外觀好看一點。\n完成！\nNote 在 Step by step 過程中，實作的部分很快就能完成，其中有很多原理必須深入研究，待研究有心得再來記錄。\nReference Part 1 - Get started with ASP.NET Core MVC\nPart 2 - Add a controller to an ASP.NET Core MVC app\nPart 3 - Add a view to an ASP.NET Core MVC app\nPart 4 - Add a model to an ASP.NET Core MVC app\nPart 5 - Work with a database in an ASP.NET Core MVC app\nPart 6 - Controller methods and views in ASP.NET Core\nPart 7 - Add search to an ASP.NET Core MVC app\nPart 8 - Add a new field to an ASP.NET Core MVC app\nPart 9 - Add validation to an ASP.NET Core MVC app\nPart 10 - Examine the Details and Delete methods of an ASP.NET Core app\n",
+  "wordCount" : "1325",
+  "inLanguage": "en",
+  "datePublished": "2021-04-10T00:00:00Z",
+  "dateModified": "2021-04-10T14:06:07+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Polar Bear"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://fakestandard.github.io/post/dotnet/dotnet-2-mvc-movielist/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "How can I help",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://fakestandard.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
 
-        <div id="content" style="min-height:80%">
-<div class="layui-container" style="margin-bottom: 10px">
-    
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-    <div class="layui-row layui-col-space10">
-        <div class="layui-col-md8 layui-col-sm12 layui-col-xs12">
-            <div class="layui-card single-card">
-                <br />
-                <blockquote class="self-elem-quote self-elem-quote-bg-green markdown-body single-title" >
-                    <h1>【.NET】適合初心者的 .NET Core MVC 實作</h1>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-10</span>
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
 
-    
-        <a href="/categories/.net/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
-        </a>
-    
-        <a href="/categories/web/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Web</span>
-        </a>
-    
+            .list {
+                background: var(--theme);
+            }
 
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
 
-    
-        <a href="/tags/.net/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
-        </a>
-    
-        <a href="/tags/mvc/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">MVC</span>
-        </a>
-    
-    
-</h3>
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
 
-                </blockquote>
-                <div class="layui-card-body markdown-body single-content">
-                    <p>此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解<strong>如何建立 Web 應用程式</strong>、<strong>新增及 Scaffold 模型</strong>、<strong>使用資料庫</strong>、<strong>資料的 CRUD</strong>、<strong>新增搜尋和驗證</strong>，最後會完成一個有關電影清單的應用程式。</p>
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://fakestandard.github.io/" accesskey="h" title="How can I help (Alt + H)">How can I help</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://fakestandard.github.io/algorithm/" title="Algorithm">
+                    <span>Algorithm</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/netcore/" title=".NET Core">
+                    <span>.NET Core</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      【.NET】適合初心者的 .NET Core MVC 實作
+    </h1>
+    <div class="post-meta">April 10, 2021&nbsp;·&nbsp;Polar Bear
+</div>
+  </header> 
+  <div class="post-content"><p>此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解<strong>如何建立 Web 應用程式</strong>、<strong>新增及 Scaffold 模型</strong>、<strong>使用資料庫</strong>、<strong>資料的 CRUD</strong>、<strong>新增搜尋和驗證</strong>，最後會完成一個有關電影清單的應用程式。</p>
 <p>UI 的介紹會以 IDE 為主，除 UI 外也會介紹 dotnet 指令。</p>
 <p>代碼部分已上傳到 <a href="https://github.com/FakeStandard/CoreMVCMovieList">GitHub</a></p>
-<h1 id="start">Start</h1>
+<h1 id="start">Start<a hidden class="anchor" aria-hidden="true" href="#start">#</a></h1>
 <ul>
 <li><a href="#%E5%BB%BA%E7%AB%8B-web-app">建立 Web app</a></li>
 <li><a href="#%E6%96%B0%E5%A2%9E%E6%8E%A7%E5%88%B6%E5%99%A8controller">新增控制器（Controller）</a></li>
@@ -161,17 +236,19 @@ layui.use('element', function(){
 <li><a href="#%E6%96%B0%E5%A2%9E%E8%B3%87%E6%96%99%E9%A9%97%E8%AD%89">新增資料驗證</a></li>
 <li><a href="#%E4%BD%BF%E7%94%A8-bootstrap-%E5%A2%9E%E5%BC%B7%E5%A4%96%E8%A7%80%E6%95%88%E6%9E%9C">使用 Bootstrap 增強外觀效果</a></li>
 </ul>
-<h2 id="建立-web-app">建立 Web app</h2>
+<h2 id="建立-web-app">建立 Web app<a hidden class="anchor" aria-hidden="true" href="#建立-web-app">#</a></h2>
 <p>提供兩種方法，一種透過 Visual Studio IDE，一種是使用 Command shell 操作，兩種皆可達相同結果。</p>
-<h3 id="visual-studio-ide">Visual Studio IDE</h3>
+<h3 id="visual-studio-ide">Visual Studio IDE<a hidden class="anchor" aria-hidden="true" href="#visual-studio-ide">#</a></h3>
 <p>建立 【ASP.NET Core Web 應用程式】</p>
-<p><img src="/images/NetCore_MVC/MVCMovie001.png" alt="001"></p>
+<p><img loading="lazy" src="/images/NetCore_MVC/MVCMovie001.png" alt="001"  />
+</p>
 <p>選擇 【ASP.NET Core Web 應用程式(Model-View-Controller)】<br>
 下拉選單選擇 <strong>.Net Core</strong> 和 <strong>ASP.NET Core 5.0</strong></p>
-<p><img src="/images/NetCore_MVC/MVCMovie002.png" alt="002"></p>
+<p><img loading="lazy" src="/images/NetCore_MVC/MVCMovie002.png" alt="002"  />
+</p>
 <p>執行 <code>Ctrl + F5</code> 啟動 IIS Express 以執行應用程式，並且不執行偵錯。不啟用偵錯工作的好處是可隨時變更程式碼並且隨時儲存，當程式碼變更可重新整理瀏覽器快速查看。</p>
 <p>觀察瀏覽器網址列顯示 <code>localhost:{port}</code>，本機電腦的 hostname 為 <code>localhost</code>，<code>{port}</code> 是當 Visual Studio 建立 Web project 時，會自動分配一個隨機通訊埠號給網頁伺服器。</p>
-<h3 id="command-shell">Command Shell</h3>
+<h3 id="command-shell">Command Shell<a hidden class="anchor" aria-hidden="true" href="#command-shell">#</a></h3>
 <p>開啟終端機或 VS Code 終端機，切換到欲新增專案的目錄</p>
 <p>在當前目錄建立新的 ASP.NET Core MVC 專案</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet new mvc -o MvcMovie
@@ -180,24 +257,28 @@ layui.use('element', function(){
 </code></pre></div><p>信任 Https 開發憑證</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet dev-certs https --trust
 </code></pre></div><p>接著同上述執行 <code>Ctrl + F5</code> 啟動應用程式，詳細內容請往回參考。</p>
-<h2 id="新增控制器controller">新增控制器（Controller）</h2>
+<h2 id="新增控制器controller">新增控制器（Controller）<a hidden class="anchor" aria-hidden="true" href="#新增控制器controller">#</a></h2>
 <p>在方案總管中，對 Controllers 資料夾執行右鍵→選擇加入→控制器。</p>
-<p><img src="/images/NetCore_MVC/MVCMovie003.png" alt="003"></p>
+<p><img loading="lazy" src="/images/NetCore_MVC/MVCMovie003.png" alt="003"  />
+</p>
 <p>選擇【MVC 控制器 - 空白】</p>
-<p><img src="/images/NetCore_MVC/MVCMovie004.png" alt="004"></p>
+<p><img loading="lazy" src="/images/NetCore_MVC/MVCMovie004.png" alt="004"  />
+</p>
 <p>將控制器名稱更改為 <code>HelloWorldController.cs</code>，並且新增。</p>
 <p>此時啟動應用程式瀏覽 <code>https://localhost:{Port}/HelloWorld/</code> 會返回錯誤，因為我們還沒建立檢視器（View）。</p>
-<h2 id="新增檢視器view">新增檢視器（View）</h2>
+<h2 id="新增檢視器view">新增檢視器（View）<a hidden class="anchor" aria-hidden="true" href="#新增檢視器view">#</a></h2>
 <p>建立檢視器方法有兩種，一種是從方案總管中建立，一種是快速建立。筆者推薦使用快速建立。</p>
-<h3 id="方案總管">方案總管</h3>
+<h3 id="方案總管">方案總管<a hidden class="anchor" aria-hidden="true" href="#方案總管">#</a></h3>
 <p>對 Views 資料夾執行右鍵→加入→資料夾，該資料夾名稱命名為欲建立 View 的控制器名稱，這邊將它命名為 <code>HelloWorld</code>。</p>
 <p>對新增的 HelloWorld 資料夾，執行右鍵→加入→檢視，選擇 <strong>Razor 檢視 - 空白</strong>。</p>
 <p>View 的名稱應命名為控制器之動作方法名稱，與動作方法與之對應。開啟 <code>HelloWorldController.cs</code> 可以看見預設建立的 <code>Index()</code> 動作方法，該方法就是這次要建立檢視器的名稱 <code>Index.cshtml</code>。</p>
-<p><img src="/images/NetCore_MVC/MVCMovie005.png" alt="005"></p>
-<h3 id="快速建立">快速建立</h3>
+<p><img loading="lazy" src="/images/NetCore_MVC/MVCMovie005.png" alt="005"  />
+</p>
+<h3 id="快速建立">快速建立<a hidden class="anchor" aria-hidden="true" href="#快速建立">#</a></h3>
 <p>開啟 <code>HelloWorldControll.cs</code>，在 <code>Index()</code> 方法上執行右鍵，選擇新增檢視。接著就與上述建立方法相同，選擇 <strong>Razor 檢視 - 空白</strong>，建立名為 <code>Index.cshtml</code> 檢視器。</p>
-<p><img src="/images/NetCore_MVC/MVCMovie006.png" alt="006"></p>
-<h3 id="變更檢視及版面配置">變更檢視及版面配置</h3>
+<p><img loading="lazy" src="/images/NetCore_MVC/MVCMovie006.png" alt="006"  />
+</p>
+<h3 id="變更檢視及版面配置">變更檢視及版面配置<a hidden class="anchor" aria-hidden="true" href="#變更檢視及版面配置">#</a></h3>
 <p>打開剛剛建立的 View 修改代碼以變更呈現內容</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--index.cshtml--&gt;</span>
 @{
@@ -227,12 +308,13 @@ layui.use('element', function(){
     &lt;/<span style="color:#f92672">ul</span>&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
 </code></pre></div><p>效果</p>
-<p><img src="/images/NetCore_MVC/MVCMovie007.png" alt="007"></p>
-<h2 id="新增模型model">新增模型（Model）</h2>
+<p><img loading="lazy" src="/images/NetCore_MVC/MVCMovie007.png" alt="007"  />
+</p>
+<h2 id="新增模型model">新增模型（Model）<a hidden class="anchor" aria-hidden="true" href="#新增模型model">#</a></h2>
 <p>模型以實際層面來說即是類別，建立模型實際動作就是建立一個類別，將建立的類別作為 Model 使用。</p>
 <p>Entity Framework Core（EF Core） 是一種<strong>物件關聯式架構</strong>（Object-relational mapping, ORM），在撰寫資料存取的代碼時，透過 ORM 可簡化這些代碼。所以你可以將類別與 EF Core 搭配使用以操作資料庫。</p>
 <p>這些自行建立的類別被稱為 <strong>POCO</strong>（Plain Old CLR Objects），因為它們只定義儲存在資料庫中的資料屬性，對 EF Core 不具有任何相依性。</p>
-<h3 id="建立類別">建立類別</h3>
+<h3 id="建立類別">建立類別<a hidden class="anchor" aria-hidden="true" href="#建立類別">#</a></h3>
 <p>在 Models 資料夾執行右鍵→選擇加入→類別，將類別命名為 <code>Movie.cs</code>，在類別內添加下列代碼</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">using</span> System;
 <span style="color:#66d9ef">using</span> System.ComponentModel.DataAnnotations;
@@ -250,12 +332,12 @@ layui.use('element', function(){
         <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">decimal</span> Price { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
     }
 }
-</code></pre></div><h2 id="新增-nuget-套件">新增 NuGet 套件</h2>
+</code></pre></div><h2 id="新增-nuget-套件">新增 NuGet 套件<a hidden class="anchor" aria-hidden="true" href="#新增-nuget-套件">#</a></h2>
 <p>在 ASP.NET Core 中欲使用 Entity Framework Core 需安裝 <code>Microsfot.EntityFrameworkCore</code> Package，使用下列指令來安裝套件</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet add package Microsoft.EntityFrameworkCore
 </code></pre></div><p>EF 通常都是搭配 SQL Server，開啟<strong>套件管理器主控台</strong>，執行下列指令，以添加 EF Core SQL Server Provider</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Install-Package Microsoft.EntityFrameworkCore.SqlServer
-</code></pre></div><h2 id="建立-dbcontext">建立 DbContext</h2>
+</code></pre></div><h2 id="建立-dbcontext">建立 DbContext<a hidden class="anchor" aria-hidden="true" href="#建立-dbcontext">#</a></h2>
 <p><code>DbContext</code> 類別為 EF Core 與資料庫的溝通橋樑，在專案下建立 <code>MvcMovieContext.cs</code> 類別，並繼承 <code>DbContext</code> 類別以定義與資料庫的溝通行為，同時建立 <code>DbSet&lt;Movie&gt;</code>　實體集（Entity Set）。</p>
 <p>在 Entity Framework 下，通常實體集（Entity Set）對應於資料表，實體（Entity）對應於資料表中的資料列，EF Core 會自動幫我們轉換實體集與實體的部分。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">using</span> CoreMVCMovieList.Models;
@@ -271,7 +353,7 @@ layui.use('element', function(){
         <span style="color:#66d9ef">public</span> DbSet&lt;Movie&gt; Movie { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
     }
 }
-</code></pre></div><h2 id="新增-connectionstring">新增 ConnectionString</h2>
+</code></pre></div><h2 id="新增-connectionstring">新增 ConnectionString<a hidden class="anchor" aria-hidden="true" href="#新增-connectionstring">#</a></h2>
 <p>以往應用程式有 <code>app.config</code> 可以設定，Web 則有 <code>web.config</code> 可以設置連線字串，在 .Net Core 下 <code>.config</code> 配置文件已經消失，改成使用 JSON 格式的 <code>appsettings.json</code> 配置相關設定。</p>
 <p>添加 ConnectionString 節點的代碼</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
@@ -287,7 +369,7 @@ layui.use('element', function(){
     <span style="color:#f92672">&#34;MvcMovieContext&#34;</span>: <span style="color:#e6db74">&#34;Server=(localdb)\\mssqllocaldb;Database=MvcMovieContext;Trusted_Connection=True;MultipleActiveResultSets=true&#34;</span>
   }
 }
-</code></pre></div><h2 id="註冊-dbcontext">註冊 DbContext</h2>
+</code></pre></div><h2 id="註冊-dbcontext">註冊 DbContext<a hidden class="anchor" aria-hidden="true" href="#註冊-dbcontext">#</a></h2>
 <p>ASP.NET Core 建構於相依性注入（Dependency Injection, DI）概念，所有服務必須在應用程式啟動期間向 DI 進行註冊，透過建構函數提供服務給需要服務的元件（如 Razor Page），開啟 <code>Startup.cs</code> 向 DI 容器註冊 DbContext。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 添加引用
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> MvcMovie.Data;
@@ -301,19 +383,22 @@ layui.use('element', function(){
             options.UseSqlServer(Configuration.GetConnectionString(<span style="color:#e6db74">&#34;MvcMovieContext&#34;</span>)));
 }
 </code></pre></div><p>在 DbContextOptions 物件上調用方法將連線字串傳遞到 context，而在目前開發中，ASP.NET Core Configuration System 會從 <code>appsetting.json</code> 來取得連線字串。</p>
-<h2 id="使用-scaffold">使用 Scaffold</h2>
+<h2 id="使用-scaffold">使用 Scaffold<a hidden class="anchor" aria-hidden="true" href="#使用-scaffold">#</a></h2>
 <p>在方案總管對 Controllers 資料夾執行右鍵→加入→選擇 <strong>新增 Scaffold 項目</strong></p>
-<p><img src="/images/NetCore_MVC/MVCMovie008.png" alt="008"></p>
+<p><img loading="lazy" src="/images/NetCore_MVC/MVCMovie008.png" alt="008"  />
+</p>
 <p>選擇 <strong>使用 Entity Framework 執行檢視的 MVC 控制器</strong></p>
-<p><img src="/images/NetCore_MVC/MVCMovie009.png" alt="009"></p>
+<p><img loading="lazy" src="/images/NetCore_MVC/MVCMovie009.png" alt="009"  />
+</p>
 <p>將<strong>模型類別</strong>與<strong>資料內容類別</strong> 調整為與下圖相同選項，並勾選檢視的三個複選框，控制器名稱為預設。</p>
-<p><img src="/images/NetCore_MVC/MVCMovie010.png" alt="010"></p>
+<p><img loading="lazy" src="/images/NetCore_MVC/MVCMovie010.png" alt="010"  />
+</p>
 <p>此時已添加 <code>MoviesController.cs</code> 該控制下項已經添加所有 CRUD 等動作方法（Action），但目前未能使用該頁面，因為資料庫還不存在，下一步我們將會建立資料庫。</p>
 <blockquote>
 <p><strong>如果使用 Scaffold 建立失敗</strong></p>
 <p>嘗試到 NuGet 安裝 <strong>Microsoft.VisualStudio.Web.CodeGeneration.Utils</strong></p>
 </blockquote>
-<h2 id="進行初始移轉initial-migration">進行初始移轉（Initial Migration）</h2>
+<h2 id="進行初始移轉initial-migration">進行初始移轉（Initial Migration）<a hidden class="anchor" aria-hidden="true" href="#進行初始移轉initial-migration">#</a></h2>
 <p>使用 EF Core 的遷移功能來建立資料庫，Migration 可建立和更新與資料模型相符的資料庫。在套件管理器主控台輸入下列命令</p>
 <p>產生 <code>/{timestamp}_InitialCreate.cs</code> 遷移檔案，因為是第一次移轉，所以產生的類別會以 <code>MvcMovieContext</code> 類別的資料庫結構為基礎。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Add-Migration InitialCreate
@@ -326,7 +411,7 @@ layui.use('element', function(){
 {
     _context = context;
 }
-</code></pre></div><h2 id="植入資料以初始資料庫">植入資料以初始資料庫</h2>
+</code></pre></div><h2 id="植入資料以初始資料庫">植入資料以初始資料庫<a hidden class="anchor" aria-hidden="true" href="#植入資料以初始資料庫">#</a></h2>
 <p>在 Models 資料夾下建立 <code>SeedData.cs</code> 類別，在類別內添加下列代碼</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SeedData</span>
 {
@@ -417,7 +502,7 @@ layui.use('element', function(){
     ...
 }
 </code></pre></div><p>啟動應用程式，查看上述的設定，資料庫在有資料的情況下，不做新增資料的動作，將所有資料刪除使得資料庫資料為零，這時再啟動應用程式會發現，資料庫會新增預設的資料。</p>
-<h2 id="使用資料註釋-data-annotations">使用資料註釋 Data Annotations</h2>
+<h2 id="使用資料註釋-data-annotations">使用資料註釋 Data Annotations<a hidden class="anchor" aria-hidden="true" href="#使用資料註釋-data-annotations">#</a></h2>
 <p>目前清單的標題列上顯示的是 Model 的名稱，使用 Data Annotations 來變更顯示名稱。開啟 <code>Models/Movie.cs</code> 替換成下列代碼</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 需引用的命名空間
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.ComponentModel.DataAnnotations;
@@ -444,10 +529,11 @@ layui.use('element', function(){
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">decimal</span> Price { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 }
 </code></pre></div><p>結果如下</p>
-<p><img src="/images/NetCore_MVC/MVCMovie011.png" alt="011"></p>
-<h2 id="新增搜尋引擎">新增搜尋引擎</h2>
+<p><img loading="lazy" src="/images/NetCore_MVC/MVCMovie011.png" alt="011"  />
+</p>
+<h2 id="新增搜尋引擎">新增搜尋引擎<a hidden class="anchor" aria-hidden="true" href="#新增搜尋引擎">#</a></h2>
 <p>目前的清單沒有搜尋引擎，當資料量一多，一頁頁的翻找會很耗時，接下來我們要新增一個搜尋引擎，讓使用者可以搜尋「電影名稱」、「類型」以快速查找。</p>
-<h3 id="搜尋電影名稱">搜尋電影名稱</h3>
+<h3 id="搜尋電影名稱">搜尋電影名稱<a hidden class="anchor" aria-hidden="true" href="#搜尋電影名稱">#</a></h3>
 <p>開啟 <code>Vies/Movies/Index.cshtml</code> 添加下列 <code>&lt;form&gt;...&lt;/form&gt;</code> 代碼</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span>&gt;
     &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">asp-action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Create&#34;</span>&gt;Create New&lt;/<span style="color:#f92672">a</span>&gt;
@@ -481,8 +567,9 @@ layui.use('element', function(){
     <span style="color:#66d9ef">return</span> View(<span style="color:#66d9ef">await</span> movies.ToListAsync());
 }
 </code></pre></div><p>效果</p>
-<p><img src="/images/NetCore_MVC/MVCMovie012.png" alt="012"></p>
-<h3 id="搜尋類型">搜尋類型</h3>
+<p><img loading="lazy" src="/images/NetCore_MVC/MVCMovie012.png" alt="012"  />
+</p>
+<h3 id="搜尋類型">搜尋類型<a hidden class="anchor" aria-hidden="true" href="#搜尋類型">#</a></h3>
 <p>搜尋類型要以下拉選單的方式呈現，因此先新增 <code>ViewModels</code> 資料夾，再資料夾下新增 <code>MovieGenerViewModel.cs</code> 類別</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MovieGenerViewModel</span>
 {
@@ -575,8 +662,9 @@ layui.use('element', function(){
     &lt;/<span style="color:#f92672">tr</span>&gt;
 }
 </code></pre></div><p>觀察效果</p>
-<p><img src="/images/NetCore_MVC/MVCMovie013.png" alt="013"></p>
-<h2 id="新增資料驗證">新增資料驗證</h2>
+<p><img loading="lazy" src="/images/NetCore_MVC/MVCMovie013.png" alt="013"  />
+</p>
+<h2 id="新增資料驗證">新增資料驗證<a hidden class="anchor" aria-hidden="true" href="#新增資料驗證">#</a></h2>
 <p>使用 <code>DataAnnotations</code> Namespace 提供的的驗證屬性，套用到類別或屬性中，開啟 <code>Movie</code> 類別，將 <code>Required</code>、<code>StringLength</code>、<code>RegularExpression</code>、<code>Range</code> 添加到各個屬性上</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Movie</span>
 {
@@ -603,14 +691,16 @@ layui.use('element', function(){
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">decimal</span> Price { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 }
 </code></pre></div><p>啟動應用程式新增一筆資料，在未填任何資料的情況下按下「新增」按鈕，觀察結果，同樣在編輯頁面若資料不符合驗證規則，會有錯誤提示產生。</p>
-<p><img src="/images/NetCore_MVC/MVCMovie014.png" alt="014"></p>
-<h3 id="使用-bootstrap-增強外觀效果">使用 Bootstrap 增強外觀效果</h3>
+<p><img loading="lazy" src="/images/NetCore_MVC/MVCMovie014.png" alt="014"  />
+</p>
+<h3 id="使用-bootstrap-增強外觀效果">使用 Bootstrap 增強外觀效果<a hidden class="anchor" aria-hidden="true" href="#使用-bootstrap-增強外觀效果">#</a></h3>
 <p>最後一步，由於 .NET Core 已經不會內建樣式，要添加 Bootstrap 等套件需自行到 NuGet 添加，這邊隨手添加一下 Bootstrap 的 Button 及 Table 樣式，使得外觀好看一點。</p>
 <p>完成！</p>
-<p><img src="/images/NetCore_MVC/MVCMovie015.png" alt="015"></p>
-<h1 id="note">Note</h1>
+<p><img loading="lazy" src="/images/NetCore_MVC/MVCMovie015.png" alt="015"  />
+</p>
+<h1 id="note">Note<a hidden class="anchor" aria-hidden="true" href="#note">#</a></h1>
 <p>在 Step by step 過程中，實作的部分很快就能完成，其中有很多原理必須深入研究，待研究有心得再來記錄。</p>
-<h1 id="reference">Reference</h1>
+<h1 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h1>
 <p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-5.0&amp;tabs=visual-studio">Part 1 - Get started with ASP.NET Core MVC</a></p>
 <p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/first-mvc-app/adding-controller?view=aspnetcore-5.0&amp;tabs=visual-studio">Part 2 - Add a controller to an ASP.NET Core MVC app</a></p>
 <p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/first-mvc-app/adding-view?view=aspnetcore-5.0&amp;tabs=visual-studio">Part 3 - Add a view to an ASP.NET Core MVC app</a></p>
@@ -621,329 +711,84 @@ layui.use('element', function(){
 <p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/first-mvc-app/new-field?view=aspnetcore-5.0&amp;tabs=visual-studio">Part 8 - Add a new field to an ASP.NET Core MVC app</a></p>
 <p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/first-mvc-app/validation?view=aspnetcore-5.0">Part 9 - Add validation to an ASP.NET Core MVC app</a></p>
 <p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/first-mvc-app/details?view=aspnetcore-5.0">Part 10 - Examine the Details and Delete methods of an ASP.NET Core app</a></p>
+
 </div>
-            </div>
-        </div>
-
-        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
-            
-            <div class="layui-card single-card">
-                <h2 class="single-title">Relevant Topics</h2>
-                
-                	
-                    <div style="margin-left: 10px;">
-                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                            <a href="/post/dotnet/dotnet-1-blazor/">
-                                <h3 class="">【.NET】打造 Blazor ToDoList</h3>
-                            </a>
-                            
-                            <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-03-28</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/.net/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
-        </a>
-    
-        <a href="/categories/web/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Web</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/.net/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
-        </a>
-    
-        <a href="/tags/blazor/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Blazor</span>
-        </a>
-    
-        <a href="/tags/todolist/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">TodoList</span>
-        </a>
-    
-    
-</h3>
-
-                        </blockquote>
-                    </div>
-                	
-                
-                <br />
-            </div>
-            
-
-            <div class="layui-card single-card">
-                <h2 class="single-title">Recent Posts</h2>
-            
-                
-                <div style="margin-left: 10px;">
-                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                    <a href="/post/lifetrip/lifetrip-2-hsinchu-wufeng/">
-                        <h3 class="">【Life Trip】五峰星空下露營區</h3>
-                    </a>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-29</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/life-trip/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Life Trip</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/hsinchu-wufeng/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Hsinchu - Wufeng</span>
-        </a>
-    
-    
-</h3>
-
-                    </blockquote>
-                </div>
-                
-                <div style="margin-left: 10px;">
-                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                    <a href="/post/dotnet/dotnet-3-npoisimple/">
-                        <h3 class="">【.NET】使用 NPOI 匯出 Excel 的基本應用</h3>
-                    </a>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-27</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/.net/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/.net/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
-        </a>
-    
-        <a href="/tags/npoi/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">NPOI</span>
-        </a>
-    
-        <a href="/tags/c/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
-        </a>
-    
-    
-</h3>
-
-                    </blockquote>
-                </div>
-                
-                <div style="margin-left: 10px;">
-                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                    <a href="/post/csharp/csharp-1-getosinformation/">
-                        <h3 class="">【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊</h3>
-                    </a>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-19</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/c/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/c/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
-        </a>
-    
-        <a href="/tags/windows/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
-        </a>
-    
-        <a href="/tags/memory/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Memory</span>
-        </a>
-    
-        <a href="/tags/culture/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Culture</span>
-        </a>
-    
-    
-</h3>
-
-                    </blockquote>
-                </div>
-                
-                <div style="margin-left: 10px;">
-                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                    <a href="/post/other/other-2-incometax/">
-                        <h3 class="">【人森】如何計算個人綜合所得稅？</h3>
-                    </a>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-14</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/other/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Other</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/%e7%b6%9c%e5%90%88%e6%89%80%e5%be%97%e7%a8%85/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">綜合所得稅</span>
-        </a>
-    
-        <a href="/tags/income-tax/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Income Tax</span>
-        </a>
-    
-    
-</h3>
-
-                    </blockquote>
-                </div>
-                
-                <div style="margin-left: 10px;">
-                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                    <a href="/post/windows/windows-7-openwindowsexplorer/">
-                        <h3 class="">【Windows】開啟運行程式的所在資料夾位置</h3>
-                    </a>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-12</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/windows-win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - Win10</span>
-        </a>
-    
-        <a href="/categories/common-sense/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/windows/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
-        </a>
-    
-        <a href="/tags/win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
-        </a>
-    
-        <a href="/tags/windows-explorer/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows Explorer</span>
-        </a>
-    
-        <a href="/tags/task-manager/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Task Manager</span>
-        </a>
-    
-    
-</h3>
-
-                    </blockquote>
-                </div>
-                
-            
-            <br />
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-        </div>
-
-<footer>
-    
-
-    <div class="layui-container">
-        <div class="layui-row">
-            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
-                <h3> Related Sites </h3>
-            </div>
-        </div>
-        <div class="layui-row">
-            
-            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
-            </div>
-            
-            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/about/"><p class="footer-url">About</p></a>
-            </div>
-            
-            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/categories/"><p class="footer-url">Category</p></a>
-            </div>
-            
-        </div>
-    </div>
-    
-    
-    <div class="layui-container">
-        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
-    </div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://fakestandard.github.io/tags/.net/">.NET</a></li>
+      <li><a href="https://fakestandard.github.io/tags/mvc/">MVC</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://fakestandard.github.io/">How can I help</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
 </footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
 </body>
+
 </html>

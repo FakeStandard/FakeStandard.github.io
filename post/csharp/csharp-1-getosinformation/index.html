@@ -1,151 +1,222 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html lang="en" dir="auto">
 
-    <title>How can I help - 【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊 </title>
-    
-    
-    <meta content="C#, Windows, Memory, Culture" name="keywords">
-    
-    <meta content="How can I help - Start 近期為了在客戶的應用程式中添加一些裝置資訊，並將裝置資訊記錄成 LOG，以利下次客戶有問題時，可以先讓客戶提供有用資訊加以判斷。
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊 | How can I help</title>
+<meta name="keywords" content="C#, Windows, Memory, Culture" />
+<meta name="description" content="Start 近期為了在客戶的應用程式中添加一些裝置資訊，並將裝置資訊記錄成 LOG，以利下次客戶有問題時，可以先讓客戶提供有用資訊加以判斷。
 引用 Microsoft.VisualBasic.Devices 命名空間，使用該命名空間下的 Computer 類別來取得資訊，Computer 類別提供許多屬性來操作電腦元件，這篇紀錄如何取得裝置資訊。
 Computer computer = new Computer(); // 取得裝置名稱 Console.WriteLine(computer.Name); // 實體記憶體總量 Console.WriteLine(computer.Info.TotalPhysicalMemory); // 虛擬記憶體總量 Console.WriteLine(computer.Info.TotalVirtualMemory); // 可用實體記憶體總量 Console.WriteLine(computer.Info.AvailablePhysicalMemory); // 可用虛擬記憶體總量 Console.WriteLine(computer.Info.AvailableVirtualMemory); // 完整作業系統名稱 Console.WriteLine(computer.Info.OSFullName); // OS 平台識別項 Console.WriteLine(computer.Info.OSPlatform); // OS 版本 Console.WriteLine(computer.Info.OSVersion); // OS 文化特性 Console.WriteLine(computer.Info.InstalledUICulture); 除了使用 Computer 類別之外，也可以使用 ComputerInfo 取得裝置資訊
 ComputerInfo info = new ComputerInfo(); 上述看到 computer.Info.InstalledUICulture 文化特性，在該屬性下還有很多屬性可以使用，如下。
-// 系統所安裝的 UI 文化特性 Console.WriteLine(computer.Info.InstalledUICulture); // 預設行事曆 Console.WriteLine(computer.Info.InstalledUICulture.Calendar); // 該文化特性的曆法集合 foreach (var calendar in computer." name="description">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    
+// 系統所安裝的 UI 文化特性 Console.WriteLine(computer.Info.InstalledUICulture); // 預設行事曆 Console.WriteLine(computer.Info.InstalledUICulture.Calendar); // 該文化特性的曆法集合 foreach (var calendar in computer.">
+<meta name="author" content="Polar Bear">
+<link rel="canonical" href="https://fakestandard.github.io/post/csharp/csharp-1-getosinformation/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.d1b405b7c6bf1b09aebca33eb6e2d8bd070113d119bdfa2715c32f6408f9fbee.css" integrity="sha256-0bQFt8a/GwmuvKM&#43;tuLYvQcBE9EZvfonFcMvZAj5&#43;&#43;4=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://fakestandard.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://fakestandard.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://fakestandard.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://fakestandard.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.81.0" />
+<meta property="og:title" content="【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊" />
+<meta property="og:description" content="Start 近期為了在客戶的應用程式中添加一些裝置資訊，並將裝置資訊記錄成 LOG，以利下次客戶有問題時，可以先讓客戶提供有用資訊加以判斷。
+引用 Microsoft.VisualBasic.Devices 命名空間，使用該命名空間下的 Computer 類別來取得資訊，Computer 類別提供許多屬性來操作電腦元件，這篇紀錄如何取得裝置資訊。
+Computer computer = new Computer(); // 取得裝置名稱 Console.WriteLine(computer.Name); // 實體記憶體總量 Console.WriteLine(computer.Info.TotalPhysicalMemory); // 虛擬記憶體總量 Console.WriteLine(computer.Info.TotalVirtualMemory); // 可用實體記憶體總量 Console.WriteLine(computer.Info.AvailablePhysicalMemory); // 可用虛擬記憶體總量 Console.WriteLine(computer.Info.AvailableVirtualMemory); // 完整作業系統名稱 Console.WriteLine(computer.Info.OSFullName); // OS 平台識別項 Console.WriteLine(computer.Info.OSPlatform); // OS 版本 Console.WriteLine(computer.Info.OSVersion); // OS 文化特性 Console.WriteLine(computer.Info.InstalledUICulture); 除了使用 Computer 類別之外，也可以使用 ComputerInfo 取得裝置資訊
+ComputerInfo info = new ComputerInfo(); 上述看到 computer.Info.InstalledUICulture 文化特性，在該屬性下還有很多屬性可以使用，如下。
+// 系統所安裝的 UI 文化特性 Console.WriteLine(computer.Info.InstalledUICulture); // 預設行事曆 Console.WriteLine(computer.Info.InstalledUICulture.Calendar); // 該文化特性的曆法集合 foreach (var calendar in computer." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fakestandard.github.io/post/csharp/csharp-1-getosinformation/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-04-19T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-04-19T18:33:22&#43;08:00" />
 
-    
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊"/>
+<meta name="twitter:description" content="Start 近期為了在客戶的應用程式中添加一些裝置資訊，並將裝置資訊記錄成 LOG，以利下次客戶有問題時，可以先讓客戶提供有用資訊加以判斷。
+引用 Microsoft.VisualBasic.Devices 命名空間，使用該命名空間下的 Computer 類別來取得資訊，Computer 類別提供許多屬性來操作電腦元件，這篇紀錄如何取得裝置資訊。
+Computer computer = new Computer(); // 取得裝置名稱 Console.WriteLine(computer.Name); // 實體記憶體總量 Console.WriteLine(computer.Info.TotalPhysicalMemory); // 虛擬記憶體總量 Console.WriteLine(computer.Info.TotalVirtualMemory); // 可用實體記憶體總量 Console.WriteLine(computer.Info.AvailablePhysicalMemory); // 可用虛擬記憶體總量 Console.WriteLine(computer.Info.AvailableVirtualMemory); // 完整作業系統名稱 Console.WriteLine(computer.Info.OSFullName); // OS 平台識別項 Console.WriteLine(computer.Info.OSPlatform); // OS 版本 Console.WriteLine(computer.Info.OSVersion); // OS 文化特性 Console.WriteLine(computer.Info.InstalledUICulture); 除了使用 Computer 類別之外，也可以使用 ComputerInfo 取得裝置資訊
+ComputerInfo info = new ComputerInfo(); 上述看到 computer.Info.InstalledUICulture 文化特性，在該屬性下還有很多屬性可以使用，如下。
+// 系統所安裝的 UI 文化特性 Console.WriteLine(computer.Info.InstalledUICulture); // 預設行事曆 Console.WriteLine(computer.Info.InstalledUICulture.Calendar); // 該文化特性的曆法集合 foreach (var calendar in computer."/>
 
-    
 
-    
-
-    <link rel="stylesheet" href="/layui/css/layui.css">
-    <link rel="stylesheet" href="/self/css/default.css">
-    <script src=" /layui/layui.js"></script>
-
-    <link rel="stylesheet" async href="/self/css/markdown.min.css">
-    <link rel="stylesheet" async href="/self/css/gallery.css">
-    
-    
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-    <script async src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.0/lazysizes.min.js" integrity="sha256-h2tMEmhemR2IN4wbbdNjj9LaDIjzwk2hralQwfJmBOE=" crossorigin="anonymous"></script></head>
-
-<body>
-    
-    <header class="layui-header layui-bg-cyan">
-
-    
-    
-    <a class="nav-self-logo" href="/">
-        How can I help
-    </a>
-
-    <ul class="layui-nav layui-layout-right layui-bg-cyan" lay-filter="">
-        
-        
-        <li class="layui-nav-item" id="nav_big"><a href="/post/">Posts</a></li>
-        
-
-        
-            
-                <li class="layui-nav-item" id="nav_big"><a href="/hugo/">Hugo</a></li>
-            
-                <li class="layui-nav-item" id="nav_big"><a href="/algorithm/">Algorithm</a></li>
-            
-                <li class="layui-nav-item" id="nav_big"><a href="/netcore/">.NET Core</a></li>
-            
-        
-
-        
-        <li class="layui-nav-item" id="nav_small">
-            <a href="javascript:;">
-                <i class="layui-icon layui-icon-app" style="font-size: 24px;"></i>
-            </a>
-
-            <dl class="layui-nav-child">
-                
-                <dd><a href="/post/">Posts</a></dd>
-                
-
-                
-                    
-                        <dd><a href="/hugo/">Hugo</a></dd>
-                    
-                        <dd><a href="/algorithm/">Algorithm</a></dd>
-                    
-                        <dd><a href="/netcore/">.NET Core</a></dd>
-                    
-                
-            </dl>
-        </li>
-    </ul>
-</header>
-
-<script>
-layui.use('element', function(){
-  var element = layui.element;
-});
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://fakestandard.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊",
+      "item": "https://fakestandard.github.io/post/csharp/csharp-1-getosinformation/"
+    }
+  ]
+}
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊",
+  "name": "【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊",
+  "description": "Start 近期為了在客戶的應用程式中添加一些裝置資訊，並將裝置資訊記錄成 LOG，以利下次客戶有問題時，可以先讓客戶提供有用資訊加以判斷。\n引用 Microsoft.VisualBasic.Devices 命名空間，使用該命名空間下的 Computer 類別來取得資訊，Computer 類別提供許多屬性來操作電腦元件，這篇紀錄如何取得裝置資訊。\nComputer computer = new Computer(); // 取得裝置名稱 Console.WriteLine(computer.Name); // 實體記憶體總量 Console.WriteLine(computer.Info.TotalPhysicalMemory); // 虛擬記憶體總量 Console.WriteLine(computer.Info.TotalVirtualMemory); // 可用實體記憶體總量 Console.WriteLine(computer.Info.AvailablePhysicalMemory); // 可用虛擬記憶體總量 Console.WriteLine(computer.Info.AvailableVirtualMemory); // 完整作業系統名稱 Console.WriteLine(computer.Info.OSFullName); // OS 平台識別項 Console.WriteLine(computer.Info.OSPlatform); // OS 版本 Console.WriteLine(computer.Info.OSVersion); // OS 文化特性 Console.WriteLine(computer.Info.InstalledUICulture); 除了使用 Computer 類別之外，也可以使用 ComputerInfo 取得裝置資訊\nComputerInfo info = new ComputerInfo(); 上述看到 computer.Info.InstalledUICulture 文化特性，在該屬性下還有很多屬性可以使用，如下。\n// 系統所安裝的 UI 文化特性 Console.WriteLine(computer.Info.InstalledUICulture); // 預設行事曆 Console.WriteLine(computer.Info.InstalledUICulture.Calendar); // 該文化特性的曆法集合 foreach (var calendar in computer.",
+  "keywords": [
+    "C#", "Windows", "Memory", "Culture"
+  ],
+  "articleBody": "Start 近期為了在客戶的應用程式中添加一些裝置資訊，並將裝置資訊記錄成 LOG，以利下次客戶有問題時，可以先讓客戶提供有用資訊加以判斷。\n引用 Microsoft.VisualBasic.Devices 命名空間，使用該命名空間下的 Computer 類別來取得資訊，Computer 類別提供許多屬性來操作電腦元件，這篇紀錄如何取得裝置資訊。\nComputer computer = new Computer(); // 取得裝置名稱 Console.WriteLine(computer.Name); // 實體記憶體總量 Console.WriteLine(computer.Info.TotalPhysicalMemory); // 虛擬記憶體總量 Console.WriteLine(computer.Info.TotalVirtualMemory); // 可用實體記憶體總量 Console.WriteLine(computer.Info.AvailablePhysicalMemory); // 可用虛擬記憶體總量 Console.WriteLine(computer.Info.AvailableVirtualMemory); // 完整作業系統名稱 Console.WriteLine(computer.Info.OSFullName); // OS 平台識別項 Console.WriteLine(computer.Info.OSPlatform); // OS 版本 Console.WriteLine(computer.Info.OSVersion); // OS 文化特性 Console.WriteLine(computer.Info.InstalledUICulture); 除了使用 Computer 類別之外，也可以使用 ComputerInfo 取得裝置資訊\nComputerInfo info = new ComputerInfo(); 上述看到 computer.Info.InstalledUICulture 文化特性，在該屬性下還有很多屬性可以使用，如下。\n// 系統所安裝的 UI 文化特性 Console.WriteLine(computer.Info.InstalledUICulture); // 預設行事曆 Console.WriteLine(computer.Info.InstalledUICulture.Calendar); // 該文化特性的曆法集合 foreach (var calendar in computer.Info.InstalledUICulture.OptionalCalendars) { Console.WriteLine(calendar); } // Culture 是否唯讀 Console.WriteLine(computer.Info.InstalledUICulture.IsReadOnly); // 是否套用使用者選取的文化特性 Console.WriteLine(computer.Info.InstalledUICulture.UseUserOverride); // 是否為中性文化特性 Console.WriteLine(computer.Info.InstalledUICulture.IsNeutralCulture); // 數字、貨幣或百分比顯示格式 Console.WriteLine(computer.Info.InstalledUICulture.NumberFormat); // 日期和時間的顯示格式 Console.WriteLine(computer.Info.InstalledUICulture.DateTimeFormat); // 文化特性的書寫系統 Console.WriteLine(computer.Info.InstalledUICulture.TextInfo); // ISO 639-1 兩個字母代碼 Console.WriteLine(computer.Info.InstalledUICulture.TwoLetterISOLanguageName); // ISO 639-2 三個字母代碼 Console.WriteLine(computer.Info.InstalledUICulture.ThreeLetterISOLanguageName); // 文化特性名稱 Console.WriteLine(computer.Info.InstalledUICulture.Name); // 完整語系文化特性名稱 Console.WriteLine(computer.Info.InstalledUICulture.DisplayName); // 英文文化特性名稱 Console.WriteLine(computer.Info.InstalledUICulture.EnglishName); // 取得父文化特性 Console.WriteLine(computer.Info.InstalledUICulture.Parent); // 語言和國家/地區組成之名稱 Console.WriteLine(computer.Info.InstalledUICulture.NativeName); // 該文化特性如何比較字串 Console.WriteLine(computer.Info.InstalledUICulture.CompareInfo); // 目前文化特性類型 Console.WriteLine(computer.Info.InstalledUICulture.CultureTypes); // RFC 4646 標準識別 Console.WriteLine(computer.Info.InstalledUICulture.IetfLanguageTag); // 輸入地區設定識別項 Console.WriteLine(computer.Info.InstalledUICulture.KeyboardLayoutId); // 當前文化特性識別項 Console.WriteLine(computer.Info.InstalledUICulture.LCID); // Windows API 定義之語言的三個字母代碼 Console.WriteLine(computer.Info.InstalledUICulture.ThreeLetterWindowsLanguageName); Note 有些屬性可直接印出結果，有些則是印出類名，這些類別下尚有許多屬性可使用，有興趣的可深入研究。\n可使用類別\n Microsoft.VisualBasic.Devices.Computer Microsoft.VisualBasic.Devices.ComputerInfo System.Globalization.CultureInfo  Reference Computer Class\nComputerInfo Class\n",
+  "wordCount" : "152",
+  "inLanguage": "en",
+  "datePublished": "2021-04-19T00:00:00Z",
+  "dateModified": "2021-04-19T18:33:22+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Polar Bear"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://fakestandard.github.io/post/csharp/csharp-1-getosinformation/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "How can I help",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://fakestandard.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
 
-        <div id="content" style="min-height:80%">
-<div class="layui-container" style="margin-bottom: 10px">
-    
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
 
-    <div class="layui-row layui-col-space10">
-        <div class="layui-col-md8 layui-col-sm12 layui-col-xs12">
-            <div class="layui-card single-card">
-                <br />
-                <blockquote class="self-elem-quote self-elem-quote-bg-green markdown-body single-title" >
-                    <h1>【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊</h1>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-19</span>
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
 
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
 
-    
-        <a href="/categories/c/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
-        </a>
-    
+            .list {
+                background: var(--theme);
+            }
 
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
 
-    
-        <a href="/tags/c/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
-        </a>
-    
-        <a href="/tags/windows/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
-        </a>
-    
-        <a href="/tags/memory/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Memory</span>
-        </a>
-    
-        <a href="/tags/culture/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Culture</span>
-        </a>
-    
-    
-</h3>
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
 
-                </blockquote>
-                <div class="layui-card-body markdown-body single-content">
-                    <h1 id="start">Start</h1>
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://fakestandard.github.io/" accesskey="h" title="How can I help (Alt + H)">How can I help</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://fakestandard.github.io/algorithm/" title="Algorithm">
+                    <span>Algorithm</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/netcore/" title=".NET Core">
+                    <span>.NET Core</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊
+    </h1>
+    <div class="post-meta">April 19, 2021&nbsp;·&nbsp;Polar Bear
+</div>
+  </header> 
+  <div class="post-content"><h1 id="start">Start<a hidden class="anchor" aria-hidden="true" href="#start">#</a></h1>
 <p>近期為了在客戶的應用程式中添加一些裝置資訊，並將裝置資訊記錄成 LOG，以利下次客戶有問題時，可以先讓客戶提供有用資訊加以判斷。</p>
 <p>引用 <code>Microsoft.VisualBasic.Devices</code> 命名空間，使用該命名空間下的 <code>Computer</code> 類別來取得資訊，<code>Computer</code> 類別提供許多屬性來操作電腦元件，這篇紀錄如何取得裝置資訊。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">Computer computer = <span style="color:#66d9ef">new</span> Computer();
@@ -248,7 +319,7 @@ layui.use('element', function(){
 
 <span style="color:#75715e">// Windows API 定義之語言的三個字母代碼
 </span><span style="color:#75715e"></span>Console.WriteLine(computer.Info.InstalledUICulture.ThreeLetterWindowsLanguageName);
-</code></pre></div><h1 id="note">Note</h1>
+</code></pre></div><h1 id="note">Note<a hidden class="anchor" aria-hidden="true" href="#note">#</a></h1>
 <p>有些屬性可直接印出結果，有些則是印出類名，這些類別下尚有許多屬性可使用，有興趣的可深入研究。</p>
 <p>可使用類別</p>
 <ul>
@@ -256,520 +327,89 @@ layui.use('element', function(){
 <li><code>Microsoft.VisualBasic.Devices.ComputerInfo</code></li>
 <li><code>System.Globalization.CultureInfo</code></li>
 </ul>
-<h1 id="reference">Reference</h1>
+<h1 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h1>
 <p><a href="https://docs.microsoft.com/zh-tw/dotnet/api/microsoft.visualbasic.devices.computer?view=net-5.0">Computer Class</a></p>
 <p><a href="https://docs.microsoft.com/zh-tw/dotnet/api/microsoft.visualbasic.devices.computerinfo?view=net-5.0">ComputerInfo Class</a></p>
+
 </div>
-            </div>
-        </div>
-
-        <div class="layui-col-md4 layui-col-sm12 layui-col-xs12">
-            
-            <div class="layui-card single-card">
-                <h2 class="single-title">Relevant Topics</h2>
-                
-                	
-                    <div style="margin-left: 10px;">
-                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                            <a href="/post/windows/windows-7-openwindowsexplorer/">
-                                <h3 class="">【Windows】開啟運行程式的所在資料夾位置</h3>
-                            </a>
-                            
-                            <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-12</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/windows-win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - Win10</span>
-        </a>
-    
-        <a href="/categories/common-sense/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/windows/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
-        </a>
-    
-        <a href="/tags/win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
-        </a>
-    
-        <a href="/tags/windows-explorer/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows Explorer</span>
-        </a>
-    
-        <a href="/tags/task-manager/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Task Manager</span>
-        </a>
-    
-    
-</h3>
-
-                        </blockquote>
-                    </div>
-                	
-                    <div style="margin-left: 10px;">
-                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                            <a href="/algorithm/algorithm-1-classicalgorithm/">
-                                <h3 class="">【Algorithm】經典演算法</h3>
-                            </a>
-                            
-                            <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-05</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/algorithm/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Algorithm</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/algorithm/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Algorithm</span>
-        </a>
-    
-        <a href="/tags/classic-algorithm/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Classic Algorithm</span>
-        </a>
-    
-        <a href="/tags/c/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
-        </a>
-    
-    
-</h3>
-
-                        </blockquote>
-                    </div>
-                	
-                    <div style="margin-left: 10px;">
-                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                            <a href="/post/windows/windows-6-cutoverwindows/">
-                                <h3 class="">【Windows】如何分割視窗/畫面</h3>
-                            </a>
-                            
-                            <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-01</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/windows-win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - Win10</span>
-        </a>
-    
-        <a href="/categories/common-sense/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/windows/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
-        </a>
-    
-        <a href="/tags/win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
-        </a>
-    
-    
-</h3>
-
-                        </blockquote>
-                    </div>
-                	
-                    <div style="margin-left: 10px;">
-                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                            <a href="/post/windows/windows-5-cmdcutoverdisk/">
-                                <h3 class="">【Windows】使用 DOS 指令切換當前硬碟</h3>
-                            </a>
-                            
-                            <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-03-31</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/windows-cmd/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - cmd</span>
-        </a>
-    
-        <a href="/categories/common-sense/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/windows/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
-        </a>
-    
-        <a href="/tags/win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
-        </a>
-    
-        <a href="/tags/cmd/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">cmd</span>
-        </a>
-    
-    
-</h3>
-
-                        </blockquote>
-                    </div>
-                	
-                    <div style="margin-left: 10px;">
-                        <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                            <a href="/post/windows/windows-4-cmdadjustmentdefaultsize/">
-                                <h3 class="">【Windows】如何改變命令提示字元(cmd)視窗預設大小</h3>
-                            </a>
-                            
-                            <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-03-27</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/windows-cmd/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - cmd</span>
-        </a>
-    
-        <a href="/categories/common-sense/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/windows/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
-        </a>
-    
-        <a href="/tags/win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
-        </a>
-    
-        <a href="/tags/cmd/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">cmd</span>
-        </a>
-    
-    
-</h3>
-
-                        </blockquote>
-                    </div>
-                	
-                
-                <br />
-            </div>
-            
-
-            <div class="layui-card single-card">
-                <h2 class="single-title">Recent Posts</h2>
-            
-                
-                <div style="margin-left: 10px;">
-                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                    <a href="/post/lifetrip/lifetrip-2-hsinchu-wufeng/">
-                        <h3 class="">【Life Trip】五峰星空下露營區</h3>
-                    </a>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-29</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/life-trip/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Life Trip</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/hsinchu-wufeng/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Hsinchu - Wufeng</span>
-        </a>
-    
-    
-</h3>
-
-                    </blockquote>
-                </div>
-                
-                <div style="margin-left: 10px;">
-                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                    <a href="/post/dotnet/dotnet-3-npoisimple/">
-                        <h3 class="">【.NET】使用 NPOI 匯出 Excel 的基本應用</h3>
-                    </a>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-27</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/.net/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/.net/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">.NET</span>
-        </a>
-    
-        <a href="/tags/npoi/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">NPOI</span>
-        </a>
-    
-        <a href="/tags/c/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
-        </a>
-    
-    
-</h3>
-
-                    </blockquote>
-                </div>
-                
-                <div style="margin-left: 10px;">
-                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                    <a href="/post/csharp/csharp-1-getosinformation/">
-                        <h3 class="">【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊</h3>
-                    </a>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-19</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/c/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/c/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">C#</span>
-        </a>
-    
-        <a href="/tags/windows/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
-        </a>
-    
-        <a href="/tags/memory/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Memory</span>
-        </a>
-    
-        <a href="/tags/culture/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Culture</span>
-        </a>
-    
-    
-</h3>
-
-                    </blockquote>
-                </div>
-                
-                <div style="margin-left: 10px;">
-                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                    <a href="/post/other/other-2-incometax/">
-                        <h3 class="">【人森】如何計算個人綜合所得稅？</h3>
-                    </a>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-14</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/other/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Other</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/%e7%b6%9c%e5%90%88%e6%89%80%e5%be%97%e7%a8%85/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">綜合所得稅</span>
-        </a>
-    
-        <a href="/tags/income-tax/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Income Tax</span>
-        </a>
-    
-    
-</h3>
-
-                    </blockquote>
-                </div>
-                
-                <div style="margin-left: 10px;">
-                    <blockquote class="self-elem-quote self-elem-quote-bg-green" style="background-color:#FFFFFF;margin-top: 10px;">
-                    <a href="/post/windows/windows-7-openwindowsexplorer/">
-                        <h3 class="">【Windows】開啟運行程式的所在資料夾位置</h3>
-                    </a>
-                    <h3 style="margin-top:10px; margin-bottom:10px"> 
-    <i class="layui-icon layui-icon-date" style="font-size: 28px; vertical-align: -2px;"></i>
-    <span>2021-04-12</span>
-
-    
-     
-    <i class="layui-icon layui-icon-list" style="font-size: 32px; vertical-align: -3px;"></i>
-    
-
-    
-        <a href="/categories/windows-win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows - Win10</span>
-        </a>
-    
-        <a href="/categories/common-sense/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Common Sense</span>
-        </a>
-    
-
-    
-    <i class="layui-icon layui-icon-tabs" style="font-size: 22px; vertical-align: 1px;margin-right:2px;"></i>
-    
-
-    
-        <a href="/tags/windows/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows</span>
-        </a>
-    
-        <a href="/tags/win10/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Win10</span>
-        </a>
-    
-        <a href="/tags/windows-explorer/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Windows Explorer</span>
-        </a>
-    
-        <a href="/tags/task-manager/">
-            <span class="layui-badge layui-bg-gray" style="vertical-align: 2px;">Task Manager</span>
-        </a>
-    
-    
-</h3>
-
-                    </blockquote>
-                </div>
-                
-            
-            <br />
-            </div>
-        </div>
-
-    </div>
-</div>
-
-
-        </div>
-
-<footer>
-    
-
-    <div class="layui-container">
-        <div class="layui-row">
-            <div class="layui-col-md4 layui-col-sm6 layui-col-xs6">
-                <h3> Related Sites </h3>
-            </div>
-        </div>
-        <div class="layui-row">
-            
-            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/"><p class="footer-url">home</p></a>
-            </div>
-            
-            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/about/"><p class="footer-url">About</p></a>
-            </div>
-            
-            <div class="layui-col-md4 layui-col-sm6 layui-col-xs12">
-                <a href="/categories/"><p class="footer-url">Category</p></a>
-            </div>
-            
-        </div>
-    </div>
-    
-    
-    <div class="layui-container">
-        <p class="copyright">&copy; All rights reserved. Powered by <a href='https://gohugo.io' style='color:#FFFFFF'>Hugo</a> and <a href='https://github.com/ertuil/erblog' style='color:#FFFFFF'>Erblog</a>.</p>
-    </div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://fakestandard.github.io/tags/c#/">C#</a></li>
+      <li><a href="https://fakestandard.github.io/tags/windows/">Windows</a></li>
+      <li><a href="https://fakestandard.github.io/tags/memory/">Memory</a></li>
+      <li><a href="https://fakestandard.github.io/tags/culture/">Culture</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://fakestandard.github.io/">How can I help</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
 </footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
 </body>
+
 </html>
