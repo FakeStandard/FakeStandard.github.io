@@ -133,11 +133,16 @@
                     <span>Tags</span>
                 </a>
             </li>
+            <li>
+                <a href="https://fakestandard.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
 <main class="main"> 
-<header class="page-header">
+<header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
   <h1>Array</h1>
 </header>
 
@@ -156,7 +161,7 @@ Start 此篇紀錄記錄陣列定義及應用，其餘常見的資料結構如�
 使用一維陣列尋找和儲存 1~num 之間的所有質數
 const int num = 300; // true: 質數 false: 非質數 bool[] prime = new bool[num]; // 將 0,1 配置為非質數 prime[0] = false; prime[1] = false; int m = 2; int n = 2; // 找出 1~num 之間所有質數 while (m &lt; num) { prime[m] = IsPrime(m); m&#43;&#43;; } int c = 0; int count = 0; // 列印所有質數 for (int i = 0; i &lt; num; i&#43;&#43;) { if (prime[i]) { if (c == 10) { Console....</p>
   </section>
-  <footer class="entry-footer">April 26, 2021&nbsp;·&nbsp;Polar Bear</footer>
+  <footer class="entry-footer">April 26, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—陣列（Array）" href="https://fakestandard.github.io/algorithm/algorithm-3-array/"></a>
 </article>
     </main>

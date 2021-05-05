@@ -17,11 +17,11 @@
     </item>
     
     <item>
-      <title>C#</title>
-      <link>https://fakestandard.github.io/tags/c#/</link>
+      <title>CSharp</title>
+      <link>https://fakestandard.github.io/tags/csharp/</link>
       <pubDate>Fri, 30 Apr 2021 16:09:07 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/tags/c#/</guid>
+      <guid>https://fakestandard.github.io/tags/csharp/</guid>
       <description></description>
     </item>
     
@@ -82,27 +82,18 @@
     <item>
       <title>Culture</title>
       <link>https://fakestandard.github.io/tags/culture/</link>
-      <pubDate>Mon, 19 Apr 2021 18:33:22 +0800</pubDate>
+      <pubDate>Mon, 19 Apr 2021 14:58:59 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/culture/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Memory</title>
-      <link>https://fakestandard.github.io/tags/memory/</link>
-      <pubDate>Mon, 19 Apr 2021 18:33:22 +0800</pubDate>
+      <title>Taiwan Calendar</title>
+      <link>https://fakestandard.github.io/tags/taiwan-calendar/</link>
+      <pubDate>Mon, 19 Apr 2021 14:58:59 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/tags/memory/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Windows</title>
-      <link>https://fakestandard.github.io/tags/windows/</link>
-      <pubDate>Mon, 19 Apr 2021 18:33:22 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/windows/</guid>
+      <guid>https://fakestandard.github.io/tags/taiwan-calendar/</guid>
       <description></description>
     </item>
     
@@ -139,6 +130,15 @@
       <pubDate>Mon, 12 Apr 2021 11:48:04 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/win10/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>https://fakestandard.github.io/tags/windows/</link>
+      <pubDate>Mon, 12 Apr 2021 11:48:04 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/windows/</guid>
       <description></description>
     </item>
     

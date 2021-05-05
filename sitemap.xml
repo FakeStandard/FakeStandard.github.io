@@ -11,10 +11,10 @@
     <loc>https://fakestandard.github.io/algorithm/</loc>
     <lastmod>2021-04-30T16:09:07+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/tags/c#/</loc>
+    <loc>https://fakestandard.github.io/categories/</loc>
     <lastmod>2021-04-30T16:09:07+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/categories/</loc>
+    <loc>https://fakestandard.github.io/tags/csharp/</loc>
     <lastmod>2021-04-30T16:09:07+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/data-structure/</loc>
@@ -65,20 +65,17 @@
     <loc>https://fakestandard.github.io/algorithm/algorithm-2-datastructure/</loc>
     <lastmod>2021-04-25T13:26:46+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/categories/c#/</loc>
-    <lastmod>2021-04-19T18:33:22+08:00</lastmod>
+    <loc>https://fakestandard.github.io/categories/csharp/</loc>
+    <lastmod>2021-04-19T14:58:59+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/culture/</loc>
-    <lastmod>2021-04-19T18:33:22+08:00</lastmod>
+    <lastmod>2021-04-19T14:58:59+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/tags/memory/</loc>
-    <lastmod>2021-04-19T18:33:22+08:00</lastmod>
+    <loc>https://fakestandard.github.io/tags/taiwan-calendar/</loc>
+    <lastmod>2021-04-19T14:58:59+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/tags/windows/</loc>
-    <lastmod>2021-04-19T18:33:22+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/post/csharp/csharp-1-getosinformation/</loc>
-    <lastmod>2021-04-19T18:33:22+08:00</lastmod>
+    <loc>https://fakestandard.github.io/post/csharp/csharp-4-changetaiwancalendar/</loc>
+    <lastmod>2021-04-19T14:58:59+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/income-tax/</loc>
     <lastmod>2021-04-14T11:19:05+08:00</lastmod>
@@ -99,6 +96,9 @@
     <lastmod>2021-04-12T11:48:04+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/win10/</loc>
+    <lastmod>2021-04-12T11:48:04+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/windows/</loc>
     <lastmod>2021-04-12T11:48:04+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/categories/windows-win10/</loc>
@@ -228,5 +228,7 @@
     <lastmod>2021-03-17T14:41:48+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/archives/</loc>
+  </url><url>
+    <loc>https://fakestandard.github.io/search/</loc>
   </url>
 </urlset>

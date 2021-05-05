@@ -133,27 +133,34 @@
                     <span>Tags</span>
                 </a>
             </li>
+            <li>
+                <a href="https://fakestandard.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
 <main class="main"> 
-<header class="page-header">
+<header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
   <h1>Culture</h1>
 </header>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2>【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊</h2>
+    <h2>【C#】西元年與民國年相互轉換</h2>
   </header>
   <section class="entry-content">
-    <p>Start 近期為了在客戶的應用程式中添加一些裝置資訊，並將裝置資訊記錄成 LOG，以利下次客戶有問題時，可以先讓客戶提供有用資訊加以判斷。
-引用 Microsoft.VisualBasic.Devices 命名空間，使用該命名空間下的 Computer 類別來取得資訊，Computer 類別提供許多屬性來操作電腦元件，這篇紀錄如何取得裝置資訊。
-Computer computer = new Computer(); // 取得裝置名稱 Console.WriteLine(computer.Name); // 實體記憶體總量 Console.WriteLine(computer.Info.TotalPhysicalMemory); // 虛擬記憶體總量 Console.WriteLine(computer.Info.TotalVirtualMemory); // 可用實體記憶體總量 Console.WriteLine(computer.Info.AvailablePhysicalMemory); // 可用虛擬記憶體總量 Console.WriteLine(computer.Info.AvailableVirtualMemory); // 完整作業系統名稱 Console.WriteLine(computer.Info.OSFullName); // OS 平台識別項 Console.WriteLine(computer.Info.OSPlatform); // OS 版本 Console.WriteLine(computer.Info.OSVersion); // OS 文化特性 Console.WriteLine(computer.Info.InstalledUICulture); 除了使用 Computer 類別之外，也可以使用 ComputerInfo 取得裝置資訊
-ComputerInfo info = new ComputerInfo(); 上述看到 computer.Info.InstalledUICulture 文化特性，在該屬性下還有很多屬性可以使用，如下。
-// 系統所安裝的 UI 文化特性 Console.WriteLine(computer.Info.InstalledUICulture); // 預設行事曆 Console.WriteLine(computer.Info.InstalledUICulture.Calendar); // 該文化特性的曆法集合 foreach (var calendar in computer....</p>
+    <p>這篇想記錄一下老掉牙的問題，是關於時間格式的「西元年」和「民國年」的愛恨糾葛。
+一般電腦在安裝作業系統時預設會是西元年，而有些人習慣看民國年，這些人就從設定的「地區與語言」中，將行事曆變更為中華民國曆，這些人對日期看順眼了，卻為開發人員種下一個應該要懂得基本常識。
+西元年扣掉 1911 就是民國年，這知識完全無誤，但若你是開發人員，並且在開發應用程式時使用 -1911 來算出民國年，這觀念可要重新來過了，因為 .NET 有提供 Taiwan Calendar 類別讓你在西元與民國之間盡情地轉換，甚至也無須擔心四年就要閏一次「閏年」。
+Solution 直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉換後的時間
+引用命名空間
+ System.Globalization  DateTime dateTime = new DateTime(2020, 2, 29); TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.GetYear(dateTime); int month = dateTime.Month; int day = dateTime.Day; string newDateTime = $&#34;{year}/{month}/{day}&#34;; Console.WriteLine(newDateTime); 建立擴充方法 先撰寫一個擴展方法，需要使用時直接調用擴充方法，無須每次都撰寫相同代碼。
+/// &lt;summary&gt; /// 靜態擴展類別 /// &lt;/summary&gt; public static class DateTimeExtend { /// &lt;summary&gt;  /// 靜態擴展方法  /// &lt;/summary&gt;  /// &lt;param name=&#34;dateTime&#34;&gt;&lt;/param&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public static string ToTaiwanDate(this DateTime dateTime) { TaiwanCalendar tc = new TaiwanCalendar(); int year = tc....</p>
   </section>
-  <footer class="entry-footer">April 19, 2021&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【C#】取得電腦名稱、作業系統版本、記憶體及文化特性資訊" href="https://fakestandard.github.io/post/csharp/csharp-1-getosinformation/"></a>
+  <footer class="entry-footer">April 19, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【C#】西元年與民國年相互轉換" href="https://fakestandard.github.io/post/csharp/csharp-4-changetaiwancalendar/"></a>
 </article>
     </main>
     <footer class="footer">

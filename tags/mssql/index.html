@@ -133,11 +133,16 @@
                     <span>Tags</span>
                 </a>
             </li>
+            <li>
+                <a href="https://fakestandard.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
 <main class="main"> 
-<header class="page-header">
+<header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
   <h1>MSSQL</h1>
 </header>
 
@@ -156,7 +161,7 @@ SELECT OrderID FROM A WHERE ProductID IS NULL -- 應改為 SELECT OrderID FROM A
   避免使用 or 來連接條件
 SELECT OrderID FROM [Northwind].[dbo].[Orders] WHERE EmployeeID = 4 OR EmployeeID = 5 -- 將 or 替換成 UNION ALL SELECT OrderID FROM [Northwind]....</p>
   </section>
-  <footer class="entry-footer">March 30, 2021&nbsp;·&nbsp;Polar Bear</footer>
+  <footer class="entry-footer">March 30, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【MSSQL】如何改善 SQL 常見的效能問題" href="https://fakestandard.github.io/post/mssql/mssql-1-performanceissues/"></a>
 </article>
     </main>

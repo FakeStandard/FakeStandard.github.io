@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>【Algorithm】經典演算法 | How can I help</title>
-<meta name="keywords" content="Algorithm, Classic Algorithm, C#" />
+<meta name="keywords" content="Algorithm, Classic Algorithm, CSharp" />
 <meta name="description" content="【3/28 閱讀紀錄】
 此篇想記錄一些閱讀的筆記，演算法乃是運算思維的基石之一，藉由紀錄加深一下演算法的概念。
 Start 演算法種類很多，經典的演算法有以下幾種
@@ -88,7 +88,7 @@ Start 演算法種類很多，經典的演算法有以下幾種
   "name": "【Algorithm】經典演算法",
   "description": "【3/28 閱讀紀錄】\n此篇想記錄一些閱讀的筆記，演算法乃是運算思維的基石之一，藉由紀錄加深一下演算法的概念。\nStart 演算法種類很多，經典的演算法有以下幾種\n 分治演算法（Divide and conquer） 疊代演算法（Iterative Algorithm） 遞迴演算法（Recursion Algorithm） 動態規劃演算法（Dynamic Programming Algorithm） 枚舉演算法（Exhaustive Searching） 貪心演算法（Greedy Algorithm） 回溯演算法（Backtracking Algorithm）  分治演算法（Divide and conquer） 分治演算法是一種簡單又重要的演算法，它將複雜的問題逐一拆解成單元較小的問題，問題規模較小則容易求解，最終在合併子問題以得到原問題的解答，在日常生活中也能時時應用到。\n像是以往在進行團體報告時，假設報告主題的章節共有五個章節，當然不可能讓一個人獨立完成五個章節，這時就可以透過分治法，將各章節逐一拆解成較小單元，每位成員負責一個章節，讓五位成員同時進行，在時間上遠遠勝於一人獨立完成所有章節，且透過分工還可能達到其他效果。\n然而分治演算法還可應用在數字的分類和排序上，舉個例子，手邊有一副順序打亂的撲克牌，現在要將它們復原到起初開封時的排序，依序分類為黑桃、紅心、梅花、方塊，每個分類需從 A-K 逐一排序。此時有兩種做法，第一種為每拿到一張牌，就將它插入到適當的順序中，但缺點是在整理的過程中較繁瑣也較花時間。第二種作法則是應用分治演算法，以不考慮 A-K 順序的情況下，將黑桃分成一堆，紅心分成一堆，以此類推，最終會將黑桃、紅心、梅花、方塊分類出來，此時在逐一將每個分類的 A-K 順序整理好，再將其合併。\n所以透過分治演算法可將複雜的大問題，拆解成規模小的子問題，雖然子問題的數量多，相對的更易於解決，解決的速度上也相對的快。\n疊代演算法（Iterative Algorithm） 無法使用一次公式就能求解，需透過反覆的運算才能得解的方法稱為疊代演算法，像是透過迴圈去循環重複的程式碼來得到答案。\n舉例：利用 for 迴圈設計 n! 的遞迴程式，n 是透過外部輸入得知，打算 1! ~ n! 所有結果\n// 從外部輸入 n int n = int.Parse(Console.ReadLine()); // 用以計算結果 int sum = 1; // 使用迴圈計算 1! ~ n! for (int i = 1; i \u0026lt;= n; i++) { for (int j = i; j \u0026gt; 0; j--) { sum = sum * j; } Console.",
   "keywords": [
-    "Algorithm", "Classic Algorithm", "C#"
+    "Algorithm", "Classic Algorithm", "CSharp"
   ],
   "articleBody": "【3/28 閱讀紀錄】\n此篇想記錄一些閱讀的筆記，演算法乃是運算思維的基石之一，藉由紀錄加深一下演算法的概念。\nStart 演算法種類很多，經典的演算法有以下幾種\n 分治演算法（Divide and conquer） 疊代演算法（Iterative Algorithm） 遞迴演算法（Recursion Algorithm） 動態規劃演算法（Dynamic Programming Algorithm） 枚舉演算法（Exhaustive Searching） 貪心演算法（Greedy Algorithm） 回溯演算法（Backtracking Algorithm）  分治演算法（Divide and conquer） 分治演算法是一種簡單又重要的演算法，它將複雜的問題逐一拆解成單元較小的問題，問題規模較小則容易求解，最終在合併子問題以得到原問題的解答，在日常生活中也能時時應用到。\n像是以往在進行團體報告時，假設報告主題的章節共有五個章節，當然不可能讓一個人獨立完成五個章節，這時就可以透過分治法，將各章節逐一拆解成較小單元，每位成員負責一個章節，讓五位成員同時進行，在時間上遠遠勝於一人獨立完成所有章節，且透過分工還可能達到其他效果。\n然而分治演算法還可應用在數字的分類和排序上，舉個例子，手邊有一副順序打亂的撲克牌，現在要將它們復原到起初開封時的排序，依序分類為黑桃、紅心、梅花、方塊，每個分類需從 A-K 逐一排序。此時有兩種做法，第一種為每拿到一張牌，就將它插入到適當的順序中，但缺點是在整理的過程中較繁瑣也較花時間。第二種作法則是應用分治演算法，以不考慮 A-K 順序的情況下，將黑桃分成一堆，紅心分成一堆，以此類推，最終會將黑桃、紅心、梅花、方塊分類出來，此時在逐一將每個分類的 A-K 順序整理好，再將其合併。\n所以透過分治演算法可將複雜的大問題，拆解成規模小的子問題，雖然子問題的數量多，相對的更易於解決，解決的速度上也相對的快。\n疊代演算法（Iterative Algorithm） 無法使用一次公式就能求解，需透過反覆的運算才能得解的方法稱為疊代演算法，像是透過迴圈去循環重複的程式碼來得到答案。\n舉例：利用 for 迴圈設計 n! 的遞迴程式，n 是透過外部輸入得知，打算 1! ~ n! 所有結果\n// 從外部輸入 n int n = int.Parse(Console.ReadLine()); // 用以計算結果 int sum = 1; // 使用迴圈計算 1! ~ n! for (int i = 1; i for (int j = i; j  0; j--) { sum = sum * j; } Console.WriteLine($\"{i} != {sum}\"); // 重設計算結果  sum = 1; } 執行結果\n1!=1 2!=2 3!=6 4!=24 5!=120 除了上述介紹固定執行次數的疊代法之外，還可以使用 while 迴圈，來執行不確定執行次數的疊代法。使用 while 迴圈必須注意不可讓迴圈一直循環，若執行無法停止就會導致「無窮迴圈」，所以 while 迴圈結構需要具備三個條件\n 變數初始值 迴圈條件式 調整變數增減值  設置一個變數初始值使迴圈得以開始，明確設置迴圈條件式，在符合該條件下迴圈得以循環執行，最終一定要調整變數增減值做為可以離開迴圈的出口。\n// 變數出使值 int i = 1; // 迴圈條件式 while (i 10) { Console.WriteLine(i); // 調整變數增減值  i += 1; } 巴斯卡三角形 也是經典中之一，這邊不做進一步介紹。\n遞迴演算法（Recursion Algorithm） 遞迴演算法跟疊代演算法在循環上相似，卻又跟分治演算法的概念類似，遞迴法與分治法相同地將大問題拆解成小問題來解決，又跟疊代法的循環有異曲同工之妙。\n在程式設計裡，設計一種方法並將其封裝起來稱為函數或副程式，通過外部來呼叫函數或副程式執行封裝後的代碼，以定義而言，透過自己來呼叫自己的過程稱為遞迴，可以想像為函數內部又在調用一次函數。遞迴必須具備兩個條件\n 可以反覆執行的程式碼 結束執行過程的出口  遞迴的經典範例「階乘」，階乘的運算式 n! = n*(n-1)*(n-2)...*1，透過階乘運算過程可觀察出一定的規律性，就可以使用遞迴演算法來達成\nstatic int Function(int n) { if (n == 0) // 終止的條件  return 1; else return n * Function(n - 1); // 遞迴呼叫自己 } 經典的費伯那序列（Fibonacci Polynomial）\n參照上圖公式，n 為正整數，第零項為 0、第一項為 1、第二項為本身前兩項的值相加所得，第二項可得 1、第三項為 2，以此類推。找出規律後可嘗試設計出遞迴程式。\nstatic int Fibonacci(int n) { if (n == 0) return 0; else if (n == 1) return 1; else return Fibonacci(n - 1) + Fibonacci(n - 2); } 動態規劃演算法（Dynamic Programming Algorithm） 動態規劃演算法（DPA）與分治法十分相似，先將大問題拆解成小問題，不同的是動態規劃演算法將每個子問題的答案儲存起來，以供下次求解時直接取用，減少相同子問題再次被計算的時間，所以動態規劃法解決了重複計算的缺點。\n依據上述提到的費伯那序列，從上面的路徑圖看到 Fib[2] 被計算過兩次，透過動態規劃演算法將第一次 Fib[2] 的計算結果儲存於陣列，第二次要計算時就可直接從陣列取出結果，不用再計算一次。上述明顯地得知，將每次的計算結果先儲存，供後續使用，以減少效能開銷是其演算法之精神。\n改良先前的費伯那序列代碼\n// 計算結果暫存區 static int[] output = new int[100]; static int Fibonacci(int n) { int result; result = output[n]; if (result == 0) { if (n == 0) result = 0; else if (n == 1) result = 1; else result = (Fibonacci(n - 1) + Fibonacci(n - 2)); } // 將計算結果儲存到暫存區  output[n] = result; return result; } 枚舉演算法（Exhaustive Searching） 又稱窮舉法，一種常見的數學基礎方法，高頻率的在日常生活中使用到，主要核心概念為依據問題需求，逐一枚舉出所有解答，達到解決問題的目的，缺點為速度太慢。\n舉例：當 1000 依次減去 1,2,3…直到結果為負數，代碼如下\nint num = 1000; int count = 0; while (num = 0) { count++; num -= count; } Console.WriteLine(count); 上述範例中可看到，每執行一次相減就檢查結果是否為負數，在不遺漏的情況下，一一枚舉出所有項目，在從枚舉的項目中找到自己所需的項目。\n再舉個例：從 1-500 之間列舉出所有 3 的倍數的整數\nfor (int num = 0; num 500; num++) { if (num % 3 == 0) Console.WriteLine(num); } 枚舉演算法還有一個經典題型，如何得知某數是否為質數，在此推薦使用 Eratosthenes 方法，將某數逐一除以 2 至某數減一之間的所有數字，若有其中一個可以整除，就能斷定某數是否為質數。\nstatic bool IsPrime(int n) { int i = 2; while (i // 如果整除, i 為 n 的因數  if (n % i == 0) return false; i++; } return true; } 貪心演算法（Greedy Algorithm） 貪心演算法又稱貪婪演算法，主要核心概念如同名稱一樣，在每個解決問題的步驟遵循貪心原則，採取最有利或最優化的選項，意即只求局部解決辦法，而不考慮大局影響，不斷改進解答。\n雖然貪心演算法都是選擇當前最有利，但不能保證最終結果也是最佳的，因為貪心法在原理上容易過早做決定，此演算法很適合用來尋找最短路徑或是機器學習等方面。\n回溯演算法（Backtracking Algorithm） 最後一個回溯演算法也是枚舉法的一種，顧名思義為步驟可回溯的概念，當枚舉出不正確答案時，可以透過回溯來回到上一層，接著找尋出尚未執行過的路徑，再遞迴至下一層。\n老鼠走迷宮就是經典例子，利用二維陣列模擬出一個迷宮，而老鼠行進時遵循以下三個原則\n 一次只能走一格 遇到牆壁無法前行時，則退回到上一步尋找其他可走路徑 走過的路不再走第二遍  二維陣列的迷宮規則為\nMaze[i][j] = 1 --表示該位置為牆壁，無法通行 Maze[i][j] = 0 --表示該位置為不為牆壁，可前行 Maze[1][1] --該處為入口 Maze[m][n] --該處為出口 虛擬碼解析迷宮搜尋概念\nif (上一格可走) { 加入方格編號到堆疊; 往上走; 判斷是否為出口; } else if (下一格可走) { 加入方格編號到堆疊; 往下走; 判斷是否為出口; } else if (左一格可走) { 加入方格編號到堆疊; 往左走; 判斷是否為出口; } else if (右一格可走) { 加入方格編號到堆疊; 往右走; 判斷是否為出口; } else { 從堆疊中刪除一個方格編號; 從堆疊中取出一個方格編號; 往回走; } 實際代碼\n建立座標類別\n///  /// 座標 ///  public class Node { public int X { get; set; } public int Y { get; set; } public Node(int x, int y) { this.X = x; this.Y = y; } } 建立記錄路經追蹤的類別\n///  /// 紀錄追蹤路徑類別 ///  public class TraceRecord { public Node[] nodes = new Node[120]; public Node Pre; public int num = 1; public bool IsEmpty() { return nodes[0] == null; } // 新增路徑到堆疊  public void Insert(int x, int y) { Node newNode = new Node(x, y); if (this.IsEmpty()) // 剛從入口出發  { nodes[0] = newNode; } else { num = num + 1; nodes[num] = newNode; } } // 刪除堆疊中的路徑  public void Delete() { if (this.IsEmpty()) { Console.WriteLine(\"佇列已經空了\"); return; } nodes[num] = null; num = num - 1; Pre = nodes[num]; } } 建立檢查出口的方法\npublic static bool ChkExit(int x, int y, int ex, int ey) { if (x == ex \u0026\u0026 y == ey) return true; return false; } 開始前的預定義\n// 定義出口 X 座標 public static int ExitX = 8; // 定義出口 Y 座標 public static int ExitY = 10; // 定義二維陣列迷宮 public static int[,] Maze = { { 1,1,1,1,1,1,1,1,1,1,1,1 }, { 1,0,0,0,1,1,1,1,1,1,1,1 }, { 1,1,1,0,1,1,0,0,0,0,1,1 }, { 1,1,1,0,1,1,0,1,1,0,1,1 }, { 1,1,1,0,0,0,0,1,1,0,1,1 }, { 1,1,1,0,1,1,0,1,1,0,1,1 }, { 1,1,1,0,1,1,0,1,1,0,1,1 }, { 1,1,1,1,1,1,0,1,1,0,1,1 }, { 1,1,0,0,0,0,0,0,1,0,0,1 }, { 1,1,1,1,1,1,1,1,1,1,1,1 } }; Main 方法\nstatic void Main(string[] args) { int i, j; int x = 1; int y = 1; TraceRecord path = new TraceRecord(); Console.WriteLine(\"迷宮路徑\\n\"); for (i = 0; i 10; i++) { for (j = 0; j 12; j++) { Console.Write(Maze[i, j]); } Console.WriteLine(); } Thread.Sleep(1000); Console.WriteLine(\"\\n老鼠開始走迷宮...\\n\"); while (x // 將當前路徑設置成已經走過  Maze[x, y] = 2; if (Maze[x - 1, y] == 0) // 左邊  { x -= 1; path.Insert(x, y); } else if (Maze[x + 1, y] == 0) // 右邊  { x += 1; path.Insert(x, y); } else if (Maze[x, y - 1] == 0) // 下方  { y -= 1; path.Insert(x, y); } else if (Maze[x, y + 1] == 0) // 上方  { y += 1; path.Insert(x, y + 1); } else if (ChkExit(x, y, ExitX, ExitY)) // 判斷是否為出口  { break; } else // 遇到死路  { path.Delete(); x = path.Pre.X; y = path.Pre.Y; } } Thread.Sleep(1000); Console.WriteLine(\"老鼠走過的路徑(以2表示)\\n\"); for (i = 0; i 10; i++) { for (j = 0; j 12; j++) { Console.Write(Maze[i, j]); } Console.WriteLine(); } Console.ReadKey(); } 執行結果\n迷宮路徑 111111111111 100011111111 111011000011 111011011011 111000011011 111011011011 111011011011 111111011011 110000001001 111111111111 老鼠開始走迷宮... 老鼠走過的路徑(以2表示) 111111111111 122211111111 111211222211 111211211211 111222211211 111211011211 111211011211 111111011211 110000001221 111111111111 Note 這次趁著假日時間，回憶一下經典演算法，閱讀過程中，意外發現此書作者有些筆誤的地方，文字的部分到還好，沒特別注意還是能順暢的讀過（中文字就算兩個字顛倒也能辨識，神奇～），倒是老鼠走迷宮代碼的部分，讓筆者疑惑很久，最後依照筆者自己的想法做了些改良，一樣是使用堆疊概念來實作，其實還可進階地使用遞迴，有興趣的人可以試試看。\n收工！\nReference 【圖說演算法 C#】\n",
   "wordCount" : "860",
@@ -217,6 +217,11 @@ Start 演算法種類很多，經典的演算法有以下幾種
                     <span>Tags</span>
                 </a>
             </li>
+            <li>
+                <a href="https://fakestandard.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -224,11 +229,11 @@ Start 演算法種類很多，經典的演算法有以下幾種
 
 <article class="post-single">
   <header class="post-header">
-    
+    <div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/algorithm/">Algorithms</a></div>
     <h1 class="post-title">
       【Algorithm】經典演算法
     </h1>
-    <div class="post-meta">April 5, 2021&nbsp;·&nbsp;Polar Bear
+    <div class="post-meta">April 5, 2021&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Polar Bear
 </div>
   </header> 
   <div class="post-content"><p>【3/28 閱讀紀錄】</p>
@@ -641,8 +646,54 @@ else
     <ul class="post-tags">
       <li><a href="https://fakestandard.github.io/tags/algorithm/">Algorithm</a></li>
       <li><a href="https://fakestandard.github.io/tags/classic-algorithm/">Classic Algorithm</a></li>
-      <li><a href="https://fakestandard.github.io/tags/c#/">C#</a></li>
+      <li><a href="https://fakestandard.github.io/tags/csharp/">CSharp</a></li>
     </ul>
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【Algorithm】經典演算法 on twitter"
+        href="https://twitter.com/intent/tweet/?text=%e3%80%90Algorithm%e3%80%91%e7%b6%93%e5%85%b8%e6%bc%94%e7%ae%97%e6%b3%95&amp;url=https%3a%2f%2ffakestandard.github.io%2falgorithm%2falgorithm-1-classicalgorithm%2f&amp;hashtags=Algorithm%2cClassicAlgorithm%2cCSharp">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【Algorithm】經典演算法 on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ffakestandard.github.io%2falgorithm%2falgorithm-1-classicalgorithm%2f&amp;title=%e3%80%90Algorithm%e3%80%91%e7%b6%93%e5%85%b8%e6%bc%94%e7%ae%97%e6%b3%95&amp;summary=%e3%80%90Algorithm%e3%80%91%e7%b6%93%e5%85%b8%e6%bc%94%e7%ae%97%e6%b3%95&amp;source=https%3a%2f%2ffakestandard.github.io%2falgorithm%2falgorithm-1-classicalgorithm%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【Algorithm】經典演算法 on reddit"
+        href="https://reddit.com/submit?url=https%3a%2f%2ffakestandard.github.io%2falgorithm%2falgorithm-1-classicalgorithm%2f&title=%e3%80%90Algorithm%e3%80%91%e7%b6%93%e5%85%b8%e6%bc%94%e7%ae%97%e6%b3%95">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【Algorithm】經典演算法 on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2ffakestandard.github.io%2falgorithm%2falgorithm-1-classicalgorithm%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【Algorithm】經典演算法 on whatsapp"
+        href="https://api.whatsapp.com/send?text=%e3%80%90Algorithm%e3%80%91%e7%b6%93%e5%85%b8%e6%bc%94%e7%ae%97%e6%b3%95%20-%20https%3a%2f%2ffakestandard.github.io%2falgorithm%2falgorithm-1-classicalgorithm%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【Algorithm】經典演算法 on telegram"
+        href="https://telegram.me/share/url?text=%e3%80%90Algorithm%e3%80%91%e7%b6%93%e5%85%b8%e6%bc%94%e7%ae%97%e6%b3%95&amp;url=https%3a%2f%2ffakestandard.github.io%2falgorithm%2falgorithm-1-classicalgorithm%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+</div>
+
   </footer>
 </article>
     </main>
@@ -713,6 +764,53 @@ else
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

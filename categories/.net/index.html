@@ -133,11 +133,16 @@
                     <span>Tags</span>
                 </a>
             </li>
+            <li>
+                <a href="https://fakestandard.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
 <main class="main"> 
-<header class="page-header">
+<header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/categories/">Categories</a></div>
   <h1>.NET</h1>
 </header>
 
@@ -146,13 +151,13 @@
     <h2>【.NET】使用 NPOI 匯出 Excel 的基本應用</h2>
   </header>
   <section class="entry-content">
-    <p>Introduce 開發應用程式或網頁時總是會遇到匯出 Excel 的需求，常見的如匯出報表。然而在眾多匯出 Excel 的套件中，這篇選擇以 NPOI 作為介紹匯出的基本應用和觀念，資料則選擇現成的北風資料庫，這邊就不另外建立資料物件。
+    <p>開發應用程式或網頁時總是會遇到匯出 Excel 的需求，常見的如匯出報表。然而在眾多匯出 Excel 的套件中，這篇選擇以 NPOI 作為介紹匯出的基本應用和觀念，資料則選擇現成的北風資料庫，這邊就不另外建立資料物件。
 代碼存放於 GitHub
 Start 首先到 NuGet 套件添加 NPOI Package
 建立一個資料庫連線的方法，將 Orders 資料表的資料全部讀到 DataTable
 /// &lt;summary&gt; /// 資料庫連線方法 /// &lt;/summary&gt; static DataTable Connect() { // 宣告並建立 SqlConnectionStringBuilder 物件，並設置連線資訊  SqlConnectionStringBuilder cnsb = new SqlConnectionStringBuilder(); cnsb.DataSource = &#34;.&#34;; cnsb.InitialCatalog = &#34;Northwind&#34;; cnsb.IntegratedSecurity = true; // 宣告並建立 SqlConnection  SqlConnection cn = new SqlConnection(cnsb.ConnectionString); // SQL Statement  string sql = &#34;SELECT * FROM [Northwind].[dbo].[Orders]&#34;; // 宣告並建立 SqlDataAdapter 物件  SqlDataAdapter da = new SqlDataAdapter(sql, cn); // 建立 DataSet 物件以儲存資料  DataSet ds = new DataSet(); da....</p>
   </section>
-  <footer class="entry-footer">April 27, 2021&nbsp;·&nbsp;Polar Bear</footer>
+  <footer class="entry-footer">April 27, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【.NET】使用 NPOI 匯出 Excel 的基本應用" href="https://fakestandard.github.io/post/dotnet/dotnet-3-npoisimple/"></a>
 </article>
 
@@ -167,7 +172,7 @@ UI 的介紹會以 IDE 為主，除 UI 外也會介紹 dotnet 指令。
 Start  建立 Web app 新增控制器（Controller） 新增檢視器（View）auto 新增模型（Model） 新增 NuGet 套件 建立 DbContext 新增 ConnectionString 使用 Scaffold 進行初始移轉（Initial Migration） 植入資料以初始資料庫 使用資料註釋 Data Annotations 新增搜尋引擎 新增資料驗證 使用 Bootstrap 增強外觀效果  建立 Web app 提供兩種方法，一種透過 Visual Studio IDE，一種是使用 Command shell 操作，兩種皆可達相同結果。
 Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】...</p>
   </section>
-  <footer class="entry-footer">April 10, 2021&nbsp;·&nbsp;Polar Bear</footer>
+  <footer class="entry-footer">April 10, 2021&nbsp;·&nbsp;7 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【.NET】適合初心者的 .NET Core MVC 實作" href="https://fakestandard.github.io/post/dotnet/dotnet-2-mvc-movielist/"></a>
 </article>
 
@@ -186,7 +191,7 @@ Start 使用 VS 2019 建立 Blazor
 @page &#34;/todo&#34; &lt;h3&gt;Todo&lt;/h3&gt; @code { } 開啟 Shared/NavMenu.razor，此 razor 為應用程式其中一個版面配置，可避免應用程式中使用重複的元件，在此配置中添加以下代碼
 &lt;ul class=&#34;nav flex-column&#34;&gt; ... &lt;li class=&#34;nav-item px-3&#34;&gt; &lt;NavLink class=&#34;nav-link&#34; href=&#34;todo&#34;&gt; &lt;span class=&#34;oi oi-list-rich&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt; Todo &lt;/NavLink&gt; &lt;/li&gt; &lt;/ul&gt; 建立 TodoItem 類別 在專案目錄下建立 /TodoList/TodoItem....</p>
   </section>
-  <footer class="entry-footer">March 28, 2021&nbsp;·&nbsp;Polar Bear</footer>
+  <footer class="entry-footer">March 28, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【.NET】打造 Blazor ToDoList" href="https://fakestandard.github.io/post/dotnet/dotnet-1-blazor/"></a>
 </article>
     </main>

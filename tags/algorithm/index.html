@@ -133,11 +133,16 @@
                     <span>Tags</span>
                 </a>
             </li>
+            <li>
+                <a href="https://fakestandard.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
 <main class="main"> 
-<header class="page-header">
+<header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
   <h1>Algorithm</h1>
 </header>
 
@@ -159,7 +164,7 @@ Note 特性
  刪除或插入資料無須移動大量資料  缺點
  讀取和修改速度相對慢，因要對整個串列進行走訪  Reference 【圖說演算法 C#】</p>
   </section>
-  <footer class="entry-footer">April 30, 2021&nbsp;·&nbsp;Polar Bear</footer>
+  <footer class="entry-footer">April 30, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—鏈結串列（Linked List）" href="https://fakestandard.github.io/algorithm/algorithm-4-linkedlist/"></a>
 </article>
 
@@ -178,7 +183,7 @@ Start 此篇紀錄記錄陣列定義及應用，其餘常見的資料結構如�
 使用一維陣列尋找和儲存 1~num 之間的所有質數
 const int num = 300; // true: 質數 false: 非質數 bool[] prime = new bool[num]; // 將 0,1 配置為非質數 prime[0] = false; prime[1] = false; int m = 2; int n = 2; // 找出 1~num 之間所有質數 while (m &lt; num) { prime[m] = IsPrime(m); m&#43;&#43;; } int c = 0; int count = 0; // 列印所有質數 for (int i = 0; i &lt; num; i&#43;&#43;) { if (prime[i]) { if (c == 10) { Console....</p>
   </section>
-  <footer class="entry-footer">April 26, 2021&nbsp;·&nbsp;Polar Bear</footer>
+  <footer class="entry-footer">April 26, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—陣列（Array）" href="https://fakestandard.github.io/algorithm/algorithm-3-array/"></a>
 </article>
 
@@ -197,7 +202,7 @@ Start 資料結構為一種輔助程式設計最佳化的方法論，其中包�
 抽象資料型態（Abstract Data Type） 抽象資料型態在電腦中代表資訊隱藏的精神與某一種特定的關係模式，例如堆疊是一種後進先出的運作方式。
 Reference 【圖說演算法 C#】</p>
   </section>
-  <footer class="entry-footer">April 25, 2021&nbsp;·&nbsp;Polar Bear</footer>
+  <footer class="entry-footer">April 25, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】資料結構定義與資料型態" href="https://fakestandard.github.io/algorithm/algorithm-2-datastructure/"></a>
 </article>
 
@@ -217,7 +222,7 @@ Start 演算法種類很多，經典的演算法有以下幾種
 舉例：利用 for 迴圈設計 n! 的遞迴程式，n 是透過外部輸入得知，打算 1! ~ n! 所有結果
 // 從外部輸入 n int n = int.Parse(Console.ReadLine()); // 用以計算結果 int sum = 1; // 使用迴圈計算 1! ~ n! for (int i = 1; i &lt;= n; i&#43;&#43;) { for (int j = i; j &gt; 0; j--) { sum = sum * j; } Console....</p>
   </section>
-  <footer class="entry-footer">April 5, 2021&nbsp;·&nbsp;Polar Bear</footer>
+  <footer class="entry-footer">April 5, 2021&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】經典演算法" href="https://fakestandard.github.io/algorithm/algorithm-1-classicalgorithm/"></a>
 </article>
     </main>
