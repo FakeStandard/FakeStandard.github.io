@@ -40,7 +40,7 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】</description>
       
       <guid>https://fakestandard.github.io/post/dotnet/dotnet-1-blazor/</guid>
       <description>Prerequisites .NET 5.0 SDK 或之後的版本
-Start 使用 VS 2019 建立 Blazor
+Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
 建立新專案 選擇【Blazor 應用程式】專案
 選擇【Blazor Server 應用程式】樣板
 建立 Razor 元件 新建立的專案在方案總管下的 Pages 資料夾內，可以看到已經有建立好的預設頁面，在該資料夾下建立 Todo.razor。

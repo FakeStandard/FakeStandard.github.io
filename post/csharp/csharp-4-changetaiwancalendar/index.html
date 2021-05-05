@@ -10,7 +10,8 @@
 <meta name="description" content="這篇想記錄一下老掉牙的問題，是關於時間格式的「西元年」和「民國年」的愛恨糾葛。
 一般電腦在安裝作業系統時預設會是西元年，而有些人習慣看民國年，這些人就從設定的「地區與語言」中，將行事曆變更為中華民國曆，這些人對日期看順眼了，卻為開發人員種下一個應該要懂得基本常識。
 西元年扣掉 1911 就是民國年，這知識完全無誤，但若你是開發人員，並且在開發應用程式時使用 -1911 來算出民國年，這觀念可要重新來過了，因為 .NET 有提供 Taiwan Calendar 類別讓你在西元與民國之間盡情地轉換，甚至也無須擔心四年就要閏一次「閏年」。
-Solution 直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉換後的時間
+Solution 有三種解決方案
+ 直接轉換 建立擴充方法 替換當前執行緒的文化特性  直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉換後的時間
 引用命名空間
  System.Globalization  DateTime dateTime = new DateTime(2020, 2, 29); TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.GetYear(dateTime); int month = dateTime.Month; int day = dateTime.Day; string newDateTime = $&#34;{year}/{month}/{day}&#34;; Console.WriteLine(newDateTime); 建立擴充方法 先撰寫一個擴展方法，需要使用時直接調用擴充方法，無須每次都撰寫相同代碼。
 /// &lt;summary&gt; /// 靜態擴展類別 /// &lt;/summary&gt; public static class DateTimeExtend { /// &lt;summary&gt;  /// 靜態擴展方法  /// &lt;/summary&gt;  /// &lt;param name=&#34;dateTime&#34;&gt;&lt;/param&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public static string ToTaiwanDate(this DateTime dateTime) { TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.">
@@ -31,7 +32,8 @@ Solution 直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉
 <meta property="og:description" content="這篇想記錄一下老掉牙的問題，是關於時間格式的「西元年」和「民國年」的愛恨糾葛。
 一般電腦在安裝作業系統時預設會是西元年，而有些人習慣看民國年，這些人就從設定的「地區與語言」中，將行事曆變更為中華民國曆，這些人對日期看順眼了，卻為開發人員種下一個應該要懂得基本常識。
 西元年扣掉 1911 就是民國年，這知識完全無誤，但若你是開發人員，並且在開發應用程式時使用 -1911 來算出民國年，這觀念可要重新來過了，因為 .NET 有提供 Taiwan Calendar 類別讓你在西元與民國之間盡情地轉換，甚至也無須擔心四年就要閏一次「閏年」。
-Solution 直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉換後的時間
+Solution 有三種解決方案
+ 直接轉換 建立擴充方法 替換當前執行緒的文化特性  直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉換後的時間
 引用命名空間
  System.Globalization  DateTime dateTime = new DateTime(2020, 2, 29); TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.GetYear(dateTime); int month = dateTime.Month; int day = dateTime.Day; string newDateTime = $&#34;{year}/{month}/{day}&#34;; Console.WriteLine(newDateTime); 建立擴充方法 先撰寫一個擴展方法，需要使用時直接調用擴充方法，無須每次都撰寫相同代碼。
 /// &lt;summary&gt; /// 靜態擴展類別 /// &lt;/summary&gt; public static class DateTimeExtend { /// &lt;summary&gt;  /// 靜態擴展方法  /// &lt;/summary&gt;  /// &lt;param name=&#34;dateTime&#34;&gt;&lt;/param&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public static string ToTaiwanDate(this DateTime dateTime) { TaiwanCalendar tc = new TaiwanCalendar(); int year = tc." />
@@ -45,7 +47,8 @@ Solution 直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉
 <meta name="twitter:description" content="這篇想記錄一下老掉牙的問題，是關於時間格式的「西元年」和「民國年」的愛恨糾葛。
 一般電腦在安裝作業系統時預設會是西元年，而有些人習慣看民國年，這些人就從設定的「地區與語言」中，將行事曆變更為中華民國曆，這些人對日期看順眼了，卻為開發人員種下一個應該要懂得基本常識。
 西元年扣掉 1911 就是民國年，這知識完全無誤，但若你是開發人員，並且在開發應用程式時使用 -1911 來算出民國年，這觀念可要重新來過了，因為 .NET 有提供 Taiwan Calendar 類別讓你在西元與民國之間盡情地轉換，甚至也無須擔心四年就要閏一次「閏年」。
-Solution 直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉換後的時間
+Solution 有三種解決方案
+ 直接轉換 建立擴充方法 替換當前執行緒的文化特性  直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉換後的時間
 引用命名空間
  System.Globalization  DateTime dateTime = new DateTime(2020, 2, 29); TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.GetYear(dateTime); int month = dateTime.Month; int day = dateTime.Day; string newDateTime = $&#34;{year}/{month}/{day}&#34;; Console.WriteLine(newDateTime); 建立擴充方法 先撰寫一個擴展方法，需要使用時直接調用擴充方法，無須每次都撰寫相同代碼。
 /// &lt;summary&gt; /// 靜態擴展類別 /// &lt;/summary&gt; public static class DateTimeExtend { /// &lt;summary&gt;  /// 靜態擴展方法  /// &lt;/summary&gt;  /// &lt;param name=&#34;dateTime&#34;&gt;&lt;/param&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public static string ToTaiwanDate(this DateTime dateTime) { TaiwanCalendar tc = new TaiwanCalendar(); int year = tc."/>
@@ -77,12 +80,12 @@ Solution 直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉
   "@type": "BlogPosting",
   "headline": "【C#】西元年與民國年相互轉換",
   "name": "【C#】西元年與民國年相互轉換",
-  "description": "這篇想記錄一下老掉牙的問題，是關於時間格式的「西元年」和「民國年」的愛恨糾葛。\n一般電腦在安裝作業系統時預設會是西元年，而有些人習慣看民國年，這些人就從設定的「地區與語言」中，將行事曆變更為中華民國曆，這些人對日期看順眼了，卻為開發人員種下一個應該要懂得基本常識。\n西元年扣掉 1911 就是民國年，這知識完全無誤，但若你是開發人員，並且在開發應用程式時使用 -1911 來算出民國年，這觀念可要重新來過了，因為 .NET 有提供 Taiwan Calendar 類別讓你在西元與民國之間盡情地轉換，甚至也無須擔心四年就要閏一次「閏年」。\nSolution 直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉換後的時間\n引用命名空間\n System.Globalization  DateTime dateTime = new DateTime(2020, 2, 29); TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.GetYear(dateTime); int month = dateTime.Month; int day = dateTime.Day; string newDateTime = $\u0026#34;{year}/{month}/{day}\u0026#34;; Console.WriteLine(newDateTime); 建立擴充方法 先撰寫一個擴展方法，需要使用時直接調用擴充方法，無須每次都撰寫相同代碼。\n/// \u0026lt;summary\u0026gt; /// 靜態擴展類別 /// \u0026lt;/summary\u0026gt; public static class DateTimeExtend { /// \u0026lt;summary\u0026gt;  /// 靜態擴展方法  /// \u0026lt;/summary\u0026gt;  /// \u0026lt;param name=\u0026#34;dateTime\u0026#34;\u0026gt;\u0026lt;/param\u0026gt;  /// \u0026lt;returns\u0026gt;\u0026lt;/returns\u0026gt;  public static string ToTaiwanDate(this DateTime dateTime) { TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.",
+  "description": "這篇想記錄一下老掉牙的問題，是關於時間格式的「西元年」和「民國年」的愛恨糾葛。\n一般電腦在安裝作業系統時預設會是西元年，而有些人習慣看民國年，這些人就從設定的「地區與語言」中，將行事曆變更為中華民國曆，這些人對日期看順眼了，卻為開發人員種下一個應該要懂得基本常識。\n西元年扣掉 1911 就是民國年，這知識完全無誤，但若你是開發人員，並且在開發應用程式時使用 -1911 來算出民國年，這觀念可要重新來過了，因為 .NET 有提供 Taiwan Calendar 類別讓你在西元與民國之間盡情地轉換，甚至也無須擔心四年就要閏一次「閏年」。\nSolution 有三種解決方案\n 直接轉換 建立擴充方法 替換當前執行緒的文化特性  直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉換後的時間\n引用命名空間\n System.Globalization  DateTime dateTime = new DateTime(2020, 2, 29); TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.GetYear(dateTime); int month = dateTime.Month; int day = dateTime.Day; string newDateTime = $\u0026#34;{year}/{month}/{day}\u0026#34;; Console.WriteLine(newDateTime); 建立擴充方法 先撰寫一個擴展方法，需要使用時直接調用擴充方法，無須每次都撰寫相同代碼。\n/// \u0026lt;summary\u0026gt; /// 靜態擴展類別 /// \u0026lt;/summary\u0026gt; public static class DateTimeExtend { /// \u0026lt;summary\u0026gt;  /// 靜態擴展方法  /// \u0026lt;/summary\u0026gt;  /// \u0026lt;param name=\u0026#34;dateTime\u0026#34;\u0026gt;\u0026lt;/param\u0026gt;  /// \u0026lt;returns\u0026gt;\u0026lt;/returns\u0026gt;  public static string ToTaiwanDate(this DateTime dateTime) { TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.",
   "keywords": [
     "CSharp", "Culture", "Taiwan Calendar"
   ],
-  "articleBody": "這篇想記錄一下老掉牙的問題，是關於時間格式的「西元年」和「民國年」的愛恨糾葛。\n一般電腦在安裝作業系統時預設會是西元年，而有些人習慣看民國年，這些人就從設定的「地區與語言」中，將行事曆變更為中華民國曆，這些人對日期看順眼了，卻為開發人員種下一個應該要懂得基本常識。\n西元年扣掉 1911 就是民國年，這知識完全無誤，但若你是開發人員，並且在開發應用程式時使用 -1911 來算出民國年，這觀念可要重新來過了，因為 .NET 有提供 Taiwan Calendar 類別讓你在西元與民國之間盡情地轉換，甚至也無須擔心四年就要閏一次「閏年」。\nSolution 直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉換後的時間\n引用命名空間\n System.Globalization  DateTime dateTime = new DateTime(2020, 2, 29); TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.GetYear(dateTime); int month = dateTime.Month; int day = dateTime.Day; string newDateTime = $\"{year}/{month}/{day}\"; Console.WriteLine(newDateTime); 建立擴充方法 先撰寫一個擴展方法，需要使用時直接調用擴充方法，無須每次都撰寫相同代碼。\n///  /// 靜態擴展類別 ///  public static class DateTimeExtend { ///   /// 靜態擴展方法  ///   ///   ///   public static string ToTaiwanDate(this DateTime dateTime) { TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.GetYear(dateTime); int month = dateTime.Month; int day = dateTime.Day; return $\"{year}/{month}/{day}\"; } } 替換當前執行緒的文化特性 不想在每次遇到時間時，才透過方法來轉換民國年與西元年，那直接設定執行緒的 Cultrue 最便利。\n引用命名空間\n System.Globalization System.Threading  // 指定 zh-TW CultureInfo culture = new CultureInfo(\"zh-TW\"); // 西曆 culture.DateTimeFormat.Calendar = new GregorianCalendar(); // 民國曆 //culture.DateTimeFormat.Calendar = new TaiwanCalendar();  // 將自建物件指給當前執行緒使用 Thread.CurrentThread.CurrentCulture = culture; Thread.CurrentThread.CurrentUICulture = culture; Console.WriteLine(DateTime.Now.ToShortDateString()); 由上列的代碼可以看到分別使用的物件為\n 西曆 GregorianCalendar 民國曆 TaiwanCalendar  在做轉換時，只需建立欲轉換的物件並指給 Culture，最後在將自訂的 Culture 指給執行緒使用，即可達到效果。\nNote 如何取得 DateTime 型別的日期部分？\nDateTime dateTime = new DateTime(2020, 2, 29); Console.WriteLine(dateTime.Date); 使用 Date 屬性，結案！\nReference TaiwanCalendar Class\n",
-  "wordCount" : "163",
+  "articleBody": "這篇想記錄一下老掉牙的問題，是關於時間格式的「西元年」和「民國年」的愛恨糾葛。\n一般電腦在安裝作業系統時預設會是西元年，而有些人習慣看民國年，這些人就從設定的「地區與語言」中，將行事曆變更為中華民國曆，這些人對日期看順眼了，卻為開發人員種下一個應該要懂得基本常識。\n西元年扣掉 1911 就是民國年，這知識完全無誤，但若你是開發人員，並且在開發應用程式時使用 -1911 來算出民國年，這觀念可要重新來過了，因為 .NET 有提供 Taiwan Calendar 類別讓你在西元與民國之間盡情地轉換，甚至也無須擔心四年就要閏一次「閏年」。\nSolution 有三種解決方案\n 直接轉換 建立擴充方法 替換當前執行緒的文化特性  直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉換後的時間\n引用命名空間\n System.Globalization  DateTime dateTime = new DateTime(2020, 2, 29); TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.GetYear(dateTime); int month = dateTime.Month; int day = dateTime.Day; string newDateTime = $\"{year}/{month}/{day}\"; Console.WriteLine(newDateTime); 建立擴充方法 先撰寫一個擴展方法，需要使用時直接調用擴充方法，無須每次都撰寫相同代碼。\n///  /// 靜態擴展類別 ///  public static class DateTimeExtend { ///   /// 靜態擴展方法  ///   ///   ///   public static string ToTaiwanDate(this DateTime dateTime) { TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.GetYear(dateTime); int month = dateTime.Month; int day = dateTime.Day; return $\"{year}/{month}/{day}\"; } } 替換當前執行緒的文化特性 不想在每次遇到時間時，才透過方法來轉換民國年與西元年，那直接設定執行緒的 Cultrue 最便利。\n引用命名空間\n System.Globalization System.Threading  // 指定 zh-TW CultureInfo culture = new CultureInfo(\"zh-TW\"); // 西曆 culture.DateTimeFormat.Calendar = new GregorianCalendar(); // 民國曆 //culture.DateTimeFormat.Calendar = new TaiwanCalendar();  // 將自建物件指給當前執行緒使用 Thread.CurrentThread.CurrentCulture = culture; Thread.CurrentThread.CurrentUICulture = culture; Console.WriteLine(DateTime.Now.ToShortDateString()); 由上列的代碼可以看到分別使用的物件為\n 西曆 GregorianCalendar 民國曆 TaiwanCalendar  在做轉換時，只需建立欲轉換的物件並指給 Culture，最後在將自訂的 Culture 指給執行緒使用，即可達到效果。\nNote 如何取得 DateTime 型別的日期部分？\nDateTime dateTime = new DateTime(2020, 2, 29); Console.WriteLine(dateTime.Date); 使用 Date 屬性，結案！\nReference TaiwanCalendar Class\n",
+  "wordCount" : "167",
   "inLanguage": "en",
   "datePublished": "2021-04-19T00:00:00Z",
   "dateModified": "2021-04-19T14:58:59+08:00",
@@ -184,6 +187,11 @@ Solution 直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉
         </div>
         <ul id="menu">
             <li>
+                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
                 <a href="https://fakestandard.github.io/algorithm/" title="Algorithm">
                     <span>Algorithm</span>
                 </a>
@@ -191,11 +199,6 @@ Solution 直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉
             <li>
                 <a href="https://fakestandard.github.io/netcore/" title=".NET Core">
                     <span>.NET Core</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
-                    <span>Archive</span>
                 </a>
             </li>
             <li>
@@ -231,7 +234,13 @@ Solution 直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉
 <p>一般電腦在安裝作業系統時預設會是西元年，而有些人習慣看民國年，這些人就從設定的「地區與語言」中，將行事曆變更為中華民國曆，這些人對日期看順眼了，卻為開發人員種下一個應該要懂得基本常識。</p>
 <p>西元年扣掉 1911 就是民國年，這知識完全無誤，但若你是開發人員，並且在開發應用程式時使用 -1911 來算出民國年，這觀念可要重新來過了，因為 .NET 有提供 Taiwan Calendar 類別讓你在西元與民國之間盡情地轉換，甚至也無須擔心四年就要閏一次「閏年」。</p>
 <h1 id="solution">Solution<a hidden class="anchor" aria-hidden="true" href="#solution">#</a></h1>
-<h3 id="直接轉換">直接轉換<a hidden class="anchor" aria-hidden="true" href="#直接轉換">#</a></h3>
+<p>有三種解決方案</p>
+<ul>
+<li>直接轉換</li>
+<li>建立擴充方法</li>
+<li>替換當前執行緒的文化特性</li>
+</ul>
+<h2 id="直接轉換">直接轉換<a hidden class="anchor" aria-hidden="true" href="#直接轉換">#</a></h2>
 <p>建立一個時間變數，透過 TaiwanCalendar 返回轉換後的時間</p>
 <p>引用命名空間</p>
 <ul>
@@ -247,7 +256,7 @@ TaiwanCalendar tc = <span style="color:#66d9ef">new</span> TaiwanCalendar();
 <span style="color:#66d9ef">string</span> newDateTime = <span style="color:#e6db74">$&#34;{year}/{month}/{day}&#34;</span>;
 
 Console.WriteLine(newDateTime);
-</code></pre></div><h3 id="建立擴充方法">建立擴充方法<a hidden class="anchor" aria-hidden="true" href="#建立擴充方法">#</a></h3>
+</code></pre></div><h2 id="建立擴充方法">建立擴充方法<a hidden class="anchor" aria-hidden="true" href="#建立擴充方法">#</a></h2>
 <p>先撰寫一個擴展方法，需要使用時直接調用擴充方法，無須每次都撰寫相同代碼。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 靜態擴展類別
@@ -270,7 +279,7 @@ Console.WriteLine(newDateTime);
         <span style="color:#66d9ef">return</span> <span style="color:#e6db74">$&#34;{year}/{month}/{day}&#34;</span>;
     }
 }
-</code></pre></div><h3 id="替換當前執行緒的文化特性">替換當前執行緒的文化特性<a hidden class="anchor" aria-hidden="true" href="#替換當前執行緒的文化特性">#</a></h3>
+</code></pre></div><h2 id="替換當前執行緒的文化特性">替換當前執行緒的文化特性<a hidden class="anchor" aria-hidden="true" href="#替換當前執行緒的文化特性">#</a></h2>
 <p>不想在每次遇到時間時，才透過方法來轉換民國年與西元年，那直接設定執行緒的 Cultrue 最便利。</p>
 <p>引用命名空間</p>
 <ul>
