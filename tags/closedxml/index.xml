@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 08 May 2021 10:28:02 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/closedxml/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【.NET】使用 ClosedXML 實現匯出 Excel 功能</title>
-      <link>https://fakestandard.github.io/post/dotnet/dotnet-4-closedxmlsimple/</link>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-5-closedxmlsimple/</link>
       <pubDate>Sat, 08 May 2021 10:28:02 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/dotnet/dotnet-4-closedxmlsimple/</guid>
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-5-closedxmlsimple/</guid>
       <description>開發應用程式或網頁時一定會遇到匯出 Excel 功能，而匯出的 Libaray 除了微軟原生的程式庫之外，還可以使用第三方的程式庫，先前已有介紹過使用 NPOI 套件，有興趣可參考傳送門。
 這篇則會介紹如何使用 ClosedXML 簡易的匯出，代碼已存放於 GitHub
 【傳送門】【NPOI】使用 NPOI 匯出 Excel 的基本應用

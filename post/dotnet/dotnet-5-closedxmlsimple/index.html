@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>【.NET】使用 ClosedXML 實現匯出 Excel 功能 | How can I help</title>
+<meta name="keywords" content=".NET, ClosedXML, CSharp" />
+<meta name="description" content="開發應用程式或網頁時一定會遇到匯出 Excel 功能，而匯出的 Libaray 除了微軟原生的程式庫之外，還可以使用第三方的程式庫，先前已有介紹過使用 NPOI 套件，有興趣可參考傳送門。
+這篇則會介紹如何使用 ClosedXML 簡易的匯出，代碼已存放於 GitHub
+【傳送門】【NPOI】使用 NPOI 匯出 Excel 的基本應用
+Start 首先到 NuGet 安裝套件
+Model 建立資料模型
+public class Employee { public int ID { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Title { get; set; } public string City { get; set; } } Controller 建立控制項和產生資料
+public class EmployeeController : Controller { private List&lt;Employee&gt; employees; public EmployeeController() { if (employees == null) { employees = new List&lt;Employee&gt;() { new Employee{ ID = 1, LastName = &#34;Davolio&#34;, FirstName = &#34;Nancy&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 2, LastName = &#34;Fuller&#34;, FirstName = &#34;Andrew&#34;, Title = &#34;Vice President, Sales&#34;, City = &#34;Tacoma&#34; }, new Employee{ ID = 3, LastName = &#34;Leverling&#34;, FirstName = &#34;Janet&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Kirkland&#34; }, new Employee{ ID = 4, LastName = &#34;Peacock&#34;, FirstName = &#34;Margaret&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Redmond&#34; }, new Employee{ ID = 5, LastName = &#34;Buchanan&#34;, FirstName = &#34;Steven&#34;, Title = &#34;Sales Manager&#34;, City = &#34;London&#34; }, new Employee{ ID = 6, LastName = &#34;Suyama&#34;, FirstName = &#34;Michael&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 7, LastName = &#34;King&#34;, FirstName = &#34;Robert&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 8, LastName = &#34;Callahan&#34;, FirstName = &#34;Laura&#34;, Title = &#34;Inside Sales Coordinator&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 9, LastName = &#34;Dodsworth&#34;, FirstName = &#34;Anne&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; } }; } } public IActionResult Index() { return View(employees); } } View 在視圖渲染資料，且添加 Export 按鈕">
+<meta name="author" content="Polar Bear">
+<link rel="canonical" href="https://fakestandard.github.io/post/dotnet/dotnet-5-closedxmlsimple/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.d1b405b7c6bf1b09aebca33eb6e2d8bd070113d119bdfa2715c32f6408f9fbee.css" integrity="sha256-0bQFt8a/GwmuvKM&#43;tuLYvQcBE9EZvfonFcMvZAj5&#43;&#43;4=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://fakestandard.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://fakestandard.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://fakestandard.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://fakestandard.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.81.0" />
+<meta property="og:title" content="【.NET】使用 ClosedXML 實現匯出 Excel 功能" />
+<meta property="og:description" content="開發應用程式或網頁時一定會遇到匯出 Excel 功能，而匯出的 Libaray 除了微軟原生的程式庫之外，還可以使用第三方的程式庫，先前已有介紹過使用 NPOI 套件，有興趣可參考傳送門。
+這篇則會介紹如何使用 ClosedXML 簡易的匯出，代碼已存放於 GitHub
+【傳送門】【NPOI】使用 NPOI 匯出 Excel 的基本應用
+Start 首先到 NuGet 安裝套件
+Model 建立資料模型
+public class Employee { public int ID { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Title { get; set; } public string City { get; set; } } Controller 建立控制項和產生資料
+public class EmployeeController : Controller { private List&lt;Employee&gt; employees; public EmployeeController() { if (employees == null) { employees = new List&lt;Employee&gt;() { new Employee{ ID = 1, LastName = &#34;Davolio&#34;, FirstName = &#34;Nancy&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 2, LastName = &#34;Fuller&#34;, FirstName = &#34;Andrew&#34;, Title = &#34;Vice President, Sales&#34;, City = &#34;Tacoma&#34; }, new Employee{ ID = 3, LastName = &#34;Leverling&#34;, FirstName = &#34;Janet&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Kirkland&#34; }, new Employee{ ID = 4, LastName = &#34;Peacock&#34;, FirstName = &#34;Margaret&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Redmond&#34; }, new Employee{ ID = 5, LastName = &#34;Buchanan&#34;, FirstName = &#34;Steven&#34;, Title = &#34;Sales Manager&#34;, City = &#34;London&#34; }, new Employee{ ID = 6, LastName = &#34;Suyama&#34;, FirstName = &#34;Michael&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 7, LastName = &#34;King&#34;, FirstName = &#34;Robert&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 8, LastName = &#34;Callahan&#34;, FirstName = &#34;Laura&#34;, Title = &#34;Inside Sales Coordinator&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 9, LastName = &#34;Dodsworth&#34;, FirstName = &#34;Anne&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; } }; } } public IActionResult Index() { return View(employees); } } View 在視圖渲染資料，且添加 Export 按鈕" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fakestandard.github.io/post/dotnet/dotnet-5-closedxmlsimple/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-05-08T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-05-08T10:28:02&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="【.NET】使用 ClosedXML 實現匯出 Excel 功能"/>
+<meta name="twitter:description" content="開發應用程式或網頁時一定會遇到匯出 Excel 功能，而匯出的 Libaray 除了微軟原生的程式庫之外，還可以使用第三方的程式庫，先前已有介紹過使用 NPOI 套件，有興趣可參考傳送門。
+這篇則會介紹如何使用 ClosedXML 簡易的匯出，代碼已存放於 GitHub
+【傳送門】【NPOI】使用 NPOI 匯出 Excel 的基本應用
+Start 首先到 NuGet 安裝套件
+Model 建立資料模型
+public class Employee { public int ID { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Title { get; set; } public string City { get; set; } } Controller 建立控制項和產生資料
+public class EmployeeController : Controller { private List&lt;Employee&gt; employees; public EmployeeController() { if (employees == null) { employees = new List&lt;Employee&gt;() { new Employee{ ID = 1, LastName = &#34;Davolio&#34;, FirstName = &#34;Nancy&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 2, LastName = &#34;Fuller&#34;, FirstName = &#34;Andrew&#34;, Title = &#34;Vice President, Sales&#34;, City = &#34;Tacoma&#34; }, new Employee{ ID = 3, LastName = &#34;Leverling&#34;, FirstName = &#34;Janet&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Kirkland&#34; }, new Employee{ ID = 4, LastName = &#34;Peacock&#34;, FirstName = &#34;Margaret&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Redmond&#34; }, new Employee{ ID = 5, LastName = &#34;Buchanan&#34;, FirstName = &#34;Steven&#34;, Title = &#34;Sales Manager&#34;, City = &#34;London&#34; }, new Employee{ ID = 6, LastName = &#34;Suyama&#34;, FirstName = &#34;Michael&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 7, LastName = &#34;King&#34;, FirstName = &#34;Robert&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 8, LastName = &#34;Callahan&#34;, FirstName = &#34;Laura&#34;, Title = &#34;Inside Sales Coordinator&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 9, LastName = &#34;Dodsworth&#34;, FirstName = &#34;Anne&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; } }; } } public IActionResult Index() { return View(employees); } } View 在視圖渲染資料，且添加 Export 按鈕"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://fakestandard.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "【.NET】使用 ClosedXML 實現匯出 Excel 功能",
+      "item": "https://fakestandard.github.io/post/dotnet/dotnet-5-closedxmlsimple/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "【.NET】使用 ClosedXML 實現匯出 Excel 功能",
+  "name": "【.NET】使用 ClosedXML 實現匯出 Excel 功能",
+  "description": "開發應用程式或網頁時一定會遇到匯出 Excel 功能，而匯出的 Libaray 除了微軟原生的程式庫之外，還可以使用第三方的程式庫，先前已有介紹過使用 NPOI 套件，有興趣可參考傳送門。\n這篇則會介紹如何使用 ClosedXML 簡易的匯出，代碼已存放於 GitHub\n【傳送門】【NPOI】使用 NPOI 匯出 Excel 的基本應用\nStart 首先到 NuGet 安裝套件\nModel 建立資料模型\npublic class Employee { public int ID { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Title { get; set; } public string City { get; set; } } Controller 建立控制項和產生資料\npublic class EmployeeController : Controller { private List\u0026lt;Employee\u0026gt; employees; public EmployeeController() { if (employees == null) { employees = new List\u0026lt;Employee\u0026gt;() { new Employee{ ID = 1, LastName = \u0026#34;Davolio\u0026#34;, FirstName = \u0026#34;Nancy\u0026#34;, Title = \u0026#34;Sales Representative\u0026#34;, City = \u0026#34;Seattle\u0026#34; }, new Employee{ ID = 2, LastName = \u0026#34;Fuller\u0026#34;, FirstName = \u0026#34;Andrew\u0026#34;, Title = \u0026#34;Vice President, Sales\u0026#34;, City = \u0026#34;Tacoma\u0026#34; }, new Employee{ ID = 3, LastName = \u0026#34;Leverling\u0026#34;, FirstName = \u0026#34;Janet\u0026#34;, Title = \u0026#34;Sales Representative\u0026#34;, City = \u0026#34;Kirkland\u0026#34; }, new Employee{ ID = 4, LastName = \u0026#34;Peacock\u0026#34;, FirstName = \u0026#34;Margaret\u0026#34;, Title = \u0026#34;Sales Representative\u0026#34;, City = \u0026#34;Redmond\u0026#34; }, new Employee{ ID = 5, LastName = \u0026#34;Buchanan\u0026#34;, FirstName = \u0026#34;Steven\u0026#34;, Title = \u0026#34;Sales Manager\u0026#34;, City = \u0026#34;London\u0026#34; }, new Employee{ ID = 6, LastName = \u0026#34;Suyama\u0026#34;, FirstName = \u0026#34;Michael\u0026#34;, Title = \u0026#34;Sales Representative\u0026#34;, City = \u0026#34;London\u0026#34; }, new Employee{ ID = 7, LastName = \u0026#34;King\u0026#34;, FirstName = \u0026#34;Robert\u0026#34;, Title = \u0026#34;Sales Representative\u0026#34;, City = \u0026#34;London\u0026#34; }, new Employee{ ID = 8, LastName = \u0026#34;Callahan\u0026#34;, FirstName = \u0026#34;Laura\u0026#34;, Title = \u0026#34;Inside Sales Coordinator\u0026#34;, City = \u0026#34;Seattle\u0026#34; }, new Employee{ ID = 9, LastName = \u0026#34;Dodsworth\u0026#34;, FirstName = \u0026#34;Anne\u0026#34;, Title = \u0026#34;Sales Representative\u0026#34;, City = \u0026#34;London\u0026#34; } }; } } public IActionResult Index() { return View(employees); } } View 在視圖渲染資料，且添加 Export 按鈕",
+  "keywords": [
+    ".NET", "ClosedXML", "CSharp"
+  ],
+  "articleBody": "開發應用程式或網頁時一定會遇到匯出 Excel 功能，而匯出的 Libaray 除了微軟原生的程式庫之外，還可以使用第三方的程式庫，先前已有介紹過使用 NPOI 套件，有興趣可參考傳送門。\n這篇則會介紹如何使用 ClosedXML 簡易的匯出，代碼已存放於 GitHub\n【傳送門】【NPOI】使用 NPOI 匯出 Excel 的基本應用\nStart 首先到 NuGet 安裝套件\nModel 建立資料模型\npublic class Employee { public int ID { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Title { get; set; } public string City { get; set; } } Controller 建立控制項和產生資料\npublic class EmployeeController : Controller { private List employees; public EmployeeController() { if (employees == null) { employees = new List() { new Employee{ ID = 1, LastName = \"Davolio\", FirstName = \"Nancy\", Title = \"Sales Representative\", City = \"Seattle\" }, new Employee{ ID = 2, LastName = \"Fuller\", FirstName = \"Andrew\", Title = \"Vice President, Sales\", City = \"Tacoma\" }, new Employee{ ID = 3, LastName = \"Leverling\", FirstName = \"Janet\", Title = \"Sales Representative\", City = \"Kirkland\" }, new Employee{ ID = 4, LastName = \"Peacock\", FirstName = \"Margaret\", Title = \"Sales Representative\", City = \"Redmond\" }, new Employee{ ID = 5, LastName = \"Buchanan\", FirstName = \"Steven\", Title = \"Sales Manager\", City = \"London\" }, new Employee{ ID = 6, LastName = \"Suyama\", FirstName = \"Michael\", Title = \"Sales Representative\", City = \"London\" }, new Employee{ ID = 7, LastName = \"King\", FirstName = \"Robert\", Title = \"Sales Representative\", City = \"London\" }, new Employee{ ID = 8, LastName = \"Callahan\", FirstName = \"Laura\", Title = \"Inside Sales Coordinator\", City = \"Seattle\" }, new Employee{ ID = 9, LastName = \"Dodsworth\", FirstName = \"Anne\", Title = \"Sales Representative\", City = \"London\" } }; } } public IActionResult Index() { return View(employees); } } View 在視圖渲染資料，且添加 Export 按鈕\n@model IEnumerableExport_ClosedXML.Models.Employee @{ ViewData[\"Title\"] = \"Index\"; } form method=\"post\" button class=\"btn btn-success\" asp-action=\"Export\"Simple Exportbutton form pp table class=\"table table-hover\" thead tr th @Html.DisplayNameFor(model = model.ID) th th @Html.DisplayNameFor(model = model.FirstName) th th @Html.DisplayNameFor(model = model.LastName) th th @Html.DisplayNameFor(model = model.Title) th th @Html.DisplayNameFor(model = model.City) th tr thead tbody @foreach (var item in Model) { tr td @Html.DisplayFor(modelItem = item.ID) td td @Html.DisplayFor(modelItem = item.FirstName) td td @Html.DisplayFor(modelItem = item.LastName) td td @Html.DisplayFor(modelItem = item.Title) td td @Html.DisplayFor(modelItem = item.City) td tr } tbody table 截至目前為止資料的前置作業已完成，為了不做資料庫設定，這邊直接快速產生資料並呈現。\n下一步為匯出按鈕建立一個具有 HttpPost 的 Export 動作方法，記得引用命名空間 using ClosedXML.Excel;\n///  /// 匯出 Excel ///  ///  [HttpPost] public IActionResult Export() { try { // 取得類別的欄位名稱  var headerList = typeof(Employee).GetProperties().Select(m = m.Name).ToList(); string contentType = \"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\"; //string contentType = \"application/vnd.ms-excel\";  string fileName = \"EmployeeExport.xlsx\"; // 建立工作簿  IXLWorkbook wb = new XLWorkbook(); // 建立工作表  IXLWorksheet sheet = wb.Worksheets.Add(\"Employee\"); // 合併儲存格  sheet.Range(1, 1, 1, headerList.Count()).Merge(); sheet.Cell(1, 1).Value = \"Employee Report\"; // 樣式-背景色  sheet.Cell(1, 1).Style.Fill.SetBackgroundColor(XLColor.AppleGreen); // 字體大小  sheet.Cell(1, 1).Style.Font.SetFontSize(12); // 粗體  sheet.Cell(1, 1).Style.Font.SetBold(); // 水平垂直對齊方式  sheet.Cell(1, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center; sheet.Cell(1, 1).Style.Alignment.Vertical = XLAlignmentVerticalValues.Center; // 標題列寫入 / ClosedXML 的 row 或 cell 都是從 1 開始  for (int i = 1; i 2, i).Value = headerList[i - 1]; // 上框線  sheet.Cell(2, i).Style.Border.SetTopBorder(XLBorderStyleValues.Double); } // 內容寫入  for (int i = 1; i 2, 1).Value = employees[i - 1].ID; sheet.Cell(i + 2, 2).Value = employees[i - 1].FirstName; sheet.Cell(i + 2, 3).Value = employees[i - 1].LastName; sheet.Cell(i + 2, 4).Value = employees[i - 1].Title; sheet.Cell(i + 2, 5).Value = employees[i - 1].City; } // 自適應欄寬  sheet.Columns().AdjustToContents(); using (MemoryStream ms = new MemoryStream()) { // 將檔案存入記憶流  wb.SaveAs(ms); // 記憶流轉換成 byte[]  var content = ms.ToArray(); return File(content, contentType, fileName); } } catch (Exception ex) { return File(System.Text.Encoding.Unicode.GetBytes(ex.Message), \"application/x-unknown\", \"error.txt\"); } } 這樣就完成簡易的匯出，順便補充 ContentType 的對應\n   Extension ContentType     .xls application/vnd.ms-excel   .xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet    Reference ClosedXML\nCommon MIME types\nGitHub ClosedXML\n",
+  "wordCount" : "586",
+  "inLanguage": "en",
+  "datePublished": "2021-05-08T00:00:00Z",
+  "dateModified": "2021-05-08T10:28:02+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Polar Bear"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://fakestandard.github.io/post/dotnet/dotnet-5-closedxmlsimple/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "How can I help",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://fakestandard.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://fakestandard.github.io/" accesskey="h" title="How can I help (Alt + H)">How can I help</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/algorithm/" title="Algorithm">
+                    <span>Algorithm</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/netcore/" title=".NET Core">
+                    <span>.NET Core</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/post/">Posts</a></div>
+    <h1 class="post-title">
+      【.NET】使用 ClosedXML 實現匯出 Excel 功能
+    </h1>
+    <div class="post-meta">May 8, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear
+</div>
+  </header> 
+  <div class="post-content"><p>開發應用程式或網頁時一定會遇到匯出 Excel 功能，而匯出的 Libaray 除了微軟原生的程式庫之外，還可以使用第三方的程式庫，先前已有介紹過使用 NPOI 套件，有興趣可參考傳送門。</p>
+<p>這篇則會介紹如何使用 ClosedXML 簡易的匯出，代碼已存放於 <a href="https://github.com/FakeStandard/Export-ClosedXML">GitHub</a></p>
+<p>【傳送門】<a href="https://fakestandard.github.io/post/dotnet/dotnet-4-npoisimple/">【NPOI】使用 NPOI 匯出 Excel 的基本應用</a></p>
+<h1 id="start">Start<a hidden class="anchor" aria-hidden="true" href="#start">#</a></h1>
+<p>首先到 NuGet 安裝套件</p>
+<p><img loading="lazy" src="/images/ExportExcel/ClosedXML/ClosedXML001.png" alt=""  />
+</p>
+<h3 id="model">Model<a hidden class="anchor" aria-hidden="true" href="#model">#</a></h3>
+<p>建立資料模型</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Employee</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> ID { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> FirstName { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> LastName { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Title { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> City { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+}
+</code></pre></div><h3 id="controller">Controller<a hidden class="anchor" aria-hidden="true" href="#controller">#</a></h3>
+<p>建立控制項和產生資料</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmployeeController</span> : Controller
+{
+    <span style="color:#66d9ef">private</span> List&lt;Employee&gt; employees;
+
+    <span style="color:#66d9ef">public</span> EmployeeController()
+    {
+        <span style="color:#66d9ef">if</span> (employees == <span style="color:#66d9ef">null</span>)
+        {
+            employees = <span style="color:#66d9ef">new</span> List&lt;Employee&gt;()
+            {
+                <span style="color:#66d9ef">new</span> Employee{ ID = <span style="color:#ae81ff">1</span>, LastName = <span style="color:#e6db74">&#34;Davolio&#34;</span>, FirstName = <span style="color:#e6db74">&#34;Nancy&#34;</span>, Title = <span style="color:#e6db74">&#34;Sales Representative&#34;</span>, City = <span style="color:#e6db74">&#34;Seattle&#34;</span> },
+                <span style="color:#66d9ef">new</span> Employee{ ID = <span style="color:#ae81ff">2</span>, LastName = <span style="color:#e6db74">&#34;Fuller&#34;</span>, FirstName = <span style="color:#e6db74">&#34;Andrew&#34;</span>, Title = <span style="color:#e6db74">&#34;Vice President, Sales&#34;</span>, City = <span style="color:#e6db74">&#34;Tacoma&#34;</span> },
+                <span style="color:#66d9ef">new</span> Employee{ ID = <span style="color:#ae81ff">3</span>, LastName = <span style="color:#e6db74">&#34;Leverling&#34;</span>, FirstName = <span style="color:#e6db74">&#34;Janet&#34;</span>, Title = <span style="color:#e6db74">&#34;Sales Representative&#34;</span>, City = <span style="color:#e6db74">&#34;Kirkland&#34;</span> },
+                <span style="color:#66d9ef">new</span> Employee{ ID = <span style="color:#ae81ff">4</span>, LastName = <span style="color:#e6db74">&#34;Peacock&#34;</span>, FirstName = <span style="color:#e6db74">&#34;Margaret&#34;</span>, Title = <span style="color:#e6db74">&#34;Sales Representative&#34;</span>, City = <span style="color:#e6db74">&#34;Redmond&#34;</span> },
+                <span style="color:#66d9ef">new</span> Employee{ ID = <span style="color:#ae81ff">5</span>, LastName = <span style="color:#e6db74">&#34;Buchanan&#34;</span>, FirstName = <span style="color:#e6db74">&#34;Steven&#34;</span>, Title = <span style="color:#e6db74">&#34;Sales Manager&#34;</span>, City = <span style="color:#e6db74">&#34;London&#34;</span> },
+                <span style="color:#66d9ef">new</span> Employee{ ID = <span style="color:#ae81ff">6</span>, LastName = <span style="color:#e6db74">&#34;Suyama&#34;</span>, FirstName = <span style="color:#e6db74">&#34;Michael&#34;</span>, Title = <span style="color:#e6db74">&#34;Sales Representative&#34;</span>, City = <span style="color:#e6db74">&#34;London&#34;</span> },
+                <span style="color:#66d9ef">new</span> Employee{ ID = <span style="color:#ae81ff">7</span>, LastName = <span style="color:#e6db74">&#34;King&#34;</span>, FirstName = <span style="color:#e6db74">&#34;Robert&#34;</span>, Title = <span style="color:#e6db74">&#34;Sales Representative&#34;</span>, City = <span style="color:#e6db74">&#34;London&#34;</span> },
+                <span style="color:#66d9ef">new</span> Employee{ ID = <span style="color:#ae81ff">8</span>, LastName = <span style="color:#e6db74">&#34;Callahan&#34;</span>, FirstName = <span style="color:#e6db74">&#34;Laura&#34;</span>, Title = <span style="color:#e6db74">&#34;Inside Sales Coordinator&#34;</span>, City = <span style="color:#e6db74">&#34;Seattle&#34;</span> },
+                <span style="color:#66d9ef">new</span> Employee{ ID = <span style="color:#ae81ff">9</span>, LastName = <span style="color:#e6db74">&#34;Dodsworth&#34;</span>, FirstName = <span style="color:#e6db74">&#34;Anne&#34;</span>, Title = <span style="color:#e6db74">&#34;Sales Representative&#34;</span>, City = <span style="color:#e6db74">&#34;London&#34;</span> }
+            };
+        }
+    }
+    <span style="color:#66d9ef">public</span> IActionResult Index()
+    {
+        <span style="color:#66d9ef">return</span> View(employees);
+    }
+}
+</code></pre></div><h3 id="view">View<a hidden class="anchor" aria-hidden="true" href="#view">#</a></h3>
+<p>在視圖渲染資料，且添加 Export 按鈕</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Html" data-lang="Html">@model IEnumerable&lt;<span style="color:#f92672">Export_ClosedXML.Models.Employee</span>&gt;
+
+@{
+    ViewData[&#34;Title&#34;] = &#34;Index&#34;;
+}
+
+&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;post&#34;</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-success&#34;</span> <span style="color:#a6e22e">asp-action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Export&#34;</span>&gt;Simple Export&lt;/<span style="color:#f92672">button</span>&gt;
+&lt;/<span style="color:#f92672">form</span>&gt;
+&lt;<span style="color:#f92672">p</span>&gt;&lt;/<span style="color:#f92672">p</span>&gt;
+&lt;<span style="color:#f92672">table</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;table table-hover&#34;</span>&gt;
+    &lt;<span style="color:#f92672">thead</span>&gt;
+        &lt;<span style="color:#f92672">tr</span>&gt;
+            &lt;<span style="color:#f92672">th</span>&gt;
+                @Html.DisplayNameFor(model =&gt; model.ID)
+            &lt;/<span style="color:#f92672">th</span>&gt;
+            &lt;<span style="color:#f92672">th</span>&gt;
+                @Html.DisplayNameFor(model =&gt; model.FirstName)
+            &lt;/<span style="color:#f92672">th</span>&gt;
+            &lt;<span style="color:#f92672">th</span>&gt;
+                @Html.DisplayNameFor(model =&gt; model.LastName)
+            &lt;/<span style="color:#f92672">th</span>&gt;
+            &lt;<span style="color:#f92672">th</span>&gt;
+                @Html.DisplayNameFor(model =&gt; model.Title)
+            &lt;/<span style="color:#f92672">th</span>&gt;
+            &lt;<span style="color:#f92672">th</span>&gt;
+                @Html.DisplayNameFor(model =&gt; model.City)
+            &lt;/<span style="color:#f92672">th</span>&gt;
+        &lt;/<span style="color:#f92672">tr</span>&gt;
+    &lt;/<span style="color:#f92672">thead</span>&gt;
+    &lt;<span style="color:#f92672">tbody</span>&gt;
+        @foreach (var item in Model)
+        {
+            &lt;<span style="color:#f92672">tr</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;
+                    @Html.DisplayFor(modelItem =&gt; item.ID)
+                &lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;
+                    @Html.DisplayFor(modelItem =&gt; item.FirstName)
+                &lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;
+                    @Html.DisplayFor(modelItem =&gt; item.LastName)
+                &lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;
+                    @Html.DisplayFor(modelItem =&gt; item.Title)
+                &lt;/<span style="color:#f92672">td</span>&gt;
+                &lt;<span style="color:#f92672">td</span>&gt;
+                    @Html.DisplayFor(modelItem =&gt; item.City)
+                &lt;/<span style="color:#f92672">td</span>&gt;
+            &lt;/<span style="color:#f92672">tr</span>&gt;
+        }
+    &lt;/<span style="color:#f92672">tbody</span>&gt;
+&lt;/<span style="color:#f92672">table</span>&gt;
+</code></pre></div><p>截至目前為止資料的前置作業已完成，為了不做資料庫設定，這邊直接快速產生資料並呈現。</p>
+<p>下一步為匯出按鈕建立一個具有 <code>HttpPost</code> 的 <code>Export</code> 動作方法，記得引用命名空間 <code>using ClosedXML.Excel;</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// 匯出 Excel
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e">/// &lt;returns&gt;&lt;/returns&gt;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">[HttpPost]</span>
+<span style="color:#66d9ef">public</span> IActionResult Export()
+{
+    <span style="color:#66d9ef">try</span>
+    {
+        <span style="color:#75715e">// 取得類別的欄位名稱
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">var</span> headerList = <span style="color:#66d9ef">typeof</span>(Employee).GetProperties().Select(m =&gt; m.Name).ToList();
+
+        <span style="color:#66d9ef">string</span> contentType = <span style="color:#e6db74">&#34;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&#34;</span>;
+        <span style="color:#75715e">//string contentType = &#34;application/vnd.ms-excel&#34;;
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">string</span> fileName = <span style="color:#e6db74">&#34;EmployeeExport.xlsx&#34;</span>;
+
+        <span style="color:#75715e">// 建立工作簿
+</span><span style="color:#75715e"></span>        IXLWorkbook wb = <span style="color:#66d9ef">new</span> XLWorkbook();
+
+        <span style="color:#75715e">// 建立工作表
+</span><span style="color:#75715e"></span>        IXLWorksheet sheet = wb.Worksheets.Add(<span style="color:#e6db74">&#34;Employee&#34;</span>);
+
+        <span style="color:#75715e">// 合併儲存格
+</span><span style="color:#75715e"></span>        sheet.Range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, headerList.Count()).Merge();
+        sheet.Cell(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>).Value = <span style="color:#e6db74">&#34;Employee Report&#34;</span>;
+
+        <span style="color:#75715e">// 樣式-背景色
+</span><span style="color:#75715e"></span>        sheet.Cell(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>).Style.Fill.SetBackgroundColor(XLColor.AppleGreen);
+        <span style="color:#75715e">// 字體大小
+</span><span style="color:#75715e"></span>        sheet.Cell(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>).Style.Font.SetFontSize(<span style="color:#ae81ff">12</span>);
+        <span style="color:#75715e">// 粗體
+</span><span style="color:#75715e"></span>        sheet.Cell(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>).Style.Font.SetBold();
+
+        <span style="color:#75715e">// 水平垂直對齊方式
+</span><span style="color:#75715e"></span>        sheet.Cell(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+        sheet.Cell(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>).Style.Alignment.Vertical = XLAlignmentVerticalValues.Center;
+
+        <span style="color:#75715e">// 標題列寫入 / ClosedXML 的 row 或 cell 都是從 1 開始
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">1</span>; i &lt;= headerList.Count(); i++)
+        {
+            sheet.Cell(<span style="color:#ae81ff">2</span>, i).Value = headerList[i - <span style="color:#ae81ff">1</span>];
+
+            <span style="color:#75715e">// 上框線
+</span><span style="color:#75715e"></span>            sheet.Cell(<span style="color:#ae81ff">2</span>, i).Style.Border.SetTopBorder(XLBorderStyleValues.Double);
+        }
+
+        <span style="color:#75715e">// 內容寫入
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">1</span>; i &lt;= employees.Count(); i++)
+        {
+            sheet.Cell(i + <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>).Value = employees[i - <span style="color:#ae81ff">1</span>].ID;
+            sheet.Cell(i + <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>).Value = employees[i - <span style="color:#ae81ff">1</span>].FirstName;
+            sheet.Cell(i + <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>).Value = employees[i - <span style="color:#ae81ff">1</span>].LastName;
+            sheet.Cell(i + <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>).Value = employees[i - <span style="color:#ae81ff">1</span>].Title;
+            sheet.Cell(i + <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">5</span>).Value = employees[i - <span style="color:#ae81ff">1</span>].City;
+        }
+
+        <span style="color:#75715e">// 自適應欄寬
+</span><span style="color:#75715e"></span>        sheet.Columns().AdjustToContents();
+
+        <span style="color:#66d9ef">using</span> (MemoryStream ms = <span style="color:#66d9ef">new</span> MemoryStream())
+        {
+            <span style="color:#75715e">// 將檔案存入記憶流
+</span><span style="color:#75715e"></span>            wb.SaveAs(ms);
+
+            <span style="color:#75715e">// 記憶流轉換成 byte[]
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">var</span> content = ms.ToArray();
+
+            <span style="color:#66d9ef">return</span> File(content, contentType, fileName);
+        }
+    }
+    <span style="color:#66d9ef">catch</span> (Exception ex)
+    {
+        <span style="color:#66d9ef">return</span> File(System.Text.Encoding.Unicode.GetBytes(ex.Message), <span style="color:#e6db74">&#34;application/x-unknown&#34;</span>, <span style="color:#e6db74">&#34;error.txt&#34;</span>);
+    }
+}
+</code></pre></div><p>這樣就完成簡易的匯出，順便補充 ContentType 的對應</p>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>ContentType</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.xls</td>
+<td>application/vnd.ms-excel</td>
+</tr>
+<tr>
+<td>.xlsx</td>
+<td>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</td>
+</tr>
+</tbody>
+</table>
+<h1 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h1>
+<p><a href="https://closedxml.readthedocs.io/en/latest/index.html">ClosedXML</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types">Common MIME types</a></p>
+<p><a href="https://github.com/ClosedXML/ClosedXML">GitHub ClosedXML</a></p>
+
+</div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://fakestandard.github.io/tags/.net/">.NET</a></li>
+      <li><a href="https://fakestandard.github.io/tags/closedxml/">ClosedXML</a></li>
+      <li><a href="https://fakestandard.github.io/tags/csharp/">CSharp</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://fakestandard.github.io/post/dotnet/dotnet-6-exportcsv/">
+    <span class="title">« Prev Page</span>
+    <br>
+    <span>【.NET】將資料匯出成 CSV</span>
+  </a>
+  <a class="next" href="https://fakestandard.github.io/post/lifetrip/lifetrip-2-hsinchu-wufeng/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>【Life Trip】五峰星空下露營區</span>
+  </a>
+</nav>
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【.NET】使用 ClosedXML 實現匯出 Excel 功能 on twitter"
+        href="https://twitter.com/intent/tweet/?text=%e3%80%90.NET%e3%80%91%e4%bd%bf%e7%94%a8%20ClosedXML%20%e5%af%a6%e7%8f%be%e5%8c%af%e5%87%ba%20Excel%20%e5%8a%9f%e8%83%bd&amp;url=https%3a%2f%2ffakestandard.github.io%2fpost%2fdotnet%2fdotnet-5-closedxmlsimple%2f&amp;hashtags=.NET%2cClosedXML%2cCSharp">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【.NET】使用 ClosedXML 實現匯出 Excel 功能 on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ffakestandard.github.io%2fpost%2fdotnet%2fdotnet-5-closedxmlsimple%2f&amp;title=%e3%80%90.NET%e3%80%91%e4%bd%bf%e7%94%a8%20ClosedXML%20%e5%af%a6%e7%8f%be%e5%8c%af%e5%87%ba%20Excel%20%e5%8a%9f%e8%83%bd&amp;summary=%e3%80%90.NET%e3%80%91%e4%bd%bf%e7%94%a8%20ClosedXML%20%e5%af%a6%e7%8f%be%e5%8c%af%e5%87%ba%20Excel%20%e5%8a%9f%e8%83%bd&amp;source=https%3a%2f%2ffakestandard.github.io%2fpost%2fdotnet%2fdotnet-5-closedxmlsimple%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【.NET】使用 ClosedXML 實現匯出 Excel 功能 on reddit"
+        href="https://reddit.com/submit?url=https%3a%2f%2ffakestandard.github.io%2fpost%2fdotnet%2fdotnet-5-closedxmlsimple%2f&title=%e3%80%90.NET%e3%80%91%e4%bd%bf%e7%94%a8%20ClosedXML%20%e5%af%a6%e7%8f%be%e5%8c%af%e5%87%ba%20Excel%20%e5%8a%9f%e8%83%bd">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【.NET】使用 ClosedXML 實現匯出 Excel 功能 on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2ffakestandard.github.io%2fpost%2fdotnet%2fdotnet-5-closedxmlsimple%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【.NET】使用 ClosedXML 實現匯出 Excel 功能 on whatsapp"
+        href="https://api.whatsapp.com/send?text=%e3%80%90.NET%e3%80%91%e4%bd%bf%e7%94%a8%20ClosedXML%20%e5%af%a6%e7%8f%be%e5%8c%af%e5%87%ba%20Excel%20%e5%8a%9f%e8%83%bd%20-%20https%3a%2f%2ffakestandard.github.io%2fpost%2fdotnet%2fdotnet-5-closedxmlsimple%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【.NET】使用 ClosedXML 實現匯出 Excel 功能 on telegram"
+        href="https://telegram.me/share/url?text=%e3%80%90.NET%e3%80%91%e4%bd%bf%e7%94%a8%20ClosedXML%20%e5%af%a6%e7%8f%be%e5%8c%af%e5%87%ba%20Excel%20%e5%8a%9f%e8%83%bd&amp;url=https%3a%2f%2ffakestandard.github.io%2fpost%2fdotnet%2fdotnet-5-closedxmlsimple%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+</div>
+
+  </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://fakestandard.github.io/">How can I help</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

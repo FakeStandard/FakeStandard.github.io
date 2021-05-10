@@ -26,13 +26,13 @@
     <loc>https://fakestandard.github.io/tags/</loc>
     <lastmod>2021-05-09T14:31:15+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/post/dotnet/dotnet-5-exportcsv/</loc>
+    <loc>https://fakestandard.github.io/post/dotnet/dotnet-6-exportcsv/</loc>
     <lastmod>2021-05-09T14:31:15+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/closedxml/</loc>
     <lastmod>2021-05-08T10:28:02+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/post/dotnet/dotnet-4-closedxmlsimple/</loc>
+    <loc>https://fakestandard.github.io/post/dotnet/dotnet-5-closedxmlsimple/</loc>
     <lastmod>2021-05-08T10:28:02+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/algorithm/</loc>
@@ -65,7 +65,7 @@
     <loc>https://fakestandard.github.io/tags/npoi/</loc>
     <lastmod>2021-04-27T14:08:05+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/post/dotnet/dotnet-3-npoisimple/</loc>
+    <loc>https://fakestandard.github.io/post/dotnet/dotnet-4-npoisimple/</loc>
     <lastmod>2021-04-27T14:08:05+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/array/</loc>
@@ -77,16 +77,13 @@
     <loc>https://fakestandard.github.io/algorithm/algorithm-2-datastructure/</loc>
     <lastmod>2021-04-25T13:26:46+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/categories/csharp/</loc>
-    <lastmod>2021-04-19T14:58:59+08:00</lastmod>
-  </url><url>
     <loc>https://fakestandard.github.io/tags/culture/</loc>
     <lastmod>2021-04-19T14:58:59+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/taiwan-calendar/</loc>
     <lastmod>2021-04-19T14:58:59+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/post/csharp/csharp-4-changetaiwancalendar/</loc>
+    <loc>https://fakestandard.github.io/post/dotnet/dotnet-3-changetaiwancalendar/</loc>
     <lastmod>2021-04-19T14:58:59+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/income-tax/</loc>

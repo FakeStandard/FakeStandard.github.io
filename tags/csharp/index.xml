@@ -9,10 +9,10 @@
     <lastBuildDate>Sun, 09 May 2021 14:31:15 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【.NET】將資料匯出成 CSV</title>
-      <link>https://fakestandard.github.io/post/dotnet/dotnet-5-exportcsv/</link>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-6-exportcsv/</link>
       <pubDate>Sun, 09 May 2021 14:31:15 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/dotnet/dotnet-5-exportcsv/</guid>
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-6-exportcsv/</guid>
       <description>前篇在紀錄使用第三方套件來匯出 Excel，忽然看到匯出 csv 的方法，其實很簡單，就順便記錄一下。
 Start 按照前篇建立一個 .Net Core MVC 的專案，同樣地建立 Model、Controller 及 View，讓畫面呈現一個 Employee 的列表，將按鈕名稱改為 csv Export，相關代碼如下
 Model public class Employee { public int ID { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Title { get; set; } public string City { get; set; } } Controller public class EmployeeController : Controller { private List&amp;lt;Employee&amp;gt; employees; public EmployeeController() { if (employees == null) { employees = new List&amp;lt;Employee&amp;gt;() { new Employee{ ID = 1, LastName = &amp;#34;Davolio&amp;#34;, FirstName = &amp;#34;Nancy&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;Seattle&amp;#34; }, new Employee{ ID = 2, LastName = &amp;#34;Fuller&amp;#34;, FirstName = &amp;#34;Andrew&amp;#34;, Title = &amp;#34;Vice President, Sales&amp;#34;, City = &amp;#34;Tacoma&amp;#34; }, new Employee{ ID = 3, LastName = &amp;#34;Leverling&amp;#34;, FirstName = &amp;#34;Janet&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;Kirkland&amp;#34; }, new Employee{ ID = 4, LastName = &amp;#34;Peacock&amp;#34;, FirstName = &amp;#34;Margaret&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;Redmond&amp;#34; }, new Employee{ ID = 5, LastName = &amp;#34;Buchanan&amp;#34;, FirstName = &amp;#34;Steven&amp;#34;, Title = &amp;#34;Sales Manager&amp;#34;, City = &amp;#34;London&amp;#34; }, new Employee{ ID = 6, LastName = &amp;#34;Suyama&amp;#34;, FirstName = &amp;#34;Michael&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;London&amp;#34; }, new Employee{ ID = 7, LastName = &amp;#34;King&amp;#34;, FirstName = &amp;#34;Robert&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;London&amp;#34; }, new Employee{ ID = 8, LastName = &amp;#34;Callahan&amp;#34;, FirstName = &amp;#34;Laura&amp;#34;, Title = &amp;#34;Inside Sales Coordinator&amp;#34;, City = &amp;#34;Seattle&amp;#34; }, new Employee{ ID = 9, LastName = &amp;#34;Dodsworth&amp;#34;, FirstName = &amp;#34;Anne&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;London&amp;#34; } }; } } public IActionResult Index() { return View(employees); } } View @model IEnumerable&amp;lt;Export_ClosedXML.</description>
@@ -20,10 +20,10 @@ Model public class Employee { public int ID { get; set; } public string FirstNam
     
     <item>
       <title>【.NET】使用 ClosedXML 實現匯出 Excel 功能</title>
-      <link>https://fakestandard.github.io/post/dotnet/dotnet-4-closedxmlsimple/</link>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-5-closedxmlsimple/</link>
       <pubDate>Sat, 08 May 2021 10:28:02 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/dotnet/dotnet-4-closedxmlsimple/</guid>
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-5-closedxmlsimple/</guid>
       <description>開發應用程式或網頁時一定會遇到匯出 Excel 功能，而匯出的 Libaray 除了微軟原生的程式庫之外，還可以使用第三方的程式庫，先前已有介紹過使用 NPOI 套件，有興趣可參考傳送門。
 這篇則會介紹如何使用 ClosedXML 簡易的匯出，代碼已存放於 GitHub
 【傳送門】【NPOI】使用 NPOI 匯出 Excel 的基本應用
@@ -55,10 +55,10 @@ Note 特性
     
     <item>
       <title>【.NET】使用 NPOI 匯出 Excel 的基本應用</title>
-      <link>https://fakestandard.github.io/post/dotnet/dotnet-3-npoisimple/</link>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-4-npoisimple/</link>
       <pubDate>Tue, 27 Apr 2021 14:08:05 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/dotnet/dotnet-3-npoisimple/</guid>
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-4-npoisimple/</guid>
       <description>開發應用程式或網頁時總是會遇到匯出 Excel 的需求，常見的如匯出報表。然而在眾多匯出 Excel 的套件中，這篇選擇以 NPOI 作為介紹匯出的基本應用和觀念，資料則選擇現成的北風資料庫，這邊就不另外建立資料物件。
 代碼存放於 GitHub
 Start 首先到 NuGet 套件添加 NPOI Package
@@ -101,11 +101,11 @@ Reference 【圖說演算法 C#】</description>
     </item>
     
     <item>
-      <title>【C#】西元年與民國年相互轉換</title>
-      <link>https://fakestandard.github.io/post/csharp/csharp-4-changetaiwancalendar/</link>
+      <title>【.NET】西元年與民國年相互轉換</title>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-3-changetaiwancalendar/</link>
       <pubDate>Mon, 19 Apr 2021 14:58:59 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/post/csharp/csharp-4-changetaiwancalendar/</guid>
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-3-changetaiwancalendar/</guid>
       <description>這篇想記錄一下老掉牙的問題，是關於時間格式的「西元年」和「民國年」的愛恨糾葛。
 一般電腦在安裝作業系統時預設會是西元年，而有些人習慣看民國年，這些人就從設定的「地區與語言」中，將行事曆變更為中華民國曆，這些人對日期看順眼了，卻為開發人員種下一個應該要懂得基本常識。
 西元年扣掉 1911 就是民國年，這知識完全無誤，但若你是開發人員，並且在開發應用程式時使用 -1911 來算出民國年，這觀念可要重新來過了，因為 .NET 有提供 Taiwan Calendar 類別讓你在西元與民國之間盡情地轉換，甚至也無須擔心四年就要閏一次「閏年」。

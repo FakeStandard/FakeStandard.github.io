@@ -171,7 +171,7 @@ Start 按照前篇建立一個 .Net Core MVC 的專案，同樣地建立 Model�
 Model public class Employee { public int ID { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Title { get; set; } public string City { get; set; } } Controller public class EmployeeController : Controller { private List&lt;Employee&gt; employees; public EmployeeController() { if (employees == null) { employees = new List&lt;Employee&gt;() { new Employee{ ID = 1, LastName = &#34;Davolio&#34;, FirstName = &#34;Nancy&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 2, LastName = &#34;Fuller&#34;, FirstName = &#34;Andrew&#34;, Title = &#34;Vice President, Sales&#34;, City = &#34;Tacoma&#34; }, new Employee{ ID = 3, LastName = &#34;Leverling&#34;, FirstName = &#34;Janet&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Kirkland&#34; }, new Employee{ ID = 4, LastName = &#34;Peacock&#34;, FirstName = &#34;Margaret&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Redmond&#34; }, new Employee{ ID = 5, LastName = &#34;Buchanan&#34;, FirstName = &#34;Steven&#34;, Title = &#34;Sales Manager&#34;, City = &#34;London&#34; }, new Employee{ ID = 6, LastName = &#34;Suyama&#34;, FirstName = &#34;Michael&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 7, LastName = &#34;King&#34;, FirstName = &#34;Robert&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 8, LastName = &#34;Callahan&#34;, FirstName = &#34;Laura&#34;, Title = &#34;Inside Sales Coordinator&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 9, LastName = &#34;Dodsworth&#34;, FirstName = &#34;Anne&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; } }; } } public IActionResult Index() { return View(employees); } } View @model IEnumerable&lt;Export_ClosedXML....</p>
   </section>
   <footer class="entry-footer">May 9, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET】將資料匯出成 CSV" href="https://fakestandard.github.io/post/dotnet/dotnet-5-exportcsv/"></a>
+  <a class="entry-link" aria-label="post link to 【.NET】將資料匯出成 CSV" href="https://fakestandard.github.io/post/dotnet/dotnet-6-exportcsv/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -188,7 +188,7 @@ public class Employee { public int ID { get; set; } public string FirstName { ge
 public class EmployeeController : Controller { private List&lt;Employee&gt; employees; public EmployeeController() { if (employees == null) { employees = new List&lt;Employee&gt;() { new Employee{ ID = 1, LastName = &#34;Davolio&#34;, FirstName = &#34;Nancy&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 2, LastName = &#34;Fuller&#34;, FirstName = &#34;Andrew&#34;, Title = &#34;Vice President, Sales&#34;, City = &#34;Tacoma&#34; }, new Employee{ ID = 3, LastName = &#34;Leverling&#34;, FirstName = &#34;Janet&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Kirkland&#34; }, new Employee{ ID = 4, LastName = &#34;Peacock&#34;, FirstName = &#34;Margaret&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Redmond&#34; }, new Employee{ ID = 5, LastName = &#34;Buchanan&#34;, FirstName = &#34;Steven&#34;, Title = &#34;Sales Manager&#34;, City = &#34;London&#34; }, new Employee{ ID = 6, LastName = &#34;Suyama&#34;, FirstName = &#34;Michael&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 7, LastName = &#34;King&#34;, FirstName = &#34;Robert&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 8, LastName = &#34;Callahan&#34;, FirstName = &#34;Laura&#34;, Title = &#34;Inside Sales Coordinator&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 9, LastName = &#34;Dodsworth&#34;, FirstName = &#34;Anne&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; } }; } } public IActionResult Index() { return View(employees); } } View 在視圖渲染資料，且添加 Export 按鈕...</p>
   </section>
   <footer class="entry-footer">May 8, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET】使用 ClosedXML 實現匯出 Excel 功能" href="https://fakestandard.github.io/post/dotnet/dotnet-4-closedxmlsimple/"></a>
+  <a class="entry-link" aria-label="post link to 【.NET】使用 ClosedXML 實現匯出 Excel 功能" href="https://fakestandard.github.io/post/dotnet/dotnet-5-closedxmlsimple/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -248,12 +248,12 @@ Start 首先到 NuGet 套件添加 NPOI Package
 /// &lt;summary&gt; /// 資料庫連線方法 /// &lt;/summary&gt; static DataTable Connect() { // 宣告並建立 SqlConnectionStringBuilder 物件，並設置連線資訊  SqlConnectionStringBuilder cnsb = new SqlConnectionStringBuilder(); cnsb.DataSource = &#34;.&#34;; cnsb.InitialCatalog = &#34;Northwind&#34;; cnsb.IntegratedSecurity = true; // 宣告並建立 SqlConnection  SqlConnection cn = new SqlConnection(cnsb.ConnectionString); // SQL Statement  string sql = &#34;SELECT * FROM [Northwind].[dbo].[Orders]&#34;; // 宣告並建立 SqlDataAdapter 物件  SqlDataAdapter da = new SqlDataAdapter(sql, cn); // 建立 DataSet 物件以儲存資料  DataSet ds = new DataSet(); da....</p>
   </section>
   <footer class="entry-footer">April 27, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET】使用 NPOI 匯出 Excel 的基本應用" href="https://fakestandard.github.io/post/dotnet/dotnet-3-npoisimple/"></a>
+  <a class="entry-link" aria-label="post link to 【.NET】使用 NPOI 匯出 Excel 的基本應用" href="https://fakestandard.github.io/post/dotnet/dotnet-4-npoisimple/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>【C#】西元年與民國年相互轉換</h2>
+    <h2>【.NET】西元年與民國年相互轉換</h2>
   </header>
   <section class="entry-content">
     <p>這篇想記錄一下老掉牙的問題，是關於時間格式的「西元年」和「民國年」的愛恨糾葛。
@@ -266,7 +266,7 @@ Solution 有三種解決方案
 /// &lt;summary&gt; /// 靜態擴展類別 /// &lt;/summary&gt; public static class DateTimeExtend { /// &lt;summary&gt;  /// 靜態擴展方法  /// &lt;/summary&gt;  /// &lt;param name=&#34;dateTime&#34;&gt;&lt;/param&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public static string ToTaiwanDate(this DateTime dateTime) { TaiwanCalendar tc = new TaiwanCalendar(); int year = tc....</p>
   </section>
   <footer class="entry-footer">April 19, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【C#】西元年與民國年相互轉換" href="https://fakestandard.github.io/post/csharp/csharp-4-changetaiwancalendar/"></a>
+  <a class="entry-link" aria-label="post link to 【.NET】西元年與民國年相互轉換" href="https://fakestandard.github.io/post/dotnet/dotnet-3-changetaiwancalendar/"></a>
 </article>
 
 <article class="post-entry"> 
