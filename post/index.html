@@ -163,6 +163,36 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【.NET】將資料匯出成 CSV</h2>
+  </header>
+  <section class="entry-content">
+    <p>前篇在紀錄使用第三方套件來匯出 Excel，忽然看到匯出 csv 的方法，其實很簡單，就順便記錄一下。
+Start 按照前篇建立一個 .Net Core MVC 的專案，同樣地建立 Model、Controller 及 View，讓畫面呈現一個 Employee 的列表，將按鈕名稱改為 csv Export，相關代碼如下
+Model public class Employee { public int ID { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Title { get; set; } public string City { get; set; } } Controller public class EmployeeController : Controller { private List&lt;Employee&gt; employees; public EmployeeController() { if (employees == null) { employees = new List&lt;Employee&gt;() { new Employee{ ID = 1, LastName = &#34;Davolio&#34;, FirstName = &#34;Nancy&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 2, LastName = &#34;Fuller&#34;, FirstName = &#34;Andrew&#34;, Title = &#34;Vice President, Sales&#34;, City = &#34;Tacoma&#34; }, new Employee{ ID = 3, LastName = &#34;Leverling&#34;, FirstName = &#34;Janet&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Kirkland&#34; }, new Employee{ ID = 4, LastName = &#34;Peacock&#34;, FirstName = &#34;Margaret&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Redmond&#34; }, new Employee{ ID = 5, LastName = &#34;Buchanan&#34;, FirstName = &#34;Steven&#34;, Title = &#34;Sales Manager&#34;, City = &#34;London&#34; }, new Employee{ ID = 6, LastName = &#34;Suyama&#34;, FirstName = &#34;Michael&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 7, LastName = &#34;King&#34;, FirstName = &#34;Robert&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 8, LastName = &#34;Callahan&#34;, FirstName = &#34;Laura&#34;, Title = &#34;Inside Sales Coordinator&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 9, LastName = &#34;Dodsworth&#34;, FirstName = &#34;Anne&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; } }; } } public IActionResult Index() { return View(employees); } } View @model IEnumerable&lt;Export_ClosedXML....</p>
+  </section>
+  <footer class="entry-footer">May 9, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET】將資料匯出成 CSV" href="https://fakestandard.github.io/post/dotnet/dotnet-5-exportcsv/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>【.NET】使用 ClosedXML 實現匯出 Excel 功能</h2>
+  </header>
+  <section class="entry-content">
+    <p>開發應用程式或網頁時一定會遇到匯出 Excel 功能，而匯出的 Libaray 除了微軟原生的程式庫之外，還可以使用第三方的程式庫，先前已有介紹過使用 NPOI 套件，有興趣可參考傳送門。
+這篇則會介紹如何使用 ClosedXML 簡易的匯出，代碼已存放於 GitHub
+【傳送門】【NPOI】使用 NPOI 匯出 Excel 的基本應用
+Start 首先到 NuGet 安裝套件
+Model 建立資料模型
+public class Employee { public int ID { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Title { get; set; } public string City { get; set; } } Controller 建立控制項和產生資料
+public class EmployeeController : Controller { private List&lt;Employee&gt; employees; public EmployeeController() { if (employees == null) { employees = new List&lt;Employee&gt;() { new Employee{ ID = 1, LastName = &#34;Davolio&#34;, FirstName = &#34;Nancy&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 2, LastName = &#34;Fuller&#34;, FirstName = &#34;Andrew&#34;, Title = &#34;Vice President, Sales&#34;, City = &#34;Tacoma&#34; }, new Employee{ ID = 3, LastName = &#34;Leverling&#34;, FirstName = &#34;Janet&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Kirkland&#34; }, new Employee{ ID = 4, LastName = &#34;Peacock&#34;, FirstName = &#34;Margaret&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Redmond&#34; }, new Employee{ ID = 5, LastName = &#34;Buchanan&#34;, FirstName = &#34;Steven&#34;, Title = &#34;Sales Manager&#34;, City = &#34;London&#34; }, new Employee{ ID = 6, LastName = &#34;Suyama&#34;, FirstName = &#34;Michael&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 7, LastName = &#34;King&#34;, FirstName = &#34;Robert&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 8, LastName = &#34;Callahan&#34;, FirstName = &#34;Laura&#34;, Title = &#34;Inside Sales Coordinator&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 9, LastName = &#34;Dodsworth&#34;, FirstName = &#34;Anne&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; } }; } } public IActionResult Index() { return View(employees); } } View 在視圖渲染資料，且添加 Export 按鈕...</p>
+  </section>
+  <footer class="entry-footer">May 8, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET】使用 ClosedXML 實現匯出 Excel 功能" href="https://fakestandard.github.io/post/dotnet/dotnet-4-closedxmlsimple/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【Life Trip】五峰星空下露營區</h2>
   </header>
   <section class="entry-content">
@@ -319,44 +349,6 @@ Solution 最簡單的方法是調整視窗大小，將視窗大小調成螢幕�
   </section>
   <footer class="entry-footer">March 31, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Windows】使用 DOS 指令切換當前硬碟" href="https://fakestandard.github.io/post/windows/windows-5-cmdcutoverdisk/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【MSSQL】如何改善 SQL 常見的效能問題</h2>
-  </header>
-  <section class="entry-content">
-    <p>Start 一直以來筆者在寫 SQL 語法時從不考量效能問題，以為效能調教是等到發生後由高手們來解題，輪不到我們這種小咖來煩惱，殊不知我們這種咖小也可以提前優化效能！所以這篇要來紀錄 SQL 一些常見的效能問題，比如應該避免使用哪些語法，為何要避免使用？在筆者有限的能力下也會盡量寫 Lab 觀察數據。
-查詢優化 同樣的查詢結果會有不同寫法，但哪些寫法是比較好的？其實查詢時，應該要避免全表掃描（Full Table Scan）
-何謂全表掃描（Full Table Scan）？
-簡單來說，就是 SQL Agent 在查詢時會從頭開始掃描整張資料表，無論是否已經取得最終結果，都會掃描到最後一筆資料才結束。
-以下是在 WHERE 條件中應盡量避免使用的語法，它們會導致 SQL Agent 放棄使用索引，從而進行 Full Table Scan。
-  避免使用 NULL
-SELECT OrderID FROM A WHERE ProductID IS NULL -- 應改為 SELECT OrderID FROM A WHERE ProductID = 0   避免使用 &lt;&gt; 和 !=，使用 &gt;= 或 &lt;= 來取代
-  避免使用 or 來連接條件
-SELECT OrderID FROM [Northwind].[dbo].[Orders] WHERE EmployeeID = 4 OR EmployeeID = 5 -- 將 or 替換成 UNION ALL SELECT OrderID FROM [Northwind]....</p>
-  </section>
-  <footer class="entry-footer">March 30, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【MSSQL】如何改善 SQL 常見的效能問題" href="https://fakestandard.github.io/post/mssql/mssql-1-performanceissues/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【.NET】打造 Blazor ToDoList</h2>
-  </header>
-  <section class="entry-content">
-    <p>Prerequisites .NET 5.0 SDK 或之後的版本
-Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
-建立新專案 選擇【Blazor 應用程式】專案
-選擇【Blazor Server 應用程式】樣板
-建立 Razor 元件 新建立的專案在方案總管下的 Pages 資料夾內，可以看到已經有建立好的預設頁面，在該資料夾下建立 Todo.razor。
-建立 Razor 元件時要注意
- 檔案名稱開頭第一個字母必須大寫 副檔名為 .razor 結尾  將 Todo 元件添加到導航列 開啟 Pages/Todo.razor 添加相對應的 URL @page &#34;/todo&#34;
-@page &#34;/todo&#34; &lt;h3&gt;Todo&lt;/h3&gt; @code { } 開啟 Shared/NavMenu.razor，此 razor 為應用程式其中一個版面配置，可避免應用程式中使用重複的元件，在此配置中添加以下代碼
-&lt;ul class=&#34;nav flex-column&#34;&gt; ... &lt;li class=&#34;nav-item px-3&#34;&gt; &lt;NavLink class=&#34;nav-link&#34; href=&#34;todo&#34;&gt; &lt;span class=&#34;oi oi-list-rich&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt; Todo &lt;/NavLink&gt; &lt;/li&gt; &lt;/ul&gt; 建立 TodoItem 類別 在專案目錄下建立 /TodoList/TodoItem....</p>
-  </section>
-  <footer class="entry-footer">March 28, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET】打造 Blazor ToDoList" href="https://fakestandard.github.io/post/dotnet/dotnet-1-blazor/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

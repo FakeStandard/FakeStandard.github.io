@@ -163,6 +163,44 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【MSSQL】如何改善 SQL 常見的效能問題</h2>
+  </header>
+  <section class="entry-content">
+    <p>Start 一直以來筆者在寫 SQL 語法時從不考量效能問題，以為效能調教是等到發生後由高手們來解題，輪不到我們這種小咖來煩惱，殊不知我們這種咖小也可以提前優化效能！所以這篇要來紀錄 SQL 一些常見的效能問題，比如應該避免使用哪些語法，為何要避免使用？在筆者有限的能力下也會盡量寫 Lab 觀察數據。
+查詢優化 同樣的查詢結果會有不同寫法，但哪些寫法是比較好的？其實查詢時，應該要避免全表掃描（Full Table Scan）
+何謂全表掃描（Full Table Scan）？
+簡單來說，就是 SQL Agent 在查詢時會從頭開始掃描整張資料表，無論是否已經取得最終結果，都會掃描到最後一筆資料才結束。
+以下是在 WHERE 條件中應盡量避免使用的語法，它們會導致 SQL Agent 放棄使用索引，從而進行 Full Table Scan。
+  避免使用 NULL
+SELECT OrderID FROM A WHERE ProductID IS NULL -- 應改為 SELECT OrderID FROM A WHERE ProductID = 0   避免使用 &lt;&gt; 和 !=，使用 &gt;= 或 &lt;= 來取代
+  避免使用 or 來連接條件
+SELECT OrderID FROM [Northwind].[dbo].[Orders] WHERE EmployeeID = 4 OR EmployeeID = 5 -- 將 or 替換成 UNION ALL SELECT OrderID FROM [Northwind]....</p>
+  </section>
+  <footer class="entry-footer">March 30, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【MSSQL】如何改善 SQL 常見的效能問題" href="https://fakestandard.github.io/post/mssql/mssql-1-performanceissues/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>【.NET】打造 Blazor ToDoList</h2>
+  </header>
+  <section class="entry-content">
+    <p>Prerequisites .NET 5.0 SDK 或之後的版本
+Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
+建立新專案 選擇【Blazor 應用程式】專案
+選擇【Blazor Server 應用程式】樣板
+建立 Razor 元件 新建立的專案在方案總管下的 Pages 資料夾內，可以看到已經有建立好的預設頁面，在該資料夾下建立 Todo.razor。
+建立 Razor 元件時要注意
+ 檔案名稱開頭第一個字母必須大寫 副檔名為 .razor 結尾  將 Todo 元件添加到導航列 開啟 Pages/Todo.razor 添加相對應的 URL @page &#34;/todo&#34;
+@page &#34;/todo&#34; &lt;h3&gt;Todo&lt;/h3&gt; @code { } 開啟 Shared/NavMenu.razor，此 razor 為應用程式其中一個版面配置，可避免應用程式中使用重複的元件，在此配置中添加以下代碼
+&lt;ul class=&#34;nav flex-column&#34;&gt; ... &lt;li class=&#34;nav-item px-3&#34;&gt; &lt;NavLink class=&#34;nav-link&#34; href=&#34;todo&#34;&gt; &lt;span class=&#34;oi oi-list-rich&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt; Todo &lt;/NavLink&gt; &lt;/li&gt; &lt;/ul&gt; 建立 TodoItem 類別 在專案目錄下建立 /TodoList/TodoItem....</p>
+  </section>
+  <footer class="entry-footer">March 28, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET】打造 Blazor ToDoList" href="https://fakestandard.github.io/post/dotnet/dotnet-1-blazor/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【Windows】如何改變命令提示字元(cmd)視窗預設大小</h2>
   </header>
   <section class="entry-content">

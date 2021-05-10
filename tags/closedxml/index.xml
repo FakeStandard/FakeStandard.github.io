@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>ClosedXML on How can I help</title>
+    <link>https://fakestandard.github.io/tags/closedxml/</link>
+    <description>Recent content in ClosedXML on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sat, 08 May 2021 10:28:02 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/closedxml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【.NET】使用 ClosedXML 實現匯出 Excel 功能</title>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-4-closedxmlsimple/</link>
+      <pubDate>Sat, 08 May 2021 10:28:02 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-4-closedxmlsimple/</guid>
+      <description>開發應用程式或網頁時一定會遇到匯出 Excel 功能，而匯出的 Libaray 除了微軟原生的程式庫之外，還可以使用第三方的程式庫，先前已有介紹過使用 NPOI 套件，有興趣可參考傳送門。
+這篇則會介紹如何使用 ClosedXML 簡易的匯出，代碼已存放於 GitHub
+【傳送門】【NPOI】使用 NPOI 匯出 Excel 的基本應用
+Start 首先到 NuGet 安裝套件
+Model 建立資料模型
+public class Employee { public int ID { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Title { get; set; } public string City { get; set; } } Controller 建立控制項和產生資料
+public class EmployeeController : Controller { private List&amp;lt;Employee&amp;gt; employees; public EmployeeController() { if (employees == null) { employees = new List&amp;lt;Employee&amp;gt;() { new Employee{ ID = 1, LastName = &amp;#34;Davolio&amp;#34;, FirstName = &amp;#34;Nancy&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;Seattle&amp;#34; }, new Employee{ ID = 2, LastName = &amp;#34;Fuller&amp;#34;, FirstName = &amp;#34;Andrew&amp;#34;, Title = &amp;#34;Vice President, Sales&amp;#34;, City = &amp;#34;Tacoma&amp;#34; }, new Employee{ ID = 3, LastName = &amp;#34;Leverling&amp;#34;, FirstName = &amp;#34;Janet&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;Kirkland&amp;#34; }, new Employee{ ID = 4, LastName = &amp;#34;Peacock&amp;#34;, FirstName = &amp;#34;Margaret&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;Redmond&amp;#34; }, new Employee{ ID = 5, LastName = &amp;#34;Buchanan&amp;#34;, FirstName = &amp;#34;Steven&amp;#34;, Title = &amp;#34;Sales Manager&amp;#34;, City = &amp;#34;London&amp;#34; }, new Employee{ ID = 6, LastName = &amp;#34;Suyama&amp;#34;, FirstName = &amp;#34;Michael&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;London&amp;#34; }, new Employee{ ID = 7, LastName = &amp;#34;King&amp;#34;, FirstName = &amp;#34;Robert&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;London&amp;#34; }, new Employee{ ID = 8, LastName = &amp;#34;Callahan&amp;#34;, FirstName = &amp;#34;Laura&amp;#34;, Title = &amp;#34;Inside Sales Coordinator&amp;#34;, City = &amp;#34;Seattle&amp;#34; }, new Employee{ ID = 9, LastName = &amp;#34;Dodsworth&amp;#34;, FirstName = &amp;#34;Anne&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;London&amp;#34; } }; } } public IActionResult Index() { return View(employees); } } View 在視圖渲染資料，且添加 Export 按鈕</description>
+    </item>
+    
+  </channel>
+</rss>
