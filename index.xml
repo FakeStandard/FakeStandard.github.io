@@ -6,7 +6,22 @@
     <description>Recent content on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 09 May 2021 14:31:15 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 May 2021 10:00:16 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【.NET】使用 NPOI 匯入 Excel</title>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-7-npoi-import/</link>
+      <pubDate>Tue, 11 May 2021 10:00:16 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-7-npoi-import/</guid>
+      <description>在網站開發時，總會遇到匯出 EXCEL 的需求，除了匯出之外，偶爾也會遇到匯入 EXCEL 這種懶人需求。
+為何是懶人需求呢？通常使用者可以透過 UI 介面來維護資料，包括 CRUD 等功能，所以 Excel 資料會先透過前端介面在將資料傳遞到資料庫儲存。而匯入的方式，可以一次傳遞多筆資料，並且直達資料庫，過程中不需要使用 UI 介面逐筆輸入，非常省時又省力。
+註：此篇使用 ASP.NET Core 5 實作
+Start 首先到 NuGet 下載 NPOI 套件並安裝到專案中
+建立 ImportController.cs
+public class ImportController : Controller { public IActionResult Index() { return View(); } } 建立 Index.cshtml
+&amp;lt;h2&amp;gt;Import&amp;lt;/h2&amp;gt; @using (Html.BeginForm(&amp;#34;Upload&amp;#34;, &amp;#34;Import&amp;#34;, FormMethod.Post, new { enctype = &amp;#34;multipart/form-data&amp;#34; })) { &amp;lt;input type=&amp;#34;file&amp;#34; class=&amp;#34;form-control&amp;#34; name=&amp;#34;file&amp;#34; /&amp;gt; &amp;lt;button type=&amp;#34;submit&amp;#34; class=&amp;#34;btn btn-primary&amp;#34;&amp;gt;Upload&amp;lt;/button&amp;gt; } 在 Controller 中新增一個接收 HttpPost 的 ActionResult Upload，除了返回頁面之外，沒有任何代碼。</description>
+    </item>
+    
     <item>
       <title>【.NET】將資料匯出成 CSV</title>
       <link>https://fakestandard.github.io/post/dotnet/dotnet-6-exportcsv/</link>

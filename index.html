@@ -188,6 +188,23 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【.NET】使用 NPOI 匯入 Excel</h2>
+  </header>
+  <section class="entry-content">
+    <p>在網站開發時，總會遇到匯出 EXCEL 的需求，除了匯出之外，偶爾也會遇到匯入 EXCEL 這種懶人需求。
+為何是懶人需求呢？通常使用者可以透過 UI 介面來維護資料，包括 CRUD 等功能，所以 Excel 資料會先透過前端介面在將資料傳遞到資料庫儲存。而匯入的方式，可以一次傳遞多筆資料，並且直達資料庫，過程中不需要使用 UI 介面逐筆輸入，非常省時又省力。
+註：此篇使用 ASP.NET Core 5 實作
+Start 首先到 NuGet 下載 NPOI 套件並安裝到專案中
+建立 ImportController.cs
+public class ImportController : Controller { public IActionResult Index() { return View(); } } 建立 Index.cshtml
+&lt;h2&gt;Import&lt;/h2&gt; @using (Html.BeginForm(&#34;Upload&#34;, &#34;Import&#34;, FormMethod.Post, new { enctype = &#34;multipart/form-data&#34; })) { &lt;input type=&#34;file&#34; class=&#34;form-control&#34; name=&#34;file&#34; /&gt; &lt;button type=&#34;submit&#34; class=&#34;btn btn-primary&#34;&gt;Upload&lt;/button&gt; } 在 Controller 中新增一個接收 HttpPost 的 ActionResult Upload，除了返回頁面之外，沒有任何代碼。...</p>
+  </section>
+  <footer class="entry-footer">May 11, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET】使用 NPOI 匯入 Excel" href="https://fakestandard.github.io/post/dotnet/dotnet-7-npoi-import/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【.NET】將資料匯出成 CSV</h2>
   </header>
   <section class="entry-content">
@@ -362,18 +379,6 @@ Solution 最簡單的方法是調整視窗大小，將視窗大小調成螢幕�
   </section>
   <footer class="entry-footer">April 1, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Windows】如何分割視窗/畫面" href="https://fakestandard.github.io/post/windows/windows-6-cutoverwindows/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【Windows】使用 DOS 指令切換當前硬碟</h2>
-  </header>
-  <section class="entry-content">
-    <p>紀錄一下每次使用命令提示字元想從 C:\ 切換到 D:\ 時，都會喪失記憶，一直使用 CD D:\ 都沒有反應，切老半天就是想不起來，每次都依賴谷哥大神。
-其實切換硬碟只要直接下 D: 即可，每每看到切換方法後都捶心肝，這裡也順便紀錄，CD 是切換當前目錄，切換硬碟是另一回事，所以直接對欲切換的硬碟下該硬碟名稱即可。</p>
-  </section>
-  <footer class="entry-footer">March 31, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Windows】使用 DOS 指令切換當前硬碟" href="https://fakestandard.github.io/post/windows/windows-5-cmdcutoverdisk/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
