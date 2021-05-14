@@ -6,7 +6,20 @@
     <description>Recent content in CSharp on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 11 May 2021 10:00:16 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 13 May 2021 16:23:07 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【.NET Core】Application Startup Class</title>
+      <link>https://fakestandard.github.io/netcore/netcore5-1-startupclass/</link>
+      <pubDate>Thu, 13 May 2021 16:23:07 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/netcore/netcore5-1-startupclass/</guid>
+      <description>【ASP.NET Core 5】
+在 .NET Core 出現的 Startup 類別非常重要，該類別用來配置應用程式的「服務」和「請求管道」，由它的名稱可知，在應用程式啟動時該類別首先被執行，它與傳統應用程式內的 Global.asax 相似。
+Start 開啟 Program 類別找到 Main 方法，這裡即是程式的進入點（Entry point），與 Console 專案的啟動方式相同都是 Program.Main，再從程式進入點將網站實例化，該方法配置 Host 時使用了 UserStartup&amp;lt;T&amp;gt; 方法，其中泛型 &amp;lt;T&amp;gt; 預設為 Startup
+public class Program { public static void Main(string[] args) { CreateHostBuilder(args).Build().Run(); } public static IHostBuilder CreateHostBuilder(string[] args) =&amp;gt; Host.CreateDefaultBuilder(args) .ConfigureWebHostDefaults(webBuilder =&amp;gt; { // 配置啟動類別位置  webBuilder.UseStartup&amp;lt;Startup&amp;gt;(); }); } 該類別依照 ASP.NET Core 慣例命名為 Startup，顧名思義為啟動類別，但是，我們也可以為該類別指定任何名稱，且在 UseStratup&amp;lt;T&amp;gt; 的泛型更換為指定後的名稱即可。如下將該類別命名為 MyStartup，配置啟動類別的位置也要替換為新類名。
+public static IHostBuilder CreateHostBuilder(string[] args) =&amp;gt; Host.</description>
+    </item>
+    
     <item>
       <title>【.NET】使用 NPOI 匯入 Excel</title>
       <link>https://fakestandard.github.io/post/dotnet/dotnet-7-npoi-import/</link>

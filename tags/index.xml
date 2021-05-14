@@ -6,22 +6,58 @@
     <description>Recent content in Tags on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 11 May 2021 10:00:16 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 May 2021 16:58:49 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>.NET</title>
-      <link>https://fakestandard.github.io/tags/.net/</link>
-      <pubDate>Tue, 11 May 2021 10:00:16 +0800</pubDate>
+      <title>MSSQL</title>
+      <link>https://fakestandard.github.io/tags/mssql/</link>
+      <pubDate>Fri, 14 May 2021 16:58:49 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/tags/.net/</guid>
+      <guid>https://fakestandard.github.io/tags/mssql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>.NET Core</title>
+      <link>https://fakestandard.github.io/tags/.net-core/</link>
+      <pubDate>Thu, 13 May 2021 16:23:07 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/.net-core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core 5</title>
+      <link>https://fakestandard.github.io/tags/asp.net-core-5/</link>
+      <pubDate>Thu, 13 May 2021 16:23:07 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/asp.net-core-5/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSharp</title>
       <link>https://fakestandard.github.io/tags/csharp/</link>
-      <pubDate>Tue, 11 May 2021 10:00:16 +0800</pubDate>
+      <pubDate>Thu, 13 May 2021 16:23:07 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Startup</title>
+      <link>https://fakestandard.github.io/tags/startup/</link>
+      <pubDate>Thu, 13 May 2021 16:23:07 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/startup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>.NET</title>
+      <link>https://fakestandard.github.io/tags/.net/</link>
+      <pubDate>Tue, 11 May 2021 10:00:16 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/.net/</guid>
       <description></description>
     </item>
     
@@ -193,15 +229,6 @@
       <pubDate>Wed, 31 Mar 2021 15:53:25 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/cmd/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MSSQL</title>
-      <link>https://fakestandard.github.io/tags/mssql/</link>
-      <pubDate>Tue, 30 Mar 2021 10:42:18 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/mssql/</guid>
       <description></description>
     </item>
     

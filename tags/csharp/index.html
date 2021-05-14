@@ -148,6 +148,21 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【.NET Core】Application Startup Class</h2>
+  </header>
+  <section class="entry-content">
+    <p>【ASP.NET Core 5】
+在 .NET Core 出現的 Startup 類別非常重要，該類別用來配置應用程式的「服務」和「請求管道」，由它的名稱可知，在應用程式啟動時該類別首先被執行，它與傳統應用程式內的 Global.asax 相似。
+Start 開啟 Program 類別找到 Main 方法，這裡即是程式的進入點（Entry point），與 Console 專案的啟動方式相同都是 Program.Main，再從程式進入點將網站實例化，該方法配置 Host 時使用了 UserStartup&lt;T&gt; 方法，其中泛型 &lt;T&gt; 預設為 Startup
+public class Program { public static void Main(string[] args) { CreateHostBuilder(args).Build().Run(); } public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host.CreateDefaultBuilder(args) .ConfigureWebHostDefaults(webBuilder =&gt; { // 配置啟動類別位置  webBuilder.UseStartup&lt;Startup&gt;(); }); } 該類別依照 ASP.NET Core 慣例命名為 Startup，顧名思義為啟動類別，但是，我們也可以為該類別指定任何名稱，且在 UseStratup&lt;T&gt; 的泛型更換為指定後的名稱即可。如下將該類別命名為 MyStartup，配置啟動類別的位置也要替換為新類名。
+public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host....</p>
+  </section>
+  <footer class="entry-footer">May 13, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET Core】Application Startup Class" href="https://fakestandard.github.io/netcore/netcore5-1-startupclass/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【.NET】使用 NPOI 匯入 Excel</h2>
   </header>
   <section class="entry-content">

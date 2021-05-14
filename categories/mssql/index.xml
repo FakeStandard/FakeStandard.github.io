@@ -6,7 +6,23 @@
     <description>Recent content in MSSQL on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 30 Mar 2021 10:42:18 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/mssql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 May 2021 16:58:49 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/mssql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【MSSQL】顯示 SQL 執行指令的時間</title>
+      <link>https://fakestandard.github.io/post/mssql/mssql-2-setstatisticstime/</link>
+      <pubDate>Fri, 14 May 2021 16:58:49 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/mssql/mssql-2-setstatisticstime/</guid>
+      <description>紀錄一項非常基本的常識。
+MS SQL 在預設的情況下執行查詢指令，會將結果訊息顯示在下方，如下圖
+其實在預設情況下也是可以在右下角看到執行時間，不過這個執行時間只能讀到秒。某天無意間看到別人在執行查詢指令時，在結果訊息視窗竟能印出詳細資訊，特別紀錄一下這非常簡單我卻不會的技能。
+Step 1 新增一個查詢視窗，在功能列表選擇查詢→查詢選項
+Step 2 左側選擇執行→進階，勾選【SET STATISTICS TIME】
+Step 3 左側選擇結果→文字，勾選【在結果集裡包含查詢】
+Step 4 執行查詢指令查看結果訊息
+非常簡單的操作，如果還想知道關於結果訊息的相關設定，也都在查詢選項裡面設置！</description>
+    </item>
+    
     <item>
       <title>【MSSQL】如何改善 SQL 常見的效能問題</title>
       <link>https://fakestandard.github.io/post/mssql/mssql-1-performanceissues/</link>
