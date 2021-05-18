@@ -2,25 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fakestandard.github.io/categories/</loc>
-    <lastmod>2021-05-14T16:58:49+08:00</lastmod>
+    <loc>https://fakestandard.github.io/tags/.net/</loc>
+    <lastmod>2021-05-18T11:11:56+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/categories/common-sense/</loc>
-    <lastmod>2021-05-14T16:58:49+08:00</lastmod>
+    <loc>https://fakestandard.github.io/categories/.net/</loc>
+    <lastmod>2021-05-18T11:11:56+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/</loc>
+    <lastmod>2021-05-18T11:11:56+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/csharp/</loc>
+    <lastmod>2021-05-18T11:11:56+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/directory/</loc>
+    <lastmod>2021-05-18T11:11:56+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/directoryinfo/</loc>
+    <lastmod>2021-05-18T11:11:56+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/file/</loc>
+    <lastmod>2021-05-18T11:11:56+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/file-system/</loc>
+    <lastmod>2021-05-18T11:11:56+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/fileinfo/</loc>
+    <lastmod>2021-05-18T11:11:56+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/</loc>
+    <lastmod>2021-05-18T11:11:56+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/path/</loc>
+    <lastmod>2021-05-18T11:11:56+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/post/</loc>
+    <lastmod>2021-05-18T11:11:56+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/</loc>
+    <lastmod>2021-05-18T11:11:56+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/post/dotnet/dotnet-8-filesystemandfileio-one/</loc>
+    <lastmod>2021-05-18T11:11:56+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/common-sense/</loc>
     <lastmod>2021-05-14T16:58:49+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/mssql/</loc>
     <lastmod>2021-05-14T16:58:49+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/categories/mssql/</loc>
-    <lastmod>2021-05-14T16:58:49+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/post/</loc>
-    <lastmod>2021-05-14T16:58:49+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/</loc>
     <lastmod>2021-05-14T16:58:49+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/post/mssql/mssql-2-setstatisticstime/</loc>
@@ -38,9 +68,6 @@
     <loc>https://fakestandard.github.io/categories/asp.net-core-5/</loc>
     <lastmod>2021-05-13T16:23:07+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/tags/csharp/</loc>
-    <lastmod>2021-05-13T16:23:07+08:00</lastmod>
-  </url><url>
     <loc>https://fakestandard.github.io/netcore/</loc>
     <lastmod>2021-05-13T16:23:07+08:00</lastmod>
   </url><url>
@@ -49,12 +76,6 @@
   </url><url>
     <loc>https://fakestandard.github.io/netcore/netcore5-1-startupclass/</loc>
     <lastmod>2021-05-13T16:23:07+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/.net/</loc>
-    <lastmod>2021-05-11T10:00:16+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/categories/.net/</loc>
-    <lastmod>2021-05-11T10:00:16+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/npoi/</loc>
     <lastmod>2021-05-11T10:00:16+08:00</lastmod>
@@ -264,6 +285,8 @@
     <lastmod>2021-03-17T14:41:48+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/archives/</loc>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/file-i/o/</loc>
   </url><url>
     <loc>https://fakestandard.github.io/search/</loc>
   </url>

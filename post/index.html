@@ -163,6 +163,24 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【.NET】使用 C# 操作檔案 I/O 與檔案系統（一）</h2>
+  </header>
+  <section class="entry-content">
+    <p>在 .NET 框架中，命名空間 System.IO 已經提供多種檔案操作類別，用於對資料檔案和資料流的讀寫。談到檔案系統，要先知道兩個東西
+ 檔案（File） 流（Stream）  檔案是在硬碟或光碟機等媒體上可永久儲存資料的有序集合，它是一種進行資料讀寫操作的基本物件，通常按照樹狀目錄結構進行組織，每個檔案皆有檔名、所在路徑、建立時間、訪問許可權等屬性。
+流是位元組序列的抽象概念，例如檔案、輸入/輸出裝置、處理程序間的通訊管道（an inter-process communication pipe）或 TCP/IP 通訊端。資料流包含讀取、寫入以及支援搜尋三種基本作業。
+Start FileSystemInfo 類別是檔案系統類別的基礎類別，繼承該類別的子類別有
+ File - 負責檔案系統中的檔案，屬靜態類別 FileInfo - 負責檔案系統中的檔案 Directory - 負責檔案系統中的資料夾，屬靜態類別 DirectoryInfo - 負責檔案系統中的資料夾  另外還有位於 System.IO 命名空間下其餘相關的類別
+ Path - 負責檔案系統中的路徑 DriveInfo - 負責磁碟機資訊的訪問  File 與 FileInfo 的區別在於 Info 類別需要實體化，而一般 File 是屬於靜態類別；Directory 與 DirectoryInfo 同理，Directory 是靜態類別，DirectoryInfo 需實體化類別。
+FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
+/// &lt;summary&gt; /// 建立檔案並寫入資料 /// &lt;/summary&gt; public static void CreateFileByFileInfo() { // 實體化 FileInfo 並指予路徑  FileInfo file = new FileInfo(@&#34;D:\Test....</p>
+  </section>
+  <footer class="entry-footer">May 18, 2021&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET】使用 C# 操作檔案 I/O 與檔案系統（一）" href="https://fakestandard.github.io/post/dotnet/dotnet-8-filesystemandfileio-one/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【MSSQL】顯示 SQL 執行指令的時間</h2>
   </header>
   <section class="entry-content">
@@ -339,21 +357,6 @@ Solution 該解決方法是針對已經開啟的程式，首先開啟工作管�
   </section>
   <footer class="entry-footer">April 12, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Windows】開啟運行程式的所在資料夾位置" href="https://fakestandard.github.io/post/windows/windows-7-openwindowsexplorer/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【.NET】適合初心者的 .NET Core MVC 實作</h2>
-  </header>
-  <section class="entry-content">
-    <p>此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解如何建立 Web 應用程式、新增及 Scaffold 模型、使用資料庫、資料的 CRUD、新增搜尋和驗證，最後會完成一個有關電影清單的應用程式。
-UI 的介紹會以 IDE 為主，除 UI 外也會介紹 dotnet 指令。
-代碼部分已上傳到 GitHub
-Start  建立 Web app 新增控制器（Controller） 新增檢視器（View）auto 新增模型（Model） 新增 NuGet 套件 建立 DbContext 新增 ConnectionString 使用 Scaffold 進行初始移轉（Initial Migration） 植入資料以初始資料庫 使用資料註釋 Data Annotations 新增搜尋引擎 新增資料驗證 使用 Bootstrap 增強外觀效果  建立 Web app 提供兩種方法，一種透過 Visual Studio IDE，一種是使用 Command shell 操作，兩種皆可達相同結果。
-Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】...</p>
-  </section>
-  <footer class="entry-footer">April 10, 2021&nbsp;·&nbsp;7 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET】適合初心者的 .NET Core MVC 實作" href="https://fakestandard.github.io/post/dotnet/dotnet-2-mvc-movielist/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
