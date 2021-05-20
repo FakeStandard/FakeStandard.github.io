@@ -6,7 +6,22 @@
     <description>Recent content in Algorithms on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 30 Apr 2021 16:09:07 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 20 May 2021 13:53:44 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】資料結構—堆疊（Stack）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-5-stack/</link>
+      <pubDate>Thu, 20 May 2021 13:53:44 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-5-stack/</guid>
+      <description>【5/16 閱讀紀錄】
+選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
+Start 此篇紀錄記錄堆疊定義及應用，其餘常見的資料結構如下
+ 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖（Graph） 堆積（Heap） 雜湊表（Hash Table）  堆疊（Stack） 堆疊是一種抽象型資料結構（Abstract Data Type, ADT），是由一群相同資料型別的組合，所有動作均在頂端執行，具有後進先出（Last In, First Out: LIFO）的特性。
+堆疊基本運算具備以下五種工作定義
+   Action Description     create 建立一個空堆疊   push 存放頂端資料，並傳回新堆疊   pop 刪除頂端資料，並傳回新堆疊   isEmpty 判斷堆疊是否為空堆疊，是回傳 Ture，反之   full 判斷堆疊是否已滿，是回傳 True，反之    堆疊非常好理解，生活中也有很多堆疊的應用，假設要收拾餐桌上的餐盤，需要將它們一一疊起，先放第一個餐盤，再將第二個餐盤放到第一個餐盤上方，接著再將第三個餐盤放到第二個餐盤上方，以該例來看，第一個餐盤就是第一個放入堆疊中，而第三個是最後一個放入堆疊中，此時欲取得第二餐盤，就需要先將第三個放入的餐盤拿起，意思是，需要先將頂端的先拿起，才能在往下拿起，該例證明後進先出的特性，並且所有動作都是由頂端執行，從頂端加入，從頂端刪除，即是堆疊的概念。
+Note  堆疊（Stack）：後進先出（Last In, First Out: LIFO） 佇列（Queue）：先進先出（First In, First Out: FIFO）  Reference 【圖說演算法 C#】</description>
+    </item>
+    
     <item>
       <title>【Algorithm】資料結構—鏈結串列（Linked List）</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-4-linkedlist/</link>

@@ -252,6 +252,8 @@ const int num = 300; // true: 質數 false: 非質數 bool[] prime = new bool[nu
 <p><strong>靜態資料結構</strong>在編譯時，就必須配置記憶體空間給變數，所以初期就需宣告變數的固定空間，容易造成記憶體浪費。</p>
 <p>操作 CRUD 等功能時也各有優缺點，首先是設計時相當容易，因索引功能使得讀取和修改元素的時間都固定，但在刪除和加入資料時就必須移動大量資料，例如刪除陣列中某個元素，必須將被刪除元素後方記憶體的資料都往前移動。</p>
 <p>陣列運用可分為一維陣列、二維陣列或多維陣列，一維陣列可想像成一條線，二維陣列則為一個平面，三維陣列（多維陣列）就會是 3D 立體，以此類推。</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>使用一維陣列尋找和儲存 1~num 之間的所有質數</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> num = <span style="color:#ae81ff">300</span>;
 
@@ -342,17 +344,17 @@ prime[<span style="color:#ae81ff">1</span>] = <span style="color:#66d9ef">true</
 
 Console.WriteLine(<span style="color:#e6db74">$&#34;總共 {num} 個質數&#34;</span>);
 </code></pre></div><h1 id="note">Note<a hidden class="anchor" aria-hidden="true" href="#note">#</a></h1>
-<p>特性</p>
+<p><strong>特性</strong></p>
 <ul>
 <li>空間所配置的儲存方式為連續記憶體</li>
 <li>提供索引功能</li>
 <li>為靜態資料結構，編譯時必須先配置記憶體空間</li>
 </ul>
-<p>優點</p>
+<p><strong>優點</strong></p>
 <ul>
 <li>讀取和修改速度快</li>
 </ul>
-<p>缺點</p>
+<p><strong>缺點</strong></p>
 <ul>
 <li>刪除和新增必須移動大量資料</li>
 </ul>
