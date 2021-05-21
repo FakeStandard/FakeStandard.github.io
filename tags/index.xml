@@ -6,11 +6,11 @@
     <description>Recent content in Tags on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 20 May 2021 13:53:44 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 May 2021 10:54:12 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Algorithm</title>
       <link>https://fakestandard.github.io/tags/algorithm/</link>
-      <pubDate>Thu, 20 May 2021 13:53:44 +0800</pubDate>
+      <pubDate>Fri, 21 May 2021 10:54:12 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/algorithm/</guid>
       <description></description>
@@ -19,7 +19,7 @@
     <item>
       <title>CSharp</title>
       <link>https://fakestandard.github.io/tags/csharp/</link>
-      <pubDate>Thu, 20 May 2021 13:53:44 +0800</pubDate>
+      <pubDate>Fri, 21 May 2021 10:54:12 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/csharp/</guid>
       <description></description>
@@ -28,9 +28,54 @@
     <item>
       <title>Data Structure</title>
       <link>https://fakestandard.github.io/tags/data-structure/</link>
-      <pubDate>Thu, 20 May 2021 13:53:44 +0800</pubDate>
+      <pubDate>Fri, 21 May 2021 10:54:12 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/data-structure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Queue</title>
+      <link>https://fakestandard.github.io/tags/queue/</link>
+      <pubDate>Fri, 21 May 2021 10:54:12 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/queue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>.NET Core</title>
+      <link>https://fakestandard.github.io/tags/.net-core/</link>
+      <pubDate>Thu, 20 May 2021 15:41:33 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/.net-core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core 5</title>
+      <link>https://fakestandard.github.io/tags/asp.net-core-5/</link>
+      <pubDate>Thu, 20 May 2021 15:41:33 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/asp.net-core-5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dependency Injection</title>
+      <link>https://fakestandard.github.io/tags/dependency-injection/</link>
+      <pubDate>Thu, 20 May 2021 15:41:33 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/dependency-injection/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DI</title>
+      <link>https://fakestandard.github.io/tags/di/</link>
+      <pubDate>Thu, 20 May 2021 15:41:33 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/di/</guid>
       <description></description>
     </item>
     
@@ -112,24 +157,6 @@
       <pubDate>Fri, 14 May 2021 16:58:49 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/mssql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>.NET Core</title>
-      <link>https://fakestandard.github.io/tags/.net-core/</link>
-      <pubDate>Thu, 13 May 2021 16:23:07 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/.net-core/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ASP.NET Core 5</title>
-      <link>https://fakestandard.github.io/tags/asp.net-core-5/</link>
-      <pubDate>Thu, 13 May 2021 16:23:07 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/asp.net-core-5/</guid>
       <description></description>
     </item>
     

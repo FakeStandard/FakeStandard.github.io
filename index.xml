@@ -6,7 +6,36 @@
     <description>Recent content on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 20 May 2021 13:53:44 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 May 2021 10:54:12 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】資料結構—佇列（Queue）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-6-queue/</link>
+      <pubDate>Fri, 21 May 2021 10:54:12 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-6-queue/</guid>
+      <description>【5/16 閱讀紀錄】
+選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
+Start 此篇紀錄記錄佇列定義及應用，其餘常見的資料結構如下
+ 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖（Graph） 堆積（Heap） 雜湊表（Hash Table）  佇列（Queue） 佇列是一種抽象型資料結構（Abstract Data Type, ADT），它的所有動作是由不同的兩端執行，並且具有先進先出的特性（First In, First Out: FIFO）。
+佇列基本運算具備以下五種工作定義
+   Action Description     create 建立空佇列   add 將資料加入佇列的末端，返回新佇列   delete 刪除佇列頂端的資料，返回新佇列   front 傳回佇列頂端的值   empty 判斷佇列是否為空集合，是回傳 Ture，反之    生活中有許多佇列的應用，例如排隊，假設現在有一個排隊買票的隊伍，欲買票就要從隊伍的最後方加入，然而原本在隊伍的第一個人，因為先排隊的關係，它可以先買到票，然後離開隊伍；在排隊的案例可以知道，先排隊的人，可以先買到票，並且從隊伍的頂端離開，後排隊的人，必須從隊伍的尾端加入，當隊伍前面的人都買票離開，才會輪到他買票，而且加入和離開隊伍的動作是從不同的兩端進行，此概念符合了先進先出的特性，也就是佇列的應用。
+Note  堆疊（Stack）：後進先出（Last In, First Out: LIFO） 佇列（Queue）：先進先出（First In, First Out: FIFO）  Reference 【圖說演算法 C#】</description>
+    </item>
+    
+    <item>
+      <title>【.NET Core】相依性注入 Dependency Injection</title>
+      <link>https://fakestandard.github.io/netcore/netcore5-2-dependencyinjection/</link>
+      <pubDate>Thu, 20 May 2021 15:41:33 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/netcore/netcore5-2-dependencyinjection/</guid>
+      <description>【ASP.NET Core 5】
+如果要問 ASP.NET Core 最精華的部份是什麼，必定是 DI 無誤。
+Start 相依性是另一個物件所依賴的物件。
+建立 MyDependency 類別，內含一個無返回值的 WriteMessage 方法
+public class MyDependency { public void WriteMessage(string message) { Console.WriteLine($&amp;#34;Message:{message}&amp;#34;); } } 再建一個 MyClass 類別，類別內建立 MyDependency 實例，在 MyClass 內實作無返回值的 Get 方法，該方法內調用 MyDependency 實例的 WriteMessage 方法。
+public class MyClass { private readonly MyDependency _myDependency = new MyDependency(); public void Get() { _myDependency.WriteMessage(&amp;#34;MyClass get a message&amp;#34;); } } 到目前為止程式是沒什麼問題，在未使用 DI 前，我們絕大部分都是這麼做，MyClass 物件直接依賴於 MyDependency 物件，彼此之間有著很強的相依性，也存在著一些問題。舉例來說，若要以不同實作替代 MyDependency，MyClass 必須修改此類別，再來該實作也難以進行單元測試。</description>
+    </item>
+    
     <item>
       <title>【Algorithm】資料結構—堆疊（Stack）</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-5-stack/</link>
