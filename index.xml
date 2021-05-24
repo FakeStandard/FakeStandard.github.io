@@ -6,7 +6,51 @@
     <description>Recent content on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 21 May 2021 10:54:12 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 May 2021 11:04:04 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【.NET】使用 C# 操作檔案 I/O 與檔案系統（二）</title>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-9-filesystemandfileio-two/</link>
+      <pubDate>Sun, 30 May 2021 11:04:04 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-9-filesystemandfileio-two/</guid>
+      <description>在 .NET 框架中，命名空間System.IO已經提供多種檔案操作類別，用於對資料檔案和資料流的讀寫。談到檔案系統，要先知道兩個東西
+ 檔案（File） 流（Stream）  檔案是在硬碟或光碟機等媒體上可永久儲存資料的有序集合，它是一種進行資料讀寫操作的基本物件，通常按照樹狀目錄結構進行組織，每個檔案皆有檔名、所在路徑、建立時間、訪問許可權等屬性。
+流是位元組序列的抽象概念，例如檔案、輸入/輸出裝置、處理程序間的通訊管道（an inter-process communication pipe）或 TCP/IP 通訊端。資料流包含讀取、寫入以及支援搜尋三種基本作業。
+Start 流（Stream）為所有資料流的基礎類別，繼承該類別的資料流常見的有
+ FileStream StreamReader StreamWriter MemoryStream BufferedStream  FileStream FileStream可以用來讀取、寫入、開啟和關閉檔案系統上的檔案，或操縱其他與檔案相關的檔案處理系統。該類別主要是要操作位元組陣列， Stream 類別則直接操作字元，是兩者較不同的地方。
+文字讀起來沒感覺，直接使用FileStream來讀寫二進位制檔案。
+先建立一個含有文字內容的文字檔，透過FileStream開啟該文字檔，除了讀取出二進位制內容，也順便將 binary 轉換為字元打印出來。
+/// &amp;lt;summary&amp;gt; /// 使用 FileStream 讀取檔案 /// &amp;lt;/summary&amp;gt; public static void FileStreamRead() { string path = @&amp;#34;D:\Test.txt&amp;#34;; // 建立 FileStream 並實例化  // 開啟或建立指定路徑檔案，訪問權限唯讀  FileStream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read); // 讀取 binary 檔案  byte[] array = new byte[fs.</description>
+    </item>
+    
+    <item>
+      <title>【Algorithm】資料結構—樹（Tree）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-7-tree/</link>
+      <pubDate>Mon, 24 May 2021 09:54:38 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-7-tree/</guid>
+      <description>【5/17 閱讀紀錄】
+選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
+Start 此篇紀錄記錄樹定義及應用，其餘常見的資料結構如下
+ 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖（Graph） 堆積（Heap） 雜湊表（Hash Table）  樹（Tree） 樹狀結構是一種階層架構的非線性結構，在生活中應用相當廣泛，舉凡組織架構、族譜、賽程，甚至在電腦中的作業系統、DBMS 和檔案管理系統都是樹狀結構的衍生運用。
+上圖為樹狀結構的示例，它的名稱由來是取自於樹的象徵，在上圖中，看起來是一個上下顛倒樹，其根部在上方，是資料的開頭，而下方的資料稱為葉子。
+對於合法的樹來說，節點間可以互相連結，但不能形成無出口的迴圈，例如下圖就是一個不合法的樹狀結構，因為在 H 節點與 C 節點形成了無出口的迴圈。
+樹的概念是由一個或一個以上的節點（Node）所組成，而樹根稱為根節點（Root），樹根下的樹枝，稱為子節點（Children），每個子節點都會有向上一個樹根，稱為父節點（Parent）
+樹的基本術語有許多種，利用上圖的樹狀圖一一解說
+  根節點（Root）
+先前已有大概解說過，一棵樹的樹根（即開頭）會被視為根節點，更準確地說是沒有父節點的節點是根節點。例如 A 是根節點
+  葉節點（Leaf）或終點節點（Terminal Nodes）
+節點沒有往下的子節點，稱為葉節點。例如 K、L、G 都是葉節點
+  非終端節點（Nonterminal Nodes）
+除了樹葉（葉節點）以外的節點都是非終端節點。例如 B、E、H
+  子節點（Children）
+每個節點連結的下層節點稱為子節點。例如 A 的子節點有 B、C、D
+  父節點（Parent）
+每個節點連結的上層節點稱為父節點。例如 H、I、J 的父節點為 D，G 的父節點為 C
+  祖先節點（Ancestor）
+指某個節點從自己本身到根節點之間的路徑，該路徑上所經過的所有節點皆是祖先節點。例如 M 的祖先為 A、D、H，F 的祖先為 A、B。</description>
+    </item>
+    
     <item>
       <title>【Algorithm】資料結構—佇列（Queue）</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-6-queue/</link>

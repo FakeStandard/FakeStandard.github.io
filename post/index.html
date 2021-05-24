@@ -163,6 +163,24 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【.NET】使用 C# 操作檔案 I/O 與檔案系統（二）</h2>
+  </header>
+  <section class="entry-content">
+    <p>在 .NET 框架中，命名空間System.IO已經提供多種檔案操作類別，用於對資料檔案和資料流的讀寫。談到檔案系統，要先知道兩個東西
+ 檔案（File） 流（Stream）  檔案是在硬碟或光碟機等媒體上可永久儲存資料的有序集合，它是一種進行資料讀寫操作的基本物件，通常按照樹狀目錄結構進行組織，每個檔案皆有檔名、所在路徑、建立時間、訪問許可權等屬性。
+流是位元組序列的抽象概念，例如檔案、輸入/輸出裝置、處理程序間的通訊管道（an inter-process communication pipe）或 TCP/IP 通訊端。資料流包含讀取、寫入以及支援搜尋三種基本作業。
+Start 流（Stream）為所有資料流的基礎類別，繼承該類別的資料流常見的有
+ FileStream StreamReader StreamWriter MemoryStream BufferedStream  FileStream FileStream可以用來讀取、寫入、開啟和關閉檔案系統上的檔案，或操縱其他與檔案相關的檔案處理系統。該類別主要是要操作位元組陣列， Stream 類別則直接操作字元，是兩者較不同的地方。
+文字讀起來沒感覺，直接使用FileStream來讀寫二進位制檔案。
+先建立一個含有文字內容的文字檔，透過FileStream開啟該文字檔，除了讀取出二進位制內容，也順便將 binary 轉換為字元打印出來。
+/// &lt;summary&gt; /// 使用 FileStream 讀取檔案 /// &lt;/summary&gt; public static void FileStreamRead() { string path = @&#34;D:\Test.txt&#34;; // 建立 FileStream 並實例化  // 開啟或建立指定路徑檔案，訪問權限唯讀  FileStream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read); // 讀取 binary 檔案  byte[] array = new byte[fs....</p>
+  </section>
+  <footer class="entry-footer">May 30, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET】使用 C# 操作檔案 I/O 與檔案系統（二）" href="https://fakestandard.github.io/post/dotnet/dotnet-9-filesystemandfileio-two/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【.NET】使用 C# 操作檔案 I/O 與檔案系統（一）</h2>
   </header>
   <section class="entry-content">
@@ -344,19 +362,6 @@ Solution 有三種解決方案
   </section>
   <footer class="entry-footer">April 14, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【人森】如何計算個人綜合所得稅？" href="https://fakestandard.github.io/post/other/other-2-incometax/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【Windows】開啟運行程式的所在資料夾位置</h2>
-  </header>
-  <section class="entry-content">
-    <p>Issue 應用程式安裝時會讓使用者選擇安裝路徑，假設安裝路徑有天忘記了，或是資料夾位置太深層，需要每個資料夾打開確認。
-還好有個方法可以快速開啟安裝位置，不過有個前提，必須先運行應用程式。
-Solution 該解決方法是針對已經開啟的程式，首先開啟工作管理員，切換到【應用程序】頁簽或是【詳細資料】頁簽也可以，找到運行的應用程式執行右鍵，選擇【開啟檔案位置】就開啟安裝位置囉！</p>
-  </section>
-  <footer class="entry-footer">April 12, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Windows】開啟運行程式的所在資料夾位置" href="https://fakestandard.github.io/post/windows/windows-7-openwindowsexplorer/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
