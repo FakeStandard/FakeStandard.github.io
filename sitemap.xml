@@ -313,8 +313,16 @@
   </url><url>
     <loc>https://fakestandard.github.io/archives/</loc>
   </url><url>
+    <loc>https://fakestandard.github.io/draft/</loc>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/fibonacci-search/</loc>
+  </url><url>
     <loc>https://fakestandard.github.io/tags/file-i/o/</loc>
   </url><url>
     <loc>https://fakestandard.github.io/search/</loc>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/search-algorithm/</loc>
+  </url><url>
+    <loc>https://fakestandard.github.io/draft/algorithm-21-fibonaccisearch/</loc>
   </url>
 </urlset>

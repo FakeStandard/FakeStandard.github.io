@@ -449,11 +449,29 @@
     </item>
     
     <item>
+      <title>Fibonacci Search</title>
+      <link>https://fakestandard.github.io/tags/fibonacci-search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/fibonacci-search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>File I/O</title>
       <link>https://fakestandard.github.io/tags/file-i/o/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fakestandard.github.io/tags/file-i/o/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search Algorithm</title>
+      <link>https://fakestandard.github.io/tags/search-algorithm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/search-algorithm/</guid>
       <description></description>
     </item>
     

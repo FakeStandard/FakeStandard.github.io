@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Drafts on How can I help</title>
+    <link>https://fakestandard.github.io/draft/</link>
+    <description>Recent content in Drafts on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language><atom:link href="https://fakestandard.github.io/draft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】搜尋演算法—費氏搜尋法（Fibonacci Search）</title>
+      <link>https://fakestandard.github.io/draft/algorithm-21-fibonaccisearch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fakestandard.github.io/draft/algorithm-21-fibonaccisearch/</guid>
+      <description>【閱讀紀錄】
+搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
+依據資料量大小而言，搜尋可分為兩種
+ 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
+ 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
+Start 常見的搜尋演算法
+ 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  費氏搜尋演算法（Fibonacci Search） Reference 【圖說演算法 C#】</description>
+    </item>
+    
+  </channel>
+</rss>
