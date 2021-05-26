@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>【.NET】西元年與民國年相互轉換 | How can I help</title>
-<meta name="keywords" content=".NET, CSharp, Culture, Taiwan Calendar" />
+<meta name="keywords" content="DotNET, CSharp, Culture, Taiwan Calendar" />
 <meta name="description" content="這篇想記錄一下老掉牙的問題，是關於時間格式的「西元年」和「民國年」的愛恨糾葛。
 一般電腦在安裝作業系統時預設會是西元年，而有些人習慣看民國年，這些人就從設定的「地區與語言」中，將行事曆變更為中華民國曆，這些人對日期看順眼了，卻為開發人員種下一個應該要懂得基本常識。
 西元年扣掉 1911 就是民國年，這知識完全無誤，但若你是開發人員，並且在開發應用程式時使用 -1911 來算出民國年，這觀念可要重新來過了，因為 .NET 有提供 Taiwan Calendar 類別讓你在西元與民國之間盡情地轉換，甚至也無須擔心四年就要閏一次「閏年」。
@@ -82,7 +82,7 @@ Solution 有三種解決方案
   "name": "【.NET】西元年與民國年相互轉換",
   "description": "這篇想記錄一下老掉牙的問題，是關於時間格式的「西元年」和「民國年」的愛恨糾葛。\n一般電腦在安裝作業系統時預設會是西元年，而有些人習慣看民國年，這些人就從設定的「地區與語言」中，將行事曆變更為中華民國曆，這些人對日期看順眼了，卻為開發人員種下一個應該要懂得基本常識。\n西元年扣掉 1911 就是民國年，這知識完全無誤，但若你是開發人員，並且在開發應用程式時使用 -1911 來算出民國年，這觀念可要重新來過了，因為 .NET 有提供 Taiwan Calendar 類別讓你在西元與民國之間盡情地轉換，甚至也無須擔心四年就要閏一次「閏年」。\nSolution 有三種解決方案\n 直接轉換 建立擴充方法 替換當前執行緒的文化特性  直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉換後的時間\n引用命名空間\n System.Globalization  DateTime dateTime = new DateTime(2020, 2, 29); TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.GetYear(dateTime); int month = dateTime.Month; int day = dateTime.Day; string newDateTime = $\u0026#34;{year}/{month}/{day}\u0026#34;; Console.WriteLine(newDateTime); 建立擴充方法 先撰寫一個擴展方法，需要使用時直接調用擴充方法，無須每次都撰寫相同代碼。\n/// \u0026lt;summary\u0026gt; /// 靜態擴展類別 /// \u0026lt;/summary\u0026gt; public static class DateTimeExtend { /// \u0026lt;summary\u0026gt;  /// 靜態擴展方法  /// \u0026lt;/summary\u0026gt;  /// \u0026lt;param name=\u0026#34;dateTime\u0026#34;\u0026gt;\u0026lt;/param\u0026gt;  /// \u0026lt;returns\u0026gt;\u0026lt;/returns\u0026gt;  public static string ToTaiwanDate(this DateTime dateTime) { TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.",
   "keywords": [
-    ".NET", "CSharp", "Culture", "Taiwan Calendar"
+    "DotNET", "CSharp", "Culture", "Taiwan Calendar"
   ],
   "articleBody": "這篇想記錄一下老掉牙的問題，是關於時間格式的「西元年」和「民國年」的愛恨糾葛。\n一般電腦在安裝作業系統時預設會是西元年，而有些人習慣看民國年，這些人就從設定的「地區與語言」中，將行事曆變更為中華民國曆，這些人對日期看順眼了，卻為開發人員種下一個應該要懂得基本常識。\n西元年扣掉 1911 就是民國年，這知識完全無誤，但若你是開發人員，並且在開發應用程式時使用 -1911 來算出民國年，這觀念可要重新來過了，因為 .NET 有提供 Taiwan Calendar 類別讓你在西元與民國之間盡情地轉換，甚至也無須擔心四年就要閏一次「閏年」。\nSolution 有三種解決方案\n 直接轉換 建立擴充方法 替換當前執行緒的文化特性  直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉換後的時間\n引用命名空間\n System.Globalization  DateTime dateTime = new DateTime(2020, 2, 29); TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.GetYear(dateTime); int month = dateTime.Month; int day = dateTime.Day; string newDateTime = $\"{year}/{month}/{day}\"; Console.WriteLine(newDateTime); 建立擴充方法 先撰寫一個擴展方法，需要使用時直接調用擴充方法，無須每次都撰寫相同代碼。\n///  /// 靜態擴展類別 ///  public static class DateTimeExtend { ///   /// 靜態擴展方法  ///   ///   ///   public static string ToTaiwanDate(this DateTime dateTime) { TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.GetYear(dateTime); int month = dateTime.Month; int day = dateTime.Day; return $\"{year}/{month}/{day}\"; } } 替換當前執行緒的文化特性 不想在每次遇到時間時，才透過方法來轉換民國年與西元年，那直接設定執行緒的 Cultrue 最便利。\n引用命名空間\n System.Globalization System.Threading  // 指定 zh-TW CultureInfo culture = new CultureInfo(\"zh-TW\"); // 西曆 culture.DateTimeFormat.Calendar = new GregorianCalendar(); // 民國曆 //culture.DateTimeFormat.Calendar = new TaiwanCalendar();  // 將自建物件指給當前執行緒使用 Thread.CurrentThread.CurrentCulture = culture; Thread.CurrentThread.CurrentUICulture = culture; Console.WriteLine(DateTime.Now.ToShortDateString()); 由上列的代碼可以看到分別使用的物件為\n 西曆 GregorianCalendar 民國曆 TaiwanCalendar  在做轉換時，只需建立欲轉換的物件並指給 Culture，最後在將自訂的 Culture 指給執行緒使用，即可達到效果。\nNote 如何取得 DateTime 型別的日期部分？\nDateTime dateTime = new DateTime(2020, 2, 29); Console.WriteLine(dateTime.Date); 使用 Date 屬性，結案！\nReference TaiwanCalendar Class\n",
   "wordCount" : "167",
@@ -316,7 +316,7 @@ Console.WriteLine(dateTime.Date);
 </div>
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://fakestandard.github.io/tags/.net/">.NET</a></li>
+      <li><a href="https://fakestandard.github.io/tags/dotnet/">DotNET</a></li>
       <li><a href="https://fakestandard.github.io/tags/csharp/">CSharp</a></li>
       <li><a href="https://fakestandard.github.io/tags/culture/">Culture</a></li>
       <li><a href="https://fakestandard.github.io/tags/taiwan-calendar/">Taiwan Calendar</a></li>
@@ -336,7 +336,7 @@ Console.WriteLine(dateTime.Date);
 
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share 【.NET】西元年與民國年相互轉換 on twitter"
-        href="https://twitter.com/intent/tweet/?text=%e3%80%90.NET%e3%80%91%e8%a5%bf%e5%85%83%e5%b9%b4%e8%88%87%e6%b0%91%e5%9c%8b%e5%b9%b4%e7%9b%b8%e4%ba%92%e8%bd%89%e6%8f%9b&amp;url=https%3a%2f%2ffakestandard.github.io%2fpost%2fdotnet%2fdotnet-3-changetaiwancalendar%2f&amp;hashtags=.NET%2cCSharp%2cCulture%2cTaiwanCalendar">
+        href="https://twitter.com/intent/tweet/?text=%e3%80%90.NET%e3%80%91%e8%a5%bf%e5%85%83%e5%b9%b4%e8%88%87%e6%b0%91%e5%9c%8b%e5%b9%b4%e7%9b%b8%e4%ba%92%e8%bd%89%e6%8f%9b&amp;url=https%3a%2f%2ffakestandard.github.io%2fpost%2fdotnet%2fdotnet-3-changetaiwancalendar%2f&amp;hashtags=DotNET%2cCSharp%2cCulture%2cTaiwanCalendar">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />

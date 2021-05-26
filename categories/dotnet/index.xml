@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>DotNET on How can I help</title>
+    <link>https://fakestandard.github.io/categories/dotnet/</link>
+    <description>Recent content in DotNET on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 18 May 2021 11:11:56 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/dotnet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【.NET】使用 C# 操作檔案 I/O 與檔案系統（一）</title>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-8-filesystemandfileio-one/</link>
+      <pubDate>Tue, 18 May 2021 11:11:56 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-8-filesystemandfileio-one/</guid>
+      <description>在 .NET 框架中，命名空間 System.IO 已經提供多種檔案操作類別，用於對資料檔案和資料流的讀寫。談到檔案系統，要先知道兩個東西
+ 檔案（File） 流（Stream）  檔案是在硬碟或光碟機等媒體上可永久儲存資料的有序集合，它是一種進行資料讀寫操作的基本物件，通常按照樹狀目錄結構進行組織，每個檔案皆有檔名、所在路徑、建立時間、訪問許可權等屬性。
+流是位元組序列的抽象概念，例如檔案、輸入/輸出裝置、處理程序間的通訊管道（an inter-process communication pipe）或 TCP/IP 通訊端。資料流包含讀取、寫入以及支援搜尋三種基本作業。
+Start FileSystemInfo 類別是檔案系統類別的基礎類別，繼承該類別的子類別有
+ File - 負責檔案系統中的檔案，屬靜態類別 FileInfo - 負責檔案系統中的檔案 Directory - 負責檔案系統中的資料夾，屬靜態類別 DirectoryInfo - 負責檔案系統中的資料夾  另外還有位於 System.IO 命名空間下其餘相關的類別
+ Path - 負責檔案系統中的路徑 DriveInfo - 負責磁碟機資訊的訪問  File 與 FileInfo 的區別在於 Info 類別需要實體化，而一般 File 是屬於靜態類別；Directory 與 DirectoryInfo 同理，Directory 是靜態類別，DirectoryInfo 需實體化類別。
+FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
+/// &amp;lt;summary&amp;gt; /// 建立檔案並寫入資料 /// &amp;lt;/summary&amp;gt; public static void CreateFileByFileInfo() { // 實體化 FileInfo 並指予路徑  FileInfo file = new FileInfo(@&amp;#34;D:\Test.</description>
+    </item>
+    
+    <item>
+      <title>【.NET】使用 NPOI 匯入 Excel</title>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-7-npoi-import/</link>
+      <pubDate>Tue, 11 May 2021 10:00:16 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-7-npoi-import/</guid>
+      <description>在網站開發時，總會遇到匯出 EXCEL 的需求，除了匯出之外，偶爾也會遇到匯入 EXCEL 這種懶人需求。
+為何是懶人需求呢？通常使用者可以透過 UI 介面來維護資料，包括 CRUD 等功能，所以 Excel 資料會先透過前端介面在將資料傳遞到資料庫儲存。而匯入的方式，可以一次傳遞多筆資料，並且直達資料庫，過程中不需要使用 UI 介面逐筆輸入，非常省時又省力。
+註：此篇使用 ASP.NET Core 5 實作
+Start 首先到 NuGet 下載 NPOI 套件並安裝到專案中
+建立 ImportController.cs
+public class ImportController : Controller { public IActionResult Index() { return View(); } } 建立 Index.cshtml
+&amp;lt;h2&amp;gt;Import&amp;lt;/h2&amp;gt; @using (Html.BeginForm(&amp;#34;Upload&amp;#34;, &amp;#34;Import&amp;#34;, FormMethod.Post, new { enctype = &amp;#34;multipart/form-data&amp;#34; })) { &amp;lt;input type=&amp;#34;file&amp;#34; class=&amp;#34;form-control&amp;#34; name=&amp;#34;file&amp;#34; /&amp;gt; &amp;lt;button type=&amp;#34;submit&amp;#34; class=&amp;#34;btn btn-primary&amp;#34;&amp;gt;Upload&amp;lt;/button&amp;gt; } 在 Controller 中新增一個接收 HttpPost 的 ActionResult Upload，除了返回頁面之外，沒有任何代碼。</description>
+    </item>
+    
+    <item>
+      <title>【.NET】將資料匯出成 CSV</title>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-6-exportcsv/</link>
+      <pubDate>Sun, 09 May 2021 14:31:15 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-6-exportcsv/</guid>
+      <description>前篇在紀錄使用第三方套件來匯出 Excel，忽然看到匯出 csv 的方法，其實很簡單，就順便記錄一下。
+Start 按照前篇建立一個 .Net Core MVC 的專案，同樣地建立 Model、Controller 及 View，讓畫面呈現一個 Employee 的列表，將按鈕名稱改為 csv Export，相關代碼如下
+Model public class Employee { public int ID { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Title { get; set; } public string City { get; set; } } Controller public class EmployeeController : Controller { private List&amp;lt;Employee&amp;gt; employees; public EmployeeController() { if (employees == null) { employees = new List&amp;lt;Employee&amp;gt;() { new Employee{ ID = 1, LastName = &amp;#34;Davolio&amp;#34;, FirstName = &amp;#34;Nancy&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;Seattle&amp;#34; }, new Employee{ ID = 2, LastName = &amp;#34;Fuller&amp;#34;, FirstName = &amp;#34;Andrew&amp;#34;, Title = &amp;#34;Vice President, Sales&amp;#34;, City = &amp;#34;Tacoma&amp;#34; }, new Employee{ ID = 3, LastName = &amp;#34;Leverling&amp;#34;, FirstName = &amp;#34;Janet&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;Kirkland&amp;#34; }, new Employee{ ID = 4, LastName = &amp;#34;Peacock&amp;#34;, FirstName = &amp;#34;Margaret&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;Redmond&amp;#34; }, new Employee{ ID = 5, LastName = &amp;#34;Buchanan&amp;#34;, FirstName = &amp;#34;Steven&amp;#34;, Title = &amp;#34;Sales Manager&amp;#34;, City = &amp;#34;London&amp;#34; }, new Employee{ ID = 6, LastName = &amp;#34;Suyama&amp;#34;, FirstName = &amp;#34;Michael&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;London&amp;#34; }, new Employee{ ID = 7, LastName = &amp;#34;King&amp;#34;, FirstName = &amp;#34;Robert&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;London&amp;#34; }, new Employee{ ID = 8, LastName = &amp;#34;Callahan&amp;#34;, FirstName = &amp;#34;Laura&amp;#34;, Title = &amp;#34;Inside Sales Coordinator&amp;#34;, City = &amp;#34;Seattle&amp;#34; }, new Employee{ ID = 9, LastName = &amp;#34;Dodsworth&amp;#34;, FirstName = &amp;#34;Anne&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;London&amp;#34; } }; } } public IActionResult Index() { return View(employees); } } View @model IEnumerable&amp;lt;Export_ClosedXML.</description>
+    </item>
+    
+    <item>
+      <title>【.NET】使用 ClosedXML 實現匯出 Excel 功能</title>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-5-closedxmlsimple/</link>
+      <pubDate>Sat, 08 May 2021 10:28:02 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-5-closedxmlsimple/</guid>
+      <description>開發應用程式或網頁時一定會遇到匯出 Excel 功能，而匯出的 Libaray 除了微軟原生的程式庫之外，還可以使用第三方的程式庫，先前已有介紹過使用 NPOI 套件，有興趣可參考傳送門。
+這篇則會介紹如何使用 ClosedXML 簡易的匯出，代碼已存放於 GitHub
+【傳送門】【NPOI】使用 NPOI 匯出 Excel 的基本應用
+Start 首先到 NuGet 安裝套件
+Model 建立資料模型
+public class Employee { public int ID { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Title { get; set; } public string City { get; set; } } Controller 建立控制項和產生資料
+public class EmployeeController : Controller { private List&amp;lt;Employee&amp;gt; employees; public EmployeeController() { if (employees == null) { employees = new List&amp;lt;Employee&amp;gt;() { new Employee{ ID = 1, LastName = &amp;#34;Davolio&amp;#34;, FirstName = &amp;#34;Nancy&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;Seattle&amp;#34; }, new Employee{ ID = 2, LastName = &amp;#34;Fuller&amp;#34;, FirstName = &amp;#34;Andrew&amp;#34;, Title = &amp;#34;Vice President, Sales&amp;#34;, City = &amp;#34;Tacoma&amp;#34; }, new Employee{ ID = 3, LastName = &amp;#34;Leverling&amp;#34;, FirstName = &amp;#34;Janet&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;Kirkland&amp;#34; }, new Employee{ ID = 4, LastName = &amp;#34;Peacock&amp;#34;, FirstName = &amp;#34;Margaret&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;Redmond&amp;#34; }, new Employee{ ID = 5, LastName = &amp;#34;Buchanan&amp;#34;, FirstName = &amp;#34;Steven&amp;#34;, Title = &amp;#34;Sales Manager&amp;#34;, City = &amp;#34;London&amp;#34; }, new Employee{ ID = 6, LastName = &amp;#34;Suyama&amp;#34;, FirstName = &amp;#34;Michael&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;London&amp;#34; }, new Employee{ ID = 7, LastName = &amp;#34;King&amp;#34;, FirstName = &amp;#34;Robert&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;London&amp;#34; }, new Employee{ ID = 8, LastName = &amp;#34;Callahan&amp;#34;, FirstName = &amp;#34;Laura&amp;#34;, Title = &amp;#34;Inside Sales Coordinator&amp;#34;, City = &amp;#34;Seattle&amp;#34; }, new Employee{ ID = 9, LastName = &amp;#34;Dodsworth&amp;#34;, FirstName = &amp;#34;Anne&amp;#34;, Title = &amp;#34;Sales Representative&amp;#34;, City = &amp;#34;London&amp;#34; } }; } } public IActionResult Index() { return View(employees); } } View 在視圖渲染資料，且添加 Export 按鈕</description>
+    </item>
+    
+    <item>
+      <title>【.NET】使用 NPOI 匯出 Excel 的基本應用</title>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-4-npoisimple/</link>
+      <pubDate>Tue, 27 Apr 2021 14:08:05 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-4-npoisimple/</guid>
+      <description>開發應用程式或網頁時總是會遇到匯出 Excel 的需求，常見的如匯出報表。然而在眾多匯出 Excel 的套件中，這篇選擇以 NPOI 作為介紹匯出的基本應用和觀念，資料則選擇現成的北風資料庫，這邊就不另外建立資料物件。
+代碼存放於 GitHub
+Start 首先到 NuGet 套件添加 NPOI Package
+建立一個資料庫連線的方法，將 Orders 資料表的資料全部讀到 DataTable
+/// &amp;lt;summary&amp;gt; /// 資料庫連線方法 /// &amp;lt;/summary&amp;gt; static DataTable Connect() { // 宣告並建立 SqlConnectionStringBuilder 物件，並設置連線資訊  SqlConnectionStringBuilder cnsb = new SqlConnectionStringBuilder(); cnsb.DataSource = &amp;#34;.&amp;#34;; cnsb.InitialCatalog = &amp;#34;Northwind&amp;#34;; cnsb.IntegratedSecurity = true; // 宣告並建立 SqlConnection  SqlConnection cn = new SqlConnection(cnsb.ConnectionString); // SQL Statement  string sql = &amp;#34;SELECT * FROM [Northwind].[dbo].[Orders]&amp;#34;; // 宣告並建立 SqlDataAdapter 物件  SqlDataAdapter da = new SqlDataAdapter(sql, cn); // 建立 DataSet 物件以儲存資料  DataSet ds = new DataSet(); da.</description>
+    </item>
+    
+    <item>
+      <title>【.NET】西元年與民國年相互轉換</title>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-3-changetaiwancalendar/</link>
+      <pubDate>Mon, 19 Apr 2021 14:58:59 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-3-changetaiwancalendar/</guid>
+      <description>這篇想記錄一下老掉牙的問題，是關於時間格式的「西元年」和「民國年」的愛恨糾葛。
+一般電腦在安裝作業系統時預設會是西元年，而有些人習慣看民國年，這些人就從設定的「地區與語言」中，將行事曆變更為中華民國曆，這些人對日期看順眼了，卻為開發人員種下一個應該要懂得基本常識。
+西元年扣掉 1911 就是民國年，這知識完全無誤，但若你是開發人員，並且在開發應用程式時使用 -1911 來算出民國年，這觀念可要重新來過了，因為 .NET 有提供 Taiwan Calendar 類別讓你在西元與民國之間盡情地轉換，甚至也無須擔心四年就要閏一次「閏年」。
+Solution 有三種解決方案
+ 直接轉換 建立擴充方法 替換當前執行緒的文化特性  直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉換後的時間
+引用命名空間
+ System.Globalization  DateTime dateTime = new DateTime(2020, 2, 29); TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.GetYear(dateTime); int month = dateTime.Month; int day = dateTime.Day; string newDateTime = $&amp;#34;{year}/{month}/{day}&amp;#34;; Console.WriteLine(newDateTime); 建立擴充方法 先撰寫一個擴展方法，需要使用時直接調用擴充方法，無須每次都撰寫相同代碼。
+/// &amp;lt;summary&amp;gt; /// 靜態擴展類別 /// &amp;lt;/summary&amp;gt; public static class DateTimeExtend { /// &amp;lt;summary&amp;gt;  /// 靜態擴展方法  /// &amp;lt;/summary&amp;gt;  /// &amp;lt;param name=&amp;#34;dateTime&amp;#34;&amp;gt;&amp;lt;/param&amp;gt;  /// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt;  public static string ToTaiwanDate(this DateTime dateTime) { TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.</description>
+    </item>
+    
+    <item>
+      <title>【.NET】適合初心者的 .NET Core MVC 實作</title>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-2-mvc-movielist/</link>
+      <pubDate>Sat, 10 Apr 2021 14:06:07 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-2-mvc-movielist/</guid>
+      <description>此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解如何建立 Web 應用程式、新增及 Scaffold 模型、使用資料庫、資料的 CRUD、新增搜尋和驗證，最後會完成一個有關電影清單的應用程式。
+UI 的介紹會以 IDE 為主，除 UI 外也會介紹 dotnet 指令。
+代碼部分已上傳到 GitHub
+Start  建立 Web app 新增控制器（Controller） 新增檢視器（View）auto 新增模型（Model） 新增 NuGet 套件 建立 DbContext 新增 ConnectionString 使用 Scaffold 進行初始移轉（Initial Migration） 植入資料以初始資料庫 使用資料註釋 Data Annotations 新增搜尋引擎 新增資料驗證 使用 Bootstrap 增強外觀效果  建立 Web app 提供兩種方法，一種透過 Visual Studio IDE，一種是使用 Command shell 操作，兩種皆可達相同結果。
+Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】</description>
+    </item>
+    
+    <item>
+      <title>【.NET】打造 Blazor ToDoList</title>
+      <link>https://fakestandard.github.io/post/dotnet/dotnet-1-blazor/</link>
+      <pubDate>Sun, 28 Mar 2021 21:47:49 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/dotnet/dotnet-1-blazor/</guid>
+      <description>Prerequisites .NET 5.0 SDK 或之後的版本
+Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
+建立新專案 選擇【Blazor 應用程式】專案
+選擇【Blazor Server 應用程式】樣板
+建立 Razor 元件 新建立的專案在方案總管下的 Pages 資料夾內，可以看到已經有建立好的預設頁面，在該資料夾下建立 Todo.razor。
+建立 Razor 元件時要注意
+ 檔案名稱開頭第一個字母必須大寫 副檔名為 .razor 結尾  將 Todo 元件添加到導航列 開啟 Pages/Todo.razor 添加相對應的 URL @page &amp;quot;/todo&amp;quot;
+@page &amp;#34;/todo&amp;#34; &amp;lt;h3&amp;gt;Todo&amp;lt;/h3&amp;gt; @code { } 開啟 Shared/NavMenu.razor，此 razor 為應用程式其中一個版面配置，可避免應用程式中使用重複的元件，在此配置中添加以下代碼
+&amp;lt;ul class=&amp;#34;nav flex-column&amp;#34;&amp;gt; ... &amp;lt;li class=&amp;#34;nav-item px-3&amp;#34;&amp;gt; &amp;lt;NavLink class=&amp;#34;nav-link&amp;#34; href=&amp;#34;todo&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;oi oi-list-rich&amp;#34; aria-hidden=&amp;#34;true&amp;#34;&amp;gt;&amp;lt;/span&amp;gt; Todo &amp;lt;/NavLink&amp;gt; &amp;lt;/li&amp;gt; &amp;lt;/ul&amp;gt; 建立 TodoItem 類別 在專案目錄下建立 /TodoList/TodoItem.</description>
+    </item>
+    
+  </channel>
+</rss>

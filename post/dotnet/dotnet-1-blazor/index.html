@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>【.NET】打造 Blazor ToDoList | How can I help</title>
-<meta name="keywords" content=".NET, Blazor, TodoList" />
+<meta name="keywords" content="DotNET, Blazor, TodoList" />
 <meta name="description" content="Prerequisites .NET 5.0 SDK 或之後的版本
 Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
 建立新專案 選擇【Blazor 應用程式】專案
@@ -85,7 +85,7 @@ Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
   "name": "【.NET】打造 Blazor ToDoList",
   "description": "Prerequisites .NET 5.0 SDK 或之後的版本\nStart 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。\n建立新專案 選擇【Blazor 應用程式】專案\n選擇【Blazor Server 應用程式】樣板\n建立 Razor 元件 新建立的專案在方案總管下的 Pages 資料夾內，可以看到已經有建立好的預設頁面，在該資料夾下建立 Todo.razor。\n建立 Razor 元件時要注意\n 檔案名稱開頭第一個字母必須大寫 副檔名為 .razor 結尾  將 Todo 元件添加到導航列 開啟 Pages/Todo.razor 添加相對應的 URL @page \u0026quot;/todo\u0026quot;\n@page \u0026#34;/todo\u0026#34; \u0026lt;h3\u0026gt;Todo\u0026lt;/h3\u0026gt; @code { } 開啟 Shared/NavMenu.razor，此 razor 為應用程式其中一個版面配置，可避免應用程式中使用重複的元件，在此配置中添加以下代碼\n\u0026lt;ul class=\u0026#34;nav flex-column\u0026#34;\u0026gt; ... \u0026lt;li class=\u0026#34;nav-item px-3\u0026#34;\u0026gt; \u0026lt;NavLink class=\u0026#34;nav-link\u0026#34; href=\u0026#34;todo\u0026#34;\u0026gt; \u0026lt;span class=\u0026#34;oi oi-list-rich\u0026#34; aria-hidden=\u0026#34;true\u0026#34;\u0026gt;\u0026lt;/span\u0026gt; Todo \u0026lt;/NavLink\u0026gt; \u0026lt;/li\u0026gt; \u0026lt;/ul\u0026gt; 建立 TodoItem 類別 在專案目錄下建立 /TodoList/TodoItem.",
   "keywords": [
-    ".NET", "Blazor", "TodoList"
+    "DotNET", "Blazor", "TodoList"
   ],
   "articleBody": "Prerequisites .NET 5.0 SDK 或之後的版本\nStart 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。\n建立新專案 選擇【Blazor 應用程式】專案\n選擇【Blazor Server 應用程式】樣板\n建立 Razor 元件 新建立的專案在方案總管下的 Pages 資料夾內，可以看到已經有建立好的預設頁面，在該資料夾下建立 Todo.razor。\n建立 Razor 元件時要注意\n 檔案名稱開頭第一個字母必須大寫 副檔名為 .razor 結尾  將 Todo 元件添加到導航列 開啟 Pages/Todo.razor 添加相對應的 URL @page \"/todo\"\n@page \"/todo\" h3Todoh3 @code { } 開啟 Shared/NavMenu.razor，此 razor 為應用程式其中一個版面配置，可避免應用程式中使用重複的元件，在此配置中添加以下代碼\nul class=\"nav flex-column\" ... li class=\"nav-item px-3\" NavLink class=\"nav-link\" href=\"todo\" span class=\"oi oi-list-rich\" aria-hidden=\"true\"span Todo NavLink li ul 建立 TodoItem 類別 在專案目錄下建立 /TodoList/TodoItem.cs 類別，以保存待辦清單集合\npublic class TodoItem { public string Title { get; set; } public bool IsDone { get; set; } } 在 UI 渲染清單 在 Pages/Todo.razor 變更下列代碼\n@page \"/todo\" h3Todoh3 ul  @foreach (var todo in todos) { li@todo.Titleli } ul @code { // 建立 todo 清單集合  private IList todos = new List(); } 此時還不會有任何清單呈現，因為在 todos 集合中尚未添加項目。\n添加新增功能 繼續在 Pages/Todo.razor 新增文字輸入框及按鈕\nul ... ul  input placeholder=\"Something todo\" @bind=\"newTodo\"/ button @onclick=\"AddTodo\"Add todobutton 在 @code 區塊內加入一個與文字輸入框綁定的 string，以及按下 Add Todo 按鈕後呼叫的 AddTodo 方法\n@code { ... // 取得新的 todo 標題  private string newTodo; ///   /// 新增清單項目  ///   private void AddTodo() { // Todo: Add the todo  // 將綁定的 newTodo 文字新增至 todos 集合中  if (!string.IsNullOrWhiteSpace(newTodo)) { todos.Add(new TodoItem { Title = newTodo }); newTodo = string.Empty; } } } 變更清單呈現方式  每個清單項目前添加核取方塊 checkbox ，供使用者紀錄已完成項目 每個清單項目的文字輸入框設定為可編輯   @foreach(var todo in todos) { li  input type=\"checkbox\" @bind=\"todo.IsDone\" / input @bind=\"todo.Title\" / li } 標題顯示未完成項目數量 更新  標頭為可計算未完成項目的數量\nh3Todo (@todos.Count(todo = !todo.IsDone))h3 Done 啟動本地瀏覽，享受成品！\n使用 command shell 建立專案 前面建立專案時是使用 IDE 介面，這裡補充一下如何使用指令來建立專案。\n建立 Blazor 專案 先 CD 到欲建立資料夾的目錄，使用下列指令來建立 Blazor 專案，執行完後會看到該目錄下已建立 TodoList 資料夾\n$ dotnet new blazorserver -o TodoList 將當前目錄更換到 TodoList 資料夾\n$ cd TodoList 新增 Razor Component -n 為建立元件的名稱， -o 為輸出的位置，下列該指令會在 Pages 資料夾下建立一個 Todo.razor 的元件\n$ dotnet new razorcomponent -n Todo -o Pages 到目前為止已經建立一個 Blazor 專案，並為專案內建立 Razor 元件，接下來的程式碼修改如同上述操作，這邊就不再重複介紹。\n完成後使用下列代碼來啟用本地伺服器瀏覽\n$ dotnet watch run Reference Build a Blazor todo list app\n",
   "wordCount" : "306",
@@ -372,7 +372,7 @@ Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
 </div>
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://fakestandard.github.io/tags/.net/">.NET</a></li>
+      <li><a href="https://fakestandard.github.io/tags/dotnet/">DotNET</a></li>
       <li><a href="https://fakestandard.github.io/tags/blazor/">Blazor</a></li>
       <li><a href="https://fakestandard.github.io/tags/todolist/">TodoList</a></li>
     </ul>
@@ -391,7 +391,7 @@ Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
 
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share 【.NET】打造 Blazor ToDoList on twitter"
-        href="https://twitter.com/intent/tweet/?text=%e3%80%90.NET%e3%80%91%e6%89%93%e9%80%a0%20Blazor%20ToDoList&amp;url=https%3a%2f%2ffakestandard.github.io%2fpost%2fdotnet%2fdotnet-1-blazor%2f&amp;hashtags=.NET%2cBlazor%2cTodoList">
+        href="https://twitter.com/intent/tweet/?text=%e3%80%90.NET%e3%80%91%e6%89%93%e9%80%a0%20Blazor%20ToDoList&amp;url=https%3a%2f%2ffakestandard.github.io%2fpost%2fdotnet%2fdotnet-1-blazor%2f&amp;hashtags=DotNET%2cBlazor%2cTodoList">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />

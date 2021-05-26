@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>【.NET】使用 NPOI 匯入 Excel | How can I help</title>
-<meta name="keywords" content=".NET, NPOI, CSharp" />
+<meta name="keywords" content="DotNET, NPOI, CSharp" />
 <meta name="description" content="在網站開發時，總會遇到匯出 EXCEL 的需求，除了匯出之外，偶爾也會遇到匯入 EXCEL 這種懶人需求。
 為何是懶人需求呢？通常使用者可以透過 UI 介面來維護資料，包括 CRUD 等功能，所以 Excel 資料會先透過前端介面在將資料傳遞到資料庫儲存。而匯入的方式，可以一次傳遞多筆資料，並且直達資料庫，過程中不需要使用 UI 介面逐筆輸入，非常省時又省力。
 註：此篇使用 ASP.NET Core 5 實作
@@ -79,7 +79,7 @@ public class ImportController : Controller { public IActionResult Index() { retu
   "name": "【.NET】使用 NPOI 匯入 Excel",
   "description": "在網站開發時，總會遇到匯出 EXCEL 的需求，除了匯出之外，偶爾也會遇到匯入 EXCEL 這種懶人需求。\n為何是懶人需求呢？通常使用者可以透過 UI 介面來維護資料，包括 CRUD 等功能，所以 Excel 資料會先透過前端介面在將資料傳遞到資料庫儲存。而匯入的方式，可以一次傳遞多筆資料，並且直達資料庫，過程中不需要使用 UI 介面逐筆輸入，非常省時又省力。\n註：此篇使用 ASP.NET Core 5 實作\nStart 首先到 NuGet 下載 NPOI 套件並安裝到專案中\n建立 ImportController.cs\npublic class ImportController : Controller { public IActionResult Index() { return View(); } } 建立 Index.cshtml\n\u0026lt;h2\u0026gt;Import\u0026lt;/h2\u0026gt; @using (Html.BeginForm(\u0026#34;Upload\u0026#34;, \u0026#34;Import\u0026#34;, FormMethod.Post, new { enctype = \u0026#34;multipart/form-data\u0026#34; })) { \u0026lt;input type=\u0026#34;file\u0026#34; class=\u0026#34;form-control\u0026#34; name=\u0026#34;file\u0026#34; /\u0026gt; \u0026lt;button type=\u0026#34;submit\u0026#34; class=\u0026#34;btn btn-primary\u0026#34;\u0026gt;Upload\u0026lt;/button\u0026gt; } 在 Controller 中新增一個接收 HttpPost 的 ActionResult Upload，除了返回頁面之外，沒有任何代碼。",
   "keywords": [
-    ".NET", "NPOI", "CSharp"
+    "DotNET", "NPOI", "CSharp"
   ],
   "articleBody": "在網站開發時，總會遇到匯出 EXCEL 的需求，除了匯出之外，偶爾也會遇到匯入 EXCEL 這種懶人需求。\n為何是懶人需求呢？通常使用者可以透過 UI 介面來維護資料，包括 CRUD 等功能，所以 Excel 資料會先透過前端介面在將資料傳遞到資料庫儲存。而匯入的方式，可以一次傳遞多筆資料，並且直達資料庫，過程中不需要使用 UI 介面逐筆輸入，非常省時又省力。\n註：此篇使用 ASP.NET Core 5 實作\nStart 首先到 NuGet 下載 NPOI 套件並安裝到專案中\n建立 ImportController.cs\npublic class ImportController : Controller { public IActionResult Index() { return View(); } } 建立 Index.cshtml\nh2Importh2 @using (Html.BeginForm(\"Upload\", \"Import\", FormMethod.Post, new { enctype = \"multipart/form-data\" })) { input type=\"file\" class=\"form-control\" name=\"file\" / button type=\"submit\" class=\"btn btn-primary\"Uploadbutton } 在 Controller 中新增一個接收 HttpPost 的 ActionResult Upload，除了返回頁面之外，沒有任何代碼。\n///  /// 上傳 Excel 方法 ///  ///  [HttpPost] public IActionResult Upload(IFormFile file) { return View(\"Index\"); } 建立以副檔名來判斷要使用的 Workbook 實例私有方法\n///  /// 判斷副檔名以取得 Workbook 實例，直接讀取檔案內容 ///  ///  ///  private IWorkbook GetWorkbook(string extension, IFormFile file) { MemoryStream ms = new MemoryStream(); file.CopyTo(ms); Stream stream = new MemoryStream(ms.ToArray()); switch (extension) { case \".xls\": return new HSSFWorkbook(stream); case \".xlsx\": return new XSSFWorkbook(stream); default: return null; } } 回到 Upload 方法撰寫讀取資料程式碼，最後，將讀到的資料作處理或解析，在把整理好的資料存入資料庫，這邊就不撰寫程式碼。\n///  /// 上傳 Excel 方法 ///  ///  [HttpPost] public IActionResult Upload(IFormFile file) { try { if (file != null) { // 檢查 是否選擇檔案  if (file.Length  0) { // 取得副檔名  string extension = Path.GetExtension(file.FileName); // 取得 Workbook 實例  IWorkbook wb = GetWorkbook(extension, file); if (wb == null) { ViewBag.Message = \"請上傳 .xls 或 .xlsx 的檔案！\"; return View(\"Index\"); } // 取得第一個工作表  ISheet sheet = wb.GetSheetAt(0); // 取得標題列  IRow header = sheet.GetRow(0); // 走訪所有資料列(排除標題列)  for (int row = 1; row // 驗證不是空白列  if (sheet.GetRow(row) != null) { // 走訪所有資料欄  for (int column = 0; column // 取得資料  var data = sheet.GetRow(row).GetCell(column).ToString(); // do something...  } } } ViewBag.Message = \"上傳成功\"; } else { ViewBag.Message = $\"上傳失敗，檔案內無任何資料\"; } } else { ViewBag.Message = \"請選擇檔案！\"; } } catch (Exception ex) { ViewBag.Message = $\"上傳失敗，詳細原因:{ex.Message}\"; } return View(\"Index\"); } 值得注意的幾個地方\n 檢查  是否有選擇檔案 取得索引為零的工作表，建議不直接用名稱取得工作表，除非有特別要求只讀取特定名稱的工作表，否則，優先建議用取得索引的方法來取得 ISheet 實例。 通常範例會包含標題，在讀取時記得要跳過第一行標題 使用 GetRow() 方法取得 Row 之後，要驗證取到的值是否為 Null  Note 使用第三方套件達成報表匯出匯入功能其實不難，了解整體脈絡後，不管是匯入或匯出，在使用上沒有太大的差別，只是處理取得資料或是返回資料的部分，就會要根據需求來撰寫。\n",
   "wordCount" : "316",
@@ -366,7 +366,7 @@ public class ImportController : Controller { public IActionResult Index() { retu
 </div>
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://fakestandard.github.io/tags/.net/">.NET</a></li>
+      <li><a href="https://fakestandard.github.io/tags/dotnet/">DotNET</a></li>
       <li><a href="https://fakestandard.github.io/tags/npoi/">NPOI</a></li>
       <li><a href="https://fakestandard.github.io/tags/csharp/">CSharp</a></li>
     </ul>
@@ -385,7 +385,7 @@ public class ImportController : Controller { public IActionResult Index() { retu
 
 <div class="share-buttons">
     <a target="_blank" rel="noopener noreferrer" aria-label="share 【.NET】使用 NPOI 匯入 Excel on twitter"
-        href="https://twitter.com/intent/tweet/?text=%e3%80%90.NET%e3%80%91%e4%bd%bf%e7%94%a8%20NPOI%20%e5%8c%af%e5%85%a5%20Excel&amp;url=https%3a%2f%2ffakestandard.github.io%2fpost%2fdotnet%2fdotnet-7-npoi-import%2f&amp;hashtags=.NET%2cNPOI%2cCSharp">
+        href="https://twitter.com/intent/tweet/?text=%e3%80%90.NET%e3%80%91%e4%bd%bf%e7%94%a8%20NPOI%20%e5%8c%af%e5%85%a5%20Excel&amp;url=https%3a%2f%2ffakestandard.github.io%2fpost%2fdotnet%2fdotnet-7-npoi-import%2f&amp;hashtags=DotNET%2cNPOI%2cCSharp">
         <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
             <path
                 d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
