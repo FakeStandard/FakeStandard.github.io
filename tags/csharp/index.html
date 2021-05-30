@@ -148,6 +148,29 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】資料結構—雜湊表（Hash Table）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/24 閱讀紀錄】
+選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
+Start 此篇紀錄記錄雜湊表定義及應用，其餘常見的資料結構如下
+ 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  雜湊表（Hash Table） 雜湊是一種電腦對資料的處理方式，它通過某種特定的雜湊函數應用，將鍵值轉換成相對應的資料儲存位址，形成一種快速存取與搜尋資料的資料結構—雜湊表，而雜湊表是一種儲存紀錄的連續記憶體。
+相關專有名詞  雜湊函數（Hashing Function）
+將未經雜湊的資料，透過特定的計算公式，轉換成對應的資料儲存位址，計算後的結果必須隨著明文改變而改變。 雜湊值（Hash Code）
+原始資料經由雜湊函數計算的結果，稱為雜湊值，且雜湊值為不可逆。不可逆的意思是，轉換後的結果無法反推原來的資料，只能由 A 變成 B，無法從 B 找回 A，例如將蘋果透過果汁機打成蘋果汁，蘋果就是原始資料，果汁機是雜湊函數，蘋果汁是雜湊值，我們無法將蘋果汁再透過果汁機變回蘋果，這就是不可逆。 桶（Bucket）
+雜湊表中儲存資料的位置，每個位置對應唯一的位址（Bucket Address） 槽（Slot）
+每一筆紀錄可能包含多個欄位，Slot 指的就是 Bucket 的欄位 碰撞（Collision）
+兩筆不同的資料，經雜湊函數運算後，對應到相同位址時，稱為碰撞 溢位（Overflow）
+資料經過雜湊函數運算後，對應的 Bucket 已滿，則會使 Bucket 發生溢位 雜湊表（Hash Table）
+儲存紀錄的連續記憶體，它類似於資料表的索引表格，可將 Column 和 Row 看待成 Slot 與 Bucket 完美雜湊（Perfect Hashing）
+指沒有發生碰撞，也沒有發生溢位的雜湊函數  雜湊應用 雜湊通常應用於加密或驗證，但雜湊不等於加密，加密不等於雜湊。其應用有身份證字號是透過公式來驗證是否合法，或者是 MD5 密碼雜湊函式，將使用者的 password 經由 MD5 產生雜湊值，再將雜湊值儲存於資料庫中，等下次使用者登入時，將輸入的密碼經由 MD5 運算，將其結果與資料庫中儲存的雜湊值進行比對即可。...</p>
+  </section>
+  <footer class="entry-footer">May 29, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—雜湊表（Hash Table）" href="https://fakestandard.github.io/algorithm/algorithm-9-hashtable/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】資料結構—圖形（Graph）</h2>
   </header>
   <section class="entry-content">
@@ -309,23 +332,6 @@ Model public class Employee { public int ID { get; set; } public string FirstNam
   </section>
   <footer class="entry-footer">May 9, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【.NET】將資料匯出成 CSV" href="https://fakestandard.github.io/post/dotnet/dotnet-6-exportcsv/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET】使用 ClosedXML 實現匯出 Excel 功能</h2>
-  </header>
-  <section class="entry-content">
-    <p>開發應用程式或網頁時一定會遇到匯出 Excel 功能，而匯出的 Libaray 除了微軟原生的程式庫之外，還可以使用第三方的程式庫，先前已有介紹過使用 NPOI 套件，有興趣可參考傳送門。
-這篇則會介紹如何使用 ClosedXML 簡易的匯出，代碼已存放於 GitHub
-【傳送門】【NPOI】使用 NPOI 匯出 Excel 的基本應用
-Start 首先到 NuGet 安裝套件
-Model 建立資料模型
-public class Employee { public int ID { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Title { get; set; } public string City { get; set; } } Controller 建立控制項和產生資料
-public class EmployeeController : Controller { private List&lt;Employee&gt; employees; public EmployeeController() { if (employees == null) { employees = new List&lt;Employee&gt;() { new Employee{ ID = 1, LastName = &#34;Davolio&#34;, FirstName = &#34;Nancy&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 2, LastName = &#34;Fuller&#34;, FirstName = &#34;Andrew&#34;, Title = &#34;Vice President, Sales&#34;, City = &#34;Tacoma&#34; }, new Employee{ ID = 3, LastName = &#34;Leverling&#34;, FirstName = &#34;Janet&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Kirkland&#34; }, new Employee{ ID = 4, LastName = &#34;Peacock&#34;, FirstName = &#34;Margaret&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Redmond&#34; }, new Employee{ ID = 5, LastName = &#34;Buchanan&#34;, FirstName = &#34;Steven&#34;, Title = &#34;Sales Manager&#34;, City = &#34;London&#34; }, new Employee{ ID = 6, LastName = &#34;Suyama&#34;, FirstName = &#34;Michael&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 7, LastName = &#34;King&#34;, FirstName = &#34;Robert&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 8, LastName = &#34;Callahan&#34;, FirstName = &#34;Laura&#34;, Title = &#34;Inside Sales Coordinator&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 9, LastName = &#34;Dodsworth&#34;, FirstName = &#34;Anne&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; } }; } } public IActionResult Index() { return View(employees); } } View 在視圖渲染資料，且添加 Export 按鈕...</p>
-  </section>
-  <footer class="entry-footer">May 8, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET】使用 ClosedXML 實現匯出 Excel 功能" href="https://fakestandard.github.io/post/dotnet/dotnet-5-closedxmlsimple/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

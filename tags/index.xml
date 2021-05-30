@@ -6,11 +6,11 @@
     <description>Recent content in Tags on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 26 May 2021 09:27:51 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 29 May 2021 13:55:36 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Algorithm</title>
       <link>https://fakestandard.github.io/tags/algorithm/</link>
-      <pubDate>Wed, 26 May 2021 09:27:51 +0800</pubDate>
+      <pubDate>Sat, 29 May 2021 13:55:36 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/algorithm/</guid>
       <description></description>
@@ -19,7 +19,7 @@
     <item>
       <title>CSharp</title>
       <link>https://fakestandard.github.io/tags/csharp/</link>
-      <pubDate>Wed, 26 May 2021 09:27:51 +0800</pubDate>
+      <pubDate>Sat, 29 May 2021 13:55:36 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/csharp/</guid>
       <description></description>
@@ -28,9 +28,18 @@
     <item>
       <title>Data Structure</title>
       <link>https://fakestandard.github.io/tags/data-structure/</link>
-      <pubDate>Wed, 26 May 2021 09:27:51 +0800</pubDate>
+      <pubDate>Sat, 29 May 2021 13:55:36 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/data-structure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hash Table</title>
+      <link>https://fakestandard.github.io/tags/hash-table/</link>
+      <pubDate>Sat, 29 May 2021 13:55:36 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/hash-table/</guid>
       <description></description>
     </item>
     
@@ -481,6 +490,15 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://fakestandard.github.io/tags/search-algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stream</title>
+      <link>https://fakestandard.github.io/tags/stream/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/stream/</guid>
       <description></description>
     </item>
     
