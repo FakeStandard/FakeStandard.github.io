@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>【.NET Core】中介軟體 Middleware | How can I help</title>
+<meta name="keywords" content="DotNET Core, ASP.NET Core 5, CSharp, Middleware" />
+<meta name="description" content="【ASP.NET Core 5】
+ASP.NET Core 引入一個新概念稱為中介軟體（Middleware），Middleware 會在 ASP.NET Core 應用程式中的每個請求上執行。
+過去 ASP.NET 中 HttpHandlers 和 HttpModules 在 ASP.NET Core 已不復存在，更準確地說，它們已成為 Request Pipeline 的一部分，Middleware 類似於 HttpHandlers、HttpModules，都需要在每個請求中進行配置及執行。
+Start Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以選擇是否將請求傳遞到管線中的下一個組件，也可以在下一個組件中的前後執行工作。
+通常 ASP.NET Core Web 應用程式中有許多 Middleware，它可以是 Framework provided 的中介軟體，也可以通過 NuGet 添加，甚至可以自行定義 Middleware。我們可以在請求管道中設置中介軟體的執行順序，每個中介軟體都會新增或修改 Http 請求，且可選擇將控制權傳遞給下一個中介軟體。
+請求委派用於建構請求管道，請求委派會處理每個 Http 請求。該句的原文是這樣
+ Request delegates are used to build the request pipeline. The request delegates handle each HTTP request.
+ Request delegates 使用 Run、Map 和 Use 三種擴充方法來配置。單個請求委派可以指定嵌入式（in-line）匿名方法，稱為嵌入式中介軟體，也可以在重複使用的類別中進行定義。這些可重用的類別和嵌入式匿名方法就是 middleware ，也稱之為 middleware components。在請求管道中的每個中介軟體元件負責調用 Pipeline 中的下一個元件，或對管線執行最少運算，當中介軟體短路時（short-circult），會阻止接下來的中介軟體處理請求，稱之為終端中介軟體 terminal middleware。">
+<meta name="author" content="Polar Bear">
+<link rel="canonical" href="https://fakestandard.github.io/netcore/netcore5-3-middleware/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.d1b405b7c6bf1b09aebca33eb6e2d8bd070113d119bdfa2715c32f6408f9fbee.css" integrity="sha256-0bQFt8a/GwmuvKM&#43;tuLYvQcBE9EZvfonFcMvZAj5&#43;&#43;4=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://fakestandard.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://fakestandard.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://fakestandard.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://fakestandard.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.81.0" />
+<meta property="og:title" content="【.NET Core】中介軟體 Middleware" />
+<meta property="og:description" content="【ASP.NET Core 5】
+ASP.NET Core 引入一個新概念稱為中介軟體（Middleware），Middleware 會在 ASP.NET Core 應用程式中的每個請求上執行。
+過去 ASP.NET 中 HttpHandlers 和 HttpModules 在 ASP.NET Core 已不復存在，更準確地說，它們已成為 Request Pipeline 的一部分，Middleware 類似於 HttpHandlers、HttpModules，都需要在每個請求中進行配置及執行。
+Start Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以選擇是否將請求傳遞到管線中的下一個組件，也可以在下一個組件中的前後執行工作。
+通常 ASP.NET Core Web 應用程式中有許多 Middleware，它可以是 Framework provided 的中介軟體，也可以通過 NuGet 添加，甚至可以自行定義 Middleware。我們可以在請求管道中設置中介軟體的執行順序，每個中介軟體都會新增或修改 Http 請求，且可選擇將控制權傳遞給下一個中介軟體。
+請求委派用於建構請求管道，請求委派會處理每個 Http 請求。該句的原文是這樣
+ Request delegates are used to build the request pipeline. The request delegates handle each HTTP request.
+ Request delegates 使用 Run、Map 和 Use 三種擴充方法來配置。單個請求委派可以指定嵌入式（in-line）匿名方法，稱為嵌入式中介軟體，也可以在重複使用的類別中進行定義。這些可重用的類別和嵌入式匿名方法就是 middleware ，也稱之為 middleware components。在請求管道中的每個中介軟體元件負責調用 Pipeline 中的下一個元件，或對管線執行最少運算，當中介軟體短路時（short-circult），會阻止接下來的中介軟體處理請求，稱之為終端中介軟體 terminal middleware。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fakestandard.github.io/netcore/netcore5-3-middleware/" /><meta property="article:section" content="NETCore" />
+<meta property="article:published_time" content="2021-05-31T14:52:16&#43;08:00" />
+<meta property="article:modified_time" content="2021-05-31T14:52:16&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="【.NET Core】中介軟體 Middleware"/>
+<meta name="twitter:description" content="【ASP.NET Core 5】
+ASP.NET Core 引入一個新概念稱為中介軟體（Middleware），Middleware 會在 ASP.NET Core 應用程式中的每個請求上執行。
+過去 ASP.NET 中 HttpHandlers 和 HttpModules 在 ASP.NET Core 已不復存在，更準確地說，它們已成為 Request Pipeline 的一部分，Middleware 類似於 HttpHandlers、HttpModules，都需要在每個請求中進行配置及執行。
+Start Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以選擇是否將請求傳遞到管線中的下一個組件，也可以在下一個組件中的前後執行工作。
+通常 ASP.NET Core Web 應用程式中有許多 Middleware，它可以是 Framework provided 的中介軟體，也可以通過 NuGet 添加，甚至可以自行定義 Middleware。我們可以在請求管道中設置中介軟體的執行順序，每個中介軟體都會新增或修改 Http 請求，且可選擇將控制權傳遞給下一個中介軟體。
+請求委派用於建構請求管道，請求委派會處理每個 Http 請求。該句的原文是這樣
+ Request delegates are used to build the request pipeline. The request delegates handle each HTTP request.
+ Request delegates 使用 Run、Map 和 Use 三種擴充方法來配置。單個請求委派可以指定嵌入式（in-line）匿名方法，稱為嵌入式中介軟體，也可以在重複使用的類別中進行定義。這些可重用的類別和嵌入式匿名方法就是 middleware ，也稱之為 middleware components。在請求管道中的每個中介軟體元件負責調用 Pipeline 中的下一個元件，或對管線執行最少運算，當中介軟體短路時（short-circult），會阻止接下來的中介軟體處理請求，稱之為終端中介軟體 terminal middleware。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "NETCores",
+      "item": "https://fakestandard.github.io/netcore/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "【.NET Core】中介軟體 Middleware",
+      "item": "https://fakestandard.github.io/netcore/netcore5-3-middleware/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "【.NET Core】中介軟體 Middleware",
+  "name": "【.NET Core】中介軟體 Middleware",
+  "description": "【ASP.NET Core 5】\nASP.NET Core 引入一個新概念稱為中介軟體（Middleware），Middleware 會在 ASP.NET Core 應用程式中的每個請求上執行。\n過去 ASP.NET 中 HttpHandlers 和 HttpModules 在 ASP.NET Core 已不復存在，更準確地說，它們已成為 Request Pipeline 的一部分，Middleware 類似於 HttpHandlers、HttpModules，都需要在每個請求中進行配置及執行。\nStart Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以選擇是否將請求傳遞到管線中的下一個組件，也可以在下一個組件中的前後執行工作。\n通常 ASP.NET Core Web 應用程式中有許多 Middleware，它可以是 Framework provided 的中介軟體，也可以通過 NuGet 添加，甚至可以自行定義 Middleware。我們可以在請求管道中設置中介軟體的執行順序，每個中介軟體都會新增或修改 Http 請求，且可選擇將控制權傳遞給下一個中介軟體。\n請求委派用於建構請求管道，請求委派會處理每個 Http 請求。該句的原文是這樣\n Request delegates are used to build the request pipeline. The request delegates handle each HTTP request.\n Request delegates 使用 Run、Map 和 Use 三種擴充方法來配置。單個請求委派可以指定嵌入式（in-line）匿名方法，稱為嵌入式中介軟體，也可以在重複使用的類別中進行定義。這些可重用的類別和嵌入式匿名方法就是 middleware ，也稱之為 middleware components。在請求管道中的每個中介軟體元件負責調用 Pipeline 中的下一個元件，或對管線執行最少運算，當中介軟體短路時（short-circult），會阻止接下來的中介軟體處理請求，稱之為終端中介軟體 terminal middleware。",
+  "keywords": [
+    "DotNET Core", "ASP.NET Core 5", "CSharp", "Middleware"
+  ],
+  "articleBody": "【ASP.NET Core 5】\nASP.NET Core 引入一個新概念稱為中介軟體（Middleware），Middleware 會在 ASP.NET Core 應用程式中的每個請求上執行。\n過去 ASP.NET 中 HttpHandlers 和 HttpModules 在 ASP.NET Core 已不復存在，更準確地說，它們已成為 Request Pipeline 的一部分，Middleware 類似於 HttpHandlers、HttpModules，都需要在每個請求中進行配置及執行。\nStart Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以選擇是否將請求傳遞到管線中的下一個組件，也可以在下一個組件中的前後執行工作。\n通常 ASP.NET Core Web 應用程式中有許多 Middleware，它可以是 Framework provided 的中介軟體，也可以通過 NuGet 添加，甚至可以自行定義 Middleware。我們可以在請求管道中設置中介軟體的執行順序，每個中介軟體都會新增或修改 Http 請求，且可選擇將控制權傳遞給下一個中介軟體。\n請求委派用於建構請求管道，請求委派會處理每個 Http 請求。該句的原文是這樣\n Request delegates are used to build the request pipeline. The request delegates handle each HTTP request.\n Request delegates 使用 Run、Map 和 Use 三種擴充方法來配置。單個請求委派可以指定嵌入式（in-line）匿名方法，稱為嵌入式中介軟體，也可以在重複使用的類別中進行定義。這些可重用的類別和嵌入式匿名方法就是 middleware ，也稱之為 middleware components。在請求管道中的每個中介軟體元件負責調用 Pipeline 中的下一個元件，或對管線執行最少運算，當中介軟體短路時（short-circult），會阻止接下來的中介軟體處理請求，稱之為終端中介軟體 terminal middleware。\n最簡單的 ASP.NET Core 應用程式可以設置一個處理所有請求的請求委派，該情況不包括實際的請求管道，取而代之的是，系統會調用單一匿名函數來回應每個 HTTP 請求。\napp.Run() 在 Startup 的 Configure 註冊 Middleware，將 app.Run() 註冊在最前面即第一個。\npublic void Configure(IApplicationBuilder app, IWebHostEnvironment env) { app.Run(async context = { await context.Response.WriteAsync(\"First. Hello World\"); }); // ... } 設立中斷點，啟動應用程式，可以發現 Run 是最後一個執行，在 Run 後註冊的中介軟體都未執行，也就是說一般情況下 Run 必須註冊於最後，要使用的 Middleware 必須在 Run 之前註冊完成。\n再添加一個 Run 委派，等於目前註冊了兩個中介軟體，像這樣\npublic void Configure(IApplicationBuilder app, IWebHostEnvironment env) { app.Run(async context = { await context.Response.WriteAsync(\"First. Hello World\"); }); app.Run(async context = { await context.Response.WriteAsync(\"Second. Hello World\"); }); } 啟動應用程式觀察結果，當第一個 Run 委派輸出 First. Hello World 回應，就會終止 Pipeline，第二個 Run 委派則不會被呼叫。\napp.Use() 使用 Use 擴充方法來註冊 Middleware，也可以使用 Use 方法將多個請求委派鏈結再一起，next 代表 Pipeline 中的下個委派。通常可以在下一個委派前或後執行動作，你也可以不呼叫 next 參數來使 Pipeline 執行最少運算（short-circult）\n重新註冊 Middleware 如下\npublic void Configure(IApplicationBuilder app, IWebHostEnvironment env) { app.Use(async (context, next) = { await context.Response.WriteAsync(\"First Middleware.\\n\"); await next.Invoke(); }); app.Use(async (context, next) = { await context.Response.WriteAsync(\"Second Middleware.\\n\"); await next.Invoke(); }); app.Run(async context = { await context.Response.WriteAsync(\"Done. Hello World\\n\"); }); } 觀察執行輸出如下\nFirst Middleware. Second Middleware. Done. Hello World 試試在使用 next.Invoke 之後繼續處理程式碼\npublic void Configure(IApplicationBuilder app, IWebHostEnvironment env) { app.Use(async (context, next) = { await context.Response.WriteAsync(\"First Middleware.\\n\"); await next.Invoke(); await context.Response.WriteAsync(\"First Middleware After Invoke.\\n\"); }); app.Use(async (context, next) = { await context.Response.WriteAsync(\"Second Middleware.\\n\"); await next.Invoke(); await context.Response.WriteAsync(\"Second Middleware After Invoke.\\n\"); }); app.Run(async context = { await context.Response.WriteAsync(\"Done. Hello World\\n\"); }); } 觀察輸出結果\nFirst Middleware. Second Middleware. Done. Hello World Second Middleware After Invoke. First Middleware After Invoke. 在 Pipeline 概念中資料的順序是先進後出（First In Last Out），所以 Middleware 註冊的順序非常重要。\nMiddleware 也可以作為攔截使用，將第二個 Use 變更如下\napp.Use(async (context, next) = { await context.Response.WriteAsync(\"Second Middleware.\\n\"); if (false) await next.Invoke(); await context.Response.WriteAsync(\"Second Middleware After Invoke.\\n\"); }); 觀察輸出結果，發現在第二個 Use 中封裝未能往後面的 Pipeline 傳送。\nFirst Middleware. Second Middleware. Second Middleware After Invoke. First Middleware After Invoke. app.Map() Map 擴展方法用於約定分支管道，上述我們直接定義固定的管道，在應用程式作中時，都必須遵循此 Pipeline，而 Map 可以根據請求路徑來分配要作用的 Pipeline，當匹配成功分支會被執行。\n簡單來說，根據不同 URL 指向不同 Pipeline。\n在 Configure 方法內使用 Map，也可以建立靜態方法 HandleMapTest，方法內使用 Map\nprivate static void HandleMapTest(IApplicationBuilder app) { app.Run(async context = { await context.Response.WriteAsync(\"Map Test Done.\"); }); } public void Configure(IApplicationBuilder app, IWebHostEnvironment env) { app.Use(async (context, next) = { await context.Response.WriteAsync(\"First Middleware.\\n\"); await next.Invoke(); await context.Response.WriteAsync(\"First Middleware After Invoke.\\n\"); }); app.Map(\"/map\", HandleMapTest); app.Use(async (context, next) = { await context.Response.WriteAsync(\"Second Middleware.\\n\"); await next.Invoke(); await context.Response.WriteAsync(\"Second Middleware After Invoke.\\n\"); }); app.Map(\"/middleware\", map = { map.Use(async (context, next) = { await context.Response.WriteAsync(\"Third Middleware.\\n\"); await next.Invoke(); await context.Response.WriteAsync(\"Third Middleware After Invoke.\\n\"); }); map.Run(async context = { await context.Response.WriteAsync(\"Done Third.\"); }); }); app.Run(async context = { await context.Response.WriteAsync(\"Done. Hello World\\n\"); }); } 運行應用程式觀察輸出結果，當前路徑 https://localhost:44323/\nFirst Middleware. Second Middleware. Done. Hello World Second Middleware After Invoke. First Middleware After Invoke. 路徑指向 https://localhost:44323/map 輸出結果\nFirst Middleware. Map Test Done. First Middleware After Invoke. 路徑指向 https://localhost:44323/middleware 輸出結果\nFirst Middleware. Second Middleware. Third Middleware. Done Third. Third Middleware After Invoke. Second Middleware After Invoke. First Middleware After Invoke. Middleware Components 一般應用程式會新增的中介軟體元件有\n 例外狀況/錯誤處理（Exception/error handling）  當應用程式運行於開發環境（Development） 當應用程式運行於生產環境（Production）   HTTPS 重新導向（HTTPS Redirection Middleware）\n將 HTTP 請求重新導向到 HTTPS UseHttpsRedirection 靜態檔案（Static File Middleware）\n傳回靜態檔案並縮短進一步請求處理的時間\nUseStaticFiles Cookie 原則（Cookie Policy Middleware）\n符合歐盟 General Data Protection Regulation (GDPR) 規定\nUseCookiePolicy 路由（Routing Middleware）\n傳送路由請求\nUseRouting 驗證（Authentication Middleware）\n使用者存取資源前先進行安全性驗證\nUseAuthentication 授權（Authorization Middleware）\n授權使用者存取資源的安全性\nUseAuthorization Session（Session Middleware）\n建立並維護 Session 狀態，需在 Cookie Policy Middleware 和 MVC Middleware 之前呼叫 Session Middleware\nUseSession 端點路由（Endpoint Routing Middleware）\n將頁面端點新增至請求管線\nUseEndpoints  Note 請求管道 Request delegates 配置的擴充方法\n Run Use Map  對於安全性、效能或功能各方面而言，註冊中介軟體的順序很重要，\nReference ASP.NET Core Middleware\nASP.NET Core - Middleware\n",
+  "wordCount" : "588",
+  "inLanguage": "en",
+  "datePublished": "2021-05-31T14:52:16+08:00",
+  "dateModified": "2021-05-31T14:52:16+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Polar Bear"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://fakestandard.github.io/netcore/netcore5-3-middleware/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "How can I help",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://fakestandard.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://fakestandard.github.io/" accesskey="h" title="How can I help (Alt + H)">How can I help</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/algorithm/" title="Algorithm">
+                    <span>Algorithm</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/netcore/" title=".NET Core">
+                    <span>.NET Core</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/netcore/">NETCores</a></div>
+    <h1 class="post-title">
+      【.NET Core】中介軟體 Middleware
+    </h1>
+    <div class="post-meta">May 31, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear
+</div>
+  </header> 
+  <div class="post-content"><p>【ASP.NET Core 5】</p>
+<p>ASP.NET Core 引入一個新概念稱為中介軟體（Middleware），Middleware 會在 ASP.NET Core 應用程式中的每個請求上執行。</p>
+<p>過去 ASP.NET 中 <code>HttpHandlers</code> 和 <code>HttpModules</code> 在 ASP.NET Core 已不復存在，更準確地說，它們已成為 Request Pipeline 的一部分，Middleware 類似於 <code>HttpHandlers</code>、<code>HttpModules</code>，都需要在每個請求中進行配置及執行。</p>
+<h1 id="start">Start<a hidden class="anchor" aria-hidden="true" href="#start">#</a></h1>
+<p>Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以選擇是否將請求傳遞到管線中的下一個組件，也可以在下一個組件中的前後執行工作。</p>
+<p>通常 ASP.NET Core Web 應用程式中有許多 Middleware，它可以是 Framework provided 的中介軟體，也可以通過 NuGet 添加，甚至可以自行定義 Middleware。我們可以在請求管道中設置中介軟體的執行順序，每個中介軟體都會新增或修改 Http 請求，且可選擇將控制權傳遞給下一個中介軟體。</p>
+<p><img loading="lazy" src="../../images/NetCore/NetCore003.png" alt="取自微軟官網"  title="取自微軟官網"  />
+</p>
+<p>請求委派用於建構請求管道，請求委派會處理每個 Http 請求。該句的原文是這樣</p>
+<blockquote>
+<p>Request delegates are used to build the request pipeline. The request delegates handle each HTTP request.</p>
+</blockquote>
+<p>Request delegates 使用 <code>Run</code>、<code>Map</code> 和 <code>Use</code> 三種擴充方法來配置。單個請求委派可以指定嵌入式（in-line）匿名方法，稱為嵌入式中介軟體，也可以在重複使用的類別中進行定義。這些可重用的類別和嵌入式匿名方法就是 <em><code>middleware</code></em> ，也稱之為 <em><code>middleware components</code></em>。在請求管道中的每個中介軟體元件負責調用 Pipeline 中的下一個元件，或對管線執行最少運算，當中介軟體短路時（short-circult），會阻止接下來的中介軟體處理請求，稱之為終端中介軟體 <em><code>terminal middleware</code></em>。</p>
+<p>最簡單的 ASP.NET Core 應用程式可以設置一個處理所有請求的請求委派，該情況不包括實際的請求管道，取而代之的是，系統會調用單一匿名函數來回應每個 HTTP 請求。</p>
+<h2 id="apprun">app.Run()<a hidden class="anchor" aria-hidden="true" href="#apprun">#</a></h2>
+<p>在 <code>Startup</code> 的 <code>Configure</code> 註冊 Middleware，將 <code>app.Run()</code> 註冊在最前面即第一個。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    app.Run(<span style="color:#66d9ef">async</span> context =&gt;
+    {
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;First. Hello World&#34;</span>);
+    });
+
+    <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>設立中斷點，啟動應用程式，可以發現 <code>Run</code> 是最後一個執行，在 <code>Run</code> 後註冊的中介軟體都未執行，也就是說一般情況下 <code>Run</code> 必須註冊於最後，要使用的 Middleware 必須在 <code>Run</code> 之前註冊完成。</p>
+<p>再添加一個 <code>Run</code> 委派，等於目前註冊了兩個中介軟體，像這樣</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    app.Run(<span style="color:#66d9ef">async</span> context =&gt;
+    {
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;First. Hello World&#34;</span>);
+    });
+
+    app.Run(<span style="color:#66d9ef">async</span> context =&gt;
+    {
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;Second. Hello World&#34;</span>);
+    });
+}
+</code></pre></div><p>啟動應用程式觀察結果，當第一個 <code>Run</code> 委派輸出 <code>First. Hello World</code> 回應，就會終止 Pipeline，第二個 <code>Run</code> 委派則不會被呼叫。</p>
+<h2 id="appuse">app.Use()<a hidden class="anchor" aria-hidden="true" href="#appuse">#</a></h2>
+<p>使用 <code>Use</code> 擴充方法來註冊 Middleware，也可以使用 <code>Use</code> 方法將多個請求委派鏈結再一起，<code>next</code> 代表 Pipeline 中的下個委派。通常可以在下一個委派前或後執行動作，你也可以不呼叫 <code>next</code> 參數來使 Pipeline 執行最少運算（short-circult）</p>
+<p>重新註冊 Middleware 如下</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    app.Use(<span style="color:#66d9ef">async</span> (context, next) =&gt;
+    {
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;First Middleware.\n&#34;</span>);
+
+        <span style="color:#66d9ef">await</span> next.Invoke();
+    });
+
+    app.Use(<span style="color:#66d9ef">async</span> (context, next) =&gt;
+    {
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;Second Middleware.\n&#34;</span>);
+
+        <span style="color:#66d9ef">await</span> next.Invoke();
+    });
+
+    app.Run(<span style="color:#66d9ef">async</span> context =&gt;
+    {
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;Done. Hello World\n&#34;</span>);
+    });
+}
+</code></pre></div><p>觀察執行輸出如下</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
+Second Middleware.
+Done. Hello World
+</code></pre></div><p>試試在使用 <code>next.Invoke</code> 之後繼續處理程式碼</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    app.Use(<span style="color:#66d9ef">async</span> (context, next) =&gt;
+    {
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;First Middleware.\n&#34;</span>);
+
+        <span style="color:#66d9ef">await</span> next.Invoke();
+
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;First Middleware After Invoke.\n&#34;</span>);
+    });
+
+    app.Use(<span style="color:#66d9ef">async</span> (context, next) =&gt;
+    {
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;Second Middleware.\n&#34;</span>);
+
+        <span style="color:#66d9ef">await</span> next.Invoke();
+
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;Second Middleware After Invoke.\n&#34;</span>);
+    });
+
+    app.Run(<span style="color:#66d9ef">async</span> context =&gt;
+    {
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;Done. Hello World\n&#34;</span>);
+    });
+}
+</code></pre></div><p>觀察輸出結果</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
+Second Middleware.
+Done. Hello World
+Second Middleware After Invoke.
+First Middleware After Invoke.
+</code></pre></div><p>在 Pipeline 概念中資料的順序是先進後出（First In Last Out），所以 Middleware 註冊的順序非常重要。</p>
+<p>Middleware 也可以作為攔截使用，將第二個 <code>Use</code> 變更如下</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">app.Use(<span style="color:#66d9ef">async</span> (context, next) =&gt;
+{
+    <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;Second Middleware.\n&#34;</span>);
+
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">false</span>)
+        <span style="color:#66d9ef">await</span> next.Invoke();
+
+    <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;Second Middleware After Invoke.\n&#34;</span>);
+});
+</code></pre></div><p>觀察輸出結果，發現在第二個 <code>Use</code> 中封裝未能往後面的 Pipeline 傳送。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
+Second Middleware.
+Second Middleware After Invoke.
+First Middleware After Invoke.
+</code></pre></div><h2 id="appmap">app.Map()<a hidden class="anchor" aria-hidden="true" href="#appmap">#</a></h2>
+<p><code>Map</code> 擴展方法用於約定分支管道，上述我們直接定義固定的管道，在應用程式作中時，都必須遵循此 Pipeline，而 <code>Map</code> 可以根據請求路徑來分配要作用的 Pipeline，當匹配成功分支會被執行。</p>
+<p>簡單來說，根據不同 URL 指向不同 Pipeline。</p>
+<p>在 <code>Configure</code> 方法內使用 <code>Map</code>，也可以建立靜態方法 <code>HandleMapTest</code>，方法內使用 <code>Map</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> HandleMapTest(IApplicationBuilder app)
+{
+    app.Run(<span style="color:#66d9ef">async</span> context =&gt;
+    {
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;Map Test Done.&#34;</span>);
+    });
+}
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    app.Use(<span style="color:#66d9ef">async</span> (context, next) =&gt;
+    {
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;First Middleware.\n&#34;</span>);
+
+        <span style="color:#66d9ef">await</span> next.Invoke();
+
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;First Middleware After Invoke.\n&#34;</span>);
+    });
+
+    app.Map(<span style="color:#e6db74">&#34;/map&#34;</span>, HandleMapTest);
+
+    app.Use(<span style="color:#66d9ef">async</span> (context, next) =&gt;
+    {
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;Second Middleware.\n&#34;</span>);
+
+        <span style="color:#66d9ef">await</span> next.Invoke();
+
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;Second Middleware After Invoke.\n&#34;</span>);
+    });
+
+    app.Map(<span style="color:#e6db74">&#34;/middleware&#34;</span>, map =&gt;
+    {
+        map.Use(<span style="color:#66d9ef">async</span> (context, next) =&gt;
+        {
+            <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;Third Middleware.\n&#34;</span>);
+
+            <span style="color:#66d9ef">await</span> next.Invoke();
+
+            <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;Third Middleware After Invoke.\n&#34;</span>);
+        });
+
+        map.Run(<span style="color:#66d9ef">async</span> context =&gt;
+        {
+            <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;Done Third.&#34;</span>);
+        });
+    });
+
+    app.Run(<span style="color:#66d9ef">async</span> context =&gt;
+    {
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;Done. Hello World\n&#34;</span>);
+    });
+}
+</code></pre></div><p>運行應用程式觀察輸出結果，當前路徑 <code>https://localhost:44323/</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
+Second Middleware.
+Done. Hello World
+Second Middleware After Invoke.
+First Middleware After Invoke.
+</code></pre></div><p>路徑指向 <code>https://localhost:44323/map</code> 輸出結果</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
+Map Test Done.
+First Middleware After Invoke.
+</code></pre></div><p>路徑指向 <code>https://localhost:44323/middleware</code> 輸出結果</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
+Second Middleware.
+Third Middleware.
+Done Third.
+Third Middleware After Invoke.
+Second Middleware After Invoke.
+First Middleware After Invoke.
+</code></pre></div><h2 id="middleware-components">Middleware Components<a hidden class="anchor" aria-hidden="true" href="#middleware-components">#</a></h2>
+<p>一般應用程式會新增的中介軟體元件有</p>
+<ul>
+<li>例外狀況/錯誤處理（<strong>Exception/error handling</strong>）
+<ul>
+<li>當應用程式運行於開發環境（Development）</li>
+<li>當應用程式運行於生產環境（Production）</li>
+</ul>
+</li>
+<li>HTTPS 重新導向（<strong>HTTPS Redirection Middleware</strong>）<br>
+將 HTTP 請求重新導向到 HTTPS
+<code>UseHttpsRedirection</code></li>
+<li>靜態檔案（<strong>Static File Middleware</strong>）<br>
+傳回靜態檔案並縮短進一步請求處理的時間<br>
+<code>UseStaticFiles</code></li>
+<li>Cookie 原則（<strong>Cookie Policy Middleware</strong>）<br>
+符合歐盟 General Data Protection Regulation (GDPR) 規定<br>
+<code>UseCookiePolicy</code></li>
+<li>路由（<strong>Routing Middleware</strong>）<br>
+傳送路由請求<br>
+<code>UseRouting</code></li>
+<li>驗證（<strong>Authentication Middleware</strong>）<br>
+使用者存取資源前先進行安全性驗證<br>
+<code>UseAuthentication</code></li>
+<li>授權（<strong>Authorization Middleware</strong>）<br>
+授權使用者存取資源的安全性<br>
+<code>UseAuthorization</code></li>
+<li>Session（<strong>Session Middleware</strong>）<br>
+建立並維護 Session 狀態，需在 Cookie Policy Middleware 和 MVC Middleware 之前呼叫 <code>Session Middleware</code><br>
+<code>UseSession</code></li>
+<li>端點路由（<strong>Endpoint Routing Middleware</strong>）<br>
+將頁面端點新增至請求管線<br>
+<code>UseEndpoints</code></li>
+</ul>
+<h1 id="note">Note<a hidden class="anchor" aria-hidden="true" href="#note">#</a></h1>
+<p>請求管道 Request delegates 配置的擴充方法</p>
+<ul>
+<li>Run</li>
+<li>Use</li>
+<li>Map</li>
+</ul>
+<p>對於安全性、效能或功能各方面而言，註冊中介軟體的<strong>順序</strong>很重要，</p>
+<h1 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h1>
+<p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/fundamentals/middleware/?view=aspnetcore-5.0">ASP.NET Core Middleware</a></p>
+<p><a href="https://www.tutorialsteacher.com/core/aspnet-core-middleware">ASP.NET Core - Middleware</a></p>
+
+</div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://fakestandard.github.io/tags/dotnet-core/">DotNET Core</a></li>
+      <li><a href="https://fakestandard.github.io/tags/asp.net-core-5/">ASP.NET Core 5</a></li>
+      <li><a href="https://fakestandard.github.io/tags/csharp/">CSharp</a></li>
+      <li><a href="https://fakestandard.github.io/tags/middleware/">Middleware</a></li>
+    </ul>
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【.NET Core】中介軟體 Middleware on twitter"
+        href="https://twitter.com/intent/tweet/?text=%e3%80%90.NET%20Core%e3%80%91%e4%b8%ad%e4%bb%8b%e8%bb%9f%e9%ab%94%20Middleware&amp;url=https%3a%2f%2ffakestandard.github.io%2fnetcore%2fnetcore5-3-middleware%2f&amp;hashtags=DotNETCore%2cASP.NETCore5%2cCSharp%2cMiddleware">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【.NET Core】中介軟體 Middleware on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ffakestandard.github.io%2fnetcore%2fnetcore5-3-middleware%2f&amp;title=%e3%80%90.NET%20Core%e3%80%91%e4%b8%ad%e4%bb%8b%e8%bb%9f%e9%ab%94%20Middleware&amp;summary=%e3%80%90.NET%20Core%e3%80%91%e4%b8%ad%e4%bb%8b%e8%bb%9f%e9%ab%94%20Middleware&amp;source=https%3a%2f%2ffakestandard.github.io%2fnetcore%2fnetcore5-3-middleware%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【.NET Core】中介軟體 Middleware on reddit"
+        href="https://reddit.com/submit?url=https%3a%2f%2ffakestandard.github.io%2fnetcore%2fnetcore5-3-middleware%2f&title=%e3%80%90.NET%20Core%e3%80%91%e4%b8%ad%e4%bb%8b%e8%bb%9f%e9%ab%94%20Middleware">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【.NET Core】中介軟體 Middleware on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2ffakestandard.github.io%2fnetcore%2fnetcore5-3-middleware%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【.NET Core】中介軟體 Middleware on whatsapp"
+        href="https://api.whatsapp.com/send?text=%e3%80%90.NET%20Core%e3%80%91%e4%b8%ad%e4%bb%8b%e8%bb%9f%e9%ab%94%20Middleware%20-%20https%3a%2f%2ffakestandard.github.io%2fnetcore%2fnetcore5-3-middleware%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【.NET Core】中介軟體 Middleware on telegram"
+        href="https://telegram.me/share/url?text=%e3%80%90.NET%20Core%e3%80%91%e4%b8%ad%e4%bb%8b%e8%bb%9f%e9%ab%94%20Middleware&amp;url=https%3a%2f%2ffakestandard.github.io%2fnetcore%2fnetcore5-3-middleware%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+</div>
+
+  </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://fakestandard.github.io/">How can I help</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

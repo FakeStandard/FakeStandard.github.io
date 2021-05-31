@@ -6,7 +6,23 @@
     <description>Recent content in ASP.NET Core 5 on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 20 May 2021 15:41:33 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/asp.net-core-5/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 May 2021 14:52:16 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/asp.net-core-5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【.NET Core】中介軟體 Middleware</title>
+      <link>https://fakestandard.github.io/netcore/netcore5-3-middleware/</link>
+      <pubDate>Mon, 31 May 2021 14:52:16 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/netcore/netcore5-3-middleware/</guid>
+      <description>【ASP.NET Core 5】
+ASP.NET Core 引入一個新概念稱為中介軟體（Middleware），Middleware 會在 ASP.NET Core 應用程式中的每個請求上執行。
+過去 ASP.NET 中 HttpHandlers 和 HttpModules 在 ASP.NET Core 已不復存在，更準確地說，它們已成為 Request Pipeline 的一部分，Middleware 類似於 HttpHandlers、HttpModules，都需要在每個請求中進行配置及執行。
+Start Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以選擇是否將請求傳遞到管線中的下一個組件，也可以在下一個組件中的前後執行工作。
+通常 ASP.NET Core Web 應用程式中有許多 Middleware，它可以是 Framework provided 的中介軟體，也可以通過 NuGet 添加，甚至可以自行定義 Middleware。我們可以在請求管道中設置中介軟體的執行順序，每個中介軟體都會新增或修改 Http 請求，且可選擇將控制權傳遞給下一個中介軟體。
+請求委派用於建構請求管道，請求委派會處理每個 Http 請求。該句的原文是這樣
+ Request delegates are used to build the request pipeline. The request delegates handle each HTTP request.
+ Request delegates 使用 Run、Map 和 Use 三種擴充方法來配置。單個請求委派可以指定嵌入式（in-line）匿名方法，稱為嵌入式中介軟體，也可以在重複使用的類別中進行定義。這些可重用的類別和嵌入式匿名方法就是 middleware ，也稱之為 middleware components。在請求管道中的每個中介軟體元件負責調用 Pipeline 中的下一個元件，或對管線執行最少運算，當中介軟體短路時（short-circult），會阻止接下來的中介軟體處理請求，稱之為終端中介軟體 terminal middleware。</description>
+    </item>
+    
     <item>
       <title>【.NET Core】相依性注入 Dependency Injection</title>
       <link>https://fakestandard.github.io/netcore/netcore5-2-dependencyinjection/</link>

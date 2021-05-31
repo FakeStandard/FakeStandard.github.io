@@ -6,7 +6,38 @@
     <description>Recent content in CSharp on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 29 May 2021 13:55:36 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 May 2021 21:08:57 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【OOP】物件導向基礎概念（Object Oriented Programming）</title>
+      <link>https://fakestandard.github.io/post/oop/oop-1-object-oriented-programming/</link>
+      <pubDate>Mon, 31 May 2021 21:08:57 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/oop/oop-1-object-oriented-programming/</guid>
+      <description>Start 物件導向（Object-Oriented Programming），意為針對物件進行程式設計。而學習設計模式前必須先了解物件導向設計，不然難以體會設計模式的魅力。
+接下來我們會知道
+ 類別（Class） 物件（Object） 實體（Instance） 建構式（Constructor） 多載（Overloading） 欄位（Field） 屬性（Property） 修飾詞（Modifiers）  類別（Class） 類別是具有相同「屬性（Attribute）」和 「功能（Method）」的物件之抽象集合。在 C# 中定義類別的關鍵字為 class，類別命名規則為第一個字母為大寫，多個單字命名時各個首字母為大寫。
+// 建立 Swordman 類別 class Swordman { // 建立公開的攻擊方法使外部可以呼叫，修飾詞用 public  public string Attack() { return &amp;#34;基本攻擊！&amp;#34;; } } 物件（Object） 物件是一個獨立的實體，實體裡包含許多資料，資料彼此之間不會互相影響，每個皆為獨立的資料。物件與類別的關係，最簡單易懂又不抽象的解釋為—物件是類別的實體。
+// 宣告一個Swordman 物件，物件名為 swordman Swordman swordman; // 先前建立的 Swordman 類別 class Swordman { ... }  在程式碼的世界裡，萬物皆為物件。
+ 實體（Instance） 實體就是一個真實的物件。實體化是建立物件的過程，使用 new 關鍵字建立。
+// 實體化 swordman 物件 swordman = new Swordman(); 綜合上述介紹的類別、物件和實體，實際演練一次程式碼並觀察結果。 在 Swordman 有一個公開的 Attack 方法，當物件被實體化後，未來就能一直呼叫該方法</description>
+    </item>
+    
+    <item>
+      <title>【.NET Core】中介軟體 Middleware</title>
+      <link>https://fakestandard.github.io/netcore/netcore5-3-middleware/</link>
+      <pubDate>Mon, 31 May 2021 14:52:16 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/netcore/netcore5-3-middleware/</guid>
+      <description>【ASP.NET Core 5】
+ASP.NET Core 引入一個新概念稱為中介軟體（Middleware），Middleware 會在 ASP.NET Core 應用程式中的每個請求上執行。
+過去 ASP.NET 中 HttpHandlers 和 HttpModules 在 ASP.NET Core 已不復存在，更準確地說，它們已成為 Request Pipeline 的一部分，Middleware 類似於 HttpHandlers、HttpModules，都需要在每個請求中進行配置及執行。
+Start Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以選擇是否將請求傳遞到管線中的下一個組件，也可以在下一個組件中的前後執行工作。
+通常 ASP.NET Core Web 應用程式中有許多 Middleware，它可以是 Framework provided 的中介軟體，也可以通過 NuGet 添加，甚至可以自行定義 Middleware。我們可以在請求管道中設置中介軟體的執行順序，每個中介軟體都會新增或修改 Http 請求，且可選擇將控制權傳遞給下一個中介軟體。
+請求委派用於建構請求管道，請求委派會處理每個 Http 請求。該句的原文是這樣
+ Request delegates are used to build the request pipeline. The request delegates handle each HTTP request.
+ Request delegates 使用 Run、Map 和 Use 三種擴充方法來配置。單個請求委派可以指定嵌入式（in-line）匿名方法，稱為嵌入式中介軟體，也可以在重複使用的類別中進行定義。這些可重用的類別和嵌入式匿名方法就是 middleware ，也稱之為 middleware components。在請求管道中的每個中介軟體元件負責調用 Pipeline 中的下一個元件，或對管線執行最少運算，當中介軟體短路時（short-circult），會阻止接下來的中介軟體處理請求，稱之為終端中介軟體 terminal middleware。</description>
+    </item>
+    
     <item>
       <title>【Algorithm】資料結構—雜湊表（Hash Table）</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-9-hashtable/</link>
@@ -314,21 +345,6 @@ Start 流（Stream）為所有資料流的基礎類別，繼承該類別的資�
 文字讀起來沒感覺，直接使用FileStream來讀寫二進位制檔案。
 先建立一個含有文字內容的文字檔，透過FileStream開啟該文字檔，除了讀取出二進位制內容，也順便將 binary 轉換為字元打印出來。
 /// &amp;lt;summary&amp;gt; /// 使用 FileStream 讀取檔案 /// &amp;lt;/summary&amp;gt; public static void FileStreamRead() { string path = @&amp;#34;D:\Test.txt&amp;#34;; // 建立 FileStream 並實例化  // 開啟或建立指定路徑檔案，訪問權限唯讀  FileStream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read); // 讀取 binary 檔案  byte[] array = new byte[fs.</description>
-    </item>
-    
-    <item>
-      <title>【Algorithm】搜尋演算法—費氏搜尋法（Fibonacci Search）</title>
-      <link>https://fakestandard.github.io/draft/algorithm-21-fibonaccisearch/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://fakestandard.github.io/draft/algorithm-21-fibonaccisearch/</guid>
-      <description>【閱讀紀錄】
-搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
-依據資料量大小而言，搜尋可分為兩種
- 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
- 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
-Start 常見的搜尋演算法
- 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  費氏搜尋演算法（Fibonacci Search） Reference 【圖說演算法 C#】</description>
     </item>
     
   </channel>

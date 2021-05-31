@@ -148,6 +148,41 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【OOP】物件導向基礎概念（Object Oriented Programming）</h2>
+  </header>
+  <section class="entry-content">
+    <p>Start 物件導向（Object-Oriented Programming），意為針對物件進行程式設計。而學習設計模式前必須先了解物件導向設計，不然難以體會設計模式的魅力。
+接下來我們會知道
+ 類別（Class） 物件（Object） 實體（Instance） 建構式（Constructor） 多載（Overloading） 欄位（Field） 屬性（Property） 修飾詞（Modifiers）  類別（Class） 類別是具有相同「屬性（Attribute）」和 「功能（Method）」的物件之抽象集合。在 C# 中定義類別的關鍵字為 class，類別命名規則為第一個字母為大寫，多個單字命名時各個首字母為大寫。
+// 建立 Swordman 類別 class Swordman { // 建立公開的攻擊方法使外部可以呼叫，修飾詞用 public  public string Attack() { return &#34;基本攻擊！&#34;; } } 物件（Object） 物件是一個獨立的實體，實體裡包含許多資料，資料彼此之間不會互相影響，每個皆為獨立的資料。物件與類別的關係，最簡單易懂又不抽象的解釋為—物件是類別的實體。
+// 宣告一個Swordman 物件，物件名為 swordman Swordman swordman; // 先前建立的 Swordman 類別 class Swordman { ... }  在程式碼的世界裡，萬物皆為物件。
+ 實體（Instance） 實體就是一個真實的物件。實體化是建立物件的過程，使用 new 關鍵字建立。
+// 實體化 swordman 物件 swordman = new Swordman(); 綜合上述介紹的類別、物件和實體，實際演練一次程式碼並觀察結果。 在 Swordman 有一個公開的 Attack 方法，當物件被實體化後，未來就能一直呼叫該方法...</p>
+  </section>
+  <footer class="entry-footer">May 31, 2021&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【OOP】物件導向基礎概念（Object Oriented Programming）" href="https://fakestandard.github.io/post/oop/oop-1-object-oriented-programming/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【.NET Core】中介軟體 Middleware</h2>
+  </header>
+  <section class="entry-content">
+    <p>【ASP.NET Core 5】
+ASP.NET Core 引入一個新概念稱為中介軟體（Middleware），Middleware 會在 ASP.NET Core 應用程式中的每個請求上執行。
+過去 ASP.NET 中 HttpHandlers 和 HttpModules 在 ASP.NET Core 已不復存在，更準確地說，它們已成為 Request Pipeline 的一部分，Middleware 類似於 HttpHandlers、HttpModules，都需要在每個請求中進行配置及執行。
+Start Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以選擇是否將請求傳遞到管線中的下一個組件，也可以在下一個組件中的前後執行工作。
+通常 ASP.NET Core Web 應用程式中有許多 Middleware，它可以是 Framework provided 的中介軟體，也可以通過 NuGet 添加，甚至可以自行定義 Middleware。我們可以在請求管道中設置中介軟體的執行順序，每個中介軟體都會新增或修改 Http 請求，且可選擇將控制權傳遞給下一個中介軟體。
+請求委派用於建構請求管道，請求委派會處理每個 Http 請求。該句的原文是這樣
+ Request delegates are used to build the request pipeline. The request delegates handle each HTTP request.
+ Request delegates 使用 Run、Map 和 Use 三種擴充方法來配置。單個請求委派可以指定嵌入式（in-line）匿名方法，稱為嵌入式中介軟體，也可以在重複使用的類別中進行定義。這些可重用的類別和嵌入式匿名方法就是 middleware ，也稱之為 middleware components。在請求管道中的每個中介軟體元件負責調用 Pipeline 中的下一個元件，或對管線執行最少運算，當中介軟體短路時（short-circult），會阻止接下來的中介軟體處理請求，稱之為終端中介軟體 terminal middleware。...</p>
+  </section>
+  <footer class="entry-footer">May 31, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET Core】中介軟體 Middleware" href="https://fakestandard.github.io/netcore/netcore5-3-middleware/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】資料結構—雜湊表（Hash Table）</h2>
   </header>
   <section class="entry-content">
@@ -302,36 +337,6 @@ public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host....</p>
   </section>
   <footer class="entry-footer">May 13, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【.NET Core】Application Startup Class" href="https://fakestandard.github.io/netcore/netcore5-1-startupclass/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET】使用 NPOI 匯入 Excel</h2>
-  </header>
-  <section class="entry-content">
-    <p>在網站開發時，總會遇到匯出 EXCEL 的需求，除了匯出之外，偶爾也會遇到匯入 EXCEL 這種懶人需求。
-為何是懶人需求呢？通常使用者可以透過 UI 介面來維護資料，包括 CRUD 等功能，所以 Excel 資料會先透過前端介面在將資料傳遞到資料庫儲存。而匯入的方式，可以一次傳遞多筆資料，並且直達資料庫，過程中不需要使用 UI 介面逐筆輸入，非常省時又省力。
-註：此篇使用 ASP.NET Core 5 實作
-Start 首先到 NuGet 下載 NPOI 套件並安裝到專案中
-建立 ImportController.cs
-public class ImportController : Controller { public IActionResult Index() { return View(); } } 建立 Index.cshtml
-&lt;h2&gt;Import&lt;/h2&gt; @using (Html.BeginForm(&#34;Upload&#34;, &#34;Import&#34;, FormMethod.Post, new { enctype = &#34;multipart/form-data&#34; })) { &lt;input type=&#34;file&#34; class=&#34;form-control&#34; name=&#34;file&#34; /&gt; &lt;button type=&#34;submit&#34; class=&#34;btn btn-primary&#34;&gt;Upload&lt;/button&gt; } 在 Controller 中新增一個接收 HttpPost 的 ActionResult Upload，除了返回頁面之外，沒有任何代碼。...</p>
-  </section>
-  <footer class="entry-footer">May 11, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET】使用 NPOI 匯入 Excel" href="https://fakestandard.github.io/post/dotnet/dotnet-7-npoi-import/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET】將資料匯出成 CSV</h2>
-  </header>
-  <section class="entry-content">
-    <p>前篇在紀錄使用第三方套件來匯出 Excel，忽然看到匯出 csv 的方法，其實很簡單，就順便記錄一下。
-Start 按照前篇建立一個 .Net Core MVC 的專案，同樣地建立 Model、Controller 及 View，讓畫面呈現一個 Employee 的列表，將按鈕名稱改為 csv Export，相關代碼如下
-Model public class Employee { public int ID { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Title { get; set; } public string City { get; set; } } Controller public class EmployeeController : Controller { private List&lt;Employee&gt; employees; public EmployeeController() { if (employees == null) { employees = new List&lt;Employee&gt;() { new Employee{ ID = 1, LastName = &#34;Davolio&#34;, FirstName = &#34;Nancy&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 2, LastName = &#34;Fuller&#34;, FirstName = &#34;Andrew&#34;, Title = &#34;Vice President, Sales&#34;, City = &#34;Tacoma&#34; }, new Employee{ ID = 3, LastName = &#34;Leverling&#34;, FirstName = &#34;Janet&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Kirkland&#34; }, new Employee{ ID = 4, LastName = &#34;Peacock&#34;, FirstName = &#34;Margaret&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Redmond&#34; }, new Employee{ ID = 5, LastName = &#34;Buchanan&#34;, FirstName = &#34;Steven&#34;, Title = &#34;Sales Manager&#34;, City = &#34;London&#34; }, new Employee{ ID = 6, LastName = &#34;Suyama&#34;, FirstName = &#34;Michael&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 7, LastName = &#34;King&#34;, FirstName = &#34;Robert&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 8, LastName = &#34;Callahan&#34;, FirstName = &#34;Laura&#34;, Title = &#34;Inside Sales Coordinator&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 9, LastName = &#34;Dodsworth&#34;, FirstName = &#34;Anne&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; } }; } } public IActionResult Index() { return View(employees); } } View @model IEnumerable&lt;Export_ClosedXML....</p>
-  </section>
-  <footer class="entry-footer">May 9, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET】將資料匯出成 CSV" href="https://fakestandard.github.io/post/dotnet/dotnet-6-exportcsv/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>【OOP】物件導向基礎概念（Object Oriented Programming） | How can I help</title>
+<meta name="keywords" content="OOP, CSharp" />
+<meta name="description" content="Start 物件導向（Object-Oriented Programming），意為針對物件進行程式設計。而學習設計模式前必須先了解物件導向設計，不然難以體會設計模式的魅力。
+接下來我們會知道
+ 類別（Class） 物件（Object） 實體（Instance） 建構式（Constructor） 多載（Overloading） 欄位（Field） 屬性（Property） 修飾詞（Modifiers）  類別（Class） 類別是具有相同「屬性（Attribute）」和 「功能（Method）」的物件之抽象集合。在 C# 中定義類別的關鍵字為 class，類別命名規則為第一個字母為大寫，多個單字命名時各個首字母為大寫。
+// 建立 Swordman 類別 class Swordman { // 建立公開的攻擊方法使外部可以呼叫，修飾詞用 public  public string Attack() { return &#34;基本攻擊！&#34;; } } 物件（Object） 物件是一個獨立的實體，實體裡包含許多資料，資料彼此之間不會互相影響，每個皆為獨立的資料。物件與類別的關係，最簡單易懂又不抽象的解釋為—物件是類別的實體。
+// 宣告一個Swordman 物件，物件名為 swordman Swordman swordman; // 先前建立的 Swordman 類別 class Swordman { ... }  在程式碼的世界裡，萬物皆為物件。
+ 實體（Instance） 實體就是一個真實的物件。實體化是建立物件的過程，使用 new 關鍵字建立。
+// 實體化 swordman 物件 swordman = new Swordman(); 綜合上述介紹的類別、物件和實體，實際演練一次程式碼並觀察結果。 在 Swordman 有一個公開的 Attack 方法，當物件被實體化後，未來就能一直呼叫該方法">
+<meta name="author" content="Polar Bear">
+<link rel="canonical" href="https://fakestandard.github.io/post/oop/oop-1-object-oriented-programming/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.d1b405b7c6bf1b09aebca33eb6e2d8bd070113d119bdfa2715c32f6408f9fbee.css" integrity="sha256-0bQFt8a/GwmuvKM&#43;tuLYvQcBE9EZvfonFcMvZAj5&#43;&#43;4=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js" integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5&#43;kdJvBz5iKbt6B5PJI="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://fakestandard.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://fakestandard.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://fakestandard.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://fakestandard.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.81.0" />
+<meta property="og:title" content="【OOP】物件導向基礎概念（Object Oriented Programming）" />
+<meta property="og:description" content="Start 物件導向（Object-Oriented Programming），意為針對物件進行程式設計。而學習設計模式前必須先了解物件導向設計，不然難以體會設計模式的魅力。
+接下來我們會知道
+ 類別（Class） 物件（Object） 實體（Instance） 建構式（Constructor） 多載（Overloading） 欄位（Field） 屬性（Property） 修飾詞（Modifiers）  類別（Class） 類別是具有相同「屬性（Attribute）」和 「功能（Method）」的物件之抽象集合。在 C# 中定義類別的關鍵字為 class，類別命名規則為第一個字母為大寫，多個單字命名時各個首字母為大寫。
+// 建立 Swordman 類別 class Swordman { // 建立公開的攻擊方法使外部可以呼叫，修飾詞用 public  public string Attack() { return &#34;基本攻擊！&#34;; } } 物件（Object） 物件是一個獨立的實體，實體裡包含許多資料，資料彼此之間不會互相影響，每個皆為獨立的資料。物件與類別的關係，最簡單易懂又不抽象的解釋為—物件是類別的實體。
+// 宣告一個Swordman 物件，物件名為 swordman Swordman swordman; // 先前建立的 Swordman 類別 class Swordman { ... }  在程式碼的世界裡，萬物皆為物件。
+ 實體（Instance） 實體就是一個真實的物件。實體化是建立物件的過程，使用 new 關鍵字建立。
+// 實體化 swordman 物件 swordman = new Swordman(); 綜合上述介紹的類別、物件和實體，實際演練一次程式碼並觀察結果。 在 Swordman 有一個公開的 Attack 方法，當物件被實體化後，未來就能一直呼叫該方法" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://fakestandard.github.io/post/oop/oop-1-object-oriented-programming/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-05-31T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-05-31T21:08:57&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="【OOP】物件導向基礎概念（Object Oriented Programming）"/>
+<meta name="twitter:description" content="Start 物件導向（Object-Oriented Programming），意為針對物件進行程式設計。而學習設計模式前必須先了解物件導向設計，不然難以體會設計模式的魅力。
+接下來我們會知道
+ 類別（Class） 物件（Object） 實體（Instance） 建構式（Constructor） 多載（Overloading） 欄位（Field） 屬性（Property） 修飾詞（Modifiers）  類別（Class） 類別是具有相同「屬性（Attribute）」和 「功能（Method）」的物件之抽象集合。在 C# 中定義類別的關鍵字為 class，類別命名規則為第一個字母為大寫，多個單字命名時各個首字母為大寫。
+// 建立 Swordman 類別 class Swordman { // 建立公開的攻擊方法使外部可以呼叫，修飾詞用 public  public string Attack() { return &#34;基本攻擊！&#34;; } } 物件（Object） 物件是一個獨立的實體，實體裡包含許多資料，資料彼此之間不會互相影響，每個皆為獨立的資料。物件與類別的關係，最簡單易懂又不抽象的解釋為—物件是類別的實體。
+// 宣告一個Swordman 物件，物件名為 swordman Swordman swordman; // 先前建立的 Swordman 類別 class Swordman { ... }  在程式碼的世界裡，萬物皆為物件。
+ 實體（Instance） 實體就是一個真實的物件。實體化是建立物件的過程，使用 new 關鍵字建立。
+// 實體化 swordman 物件 swordman = new Swordman(); 綜合上述介紹的類別、物件和實體，實際演練一次程式碼並觀察結果。 在 Swordman 有一個公開的 Attack 方法，當物件被實體化後，未來就能一直呼叫該方法"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://fakestandard.github.io/post/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "【OOP】物件導向基礎概念（Object Oriented Programming）",
+      "item": "https://fakestandard.github.io/post/oop/oop-1-object-oriented-programming/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "【OOP】物件導向基礎概念（Object Oriented Programming）",
+  "name": "【OOP】物件導向基礎概念（Object Oriented Programming）",
+  "description": "Start 物件導向（Object-Oriented Programming），意為針對物件進行程式設計。而學習設計模式前必須先了解物件導向設計，不然難以體會設計模式的魅力。\n接下來我們會知道\n 類別（Class） 物件（Object） 實體（Instance） 建構式（Constructor） 多載（Overloading） 欄位（Field） 屬性（Property） 修飾詞（Modifiers）  類別（Class） 類別是具有相同「屬性（Attribute）」和 「功能（Method）」的物件之抽象集合。在 C# 中定義類別的關鍵字為 class，類別命名規則為第一個字母為大寫，多個單字命名時各個首字母為大寫。\n// 建立 Swordman 類別 class Swordman { // 建立公開的攻擊方法使外部可以呼叫，修飾詞用 public  public string Attack() { return \u0026#34;基本攻擊！\u0026#34;; } } 物件（Object） 物件是一個獨立的實體，實體裡包含許多資料，資料彼此之間不會互相影響，每個皆為獨立的資料。物件與類別的關係，最簡單易懂又不抽象的解釋為—物件是類別的實體。\n// 宣告一個Swordman 物件，物件名為 swordman Swordman swordman; // 先前建立的 Swordman 類別 class Swordman { ... }  在程式碼的世界裡，萬物皆為物件。\n 實體（Instance） 實體就是一個真實的物件。實體化是建立物件的過程，使用 new 關鍵字建立。\n// 實體化 swordman 物件 swordman = new Swordman(); 綜合上述介紹的類別、物件和實體，實際演練一次程式碼並觀察結果。 在 Swordman 有一個公開的 Attack 方法，當物件被實體化後，未來就能一直呼叫該方法",
+  "keywords": [
+    "OOP", "CSharp"
+  ],
+  "articleBody": "Start 物件導向（Object-Oriented Programming），意為針對物件進行程式設計。而學習設計模式前必須先了解物件導向設計，不然難以體會設計模式的魅力。\n接下來我們會知道\n 類別（Class） 物件（Object） 實體（Instance） 建構式（Constructor） 多載（Overloading） 欄位（Field） 屬性（Property） 修飾詞（Modifiers）  類別（Class） 類別是具有相同「屬性（Attribute）」和 「功能（Method）」的物件之抽象集合。在 C# 中定義類別的關鍵字為 class，類別命名規則為第一個字母為大寫，多個單字命名時各個首字母為大寫。\n// 建立 Swordman 類別 class Swordman { // 建立公開的攻擊方法使外部可以呼叫，修飾詞用 public  public string Attack() { return \"基本攻擊！\"; } } 物件（Object） 物件是一個獨立的實體，實體裡包含許多資料，資料彼此之間不會互相影響，每個皆為獨立的資料。物件與類別的關係，最簡單易懂又不抽象的解釋為—物件是類別的實體。\n// 宣告一個Swordman 物件，物件名為 swordman Swordman swordman; // 先前建立的 Swordman 類別 class Swordman { ... }  在程式碼的世界裡，萬物皆為物件。\n 實體（Instance） 實體就是一個真實的物件。實體化是建立物件的過程，使用 new 關鍵字建立。\n// 實體化 swordman 物件 swordman = new Swordman(); 綜合上述介紹的類別、物件和實體，實際演練一次程式碼並觀察結果。 在 Swordman 有一個公開的 Attack 方法，當物件被實體化後，未來就能一直呼叫該方法\nstatic void Main(string[] args) { // 簡化建立與實體化物件的程式碼  // 將 Swordman 類別實體化  Swordman swordman = new Swordman(); // 調用 Attack 公開方法  string attack = swordman.Attack(); Console.WriteLine(attack); Console.ReadLine(); } // 建立 Swordman 類別 class Swordman { // 建立公開的攻擊方法  public string Attack() { return \"基本攻擊！\"; } } 觀看結果，輸出 Attack 方法返回的值\n建構式（Constructor） 建構式又稱建構函式或建構子，建構式是對類別初始化的函數，建構式與類別同名，無返回值也不需要 void，在使用關鍵字 new 時調用。在未定義建構式時編譯器會自動產生空的建構式。\n根據上述例子，在實體化 swordman 物件時，new 後面的 Swordman() 就是建構式，而建立 Swordman 類別時未定義建構子，所以編譯器自動產生空的 Constructor 讓 swordman 成功實體化。\n以上述的 Swordman 類別來說，編譯器產生的空建構子如下\n// 建立 Swordman 類別 class Swordman { // 空的建構子  public Swordman() { } ... } 所以，如果不需要改變空的建構子時，就可以不必撰寫空建構子的程式碼，讓編譯器在編譯時自動產生即可。\n實際演練：利用建構式來給 swordman 增加 Name，在 Swordman 類別裡加入 name 私有變數及帶有一個參數的建構子\n// 定義私有變數 name private string name; // 建立帶有參數 name 的建構子 public Swordman(string name) { // 將參數 name 指給私有變數 name  this.name = name; } 當新的建構子被建立時，編譯器變不再自動產生空的建構子，若繼續使用先前程式碼讓 swordman 實體化，會得到紅色毛毛蟲。\n此時必須給予相對應的參數，讓物件能成功實體化。給 swordman 一個瀟灑的 ID，將 Attack() 方法返回值添加上私有變數。\n// 使用自行定義的建構子實體化物件 Swordman swordman = new Swordman(\"離人劍\"); class Swordman { ... // 建立攻擊方法  public string Attack() { return $\"{name} 使出「基本攻擊」！\"; } }p 當要實體化 swordman 物件時，必須帶入參數—離人劍，此時離人劍會存到類別的私有變數 name 裡，最後，在 Attack 方法內調用私有變數作為返回值。\n實際宣告且實體化 Swordman 類別，調用其 Attack 方法，觀察輸出結果\n多載（Overloading） 多載意即方法重載，多載為可同時建立同名的函數（Function），函數須使用不同的參數類型或不同個數。筆者不習慣用函數，因為會有點偏向於數學，筆者通常會稱函數為方法。\n假設不想取名就直接實體化物件，就必須再建立一個不帶參數的建構式，與原本的建構式共存，就是方法重載，如下\n// 建立 Swordman 類別 class Swordman { // 定義私有變數 name  private string name; // 定義空的建構式  public Swordman() { // 賦值給私有變數  this.name = \"無名氏\"; } // 建立帶有參數 name 的建構子  public Swordman(string name) { // 將參數 name 指給私有變數 name  this.name = name; } ... } 以上述的例子來說，該類別同時擁有兩個同名稱的建構子 Swordman，一個是沒有帶參數，一個帶有 string 參數，他們是可以同時存在的，因為符合參數個數不同的特性。方法重載通常可以用於，在不改變原有方法的基礎上，以達擴展功能目的。當然不只建構子可以方法重載，一般建立的方法也可以使用多載。\n實際演練\n// 宣告物件並實體化物件 Swordman swordman1 = new Swordman(); Swordman swordman2 = new Swordman(\"離人劍\"); // 調用 Attack 公開方法 Console.WriteLine(swordman1.Attack()); Console.WriteLine(swordman2.Attack()); 觀察輸出結果\n欄位（Field） 欄位用來儲存類別要滿足設計所需的資料，簡化為儲存資料的意思，通常為私有的類別變數，只能供類別內部使用的變數，一般命名規則通常開頭字母為小寫。比方 Swordman 類別裡定義的私有變數 name 即為欄位，僅供內部使用，而外部無法調用，必須給予 private修飾詞。例如先前定義的私有變數 name。\n// 建立 Swordman 類別 class Swordman { // 定義私有變數 name  private string name; ... } 屬性（Property） 屬性為類別的一個欄位（看起來有點詭異），通常是給外部調用，所以外部可以存取屬性，屬性的命名規則通常開頭字母為大寫，下面範例看起來與欄位區別不大，不過隨著後面的介紹與使用，欄位與屬性的定義會越來越清晰。\n// 建立 Swordman 類別 class Swordman { // 定義公開屬性供外部存取  public int Count; ... } 修飾詞（Modifiers） 屬性有兩個方法 get和set，get 存取器（或存取子）返回與宣告屬性相同的資料類型，即調用時可取得內部欄位的值或參考；set 存取器調用屬性時，可以給內部的欄位或參考賦值，其中有個隱式參數為 value，即從外部進來的值。\n先看公開屬性加上 get 與 set 存取子的「自動實作屬性」作法\n// 建立 Swordman 類別 class Swordman { // 定義公開屬性供外部存取，使用自動實作屬性  public int Count { get; set; } ... } 使用 get 與 set 來存取欄位，隱藏實際要做的事情，達到「資料封裝」的效果\n// 定義私有欄位 private int count; // 定義公開屬性供外部存取 public int Count { get { // 回傳私有欄位 count 的值  return count; } set { // 將 value 的值賦予給私有欄位 count  count = value; } } 上述兩種方法 Compiler 後是完全一樣，Property { get; set; } 是 C# 3.0 更新版中添加的自動實作屬性語法，自動實作屬性經過 Compiler 會自動產生 Private Field，而官方也清楚說明，屬性存取中若沒有額外的邏輯，自動實作屬性會讓宣告更精簡。\n In C# 3.0 and later, auto-implemented properties make property-declaration more concise when no additional logic is required in the property accessors.\n 另外補充 C# 6.0 更新版中增加了初始化自動實作屬性功能\n// 初始化自動實作屬性 public int Count { get; set; } = 10; 屬性只想做唯讀或是唯寫，不加修飾詞即可，比如\n// 只能讀取 public int Count { // 只有 get 存取子  get { return count; } } // 只能寫入 public int Count { // 只有 set 存取子  set { count = value; } } 或者將公開存取宣告為私有\n// 定義公開屬性供外部存取 public int Count { get { return count; } // 宣告為私有僅供內部調用，對外部而言也是唯讀  private set { count = value; } } 所以當 set 修飾詞宣告為私有時，外界要使用時會引發無法存取 set 存取子之錯誤\n認識了這麼多名詞，最後把上面提到的欄位、屬性和修飾詞實際演練。\n先建立 Swordman 類別\n///  /// Swordman 類別 ///  class Swordman { // 名稱私有屬性  private string name; // 攻擊次數私有欄位  private int num = 1; ///   /// 攻擊次數公開屬性  ///   public int Num { get { return num; } set { // 給予限制  if (value = 10) num = 10; else num = value; } } ///   /// 公告次數公開屬性，初始化為 3  ///   public int Count { get; set; } = 3; ///   /// 空建構式  ///   public Swordman() { this.name = \"GM大大\"; } ///   /// 帶有 string 參數的建構式  ///   ///   public Swordman(string name) { this.name = name; } ///   /// 公開攻擊方法  ///   ///   public string Attack() { string result = string.Empty; for (int i = 0; i \"使出\" + \"「基本攻擊」\\n\"; } return result; } ///   /// 公開公告方法  ///   ///   public string Announcement() { string result = string.Empty; for (int i = 0; i \"「明天早上10點進行更新」\\n\"; } return name + \"說：\\n\" + result + \"很重要所以說三遍！\"; } } 在 Main 方法中，宣告且實體化類別物件，接著調用公開方法，以及設置公開屬性\nstatic void Main(string[] args) { // 宣告名為離人劍的 swordman 物件並實體化  Swordman swordman = new Swordman(\"離人劍\"); // 調用攻擊方法  string attack = swordman.Attack(); Console.WriteLine(attack); // 宣告不帶參數的 gm 物件並實體化  Swordman gm = new Swordman(); // 調用公告方法  string announcement = gm.Announcement(); Console.WriteLine(announcement); // 變更攻擊次數，指派屬性 Num 的值，新的值會調用 set 訪問器  swordman.Num = 5; Console.WriteLine(\"\\n變更攻擊次數為 5 次，開始攻擊！\\n\"); Console.WriteLine(swordman.Attack()); swordman.Num = 11; Console.WriteLine(\"\\n變更攻擊次數為 11 次，開始攻擊！\\n\"); Console.WriteLine(swordman.Attack()); Console.WriteLine(\"\\n因受到限制，實際上只攻擊了 10 次！\\n\"); Console.ReadLine(); } 觀察輸出結果\nNote 類別是用來定義物件的模板（或是藍圖），由「方法成員」和「資料成員」組成，具體化後成為物件（實體）；屬性和欄位歸類為資料成員，方法（函數）視為方法成員，物件具有封裝特性，達到隱藏或保護資料的目的，除非方法或屬性提供外界可存取資料成員或方法成員的權限。\nReference 【大話設計模式】\nAuto-Implemented Properties\n",
+  "wordCount" : "771",
+  "inLanguage": "en",
+  "datePublished": "2021-05-31T00:00:00Z",
+  "dateModified": "2021-05-31T21:08:57+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Polar Bear"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://fakestandard.github.io/post/oop/oop-1-object-oriented-programming/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "How can I help",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://fakestandard.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://fakestandard.github.io/" accesskey="h" title="How can I help (Alt + H)">How can I help</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/algorithm/" title="Algorithm">
+                    <span>Algorithm</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/netcore/" title=".NET Core">
+                    <span>.NET Core</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/post/">Posts</a></div>
+    <h1 class="post-title">
+      【OOP】物件導向基礎概念（Object Oriented Programming）
+    </h1>
+    <div class="post-meta">May 31, 2021&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Polar Bear
+</div>
+  </header> 
+  <div class="post-content"><h1 id="start">Start<a hidden class="anchor" aria-hidden="true" href="#start">#</a></h1>
+<p>物件導向（<strong>Object-Oriented Programming</strong>），意為針對物件進行程式設計。而學習設計模式前必須先了解物件導向設計，不然難以體會設計模式的魅力。</p>
+<p>接下來我們會知道</p>
+<ul>
+<li>類別（Class）</li>
+<li>物件（Object）</li>
+<li>實體（Instance）</li>
+<li>建構式（Constructor）</li>
+<li>多載（Overloading）</li>
+<li>欄位（Field）</li>
+<li>屬性（Property）</li>
+<li>修飾詞（Modifiers）</li>
+</ul>
+<h3 id="類別class">類別（Class）<a hidden class="anchor" aria-hidden="true" href="#類別class">#</a></h3>
+<p>類別是具有相同「<strong>屬性（Attribute）</strong>」和 「<strong>功能（Method）</strong>」的物件之抽象集合。在 C# 中定義<strong>類別</strong>的關鍵字為 <code>class</code>，類別命名規則為第一個字母為大寫，多個單字命名時各個首字母為大寫。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
+{
+    <span style="color:#75715e">// 建立公開的攻擊方法使外部可以呼叫，修飾詞用 public
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Attack()
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;基本攻擊！&#34;</span>;
+    }
+}
+</code></pre></div><h3 id="物件object">物件（Object）<a hidden class="anchor" aria-hidden="true" href="#物件object">#</a></h3>
+<p>物件是一個獨立的實體，實體裡包含許多資料，資料彼此之間不會互相影響，每個皆為獨立的資料。物件與類別的關係，最簡單易懂又不抽象的解釋為—物件是類別的實體。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 宣告一個Swordman 物件，物件名為 swordman
+</span><span style="color:#75715e"></span>Swordman swordman;
+
+<span style="color:#75715e">// 先前建立的 Swordman 類別
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
+{
+    ...
+}
+</code></pre></div><blockquote>
+<p>在程式碼的世界裡，萬物皆為物件。</p>
+</blockquote>
+<h3 id="實體instance">實體（Instance）<a hidden class="anchor" aria-hidden="true" href="#實體instance">#</a></h3>
+<p>實體就是一個真實的物件。實體化是建立物件的過程，使用 <code>new</code> 關鍵字建立。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 實體化 swordman 物件
+</span><span style="color:#75715e"></span>swordman = <span style="color:#66d9ef">new</span> Swordman();
+</code></pre></div><p>綜合上述介紹的類別、物件和實體，實際演練一次程式碼並觀察結果。
+在 <code>Swordman</code> 有一個公開的 <code>Attack</code> 方法，當物件被實體化後，未來就能一直呼叫該方法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+{
+    <span style="color:#75715e">// 簡化建立與實體化物件的程式碼
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// 將 Swordman 類別實體化
+</span><span style="color:#75715e"></span>    Swordman swordman = <span style="color:#66d9ef">new</span> Swordman();
+
+    <span style="color:#75715e">// 調用 Attack 公開方法
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">string</span> attack = swordman.Attack();
+
+    Console.WriteLine(attack);
+    Console.ReadLine();
+}
+
+<span style="color:#75715e">// 建立 Swordman 類別
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
+{
+    <span style="color:#75715e">// 建立公開的攻擊方法
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Attack()
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;基本攻擊！&#34;</span>;
+    }
+}
+</code></pre></div><p>觀看結果，輸出 <code>Attack</code> 方法返回的值</p>
+<p><img loading="lazy" src="/images/OOP/OOP-001.png" alt=""  />
+</p>
+<h3 id="建構式constructor">建構式（Constructor）<a hidden class="anchor" aria-hidden="true" href="#建構式constructor">#</a></h3>
+<p>建構式又稱<strong>建構函式</strong>或<strong>建構子</strong>，建構式是對類別初始化的函數，建構式與類別同名，無返回值也不需要 <code>void</code>，在使用關鍵字 <code>new</code> 時調用。在未定義建構式時編譯器會<strong>自動產生空的建構式</strong>。</p>
+<p>根據上述例子，在實體化 swordman 物件時，<code>new</code> 後面的 <code>Swordman()</code> 就是建構式，而建立 Swordman 類別時未定義建構子，所以編譯器自動產生空的 Constructor 讓 swordman 成功實體化。</p>
+<p>以上述的 Swordman 類別來說，編譯器產生的空建構子如下</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
+{
+    <span style="color:#75715e">// 空的建構子
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> Swordman()
+    {
+
+    }
+    
+    ...
+}
+</code></pre></div><p>所以，如果不需要改變空的建構子時，就可以不必撰寫空建構子的程式碼，讓編譯器在編譯時自動產生即可。</p>
+<p>實際演練：利用建構式來給 swordman 增加 Name，在 Swordman 類別裡加入 <code>name</code> 私有變數及帶有一個參數的建構子</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 定義私有變數 name
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> name;
+
+<span style="color:#75715e">// 建立帶有參數 name 的建構子
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> Swordman(<span style="color:#66d9ef">string</span> name)
+{
+    <span style="color:#75715e">// 將參數 name 指給私有變數 name
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.name = name;
+}
+</code></pre></div><p>當新的建構子被建立時，編譯器變不再自動產生空的建構子，若繼續使用先前程式碼讓 swordman 實體化，會得到紅色毛毛蟲。</p>
+<p><img loading="lazy" src="/images/OOP/OOP-002.png" alt=""  />
+</p>
+<p>此時必須給予相對應的參數，讓物件能成功實體化。給 swordman 一個瀟灑的 ID，將 <code>Attack()</code> 方法返回值添加上私有變數。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 使用自行定義的建構子實體化物件
+</span><span style="color:#75715e"></span>Swordman swordman = <span style="color:#66d9ef">new</span> Swordman(<span style="color:#e6db74">&#34;離人劍&#34;</span>);
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
+{
+    ...
+    
+    <span style="color:#75715e">// 建立攻擊方法
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Attack()
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">$&#34;{name} 使出「基本攻擊」！&#34;</span>;
+    }
+}p
+
+</code></pre></div><p>當要實體化 swordman 物件時，必須帶入參數—離人劍，此時離人劍會存到類別的私有變數 name 裡，最後，在 <code>Attack</code> 方法內調用私有變數作為返回值。</p>
+<p>實際宣告且實體化 Swordman 類別，調用其 <code>Attack</code> 方法，觀察輸出結果</p>
+<p><img loading="lazy" src="/images/OOP/OOP-003.png" alt=""  />
+</p>
+<h3 id="多載overloading">多載（Overloading）<a hidden class="anchor" aria-hidden="true" href="#多載overloading">#</a></h3>
+<p>多載意即<strong>方法重載</strong>，多載為可同時建立<strong>同名的函數（Function）</strong>，函數須使用不同的參數類型或不同個數。筆者不習慣用函數，因為會有點偏向於數學，筆者通常會稱函數為方法。</p>
+<p>假設不想取名就直接實體化物件，就必須再建立一個不帶參數的建構式，與原本的建構式共存，就是方法重載，如下</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
+{
+    <span style="color:#75715e">// 定義私有變數 name
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> name;
+
+    <span style="color:#75715e">// 定義空的建構式
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> Swordman()
+    {
+        <span style="color:#75715e">// 賦值給私有變數
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">this</span>.name = <span style="color:#e6db74">&#34;無名氏&#34;</span>;
+    }
+
+    <span style="color:#75715e">// 建立帶有參數 name 的建構子
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> Swordman(<span style="color:#66d9ef">string</span> name)
+    {
+        <span style="color:#75715e">// 將參數 name 指給私有變數 name
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">this</span>.name = name;
+    }
+
+    ...
+}
+</code></pre></div><p>以上述的例子來說，該類別同時擁有兩個同名稱的建構子 Swordman，一個是沒有帶參數，一個帶有 string 參數，他們是可以同時存在的，因為符合參數個數不同的特性。方法重載通常可以用於，在不改變原有方法的基礎上，以達擴展功能目的。當然不只建構子可以方法重載，一般建立的方法也可以使用多載。</p>
+<p>實際演練</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 宣告物件並實體化物件
+</span><span style="color:#75715e"></span>Swordman swordman1 = <span style="color:#66d9ef">new</span> Swordman();
+Swordman swordman2 = <span style="color:#66d9ef">new</span> Swordman(<span style="color:#e6db74">&#34;離人劍&#34;</span>);
+
+<span style="color:#75715e">// 調用 Attack 公開方法
+</span><span style="color:#75715e"></span>Console.WriteLine(swordman1.Attack());
+Console.WriteLine(swordman2.Attack());
+</code></pre></div><p>觀察輸出結果</p>
+<p><img loading="lazy" src="/images/OOP/OOP-004.png" alt=""  />
+</p>
+<h3 id="欄位field">欄位（Field）<a hidden class="anchor" aria-hidden="true" href="#欄位field">#</a></h3>
+<p>欄位用來儲存類別要滿足設計所需的資料，簡化為儲存資料的意思，通常為私有的類別變數，只能供類別內部使用的變數，一般命名規則通常開頭字母為小寫。比方 Swordman 類別裡定義的私有變數 name 即為欄位，僅供內部使用，而外部無法調用，必須給予 <code>private</code>修飾詞。例如先前定義的私有變數 name。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
+{
+    <span style="color:#75715e">// 定義私有變數 name
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> name;
+
+    ...
+}
+</code></pre></div><h3 id="屬性property">屬性（Property）<a hidden class="anchor" aria-hidden="true" href="#屬性property">#</a></h3>
+<p>屬性為類別的一個欄位（看起來有點詭異），通常是給外部調用，所以外部可以存取屬性，屬性的命名規則通常開頭字母為大寫，下面範例看起來與欄位區別不大，不過隨著後面的介紹與使用，欄位與屬性的定義會越來越清晰。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
+{
+    <span style="color:#75715e">// 定義公開屬性供外部存取
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Count;
+
+    ...
+}
+
+</code></pre></div><h3 id="修飾詞modifiers">修飾詞（Modifiers）<a hidden class="anchor" aria-hidden="true" href="#修飾詞modifiers">#</a></h3>
+<p>屬性有兩個方法 <code>get</code>和<code>set</code>，<code>get</code> 存取器（或存取子）返回與宣告屬性相同的資料類型，即調用時可取得內部欄位的值或參考；<code>set</code> 存取器調用屬性時，可以給內部的欄位或參考賦值，其中有個隱式參數為 <code>value</code>，即從外部進來的值。</p>
+<p>先看公開屬性加上 <code>get</code> 與 <code>set</code> 存取子的「<strong>自動實作屬性</strong>」作法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
+{
+    <span style="color:#75715e">// 定義公開屬性供外部存取，使用自動實作屬性
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Count { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+
+    ...
+}
+</code></pre></div><p>使用 <code>get</code> 與 <code>set</code> 來存取欄位，隱藏實際要做的事情，達到「<strong>資料封裝</strong>」的效果</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 定義私有欄位
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> count;
+
+<span style="color:#75715e">// 定義公開屬性供外部存取
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Count
+{
+    <span style="color:#66d9ef">get</span>
+    {
+        <span style="color:#75715e">// 回傳私有欄位 count 的值
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> count;
+    }
+    <span style="color:#66d9ef">set</span>
+    {
+        <span style="color:#75715e">// 將 value 的值賦予給私有欄位 count
+</span><span style="color:#75715e"></span>        count = <span style="color:#66d9ef">value</span>;
+    }
+}
+</code></pre></div><p>上述兩種方法 Compiler 後是完全一樣，<code>Property { get; set; } </code>是 C# 3.0 更新版中添加的自動實作屬性語法，自動實作屬性經過 Compiler 會自動產生 Private Field，而官方也清楚說明，屬性存取中若沒有額外的邏輯，自動實作屬性會讓宣告更精簡。</p>
+<blockquote>
+<p><strong>In C# 3.0 and later, auto-implemented properties make property-declaration more concise when no additional logic is required in the property accessors.</strong></p>
+</blockquote>
+<p>另外補充 C# 6.0 更新版中增加了<strong>初始化</strong>自動實作屬性功能</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 初始化自動實作屬性
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Count { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; } = <span style="color:#ae81ff">10</span>;
+</code></pre></div><p>屬性只想做唯讀或是唯寫，不加修飾詞即可，比如</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 只能讀取
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Count 
+{
+    <span style="color:#75715e">// 只有 get 存取子
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">get</span> 
+    { 
+        <span style="color:#66d9ef">return</span> count;
+    }
+}
+
+<span style="color:#75715e">// 只能寫入
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Count 
+{
+    <span style="color:#75715e">// 只有 set 存取子
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">set</span> 
+    {
+        count = <span style="color:#66d9ef">value</span>;
+    } 
+}
+</code></pre></div><p>或者將公開存取宣告為私有</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 定義公開屬性供外部存取
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Count
+{
+    <span style="color:#66d9ef">get</span>
+    {
+        <span style="color:#66d9ef">return</span> count;
+    }
+    <span style="color:#75715e">// 宣告為私有僅供內部調用，對外部而言也是唯讀
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">set</span>
+    {
+        count = <span style="color:#66d9ef">value</span>;
+    }
+}
+</code></pre></div><p>所以當 <code>set</code> 修飾詞宣告為私有時，外界要使用時會引發<strong>無法存取 set 存取子</strong>之錯誤</p>
+<p><img loading="lazy" src="/images/OOP/OOP-005.png" alt=""  />
+</p>
+<p>認識了這麼多名詞，最後把上面提到的欄位、屬性和修飾詞實際演練。</p>
+<p>先建立 Swordman 類別</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// Swordman 類別
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
+{
+    <span style="color:#75715e">// 名稱私有屬性
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> name;
+
+    <span style="color:#75715e">// 攻擊次數私有欄位
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> num = <span style="color:#ae81ff">1</span>;
+
+    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// 攻擊次數公開屬性
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Num
+    {
+        <span style="color:#66d9ef">get</span>
+        {
+            <span style="color:#66d9ef">return</span> num;
+        }
+        <span style="color:#66d9ef">set</span>
+        {
+            <span style="color:#75715e">// 給予限制
+</span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">value</span> &gt;= <span style="color:#ae81ff">10</span>)
+                num = <span style="color:#ae81ff">10</span>;
+            <span style="color:#66d9ef">else</span>
+                num = <span style="color:#66d9ef">value</span>;
+        }
+    }
+
+    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// 公告次數公開屬性，初始化為 3
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Count { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; } = <span style="color:#ae81ff">3</span>;
+
+    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// 空建構式
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> Swordman()
+    {
+        <span style="color:#66d9ef">this</span>.name = <span style="color:#e6db74">&#34;GM大大&#34;</span>;
+    }
+
+    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// 帶有 string 參數的建構式
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;param name=&#34;name&#34;&gt;&lt;/param&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> Swordman(<span style="color:#66d9ef">string</span> name)
+    {
+        <span style="color:#66d9ef">this</span>.name = name;
+    }
+
+    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// 公開攻擊方法
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;returns&gt;&lt;/returns&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Attack()
+    {
+        <span style="color:#66d9ef">string</span> result = <span style="color:#66d9ef">string</span>.Empty;
+
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; num; i++)
+        {
+            result += name + <span style="color:#e6db74">&#34;使出&#34;</span> + <span style="color:#e6db74">&#34;「基本攻擊」\n&#34;</span>;
+        }
+
+        <span style="color:#66d9ef">return</span> result;
+    }
+
+    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// 公開公告方法
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;returns&gt;&lt;/returns&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Announcement()
+    {
+        <span style="color:#66d9ef">string</span> result = <span style="color:#66d9ef">string</span>.Empty;
+
+        <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; Count; i++)
+        {
+            result += <span style="color:#e6db74">&#34;「明天早上10點進行更新」\n&#34;</span>;
+        }
+
+        <span style="color:#66d9ef">return</span> name + <span style="color:#e6db74">&#34;說：\n&#34;</span> + result + <span style="color:#e6db74">&#34;很重要所以說三遍！&#34;</span>;
+    }
+}
+</code></pre></div><p>在 Main 方法中，宣告且實體化類別物件，接著調用公開方法，以及設置公開屬性</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+{
+    <span style="color:#75715e">// 宣告名為離人劍的 swordman 物件並實體化
+</span><span style="color:#75715e"></span>    Swordman swordman = <span style="color:#66d9ef">new</span> Swordman(<span style="color:#e6db74">&#34;離人劍&#34;</span>);
+
+    <span style="color:#75715e">// 調用攻擊方法
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">string</span> attack = swordman.Attack();
+    Console.WriteLine(attack);
+
+    <span style="color:#75715e">// 宣告不帶參數的 gm 物件並實體化
+</span><span style="color:#75715e"></span>    Swordman gm = <span style="color:#66d9ef">new</span> Swordman();
+
+    <span style="color:#75715e">// 調用公告方法
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">string</span> announcement = gm.Announcement();
+    Console.WriteLine(announcement);
+
+    <span style="color:#75715e">// 變更攻擊次數，指派屬性 Num 的值，新的值會調用 set 訪問器
+</span><span style="color:#75715e"></span>    swordman.Num = <span style="color:#ae81ff">5</span>;
+    Console.WriteLine(<span style="color:#e6db74">&#34;\n變更攻擊次數為 5 次，開始攻擊！\n&#34;</span>);
+    Console.WriteLine(swordman.Attack());
+
+    swordman.Num = <span style="color:#ae81ff">11</span>;
+    Console.WriteLine(<span style="color:#e6db74">&#34;\n變更攻擊次數為 11 次，開始攻擊！\n&#34;</span>);
+    Console.WriteLine(swordman.Attack());
+    Console.WriteLine(<span style="color:#e6db74">&#34;\n因受到限制，實際上只攻擊了 10 次！\n&#34;</span>);
+
+    Console.ReadLine();
+}
+</code></pre></div><p>觀察輸出結果</p>
+<p><img loading="lazy" src="/images/OOP/OOP-006.png" alt=""  />
+</p>
+<h1 id="note">Note<a hidden class="anchor" aria-hidden="true" href="#note">#</a></h1>
+<p>類別是用來定義物件的模板（或是藍圖），由「<strong>方法成員</strong>」和「<strong>資料成員</strong>」組成，具體化後成為物件（實體）；屬性和欄位歸類為資料成員，方法（函數）視為方法成員，物件具有封裝特性，達到隱藏或保護資料的目的，除非方法或屬性提供外界可存取資料成員或方法成員的權限。</p>
+<h1 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h1>
+<p>【大話設計模式】</p>
+<p><a href="https://docs.microsoft.com/zh-tw/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties">Auto-Implemented Properties</a></p>
+
+</div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://fakestandard.github.io/tags/oop/">OOP</a></li>
+      <li><a href="https://fakestandard.github.io/tags/csharp/">CSharp</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://fakestandard.github.io/post/dotnet/dotnet-8-filesystemandfileio-one/">
+    <span class="title">Next Page »</span>
+    <br>
+    <span>【.NET】使用 C# 操作檔案 I/O 與檔案系統（一）</span>
+  </a>
+</nav>
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【OOP】物件導向基礎概念（Object Oriented Programming） on twitter"
+        href="https://twitter.com/intent/tweet/?text=%e3%80%90OOP%e3%80%91%e7%89%a9%e4%bb%b6%e5%b0%8e%e5%90%91%e5%9f%ba%e7%a4%8e%e6%a6%82%e5%bf%b5%ef%bc%88Object%20Oriented%20Programming%ef%bc%89&amp;url=https%3a%2f%2ffakestandard.github.io%2fpost%2foop%2foop-1-object-oriented-programming%2f&amp;hashtags=OOP%2cCSharp">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【OOP】物件導向基礎概念（Object Oriented Programming） on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ffakestandard.github.io%2fpost%2foop%2foop-1-object-oriented-programming%2f&amp;title=%e3%80%90OOP%e3%80%91%e7%89%a9%e4%bb%b6%e5%b0%8e%e5%90%91%e5%9f%ba%e7%a4%8e%e6%a6%82%e5%bf%b5%ef%bc%88Object%20Oriented%20Programming%ef%bc%89&amp;summary=%e3%80%90OOP%e3%80%91%e7%89%a9%e4%bb%b6%e5%b0%8e%e5%90%91%e5%9f%ba%e7%a4%8e%e6%a6%82%e5%bf%b5%ef%bc%88Object%20Oriented%20Programming%ef%bc%89&amp;source=https%3a%2f%2ffakestandard.github.io%2fpost%2foop%2foop-1-object-oriented-programming%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【OOP】物件導向基礎概念（Object Oriented Programming） on reddit"
+        href="https://reddit.com/submit?url=https%3a%2f%2ffakestandard.github.io%2fpost%2foop%2foop-1-object-oriented-programming%2f&title=%e3%80%90OOP%e3%80%91%e7%89%a9%e4%bb%b6%e5%b0%8e%e5%90%91%e5%9f%ba%e7%a4%8e%e6%a6%82%e5%bf%b5%ef%bc%88Object%20Oriented%20Programming%ef%bc%89">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【OOP】物件導向基礎概念（Object Oriented Programming） on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2ffakestandard.github.io%2fpost%2foop%2foop-1-object-oriented-programming%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【OOP】物件導向基礎概念（Object Oriented Programming） on whatsapp"
+        href="https://api.whatsapp.com/send?text=%e3%80%90OOP%e3%80%91%e7%89%a9%e4%bb%b6%e5%b0%8e%e5%90%91%e5%9f%ba%e7%a4%8e%e6%a6%82%e5%bf%b5%ef%bc%88Object%20Oriented%20Programming%ef%bc%89%20-%20https%3a%2f%2ffakestandard.github.io%2fpost%2foop%2foop-1-object-oriented-programming%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share 【OOP】物件導向基礎概念（Object Oriented Programming） on telegram"
+        href="https://telegram.me/share/url?text=%e3%80%90OOP%e3%80%91%e7%89%a9%e4%bb%b6%e5%b0%8e%e5%90%91%e5%9f%ba%e7%a4%8e%e6%a6%82%e5%bf%b5%ef%bc%88Object%20Oriented%20Programming%ef%bc%89&amp;url=https%3a%2f%2ffakestandard.github.io%2fpost%2foop%2foop-1-object-oriented-programming%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+</div>
+
+  </footer>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://fakestandard.github.io/">How can I help</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

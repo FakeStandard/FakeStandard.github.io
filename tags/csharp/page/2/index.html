@@ -148,6 +148,36 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【.NET】使用 NPOI 匯入 Excel</h2>
+  </header>
+  <section class="entry-content">
+    <p>在網站開發時，總會遇到匯出 EXCEL 的需求，除了匯出之外，偶爾也會遇到匯入 EXCEL 這種懶人需求。
+為何是懶人需求呢？通常使用者可以透過 UI 介面來維護資料，包括 CRUD 等功能，所以 Excel 資料會先透過前端介面在將資料傳遞到資料庫儲存。而匯入的方式，可以一次傳遞多筆資料，並且直達資料庫，過程中不需要使用 UI 介面逐筆輸入，非常省時又省力。
+註：此篇使用 ASP.NET Core 5 實作
+Start 首先到 NuGet 下載 NPOI 套件並安裝到專案中
+建立 ImportController.cs
+public class ImportController : Controller { public IActionResult Index() { return View(); } } 建立 Index.cshtml
+&lt;h2&gt;Import&lt;/h2&gt; @using (Html.BeginForm(&#34;Upload&#34;, &#34;Import&#34;, FormMethod.Post, new { enctype = &#34;multipart/form-data&#34; })) { &lt;input type=&#34;file&#34; class=&#34;form-control&#34; name=&#34;file&#34; /&gt; &lt;button type=&#34;submit&#34; class=&#34;btn btn-primary&#34;&gt;Upload&lt;/button&gt; } 在 Controller 中新增一個接收 HttpPost 的 ActionResult Upload，除了返回頁面之外，沒有任何代碼。...</p>
+  </section>
+  <footer class="entry-footer">May 11, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET】使用 NPOI 匯入 Excel" href="https://fakestandard.github.io/post/dotnet/dotnet-7-npoi-import/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【.NET】將資料匯出成 CSV</h2>
+  </header>
+  <section class="entry-content">
+    <p>前篇在紀錄使用第三方套件來匯出 Excel，忽然看到匯出 csv 的方法，其實很簡單，就順便記錄一下。
+Start 按照前篇建立一個 .Net Core MVC 的專案，同樣地建立 Model、Controller 及 View，讓畫面呈現一個 Employee 的列表，將按鈕名稱改為 csv Export，相關代碼如下
+Model public class Employee { public int ID { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Title { get; set; } public string City { get; set; } } Controller public class EmployeeController : Controller { private List&lt;Employee&gt; employees; public EmployeeController() { if (employees == null) { employees = new List&lt;Employee&gt;() { new Employee{ ID = 1, LastName = &#34;Davolio&#34;, FirstName = &#34;Nancy&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 2, LastName = &#34;Fuller&#34;, FirstName = &#34;Andrew&#34;, Title = &#34;Vice President, Sales&#34;, City = &#34;Tacoma&#34; }, new Employee{ ID = 3, LastName = &#34;Leverling&#34;, FirstName = &#34;Janet&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Kirkland&#34; }, new Employee{ ID = 4, LastName = &#34;Peacock&#34;, FirstName = &#34;Margaret&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Redmond&#34; }, new Employee{ ID = 5, LastName = &#34;Buchanan&#34;, FirstName = &#34;Steven&#34;, Title = &#34;Sales Manager&#34;, City = &#34;London&#34; }, new Employee{ ID = 6, LastName = &#34;Suyama&#34;, FirstName = &#34;Michael&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 7, LastName = &#34;King&#34;, FirstName = &#34;Robert&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 8, LastName = &#34;Callahan&#34;, FirstName = &#34;Laura&#34;, Title = &#34;Inside Sales Coordinator&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 9, LastName = &#34;Dodsworth&#34;, FirstName = &#34;Anne&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; } }; } } public IActionResult Index() { return View(employees); } } View @model IEnumerable&lt;Export_ClosedXML....</p>
+  </section>
+  <footer class="entry-footer">May 9, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET】將資料匯出成 CSV" href="https://fakestandard.github.io/post/dotnet/dotnet-6-exportcsv/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【.NET】使用 ClosedXML 實現匯出 Excel 功能</h2>
   </header>
   <section class="entry-content">
@@ -301,23 +331,6 @@ Start 流（Stream）為所有資料流的基礎類別，繼承該類別的資�
   </section>
   <footer class="entry-footer">2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【.NET】使用 C# 操作檔案 I/O 與檔案系統（二）" href="https://fakestandard.github.io/post/dotnet/dotnet-9-filesystemandfileio-two/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】搜尋演算法—費氏搜尋法（Fibonacci Search）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【閱讀紀錄】
-搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
-依據資料量大小而言，搜尋可分為兩種
- 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
- 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
-Start 常見的搜尋演算法
- 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  費氏搜尋演算法（Fibonacci Search） Reference 【圖說演算法 C#】</p>
-  </section>
-  <footer class="entry-footer">1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—費氏搜尋法（Fibonacci Search）" href="https://fakestandard.github.io/draft/algorithm-21-fibonaccisearch/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
