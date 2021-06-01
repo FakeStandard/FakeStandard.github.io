@@ -2,34 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fakestandard.github.io/categories/</loc>
-    <lastmod>2021-05-31T21:08:57+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/csharp/</loc>
-    <lastmod>2021-05-31T21:08:57+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/</loc>
-    <lastmod>2021-05-31T21:08:57+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/oop/</loc>
-    <lastmod>2021-05-31T21:08:57+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/categories/oop/</loc>
-    <lastmod>2021-05-31T21:08:57+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/post/</loc>
-    <lastmod>2021-05-31T21:08:57+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/</loc>
-    <lastmod>2021-05-31T21:08:57+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/post/oop/oop-1-object-oriented-programming/</loc>
-    <lastmod>2021-05-31T21:08:57+08:00</lastmod>
-  </url><url>
     <loc>https://fakestandard.github.io/tags/asp.net-core-5/</loc>
     <lastmod>2021-05-31T14:52:16+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/categories/asp.net-core-5/</loc>
+    <lastmod>2021-05-31T14:52:16+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/</loc>
+    <lastmod>2021-05-31T14:52:16+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/csharp/</loc>
     <lastmod>2021-05-31T14:52:16+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/dotnet-core/</loc>
@@ -38,10 +20,16 @@
     <loc>https://fakestandard.github.io/categories/dotnet-core/</loc>
     <lastmod>2021-05-31T14:52:16+08:00</lastmod>
   </url><url>
+    <loc>https://fakestandard.github.io/</loc>
+    <lastmod>2021-05-31T14:52:16+08:00</lastmod>
+  </url><url>
     <loc>https://fakestandard.github.io/tags/middleware/</loc>
     <lastmod>2021-05-31T14:52:16+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/netcore/</loc>
+    <lastmod>2021-05-31T14:52:16+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/</loc>
     <lastmod>2021-05-31T14:52:16+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/netcore/netcore5-3-middleware/</loc>
@@ -64,6 +52,18 @@
   </url><url>
     <loc>https://fakestandard.github.io/algorithm/algorithm-9-hashtable/</loc>
     <lastmod>2021-05-29T13:55:36+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/oop/</loc>
+    <lastmod>2021-05-27T21:08:57+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/oop/</loc>
+    <lastmod>2021-05-27T21:08:57+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/post/</loc>
+    <lastmod>2021-05-27T21:08:57+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/post/oop/oop-1-object-oriented-programming/</loc>
+    <lastmod>2021-05-27T21:08:57+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/graph/</loc>
     <lastmod>2021-05-26T09:27:51+08:00</lastmod>
