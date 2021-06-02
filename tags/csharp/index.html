@@ -148,6 +148,30 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】排序演算法—氣泡排序法（Bubble Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【4/29 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  氣泡排序法（Bubble Sort） 氣泡排序法可稱為交換排序法，其構思為觀察水中氣泡變化而成，甚至可稱為冒泡排序等類似名稱。
+其原理為從第一個元素開始，比較相鄰元素的大小，如大小順序有誤，就將其對調，再與下一個元素進行比較，彷彿氣泡逐漸冒出水面上的概念，使用該方法掃描過一次後，就可以確保最後一個元素是位於正確的位置，進行第二次掃描，就能確認第二個元素的正確位置，逐步進行直到所有元素排序完成。
+使用白話一點的說法，逐一拆解每一個步驟，首先有一個序列，初始的狀態和順序為 [30] [20] [40] [50] [10]，目標將此序列由小到大排列，變成 [10] [20] [30] [40] [50]
+我們透過氣泡排序法進行排序，步驟解析如下
+Step 1 首先進行第一次掃描，會先拿到第一個元素 [30]，接著與相鄰的元素 [20] 進行比較，如果第二個元素小於地一個元素，就進行位置交換。
+初始序列 [30] [20] [40] [50] [10]
+結果序列 [20] [30] [40] [50] [10]
+Step 2 依然拿著 [30] 這個元素，繼續與相鄰的元素比較，因為該元素已經調換到第二個元素的位置，所以下一個相鄰的元素會是 [40]，接著進行比較，經比較後兩個元素順序不變，依然維持下列結果
+結果序列 [20] [30] [40] [50] [10]...</p>
+  </section>
+  <footer class="entry-footer">June 1, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—氣泡排序法（Bubble Sort）" href="https://fakestandard.github.io/algorithm/algorithm-10-bubblesort/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【.NET Core】中介軟體 Middleware</h2>
   </header>
   <section class="entry-content">
@@ -322,21 +346,6 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
   </section>
   <footer class="entry-footer">May 18, 2021&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【.NET】使用 C# 操作檔案 I/O 與檔案系統（一）" href="https://fakestandard.github.io/post/dotnet/dotnet-8-filesystemandfileio-one/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET Core】Application Startup Class</h2>
-  </header>
-  <section class="entry-content">
-    <p>【ASP.NET Core 5】
-在 .NET Core 出現的 Startup 類別非常重要，該類別用來配置應用程式的「服務」和「請求管道」，由它的名稱可知，在應用程式啟動時該類別首先被執行，它與傳統應用程式內的 Global.asax 相似。
-Start 開啟 Program 類別找到 Main 方法，這裡即是程式的進入點（Entry point），與 Console 專案的啟動方式相同都是 Program.Main，再從程式進入點將網站實例化，該方法配置 Host 時使用了 UserStartup&lt;T&gt; 方法，其中泛型 &lt;T&gt; 預設為 Startup
-public class Program { public static void Main(string[] args) { CreateHostBuilder(args).Build().Run(); } public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host.CreateDefaultBuilder(args) .ConfigureWebHostDefaults(webBuilder =&gt; { // 配置啟動類別位置  webBuilder.UseStartup&lt;Startup&gt;(); }); } 該類別依照 ASP.NET Core 慣例命名為 Startup，顧名思義為啟動類別，但是，我們也可以為該類別指定任何名稱，且在 UseStratup&lt;T&gt; 的泛型更換為指定後的名稱即可。如下將該類別命名為 MyStartup，配置啟動類別的位置也要替換為新類名。
-public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host....</p>
-  </section>
-  <footer class="entry-footer">May 13, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET Core】Application Startup Class" href="https://fakestandard.github.io/netcore/netcore5-1-startupclass/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

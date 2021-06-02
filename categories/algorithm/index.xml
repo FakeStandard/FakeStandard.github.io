@@ -6,7 +6,29 @@
     <description>Recent content in Algorithm on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 29 May 2021 13:55:36 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Jun 2021 13:56:38 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】排序演算法—氣泡排序法（Bubble Sort）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-10-bubblesort/</link>
+      <pubDate>Tue, 01 Jun 2021 13:56:38 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-10-bubblesort/</guid>
+      <description>【4/29 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  氣泡排序法（Bubble Sort） 氣泡排序法可稱為交換排序法，其構思為觀察水中氣泡變化而成，甚至可稱為冒泡排序等類似名稱。
+其原理為從第一個元素開始，比較相鄰元素的大小，如大小順序有誤，就將其對調，再與下一個元素進行比較，彷彿氣泡逐漸冒出水面上的概念，使用該方法掃描過一次後，就可以確保最後一個元素是位於正確的位置，進行第二次掃描，就能確認第二個元素的正確位置，逐步進行直到所有元素排序完成。
+使用白話一點的說法，逐一拆解每一個步驟，首先有一個序列，初始的狀態和順序為 [30] [20] [40] [50] [10]，目標將此序列由小到大排列，變成 [10] [20] [30] [40] [50]
+我們透過氣泡排序法進行排序，步驟解析如下
+Step 1 首先進行第一次掃描，會先拿到第一個元素 [30]，接著與相鄰的元素 [20] 進行比較，如果第二個元素小於地一個元素，就進行位置交換。
+初始序列 [30] [20] [40] [50] [10]
+結果序列 [20] [30] [40] [50] [10]
+Step 2 依然拿著 [30] 這個元素，繼續與相鄰的元素比較，因為該元素已經調換到第二個元素的位置，所以下一個相鄰的元素會是 [40]，接著進行比較，經比較後兩個元素順序不變，依然維持下列結果
+結果序列 [20] [30] [40] [50] [10]</description>
+    </item>
+    
     <item>
       <title>【Algorithm】資料結構—雜湊表（Hash Table）</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-9-hashtable/</link>
