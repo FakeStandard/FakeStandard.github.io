@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Breadth First Search on How can I help</title>
+    <link>https://fakestandard.github.io/tags/breadth-first-search/</link>
+    <description>Recent content in Breadth First Search on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Wed, 02 Jun 2021 18:41:16 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/breadth-first-search/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】圖的應用—廣度優先搜尋法</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-99-graph-breadth-first-search/</link>
+      <pubDate>Wed, 02 Jun 2021 18:41:16 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-99-graph-breadth-first-search/</guid>
+      <description>【閱讀紀錄】
+根據先前文章介紹的圖，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 在樹狀結構中，樹的走訪方式有前序、中序和後序走訪法，而在圖形結構中，其走訪方式與樹狀結構走訪概念相同，要能走訪所有頂點。
+圖形結構的走訪方式有兩種
+ 深度優先搜尋法（Depth First Search, DFS） 廣度優先搜尋法（Breadth First Search, BFS）  廣度優先搜尋法（Breadth First Search, BFS） 廣度優先搜尋法又可稱為先廣後深走訪法，
+Reference 【圖說演算法 C#】</description>
+    </item>
+    
+  </channel>
+</rss>
