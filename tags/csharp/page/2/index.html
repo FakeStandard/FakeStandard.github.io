@@ -148,6 +148,24 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【.NET】使用 C# 操作檔案 I/O 與檔案系統（一）</h2>
+  </header>
+  <section class="entry-content">
+    <p>在 .NET 框架中，命名空間 System.IO 已經提供多種檔案操作類別，用於對資料檔案和資料流的讀寫。談到檔案系統，要先知道兩個東西
+ 檔案（File） 流（Stream）  檔案是在硬碟或光碟機等媒體上可永久儲存資料的有序集合，它是一種進行資料讀寫操作的基本物件，通常按照樹狀目錄結構進行組織，每個檔案皆有檔名、所在路徑、建立時間、訪問許可權等屬性。
+流是位元組序列的抽象概念，例如檔案、輸入/輸出裝置、處理程序間的通訊管道（an inter-process communication pipe）或 TCP/IP 通訊端。資料流包含讀取、寫入以及支援搜尋三種基本作業。
+Start FileSystemInfo 類別是檔案系統類別的基礎類別，繼承該類別的子類別有
+ File - 負責檔案系統中的檔案，屬靜態類別 FileInfo - 負責檔案系統中的檔案 Directory - 負責檔案系統中的資料夾，屬靜態類別 DirectoryInfo - 負責檔案系統中的資料夾  另外還有位於 System.IO 命名空間下其餘相關的類別
+ Path - 負責檔案系統中的路徑 DriveInfo - 負責磁碟機資訊的訪問  File 與 FileInfo 的區別在於 Info 類別需要實體化，而一般 File 是屬於靜態類別；Directory 與 DirectoryInfo 同理，Directory 是靜態類別，DirectoryInfo 需實體化類別。
+FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
+/// &lt;summary&gt; /// 建立檔案並寫入資料 /// &lt;/summary&gt; public static void CreateFileByFileInfo() { // 實體化 FileInfo 並指予路徑  FileInfo file = new FileInfo(@&#34;D:\Test....</p>
+  </section>
+  <footer class="entry-footer">May 18, 2021&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET】使用 C# 操作檔案 I/O 與檔案系統（一）" href="https://fakestandard.github.io/post/dotnet/dotnet-8-filesystemandfileio-one/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【.NET Core】Application Startup Class</h2>
   </header>
   <section class="entry-content">
@@ -308,26 +326,6 @@ Solution 有三種解決方案
   </section>
   <footer class="entry-footer">April 19, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【.NET】西元年與民國年相互轉換" href="https://fakestandard.github.io/post/dotnet/dotnet-3-changetaiwancalendar/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】經典演算法</h2>
-  </header>
-  <section class="entry-content">
-    <p>【3/28 閱讀紀錄】
-此篇想記錄一些閱讀的筆記，演算法乃是運算思維的基石之一，藉由紀錄加深一下演算法的概念。
-Start 演算法種類很多，經典的演算法有以下幾種
- 分治演算法（Divide and conquer） 迭代演算法（Iterative Algorithm） 遞迴演算法（Recursion Algorithm） 動態規劃演算法（Dynamic Programming Algorithm） 枚舉演算法（Exhaustive Searching） 貪心演算法（Greedy Algorithm） 回溯演算法（Backtracking Algorithm）  分治演算法（Divide and conquer） 分治演算法是一種簡單又重要的演算法，它將複雜的問題逐一拆解成單元較小的問題，問題規模較小則容易求解，最終在合併子問題以得到原問題的解答，在日常生活中也能時時應用到。
-像是以往在進行團體報告時，假設報告主題的章節共有五個章節，當然不可能讓一個人獨立完成五個章節，這時就可以透過分治法，將各章節逐一拆解成較小單元，每位成員負責一個章節，讓五位成員同時進行，在時間上遠遠勝於一人獨立完成所有章節，且透過分工還可能達到其他效果。
-然而分治演算法還可應用在數字的分類和排序上，舉個例子，手邊有一副順序打亂的撲克牌，現在要將它們復原到起初開封時的排序，依序分類為黑桃、紅心、梅花、方塊，每個分類需從 A-K 逐一排序。此時有兩種做法，第一種為每拿到一張牌，就將它插入到適當的順序中，但缺點是在整理的過程中較繁瑣也較花時間。第二種作法則是應用分治演算法，以不考慮 A-K 順序的情況下，將黑桃分成一堆，紅心分成一堆，以此類推，最終會將黑桃、紅心、梅花、方塊分類出來，此時在逐一將每個分類的 A-K 順序整理好，再將其合併。
-所以透過分治演算法可將複雜的大問題，拆解成規模小的子問題，雖然子問題的數量多，相對的更易於解決，解決的速度上也相對的快。
-迭代演算法（Iterative Algorithm） 無法使用一次公式就能求解，需透過反覆的運算才能得解的方法稱為迭代演算法，像是透過迴圈去循環重複的程式碼來得到答案。
-舉例：利用 for 迴圈設計 n! 的遞迴程式，n 是透過外部輸入得知，打算 1! ~ n! 所有結果
-// 從外部輸入 n int n = int.Parse(Console.ReadLine()); // 用以計算結果 int sum = 1; // 使用迴圈計算 1! ~ n! for (int i = 1; i &lt;= n; i&#43;&#43;) { for (int j = i; j &gt; 0; j--) { sum = sum * j; } Console....</p>
-  </section>
-  <footer class="entry-footer">April 5, 2021&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】經典演算法" href="https://fakestandard.github.io/algorithm/algorithm-1-classicalgorithm/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

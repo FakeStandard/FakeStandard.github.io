@@ -6,7 +6,29 @@
     <description>Recent content in Algorithms on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 01 Jun 2021 13:56:38 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 03 Jun 2021 15:19:41 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】排序演算法—選擇排序法（Selection Sort）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-11-selectionsort/</link>
+      <pubDate>Thu, 03 Jun 2021 15:19:41 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-11-selectionsort/</guid>
+      <description>【4/29 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  選擇排序法（Selection Sort） 選擇排序法顧名思義是以選擇的概念來進行排序，也算是枚舉法的應用，原理為反覆從未排序的數列中取出最小元素，加入到另一個數列中，達到排序的結果。
+選擇排序可以由大到小排序，將最大值放到第一位置；或是由小到大排序，將最大值放到最後一個位置。
+透過選擇排序法，對 [30] [20] [40] [50] [10] 該數列進行排序，目標結果為由小到大排列
+Step 1 首先進行第一次掃描，找到數列中最小值，直接與第一個元素交換
+初始序列 [30] [20] [40] [50] [10]
+結果序列 [10] [20] [40] [50] [30]
+Step 2 進行第二次掃描，排除第一個元素，從第二個位置開始找起，找到最小值，與第二個位置元素交換，因為 [20] 是此次搜尋中最小值，其結果位置不變
+上次結果 [10] [20] [40] [50] [30]
+結果序列 [10] [20] [40] [50] [30]</description>
+    </item>
+    
     <item>
       <title>【Algorithm】排序演算法—氣泡排序法（Bubble Sort）</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-10-bubblesort/</link>

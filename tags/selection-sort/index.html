@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>CSharp | How can I help</title>
+<title>Selection Sort | How can I help</title>
 <meta name="keywords" content="" />
 <meta name="description" content="不專業代碼">
 <meta name="author" content="Polar Bear">
-<link rel="canonical" href="https://fakestandard.github.io/tags/csharp/" />
+<link rel="canonical" href="https://fakestandard.github.io/tags/selection-sort/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.d1b405b7c6bf1b09aebca33eb6e2d8bd070113d119bdfa2715c32f6408f9fbee.css" integrity="sha256-0bQFt8a/GwmuvKM&#43;tuLYvQcBE9EZvfonFcMvZAj5&#43;&#43;4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://fakestandard.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://fakestandard.github.io/favicon-16x16.png">
@@ -19,14 +19,14 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.81.0" />
-<link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/tags/csharp/index.xml">
-<meta property="og:title" content="CSharp" />
+<link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/tags/selection-sort/index.xml">
+<meta property="og:title" content="Selection Sort" />
 <meta property="og:description" content="不專業代碼" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://fakestandard.github.io/tags/csharp/" />
+<meta property="og:url" content="https://fakestandard.github.io/tags/selection-sort/" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="CSharp"/>
+<meta name="twitter:title" content="Selection Sort"/>
 <meta name="twitter:description" content="不專業代碼"/>
 
 </head>
@@ -143,51 +143,32 @@
 </header>
 <main class="main"> 
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
-  <h1>CSharp</h1>
+  <h1>Selection Sort</h1>
 </header>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2>【Algorithm】經典演算法</h2>
+    <h2>【Algorithm】排序演算法—選擇排序法（Selection Sort）</h2>
   </header>
   <section class="entry-content">
-    <p>【3/28 閱讀紀錄】
-此篇想記錄一些閱讀的筆記，演算法乃是運算思維的基石之一，藉由紀錄加深一下演算法的概念。
-Start 演算法種類很多，經典的演算法有以下幾種
- 分治演算法（Divide and conquer） 迭代演算法（Iterative Algorithm） 遞迴演算法（Recursion Algorithm） 動態規劃演算法（Dynamic Programming Algorithm） 枚舉演算法（Exhaustive Searching） 貪心演算法（Greedy Algorithm） 回溯演算法（Backtracking Algorithm）  分治演算法（Divide and conquer） 分治演算法是一種簡單又重要的演算法，它將複雜的問題逐一拆解成單元較小的問題，問題規模較小則容易求解，最終在合併子問題以得到原問題的解答，在日常生活中也能時時應用到。
-像是以往在進行團體報告時，假設報告主題的章節共有五個章節，當然不可能讓一個人獨立完成五個章節，這時就可以透過分治法，將各章節逐一拆解成較小單元，每位成員負責一個章節，讓五位成員同時進行，在時間上遠遠勝於一人獨立完成所有章節，且透過分工還可能達到其他效果。
-然而分治演算法還可應用在數字的分類和排序上，舉個例子，手邊有一副順序打亂的撲克牌，現在要將它們復原到起初開封時的排序，依序分類為黑桃、紅心、梅花、方塊，每個分類需從 A-K 逐一排序。此時有兩種做法，第一種為每拿到一張牌，就將它插入到適當的順序中，但缺點是在整理的過程中較繁瑣也較花時間。第二種作法則是應用分治演算法，以不考慮 A-K 順序的情況下，將黑桃分成一堆，紅心分成一堆，以此類推，最終會將黑桃、紅心、梅花、方塊分類出來，此時在逐一將每個分類的 A-K 順序整理好，再將其合併。
-所以透過分治演算法可將複雜的大問題，拆解成規模小的子問題，雖然子問題的數量多，相對的更易於解決，解決的速度上也相對的快。
-迭代演算法（Iterative Algorithm） 無法使用一次公式就能求解，需透過反覆的運算才能得解的方法稱為迭代演算法，像是透過迴圈去循環重複的程式碼來得到答案。
-舉例：利用 for 迴圈設計 n! 的遞迴程式，n 是透過外部輸入得知，打算 1! ~ n! 所有結果
-// 從外部輸入 n int n = int.Parse(Console.ReadLine()); // 用以計算結果 int sum = 1; // 使用迴圈計算 1! ~ n! for (int i = 1; i &lt;= n; i&#43;&#43;) { for (int j = i; j &gt; 0; j--) { sum = sum * j; } Console....</p>
+    <p>【4/29 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  選擇排序法（Selection Sort） 選擇排序法顧名思義是以選擇的概念來進行排序，也算是枚舉法的應用，原理為反覆從未排序的數列中取出最小元素，加入到另一個數列中，達到排序的結果。
+選擇排序可以由大到小排序，將最大值放到第一位置；或是由小到大排序，將最大值放到最後一個位置。
+透過選擇排序法，對 [30] [20] [40] [50] [10] 該數列進行排序，目標結果為由小到大排列
+Step 1 首先進行第一次掃描，找到數列中最小值，直接與第一個元素交換
+初始序列 [30] [20] [40] [50] [10]
+結果序列 [10] [20] [40] [50] [30]
+Step 2 進行第二次掃描，排除第一個元素，從第二個位置開始找起，找到最小值，與第二個位置元素交換，因為 [20] 是此次搜尋中最小值，其結果位置不變
+上次結果 [10] [20] [40] [50] [30]
+結果序列 [10] [20] [40] [50] [30]...</p>
   </section>
-  <footer class="entry-footer">April 5, 2021&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】經典演算法" href="https://fakestandard.github.io/algorithm/algorithm-1-classicalgorithm/"></a>
+  <footer class="entry-footer">June 3, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—選擇排序法（Selection Sort）" href="https://fakestandard.github.io/algorithm/algorithm-11-selectionsort/"></a>
 </article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET】使用 C# 操作檔案 I/O 與檔案系統（二）</h2>
-  </header>
-  <section class="entry-content">
-    <p>在 .NET 框架中，命名空間System.IO已經提供多種檔案操作類別，用於對資料檔案和資料流的讀寫。談到檔案系統，要先知道兩個東西
- 檔案（File） 流（Stream）  檔案是在硬碟或光碟機等媒體上可永久儲存資料的有序集合，它是一種進行資料讀寫操作的基本物件，通常按照樹狀目錄結構進行組織，每個檔案皆有檔名、所在路徑、建立時間、訪問許可權等屬性。
-流是位元組序列的抽象概念，例如檔案、輸入/輸出裝置、處理程序間的通訊管道（an inter-process communication pipe）或 TCP/IP 通訊端。資料流包含讀取、寫入以及支援搜尋三種基本作業。
-Start 流（Stream）為所有資料流的基礎類別，繼承該類別的資料流常見的有
- FileStream StreamReader StreamWriter MemoryStream BufferedStream  FileStream FileStream可以用來讀取、寫入、開啟和關閉檔案系統上的檔案，或操縱其他與檔案相關的檔案處理系統。該類別主要是要操作位元組陣列， Stream 類別則直接操作字元，是兩者較不同的地方。
-文字讀起來沒感覺，直接使用FileStream來讀寫二進位制檔案。
-先建立一個含有文字內容的文字檔，透過FileStream開啟該文字檔，除了讀取出二進位制內容，也順便將 binary 轉換為字元打印出來。
-/// &lt;summary&gt; /// 使用 FileStream 讀取檔案 /// &lt;/summary&gt; public static void FileStreamRead() { string path = @&#34;D:\Test.txt&#34;; // 建立 FileStream 並實例化  // 開啟或建立指定路徑檔案，訪問權限唯讀  FileStream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read); // 讀取 binary 檔案  byte[] array = new byte[fs....</p>
-  </section>
-  <footer class="entry-footer">2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET】使用 C# 操作檔案 I/O 與檔案系統（二）" href="https://fakestandard.github.io/post/dotnet/dotnet-9-filesystemandfileio-two/"></a>
-</article>
-<footer class="page-footer">
-  <nav class="pagination">
-    <a class="prev" href="https://fakestandard.github.io/tags/csharp/page/2/">« Prev Page</a>
-  </nav>
-</footer>
     </main>
     <footer class="footer">
     <span>&copy; 2021 <a href="https://fakestandard.github.io/">How can I help</a></span>
