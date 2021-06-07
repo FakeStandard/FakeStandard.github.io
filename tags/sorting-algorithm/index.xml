@@ -6,7 +6,31 @@
     <description>Recent content in Sorting Algorithm on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 03 Jun 2021 15:19:41 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/sorting-algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Jun 2021 12:31:46 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/sorting-algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】排序演算法—插入排序法（Insert Sort）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-12-insertsort/</link>
+      <pubDate>Mon, 07 Jun 2021 12:31:46 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-12-insertsort/</guid>
+      <description>【4/29 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  插入排序法（Insert Sort） 插入排序法原理是將陣列中的元素，逐一與已經排序好的資料作比較，例如前兩個元素已經排序好，再將第三個元素與這兩個元素作比較，插入到適當的位置，接著將第四個元素，與前三個已排序好的元素進行比較，再插入到適當位置，重複此步驟，直到排序完成為止。
+透過插入排序法，一樣對 [30] [20] [40] [50] [10] 該數列進行排序，目標結果為由小到大排列
+Step 1 首先第一個元素 [30] 定義為已排序，取得第二個元素 [20]，與第一個元素進行比較，插入到適當位置
+初始已排序序列 [30]
+插入後結果序列 [20] [30]
+Step 2 取得第三個元素 [40]，與上次結果進行比對，並插入適當位置
+初始已排序序列 [20] [30]
+插入後結果序列 [20] [30] [40]
+Step 3 取得第四個元素 [50]，與上次結果進行比對，並插入適當位置
+初始已排序序列 [20] [30] [40]
+插入後結果序列 [20] [30] [40] [50]</description>
+    </item>
+    
     <item>
       <title>【Algorithm】排序演算法—選擇排序法（Selection Sort）</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-11-selectionsort/</link>

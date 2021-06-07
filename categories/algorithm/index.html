@@ -148,6 +148,32 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】排序演算法—插入排序法（Insert Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【4/29 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  插入排序法（Insert Sort） 插入排序法原理是將陣列中的元素，逐一與已經排序好的資料作比較，例如前兩個元素已經排序好，再將第三個元素與這兩個元素作比較，插入到適當的位置，接著將第四個元素，與前三個已排序好的元素進行比較，再插入到適當位置，重複此步驟，直到排序完成為止。
+透過插入排序法，一樣對 [30] [20] [40] [50] [10] 該數列進行排序，目標結果為由小到大排列
+Step 1 首先第一個元素 [30] 定義為已排序，取得第二個元素 [20]，與第一個元素進行比較，插入到適當位置
+初始已排序序列 [30]
+插入後結果序列 [20] [30]
+Step 2 取得第三個元素 [40]，與上次結果進行比對，並插入適當位置
+初始已排序序列 [20] [30]
+插入後結果序列 [20] [30] [40]
+Step 3 取得第四個元素 [50]，與上次結果進行比對，並插入適當位置
+初始已排序序列 [20] [30] [40]
+插入後結果序列 [20] [30] [40] [50]...</p>
+  </section>
+  <footer class="entry-footer">June 7, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—插入排序法（Insert Sort）" href="https://fakestandard.github.io/algorithm/algorithm-12-insertsort/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】排序演算法—選擇排序法（Selection Sort）</h2>
   </header>
   <section class="entry-content">
@@ -342,34 +368,6 @@ const int num = 300; // true: 質數 false: 非質數 bool[] prime = new bool[nu
   </section>
   <footer class="entry-footer">April 26, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—陣列（Array）" href="https://fakestandard.github.io/algorithm/algorithm-3-array/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】資料結構定義與資料型態</h2>
-  </header>
-  <section class="entry-content">
-    <p>【4/11 閱讀紀錄】
-此篇為閱讀的紀錄，紀錄關於資料結構定義，以加強基礎觀念。
-Start 資料結構為一種輔助程式設計最佳化的方法論，其中包含儲存的資料，以及資料儲存的方式，目的是要讓程式達到有效率的執行以及減少記憶體占用等。
-一般來說，「資料」是最原始的資料，資料經過「資料處理」的過程後，成為可用的「資訊」。資料處理的過程是對原始資料進行整理和分析，將資料提煉成具有參考價值的資訊，其中整理與分析的過程會使用演算法和資料結構，所以我們要將電腦內的資料轉換為可用的文字、圖表等資訊時，首先要了解演算法和資料結構的觀念，才能精準的提煉出可用資訊。
-資料型態
- 基本資料型態（Primitive Data Type） 結構化資料型態（Structured Data Type） 抽象化資料型態（Abstraact Data Type）  記憶體儲存方式
- 靜態資料結構（Static data structure） 動態資料結構（Dynamic data structure）   資料型態 認識資料結構前，需先了解資料型態有哪些，以利在第一步選出正確地型態，避免規劃出沒有效率的程式，導致不堪的後果。
-  基本資料型態（Primitive Data Type）
-基本資料型態又稱為純量資料型態（Scalar Data Type），它們是一組最基本資料型態，例如整數、布林、字串、浮點數等。
-  結構化資料型態（Structured Data Type）
-結構化資料型態也可稱為虛擬資料型態（Virtual Data Type），比基本資料型態更高一層的型態，例如陣列、指標、串列、檔案等。
-  抽象資料型態（Abstract Data Type） 抽象資料型態在電腦中代表資訊隱藏的精神與某一種特定的關係模式，例如堆疊是一種後進先出的運作方式。
-  記憶體儲存方式 若以記憶體儲存的方式來看資料結構，可以區分為兩種
-  靜態資料結構（Static data structure）
-靜態資料結構是將有序數列的資料，儲存於連續的記憶體空間，故在編譯時就得先配置記憶體空間，所以在初期須先宣告固定的記憶體空間，優點是連續記憶體設計時叫簡易，且讀取與修改任一元素的時間都是固定，缺點則是刪除或加入需要移動大量的資料，而最典型的靜態資料結構就是陣列。
-  動態資料結構（Dynamic data structure）
-動態資料結構是將有序數列的資料，儲存於不連續的記憶體空間，不須在編譯時先配置記憶體，因記憶體配置是發生在執行時，故能節省記憶體空間，在插入和刪除也相當方便，它不需要移動大量資料，缺點則是設計時較麻煩，讀取、修改或搜尋時，無法像靜態資料結構一樣直接取出資料，必須透過走訪找到目標資料為止。動態資料結構的代表是鏈結串列。
-  Reference 【圖說演算法 C#】</p>
-  </section>
-  <footer class="entry-footer">April 25, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構定義與資料型態" href="https://fakestandard.github.io/algorithm/algorithm-2-datastructure/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
