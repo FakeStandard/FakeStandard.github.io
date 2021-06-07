@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Static Files on How can I help</title>
+    <link>https://fakestandard.github.io/tags/static-files/</link>
+    <description>Recent content in Static Files on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sun, 06 Jun 2021 16:17:44 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/static-files/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【.NET Core】靜態檔案 Static Files</title>
+      <link>https://fakestandard.github.io/netcore/netcore5-4-staticfiles/</link>
+      <pubDate>Sun, 06 Jun 2021 16:17:44 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/netcore/netcore5-4-staticfiles/</guid>
+      <description>【ASP.NET Core 5】
+靜態檔案是 HTML、css、image、js 等資源檔案，過去 .NET Framework 可直接被存取，在 ASP.NET Core 中，已不能直接被瀏覽，對於存取有特定的限制。
+Start 首先，先了解 Content root 以及 Web root，硬翻成中文為內容根目錄 &amp;amp; Web 根目錄。
+Content root（內容根目錄） Content root 預設為專案的根目錄，包含
+ 裝載應用程式的可執行檔 .exe 組成應用程式的已編譯元件 .dll 應用程式所使用的內容檔案  Razor(.cshtml、.razor) 設定檔(.json、.xml) 資料檔案(.db)   Web 根目錄(Web root)  Web root（Web 根目錄） Web root 為公共靜態資源的基本路徑，預設路徑為 {content root}/wwwroot
+ 樣式 .css JavaScript .js 影像檔 .png、.jpg  建立一個專案，在方案總管中找到 wwwroot，可看到預設已建立 css、js、lib 資料夾，使用路徑 https://localhost:5000/css/site.css 嘗試讀取 ~/css/site.css 該檔案， 可直接瀏覽檔案內容。
+測試自行建立的資料夾是否能存取，在 wwwroot 目錄下建立 images 資料夾以自定義靜態檔案路徑，並放置一張影像檔在該目錄下，嘗試使用 URL https://localhost:5000/images/MyImages.</description>
+    </item>
+    
+  </channel>
+</rss>
