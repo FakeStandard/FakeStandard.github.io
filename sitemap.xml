@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://fakestandard.github.io/categories/</loc>
+    <lastmod>2021-06-08T10:18:14+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/csharp/</loc>
+    <lastmod>2021-06-08T10:18:14+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/</loc>
+    <lastmod>2021-06-08T10:18:14+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/jagged-array/</loc>
+    <lastmod>2021-06-08T10:18:14+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/post/</loc>
+    <lastmod>2021-06-08T10:18:14+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/</loc>
+    <lastmod>2021-06-08T10:18:14+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/post/csharp/csharp-1-jaggedarray/</loc>
+    <lastmod>2021-06-08T10:18:14+08:00</lastmod>
+  </url><url>
     <loc>https://fakestandard.github.io/tags/algorithm/</loc>
     <lastmod>2021-06-07T12:31:46+08:00</lastmod>
   </url><url>
@@ -11,22 +32,13 @@
     <loc>https://fakestandard.github.io/algorithm/</loc>
     <lastmod>2021-06-07T12:31:46+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/categories/</loc>
-    <lastmod>2021-06-07T12:31:46+08:00</lastmod>
-  </url><url>
     <loc>https://fakestandard.github.io/tags/csharp/</loc>
-    <lastmod>2021-06-07T12:31:46+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/</loc>
     <lastmod>2021-06-07T12:31:46+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/insert-sort/</loc>
     <lastmod>2021-06-07T12:31:46+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/sorting-algorithm/</loc>
-    <lastmod>2021-06-07T12:31:46+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/</loc>
     <lastmod>2021-06-07T12:31:46+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/algorithm/algorithm-12-insertsort/</loc>
@@ -84,9 +96,6 @@
     <lastmod>2021-05-27T11:04:04+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/categories/dotnet/</loc>
-    <lastmod>2021-05-27T11:04:04+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/post/</loc>
     <lastmod>2021-05-27T11:04:04+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/stream/</loc>
