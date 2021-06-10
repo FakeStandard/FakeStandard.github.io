@@ -159,6 +159,24 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【.NET】西元年與民國年相互轉換</h2>
+  </header>
+  <section class="entry-content">
+    <p>這篇想記錄一下老掉牙的問題，是關於時間格式的「西元年」和「民國年」的愛恨糾葛。
+一般電腦在安裝作業系統時預設會是西元年，而有些人習慣看民國年，這些人就從設定的「地區與語言」中，將行事曆變更為中華民國曆，這些人對日期看順眼了，卻為開發人員種下一個應該要懂得基本常識。
+西元年扣掉 1911 就是民國年，這知識完全無誤，但若你是開發人員，並且在開發應用程式時使用 -1911 來算出民國年，這觀念可要重新來過了，因為 .NET 有提供 Taiwan Calendar 類別讓你在西元與民國之間盡情地轉換，甚至也無須擔心四年就要閏一次「閏年」。
+Solution 有三種解決方案
+ 直接轉換 建立擴充方法 替換當前執行緒的文化特性  直接轉換 建立一個時間變數，透過 TaiwanCalendar 返回轉換後的時間
+引用命名空間
+ System.Globalization  DateTime dateTime = new DateTime(2020, 2, 29); TaiwanCalendar tc = new TaiwanCalendar(); int year = tc.GetYear(dateTime); int month = dateTime.Month; int day = dateTime.Day; string newDateTime = $&#34;{year}/{month}/{day}&#34;; Console.WriteLine(newDateTime); 建立擴充方法 先撰寫一個擴展方法，需要使用時直接調用擴充方法，無須每次都撰寫相同代碼。
+/// &lt;summary&gt; /// 靜態擴展類別 /// &lt;/summary&gt; public static class DateTimeExtend { /// &lt;summary&gt;  /// 靜態擴展方法  /// &lt;/summary&gt;  /// &lt;param name=&#34;dateTime&#34;&gt;&lt;/param&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public static string ToTaiwanDate(this DateTime dateTime) { TaiwanCalendar tc = new TaiwanCalendar(); int year = tc....</p>
+  </section>
+  <footer class="entry-footer">April 19, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET】西元年與民國年相互轉換" href="https://fakestandard.github.io/post/dotnet/dotnet-3-changetaiwancalendar/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【人森】如何計算個人綜合所得稅？</h2>
   </header>
   <section class="entry-content">
@@ -305,22 +323,6 @@ Note OK. 如此一來就可以直接在遠端將資源儲存到本地硬碟，�
   </section>
   <footer class="entry-footer">March 26, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Windows】分享本地硬碟供遠端使用" href="https://fakestandard.github.io/post/windows/windows-3-remotedesktopconnection-sharedisk/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【Windows】遠端桌面連線無法複製貼上？</h2>
-  </header>
-  <section class="entry-content">
-    <p>Issue 最近在 Win10 上使用遠端桌面連線時，需要在本地和遠端進行複製 &amp; 貼上動作，但此功能忽然失效？不論是快捷鍵或介面操作，就是無法使用。
-Solution Step1 檢查剪貼簿功能是否有開啟
-【傳送門】【Windows】開啟遠端桌面連線剪貼簿功能
-Step2 可能原因是遠端的檔案複製（File Copy）程序沒有回應，開啟工作管理員找到 Rdpclip.exe 將它關閉，再結束遠端連線，隨後再使用本地主機執行遠端連線即可恢復。
-Note 那麼為何 File Copy 會當掉？
-有可能是伺服器的記憶體不足或者記憶體滿載，較忙碌的伺服器也有高機率發生當掉的情況。</p>
-  </section>
-  <footer class="entry-footer">March 25, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Windows】遠端桌面連線無法複製貼上？" href="https://fakestandard.github.io/post/windows/windows-2-remotedesktopconnection-rdpclip/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
