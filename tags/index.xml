@@ -6,13 +6,40 @@
     <description>Recent content in Tags on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 10 Jun 2021 14:08:57 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 11 Jun 2021 11:10:37 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ASP.NET Core 5</title>
+      <link>https://fakestandard.github.io/tags/asp.net-core-5/</link>
+      <pubDate>Fri, 11 Jun 2021 11:10:37 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/asp.net-core-5/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>CSharp</title>
       <link>https://fakestandard.github.io/tags/csharp/</link>
-      <pubDate>Thu, 10 Jun 2021 14:08:57 +0800</pubDate>
+      <pubDate>Fri, 11 Jun 2021 11:10:37 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DotNET Core</title>
+      <link>https://fakestandard.github.io/tags/dotnet-core/</link>
+      <pubDate>Fri, 11 Jun 2021 11:10:37 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/dotnet-core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Logging</title>
+      <link>https://fakestandard.github.io/tags/logging/</link>
+      <pubDate>Fri, 11 Jun 2021 11:10:37 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/logging/</guid>
       <description></description>
     </item>
     
@@ -67,24 +94,6 @@
       <pubDate>Mon, 07 Jun 2021 12:31:46 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/insert-sort/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ASP.NET Core 5</title>
-      <link>https://fakestandard.github.io/tags/asp.net-core-5/</link>
-      <pubDate>Sun, 06 Jun 2021 16:17:44 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/asp.net-core-5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DotNET Core</title>
-      <link>https://fakestandard.github.io/tags/dotnet-core/</link>
-      <pubDate>Sun, 06 Jun 2021 16:17:44 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/dotnet-core/</guid>
       <description></description>
     </item>
     

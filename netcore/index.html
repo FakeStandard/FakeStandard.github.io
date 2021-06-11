@@ -163,6 +163,23 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【.NET Core】記錄 Logging</h2>
+  </header>
+  <section class="entry-content">
+    <p>【ASP.NET Core 5】
+過去在記錄 Log 時，會使用第三方套件來記錄，在 .NET Core 預設就已經將 Logger 注入到 DI 容器，直接使用 ILogger 介面來執行。
+Start 此篇會紀錄的部分有以下
+ Logging Provider Create Logs Log Level Log EventID Log Message Log Exceptions Configure Logging  Logging Provider Logging Provider 會儲存記錄檔，但 Console 顯示記錄的提供者除外。
+在 Program.cs 調用 CreateDefaultBuilder 會新增下列記錄提供者
+ Console Debug EventSource EventLog: Windows only  欲 override 由 Host.CreateDefaultBuilder 設置的 logging provider 集合，可呼叫 ClearProviders 移除所有 ILoggerProvider 實例，再加入需要的記錄提供者。
+public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host....</p>
+  </section>
+  <footer class="entry-footer">June 11, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET Core】記錄 Logging" href="https://fakestandard.github.io/netcore/netcore5-5-logging/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【.NET Core】靜態檔案 Static Files</h2>
   </header>
   <section class="entry-content">
