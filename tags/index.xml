@@ -6,22 +6,76 @@
     <description>Recent content in Tags on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 11 Jun 2021 11:10:37 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Jun 2021 14:01:03 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ASP.NET Core 5</title>
-      <link>https://fakestandard.github.io/tags/asp.net-core-5/</link>
-      <pubDate>Fri, 11 Jun 2021 11:10:37 +0800</pubDate>
+      <title>Algorithm</title>
+      <link>https://fakestandard.github.io/tags/algorithm/</link>
+      <pubDate>Sun, 13 Jun 2021 14:01:03 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/tags/asp.net-core-5/</guid>
+      <guid>https://fakestandard.github.io/tags/algorithm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSharp</title>
       <link>https://fakestandard.github.io/tags/csharp/</link>
-      <pubDate>Fri, 11 Jun 2021 11:10:37 +0800</pubDate>
+      <pubDate>Sun, 13 Jun 2021 14:01:03 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Quick Sort</title>
+      <link>https://fakestandard.github.io/tags/quick-sort/</link>
+      <pubDate>Sun, 13 Jun 2021 14:01:03 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/quick-sort/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sorting Algorithm</title>
+      <link>https://fakestandard.github.io/tags/sorting-algorithm/</link>
+      <pubDate>Sun, 13 Jun 2021 14:01:03 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/sorting-algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bitwise Shift Operators</title>
+      <link>https://fakestandard.github.io/tags/bitwise-shift-operators/</link>
+      <pubDate>Sat, 12 Jun 2021 16:00:21 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/bitwise-shift-operators/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Left Shift Operators</title>
+      <link>https://fakestandard.github.io/tags/left-shift-operators/</link>
+      <pubDate>Sat, 12 Jun 2021 16:00:21 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/left-shift-operators/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Right Shift Operators</title>
+      <link>https://fakestandard.github.io/tags/right-shift-operators/</link>
+      <pubDate>Sat, 12 Jun 2021 16:00:21 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/right-shift-operators/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core 5</title>
+      <link>https://fakestandard.github.io/tags/asp.net-core-5/</link>
+      <pubDate>Fri, 11 Jun 2021 11:10:37 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/asp.net-core-5/</guid>
       <description></description>
     </item>
     
@@ -53,29 +107,11 @@
     </item>
     
     <item>
-      <title>Algorithm</title>
-      <link>https://fakestandard.github.io/tags/algorithm/</link>
-      <pubDate>Wed, 09 Jun 2021 10:34:12 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/algorithm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Shell Sort</title>
       <link>https://fakestandard.github.io/tags/shell-sort/</link>
       <pubDate>Wed, 09 Jun 2021 10:34:12 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/shell-sort/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sorting Algorithm</title>
-      <link>https://fakestandard.github.io/tags/sorting-algorithm/</link>
-      <pubDate>Wed, 09 Jun 2021 10:34:12 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/sorting-algorithm/</guid>
       <description></description>
     </item>
     

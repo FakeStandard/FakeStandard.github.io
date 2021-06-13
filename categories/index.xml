@@ -6,7 +6,25 @@
     <description>Recent content in Categories on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 11 Jun 2021 11:10:37 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 13 Jun 2021 14:01:03 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algorithm</title>
+      <link>https://fakestandard.github.io/categories/algorithm/</link>
+      <pubDate>Sun, 13 Jun 2021 14:01:03 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/categories/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSharp</title>
+      <link>https://fakestandard.github.io/categories/csharp/</link>
+      <pubDate>Sat, 12 Jun 2021 16:00:21 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/categories/csharp/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>ASP.NET Core 5</title>
       <link>https://fakestandard.github.io/categories/asp.net-core-5/</link>
@@ -31,24 +49,6 @@
       <pubDate>Thu, 10 Jun 2021 14:08:57 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/categories/oop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Algorithm</title>
-      <link>https://fakestandard.github.io/categories/algorithm/</link>
-      <pubDate>Wed, 09 Jun 2021 10:34:12 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/categories/algorithm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CSharp</title>
-      <link>https://fakestandard.github.io/categories/csharp/</link>
-      <pubDate>Tue, 08 Jun 2021 10:18:14 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/categories/csharp/</guid>
       <description></description>
     </item>
     

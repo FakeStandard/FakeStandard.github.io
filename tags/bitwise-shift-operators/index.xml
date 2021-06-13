@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>CSharp on How can I help</title>
-    <link>https://fakestandard.github.io/categories/csharp/</link>
-    <description>Recent content in CSharp on How can I help</description>
+    <title>Bitwise Shift Operators on How can I help</title>
+    <link>https://fakestandard.github.io/tags/bitwise-shift-operators/</link>
+    <description>Recent content in Bitwise Shift Operators on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 12 Jun 2021 16:00:21 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/csharp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Jun 2021 16:00:21 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/bitwise-shift-operators/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【C#】位移運算元 &lt;&lt; 和 &gt;&gt;</title>
       <link>https://fakestandard.github.io/post/csharp/csharp-2-bitwiseshiftoperators/</link>
@@ -20,21 +20,6 @@ string binary = &amp;#34;1110&amp;#34;; // 二進位轉十進位, 第二個參�
  左位移 &amp;lt;&amp;lt; 右位移 &amp;gt;&amp;gt;  區分方式也非常易懂，純粹是位移方向的不同，以 1110 為例，對此二進位制的所有位元進行左位移一個位元，即將所有位元往左邊移動一位，而最右邊的第一個數則補上 0，得到結果為 11100，若左位移兩個位元則為 111000；反之右位移則是向右移動，對 1110 右位移一個位元得到 0111，若右位移兩個位元則得 0011。
  左位移一個位元的表示方式為 num &amp;lt;&amp;lt; 1 左位移一個位元的表示方式為 num &amp;lt;&amp;lt; 2 右位移一個位元的表示方式為 num &amp;gt;&amp;gt; 1 右位移一個位元的表示方式為 num &amp;gt;&amp;gt; 1  實際使用程式碼測試，先宣告一個整數變數 num，因為該變數是以十進位表示之，故筆者特意註解 num 二進位的表示方式，接著透過位移運算元，向左搬移一位，最後得十進位的結果。
 // 十進位 14, 二進位 1110 int num = 14; // 向左位移 1 位 num = num &amp;lt;&amp;lt; 1; // 得到十進位 28, 二進位 11100 Console.</description>
-    </item>
-    
-    <item>
-      <title>【C#】不規則陣列（Jagged Array）</title>
-      <link>https://fakestandard.github.io/post/csharp/csharp-1-jaggedarray/</link>
-      <pubDate>Tue, 08 Jun 2021 10:18:14 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/post/csharp/csharp-1-jaggedarray/</guid>
-      <description>最近在 LeetCode 刷題時，發現一個我不知道的東西—不規則陣列（Jagged Array）
-從古自今，筆者對於陣列的認知不外乎就是一維與多維陣列，然而在工作上也從未遇過不規則陣列的使用，導致近日在刷題時，曾一度懷疑自己的眼睛，這是不是打錯了？井底之蛙的我馬上跪拜古哥，結果在 C# 程式設計手冊發現了它的蹤影，廢話不多說，馬上來看！
-不規則陣列（Jagged Array）是陣列的一種，其陣列內的元素也是陣列，不規則陣列的元素可以具有不同維度及大小，也是與多維陣列明顯的差異之處。
-不規則陣列的宣告及初始化
-// 不規則陣列的宣告方式 int[][] array = new int[5][]; // 初始化元素 array[0] = new int[6]; array[1] = new int[5]; array[2] = new int[4]; array[3] = new int[3]; // 使用 Initializer 直接填入陣列元素的值，無須設置大小 array[0] = new int[]{ 1, 2, 3 }; array[1] = new int[]{ 4, 6 }; array[2] = new int[]{ 7 }; 從上述可知，多維陣列在同一維度下的元素大小必須相同，而不規則陣列的元素大小可以不同，不規則陣列內的元素是陣列，又稱為陣列中的陣列。
-我們也可以在宣告時直接初始化元素
-// 宣告時直接初始化 int[][] array = new int[][] { new int[]{ 1, 2, 3 }, new int[]{ 4, 6 }, new int[]{ 7 } }; // 或是不使用 new 運算子的縮寫格式 int[][] array = { new int[]{ 1, 2, 3 }, new int[]{ 4, 6 }, new int[]{ 7 } }; 其指派值的方式與多維陣列相同</description>
     </item>
     
   </channel>

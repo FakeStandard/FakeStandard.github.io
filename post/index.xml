@@ -6,7 +6,22 @@
     <description>Recent content in Posts on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 10 Jun 2021 14:08:57 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Jun 2021 16:00:21 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【C#】位移運算元 &lt;&lt; 和 &gt;&gt;</title>
+      <link>https://fakestandard.github.io/post/csharp/csharp-2-bitwiseshiftoperators/</link>
+      <pubDate>Sat, 12 Jun 2021 16:00:21 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/csharp/csharp-2-bitwiseshiftoperators/</guid>
+      <description>昨天在刷 LeetCode 時，發現解題方式可以使用位移運算元，雖然筆者早就看過這個運算元，卻沒實際了解過，也趁這個機會快速了解位移運算元是個什麼樣的概念。
+首先，筆者遇到的題型非常簡單，將二進位制轉換為十進位制，如將二進位 1110 轉換成十進位，得解為 14，在 C# 中可直接使用 Convert 來實現進位之間的轉換
+string binary = &amp;#34;1110&amp;#34;; // 二進位轉十進位, 第二個參數為 base Convert.ToInt32(binary, 2); 如此是透過現成方法來實現轉換，為了更了解二進制的應用，特意觀察不少的解法，其中不少解法是透過位移運算元，撰寫起來也非常簡潔且優雅，那什麼是位移運算元？
+位移運算元有兩種
+ 左位移 &amp;lt;&amp;lt; 右位移 &amp;gt;&amp;gt;  區分方式也非常易懂，純粹是位移方向的不同，以 1110 為例，對此二進位制的所有位元進行左位移一個位元，即將所有位元往左邊移動一位，而最右邊的第一個數則補上 0，得到結果為 11100，若左位移兩個位元則為 111000；反之右位移則是向右移動，對 1110 右位移一個位元得到 0111，若右位移兩個位元則得 0011。
+ 左位移一個位元的表示方式為 num &amp;lt;&amp;lt; 1 左位移一個位元的表示方式為 num &amp;lt;&amp;lt; 2 右位移一個位元的表示方式為 num &amp;gt;&amp;gt; 1 右位移一個位元的表示方式為 num &amp;gt;&amp;gt; 1  實際使用程式碼測試，先宣告一個整數變數 num，因為該變數是以十進位表示之，故筆者特意註解 num 二進位的表示方式，接著透過位移運算元，向左搬移一位，最後得十進位的結果。
+// 十進位 14, 二進位 1110 int num = 14; // 向左位移 1 位 num = num &amp;lt;&amp;lt; 1; // 得到十進位 28, 二進位 11100 Console.</description>
+    </item>
+    
     <item>
       <title>【OOP】物件導向基礎概念（Object Oriented Programming）</title>
       <link>https://fakestandard.github.io/post/oop/oop-1-object-oriented-programming/</link>

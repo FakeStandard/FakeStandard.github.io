@@ -163,6 +163,23 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【C#】位移運算元 &lt;&lt; 和 &gt;&gt;</h2>
+  </header>
+  <section class="entry-content">
+    <p>昨天在刷 LeetCode 時，發現解題方式可以使用位移運算元，雖然筆者早就看過這個運算元，卻沒實際了解過，也趁這個機會快速了解位移運算元是個什麼樣的概念。
+首先，筆者遇到的題型非常簡單，將二進位制轉換為十進位制，如將二進位 1110 轉換成十進位，得解為 14，在 C# 中可直接使用 Convert 來實現進位之間的轉換
+string binary = &#34;1110&#34;; // 二進位轉十進位, 第二個參數為 base Convert.ToInt32(binary, 2); 如此是透過現成方法來實現轉換，為了更了解二進制的應用，特意觀察不少的解法，其中不少解法是透過位移運算元，撰寫起來也非常簡潔且優雅，那什麼是位移運算元？
+位移運算元有兩種
+ 左位移 &lt;&lt; 右位移 &gt;&gt;  區分方式也非常易懂，純粹是位移方向的不同，以 1110 為例，對此二進位制的所有位元進行左位移一個位元，即將所有位元往左邊移動一位，而最右邊的第一個數則補上 0，得到結果為 11100，若左位移兩個位元則為 111000；反之右位移則是向右移動，對 1110 右位移一個位元得到 0111，若右位移兩個位元則得 0011。
+ 左位移一個位元的表示方式為 num &lt;&lt; 1 左位移一個位元的表示方式為 num &lt;&lt; 2 右位移一個位元的表示方式為 num &gt;&gt; 1 右位移一個位元的表示方式為 num &gt;&gt; 1  實際使用程式碼測試，先宣告一個整數變數 num，因為該變數是以十進位表示之，故筆者特意註解 num 二進位的表示方式，接著透過位移運算元，向左搬移一位，最後得十進位的結果。
+// 十進位 14, 二進位 1110 int num = 14; // 向左位移 1 位 num = num &lt;&lt; 1; // 得到十進位 28, 二進位 11100 Console....</p>
+  </section>
+  <footer class="entry-footer">June 12, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【C#】位移運算元 " href="https://fakestandard.github.io/post/csharp/csharp-2-bitwiseshiftoperators/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【OOP】物件導向基礎概念（Object Oriented Programming）</h2>
   </header>
   <section class="entry-content">
@@ -339,21 +356,6 @@ W 老闆的下午茶
   </section>
   <footer class="entry-footer">April 29, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Life Trip】五峰星空下露營區" href="https://fakestandard.github.io/post/lifetrip/lifetrip-2-hsinchu-wufeng/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【.NET】使用 NPOI 匯出 Excel 的基本應用</h2>
-  </header>
-  <section class="entry-content">
-    <p>開發應用程式或網頁時總是會遇到匯出 Excel 的需求，常見的如匯出報表。然而在眾多匯出 Excel 的套件中，這篇選擇以 NPOI 作為介紹匯出的基本應用和觀念，資料則選擇現成的北風資料庫，這邊就不另外建立資料物件。
-代碼存放於 GitHub
-Start 首先到 NuGet 套件添加 NPOI Package
-建立一個資料庫連線的方法，將 Orders 資料表的資料全部讀到 DataTable
-/// &lt;summary&gt; /// 資料庫連線方法 /// &lt;/summary&gt; static DataTable Connect() { // 宣告並建立 SqlConnectionStringBuilder 物件，並設置連線資訊  SqlConnectionStringBuilder cnsb = new SqlConnectionStringBuilder(); cnsb.DataSource = &#34;.&#34;; cnsb.InitialCatalog = &#34;Northwind&#34;; cnsb.IntegratedSecurity = true; // 宣告並建立 SqlConnection  SqlConnection cn = new SqlConnection(cnsb.ConnectionString); // SQL Statement  string sql = &#34;SELECT * FROM [Northwind].[dbo].[Orders]&#34;; // 宣告並建立 SqlDataAdapter 物件  SqlDataAdapter da = new SqlDataAdapter(sql, cn); // 建立 DataSet 物件以儲存資料  DataSet ds = new DataSet(); da....</p>
-  </section>
-  <footer class="entry-footer">April 27, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET】使用 NPOI 匯出 Excel 的基本應用" href="https://fakestandard.github.io/post/dotnet/dotnet-4-npoisimple/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -2,16 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://fakestandard.github.io/tags/algorithm/</loc>
+    <lastmod>2021-06-13T14:01:03+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/algorithm/</loc>
+    <lastmod>2021-06-13T14:01:03+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/</loc>
+    <lastmod>2021-06-13T14:01:03+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/</loc>
+    <lastmod>2021-06-13T14:01:03+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/csharp/</loc>
+    <lastmod>2021-06-13T14:01:03+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/</loc>
+    <lastmod>2021-06-13T14:01:03+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/quick-sort/</loc>
+    <lastmod>2021-06-13T14:01:03+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/sorting-algorithm/</loc>
+    <lastmod>2021-06-13T14:01:03+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/</loc>
+    <lastmod>2021-06-13T14:01:03+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/algorithm-14-quicksort/</loc>
+    <lastmod>2021-06-13T14:01:03+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/bitwise-shift-operators/</loc>
+    <lastmod>2021-06-12T16:00:21+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/csharp/</loc>
+    <lastmod>2021-06-12T16:00:21+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/left-shift-operators/</loc>
+    <lastmod>2021-06-12T16:00:21+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/post/</loc>
+    <lastmod>2021-06-12T16:00:21+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/right-shift-operators/</loc>
+    <lastmod>2021-06-12T16:00:21+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/post/csharp/csharp-2-bitwiseshiftoperators/</loc>
+    <lastmod>2021-06-12T16:00:21+08:00</lastmod>
+  </url><url>
     <loc>https://fakestandard.github.io/tags/asp.net-core-5/</loc>
     <lastmod>2021-06-11T11:10:37+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/categories/asp.net-core-5/</loc>
-    <lastmod>2021-06-11T11:10:37+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/categories/</loc>
-    <lastmod>2021-06-11T11:10:37+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/csharp/</loc>
     <lastmod>2021-06-11T11:10:37+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/dotnet-core/</loc>
@@ -20,16 +62,10 @@
     <loc>https://fakestandard.github.io/categories/dotnet-core/</loc>
     <lastmod>2021-06-11T11:10:37+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/</loc>
-    <lastmod>2021-06-11T11:10:37+08:00</lastmod>
-  </url><url>
     <loc>https://fakestandard.github.io/tags/logging/</loc>
     <lastmod>2021-06-11T11:10:37+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/netcore/</loc>
-    <lastmod>2021-06-11T11:10:37+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/</loc>
     <lastmod>2021-06-11T11:10:37+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/netcore/netcore5-5-logging/</loc>
@@ -41,32 +77,14 @@
     <loc>https://fakestandard.github.io/categories/oop/</loc>
     <lastmod>2021-06-10T14:08:57+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/post/</loc>
-    <lastmod>2021-06-10T14:08:57+08:00</lastmod>
-  </url><url>
     <loc>https://fakestandard.github.io/post/oop/oop-1-object-oriented-programming/</loc>
     <lastmod>2021-06-10T14:08:57+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/algorithm/</loc>
-    <lastmod>2021-06-09T10:34:12+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/categories/algorithm/</loc>
-    <lastmod>2021-06-09T10:34:12+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/algorithm/</loc>
-    <lastmod>2021-06-09T10:34:12+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/shell-sort/</loc>
     <lastmod>2021-06-09T10:34:12+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/tags/sorting-algorithm/</loc>
-    <lastmod>2021-06-09T10:34:12+08:00</lastmod>
-  </url><url>
     <loc>https://fakestandard.github.io/algorithm/algorithm-13-shellsort/</loc>
     <lastmod>2021-06-09T10:34:12+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/categories/csharp/</loc>
-    <lastmod>2021-06-08T10:18:14+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/jagged-array/</loc>
     <lastmod>2021-06-08T10:18:14+08:00</lastmod>
