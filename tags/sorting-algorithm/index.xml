@@ -6,7 +6,23 @@
     <description>Recent content in Sorting Algorithm on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 13 Jun 2021 14:01:03 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/sorting-algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Jun 2021 10:57:54 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/sorting-algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】排序演算法—合併排序法（Merge Sort）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-15-mergesort/</link>
+      <pubDate>Wed, 16 Jun 2021 10:57:54 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-15-mergesort/</guid>
+      <description>【5/18 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  合併排序法（Merge Sort） 合併排序法的原理是將兩個或兩個以上的數列，經由合併的方式組合成一個排序好的數列。
+步驟非常好理解，如下
+ 將 N 個長度為 1 的鍵值合併成 N/2 個長度為 2 的鍵值 將 N/2 個長度為 2 的鍵值，合併成 N/4 個長度為 4 的鍵值 將 N/4 個長度為 4 的鍵值，合併成 N/8 個長度為 8 的鍵值 重複地將鍵值合併，直到合併成一個長度為 N 的鍵值為止  使用一個未排序陣列解說步驟，目標是由小到大排序，陣列如下 38 16 41 72 52 98 63 25</description>
+    </item>
+    
     <item>
       <title>【Algorithm】排序演算法—快速排序法（Quick Sort）</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-14-quicksort/</link>
