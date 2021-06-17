@@ -6,7 +6,20 @@
     <description>Recent content in DotNET Core on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 11 Jun 2021 11:10:37 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/dotnet-core/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Jun 2021 10:34:36 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/dotnet-core/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【.NET Core】組態設定 Configuration</title>
+      <link>https://fakestandard.github.io/netcore/netcore5-6-configuration/</link>
+      <pubDate>Thu, 17 Jun 2021 10:34:36 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/netcore/netcore5-6-configuration/</guid>
+      <description>【ASP.NET Core 5】
+Start .NET Framework 的組態通常在 app.config 或 web.config 中設定，在 .NET Core 不再使用過往讀取單一檔案方法，它使用一個或多個 Configuration Provider 來提供多種設定組態的方式。
+預設組態 應用程式在 Program.cs 預設產生 Host.CreateDefaultBuilder(args) 程式碼，CreateDefaultBuilder 會依照下列 Provider 的順序提供應用程式預設組態
+ ChainedConfigurationProvider appsettings.json appsettings.Environment.json Environment Variables configuration provider Command-line configuration provider  使用下列程式碼，依新增順序來顯示 Configuration Provider
+private IConfigurationRoot ConfigRoot; public HomeController(IConfiguration configRoot) { ConfigRoot = (IConfigurationRoot)configRoot; } public ContentResult OnGet() { string str = &amp;#34;&amp;#34;; foreach (var provider in ConfigRoot.Providers.ToList()) { str += provider.ToString() + &amp;#34;\n&amp;#34;; } return Content(str); } 結果與前述說明的順序相同</description>
+    </item>
+    
     <item>
       <title>【.NET Core】記錄 Logging</title>
       <link>https://fakestandard.github.io/netcore/netcore5-5-logging/</link>
