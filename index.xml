@@ -6,7 +6,39 @@
     <description>Recent content on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 18 Jun 2021 13:58:45 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Jun 2021 20:56:20 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【OOP】物件導向特性—封裝、繼承、多型</title>
+      <link>https://fakestandard.github.io/post/oop/oop-2-oop-feature/</link>
+      <pubDate>Tue, 22 Jun 2021 20:56:20 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/oop/oop-2-oop-feature/</guid>
+      <description>Start 說到物件導向就不能不知道OOP的三大特性—封裝、繼承、多型。
+ 建議閱讀本篇前先閱讀前篇「基礎概念」，在實例及解說上，若前篇已講解過，則此篇不再重複說明
+ 封裝（Encapsulation） 每個物件都包含進行操作時所需要的所有資訊，物件不必依賴其他物件來完成自己的操作，將方法、欄位、屬性和邏輯包裝在類別內，透過類別的實體來實現，外部物件無法了解物件的內部細節，有種隱藏起來的概念，外部對資料的操作也只能透過已經定義的介面，用一段簡白的話來說，對事只了解他的外在，無需理解內部構造，即為封裝。
+封裝的好處
+ 良好的封裝能減少耦合（Coupling） 可自由修改類別內部的實現 類別具有清晰的對外界面  所以在設計 Swordman 類別時即為封裝，將自己的屬性及方法包裝起來，供給自己使用，不依賴他人。
+static void Main(string[] args) { Swordman swordman = new Swordman(); } /// &amp;lt;summary&amp;gt; /// 封裝類別 /// &amp;lt;/summary&amp;gt; class Swordman { // Field  // ...  // Property  // ...  // Method  // ... } 繼承（Inheritance） 繼承很字面的意思，那有幾個特性須知道，子類別繼承父類別時，子類別擁有父類別 pirvate 以外的屬性和方法，子類別也可擁有自己的屬性和方法。最後，子類別可以用自己的方式實現父類別的功能，即方法重載。
+原本有 Swordman 的類別，現在增加一個 Thief 類別，與 Swordman 擁有相同的屬性和方法。
+/// &amp;lt;summary&amp;gt; /// 盜賊類別 /// &amp;lt;/summary&amp;gt; class Thief { private string name = string.</description>
+    </item>
+    
+    <item>
+      <title>【Algorithm】排序演算法—堆積樹排序法（Heap Tree Sort）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-17-heaptreesort/</link>
+      <pubDate>Mon, 21 Jun 2021 13:59:42 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-17-heaptreesort/</guid>
+      <description>【5/18 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  堆積樹排序法（Heap Tree Sort） 堆積樹排序法是選擇排序法的改良版，它可以減少選擇排序法的排序次數，進而減少排序時間。樹是一種資料結構，而堆積樹是一顆二元樹，二元樹的定義的定義為每個父節點最多只能有兩個子節點，而堆積樹是一種特殊的二元樹，父節點若小於子節點，稱為最小堆積（Min heap），父節點偌大於子節點，稱為最大堆積（Max heap）。
+假設有一陣列，陣列資料分別為
+                索引 A[0] A[1] A[2] A[3] A[4] A[5] A[6] A[7]   數值 69 81 30 38 9 2 47 61    將此陣列用二元樹表示，每個節點第一個數字為索引，第二個為數值</description>
+    </item>
+    
     <item>
       <title>【Algorithm】排序演算法—基數排序法（Radix Sort）</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-16-radixsort/</link>

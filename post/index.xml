@@ -6,7 +6,23 @@
     <description>Recent content in Posts on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 12 Jun 2021 16:00:21 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Jun 2021 20:56:20 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【OOP】物件導向特性—封裝、繼承、多型</title>
+      <link>https://fakestandard.github.io/post/oop/oop-2-oop-feature/</link>
+      <pubDate>Tue, 22 Jun 2021 20:56:20 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/oop/oop-2-oop-feature/</guid>
+      <description>Start 說到物件導向就不能不知道OOP的三大特性—封裝、繼承、多型。
+ 建議閱讀本篇前先閱讀前篇「基礎概念」，在實例及解說上，若前篇已講解過，則此篇不再重複說明
+ 封裝（Encapsulation） 每個物件都包含進行操作時所需要的所有資訊，物件不必依賴其他物件來完成自己的操作，將方法、欄位、屬性和邏輯包裝在類別內，透過類別的實體來實現，外部物件無法了解物件的內部細節，有種隱藏起來的概念，外部對資料的操作也只能透過已經定義的介面，用一段簡白的話來說，對事只了解他的外在，無需理解內部構造，即為封裝。
+封裝的好處
+ 良好的封裝能減少耦合（Coupling） 可自由修改類別內部的實現 類別具有清晰的對外界面  所以在設計 Swordman 類別時即為封裝，將自己的屬性及方法包裝起來，供給自己使用，不依賴他人。
+static void Main(string[] args) { Swordman swordman = new Swordman(); } /// &amp;lt;summary&amp;gt; /// 封裝類別 /// &amp;lt;/summary&amp;gt; class Swordman { // Field  // ...  // Property  // ...  // Method  // ... } 繼承（Inheritance） 繼承很字面的意思，那有幾個特性須知道，子類別繼承父類別時，子類別擁有父類別 pirvate 以外的屬性和方法，子類別也可擁有自己的屬性和方法。最後，子類別可以用自己的方式實現父類別的功能，即方法重載。
+原本有 Swordman 的類別，現在增加一個 Thief 類別，與 Swordman 擁有相同的屬性和方法。
+/// &amp;lt;summary&amp;gt; /// 盜賊類別 /// &amp;lt;/summary&amp;gt; class Thief { private string name = string.</description>
+    </item>
+    
     <item>
       <title>【C#】位移運算元 &lt;&lt; 和 &gt;&gt;</title>
       <link>https://fakestandard.github.io/post/csharp/csharp-2-bitwiseshiftoperators/</link>

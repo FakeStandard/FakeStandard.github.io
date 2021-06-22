@@ -6,7 +6,23 @@
     <description>Recent content in Algorithms on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 18 Jun 2021 13:58:45 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Jun 2021 13:59:42 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】排序演算法—堆積樹排序法（Heap Tree Sort）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-17-heaptreesort/</link>
+      <pubDate>Mon, 21 Jun 2021 13:59:42 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-17-heaptreesort/</guid>
+      <description>【5/18 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  堆積樹排序法（Heap Tree Sort） 堆積樹排序法是選擇排序法的改良版，它可以減少選擇排序法的排序次數，進而減少排序時間。樹是一種資料結構，而堆積樹是一顆二元樹，二元樹的定義的定義為每個父節點最多只能有兩個子節點，而堆積樹是一種特殊的二元樹，父節點若小於子節點，稱為最小堆積（Min heap），父節點偌大於子節點，稱為最大堆積（Max heap）。
+假設有一陣列，陣列資料分別為
+                索引 A[0] A[1] A[2] A[3] A[4] A[5] A[6] A[7]   數值 69 81 30 38 9 2 47 61    將此陣列用二元樹表示，每個節點第一個數字為索引，第二個為數值</description>
+    </item>
+    
     <item>
       <title>【Algorithm】排序演算法—基數排序法（Radix Sort）</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-16-radixsort/</link>
