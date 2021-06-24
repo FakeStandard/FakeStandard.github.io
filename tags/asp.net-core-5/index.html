@@ -148,6 +148,23 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【.NET Core】環境變數 Environments</h2>
+  </header>
+  <section class="entry-content">
+    <p>【ASP.NET Core 5】
+Start ASP.NET Core 會根據執行階段的環境變數，來設定應用程式的行為。如開發環境、測試環境及正式環境的組態設定會不太相同，使用的資料庫也會不同。
+Environment Variable 預設的三種環境
+ Development 開發環境 Staging 暫存(測試)環境 Production 正式環境  環境名稱由系統變數 ASPNETCORE_ENVIRONMENT 的內容值而來，該變數可在 launchSettings.json 作變更。
+開啟 launchSettings.json，在 profiles 節點找到 IIS Express\..\environmentVariables 的 ASPNETCORE_ENVIRONMENT，將原本的 Development 變更為 Production。
+&#34;profiles&#34;: { &#34;IIS Express&#34;: { &#34;commandName&#34;: &#34;IISExpress&#34;, &#34;launchBrowser&#34;: true, &#34;environmentVariables&#34;: { &#34;ASPNETCORE_ENVIRONMENT&#34;: &#34;Production&#34; } } } 開啟 Startup.cs，Configure 方法已注入 IWebHostEnvironment，在方法內使用下列程式碼判斷環境變數內容值
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env) { if (env.IsProduction()) // 假設是生產環境  { app.Run(async (context) =&gt; { await context....</p>
+  </section>
+  <footer class="entry-footer">June 24, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET Core】環境變數 Environments" href="https://fakestandard.github.io/netcore/netcore5-7-environments/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【.NET Core】組態設定 Configuration</h2>
   </header>
   <section class="entry-content">

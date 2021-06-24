@@ -148,6 +148,44 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【.NET Core】環境變數 Environments</h2>
+  </header>
+  <section class="entry-content">
+    <p>【ASP.NET Core 5】
+Start ASP.NET Core 會根據執行階段的環境變數，來設定應用程式的行為。如開發環境、測試環境及正式環境的組態設定會不太相同，使用的資料庫也會不同。
+Environment Variable 預設的三種環境
+ Development 開發環境 Staging 暫存(測試)環境 Production 正式環境  環境名稱由系統變數 ASPNETCORE_ENVIRONMENT 的內容值而來，該變數可在 launchSettings.json 作變更。
+開啟 launchSettings.json，在 profiles 節點找到 IIS Express\..\environmentVariables 的 ASPNETCORE_ENVIRONMENT，將原本的 Development 變更為 Production。
+&#34;profiles&#34;: { &#34;IIS Express&#34;: { &#34;commandName&#34;: &#34;IISExpress&#34;, &#34;launchBrowser&#34;: true, &#34;environmentVariables&#34;: { &#34;ASPNETCORE_ENVIRONMENT&#34;: &#34;Production&#34; } } } 開啟 Startup.cs，Configure 方法已注入 IWebHostEnvironment，在方法內使用下列程式碼判斷環境變數內容值
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env) { if (env.IsProduction()) // 假設是生產環境  { app.Run(async (context) =&gt; { await context....</p>
+  </section>
+  <footer class="entry-footer">June 24, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET Core】環境變數 Environments" href="https://fakestandard.github.io/netcore/netcore5-7-environments/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】搜尋演算法—循序搜尋法（Sequential Search）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/21 閱讀紀錄】
+搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
+依據資料量大小而言，搜尋可分為兩種
+ 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
+ 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
+Start 常見的搜尋演算法
+ 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  循序搜尋演算法（Sequential Search） 循序搜尋法又稱線性搜尋法（Linear Search），它的原理是走訪所有的資料，不論資料順序從頭到尾逐次搜尋，也不需要在搜尋前對資料做任何處理或排序，在沒有重複資料下，找到資料就中止搜尋，是一種最簡單的排序法。
+它的缺點是搜尋速度較慢，因為對資料從頭到尾的訪問，最好的情況就是一次就找到，只進行一次比較；最壞的情況則是第 n 次才找到，則進行了 n 次比較。所以在數列長度很大時，循序搜尋法則不太適合使用，它通常適用於對檔案小的資料進行搜尋。
+假設有一數列 10 20 30 40 50，欲從數列中找到鍵值 30，透過循序搜尋法，從頭到尾走訪，第一個先找到 10 進行比較，不符合條件，繼續找尋到第二個 20，依然不符合條件，找尋到第三個鍵值，經比對後符合條件，此時演算法中止。
+利用上面的數列來看，最佳的情況是第一次搜尋就符合條件，然後中止搜尋，只進行了一次比較，例如欲搜尋鍵值 10，即是最佳情況；最壞的情況就是從頭走訪到尾，直到搜尋到最後一個鍵值才符合條件，或數列中都沒有符合條件的鍵值，假設數列長度為 n，則需進行 n 次比較，例如欲搜尋鍵值 50 或不存在數列中的鍵值 60，即是最差情況。
+演算法分析  最差的情況下，時間複雜度為 O(n) 平均情況下，需要 (n&#43;1)/2 次的比較  實際撰寫程式碼 亂數產生 1-150 之間的 100 個整數，並實作循序搜尋法的過程...</p>
+  </section>
+  <footer class="entry-footer">June 23, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—循序搜尋法（Sequential Search）" href="https://fakestandard.github.io/algorithm/algorithm-18-sequentialsearch/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【OOP】物件導向特性—封裝、繼承、多型</h2>
   </header>
   <section class="entry-content">
@@ -285,53 +323,6 @@ public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host....</p>
   </section>
   <footer class="entry-footer">June 10, 2021&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【OOP】物件導向基礎概念（Object Oriented Programming）" href="https://fakestandard.github.io/post/oop/oop-1-object-oriented-programming/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—謝耳排序法（Shell Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/2 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  謝耳排序法（Shell Sort） 在插入排序法中，若大部分資料已經排序完成，該排序法會相當有效率，而謝耳排序法可以看作是一種使插入排序法減少資料搬移次數的衍伸排序法。
-其原理為將資料區分成特定間隔的區塊，以插入排序法對區塊內資料進行排序，再漸漸減少間隔的距離。
-舉例，有一陣列為 [50] [60] [10] [30] [20] [80] [40] [70]，以劃分數為 2，將資料分成四等份 (8/2)，得到下列區塊組合 (50,20)(60,80)(10,40)(30,70)，規則為第一個數與第五個數為一組，第二個數與第六個數為一組，以此類推。
-接著透過插入排序法，對區塊內的資料做排序，使其成為 (20,50)(60,80)(10,40)(30,70)，排序完後，解散區塊組合，還原成原數列 [20] [60] [10] [30] [50] [80] [40] [70]
-繼續縮小間隔為 (8/2)/2，得到下列區塊組合 (20,10,50,40)(60,30,80,70)，其規則為第一、三、五、七個數字為一組，二、四、六、八為一組，一樣以插入排序法對區塊內資料做排序，得結果為 (10,20,40,50)(30,60,70,80)，解散組合區塊，還原成原數列 [10] [30] [20] [60] [40] [70] [50] [80]
-進行第三次排序，縮小間隔為 ((8/2)/2)/2，如此一來變成對每一個元素進行排序，直接使用插入排序法得結果為 [10] [20] [30] [40] [50] [60] [70] [80]...</p>
-  </section>
-  <footer class="entry-footer">June 9, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—謝耳排序法（Shell Sort）" href="https://fakestandard.github.io/algorithm/algorithm-13-shellsort/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—插入排序法（Insert Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【4/29 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  插入排序法（Insert Sort） 插入排序法原理是將陣列中的元素，逐一與已經排序好的資料作比較，例如前兩個元素已經排序好，再將第三個元素與這兩個元素作比較，插入到適當的位置，接著將第四個元素，與前三個已排序好的元素進行比較，再插入到適當位置，重複此步驟，直到排序完成為止。
-透過插入排序法，一樣對 [30] [20] [40] [50] [10] 該數列進行排序，目標結果為由小到大排列
-Step 1 首先第一個元素 [30] 定義為已排序，取得第二個元素 [20]，與第一個元素進行比較，插入到適當位置
-初始已排序序列 [30]
-插入後結果序列 [20] [30]
-Step 2 取得第三個元素 [40]，與上次結果進行比對，並插入適當位置
-初始已排序序列 [20] [30]
-插入後結果序列 [20] [30] [40]
-Step 3 取得第四個元素 [50]，與上次結果進行比對，並插入適當位置
-初始已排序序列 [20] [30] [40]
-插入後結果序列 [20] [30] [40] [50]...</p>
-  </section>
-  <footer class="entry-footer">June 7, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—插入排序法（Insert Sort）" href="https://fakestandard.github.io/algorithm/algorithm-12-insertsort/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

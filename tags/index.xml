@@ -6,13 +6,76 @@
     <description>Recent content in Tags on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 22 Jun 2021 20:56:20 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Jun 2021 10:05:46 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ASP.NET Core 5</title>
+      <link>https://fakestandard.github.io/tags/asp.net-core-5/</link>
+      <pubDate>Thu, 24 Jun 2021 10:05:46 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/asp.net-core-5/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>CSharp</title>
       <link>https://fakestandard.github.io/tags/csharp/</link>
-      <pubDate>Tue, 22 Jun 2021 20:56:20 +0800</pubDate>
+      <pubDate>Thu, 24 Jun 2021 10:05:46 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>DotNET Core</title>
+      <link>https://fakestandard.github.io/tags/dotnet-core/</link>
+      <pubDate>Thu, 24 Jun 2021 10:05:46 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/dotnet-core/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Environments</title>
+      <link>https://fakestandard.github.io/tags/environments/</link>
+      <pubDate>Thu, 24 Jun 2021 10:05:46 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/environments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Algorithm</title>
+      <link>https://fakestandard.github.io/tags/algorithm/</link>
+      <pubDate>Wed, 23 Jun 2021 11:19:30 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linear Search</title>
+      <link>https://fakestandard.github.io/tags/linear-search/</link>
+      <pubDate>Wed, 23 Jun 2021 11:19:30 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/linear-search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search Algorithm</title>
+      <link>https://fakestandard.github.io/tags/search-algorithm/</link>
+      <pubDate>Wed, 23 Jun 2021 11:19:30 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/search-algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sequential Search</title>
+      <link>https://fakestandard.github.io/tags/sequential-search/</link>
+      <pubDate>Wed, 23 Jun 2021 11:19:30 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/sequential-search/</guid>
       <description></description>
     </item>
     
@@ -22,15 +85,6 @@
       <pubDate>Tue, 22 Jun 2021 20:56:20 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/oop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Algorithm</title>
-      <link>https://fakestandard.github.io/tags/algorithm/</link>
-      <pubDate>Mon, 21 Jun 2021 13:59:42 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/algorithm/</guid>
       <description></description>
     </item>
     
@@ -62,29 +116,11 @@
     </item>
     
     <item>
-      <title>ASP.NET Core 5</title>
-      <link>https://fakestandard.github.io/tags/asp.net-core-5/</link>
-      <pubDate>Thu, 17 Jun 2021 10:34:36 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/asp.net-core-5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Configuration</title>
       <link>https://fakestandard.github.io/tags/configuration/</link>
       <pubDate>Thu, 17 Jun 2021 10:34:36 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/configuration/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>DotNET Core</title>
-      <link>https://fakestandard.github.io/tags/dotnet-core/</link>
-      <pubDate>Thu, 17 Jun 2021 10:34:36 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/dotnet-core/</guid>
       <description></description>
     </item>
     

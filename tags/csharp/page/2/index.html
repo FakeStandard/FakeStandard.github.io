@@ -148,6 +148,53 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】排序演算法—謝耳排序法（Shell Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/2 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  謝耳排序法（Shell Sort） 在插入排序法中，若大部分資料已經排序完成，該排序法會相當有效率，而謝耳排序法可以看作是一種使插入排序法減少資料搬移次數的衍伸排序法。
+其原理為將資料區分成特定間隔的區塊，以插入排序法對區塊內資料進行排序，再漸漸減少間隔的距離。
+舉例，有一陣列為 [50] [60] [10] [30] [20] [80] [40] [70]，以劃分數為 2，將資料分成四等份 (8/2)，得到下列區塊組合 (50,20)(60,80)(10,40)(30,70)，規則為第一個數與第五個數為一組，第二個數與第六個數為一組，以此類推。
+接著透過插入排序法，對區塊內的資料做排序，使其成為 (20,50)(60,80)(10,40)(30,70)，排序完後，解散區塊組合，還原成原數列 [20] [60] [10] [30] [50] [80] [40] [70]
+繼續縮小間隔為 (8/2)/2，得到下列區塊組合 (20,10,50,40)(60,30,80,70)，其規則為第一、三、五、七個數字為一組，二、四、六、八為一組，一樣以插入排序法對區塊內資料做排序，得結果為 (10,20,40,50)(30,60,70,80)，解散組合區塊，還原成原數列 [10] [30] [20] [60] [40] [70] [50] [80]
+進行第三次排序，縮小間隔為 ((8/2)/2)/2，如此一來變成對每一個元素進行排序，直接使用插入排序法得結果為 [10] [20] [30] [40] [50] [60] [70] [80]...</p>
+  </section>
+  <footer class="entry-footer">June 9, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—謝耳排序法（Shell Sort）" href="https://fakestandard.github.io/algorithm/algorithm-13-shellsort/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】排序演算法—插入排序法（Insert Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【4/29 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  插入排序法（Insert Sort） 插入排序法原理是將陣列中的元素，逐一與已經排序好的資料作比較，例如前兩個元素已經排序好，再將第三個元素與這兩個元素作比較，插入到適當的位置，接著將第四個元素，與前三個已排序好的元素進行比較，再插入到適當位置，重複此步驟，直到排序完成為止。
+透過插入排序法，一樣對 [30] [20] [40] [50] [10] 該數列進行排序，目標結果為由小到大排列
+Step 1 首先第一個元素 [30] 定義為已排序，取得第二個元素 [20]，與第一個元素進行比較，插入到適當位置
+初始已排序序列 [30]
+插入後結果序列 [20] [30]
+Step 2 取得第三個元素 [40]，與上次結果進行比對，並插入適當位置
+初始已排序序列 [20] [30]
+插入後結果序列 [20] [30] [40]
+Step 3 取得第四個元素 [50]，與上次結果進行比對，並插入適當位置
+初始已排序序列 [20] [30] [40]
+插入後結果序列 [20] [30] [40] [50]...</p>
+  </section>
+  <footer class="entry-footer">June 7, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—插入排序法（Insert Sort）" href="https://fakestandard.github.io/algorithm/algorithm-12-insertsort/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【.NET Core】靜態檔案 Static Files</h2>
   </header>
   <section class="entry-content">
@@ -320,39 +367,6 @@ Start 此篇紀錄記錄樹定義及應用，其餘常見的資料結構如下
   </section>
   <footer class="entry-footer">May 24, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—樹（Tree）" href="https://fakestandard.github.io/algorithm/algorithm-7-tree/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】資料結構—佇列（Queue）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/16 閱讀紀錄】
-選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
-Start 此篇紀錄記錄佇列定義及應用，其餘常見的資料結構如下
- 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  佇列（Queue） 佇列是一種抽象型資料結構（Abstract Data Type, ADT），它的所有動作是由不同的兩端執行，並且具有先進先出的特性（First In, First Out: FIFO）。
-佇列基本運算具備以下五種工作定義
-   Action Description     create 建立空佇列   add 將資料加入佇列的末端，返回新佇列   delete 刪除佇列頂端的資料，返回新佇列   front 傳回佇列頂端的值   empty 判斷佇列是否為空集合，是回傳 Ture，反之    生活中有許多佇列的應用，例如排隊，假設現在有一個排隊買票的隊伍，欲買票就要從隊伍的最後方加入，然而原本在隊伍的第一個人，因為先排隊的關係，它可以先買到票，然後離開隊伍；在排隊的案例可以知道，先排隊的人，可以先買到票，並且從隊伍的頂端離開，後排隊的人，必須從隊伍的尾端加入，當隊伍前面的人都買票離開，才會輪到他買票，而且加入和離開隊伍的動作是從不同的兩端進行，此概念符合了先進先出的特性，也就是佇列的應用。
-Note  堆疊（Stack）：後進先出（Last In, First Out: LIFO） 佇列（Queue）：先進先出（First In, First Out: FIFO）  Reference 【圖說演算法 C#】</p>
-  </section>
-  <footer class="entry-footer">May 21, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—佇列（Queue）" href="https://fakestandard.github.io/algorithm/algorithm-6-queue/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET Core】相依性注入 Dependency Injection</h2>
-  </header>
-  <section class="entry-content">
-    <p>【ASP.NET Core 5】
-如果要問 ASP.NET Core 最精華的部份是什麼，必定是 DI 無誤。
-Start 相依性是另一個物件所依賴的物件。
-建立 MyDependency 類別，內含一個無返回值的 WriteMessage 方法
-public class MyDependency { public void WriteMessage(string message) { Console.WriteLine($&#34;Message:{message}&#34;); } } 再建一個 MyClass 類別，類別內建立 MyDependency 實例，在 MyClass 內實作無返回值的 Get 方法，該方法內調用 MyDependency 實例的 WriteMessage 方法。
-public class MyClass { private readonly MyDependency _myDependency = new MyDependency(); public void Get() { _myDependency.WriteMessage(&#34;MyClass get a message&#34;); } } 到目前為止程式是沒什麼問題，在未使用 DI 前，我們絕大部分都是這麼做，MyClass 物件直接依賴於 MyDependency 物件，彼此之間有著很強的相依性，也存在著一些問題。舉例來說，若要以不同實作替代 MyDependency，MyClass 必須修改此類別，再來該實作也難以進行單元測試。...</p>
-  </section>
-  <footer class="entry-footer">May 20, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET Core】相依性注入 Dependency Injection" href="https://fakestandard.github.io/netcore/netcore5-2-dependencyinjection/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Search Algorithm | How can I help</title>
+<title>Environments | How can I help</title>
 <meta name="keywords" content="" />
 <meta name="description" content="不專業代碼">
 <meta name="author" content="Polar Bear">
-<link rel="canonical" href="https://fakestandard.github.io/tags/search-algorithm/" />
+<link rel="canonical" href="https://fakestandard.github.io/tags/environments/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.d1b405b7c6bf1b09aebca33eb6e2d8bd070113d119bdfa2715c32f6408f9fbee.css" integrity="sha256-0bQFt8a/GwmuvKM&#43;tuLYvQcBE9EZvfonFcMvZAj5&#43;&#43;4=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://fakestandard.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://fakestandard.github.io/favicon-16x16.png">
@@ -19,14 +19,14 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.81.0" />
-<link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/tags/search-algorithm/index.xml">
-<meta property="og:title" content="Search Algorithm" />
+<link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/tags/environments/index.xml">
+<meta property="og:title" content="Environments" />
 <meta property="og:description" content="不專業代碼" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://fakestandard.github.io/tags/search-algorithm/" />
+<meta property="og:url" content="https://fakestandard.github.io/tags/environments/" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Search Algorithm"/>
+<meta name="twitter:title" content="Environments"/>
 <meta name="twitter:description" content="不專業代碼"/>
 
 </head>
@@ -143,28 +143,24 @@
 </header>
 <main class="main"> 
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
-  <h1>Search Algorithm</h1>
+  <h1>Environments</h1>
 </header>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2>【Algorithm】搜尋演算法—循序搜尋法（Sequential Search）</h2>
+    <h2>【.NET Core】環境變數 Environments</h2>
   </header>
   <section class="entry-content">
-    <p>【5/21 閱讀紀錄】
-搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
-依據資料量大小而言，搜尋可分為兩種
- 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
- 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
-Start 常見的搜尋演算法
- 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  循序搜尋演算法（Sequential Search） 循序搜尋法又稱線性搜尋法（Linear Search），它的原理是走訪所有的資料，不論資料順序從頭到尾逐次搜尋，也不需要在搜尋前對資料做任何處理或排序，在沒有重複資料下，找到資料就中止搜尋，是一種最簡單的排序法。
-它的缺點是搜尋速度較慢，因為對資料從頭到尾的訪問，最好的情況就是一次就找到，只進行一次比較；最壞的情況則是第 n 次才找到，則進行了 n 次比較。所以在數列長度很大時，循序搜尋法則不太適合使用，它通常適用於對檔案小的資料進行搜尋。
-假設有一數列 10 20 30 40 50，欲從數列中找到鍵值 30，透過循序搜尋法，從頭到尾走訪，第一個先找到 10 進行比較，不符合條件，繼續找尋到第二個 20，依然不符合條件，找尋到第三個鍵值，經比對後符合條件，此時演算法中止。
-利用上面的數列來看，最佳的情況是第一次搜尋就符合條件，然後中止搜尋，只進行了一次比較，例如欲搜尋鍵值 10，即是最佳情況；最壞的情況就是從頭走訪到尾，直到搜尋到最後一個鍵值才符合條件，或數列中都沒有符合條件的鍵值，假設數列長度為 n，則需進行 n 次比較，例如欲搜尋鍵值 50 或不存在數列中的鍵值 60，即是最差情況。
-演算法分析  最差的情況下，時間複雜度為 O(n) 平均情況下，需要 (n&#43;1)/2 次的比較  實際撰寫程式碼 亂數產生 1-150 之間的 100 個整數，並實作循序搜尋法的過程...</p>
+    <p>【ASP.NET Core 5】
+Start ASP.NET Core 會根據執行階段的環境變數，來設定應用程式的行為。如開發環境、測試環境及正式環境的組態設定會不太相同，使用的資料庫也會不同。
+Environment Variable 預設的三種環境
+ Development 開發環境 Staging 暫存(測試)環境 Production 正式環境  環境名稱由系統變數 ASPNETCORE_ENVIRONMENT 的內容值而來，該變數可在 launchSettings.json 作變更。
+開啟 launchSettings.json，在 profiles 節點找到 IIS Express\..\environmentVariables 的 ASPNETCORE_ENVIRONMENT，將原本的 Development 變更為 Production。
+&#34;profiles&#34;: { &#34;IIS Express&#34;: { &#34;commandName&#34;: &#34;IISExpress&#34;, &#34;launchBrowser&#34;: true, &#34;environmentVariables&#34;: { &#34;ASPNETCORE_ENVIRONMENT&#34;: &#34;Production&#34; } } } 開啟 Startup.cs，Configure 方法已注入 IWebHostEnvironment，在方法內使用下列程式碼判斷環境變數內容值
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env) { if (env.IsProduction()) // 假設是生產環境  { app.Run(async (context) =&gt; { await context....</p>
   </section>
-  <footer class="entry-footer">June 23, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—循序搜尋法（Sequential Search）" href="https://fakestandard.github.io/algorithm/algorithm-18-sequentialsearch/"></a>
+  <footer class="entry-footer">June 24, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET Core】環境變數 Environments" href="https://fakestandard.github.io/netcore/netcore5-7-environments/"></a>
 </article>
     </main>
     <footer class="footer">

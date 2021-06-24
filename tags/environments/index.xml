@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Environments on How can I help</title>
+    <link>https://fakestandard.github.io/tags/environments/</link>
+    <description>Recent content in Environments on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Thu, 24 Jun 2021 10:05:46 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/environments/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【.NET Core】環境變數 Environments</title>
+      <link>https://fakestandard.github.io/netcore/netcore5-7-environments/</link>
+      <pubDate>Thu, 24 Jun 2021 10:05:46 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/netcore/netcore5-7-environments/</guid>
+      <description>【ASP.NET Core 5】
+Start ASP.NET Core 會根據執行階段的環境變數，來設定應用程式的行為。如開發環境、測試環境及正式環境的組態設定會不太相同，使用的資料庫也會不同。
+Environment Variable 預設的三種環境
+ Development 開發環境 Staging 暫存(測試)環境 Production 正式環境  環境名稱由系統變數 ASPNETCORE_ENVIRONMENT 的內容值而來，該變數可在 launchSettings.json 作變更。
+開啟 launchSettings.json，在 profiles 節點找到 IIS Express\..\environmentVariables 的 ASPNETCORE_ENVIRONMENT，將原本的 Development 變更為 Production。
+&amp;#34;profiles&amp;#34;: { &amp;#34;IIS Express&amp;#34;: { &amp;#34;commandName&amp;#34;: &amp;#34;IISExpress&amp;#34;, &amp;#34;launchBrowser&amp;#34;: true, &amp;#34;environmentVariables&amp;#34;: { &amp;#34;ASPNETCORE_ENVIRONMENT&amp;#34;: &amp;#34;Production&amp;#34; } } } 開啟 Startup.cs，Configure 方法已注入 IWebHostEnvironment，在方法內使用下列程式碼判斷環境變數內容值
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env) { if (env.IsProduction()) // 假設是生產環境  { app.Run(async (context) =&amp;gt; { await context.</description>
+    </item>
+    
+  </channel>
+</rss>

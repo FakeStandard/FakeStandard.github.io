@@ -2,14 +2,59 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://fakestandard.github.io/tags/asp.net-core-5/</loc>
+    <lastmod>2021-06-24T10:05:46+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/asp.net-core-5/</loc>
+    <lastmod>2021-06-24T10:05:46+08:00</lastmod>
+  </url><url>
     <loc>https://fakestandard.github.io/categories/</loc>
-    <lastmod>2021-06-22T20:56:20+08:00</lastmod>
+    <lastmod>2021-06-24T10:05:46+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/csharp/</loc>
-    <lastmod>2021-06-22T20:56:20+08:00</lastmod>
+    <lastmod>2021-06-24T10:05:46+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/dotnet-core/</loc>
+    <lastmod>2021-06-24T10:05:46+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/dotnet-core/</loc>
+    <lastmod>2021-06-24T10:05:46+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/environments/</loc>
+    <lastmod>2021-06-24T10:05:46+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/</loc>
-    <lastmod>2021-06-22T20:56:20+08:00</lastmod>
+    <lastmod>2021-06-24T10:05:46+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/netcore/</loc>
+    <lastmod>2021-06-24T10:05:46+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/</loc>
+    <lastmod>2021-06-24T10:05:46+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/netcore/netcore5-7-environments/</loc>
+    <lastmod>2021-06-24T10:05:46+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/algorithm/</loc>
+    <lastmod>2021-06-23T11:19:30+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/algorithm/</loc>
+    <lastmod>2021-06-23T11:19:30+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/</loc>
+    <lastmod>2021-06-23T11:19:30+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/linear-search/</loc>
+    <lastmod>2021-06-23T11:19:30+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/search-algorithm/</loc>
+    <lastmod>2021-06-23T11:19:30+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/sequential-search/</loc>
+    <lastmod>2021-06-23T11:19:30+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/algorithm-18-sequentialsearch/</loc>
+    <lastmod>2021-06-23T11:19:30+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/oop/</loc>
     <lastmod>2021-06-22T20:56:20+08:00</lastmod>
@@ -20,20 +65,8 @@
     <loc>https://fakestandard.github.io/post/</loc>
     <lastmod>2021-06-22T20:56:20+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/tags/</loc>
-    <lastmod>2021-06-22T20:56:20+08:00</lastmod>
-  </url><url>
     <loc>https://fakestandard.github.io/post/oop/oop-2-oop-feature/</loc>
     <lastmod>2021-06-22T20:56:20+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/algorithm/</loc>
-    <lastmod>2021-06-21T13:59:42+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/categories/algorithm/</loc>
-    <lastmod>2021-06-21T13:59:42+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/algorithm/</loc>
-    <lastmod>2021-06-21T13:59:42+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/heap-tree-sort/</loc>
     <lastmod>2021-06-21T13:59:42+08:00</lastmod>
@@ -50,22 +83,7 @@
     <loc>https://fakestandard.github.io/algorithm/algorithm-16-radixsort/</loc>
     <lastmod>2021-06-18T13:58:45+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/tags/asp.net-core-5/</loc>
-    <lastmod>2021-06-17T10:34:36+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/categories/asp.net-core-5/</loc>
-    <lastmod>2021-06-17T10:34:36+08:00</lastmod>
-  </url><url>
     <loc>https://fakestandard.github.io/tags/configuration/</loc>
-    <lastmod>2021-06-17T10:34:36+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/dotnet-core/</loc>
-    <lastmod>2021-06-17T10:34:36+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/categories/dotnet-core/</loc>
-    <lastmod>2021-06-17T10:34:36+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/netcore/</loc>
     <lastmod>2021-06-17T10:34:36+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/netcore/netcore5-6-configuration/</loc>

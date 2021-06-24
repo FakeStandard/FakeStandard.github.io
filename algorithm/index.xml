@@ -6,7 +6,26 @@
     <description>Recent content in Algorithms on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 21 Jun 2021 13:59:42 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Jun 2021 11:19:30 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】搜尋演算法—循序搜尋法（Sequential Search）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-18-sequentialsearch/</link>
+      <pubDate>Wed, 23 Jun 2021 11:19:30 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-18-sequentialsearch/</guid>
+      <description>【5/21 閱讀紀錄】
+搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
+依據資料量大小而言，搜尋可分為兩種
+ 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
+ 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
+Start 常見的搜尋演算法
+ 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  循序搜尋演算法（Sequential Search） 循序搜尋法又稱線性搜尋法（Linear Search），它的原理是走訪所有的資料，不論資料順序從頭到尾逐次搜尋，也不需要在搜尋前對資料做任何處理或排序，在沒有重複資料下，找到資料就中止搜尋，是一種最簡單的排序法。
+它的缺點是搜尋速度較慢，因為對資料從頭到尾的訪問，最好的情況就是一次就找到，只進行一次比較；最壞的情況則是第 n 次才找到，則進行了 n 次比較。所以在數列長度很大時，循序搜尋法則不太適合使用，它通常適用於對檔案小的資料進行搜尋。
+假設有一數列 10 20 30 40 50，欲從數列中找到鍵值 30，透過循序搜尋法，從頭到尾走訪，第一個先找到 10 進行比較，不符合條件，繼續找尋到第二個 20，依然不符合條件，找尋到第三個鍵值，經比對後符合條件，此時演算法中止。
+利用上面的數列來看，最佳的情況是第一次搜尋就符合條件，然後中止搜尋，只進行了一次比較，例如欲搜尋鍵值 10，即是最佳情況；最壞的情況就是從頭走訪到尾，直到搜尋到最後一個鍵值才符合條件，或數列中都沒有符合條件的鍵值，假設數列長度為 n，則需進行 n 次比較，例如欲搜尋鍵值 50 或不存在數列中的鍵值 60，即是最差情況。
+演算法分析  最差的情況下，時間複雜度為 O(n) 平均情況下，需要 (n+1)/2 次的比較  實際撰寫程式碼 亂數產生 1-150 之間的 100 個整數，並實作循序搜尋法的過程</description>
+    </item>
+    
     <item>
       <title>【Algorithm】排序演算法—堆積樹排序法（Heap Tree Sort）</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-17-heaptreesort/</link>

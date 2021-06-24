@@ -148,6 +148,28 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】資料結構—圖形（Graph）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/25 閱讀紀錄】
+選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
+Start 此篇紀錄記錄圖形定義及應用，其餘常見的資料結構如下
+ 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  圖形（Graph） 圖形理論是由一位瑞士數學家所想出的一種資料結構，是比樹狀結構更複雜的非線性結構，許多問題都可以轉換成圖形資料結構，因此，圖形資料結構被廣泛應用於程式的實作，在所有資料結構中的應用也最為廣泛。
+例如在網路的地圖上搜尋兩點之間的最短路徑，可以將地點轉換成圖形中的頂點，地點與地點之間的距離轉換成邊，最後使用最短路徑的演算法，即可以找出最短路徑。
+圖的定義是由**頂點（Vertice）和邊（Edge）**所組成的集合，邊是連結圖形中的兩個頂點，可以有循環，也可以不跟其他頂點相連，通常以 G=(V,E) 來定義一個圖形
+ G：圖（Graph） V：所有頂點（Vertice）的集合 E：所有邊（Edge）的集合  圖形的種類有兩種，分別是無向圖形和有向圖形
+無向圖形（Undirected Graph） 無向圖形的邊只代表頂點之間是相連，不會標示方向箭頭，可以說是不具有方向性，無向圖以 (V1,V2) 來表示，例如 (V1,V2) 與 (V2,V1) 表示相同的邊。
+以上圖來說
+V = {A,B,C,D,E} E = {(A,B),(A,C),(B,D),(B,E),(C,D),(C,E)} 有向圖形（Directed Graph） 有向圖形的每個邊都具有方向性，以 &lt;V1,V2&gt; 來表示，若無向圖是不具方向性，那麼有向圖就是具有方向性的，V1 是指尾端，V2 是指頂端，&lt;V1,V2&gt; 則代表著由 V1 尾端指向 V2 頂端。例如 &lt;V1,V2&gt; 和 &lt;V2,V1&gt; 表示兩個不同方向的邊。
+以上圖來說，與無向圖形的範例圖差異在於，該圖的邊是具有方向性箭頭，表示方式如下
+V = {A,B,C,D,E} E = {&lt;A,B&gt;,&lt;A,C&gt;,&lt;B,D&gt;,&lt;C,D&gt;,&lt;E,B&gt;,&lt;E,C&gt;} 相關專有名詞   頂點（Vertice）...</p>
+  </section>
+  <footer class="entry-footer">May 26, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—圖形（Graph）" href="https://fakestandard.github.io/algorithm/algorithm-8-graph/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】資料結構—樹（Tree）</h2>
   </header>
   <section class="entry-content">
