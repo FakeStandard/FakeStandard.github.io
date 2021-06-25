@@ -148,6 +148,27 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】搜尋演算法—二分搜尋法（Binary Search）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/21 閱讀紀錄】
+搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
+依據資料量大小而言，搜尋可分為兩種
+ 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
+ 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
+Start 常見的搜尋演算法
+ 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  二分搜尋演算法（Binary Search） 二分搜尋法是對已排序的資料進行搜尋，其原理是將資料分割成兩等份，對鍵值與分割的中間值進行比較大小，依照比較的結果，來確認要找的資料是在前半段或者後半段，反覆地分割比較，直到找到資料或無法再分割確定不存在為止，經由上述可知，未排序的資料不適用二分法。
+假設有一數列由小到大排序 10 20 30 40 50 60 70 80 90，欲找尋鍵值 30，利用二分法進行第一次分割，得到中間值為 50，將鍵值 30 與中間值 50 進行比較，得鍵值小於中間值，確定要找尋的資料在前半段 10 20 30 40 50，在對前半段進行第二次分隔，得到中間值 30，將鍵值與中間值進行比較，結果為真，即搜尋中止。
+演算法分析  時間複雜度為 O(logn) 必須事先排序，且資料量必須能載入到記憶體中執行 適用於不需增刪的靜態資料  實際撰寫程式碼 亂數產生 1-150 之間的 100 個整數，並實作二分搜尋法的過程
+建立靜態陣列物件及二分搜尋方法
+// 建立靜態陣列物件 static int[] data = new int[100]; /// &lt;summary&gt; /// 二分搜尋方法 /// &lt;/summary&gt; /// &lt;param name=&#34;val&#34;&gt;&lt;/param&gt; /// &lt;returns&gt;&lt;/returns&gt; static int BinarySearch(int val) { int mid; // 中間值  int left = 0; // 左邊極限  int right = data....</p>
+  </section>
+  <footer class="entry-footer">June 25, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—二分搜尋法（Binary Search）" href="https://fakestandard.github.io/algorithm/algorithm-19-binarysearch/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【.NET Core】環境變數 Environments</h2>
   </header>
   <section class="entry-content">
@@ -306,23 +327,6 @@ public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host....</p>
   </section>
   <footer class="entry-footer">June 11, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【.NET Core】記錄 Logging" href="https://fakestandard.github.io/netcore/netcore5-5-logging/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【OOP】物件導向基礎概念（Object Oriented Programming）</h2>
-  </header>
-  <section class="entry-content">
-    <p>Start 物件導向（Object-Oriented Programming），意為針對物件進行程式設計。而學習設計模式前必須先了解物件導向設計，不然難以體會設計模式的魅力。
-接下來我們會知道
- 類別（Class） 物件（Object） 實體（Instance） 建構式（Constructor） 多載（Overloading） 欄位（Field） 屬性（Property） 修飾詞（Modifiers）  類別（Class） 類別是具有相同「屬性（Attribute）」和 「功能（Method）」的物件之抽象集合。在 C# 中定義類別的關鍵字為 class，類別命名規則為第一個字母為大寫，多個單字命名時各個首字母為大寫。
-// 建立 Swordman 類別 class Swordman { // 建立公開的攻擊方法使外部可以呼叫，修飾詞用 public  public string Attack() { return &#34;基本攻擊！&#34;; } } 物件（Object） 物件是一個獨立的實體，實體裡包含許多資料，資料彼此之間不會互相影響，每個皆為獨立的資料。物件與類別的關係，最簡單易懂又不抽象的解釋為—物件是類別的實體。
-// 宣告一個Swordman 物件，物件名為 swordman Swordman swordman; // 先前建立的 Swordman 類別 class Swordman { ... }  在程式碼的世界裡，萬物皆為物件。
- 實體（Instance） 實體就是一個真實的物件。實體化是建立物件的過程，使用 new 關鍵字建立。
-// 實體化 swordman 物件 swordman = new Swordman(); 綜合上述介紹的類別、物件和實體，實際演練一次程式碼並觀察結果。 在 Swordman 有一個公開的 Attack 方法，當物件被實體化後，未來就能一直呼叫該方法...</p>
-  </section>
-  <footer class="entry-footer">June 10, 2021&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【OOP】物件導向基礎概念（Object Oriented Programming）" href="https://fakestandard.github.io/post/oop/oop-1-object-oriented-programming/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

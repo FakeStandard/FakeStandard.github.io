@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Binary Search on How can I help</title>
+    <link>https://fakestandard.github.io/tags/binary-search/</link>
+    <description>Recent content in Binary Search on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 25 Jun 2021 12:37:12 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/binary-search/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】搜尋演算法—二分搜尋法（Binary Search）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-19-binarysearch/</link>
+      <pubDate>Fri, 25 Jun 2021 12:37:12 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-19-binarysearch/</guid>
+      <description>【5/21 閱讀紀錄】
+搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
+依據資料量大小而言，搜尋可分為兩種
+ 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
+ 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
+Start 常見的搜尋演算法
+ 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  二分搜尋演算法（Binary Search） 二分搜尋法是對已排序的資料進行搜尋，其原理是將資料分割成兩等份，對鍵值與分割的中間值進行比較大小，依照比較的結果，來確認要找的資料是在前半段或者後半段，反覆地分割比較，直到找到資料或無法再分割確定不存在為止，經由上述可知，未排序的資料不適用二分法。
+假設有一數列由小到大排序 10 20 30 40 50 60 70 80 90，欲找尋鍵值 30，利用二分法進行第一次分割，得到中間值為 50，將鍵值 30 與中間值 50 進行比較，得鍵值小於中間值，確定要找尋的資料在前半段 10 20 30 40 50，在對前半段進行第二次分隔，得到中間值 30，將鍵值與中間值進行比較，結果為真，即搜尋中止。
+演算法分析  時間複雜度為 O(logn) 必須事先排序，且資料量必須能載入到記憶體中執行 適用於不需增刪的靜態資料  實際撰寫程式碼 亂數產生 1-150 之間的 100 個整數，並實作二分搜尋法的過程
+建立靜態陣列物件及二分搜尋方法
+// 建立靜態陣列物件 static int[] data = new int[100]; /// &amp;lt;summary&amp;gt; /// 二分搜尋方法 /// &amp;lt;/summary&amp;gt; /// &amp;lt;param name=&amp;#34;val&amp;#34;&amp;gt;&amp;lt;/param&amp;gt; /// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt; static int BinarySearch(int val) { int mid; // 中間值  int left = 0; // 左邊極限  int right = data.</description>
+    </item>
+    
+  </channel>
+</rss>

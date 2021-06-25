@@ -6,22 +6,49 @@
     <description>Recent content in Tags on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 24 Jun 2021 10:05:46 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Jun 2021 12:37:12 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>ASP.NET Core 5</title>
-      <link>https://fakestandard.github.io/tags/asp.net-core-5/</link>
-      <pubDate>Thu, 24 Jun 2021 10:05:46 +0800</pubDate>
+      <title>Algorithm</title>
+      <link>https://fakestandard.github.io/tags/algorithm/</link>
+      <pubDate>Fri, 25 Jun 2021 12:37:12 +0800</pubDate>
       
-      <guid>https://fakestandard.github.io/tags/asp.net-core-5/</guid>
+      <guid>https://fakestandard.github.io/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Binary Search</title>
+      <link>https://fakestandard.github.io/tags/binary-search/</link>
+      <pubDate>Fri, 25 Jun 2021 12:37:12 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/binary-search/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSharp</title>
       <link>https://fakestandard.github.io/tags/csharp/</link>
-      <pubDate>Thu, 24 Jun 2021 10:05:46 +0800</pubDate>
+      <pubDate>Fri, 25 Jun 2021 12:37:12 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search Algorithm</title>
+      <link>https://fakestandard.github.io/tags/search-algorithm/</link>
+      <pubDate>Fri, 25 Jun 2021 12:37:12 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/search-algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ASP.NET Core 5</title>
+      <link>https://fakestandard.github.io/tags/asp.net-core-5/</link>
+      <pubDate>Thu, 24 Jun 2021 10:05:46 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/asp.net-core-5/</guid>
       <description></description>
     </item>
     
@@ -44,29 +71,11 @@
     </item>
     
     <item>
-      <title>Algorithm</title>
-      <link>https://fakestandard.github.io/tags/algorithm/</link>
-      <pubDate>Wed, 23 Jun 2021 11:19:30 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/algorithm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Linear Search</title>
       <link>https://fakestandard.github.io/tags/linear-search/</link>
       <pubDate>Wed, 23 Jun 2021 11:19:30 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/linear-search/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Search Algorithm</title>
-      <link>https://fakestandard.github.io/tags/search-algorithm/</link>
-      <pubDate>Wed, 23 Jun 2021 11:19:30 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/search-algorithm/</guid>
       <description></description>
     </item>
     
