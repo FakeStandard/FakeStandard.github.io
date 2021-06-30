@@ -163,6 +163,25 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【OOP】物件導向設計的五大原則</h2>
+  </header>
+  <section class="entry-content">
+    <p>Start 前篇講解 OOP 的特性卻還沒介紹基本原則，馬上來惡補一下內功心法。
+物件導向設計五大原則「SOLID」由羅伯特·C·馬丁在21世紀早期提出，SOLID分別為單一功能原則、開閉原則、里氏替換原則、介面隔離原則、依賴反轉原則。
+了解物件導向基本原則及特性，透過不斷練習和思考就可寫出閱讀性、維護性、擴充性高的程式碼，然而開發易維護與擴展的系統也變得不難。
+單一職責（Single Responsibility Principle） 對一個類別來說，應該只有一個引起他變化的理由，意為一個類別應只專注做一件事，當類別需要做兩件以上的工作時，就承擔了過多的職責，一旦需變更代碼，耦合度會比一件工作還要高，而當發生錯誤時很難快速定位錯誤原因，間接導致程式碼可閱讀性降低。
+開放封閉（Open-Closed Principle） 增加新的代碼來擴充系統，而非修改原本已存在的代碼來擴充新功能。所以在設計類別時對擴充保持開放及對修改保持封閉。若面對需求變化時，有無法封閉的變化，此時就須建立抽象點來隔離那些變化。
+里氏替換（Liskov Substitution Principle） 子類別必須可以替換父類別而不影響程式架構。若使用繼承，子類別實作的行為必須與父類別或介面所定義的行為一致，且子類別可完全取代父類別。
+介面隔離（Interface Segregation Principle） 抽取相同的功能形成介面，再讓各類別去實作。即針對不同類別開放對應需求的介面，需抽換時只需實作介面類別即可，大量降低耦合度。
+依賴反轉（Dependency Inversion Principle） 高階模組不應依賴低階模組，兩者都應依賴在抽象概念上；抽象概念不依賴細節，而細節依賴在抽象概念。模組之間若太過耦合，很容易出現修改A又被迫修改B的情況，若依賴抽象則兩只只要關注自己本身即可。
+Reference 【大話設計模式】</p>
+  </section>
+  <footer class="entry-footer">June 29, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【OOP】物件導向設計的五大原則" href="https://fakestandard.github.io/post/oop/oop-3-oop-principles/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【OOP】物件導向特性—封裝、繼承、多型</h2>
   </header>
   <section class="entry-content">
@@ -312,23 +331,6 @@ Model public class Employee { public int ID { get; set; } public string FirstNam
   </section>
   <footer class="entry-footer">May 9, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【.NET】將資料匯出成 CSV" href="https://fakestandard.github.io/post/dotnet/dotnet-6-exportcsv/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【.NET】使用 ClosedXML 實現匯出 Excel 功能</h2>
-  </header>
-  <section class="entry-content">
-    <p>開發應用程式或網頁時一定會遇到匯出 Excel 功能，而匯出的 Libaray 除了微軟原生的程式庫之外，還可以使用第三方的程式庫，先前已有介紹過使用 NPOI 套件，有興趣可參考傳送門。
-這篇則會介紹如何使用 ClosedXML 簡易的匯出，代碼已存放於 GitHub
-【傳送門】【NPOI】使用 NPOI 匯出 Excel 的基本應用
-Start 首先到 NuGet 安裝套件
-Model 建立資料模型
-public class Employee { public int ID { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Title { get; set; } public string City { get; set; } } Controller 建立控制項和產生資料
-public class EmployeeController : Controller { private List&lt;Employee&gt; employees; public EmployeeController() { if (employees == null) { employees = new List&lt;Employee&gt;() { new Employee{ ID = 1, LastName = &#34;Davolio&#34;, FirstName = &#34;Nancy&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 2, LastName = &#34;Fuller&#34;, FirstName = &#34;Andrew&#34;, Title = &#34;Vice President, Sales&#34;, City = &#34;Tacoma&#34; }, new Employee{ ID = 3, LastName = &#34;Leverling&#34;, FirstName = &#34;Janet&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Kirkland&#34; }, new Employee{ ID = 4, LastName = &#34;Peacock&#34;, FirstName = &#34;Margaret&#34;, Title = &#34;Sales Representative&#34;, City = &#34;Redmond&#34; }, new Employee{ ID = 5, LastName = &#34;Buchanan&#34;, FirstName = &#34;Steven&#34;, Title = &#34;Sales Manager&#34;, City = &#34;London&#34; }, new Employee{ ID = 6, LastName = &#34;Suyama&#34;, FirstName = &#34;Michael&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 7, LastName = &#34;King&#34;, FirstName = &#34;Robert&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; }, new Employee{ ID = 8, LastName = &#34;Callahan&#34;, FirstName = &#34;Laura&#34;, Title = &#34;Inside Sales Coordinator&#34;, City = &#34;Seattle&#34; }, new Employee{ ID = 9, LastName = &#34;Dodsworth&#34;, FirstName = &#34;Anne&#34;, Title = &#34;Sales Representative&#34;, City = &#34;London&#34; } }; } } public IActionResult Index() { return View(employees); } } View 在視圖渲染資料，且添加 Export 按鈕...</p>
-  </section>
-  <footer class="entry-footer">May 8, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET】使用 ClosedXML 實現匯出 Excel 功能" href="https://fakestandard.github.io/post/dotnet/dotnet-5-closedxmlsimple/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

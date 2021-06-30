@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Dependency Inversion on How can I help</title>
+    <link>https://fakestandard.github.io/tags/dependency-inversion/</link>
+    <description>Recent content in Dependency Inversion on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Tue, 29 Jun 2021 21:47:25 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/dependency-inversion/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【OOP】物件導向設計的五大原則</title>
+      <link>https://fakestandard.github.io/post/oop/oop-3-oop-principles/</link>
+      <pubDate>Tue, 29 Jun 2021 21:47:25 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/oop/oop-3-oop-principles/</guid>
+      <description>Start 前篇講解 OOP 的特性卻還沒介紹基本原則，馬上來惡補一下內功心法。
+物件導向設計五大原則「SOLID」由羅伯特·C·馬丁在21世紀早期提出，SOLID分別為單一功能原則、開閉原則、里氏替換原則、介面隔離原則、依賴反轉原則。
+了解物件導向基本原則及特性，透過不斷練習和思考就可寫出閱讀性、維護性、擴充性高的程式碼，然而開發易維護與擴展的系統也變得不難。
+單一職責（Single Responsibility Principle） 對一個類別來說，應該只有一個引起他變化的理由，意為一個類別應只專注做一件事，當類別需要做兩件以上的工作時，就承擔了過多的職責，一旦需變更代碼，耦合度會比一件工作還要高，而當發生錯誤時很難快速定位錯誤原因，間接導致程式碼可閱讀性降低。
+開放封閉（Open-Closed Principle） 增加新的代碼來擴充系統，而非修改原本已存在的代碼來擴充新功能。所以在設計類別時對擴充保持開放及對修改保持封閉。若面對需求變化時，有無法封閉的變化，此時就須建立抽象點來隔離那些變化。
+里氏替換（Liskov Substitution Principle） 子類別必須可以替換父類別而不影響程式架構。若使用繼承，子類別實作的行為必須與父類別或介面所定義的行為一致，且子類別可完全取代父類別。
+介面隔離（Interface Segregation Principle） 抽取相同的功能形成介面，再讓各類別去實作。即針對不同類別開放對應需求的介面，需抽換時只需實作介面類別即可，大量降低耦合度。
+依賴反轉（Dependency Inversion Principle） 高階模組不應依賴低階模組，兩者都應依賴在抽象概念上；抽象概念不依賴細節，而細節依賴在抽象概念。模組之間若太過耦合，很容易出現修改A又被迫修改B的情況，若依賴抽象則兩只只要關注自己本身即可。
+Reference 【大話設計模式】</description>
+    </item>
+    
+  </channel>
+</rss>

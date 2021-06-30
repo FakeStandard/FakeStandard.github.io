@@ -6,22 +6,85 @@
     <description>Recent content in Tags on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 28 Jun 2021 10:27:54 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Jun 2021 21:47:25 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CSharp</title>
+      <link>https://fakestandard.github.io/tags/csharp/</link>
+      <pubDate>Tue, 29 Jun 2021 21:47:25 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dependency Inversion</title>
+      <link>https://fakestandard.github.io/tags/dependency-inversion/</link>
+      <pubDate>Tue, 29 Jun 2021 21:47:25 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/dependency-inversion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interface Segregation</title>
+      <link>https://fakestandard.github.io/tags/interface-segregation/</link>
+      <pubDate>Tue, 29 Jun 2021 21:47:25 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/interface-segregation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Liskov Substitution</title>
+      <link>https://fakestandard.github.io/tags/liskov-substitution/</link>
+      <pubDate>Tue, 29 Jun 2021 21:47:25 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/liskov-substitution/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OOP</title>
+      <link>https://fakestandard.github.io/tags/oop/</link>
+      <pubDate>Tue, 29 Jun 2021 21:47:25 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/oop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OOP-Principle</title>
+      <link>https://fakestandard.github.io/tags/oop-principle/</link>
+      <pubDate>Tue, 29 Jun 2021 21:47:25 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/oop-principle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Open-Closed</title>
+      <link>https://fakestandard.github.io/tags/open-closed/</link>
+      <pubDate>Tue, 29 Jun 2021 21:47:25 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/open-closed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Single Responsibility</title>
+      <link>https://fakestandard.github.io/tags/single-responsibility/</link>
+      <pubDate>Tue, 29 Jun 2021 21:47:25 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/single-responsibility/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Algorithm</title>
       <link>https://fakestandard.github.io/tags/algorithm/</link>
       <pubDate>Mon, 28 Jun 2021 10:27:54 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/algorithm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CSharp</title>
-      <link>https://fakestandard.github.io/tags/csharp/</link>
-      <pubDate>Mon, 28 Jun 2021 10:27:54 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/csharp/</guid>
       <description></description>
     </item>
     
@@ -94,15 +157,6 @@
       <pubDate>Wed, 23 Jun 2021 11:19:30 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/sequential-search/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>OOP</title>
-      <link>https://fakestandard.github.io/tags/oop/</link>
-      <pubDate>Tue, 22 Jun 2021 20:56:20 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/oop/</guid>
       <description></description>
     </item>
     
