@@ -6,13 +6,40 @@
     <description>Recent content in Tags on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Tue, 29 Jun 2021 21:47:25 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Jun 2021 13:28:24 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algorithm</title>
+      <link>https://fakestandard.github.io/tags/algorithm/</link>
+      <pubDate>Wed, 30 Jun 2021 13:28:24 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>CSharp</title>
       <link>https://fakestandard.github.io/tags/csharp/</link>
-      <pubDate>Tue, 29 Jun 2021 21:47:25 +0800</pubDate>
+      <pubDate>Wed, 30 Jun 2021 13:28:24 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fibonacci Search</title>
+      <link>https://fakestandard.github.io/tags/fibonacci-search/</link>
+      <pubDate>Wed, 30 Jun 2021 13:28:24 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/fibonacci-search/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search Algorithm</title>
+      <link>https://fakestandard.github.io/tags/search-algorithm/</link>
+      <pubDate>Wed, 30 Jun 2021 13:28:24 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/search-algorithm/</guid>
       <description></description>
     </item>
     
@@ -80,29 +107,11 @@
     </item>
     
     <item>
-      <title>Algorithm</title>
-      <link>https://fakestandard.github.io/tags/algorithm/</link>
-      <pubDate>Mon, 28 Jun 2021 10:27:54 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/algorithm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Interpolation Search</title>
       <link>https://fakestandard.github.io/tags/interpolation-search/</link>
       <pubDate>Mon, 28 Jun 2021 10:27:54 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/interpolation-search/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Search Algorithm</title>
-      <link>https://fakestandard.github.io/tags/search-algorithm/</link>
-      <pubDate>Mon, 28 Jun 2021 10:27:54 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/search-algorithm/</guid>
       <description></description>
     </item>
     
