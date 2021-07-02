@@ -3,30 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://fakestandard.github.io/tags/algorithm/</loc>
-    <lastmod>2021-06-30T13:28:24+08:00</lastmod>
+    <lastmod>2021-07-02T15:50:31+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/categories/algorithm/</loc>
-    <lastmod>2021-06-30T13:28:24+08:00</lastmod>
+    <lastmod>2021-07-02T15:50:31+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/algorithm/</loc>
-    <lastmod>2021-06-30T13:28:24+08:00</lastmod>
+    <lastmod>2021-07-02T15:50:31+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/array/</loc>
+    <lastmod>2021-07-02T15:50:31+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/categories/</loc>
-    <lastmod>2021-06-30T13:28:24+08:00</lastmod>
+    <lastmod>2021-07-02T15:50:31+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/csharp/</loc>
-    <lastmod>2021-06-30T13:28:24+08:00</lastmod>
+    <lastmod>2021-07-02T15:50:31+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/</loc>
+    <lastmod>2021-07-02T15:50:31+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/stack/</loc>
+    <lastmod>2021-07-02T15:50:31+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/</loc>
+    <lastmod>2021-07-02T15:50:31+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/algorithm-22-stackarray/</loc>
+    <lastmod>2021-07-02T15:50:31+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/fibonacci-search/</loc>
     <lastmod>2021-06-30T13:28:24+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/</loc>
-    <lastmod>2021-06-30T13:28:24+08:00</lastmod>
-  </url><url>
     <loc>https://fakestandard.github.io/tags/search-algorithm/</loc>
-    <lastmod>2021-06-30T13:28:24+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/</loc>
     <lastmod>2021-06-30T13:28:24+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/algorithm/algorithm-21-fibonaccisearch/</loc>
@@ -254,9 +263,6 @@
     <loc>https://fakestandard.github.io/netcore/netcore5-2-dependencyinjection/</loc>
     <lastmod>2021-05-20T15:41:33+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/tags/stack/</loc>
-    <lastmod>2021-05-19T13:53:44+08:00</lastmod>
-  </url><url>
     <loc>https://fakestandard.github.io/algorithm/algorithm-5-stack/</loc>
     <lastmod>2021-05-19T13:53:44+08:00</lastmod>
   </url><url>
@@ -334,9 +340,6 @@
   </url><url>
     <loc>https://fakestandard.github.io/post/dotnet/dotnet-4-npoisimple/</loc>
     <lastmod>2021-04-27T14:08:05+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/array/</loc>
-    <lastmod>2021-04-26T16:34:39+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/algorithm/algorithm-3-array/</loc>
     <lastmod>2021-04-26T16:34:39+08:00</lastmod>

@@ -148,6 +148,22 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】堆疊應用—陣列實作堆疊</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/16 閱讀紀錄】
+根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 利用陣列結構模擬堆疊工作運算，且使用迴圈控制推入與取出的元素，其中需包含推入（push）和取出（pop）函數，最後要輸出堆疊中所有元素。
+建立堆疊類別
+/// &lt;summary&gt; /// 以陣列模擬堆疊的類別 /// &lt;/summary&gt; class StackArray { // 宣告陣列  private int[] stack; // 指向堆疊頂端的索引  private int top; /// &lt;summary&gt;  /// 建構子  /// &lt;/summary&gt;  /// &lt;param name=&#34;stack_size&#34;&gt;堆疊大小&lt;/param&gt;  public StackArray(int size) { // 建立陣列  stack = new int[size]; top = -1; } /// &lt;summary&gt;  /// 判斷堆疊是否為空  /// &lt;/summary&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool Empty() { if (top == -1) return true; else return false; } /// &lt;summary&gt;  /// 推入資料到頂端的方法  /// &lt;/summary&gt;  /// &lt;param name=&#34;data&#34;&gt;&lt;/param&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool Push(int data) { // 判斷堆疊頂端的索引是否大於陣列大小  if (top &gt;= stack....</p>
+  </section>
+  <footer class="entry-footer">July 2, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—陣列實作堆疊" href="https://fakestandard.github.io/algorithm/algorithm-22-stackarray/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】搜尋演算法—費氏搜尋法（Fibonacci Search）</h2>
   </header>
   <section class="entry-content">
@@ -325,32 +341,6 @@ Start 常見的排序演算法
   </section>
   <footer class="entry-footer">June 9, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—謝耳排序法（Shell Sort）" href="https://fakestandard.github.io/algorithm/algorithm-13-shellsort/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—插入排序法（Insert Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【4/29 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  插入排序法（Insert Sort） 插入排序法原理是將陣列中的元素，逐一與已經排序好的資料作比較，例如前兩個元素已經排序好，再將第三個元素與這兩個元素作比較，插入到適當的位置，接著將第四個元素，與前三個已排序好的元素進行比較，再插入到適當位置，重複此步驟，直到排序完成為止。
-透過插入排序法，一樣對 [30] [20] [40] [50] [10] 該數列進行排序，目標結果為由小到大排列
-Step 1 首先第一個元素 [30] 定義為已排序，取得第二個元素 [20]，與第一個元素進行比較，插入到適當位置
-初始已排序序列 [30]
-插入後結果序列 [20] [30]
-Step 2 取得第三個元素 [40]，與上次結果進行比對，並插入適當位置
-初始已排序序列 [20] [30]
-插入後結果序列 [20] [30] [40]
-Step 3 取得第四個元素 [50]，與上次結果進行比對，並插入適當位置
-初始已排序序列 [20] [30] [40]
-插入後結果序列 [20] [30] [40] [50]...</p>
-  </section>
-  <footer class="entry-footer">June 7, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—插入排序法（Insert Sort）" href="https://fakestandard.github.io/algorithm/algorithm-12-insertsort/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

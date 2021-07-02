@@ -148,6 +148,21 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【.NET Core】組態設定 Configuration</h2>
+  </header>
+  <section class="entry-content">
+    <p>【ASP.NET Core 5】
+Start .NET Framework 的組態通常在 app.config 或 web.config 中設定，在 .NET Core 不再使用過往讀取單一檔案方法，它使用一個或多個 Configuration Provider 來提供多種設定組態的方式。
+預設組態 應用程式在 Program.cs 預設產生 Host.CreateDefaultBuilder(args) 程式碼，CreateDefaultBuilder 會依照下列 Provider 的順序提供應用程式預設組態
+ ChainedConfigurationProvider appsettings.json appsettings.Environment.json Environment Variables configuration provider Command-line configuration provider  使用下列程式碼，依新增順序來顯示 Configuration Provider
+private IConfigurationRoot ConfigRoot; public HomeController(IConfiguration configRoot) { ConfigRoot = (IConfigurationRoot)configRoot; } public ContentResult OnGet() { string str = &#34;&#34;; foreach (var provider in ConfigRoot.Providers.ToList()) { str &#43;= provider.ToString() &#43; &#34;\n&#34;; } return Content(str); } 結果與前述說明的順序相同...</p>
+  </section>
+  <footer class="entry-footer">June 17, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET Core】組態設定 Configuration" href="https://fakestandard.github.io/netcore/netcore5-6-configuration/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】排序演算法—合併排序法（Merge Sort）</h2>
   </header>
   <section class="entry-content">
@@ -327,24 +342,6 @@ Step 2 依然拿著 [30] 這個元素，繼續與相鄰的元素比較，因為�
   </section>
   <footer class="entry-footer">June 1, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—氣泡排序法（Bubble Sort）" href="https://fakestandard.github.io/algorithm/algorithm-10-bubblesort/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET Core】中介軟體 Middleware</h2>
-  </header>
-  <section class="entry-content">
-    <p>【ASP.NET Core 5】
-ASP.NET Core 引入一個新概念稱為中介軟體（Middleware），Middleware 會在 ASP.NET Core 應用程式中的每個請求上執行。
-過去 ASP.NET 中 HttpHandlers 和 HttpModules 在 ASP.NET Core 已不復存在，更準確地說，它們已成為 Request Pipeline 的一部分，Middleware 類似於 HttpHandlers、HttpModules，都需要在每個請求中進行配置及執行。
-Start Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以選擇是否將請求傳遞到管線中的下一個組件，也可以在下一個組件中的前後執行工作。
-通常 ASP.NET Core Web 應用程式中有許多 Middleware，它可以是 Framework provided 的中介軟體，也可以通過 NuGet 添加，甚至可以自行定義 Middleware。我們可以在請求管道中設置中介軟體的執行順序，每個中介軟體都會新增或修改 Http 請求，且可選擇將控制權傳遞給下一個中介軟體。
-請求委派用於建構請求管道，請求委派會處理每個 Http 請求。該句的原文是這樣
- Request delegates are used to build the request pipeline. The request delegates handle each HTTP request.
- Request delegates 使用 Run、Map 和 Use 三種擴充方法來配置。單個請求委派可以指定嵌入式（in-line）匿名方法，稱為嵌入式中介軟體，也可以在重複使用的類別中進行定義。這些可重用的類別和嵌入式匿名方法就是 middleware ，也稱之為 middleware components。在請求管道中的每個中介軟體元件負責調用 Pipeline 中的下一個元件，或對管線執行最少運算，當中介軟體短路時（short-circult），會阻止接下來的中介軟體處理請求，稱之為終端中介軟體 terminal middleware。...</p>
-  </section>
-  <footer class="entry-footer">May 31, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET Core】中介軟體 Middleware" href="https://fakestandard.github.io/netcore/netcore5-3-middleware/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

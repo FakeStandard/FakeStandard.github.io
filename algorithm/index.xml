@@ -6,7 +6,21 @@
     <description>Recent content in Algorithms on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 30 Jun 2021 13:28:24 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 02 Jul 2021 15:50:31 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】堆疊應用—陣列實作堆疊</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-22-stackarray/</link>
+      <pubDate>Fri, 02 Jul 2021 15:50:31 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-22-stackarray/</guid>
+      <description>【5/16 閱讀紀錄】
+根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 利用陣列結構模擬堆疊工作運算，且使用迴圈控制推入與取出的元素，其中需包含推入（push）和取出（pop）函數，最後要輸出堆疊中所有元素。
+建立堆疊類別
+/// &amp;lt;summary&amp;gt; /// 以陣列模擬堆疊的類別 /// &amp;lt;/summary&amp;gt; class StackArray { // 宣告陣列  private int[] stack; // 指向堆疊頂端的索引  private int top; /// &amp;lt;summary&amp;gt;  /// 建構子  /// &amp;lt;/summary&amp;gt;  /// &amp;lt;param name=&amp;#34;stack_size&amp;#34;&amp;gt;堆疊大小&amp;lt;/param&amp;gt;  public StackArray(int size) { // 建立陣列  stack = new int[size]; top = -1; } /// &amp;lt;summary&amp;gt;  /// 判斷堆疊是否為空  /// &amp;lt;/summary&amp;gt;  /// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt;  public bool Empty() { if (top == -1) return true; else return false; } /// &amp;lt;summary&amp;gt;  /// 推入資料到頂端的方法  /// &amp;lt;/summary&amp;gt;  /// &amp;lt;param name=&amp;#34;data&amp;#34;&amp;gt;&amp;lt;/param&amp;gt;  /// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt;  public bool Push(int data) { // 判斷堆疊頂端的索引是否大於陣列大小  if (top &amp;gt;= stack.</description>
+    </item>
+    
     <item>
       <title>【Algorithm】搜尋演算法—費氏搜尋法（Fibonacci Search）</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-21-fibonaccisearch/</link>
