@@ -163,6 +163,24 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】堆疊應用—串列實作堆疊</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/17 閱讀紀錄】
+根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 使用串列製作堆疊的好處是可以隨時動態改變串列長度，缺點則是設計較為複雜。相較於使用陣列製作堆疊設計上較為簡易，缺點則是陣列大小需事先宣告，無法動態改變。
+利用串列結構模擬堆疊工作運算，使用迴圈控制推入或取出的元素，其中需包含推入（push）和取出（pop）函數，最後要輸出堆疊中所有元素。
+宣告一個鏈結串列節點的類別
+/// &lt;summary&gt; /// 鏈結串列節點的類別 /// &lt;/summary&gt; class Node { public int data; public Node next; public Node(int data) { this.data = data; this.next = null; } } 宣告串列模擬堆疊的類別，其中包含推入和取出的方法
+/// &lt;summary&gt; /// 以串列模擬的堆疊 /// &lt;/summary&gt; class StackByLink { /// &lt;summary&gt;  /// 指向堆疊頂端的指標  /// &lt;/summary&gt;  public Node front; /// &lt;summary&gt;  /// 指向堆疊末端的指標  /// &lt;/summary&gt;  public Node rear; /// &lt;summary&gt;  /// 判斷堆別是否為空的方法  /// &lt;/summary&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool IsEmpty() { return front == null; } /// &lt;summary&gt;  /// 輸出堆疊內容  /// &lt;/summary&gt;  public void Display() { Node current = front; while (current !...</p>
+  </section>
+  <footer class="entry-footer">July 5, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—串列實作堆疊" href="https://fakestandard.github.io/algorithm/algorithm-23-stacklist/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】堆疊應用—陣列實作堆疊</h2>
   </header>
   <section class="entry-content">
@@ -335,27 +353,6 @@ Start 常見的排序演算法
   </section>
   <footer class="entry-footer">June 13, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—快速排序法（Quick Sort）" href="https://fakestandard.github.io/algorithm/algorithm-14-quicksort/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—謝耳排序法（Shell Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/2 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  謝耳排序法（Shell Sort） 在插入排序法中，若大部分資料已經排序完成，該排序法會相當有效率，而謝耳排序法可以看作是一種使插入排序法減少資料搬移次數的衍伸排序法。
-其原理為將資料區分成特定間隔的區塊，以插入排序法對區塊內資料進行排序，再漸漸減少間隔的距離。
-舉例，有一陣列為 [50] [60] [10] [30] [20] [80] [40] [70]，以劃分數為 2，將資料分成四等份 (8/2)，得到下列區塊組合 (50,20)(60,80)(10,40)(30,70)，規則為第一個數與第五個數為一組，第二個數與第六個數為一組，以此類推。
-接著透過插入排序法，對區塊內的資料做排序，使其成為 (20,50)(60,80)(10,40)(30,70)，排序完後，解散區塊組合，還原成原數列 [20] [60] [10] [30] [50] [80] [40] [70]
-繼續縮小間隔為 (8/2)/2，得到下列區塊組合 (20,10,50,40)(60,30,80,70)，其規則為第一、三、五、七個數字為一組，二、四、六、八為一組，一樣以插入排序法對區塊內資料做排序，得結果為 (10,20,40,50)(30,60,70,80)，解散組合區塊，還原成原數列 [10] [30] [20] [60] [40] [70] [50] [80]
-進行第三次排序，縮小間隔為 ((8/2)/2)/2，如此一來變成對每一個元素進行排序，直接使用插入排序法得結果為 [10] [20] [30] [40] [50] [60] [70] [80]...</p>
-  </section>
-  <footer class="entry-footer">June 9, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—謝耳排序法（Shell Sort）" href="https://fakestandard.github.io/algorithm/algorithm-13-shellsort/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

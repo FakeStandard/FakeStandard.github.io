@@ -6,7 +6,23 @@
     <description>Recent content in Algorithm on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 02 Jul 2021 15:50:31 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Jul 2021 14:06:01 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】堆疊應用—串列實作堆疊</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-23-stacklist/</link>
+      <pubDate>Mon, 05 Jul 2021 14:06:01 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-23-stacklist/</guid>
+      <description>【5/17 閱讀紀錄】
+根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 使用串列製作堆疊的好處是可以隨時動態改變串列長度，缺點則是設計較為複雜。相較於使用陣列製作堆疊設計上較為簡易，缺點則是陣列大小需事先宣告，無法動態改變。
+利用串列結構模擬堆疊工作運算，使用迴圈控制推入或取出的元素，其中需包含推入（push）和取出（pop）函數，最後要輸出堆疊中所有元素。
+宣告一個鏈結串列節點的類別
+/// &amp;lt;summary&amp;gt; /// 鏈結串列節點的類別 /// &amp;lt;/summary&amp;gt; class Node { public int data; public Node next; public Node(int data) { this.data = data; this.next = null; } } 宣告串列模擬堆疊的類別，其中包含推入和取出的方法
+/// &amp;lt;summary&amp;gt; /// 以串列模擬的堆疊 /// &amp;lt;/summary&amp;gt; class StackByLink { /// &amp;lt;summary&amp;gt;  /// 指向堆疊頂端的指標  /// &amp;lt;/summary&amp;gt;  public Node front; /// &amp;lt;summary&amp;gt;  /// 指向堆疊末端的指標  /// &amp;lt;/summary&amp;gt;  public Node rear; /// &amp;lt;summary&amp;gt;  /// 判斷堆別是否為空的方法  /// &amp;lt;/summary&amp;gt;  /// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt;  public bool IsEmpty() { return front == null; } /// &amp;lt;summary&amp;gt;  /// 輸出堆疊內容  /// &amp;lt;/summary&amp;gt;  public void Display() { Node current = front; while (current !</description>
+    </item>
+    
     <item>
       <title>【Algorithm】堆疊應用—陣列實作堆疊</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-22-stackarray/</link>
