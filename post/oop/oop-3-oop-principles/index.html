@@ -52,6 +52,31 @@ Reference 【大話設計模式】">
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 ></script>
 
+
+
+
+<script
+  src="https://cdn.jsdelivr.net/npm/mermaid@8.8.2/dist/mermaid.min.js"
+  integrity="sha256-KqisLh8jVMBRjpNkOhH5W9VWs+F6x6vQksLqxs7+x9A="
+  crossorigin="anonymous"
+></script>
+<script>
+  
+  Array.from(document.getElementsByClassName("language-mermaid")).forEach(
+    (el) => {
+      el.parentElement.outerHTML = `<div class="mermaid">${el.innerText}</div>`;
+    }
+  );
+</script>
+<style>
+   
+  .mermaid svg {
+    display: block;
+    margin: auto;
+  }
+</style>
+
+
 <link rel="icon" href="https://fakestandard.github.io/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://fakestandard.github.io/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://fakestandard.github.io/favicon-32x32.png">
@@ -376,10 +401,6 @@ graph TD;
         <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
     </span>
 </footer>
-
-
-
-
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
     <button class="top-link" id="top-link" type="button" accesskey="g">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
