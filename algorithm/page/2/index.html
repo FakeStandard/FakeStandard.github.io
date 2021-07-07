@@ -169,6 +169,25 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】排序演算法—快速排序法（Quick Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/17 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  快速排序法（Quick Sort） 快速排序法又稱分割交換排序法，也是目前公認最佳的排序法，原理為使用分治法的方式，從資料中找到一個虛擬中間值，依此中間值將資料分為兩部分，將小於中間值的資料放到左邊，反之，大於中間值放到右邊，以同樣的方式處理左右兩邊資料，直到排序完成。
+其步驟如下
+ 將第一個資料作為中間值 K 從左至右找出大於 K 的第一值作為 I 從右向左找到小於 K 的第一個值作為 J 如果 I &gt; J，則 I 與 J 互換，然後回到第二步驟 若在尋找的過程中 I 與 J 有相遇，則 K 與 J 互換，接著以 K 作為基準點分割成左右兩部分，重複步驟一到步驟五，直到排序完成。  演示有一序列需要排序，數值為 1~8，將第一個值作為 K
+               6 8 1 4 5 3 7 2   K           從左右兩邊開始分別找出 I 與 J，左邊找大於 K 值作為 I，右邊找小於 K 值作為 J...</p>
+  </section>
+  <footer class="entry-footer">June 13, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—快速排序法（Quick Sort）" href="https://fakestandard.github.io/algorithm/algorithm-14-quicksort/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】排序演算法—謝耳排序法（Shell Sort）</h2>
   </header>
   <section class="entry-content">
@@ -369,28 +388,6 @@ Note  堆疊（Stack）：後進先出（Last In, First Out: LIFO） 佇列（Qu
   </section>
   <footer class="entry-footer">May 19, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—堆疊（Stack）" href="https://fakestandard.github.io/algorithm/algorithm-5-stack/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】資料結構—鏈結串列（Linked List）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【4/14 閱讀紀錄】
-選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
-Start 此篇紀錄記錄鏈結串列定義及應用，其餘常見的資料結構如下
- 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  鏈結串列（Linked List） 串列是由許多相同資料型態的項目，依照特定順序排列而成的線性串列，在記憶體中儲存方式是不連續且隨機，當資料插入時只需向系統取得一塊記憶體，將資料存放於該記憶體後，把該記憶體與上一個節點的記憶體連結起來，刪除時只需將資料刪除後，把記憶體釋放空間出來並交還給系統，再將下一塊記憶體與上一塊記憶體連結起來即可，無須像陣列一樣移動大量資料。
-在動態配置記憶體空間時，最常使用的是單向鏈結串列，基本上由兩個欄位組成
- 資料欄 指標欄  資料欄顧名思義為儲存資料的欄位，串列的重點精華在於指標欄，指標欄是用來紀錄下一塊元素的記憶體位置，所以第一塊記憶體的指標欄會記錄第二個元素的記憶體所在位置，第二個指標欄紀錄第三個元素的記憶體位置，以此類推，在單向串列裡第一個節點的指標欄稱為「串列指標首」，最後一個節點稱為「串列指標尾」，依照前面對指標欄的描述，串列指標尾的指標欄會儲存 Null，因為已經沒有下一個節點可讀取。
-日常生活中也有許多類似串列的抽象應用，例如火車，假設今日乘客較多，當前的車廂數量已無法滿足乘載量，需增加一節車廂，我們只需將車廂掛在火車的最後面，使該車廂成為最後一節車廂，新增有如這樣的操作方式。假設第三節車廂折舊年限已到，需要將該節車廂撤下，我們只需將第三節車廂移除，再將第二節車廂掛到第四節車廂，火車就能一如往常的運作，刪除有如該操作模式。
-對 CRUD 所有操作來說，因為串列只能得知下一個元素的記憶體位置，沒有像陣列一樣擁有索引功能，可隨心的指向記憶體位置，所以在進行 CRUD 操作時都必須對整個串列進行走訪。
-Note 特性
- 記憶體空間配置的儲存方式為不連續且隨機  優點
- 刪除或插入資料無須移動大量資料  缺點
- 讀取和修改速度相對慢，因要對整個串列進行走訪  Reference 【圖說演算法 C#】</p>
-  </section>
-  <footer class="entry-footer">April 30, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—鏈結串列（Linked List）" href="https://fakestandard.github.io/algorithm/algorithm-4-linkedlist/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

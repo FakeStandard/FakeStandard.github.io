@@ -154,6 +154,30 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】排序演算法—選擇排序法（Selection Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【4/29 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  選擇排序法（Selection Sort） 選擇排序法顧名思義是以選擇的概念來進行排序，也算是枚舉法的應用，原理為反覆從未排序的數列中取出最小元素，加入到另一個數列中，達到排序的結果。
+選擇排序可以由大到小排序，將最大值放到第一位置；或是由小到大排序，將最大值放到最後一個位置。
+透過選擇排序法，對 [30] [20] [40] [50] [10] 該數列進行排序，目標結果為由小到大排列
+Step 1 首先進行第一次掃描，找到數列中最小值，直接與第一個元素交換
+初始序列 [30] [20] [40] [50] [10]
+結果序列 [10] [20] [40] [50] [30]
+Step 2 進行第二次掃描，排除第一個元素，從第二個位置開始找起，找到最小值，與第二個位置元素交換，因為 [20] 是此次搜尋中最小值，其結果位置不變
+上次結果 [10] [20] [40] [50] [30]
+結果序列 [10] [20] [40] [50] [30]...</p>
+  </section>
+  <footer class="entry-footer">June 3, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—選擇排序法（Selection Sort）" href="https://fakestandard.github.io/algorithm/algorithm-11-selectionsort/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】排序演算法—氣泡排序法（Bubble Sort）</h2>
   </header>
   <section class="entry-content">
@@ -335,24 +359,6 @@ Note  堆疊（Stack）：後進先出（Last In, First Out: LIFO） 佇列（Qu
   </section>
   <footer class="entry-footer">May 19, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—堆疊（Stack）" href="https://fakestandard.github.io/algorithm/algorithm-5-stack/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET】使用 C# 操作檔案 I/O 與檔案系統（一）</h2>
-  </header>
-  <section class="entry-content">
-    <p>在 .NET 框架中，命名空間 System.IO 已經提供多種檔案操作類別，用於對資料檔案和資料流的讀寫。談到檔案系統，要先知道兩個東西
- 檔案（File） 流（Stream）  檔案是在硬碟或光碟機等媒體上可永久儲存資料的有序集合，它是一種進行資料讀寫操作的基本物件，通常按照樹狀目錄結構進行組織，每個檔案皆有檔名、所在路徑、建立時間、訪問許可權等屬性。
-流是位元組序列的抽象概念，例如檔案、輸入/輸出裝置、處理程序間的通訊管道（an inter-process communication pipe）或 TCP/IP 通訊端。資料流包含讀取、寫入以及支援搜尋三種基本作業。
-Start FileSystemInfo 類別是檔案系統類別的基礎類別，繼承該類別的子類別有
- File - 負責檔案系統中的檔案，屬靜態類別 FileInfo - 負責檔案系統中的檔案 Directory - 負責檔案系統中的資料夾，屬靜態類別 DirectoryInfo - 負責檔案系統中的資料夾  另外還有位於 System.IO 命名空間下其餘相關的類別
- Path - 負責檔案系統中的路徑 DriveInfo - 負責磁碟機資訊的訪問  File 與 FileInfo 的區別在於 Info 類別需要實體化，而一般 File 是屬於靜態類別；Directory 與 DirectoryInfo 同理，Directory 是靜態類別，DirectoryInfo 需實體化類別。
-FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
-/// &lt;summary&gt; /// 建立檔案並寫入資料 /// &lt;/summary&gt; public static void CreateFileByFileInfo() { // 實體化 FileInfo 並指予路徑  FileInfo file = new FileInfo(@&#34;D:\Test....</p>
-  </section>
-  <footer class="entry-footer">May 18, 2021&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET】使用 C# 操作檔案 I/O 與檔案系統（一）" href="https://fakestandard.github.io/post/dotnet/dotnet-8-filesystemandfileio-one/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Stack | How can I help</title>
+<title>Tower Of Hanoi | How can I help</title>
 <meta name="keywords" content="" />
 <meta name="description" content="不專業代碼">
 <meta name="author" content="Polar Bear">
-<link rel="canonical" href="https://fakestandard.github.io/tags/stack/" />
+<link rel="canonical" href="https://fakestandard.github.io/tags/tower-of-hanoi/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.d1b405b7c6bf1b09aebca33eb6e2d8bd070113d119bdfa2715c32f6408f9fbee.css" integrity="sha256-0bQFt8a/GwmuvKM&#43;tuLYvQcBE9EZvfonFcMvZAj5&#43;&#43;4=" rel="preload stylesheet" as="style">
 
 
@@ -25,14 +25,14 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.81.0" />
-<link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/tags/stack/index.xml">
-<meta property="og:title" content="Stack" />
+<link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/tags/tower-of-hanoi/index.xml">
+<meta property="og:title" content="Tower Of Hanoi" />
 <meta property="og:description" content="不專業代碼" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://fakestandard.github.io/tags/stack/" />
+<meta property="og:url" content="https://fakestandard.github.io/tags/tower-of-hanoi/" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Stack"/>
+<meta name="twitter:title" content="Tower Of Hanoi"/>
 <meta name="twitter:description" content="不專業代碼"/>
 
 </head>
@@ -149,7 +149,7 @@
 </header>
 <main class="main"> 
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
-  <h1>Stack</h1>
+  <h1>Tower Of Hanoi</h1>
 </header>
 
 <article class="post-entry tag-entry"> 
@@ -178,57 +178,6 @@ Start 這篇紀錄經典的智力遊戲—河內塔，使用遞迴式和堆疊�
   </section>
   <footer class="entry-footer">July 7, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—經典河內塔" href="https://fakestandard.github.io/algorithm/algorithm-24-towerofhanoi/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】堆疊應用—串列實作堆疊</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/17 閱讀紀錄】
-根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
-程式碼已放上 GitHub
-Start 使用串列製作堆疊的好處是可以隨時動態改變串列長度，缺點則是設計較為複雜。相較於使用陣列製作堆疊設計上較為簡易，缺點則是陣列大小需事先宣告，無法動態改變。
-利用串列結構模擬堆疊工作運算，使用迴圈控制推入或取出的元素，其中需包含推入（push）和取出（pop）函數，最後要輸出堆疊中所有元素。
-宣告一個鏈結串列節點的類別
-/// &lt;summary&gt; /// 鏈結串列節點的類別 /// &lt;/summary&gt; class Node { public int data; public Node next; public Node(int data) { this.data = data; this.next = null; } } 宣告串列模擬堆疊的類別，其中包含推入和取出的方法
-/// &lt;summary&gt; /// 以串列模擬的堆疊 /// &lt;/summary&gt; class StackByLink { /// &lt;summary&gt;  /// 指向堆疊頂端的指標  /// &lt;/summary&gt;  public Node front; /// &lt;summary&gt;  /// 指向堆疊末端的指標  /// &lt;/summary&gt;  public Node rear; /// &lt;summary&gt;  /// 判斷堆別是否為空的方法  /// &lt;/summary&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool IsEmpty() { return front == null; } /// &lt;summary&gt;  /// 輸出堆疊內容  /// &lt;/summary&gt;  public void Display() { Node current = front; while (current !...</p>
-  </section>
-  <footer class="entry-footer">July 5, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—串列實作堆疊" href="https://fakestandard.github.io/algorithm/algorithm-23-stacklist/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】堆疊應用—陣列實作堆疊</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/16 閱讀紀錄】
-根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
-程式碼已放上 GitHub
-Start 利用陣列結構模擬堆疊工作運算，且使用迴圈控制推入與取出的元素，其中需包含推入（push）和取出（pop）函數，最後要輸出堆疊中所有元素。
-建立堆疊類別
-/// &lt;summary&gt; /// 以陣列模擬堆疊的類別 /// &lt;/summary&gt; class StackArray { // 宣告陣列  private int[] stack; // 指向堆疊頂端的索引  private int top; /// &lt;summary&gt;  /// 建構子  /// &lt;/summary&gt;  /// &lt;param name=&#34;stack_size&#34;&gt;堆疊大小&lt;/param&gt;  public StackArray(int size) { // 建立陣列  stack = new int[size]; top = -1; } /// &lt;summary&gt;  /// 判斷堆疊是否為空  /// &lt;/summary&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool Empty() { if (top == -1) return true; else return false; } /// &lt;summary&gt;  /// 推入資料到頂端的方法  /// &lt;/summary&gt;  /// &lt;param name=&#34;data&#34;&gt;&lt;/param&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool Push(int data) { // 判斷堆疊頂端的索引是否大於陣列大小  if (top &gt;= stack....</p>
-  </section>
-  <footer class="entry-footer">July 2, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—陣列實作堆疊" href="https://fakestandard.github.io/algorithm/algorithm-22-stackarray/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】資料結構—堆疊（Stack）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/16 閱讀紀錄】
-選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
-Start 此篇紀錄記錄堆疊定義及應用，其餘常見的資料結構如下
- 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  堆疊（Stack） 堆疊是一種抽象型資料結構（Abstract Data Type, ADT），是由一群相同資料型別的組合，所有動作均在頂端執行，具有後進先出（Last In, First Out: LIFO）的特性。
-堆疊基本運算具備以下五種工作定義
-   Action Description     create 建立一個空堆疊   push 存放頂端資料，並傳回新堆疊   pop 刪除頂端資料，並傳回新堆疊   isEmpty 判斷堆疊是否為空堆疊，是回傳 Ture，反之   full 判斷堆疊是否已滿，是回傳 True，反之    堆疊非常好理解，生活中也有很多堆疊的應用，假設要收拾餐桌上的餐盤，需要將它們一一疊起，先放第一個餐盤，再將第二個餐盤放到第一個餐盤上方，接著再將第三個餐盤放到第二個餐盤上方，以該例來看，第一個餐盤就是第一個放入堆疊中，而第三個是最後一個放入堆疊中，此時欲取得第二餐盤，就需要先將第三個放入的餐盤拿起，意思是，需要先將頂端的先拿起，才能在往下拿起，該例證明後進先出的特性，並且所有動作都是由頂端執行，從頂端加入，從頂端刪除，即是堆疊的概念。
-Note  堆疊（Stack）：後進先出（Last In, First Out: LIFO） 佇列（Queue）：先進先出（First In, First Out: FIFO）  Reference 【圖說演算法 C#】</p>
-  </section>
-  <footer class="entry-footer">May 19, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—堆疊（Stack）" href="https://fakestandard.github.io/algorithm/algorithm-5-stack/"></a>
 </article>
     </main>
     <footer class="footer">

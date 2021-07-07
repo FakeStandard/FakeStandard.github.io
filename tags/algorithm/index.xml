@@ -6,7 +6,33 @@
     <description>Recent content in Algorithm on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 05 Jul 2021 14:06:01 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jul 2021 16:59:27 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】堆疊應用—經典河內塔</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-24-towerofhanoi/</link>
+      <pubDate>Wed, 07 Jul 2021 16:59:27 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-24-towerofhanoi/</guid>
+      <description>【5/16 閱讀紀錄】
+根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 這篇紀錄經典的智力遊戲—河內塔，使用遞迴式和堆疊概念來解決問題的經典範例。
+河內塔的問題描述如下：在古老的印度神廟中，有三個木樁，在第一個木樁上，有數量和大小不同的圓盤，由大到小堆疊，最大的圓盤放在最下面，最小的圓盤在最上面，天神希望將第一個木樁的圓盤，全部移動到第三個木樁。
+搬動時必須要遵守規則下列規則
+ 直徑較小的圓盤只能置於直徑大的圓盤上，比如直徑三的圓盤可以放置在直徑四或直徑五的上方 圓盤可以任意由一個木樁移動到其他木樁上，共有三個木樁可使用 每次只能移動一個圓盤，只能從最上方的圓盤開始移動（與堆疊相同）  【解析】
+假設 n 為圓盤數量，逐步解析情境
+  n = 1
+當圓盤只有一個時，直接從第一個木樁移動到地三個木樁，完成天神願望。
+  n = 2
+當圓盤為兩個時，由上往下數，將第一個圓盤移動到第二個木樁，接著將第二個圓盤移動到第三個木樁，第一個圓盤從第二個木樁移動到第三個木樁，完成天神願望。
+在這裡可以得到一個小結論
+ 圓盤移動的次數為 (2^2)-1 = 3 次，即 2 的平方-1 次 圓盤移動的次序為 1→2→1 木樁移動的次序為 1→2、1→3、2→3    n = 3
+當圓盤為三個時，由上往下數
+ 第一個圓盤移動到第三個木樁 第二個圓盤移動到第二個木樁 第一個圓盤從第三個木樁移至第二個木樁，此時第二個木樁有兩個圓盤 第三個圓盤移動到第三個木樁 第一個圓盤從第二個木樁移動到第一個木樁 第二個圓盤從第二個木樁移動到第三個木樁 最後，將第一個圓盤從第一個木樁移動到第三個木樁  完成天神願望（懶得畫圖，請讀者發揮想像力…）
+此情境得出以下結論
+ 圓盤移動的次數為 2^3-1 = 7 次，即 2 的次方-1 次 圓盤移動的次序為 1→2→1→3→1→2→1 木樁移動的次序為 1→3、1→2、3→2、1→3、2→1、2→3、1→3    【結論】</description>
+    </item>
+    
     <item>
       <title>【Algorithm】堆疊應用—串列實作堆疊</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-23-stacklist/</link>

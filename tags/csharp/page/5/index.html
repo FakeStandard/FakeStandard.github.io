@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Algorithms | How can I help</title>
+<title>CSharp | How can I help</title>
 <meta name="keywords" content="" />
 <meta name="description" content="不專業代碼">
 <meta name="author" content="Polar Bear">
-<link rel="canonical" href="https://fakestandard.github.io/algorithm/" />
+<link rel="canonical" href="https://fakestandard.github.io/tags/csharp/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.d1b405b7c6bf1b09aebca33eb6e2d8bd070113d119bdfa2715c32f6408f9fbee.css" integrity="sha256-0bQFt8a/GwmuvKM&#43;tuLYvQcBE9EZvfonFcMvZAj5&#43;&#43;4=" rel="preload stylesheet" as="style">
 
 
@@ -25,31 +25,16 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.81.0" />
-<link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/algorithm/index.xml">
-<meta property="og:title" content="Algorithms" />
+<link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/tags/csharp/index.xml">
+<meta property="og:title" content="CSharp" />
 <meta property="og:description" content="不專業代碼" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://fakestandard.github.io/algorithm/" />
+<meta property="og:url" content="https://fakestandard.github.io/tags/csharp/" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Algorithms"/>
+<meta name="twitter:title" content="CSharp"/>
 <meta name="twitter:description" content="不專業代碼"/>
 
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Algorithms",
-      "item": "https://fakestandard.github.io/algorithm/"
-    }
-  ]
-}
-</script>
 </head>
 
 <body class="list" id="top">
@@ -136,7 +121,7 @@
             </li>
             <li>
                 <a href="https://fakestandard.github.io/algorithm/" title="Algorithm">
-                    <span class="active">Algorithm</span>
+                    <span>Algorithm</span>
                 </a>
             </li>
             <li>
@@ -163,80 +148,11 @@
     </nav>
 </header>
 <main class="main"> 
-<header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a></div>
-  <h1>Algorithms</h1>
+<header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
+  <h1>CSharp</h1>
 </header>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】資料結構—鏈結串列（Linked List）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【4/14 閱讀紀錄】
-選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
-Start 此篇紀錄記錄鏈結串列定義及應用，其餘常見的資料結構如下
- 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  鏈結串列（Linked List） 串列是由許多相同資料型態的項目，依照特定順序排列而成的線性串列，在記憶體中儲存方式是不連續且隨機，當資料插入時只需向系統取得一塊記憶體，將資料存放於該記憶體後，把該記憶體與上一個節點的記憶體連結起來，刪除時只需將資料刪除後，把記憶體釋放空間出來並交還給系統，再將下一塊記憶體與上一塊記憶體連結起來即可，無須像陣列一樣移動大量資料。
-在動態配置記憶體空間時，最常使用的是單向鏈結串列，基本上由兩個欄位組成
- 資料欄 指標欄  資料欄顧名思義為儲存資料的欄位，串列的重點精華在於指標欄，指標欄是用來紀錄下一塊元素的記憶體位置，所以第一塊記憶體的指標欄會記錄第二個元素的記憶體所在位置，第二個指標欄紀錄第三個元素的記憶體位置，以此類推，在單向串列裡第一個節點的指標欄稱為「串列指標首」，最後一個節點稱為「串列指標尾」，依照前面對指標欄的描述，串列指標尾的指標欄會儲存 Null，因為已經沒有下一個節點可讀取。
-日常生活中也有許多類似串列的抽象應用，例如火車，假設今日乘客較多，當前的車廂數量已無法滿足乘載量，需增加一節車廂，我們只需將車廂掛在火車的最後面，使該車廂成為最後一節車廂，新增有如這樣的操作方式。假設第三節車廂折舊年限已到，需要將該節車廂撤下，我們只需將第三節車廂移除，再將第二節車廂掛到第四節車廂，火車就能一如往常的運作，刪除有如該操作模式。
-對 CRUD 所有操作來說，因為串列只能得知下一個元素的記憶體位置，沒有像陣列一樣擁有索引功能，可隨心的指向記憶體位置，所以在進行 CRUD 操作時都必須對整個串列進行走訪。
-Note 特性
- 記憶體空間配置的儲存方式為不連續且隨機  優點
- 刪除或插入資料無須移動大量資料  缺點
- 讀取和修改速度相對慢，因要對整個串列進行走訪  Reference 【圖說演算法 C#】</p>
-  </section>
-  <footer class="entry-footer">April 30, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—鏈結串列（Linked List）" href="https://fakestandard.github.io/algorithm/algorithm-4-linkedlist/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】資料結構—陣列（Array）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【4/11 閱讀紀錄】
-選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
-Start 此篇紀錄記錄陣列定義及應用，其餘常見的資料結構如下
- 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  陣列（Array） 陣列是一種靜態資料結構，由相同名稱和相同資料型態的集合，使用連續記憶體作為儲存空間，陣列有提供索引功能，用來表示從記憶體起始位置的第幾個位置。
-靜態資料結構在編譯時，就必須配置記憶體空間給變數，所以初期就需宣告變數的固定空間，容易造成記憶體浪費。
-操作 CRUD 等功能時也各有優缺點，首先是設計時相當容易，因索引功能使得讀取和修改元素的時間都固定，但在刪除和加入資料時就必須移動大量資料，例如刪除陣列中某個元素，必須將被刪除元素後方記憶體的資料都往前移動。
-陣列運用可分為一維陣列、二維陣列或多維陣列，一維陣列可想像成一條線，二維陣列則為一個平面，三維陣列（多維陣列）就會是 3D 立體，以此類推。
-使用一維陣列尋找和儲存 1~num 之間的所有質數
-const int num = 300; // true: 質數 false: 非質數 bool[] prime = new bool[num]; // 將 0,1 配置為非質數 prime[0] = false; prime[1] = false; int m = 2; int n = 2; // 找出 1~num 之間所有質數 while (m &lt; num) { prime[m] = IsPrime(m); m&#43;&#43;; } int c = 0; int count = 0; // 列印所有質數 for (int i = 0; i &lt; num; i&#43;&#43;) { if (prime[i]) { if (c == 10) { Console....</p>
-  </section>
-  <footer class="entry-footer">April 26, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—陣列（Array）" href="https://fakestandard.github.io/algorithm/algorithm-3-array/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】資料結構定義與資料型態</h2>
-  </header>
-  <section class="entry-content">
-    <p>【4/11 閱讀紀錄】
-此篇為閱讀的紀錄，紀錄關於資料結構定義，以加強基礎觀念。
-Start 資料結構為一種輔助程式設計最佳化的方法論，其中包含儲存的資料，以及資料儲存的方式，目的是要讓程式達到有效率的執行以及減少記憶體占用等。
-一般來說，「資料」是最原始的資料，資料經過「資料處理」的過程後，成為可用的「資訊」。資料處理的過程是對原始資料進行整理和分析，將資料提煉成具有參考價值的資訊，其中整理與分析的過程會使用演算法和資料結構，所以我們要將電腦內的資料轉換為可用的文字、圖表等資訊時，首先要了解演算法和資料結構的觀念，才能精準的提煉出可用資訊。
-資料型態
- 基本資料型態（Primitive Data Type） 結構化資料型態（Structured Data Type） 抽象化資料型態（Abstraact Data Type）  記憶體儲存方式
- 靜態資料結構（Static data structure） 動態資料結構（Dynamic data structure）   資料型態 認識資料結構前，需先了解資料型態有哪些，以利在第一步選出正確地型態，避免規劃出沒有效率的程式，導致不堪的後果。
-  基本資料型態（Primitive Data Type）
-基本資料型態又稱為純量資料型態（Scalar Data Type），它們是一組最基本資料型態，例如整數、布林、字串、浮點數等。
-  結構化資料型態（Structured Data Type）
-結構化資料型態也可稱為虛擬資料型態（Virtual Data Type），比基本資料型態更高一層的型態，例如陣列、指標、串列、檔案等。
-  抽象資料型態（Abstract Data Type） 抽象資料型態在電腦中代表資訊隱藏的精神與某一種特定的關係模式，例如堆疊是一種後進先出的運作方式。
-  記憶體儲存方式 若以記憶體儲存的方式來看資料結構，可以區分為兩種
-  靜態資料結構（Static data structure）
-靜態資料結構是將有序數列的資料，儲存於連續的記憶體空間，故在編譯時就得先配置記憶體空間，所以在初期須先宣告固定的記憶體空間，優點是連續記憶體設計時叫簡易，且讀取與修改任一元素的時間都是固定，缺點則是刪除或加入需要移動大量的資料，而最典型的靜態資料結構就是陣列。
-  動態資料結構（Dynamic data structure）
-動態資料結構是將有序數列的資料，儲存於不連續的記憶體空間，不須在編譯時先配置記憶體，因記憶體配置是發生在執行時，故能節省記憶體空間，在插入和刪除也相當方便，它不需要移動大量資料，缺點則是設計時較麻煩，讀取、修改或搜尋時，無法像靜態資料結構一樣直接取出資料，必須透過走訪找到目標資料為止。動態資料結構的代表是鏈結串列。
-  Reference 【圖說演算法 C#】</p>
-  </section>
-  <footer class="entry-footer">April 25, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構定義與資料型態" href="https://fakestandard.github.io/algorithm/algorithm-2-datastructure/"></a>
-</article>
-
-<article class="post-entry"> 
+<article class="post-entry tag-entry"> 
   <header class="entry-header">
     <h2>【Algorithm】經典演算法</h2>
   </header>
@@ -257,7 +173,7 @@ Start 演算法種類很多，經典的演算法有以下幾種
 </article>
 <footer class="page-footer">
   <nav class="pagination">
-    <a class="prev" href="https://fakestandard.github.io/algorithm/page/2/">« Prev Page</a>
+    <a class="prev" href="https://fakestandard.github.io/tags/csharp/page/4/">« Prev Page</a>
   </nav>
 </footer>
     </main>

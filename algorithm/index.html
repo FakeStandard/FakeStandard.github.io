@@ -169,6 +169,34 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】堆疊應用—經典河內塔</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/16 閱讀紀錄】
+根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 這篇紀錄經典的智力遊戲—河內塔，使用遞迴式和堆疊概念來解決問題的經典範例。
+河內塔的問題描述如下：在古老的印度神廟中，有三個木樁，在第一個木樁上，有數量和大小不同的圓盤，由大到小堆疊，最大的圓盤放在最下面，最小的圓盤在最上面，天神希望將第一個木樁的圓盤，全部移動到第三個木樁。
+搬動時必須要遵守規則下列規則
+ 直徑較小的圓盤只能置於直徑大的圓盤上，比如直徑三的圓盤可以放置在直徑四或直徑五的上方 圓盤可以任意由一個木樁移動到其他木樁上，共有三個木樁可使用 每次只能移動一個圓盤，只能從最上方的圓盤開始移動（與堆疊相同）  【解析】
+假設 n 為圓盤數量，逐步解析情境
+  n = 1
+當圓盤只有一個時，直接從第一個木樁移動到地三個木樁，完成天神願望。
+  n = 2
+當圓盤為兩個時，由上往下數，將第一個圓盤移動到第二個木樁，接著將第二個圓盤移動到第三個木樁，第一個圓盤從第二個木樁移動到第三個木樁，完成天神願望。
+在這裡可以得到一個小結論
+ 圓盤移動的次數為 (2^2)-1 = 3 次，即 2 的平方-1 次 圓盤移動的次序為 1→2→1 木樁移動的次序為 1→2、1→3、2→3    n = 3
+當圓盤為三個時，由上往下數
+ 第一個圓盤移動到第三個木樁 第二個圓盤移動到第二個木樁 第一個圓盤從第三個木樁移至第二個木樁，此時第二個木樁有兩個圓盤 第三個圓盤移動到第三個木樁 第一個圓盤從第二個木樁移動到第一個木樁 第二個圓盤從第二個木樁移動到第三個木樁 最後，將第一個圓盤從第一個木樁移動到第三個木樁  完成天神願望（懶得畫圖，請讀者發揮想像力…）
+此情境得出以下結論
+ 圓盤移動的次數為 2^3-1 = 7 次，即 2 的次方-1 次 圓盤移動的次序為 1→2→1→3→1→2→1 木樁移動的次序為 1→3、1→2、3→2、1→3、2→1、2→3、1→3    【結論】...</p>
+  </section>
+  <footer class="entry-footer">July 7, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—經典河內塔" href="https://fakestandard.github.io/algorithm/algorithm-24-towerofhanoi/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】堆疊應用—串列實作堆疊</h2>
   </header>
   <section class="entry-content">
@@ -340,25 +368,6 @@ Start 常見的排序演算法
   </section>
   <footer class="entry-footer">June 16, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—合併排序法（Merge Sort）" href="https://fakestandard.github.io/algorithm/algorithm-15-mergesort/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—快速排序法（Quick Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/17 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  快速排序法（Quick Sort） 快速排序法又稱分割交換排序法，也是目前公認最佳的排序法，原理為使用分治法的方式，從資料中找到一個虛擬中間值，依此中間值將資料分為兩部分，將小於中間值的資料放到左邊，反之，大於中間值放到右邊，以同樣的方式處理左右兩邊資料，直到排序完成。
-其步驟如下
- 將第一個資料作為中間值 K 從左至右找出大於 K 的第一值作為 I 從右向左找到小於 K 的第一個值作為 J 如果 I &gt; J，則 I 與 J 互換，然後回到第二步驟 若在尋找的過程中 I 與 J 有相遇，則 K 與 J 互換，接著以 K 作為基準點分割成左右兩部分，重複步驟一到步驟五，直到排序完成。  演示有一序列需要排序，數值為 1~8，將第一個值作為 K
-               6 8 1 4 5 3 7 2   K           從左右兩邊開始分別找出 I 與 J，左邊找大於 K 值作為 I，右邊找小於 K 值作為 J...</p>
-  </section>
-  <footer class="entry-footer">June 13, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—快速排序法（Quick Sort）" href="https://fakestandard.github.io/algorithm/algorithm-14-quicksort/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
