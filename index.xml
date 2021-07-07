@@ -89,7 +89,8 @@ static int Fibonacci(int value) { if (value == 0) return 0; else if (value == 1)
       <pubDate>Tue, 29 Jun 2021 21:47:25 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/post/oop/oop-3-oop-principles/</guid>
-      <description>Start 前篇講解 OOP 的特性卻還沒介紹基本原則，馬上來惡補一下內功心法。
+      <description>$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
+Start 前篇講解 OOP 的特性卻還沒介紹基本原則，馬上來惡補一下內功心法。
 物件導向設計五大原則「SOLID」由羅伯特·C·馬丁在21世紀早期提出，SOLID分別為單一功能原則、開閉原則、里氏替換原則、介面隔離原則、依賴反轉原則。
 了解物件導向基本原則及特性，透過不斷練習和思考就可寫出閱讀性、維護性、擴充性高的程式碼，然而開發易維護與擴展的系統也變得不難。
 單一職責（Single Responsibility Principle） 對一個類別來說，應該只有一個引起他變化的理由，意為一個類別應只專注做一件事，當類別需要做兩件以上的工作時，就承擔了過多的職責，一旦需變更代碼，耦合度會比一件工作還要高，而當發生錯誤時很難快速定位錯誤原因，間接導致程式碼可閱讀性降低。
