@@ -6,7 +6,20 @@
     <description>Recent content on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 07 Jul 2021 16:59:27 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Jul 2021 15:24:41 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【OOP】重構、抽象和介面（Refactoring、Abstract and Interface）</title>
+      <link>https://fakestandard.github.io/post/oop/oop-4-refactoring-abstract-interface/</link>
+      <pubDate>Thu, 08 Jul 2021 15:24:41 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/oop/oop-4-refactoring-abstract-interface/</guid>
+      <description>Start 接續先前物件導向的紀錄，此篇會著重於下列三部份
+ 重構（Refactoring） 抽象（Abstract） 介面（Interface）  重構（Refactoring） 重構的概念是將原本重複的地方改寫，使程式碼更精簡且更好維護。
+接續前篇的範例，定義一個父類別 CareerBasic，該父類別內有一個虛擬方法可以讓子類別複寫。
+/// &amp;lt;summary&amp;gt; /// 職業基礎類別 /// &amp;lt;/summary&amp;gt; class CareerBasic { // something...  /// &amp;lt;summary&amp;gt;  /// 父類別虛擬方法  /// &amp;lt;/summary&amp;gt;  /// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt;  public virtual string PassiveSkill() { return &amp;#34; 使出被動技能： &amp;#34;; } } 定義兩個子類別分別為 Swordman 和 Thief，並繼承 CareerBasic 類別，使其成為父類別。在子類別裡，分別複寫父類別方法 PassiveSkill()
+/// &amp;lt;summary&amp;gt; /// 盜賊類別 /// &amp;lt;/summary&amp;gt; class Thief : CareerBasic { // ...  // Thief 複寫 父類別方法  public override string PassiveSkill() { return name + base.</description>
+    </item>
+    
     <item>
       <title>【Algorithm】堆疊應用—經典河內塔</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-24-towerofhanoi/</link>
@@ -851,7 +864,7 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】</description>
       <description>【3/28 閱讀紀錄】
 此篇想記錄一些閱讀的筆記，演算法乃是運算思維的基石之一，藉由紀錄加深一下演算法的概念。
 Start 演算法種類很多，經典的演算法有以下幾種
- 分治演算法（Divide and conquer） 迭代演算法（Iterative Algorithm） 遞迴演算法（Recursion Algorithm） 動態規劃演算法（Dynamic Programming Algorithm） 枚舉演算法（Exhaustive Searching） 貪心演算法（Greedy Algorithm） 回溯演算法（Backtracking Algorithm）  分治演算法（Divide and conquer） 分治演算法是一種簡單又重要的演算法，它將複雜的問題逐一拆解成單元較小的問題，問題規模較小則容易求解，最終在合併子問題以得到原問題的解答，在日常生活中也能時時應用到。
+ 分治演算法（Divide and conquer） 迭代演算法（Iterative Algorithm） 遞迴演算法（Recursion Algorithm） 動態規劃演算法（Dynamic Programming Algorithm） 枚舉演算法（Enumeration Algorithm） 貪心演算法（Greedy Algorithm） 回溯演算法（Backtracking Algorithm）  分治演算法（Divide and conquer） 分治演算法是一種簡單又重要的演算法，它將複雜的問題逐一拆解成單元較小的問題，問題規模較小則容易求解，最終在合併子問題以得到原問題的解答，在日常生活中也能時時應用到。
 像是以往在進行團體報告時，假設報告主題的章節共有五個章節，當然不可能讓一個人獨立完成五個章節，這時就可以透過分治法，將各章節逐一拆解成較小單元，每位成員負責一個章節，讓五位成員同時進行，在時間上遠遠勝於一人獨立完成所有章節，且透過分工還可能達到其他效果。
 然而分治演算法還可應用在數字的分類和排序上，舉個例子，手邊有一副順序打亂的撲克牌，現在要將它們復原到起初開封時的排序，依序分類為黑桃、紅心、梅花、方塊，每個分類需從 A-K 逐一排序。此時有兩種做法，第一種為每拿到一張牌，就將它插入到適當的順序中，但缺點是在整理的過程中較繁瑣也較花時間。第二種作法則是應用分治演算法，以不考慮 A-K 順序的情況下，將黑桃分成一堆，紅心分成一堆，以此類推，最終會將黑桃、紅心、梅花、方塊分類出來，此時在逐一將每個分類的 A-K 順序整理好，再將其合併。
 所以透過分治演算法可將複雜的大問題，拆解成規模小的子問題，雖然子問題的數量多，相對的更易於解決，解決的速度上也相對的快。

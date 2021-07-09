@@ -6,7 +6,43 @@
     <description>Recent content in Tags on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 07 Jul 2021 16:59:27 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Jul 2021 15:24:41 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Abstract</title>
+      <link>https://fakestandard.github.io/tags/abstract/</link>
+      <pubDate>Thu, 08 Jul 2021 15:24:41 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/abstract/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interface</title>
+      <link>https://fakestandard.github.io/tags/interface/</link>
+      <pubDate>Thu, 08 Jul 2021 15:24:41 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/interface/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OOP</title>
+      <link>https://fakestandard.github.io/tags/oop/</link>
+      <pubDate>Thu, 08 Jul 2021 15:24:41 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/oop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Refactoring</title>
+      <link>https://fakestandard.github.io/tags/refactoring/</link>
+      <pubDate>Thu, 08 Jul 2021 15:24:41 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/refactoring/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Algorithm</title>
       <link>https://fakestandard.github.io/tags/algorithm/</link>
@@ -103,15 +139,6 @@
       <pubDate>Tue, 29 Jun 2021 21:47:25 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/liskov-substitution/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>OOP</title>
-      <link>https://fakestandard.github.io/tags/oop/</link>
-      <pubDate>Tue, 29 Jun 2021 21:47:25 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/oop/</guid>
       <description></description>
     </item>
     
