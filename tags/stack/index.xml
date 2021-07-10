@@ -6,7 +6,24 @@
     <description>Recent content in Stack on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Wed, 07 Jul 2021 16:59:27 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/stack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Jul 2021 16:02:17 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/stack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】堆疊應用—八皇后經典謎題</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-25-eightqueens/</link>
+      <pubDate>Sat, 10 Jul 2021 16:02:17 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-25-eightqueens/</guid>
+      <description>【5/16 閱讀紀錄】
+根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 八皇后謎題也是經典中的經典，該問題以西洋棋作為背景，如何在 8x8 的棋盤上擺放八個皇后，使任一皇后都無法吃掉其他皇后，屬於堆疊常見的應用實例。
+西洋棋皇后擺放的規則為：因皇后可在一步內，不限格數的直行、橫行或斜線前行，若同一條線上同時有兩個皇后，則舊皇后可吃掉新來皇后，所以，皇后間不可處於同一個縱向、橫向或斜線（跟數獨的概念相似）
+首先會先放置一個皇后，接著依據第一個皇后的位置，在不被吃掉的情況下，繼續放置第二個皇后、第三個皇后…直到放置某個新皇后時，都會被先前的皇后吃掉，此時，就必須變更前一個皇后放置的位置，在不被先前的皇后吃掉之情形下，找到第二個可以放置的位置，在繼續擺放新皇后；若在前一個擺放的皇后，也沒有新的位置可以擺放（都會被吃掉的情況），就在將前前皇后拿起，尋找新的可以擺放的位置，以此類推。
+由上述可知，在放置新皇后或是拿起舊皇后的動作，是以堆疊的概念進行，而當新皇后無法擺放時，將舊皇后拿起尋找新的位置，是以回溯的概念進行。
+本書程式碼範例
+class Program { static void Main(string[] args) { number = 0; DecidePosition(0); ReadKey(); Console.ReadLine(); } static int TRUE = 1, FALSE = 0, EIGHT = 8; // 存放八個皇后的列位置  static int[] queen = new int[EIGHT]; // 計算共有幾組解答  static int number = 0; /// &amp;lt;summary&amp;gt;  /// 按下 Enter 鍵要執行方法  /// &amp;lt;/summary&amp;gt;  public static void PressEnter() { char ch; Write(&amp;#34;\n\n&amp;#34;); Write(&amp;#34;按下 Enter 鍵繼續.</description>
+    </item>
+    
     <item>
       <title>【Algorithm】堆疊應用—經典河內塔</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-24-towerofhanoi/</link>

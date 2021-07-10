@@ -161,6 +161,25 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】堆疊應用—八皇后經典謎題</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/16 閱讀紀錄】
+根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 八皇后謎題也是經典中的經典，該問題以西洋棋作為背景，如何在 8x8 的棋盤上擺放八個皇后，使任一皇后都無法吃掉其他皇后，屬於堆疊常見的應用實例。
+西洋棋皇后擺放的規則為：因皇后可在一步內，不限格數的直行、橫行或斜線前行，若同一條線上同時有兩個皇后，則舊皇后可吃掉新來皇后，所以，皇后間不可處於同一個縱向、橫向或斜線（跟數獨的概念相似）
+首先會先放置一個皇后，接著依據第一個皇后的位置，在不被吃掉的情況下，繼續放置第二個皇后、第三個皇后…直到放置某個新皇后時，都會被先前的皇后吃掉，此時，就必須變更前一個皇后放置的位置，在不被先前的皇后吃掉之情形下，找到第二個可以放置的位置，在繼續擺放新皇后；若在前一個擺放的皇后，也沒有新的位置可以擺放（都會被吃掉的情況），就在將前前皇后拿起，尋找新的可以擺放的位置，以此類推。
+由上述可知，在放置新皇后或是拿起舊皇后的動作，是以堆疊的概念進行，而當新皇后無法擺放時，將舊皇后拿起尋找新的位置，是以回溯的概念進行。
+本書程式碼範例
+class Program { static void Main(string[] args) { number = 0; DecidePosition(0); ReadKey(); Console.ReadLine(); } static int TRUE = 1, FALSE = 0, EIGHT = 8; // 存放八個皇后的列位置  static int[] queen = new int[EIGHT]; // 計算共有幾組解答  static int number = 0; /// &lt;summary&gt;  /// 按下 Enter 鍵要執行方法  /// &lt;/summary&gt;  public static void PressEnter() { char ch; Write(&#34;\n\n&#34;); Write(&#34;按下 Enter 鍵繼續....</p>
+  </section>
+  <footer class="entry-footer">July 10, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—八皇后經典謎題" href="https://fakestandard.github.io/algorithm/algorithm-25-eightqueens/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】堆疊應用—經典河內塔</h2>
   </header>
   <section class="entry-content">
@@ -341,24 +360,6 @@ Start 常見的搜尋演算法
   </section>
   <footer class="entry-footer">June 23, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—循序搜尋法（Sequential Search）" href="https://fakestandard.github.io/algorithm/algorithm-18-sequentialsearch/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【OOP】物件導向特性—封裝、繼承、多型</h2>
-  </header>
-  <section class="entry-content">
-    <p>Start 說到物件導向就不能不知道OOP的三大特性—封裝、繼承、多型。
- 建議閱讀本篇前先閱讀前篇「基礎概念」，在實例及解說上，若前篇已講解過，則此篇不再重複說明
- 封裝（Encapsulation） 每個物件都包含進行操作時所需要的所有資訊，物件不必依賴其他物件來完成自己的操作，將方法、欄位、屬性和邏輯包裝在類別內，透過類別的實體來實現，外部物件無法了解物件的內部細節，有種隱藏起來的概念，外部對資料的操作也只能透過已經定義的介面，用一段簡白的話來說，對事只了解他的外在，無需理解內部構造，即為封裝。
-封裝的好處
- 良好的封裝能減少耦合（Coupling） 可自由修改類別內部的實現 類別具有清晰的對外界面  所以在設計 Swordman 類別時即為封裝，將自己的屬性及方法包裝起來，供給自己使用，不依賴他人。
-static void Main(string[] args) { Swordman swordman = new Swordman(); } /// &lt;summary&gt; /// 封裝類別 /// &lt;/summary&gt; class Swordman { // Field  // ...  // Property  // ...  // Method  // ... } 繼承（Inheritance） 繼承很字面的意思，那有幾個特性須知道，子類別繼承父類別時，子類別擁有父類別 pirvate 以外的屬性和方法，子類別也可擁有自己的屬性和方法。最後，子類別可以用自己的方式實現父類別的功能，即方法重載。
-原本有 Swordman 的類別，現在增加一個 Thief 類別，與 Swordman 擁有相同的屬性和方法。
-/// &lt;summary&gt; /// 盜賊類別 /// &lt;/summary&gt; class Thief { private string name = string....</p>
-  </section>
-  <footer class="entry-footer">June 22, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【OOP】物件導向特性—封裝、繼承、多型" href="https://fakestandard.github.io/post/oop/oop-2-oop-feature/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

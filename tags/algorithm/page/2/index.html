@@ -161,6 +161,24 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】排序演算法—合併排序法（Merge Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/18 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  合併排序法（Merge Sort） 合併排序法的原理是將兩個或兩個以上的數列，經由合併的方式組合成一個排序好的數列。
+步驟非常好理解，如下
+ 將 N 個長度為 1 的鍵值合併成 N/2 個長度為 2 的鍵值 將 N/2 個長度為 2 的鍵值，合併成 N/4 個長度為 4 的鍵值 將 N/4 個長度為 4 的鍵值，合併成 N/8 個長度為 8 的鍵值 重複地將鍵值合併，直到合併成一個長度為 N 的鍵值為止  使用一個未排序陣列解說步驟，目標是由小到大排序，陣列如下 38 16 41 72 52 98 63 25...</p>
+  </section>
+  <footer class="entry-footer">June 16, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—合併排序法（Merge Sort）" href="https://fakestandard.github.io/algorithm/algorithm-15-mergesort/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】排序演算法—快速排序法（Quick Sort）</h2>
   </header>
   <section class="entry-content">
@@ -363,23 +381,6 @@ Note  堆疊（Stack）：後進先出（Last In, First Out: LIFO） 佇列（Qu
   </section>
   <footer class="entry-footer">May 21, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—佇列（Queue）" href="https://fakestandard.github.io/algorithm/algorithm-6-queue/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】資料結構—堆疊（Stack）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/16 閱讀紀錄】
-選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
-Start 此篇紀錄記錄堆疊定義及應用，其餘常見的資料結構如下
- 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  堆疊（Stack） 堆疊是一種抽象型資料結構（Abstract Data Type, ADT），是由一群相同資料型別的組合，所有動作均在頂端執行，具有後進先出（Last In, First Out: LIFO）的特性。
-堆疊基本運算具備以下五種工作定義
-   Action Description     create 建立一個空堆疊   push 存放頂端資料，並傳回新堆疊   pop 刪除頂端資料，並傳回新堆疊   isEmpty 判斷堆疊是否為空堆疊，是回傳 Ture，反之   full 判斷堆疊是否已滿，是回傳 True，反之    堆疊非常好理解，生活中也有很多堆疊的應用，假設要收拾餐桌上的餐盤，需要將它們一一疊起，先放第一個餐盤，再將第二個餐盤放到第一個餐盤上方，接著再將第三個餐盤放到第二個餐盤上方，以該例來看，第一個餐盤就是第一個放入堆疊中，而第三個是最後一個放入堆疊中，此時欲取得第二餐盤，就需要先將第三個放入的餐盤拿起，意思是，需要先將頂端的先拿起，才能在往下拿起，該例證明後進先出的特性，並且所有動作都是由頂端執行，從頂端加入，從頂端刪除，即是堆疊的概念。
-Note  堆疊（Stack）：後進先出（Last In, First Out: LIFO） 佇列（Queue）：先進先出（First In, First Out: FIFO）  Reference 【圖說演算法 C#】</p>
-  </section>
-  <footer class="entry-footer">May 19, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—堆疊（Stack）" href="https://fakestandard.github.io/algorithm/algorithm-5-stack/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
