@@ -6,7 +6,20 @@
     <description>Recent content in Algorithm on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 10 Jul 2021 16:02:17 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Jul 2021 11:02:02 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】佇列應用—陣列實作佇列</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-26-queuearray/</link>
+      <pubDate>Sun, 11 Jul 2021 11:02:02 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-26-queuearray/</guid>
+      <description>【5/20 閱讀紀錄】
+根據先前文章介紹的佇列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 利用陣列簡單地時做佇列應用，宣告一個大小為 10 的佇列 queue[10]，設置 front 和 rear 作為頭尾的指標且預設為 -1。
+static int front = -1; static int rear = -1; static int max = 10; static int val; static int[] queue = new int[max]; static void Main(string[] args) { int choice = 0; while (rear &amp;lt; max - 1 &amp;amp;&amp;amp; choice != 3) { Write(&amp;#34;請輸入 \n[1] 新增一個資料 \n[2] 取出資料 \n[3] 結束 :&amp;#34;); choice = int.Parse(Console.ReadLine()); switch (choice) { case 1: Write(&amp;#34;請輸入要新增的數值:&amp;#34;); val = int.</description>
+    </item>
+    
     <item>
       <title>【Algorithm】堆疊應用—八皇后經典謎題</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-25-eightqueens/</link>
