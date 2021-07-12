@@ -161,6 +161,23 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【.NET Core】環境變數 Environments</h2>
+  </header>
+  <section class="entry-content">
+    <p>【ASP.NET Core 5】
+Start ASP.NET Core 會根據執行階段的環境變數，來設定應用程式的行為。如開發環境、測試環境及正式環境的組態設定會不太相同，使用的資料庫也會不同。
+Environment Variable 預設的三種環境
+ Development 開發環境 Staging 暫存(測試)環境 Production 正式環境  環境名稱由系統變數 ASPNETCORE_ENVIRONMENT 的內容值而來，該變數可在 launchSettings.json 作變更。
+開啟 launchSettings.json，在 profiles 節點找到 IIS Express\..\environmentVariables 的 ASPNETCORE_ENVIRONMENT，將原本的 Development 變更為 Production。
+&#34;profiles&#34;: { &#34;IIS Express&#34;: { &#34;commandName&#34;: &#34;IISExpress&#34;, &#34;launchBrowser&#34;: true, &#34;environmentVariables&#34;: { &#34;ASPNETCORE_ENVIRONMENT&#34;: &#34;Production&#34; } } } 開啟 Startup.cs，Configure 方法已注入 IWebHostEnvironment，在方法內使用下列程式碼判斷環境變數內容值
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env) { if (env.IsProduction()) // 假設是生產環境  { app.Run(async (context) =&gt; { await context....</p>
+  </section>
+  <footer class="entry-footer">June 24, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET Core】環境變數 Environments" href="https://fakestandard.github.io/netcore/netcore5-7-environments/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】搜尋演算法—循序搜尋法（Sequential Search）</h2>
   </header>
   <section class="entry-content">
@@ -319,27 +336,6 @@ public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host....</p>
   </section>
   <footer class="entry-footer">June 10, 2021&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【OOP】物件導向基礎概念（Object Oriented Programming）" href="https://fakestandard.github.io/post/oop/oop-1-object-oriented-programming/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—謝耳排序法（Shell Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/2 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  謝耳排序法（Shell Sort） 在插入排序法中，若大部分資料已經排序完成，該排序法會相當有效率，而謝耳排序法可以看作是一種使插入排序法減少資料搬移次數的衍伸排序法。
-其原理為將資料區分成特定間隔的區塊，以插入排序法對區塊內資料進行排序，再漸漸減少間隔的距離。
-舉例，有一陣列為 [50] [60] [10] [30] [20] [80] [40] [70]，以劃分數為 2，將資料分成四等份 (8/2)，得到下列區塊組合 (50,20)(60,80)(10,40)(30,70)，規則為第一個數與第五個數為一組，第二個數與第六個數為一組，以此類推。
-接著透過插入排序法，對區塊內的資料做排序，使其成為 (20,50)(60,80)(10,40)(30,70)，排序完後，解散區塊組合，還原成原數列 [20] [60] [10] [30] [50] [80] [40] [70]
-繼續縮小間隔為 (8/2)/2，得到下列區塊組合 (20,10,50,40)(60,30,80,70)，其規則為第一、三、五、七個數字為一組，二、四、六、八為一組，一樣以插入排序法對區塊內資料做排序，得結果為 (10,20,40,50)(30,60,70,80)，解散組合區塊，還原成原數列 [10] [30] [20] [60] [40] [70] [50] [80]
-進行第三次排序，縮小間隔為 ((8/2)/2)/2，如此一來變成對每一個元素進行排序，直接使用插入排序法得結果為 [10] [20] [30] [40] [50] [60] [70] [80]...</p>
-  </section>
-  <footer class="entry-footer">June 9, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—謝耳排序法（Shell Sort）" href="https://fakestandard.github.io/algorithm/algorithm-13-shellsort/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

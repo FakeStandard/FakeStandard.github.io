@@ -161,6 +161,23 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】佇列應用—串列實作佇列</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/20 閱讀紀錄】
+根據先前文章介紹的佇列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 利用串列結構模擬佇列工作，使用指標及相關方法實作佇列。
+建立鏈結串列的節點類別
+/// &lt;summary&gt; /// 鏈結串列節點類別 /// &lt;/summary&gt; class QueueNode { public int data; public QueueNode next; public QueueNode(int data) { this.data = data; next = null; } } 建立使用串列節點模擬佇列的類別，其中包含 Enqueue 和 Dequeue 方法。
+/// &lt;summary&gt; /// 串列模擬佇列類別 /// &lt;/summary&gt; class QueueByLink { // 前端指標  public QueueNode front; // 末端指標  public QueueNode rear; public QueueByLink() { front = null; rear = null; } /// &lt;summary&gt;  /// 加入資料到佇列  /// &lt;/summary&gt;  /// &lt;param name=&#34;value&#34;&gt;&lt;/param&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool Enqueue(int value) { // 建立新節點  QueueNode node = new QueueNode(value); // 檢查是否為空佇列  if (rear == null) front = node; else rear....</p>
+  </section>
+  <footer class="entry-footer">July 12, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】佇列應用—串列實作佇列" href="https://fakestandard.github.io/algorithm/algorithm-27-queuelist/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】佇列應用—陣列實作佇列</h2>
   </header>
   <section class="entry-content">
@@ -339,24 +356,6 @@ Start 常見的搜尋演算法
   </section>
   <footer class="entry-footer">June 23, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—循序搜尋法（Sequential Search）" href="https://fakestandard.github.io/algorithm/algorithm-18-sequentialsearch/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—堆積樹排序法（Heap Tree Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/18 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  堆積樹排序法（Heap Tree Sort） 堆積樹排序法是選擇排序法的改良版，它可以減少選擇排序法的排序次數，進而減少排序時間。樹是一種資料結構，而堆積樹是一顆二元樹，二元樹的定義的定義為每個父節點最多只能有兩個子節點，而堆積樹是一種特殊的二元樹，父節點若小於子節點，稱為最小堆積（Min heap），父節點偌大於子節點，稱為最大堆積（Max heap）。
-假設有一陣列，陣列資料分別為
-                索引 A[0] A[1] A[2] A[3] A[4] A[5] A[6] A[7]   數值 69 81 30 38 9 2 47 61    將此陣列用二元樹表示，每個節點第一個數字為索引，第二個為數值...</p>
-  </section>
-  <footer class="entry-footer">June 21, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—堆積樹排序法（Heap Tree Sort）" href="https://fakestandard.github.io/algorithm/algorithm-17-heaptreesort/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -161,6 +161,25 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】資料結構—陣列（Array）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【4/11 閱讀紀錄】
+選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
+Start 此篇紀錄記錄陣列定義及應用，其餘常見的資料結構如下
+ 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  陣列（Array） 陣列是一種靜態資料結構，由相同名稱和相同資料型態的集合，使用連續記憶體作為儲存空間，陣列有提供索引功能，用來表示從記憶體起始位置的第幾個位置。
+靜態資料結構在編譯時，就必須配置記憶體空間給變數，所以初期就需宣告變數的固定空間，容易造成記憶體浪費。
+操作 CRUD 等功能時也各有優缺點，首先是設計時相當容易，因索引功能使得讀取和修改元素的時間都固定，但在刪除和加入資料時就必須移動大量資料，例如刪除陣列中某個元素，必須將被刪除元素後方記憶體的資料都往前移動。
+陣列運用可分為一維陣列、二維陣列或多維陣列，一維陣列可想像成一條線，二維陣列則為一個平面，三維陣列（多維陣列）就會是 3D 立體，以此類推。
+使用一維陣列尋找和儲存 1~num 之間的所有質數
+const int num = 300; // true: 質數 false: 非質數 bool[] prime = new bool[num]; // 將 0,1 配置為非質數 prime[0] = false; prime[1] = false; int m = 2; int n = 2; // 找出 1~num 之間所有質數 while (m &lt; num) { prime[m] = IsPrime(m); m&#43;&#43;; } int c = 0; int count = 0; // 列印所有質數 for (int i = 0; i &lt; num; i&#43;&#43;) { if (prime[i]) { if (c == 10) { Console....</p>
+  </section>
+  <footer class="entry-footer">April 26, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—陣列（Array）" href="https://fakestandard.github.io/algorithm/algorithm-3-array/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】資料結構定義與資料型態</h2>
   </header>
   <section class="entry-content">

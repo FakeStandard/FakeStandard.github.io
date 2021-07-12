@@ -6,7 +6,22 @@
     <description>Recent content in Algorithms on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 11 Jul 2021 11:02:02 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 12 Jul 2021 11:07:41 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】佇列應用—串列實作佇列</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-27-queuelist/</link>
+      <pubDate>Mon, 12 Jul 2021 11:07:41 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-27-queuelist/</guid>
+      <description>【5/20 閱讀紀錄】
+根據先前文章介紹的佇列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 利用串列結構模擬佇列工作，使用指標及相關方法實作佇列。
+建立鏈結串列的節點類別
+/// &amp;lt;summary&amp;gt; /// 鏈結串列節點類別 /// &amp;lt;/summary&amp;gt; class QueueNode { public int data; public QueueNode next; public QueueNode(int data) { this.data = data; next = null; } } 建立使用串列節點模擬佇列的類別，其中包含 Enqueue 和 Dequeue 方法。
+/// &amp;lt;summary&amp;gt; /// 串列模擬佇列類別 /// &amp;lt;/summary&amp;gt; class QueueByLink { // 前端指標  public QueueNode front; // 末端指標  public QueueNode rear; public QueueByLink() { front = null; rear = null; } /// &amp;lt;summary&amp;gt;  /// 加入資料到佇列  /// &amp;lt;/summary&amp;gt;  /// &amp;lt;param name=&amp;#34;value&amp;#34;&amp;gt;&amp;lt;/param&amp;gt;  /// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt;  public bool Enqueue(int value) { // 建立新節點  QueueNode node = new QueueNode(value); // 檢查是否為空佇列  if (rear == null) front = node; else rear.</description>
+    </item>
+    
     <item>
       <title>【Algorithm】佇列應用—陣列實作佇列</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-26-queuearray/</link>

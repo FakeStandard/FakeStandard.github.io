@@ -161,6 +161,23 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】佇列應用—串列實作佇列</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/20 閱讀紀錄】
+根據先前文章介紹的佇列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 利用串列結構模擬佇列工作，使用指標及相關方法實作佇列。
+建立鏈結串列的節點類別
+/// &lt;summary&gt; /// 鏈結串列節點類別 /// &lt;/summary&gt; class QueueNode { public int data; public QueueNode next; public QueueNode(int data) { this.data = data; next = null; } } 建立使用串列節點模擬佇列的類別，其中包含 Enqueue 和 Dequeue 方法。
+/// &lt;summary&gt; /// 串列模擬佇列類別 /// &lt;/summary&gt; class QueueByLink { // 前端指標  public QueueNode front; // 末端指標  public QueueNode rear; public QueueByLink() { front = null; rear = null; } /// &lt;summary&gt;  /// 加入資料到佇列  /// &lt;/summary&gt;  /// &lt;param name=&#34;value&#34;&gt;&lt;/param&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool Enqueue(int value) { // 建立新節點  QueueNode node = new QueueNode(value); // 檢查是否為空佇列  if (rear == null) front = node; else rear....</p>
+  </section>
+  <footer class="entry-footer">July 12, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】佇列應用—串列實作佇列" href="https://fakestandard.github.io/algorithm/algorithm-27-queuelist/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】佇列應用—陣列實作佇列</h2>
   </header>
   <section class="entry-content">
