@@ -94,8 +94,8 @@ Start 利用串列結構模擬佇列工作，使用指標及相關方法實作�
   "keywords": [
     "Algorithm", "CSharp", "Queue", "List"
   ],
-  "articleBody": "【5/20 閱讀紀錄】\n根據先前文章介紹的佇列，此篇實際運用它們實作一個應用。\n程式碼已放上 GitHub\nStart 利用串列結構模擬佇列工作，使用指標及相關方法實作佇列。\n建立鏈結串列的節點類別\n///  /// 鏈結串列節點類別 ///  class QueueNode { public int data; public QueueNode next; public QueueNode(int data) { this.data = data; next = null; } } 建立使用串列節點模擬佇列的類別，其中包含 Enqueue 和 Dequeue 方法。\n///  /// 串列模擬佇列類別 ///  class QueueByLink { // 前端指標  public QueueNode front; // 末端指標  public QueueNode rear; public QueueByLink() { front = null; rear = null; } ///   /// 加入資料到佇列  ///   ///   ///   public bool Enqueue(int value) { // 建立新節點  QueueNode node = new QueueNode(value); // 檢查是否為空佇列  if (rear == null) front = node; else rear.next = node; rear = node; return true; } ///   /// 從佇列中取出資料  ///   ///   public int Dequeue() { int value; // 檢查是否為空佇列  if (front != null) { if (front == rear) rear = null; // 取出資料  value = front.data; // 將指標指向下一個  front = front.next; return value; } else return -1; } } 撰寫 Main 方法\nstatic void Main(string[] args) { // 建立佇列物件  QueueByLink queue = new QueueByLink(); int tmp; WriteLine(\"以鏈結串列實作佇列\"); WriteLine(\"=============================\"); WriteLine(\"在佇列中加入資料 2\"); queue.Enqueue(2); WriteLine(\"在佇列中加入資料 4\"); queue.Enqueue(4); WriteLine(\"在佇列中加入資料 6\"); queue.Enqueue(6); WriteLine(\"在佇列中加入資料 8\"); queue.Enqueue(8); WriteLine(\"在佇列中加入資料 10\"); queue.Enqueue(10); WriteLine(\"=============================\"); while (true) { if (!(queue.front == null)) { tmp = queue.Dequeue(); WriteLine($\"從佇列中取出資料 {tmp}\"); } else break; } Console.ReadLine(); } Note 實作的過程中，發現一問題，在加入資料方法中，其中檢查是否為空陣列判斷的 else 區塊，在 rear.next = node 執行完後，front.next 也添加了新的節點，真是匪夷所思，先記錄起來。\n///  /// 加入資料到佇列 ///  ///  ///  public bool Enqueue(int value) { ... // 檢查是否為空佇列  if (rear == null) front = node; else rear.next = node; ... Reference 【圖說演算法 C#】\n",
-  "wordCount" : "254",
+  "articleBody": "【5/20 閱讀紀錄】\n根據先前文章介紹的佇列，此篇實際運用它們實作一個應用。\n程式碼已放上 GitHub\nStart 利用串列結構模擬佇列工作，使用指標及相關方法實作佇列。\n建立鏈結串列的節點類別\n///  /// 鏈結串列節點類別 ///  class QueueNode { public int data; public QueueNode next; public QueueNode(int data) { this.data = data; next = null; } } 建立使用串列節點模擬佇列的類別，其中包含 Enqueue 和 Dequeue 方法。\n///  /// 串列模擬佇列類別 ///  class QueueByLink { // 前端指標  public QueueNode front; // 末端指標  public QueueNode rear; public QueueByLink() { front = null; rear = null; } ///   /// 加入資料到佇列  ///   ///   ///   public bool Enqueue(int value) { // 建立新節點  QueueNode node = new QueueNode(value); // 檢查是否為空佇列  if (rear == null) front = node; else rear.next = node; rear = node; return true; } ///   /// 從佇列中取出資料  ///   ///   public int Dequeue() { int value; // 檢查是否為空佇列  if (front != null) { if (front == rear) rear = null; // 取出資料  value = front.data; // 將指標指向下一個  front = front.next; return value; } else return -1; } } 撰寫 Main 方法\nstatic void Main(string[] args) { // 建立佇列物件  QueueByLink queue = new QueueByLink(); int tmp; WriteLine(\"以鏈結串列實作佇列\"); WriteLine(\"=============================\"); WriteLine(\"在佇列中加入資料 2\"); queue.Enqueue(2); WriteLine(\"在佇列中加入資料 4\"); queue.Enqueue(4); WriteLine(\"在佇列中加入資料 6\"); queue.Enqueue(6); WriteLine(\"在佇列中加入資料 8\"); queue.Enqueue(8); WriteLine(\"在佇列中加入資料 10\"); queue.Enqueue(10); WriteLine(\"=============================\"); while (true) { if (!(queue.front == null)) { tmp = queue.Dequeue(); WriteLine($\"從佇列中取出資料 {tmp}\"); } else break; } Console.ReadLine(); } Note 實作的過程中，發現一問題，在加入資料方法中，其中檢查是否為空陣列判斷的 else 區塊，在 rear.next = node 執行完後，front.next 也添加了新的節點，真是匪夷所思，先記錄起來。\n///  /// 加入資料到佇列 ///  ///  ///  public bool Enqueue(int value) { ... // 檢查是否為空佇列  if (rear == null) front = node; else rear.next = node; ...  【7/12 問題排解】\n一開始檢查rear是否為空佇列，如果為空則front = node，接著rear = node，此時front與rear都同時指向node，故兩者配置的記憶體位置是相同的，下次新增資料時，else區塊的rear.next = node，也等同於將front.next指向node\n ///  /// 加入資料到佇列 ///  ///  ///  public bool Enqueue(int value) { // 建立新節點  QueueNode node = new QueueNode(value); // 檢查是否為空佇列  if (rear == null) front = node; else rear.next = node; rear = node; return true; } Reference 【圖說演算法 C#】\n",
+  "wordCount" : "305",
   "inLanguage": "en",
   "datePublished": "2021-07-12T11:07:41+08:00",
   "dateModified": "2021-07-12T11:07:41+08:00",
@@ -379,6 +379,30 @@ Start 利用串列結構模擬佇列工作，使用指標及相關方法實作�
         rear.next = node;
     
     ...
+</code></pre></div><blockquote>
+<p>【7/12 問題排解】</p>
+<p>一開始檢查<code>rear</code>是否為空佇列，如果為空則<code>front = node</code>，接著<code>rear = node</code>，此時<code>front</code>與<code>rear</code>都同時指向<code>node</code>，故兩者配置的記憶體位置是相同的，下次新增資料時，<code>else</code>區塊的<code>rear.next = node</code>，也等同於將<code>front.next</code>指向<code>node</code></p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e">/// 加入資料到佇列
+</span><span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e">/// &lt;param name=&#34;value&#34;&gt;&lt;/param&gt;
+</span><span style="color:#75715e">/// &lt;returns&gt;&lt;/returns&gt;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> Enqueue(<span style="color:#66d9ef">int</span> <span style="color:#66d9ef">value</span>)
+{
+    <span style="color:#75715e">// 建立新節點
+</span><span style="color:#75715e"></span>    QueueNode node = <span style="color:#66d9ef">new</span> QueueNode(<span style="color:#66d9ef">value</span>);
+
+    <span style="color:#75715e">// 檢查是否為空佇列
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (rear == <span style="color:#66d9ef">null</span>)
+        front = node;
+    <span style="color:#66d9ef">else</span>
+        rear.next = node;
+
+    rear = node;
+
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
+}
 </code></pre></div><h1 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h1>
 <p>【圖說演算法 C#】</p>
 
