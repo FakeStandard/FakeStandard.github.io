@@ -6,11 +6,11 @@
     <description>Recent content in Tags on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 12 Jul 2021 11:07:41 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Jul 2021 11:24:37 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Algorithm</title>
       <link>https://fakestandard.github.io/tags/algorithm/</link>
-      <pubDate>Mon, 12 Jul 2021 11:07:41 +0800</pubDate>
+      <pubDate>Thu, 15 Jul 2021 11:24:37 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/algorithm/</guid>
       <description></description>
@@ -19,9 +19,18 @@
     <item>
       <title>CSharp</title>
       <link>https://fakestandard.github.io/tags/csharp/</link>
-      <pubDate>Mon, 12 Jul 2021 11:07:41 +0800</pubDate>
+      <pubDate>Thu, 15 Jul 2021 11:24:37 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deques</title>
+      <link>https://fakestandard.github.io/tags/deques/</link>
+      <pubDate>Thu, 15 Jul 2021 11:24:37 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/deques/</guid>
       <description></description>
     </item>
     

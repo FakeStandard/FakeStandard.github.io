@@ -6,7 +6,23 @@
     <description>Recent content in Algorithm on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 12 Jul 2021 11:07:41 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Jul 2021 11:24:37 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】佇列應用—雙向佇列（Deques）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-28-deques/</link>
+      <pubDate>Thu, 15 Jul 2021 11:24:37 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-28-deques/</guid>
+      <description>【5/30 閱讀紀錄】
+根據先前文章介紹的佇列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 雙向佇列的全名是 Double-ends Queues，縮寫為 Deques。雙向佇列與一般說的佇列不太相同，不過也很容易理解，它是一種前後兩端都可以輸入或輸出資料的有序串列。
+雙向佇列至少有以下工作行為
+   Method Description     IsEmpty 檢查雙向佇列是否為空   PushFront 將資料從頂端推入，其大小加一   PushRear 將資料從末端推入，其大小加一   PopFront 將資料從頂端推出，其大小減一   PopRear 將資料從末端推出，其大小減一   PeekFront 存取頂端的資料，不改變其大小   PeekRear 存取末端的資料，不改變其大小    而雙向佇列依其應用還可分為多種存取模式，較常見的雙向佇列有
+ 輸入限制性雙佇列（Input Restricted Deque） - 限制存入資料只能在其中一端進行，取出資料則可在兩端執行 輸出限制性雙佇列（Output Restricted Deque） - 限制取出資料只能在其中一端進行，輸入資料則可在兩端執行  以串列結構實作雙向佇列程式碼，建立節點類別、雙向佇列串列結構類別，以及佇列相關方法（推入推出方法在下一步實作）
+/// &amp;lt;summary&amp;gt; /// 節點類別 /// &amp;lt;/summary&amp;gt; class Node { public int data; public Node next; public Node(int data) { this.</description>
+    </item>
+    
     <item>
       <title>【Algorithm】佇列應用—串列實作佇列</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-27-queuelist/</link>

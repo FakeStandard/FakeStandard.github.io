@@ -161,6 +161,21 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【.NET】使用 NPOI 匯出 Excel 的基本應用</h2>
+  </header>
+  <section class="entry-content">
+    <p>開發應用程式或網頁時總是會遇到匯出 Excel 的需求，常見的如匯出報表。然而在眾多匯出 Excel 的套件中，這篇選擇以 NPOI 作為介紹匯出的基本應用和觀念，資料則選擇現成的北風資料庫，這邊就不另外建立資料物件。
+代碼存放於 GitHub
+Start 首先到 NuGet 套件添加 NPOI Package
+建立一個資料庫連線的方法，將 Orders 資料表的資料全部讀到 DataTable
+/// &lt;summary&gt; /// 資料庫連線方法 /// &lt;/summary&gt; static DataTable Connect() { // 宣告並建立 SqlConnectionStringBuilder 物件，並設置連線資訊  SqlConnectionStringBuilder cnsb = new SqlConnectionStringBuilder(); cnsb.DataSource = &#34;.&#34;; cnsb.InitialCatalog = &#34;Northwind&#34;; cnsb.IntegratedSecurity = true; // 宣告並建立 SqlConnection  SqlConnection cn = new SqlConnection(cnsb.ConnectionString); // SQL Statement  string sql = &#34;SELECT * FROM [Northwind].[dbo].[Orders]&#34;; // 宣告並建立 SqlDataAdapter 物件  SqlDataAdapter da = new SqlDataAdapter(sql, cn); // 建立 DataSet 物件以儲存資料  DataSet ds = new DataSet(); da....</p>
+  </section>
+  <footer class="entry-footer">April 27, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET】使用 NPOI 匯出 Excel 的基本應用" href="https://fakestandard.github.io/post/dotnet/dotnet-4-npoisimple/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】資料結構—陣列（Array）</h2>
   </header>
   <section class="entry-content">

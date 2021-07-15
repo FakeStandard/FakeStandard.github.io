@@ -161,6 +161,24 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】佇列應用—雙向佇列（Deques）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/30 閱讀紀錄】
+根據先前文章介紹的佇列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 雙向佇列的全名是 Double-ends Queues，縮寫為 Deques。雙向佇列與一般說的佇列不太相同，不過也很容易理解，它是一種前後兩端都可以輸入或輸出資料的有序串列。
+雙向佇列至少有以下工作行為
+   Method Description     IsEmpty 檢查雙向佇列是否為空   PushFront 將資料從頂端推入，其大小加一   PushRear 將資料從末端推入，其大小加一   PopFront 將資料從頂端推出，其大小減一   PopRear 將資料從末端推出，其大小減一   PeekFront 存取頂端的資料，不改變其大小   PeekRear 存取末端的資料，不改變其大小    而雙向佇列依其應用還可分為多種存取模式，較常見的雙向佇列有
+ 輸入限制性雙佇列（Input Restricted Deque） - 限制存入資料只能在其中一端進行，取出資料則可在兩端執行 輸出限制性雙佇列（Output Restricted Deque） - 限制取出資料只能在其中一端進行，輸入資料則可在兩端執行  以串列結構實作雙向佇列程式碼，建立節點類別、雙向佇列串列結構類別，以及佇列相關方法（推入推出方法在下一步實作）
+/// &lt;summary&gt; /// 節點類別 /// &lt;/summary&gt; class Node { public int data; public Node next; public Node(int data) { this....</p>
+  </section>
+  <footer class="entry-footer">July 15, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】佇列應用—雙向佇列（Deques）" href="https://fakestandard.github.io/algorithm/algorithm-28-deques/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】佇列應用—串列實作佇列</h2>
   </header>
   <section class="entry-content">
@@ -333,27 +351,6 @@ Mid = left &#43; ((key-data[left]) * (right - left) / (data[right] - data[left])
   </section>
   <footer class="entry-footer">June 28, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—內插搜尋法（Interpolation Search）" href="https://fakestandard.github.io/algorithm/algorithm-20-interpolationsearch/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】搜尋演算法—二分搜尋法（Binary Search）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/21 閱讀紀錄】
-搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
-依據資料量大小而言，搜尋可分為兩種
- 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
- 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
-Start 常見的搜尋演算法
- 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  二分搜尋演算法（Binary Search） 二分搜尋法是對已排序的資料進行搜尋，其原理是將資料分割成兩等份，對鍵值與分割的中間值進行比較大小，依照比較的結果，來確認要找的資料是在前半段或者後半段，反覆地分割比較，直到找到資料或無法再分割確定不存在為止，經由上述可知，未排序的資料不適用二分法。
-假設有一數列由小到大排序 10 20 30 40 50 60 70 80 90，欲找尋鍵值 30，利用二分法進行第一次分割，得到中間值為 50，將鍵值 30 與中間值 50 進行比較，得鍵值小於中間值，確定要找尋的資料在前半段 10 20 30 40 50，在對前半段進行第二次分隔，得到中間值 30，將鍵值與中間值進行比較，結果為真，即搜尋中止。
-演算法分析  時間複雜度為 O(logn) 必須事先排序，且資料量必須能載入到記憶體中執行 適用於不需增刪的靜態資料  實際撰寫程式碼 亂數產生 1-150 之間的 100 個整數，並實作二分搜尋法的過程
-建立靜態陣列物件及二分搜尋方法
-// 建立靜態陣列物件 static int[] data = new int[100]; /// &lt;summary&gt; /// 二分搜尋方法 /// &lt;/summary&gt; /// &lt;param name=&#34;val&#34;&gt;&lt;/param&gt; /// &lt;returns&gt;&lt;/returns&gt; static int BinarySearch(int val) { int mid; // 中間值  int left = 0; // 左邊極限  int right = data....</p>
-  </section>
-  <footer class="entry-footer">June 25, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—二分搜尋法（Binary Search）" href="https://fakestandard.github.io/algorithm/algorithm-19-binarysearch/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
