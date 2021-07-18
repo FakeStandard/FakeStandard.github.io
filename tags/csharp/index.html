@@ -161,6 +161,26 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】陣列應用—轉置矩陣演算法</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/26 閱讀紀錄】
+根據先前文章介紹的陣列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 從數學角度來說，矩陣 m*n 的形式在電腦中可以利用二維陣列表示，而矩陣的相關運算與應用，也都是以陣列結構來解決。矩陣可應用於 3D 圖學中，用來表示模型資料的投影、擴大、縮小、平移、偏斜或旋轉等運算，在深度學習中也常遇到大量使用矩陣運算來提高效率。
+接下來會透過陣列結構來演示轉置矩陣演算法
+轉置矩陣 轉置矩陣非常好理解，就是將原矩陣的行座標元素與列座標元素互相對調，例如
+可得結論
+程式碼實現，先輸出矩陣方法
+/// &lt;summary&gt; /// 輸出矩陣 /// &lt;/summary&gt; /// &lt;param name=&#34;matrix&#34;&gt;&lt;/param&gt; static void Print(ref int[,] matrix) { int i; int j; for (i = 0; i &lt; matrix.GetLength(0); i&#43;&#43;) { for (j = 0; j &lt; matrix.GetLength(1); j&#43;&#43;) Write(matrix[i, j] &#43; &#34;\t&#34;); WriteLine(); } } 轉置矩陣方法
+/// &lt;summary&gt; /// 轉置矩陣方法 /// &lt;/summary&gt; /// &lt;param name=&#34;A&#34;&gt;&lt;/param&gt; /// &lt;param name=&#34;B&#34;&gt;&lt;/param&gt; /// &lt;param name=&#34;C&#34;&gt;&lt;/param&gt; static void Matrix_Transpose(ref int[,] A, ref int[,] At) { int i, j; for (i = 0; i &lt; A....</p>
+  </section>
+  <footer class="entry-footer">July 18, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】陣列應用—轉置矩陣演算法" href="https://fakestandard.github.io/algorithm/algorithm-30-matrixtranspose/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】陣列應用—矩陣相加與相乘演算法</h2>
   </header>
   <section class="entry-content">
@@ -329,25 +349,6 @@ static int Fibonacci(int value) { if (value == 0) return 0; else if (value == 1)
   </section>
   <footer class="entry-footer">June 30, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—費氏搜尋法（Fibonacci Search）" href="https://fakestandard.github.io/algorithm/algorithm-21-fibonaccisearch/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【OOP】物件導向設計的五大原則</h2>
-  </header>
-  <section class="entry-content">
-    <p>Start 前篇講解 OOP 的特性卻還沒介紹基本原則，馬上來惡補一下內功心法。
-物件導向設計五大原則「SOLID」由羅伯特·C·馬丁在21世紀早期提出，SOLID分別為單一功能原則、開閉原則、里氏替換原則、介面隔離原則、依賴反轉原則。
-了解物件導向基本原則及特性，透過不斷練習和思考就可寫出閱讀性、維護性、擴充性高的程式碼，然而開發易維護與擴展的系統也變得不難。
-單一職責（Single Responsibility Principle） 對一個類別來說，應該只有一個引起他變化的理由，意為一個類別應只專注做一件事，當類別需要做兩件以上的工作時，就承擔了過多的職責，一旦需變更代碼，耦合度會比一件工作還要高，而當發生錯誤時很難快速定位錯誤原因，間接導致程式碼可閱讀性降低。
-開放封閉（Open-Closed Principle） 增加新的代碼來擴充系統，而非修改原本已存在的代碼來擴充新功能。所以在設計類別時對擴充保持開放及對修改保持封閉。若面對需求變化時，有無法封閉的變化，此時就須建立抽象點來隔離那些變化。
-里氏替換（Liskov Substitution Principle） 子類別必須可以替換父類別而不影響程式架構。若使用繼承，子類別實作的行為必須與父類別或介面所定義的行為一致，且子類別可完全取代父類別。
-介面隔離（Interface Segregation Principle） 抽取相同的功能形成介面，再讓各類別去實作。即針對不同類別開放對應需求的介面，需抽換時只需實作介面類別即可，大量降低耦合度。
-依賴反轉（Dependency Inversion Principle） 高階模組不應依賴低階模組，兩者都應依賴在抽象概念上；抽象概念不依賴細節，而細節依賴在抽象概念。模組之間若太過耦合，很容易出現修改A又被迫修改B的情況，若依賴抽象則兩只只要關注自己本身即可。
-Reference 【大話設計模式】</p>
-  </section>
-  <footer class="entry-footer">June 29, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【OOP】物件導向設計的五大原則" href="https://fakestandard.github.io/post/oop/oop-3-oop-principles/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
