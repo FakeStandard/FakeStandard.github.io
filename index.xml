@@ -6,7 +6,26 @@
     <description>Recent content on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sun, 18 Jul 2021 14:45:37 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Jul 2021 12:15:10 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】陣列應用—稀疏矩陣演算法</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-31-matrixsparse/</link>
+      <pubDate>Tue, 20 Jul 2021 12:15:10 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-31-matrixsparse/</guid>
+      <description>【5/26 閱讀紀錄】
+根據先前文章介紹的陣列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 從數學角度來說，矩陣 m*n 的形式在電腦中可以利用二維陣列表示，而矩陣的相關運算與應用，也都是以陣列結構來解決。矩陣可應用於 3D 圖學中，用來表示模型資料的投影、擴大、縮小、平移、偏斜或旋轉等運算，在深度學習中也常遇到大量使用矩陣運算來提高效率。
+接下來會透過陣列結構來演示稀疏矩陣演算法
+稀疏矩陣 稀疏矩陣的定義是在一個矩陣中，有大部分的元素是 0，例如
+在上述矩陣中，若以二維陣列來儲存，十分浪費記憶體空間，此時改進的方法就是利用三項式（3-tuple）的資料結構，來壓縮稀疏矩陣，以減少記憶體空間。
+三項式的儲存方式，首先 A(0,1) 儲存稀疏矩陣的列數，A(0,2) 儲存稀疏矩陣的的行數，A(0,3) 則儲存稀疏矩陣非零的項目個數，接著依序將非零的項目以 A(i,j,item-value) 的方式儲存，如下
+實際演練程式碼，將一稀疏矩陣利用三項式壓縮
+先建立輸出矩陣方法
+/// &amp;lt;summary&amp;gt; /// 輸出矩陣 /// &amp;lt;/summary&amp;gt; /// &amp;lt;param name=&amp;#34;matrix&amp;#34;&amp;gt;&amp;lt;/param&amp;gt; static void Print(ref int[,] matrix) { int i; int j; for (i = 0; i &amp;lt; matrix.GetLength(0); i++) { for (j = 0; j &amp;lt; matrix.GetLength(1); j++) Write(matrix[i, j] + &amp;#34;\t&amp;#34;); WriteLine(); } } 在 Main 方法中直接執行壓縮</description>
+    </item>
+    
     <item>
       <title>【Algorithm】陣列應用—轉置矩陣演算法</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-30-matrixtranspose/</link>

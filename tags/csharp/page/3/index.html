@@ -161,6 +161,24 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】排序演算法—合併排序法（Merge Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/18 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  合併排序法（Merge Sort） 合併排序法的原理是將兩個或兩個以上的數列，經由合併的方式組合成一個排序好的數列。
+步驟非常好理解，如下
+ 將 N 個長度為 1 的鍵值合併成 N/2 個長度為 2 的鍵值 將 N/2 個長度為 2 的鍵值，合併成 N/4 個長度為 4 的鍵值 將 N/4 個長度為 4 的鍵值，合併成 N/8 個長度為 8 的鍵值 重複地將鍵值合併，直到合併成一個長度為 N 的鍵值為止  使用一個未排序陣列解說步驟，目標是由小到大排序，陣列如下 38 16 41 72 52 98 63 25...</p>
+  </section>
+  <footer class="entry-footer">June 16, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—合併排序法（Merge Sort）" href="https://fakestandard.github.io/algorithm/algorithm-15-mergesort/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】排序演算法—快速排序法（Quick Sort）</h2>
   </header>
   <section class="entry-content">
@@ -340,29 +358,6 @@ Start Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以�
   </section>
   <footer class="entry-footer">May 31, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【.NET Core】中介軟體 Middleware" href="https://fakestandard.github.io/netcore/netcore5-3-middleware/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】資料結構—雜湊表（Hash Table）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/24 閱讀紀錄】
-選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
-Start 此篇紀錄記錄雜湊表定義及應用，其餘常見的資料結構如下
- 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  雜湊表（Hash Table） 雜湊是一種電腦對資料的處理方式，它通過某種特定的雜湊函數應用，將鍵值轉換成相對應的資料儲存位址，形成一種快速存取與搜尋資料的資料結構—雜湊表，而雜湊表是一種儲存紀錄的連續記憶體。
-相關專有名詞  雜湊函數（Hashing Function）
-將未經雜湊的資料，透過特定的計算公式，轉換成對應的資料儲存位址，計算後的結果必須隨著明文改變而改變。 雜湊值（Hash Code）
-原始資料經由雜湊函數計算的結果，稱為雜湊值，且雜湊值為不可逆。不可逆的意思是，轉換後的結果無法反推原來的資料，只能由 A 變成 B，無法從 B 找回 A，例如將蘋果透過果汁機打成蘋果汁，蘋果就是原始資料，果汁機是雜湊函數，蘋果汁是雜湊值，我們無法將蘋果汁再透過果汁機變回蘋果，這就是不可逆。 桶（Bucket）
-雜湊表中儲存資料的位置，每個位置對應唯一的位址（Bucket Address） 槽（Slot）
-每一筆紀錄可能包含多個欄位，Slot 指的就是 Bucket 的欄位 碰撞（Collision）
-兩筆不同的資料，經雜湊函數運算後，對應到相同位址時，稱為碰撞 溢位（Overflow）
-資料經過雜湊函數運算後，對應的 Bucket 已滿，則會使 Bucket 發生溢位 雜湊表（Hash Table）
-儲存紀錄的連續記憶體，它類似於資料表的索引表格，可將 Column 和 Row 看待成 Slot 與 Bucket 完美雜湊（Perfect Hashing）
-指沒有發生碰撞，也沒有發生溢位的雜湊函數  雜湊應用 雜湊通常應用於加密或驗證，但雜湊不等於加密，加密不等於雜湊。其應用有身份證字號是透過公式來驗證是否合法，或者是 MD5 密碼雜湊函式，將使用者的 password 經由 MD5 產生雜湊值，再將雜湊值儲存於資料庫中，等下次使用者登入時，將輸入的密碼經由 MD5 運算，將其結果與資料庫中儲存的雜湊值進行比對即可。...</p>
-  </section>
-  <footer class="entry-footer">May 29, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—雜湊表（Hash Table）" href="https://fakestandard.github.io/algorithm/algorithm-9-hashtable/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

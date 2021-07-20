@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Array | How can I help</title>
+<title>Sparse Matrix | How can I help</title>
 <meta name="keywords" content="" />
 <meta name="description" content="不專業代碼">
 <meta name="author" content="Polar Bear">
-<link rel="canonical" href="https://fakestandard.github.io/tags/array/" />
+<link rel="canonical" href="https://fakestandard.github.io/tags/sparse-matrix/" />
 <link crossorigin="anonymous" href="/assets/css/stylesheet.min.d1b405b7c6bf1b09aebca33eb6e2d8bd070113d119bdfa2715c32f6408f9fbee.css" integrity="sha256-0bQFt8a/GwmuvKM&#43;tuLYvQcBE9EZvfonFcMvZAj5&#43;&#43;4=" rel="preload stylesheet" as="style">
 
 
@@ -32,14 +32,14 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <meta name="generator" content="Hugo 0.81.0" />
-<link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/tags/array/index.xml">
-<meta property="og:title" content="Array" />
+<link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/tags/sparse-matrix/index.xml">
+<meta property="og:title" content="Sparse Matrix" />
 <meta property="og:description" content="不專業代碼" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://fakestandard.github.io/tags/array/" />
+<meta property="og:url" content="https://fakestandard.github.io/tags/sparse-matrix/" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Array"/>
+<meta name="twitter:title" content="Sparse Matrix"/>
 <meta name="twitter:description" content="不專業代碼"/>
 
 </head>
@@ -156,7 +156,7 @@
 </header>
 <main class="main"> 
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
-  <h1>Array</h1>
+  <h1>Sparse Matrix</h1>
 </header>
 
 <article class="post-entry tag-entry"> 
@@ -178,95 +178,6 @@ Start 從數學角度來說，矩陣 m*n 的形式在電腦中可以利用二維
   </section>
   <footer class="entry-footer">July 20, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】陣列應用—稀疏矩陣演算法" href="https://fakestandard.github.io/algorithm/algorithm-31-matrixsparse/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】陣列應用—轉置矩陣演算法</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/26 閱讀紀錄】
-根據先前文章介紹的陣列，此篇實際運用它們實作一個應用。
-程式碼已放上 GitHub
-Start 從數學角度來說，矩陣 m*n 的形式在電腦中可以利用二維陣列表示，而矩陣的相關運算與應用，也都是以陣列結構來解決。矩陣可應用於 3D 圖學中，用來表示模型資料的投影、擴大、縮小、平移、偏斜或旋轉等運算，在深度學習中也常遇到大量使用矩陣運算來提高效率。
-接下來會透過陣列結構來演示轉置矩陣演算法
-轉置矩陣 轉置矩陣非常好理解，就是將原矩陣的行座標元素與列座標元素互相對調，例如
-可得結論
-程式碼實現，先輸出矩陣方法
-/// &lt;summary&gt; /// 輸出矩陣 /// &lt;/summary&gt; /// &lt;param name=&#34;matrix&#34;&gt;&lt;/param&gt; static void Print(ref int[,] matrix) { int i; int j; for (i = 0; i &lt; matrix.GetLength(0); i&#43;&#43;) { for (j = 0; j &lt; matrix.GetLength(1); j&#43;&#43;) Write(matrix[i, j] &#43; &#34;\t&#34;); WriteLine(); } } 轉置矩陣方法
-/// &lt;summary&gt; /// 轉置矩陣方法 /// &lt;/summary&gt; /// &lt;param name=&#34;A&#34;&gt;&lt;/param&gt; /// &lt;param name=&#34;B&#34;&gt;&lt;/param&gt; /// &lt;param name=&#34;C&#34;&gt;&lt;/param&gt; static void Matrix_Transpose(ref int[,] A, ref int[,] At) { int i, j; for (i = 0; i &lt; A....</p>
-  </section>
-  <footer class="entry-footer">July 18, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】陣列應用—轉置矩陣演算法" href="https://fakestandard.github.io/algorithm/algorithm-30-matrixtranspose/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】陣列應用—矩陣相加與相乘演算法</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/26 閱讀紀錄】
-根據先前文章介紹的陣列，此篇實際運用它們實作一個應用。
-程式碼已放上 GitHub
-Start 從數學角度來說，矩陣 m*n 的形式在電腦中可以利用二維陣列表示，而矩陣的相關運算與應用，也都是以陣列結構來解決。矩陣可應用於 3D 圖學中，用來表示模型資料的投影、擴大、縮小、平移、偏斜或旋轉等運算，在深度學習中也常遇到大量使用矩陣運算來提高效率。
-接下來會透過陣列結構來演示以下兩種演算法
- 矩陣相加 矩陣相乘  矩陣相加 矩陣相加與相減的前提是兩矩陣的陣列數與行數必須相同，相加或相減後的陣列數與行數也必須相等，所以矩陣相加與相減的特性相同。
-實際演練下列兩矩陣 A.B 相加之後得到 C 矩陣
-建立靜態變數與輸出矩陣方法
-static int ROWS = 3; static int COLS = 3; /// &lt;summary&gt; /// 輸出矩陣 /// &lt;/summary&gt; /// &lt;param name=&#34;matrix&#34;&gt;&lt;/param&gt; static void Print(ref int[,] matrix) { int i; int j; for (i = 0; i &lt; ROWS; i&#43;&#43;) { for (j = 0; j &lt; COLS; j&#43;&#43;) Write(matrix[i, j] &#43; &#34;\t&#34;); WriteLine(); } } 建立矩陣相加方法...</p>
-  </section>
-  <footer class="entry-footer">July 17, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】陣列應用—矩陣相加與相乘演算法" href="https://fakestandard.github.io/algorithm/algorithm-29-matrixaddadnmultiply/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】佇列應用—陣列實作佇列</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/20 閱讀紀錄】
-根據先前文章介紹的佇列，此篇實際運用它們實作一個應用。
-程式碼已放上 GitHub
-Start 利用陣列簡單地時做佇列應用，宣告一個大小為 10 的佇列 queue[10]，設置 front 和 rear 作為頭尾的指標且預設為 -1。
-static int front = -1; static int rear = -1; static int max = 10; static int val; static int[] queue = new int[max]; static void Main(string[] args) { int choice = 0; while (rear &lt; max - 1 &amp;&amp; choice != 3) { Write(&#34;請輸入 \n[1] 新增一個資料 \n[2] 取出資料 \n[3] 結束 :&#34;); choice = int.Parse(Console.ReadLine()); switch (choice) { case 1: Write(&#34;請輸入要新增的數值:&#34;); val = int....</p>
-  </section>
-  <footer class="entry-footer">July 11, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】佇列應用—陣列實作佇列" href="https://fakestandard.github.io/algorithm/algorithm-26-queuearray/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】堆疊應用—陣列實作堆疊</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/16 閱讀紀錄】
-根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
-程式碼已放上 GitHub
-Start 利用陣列結構模擬堆疊工作運算，且使用迴圈控制推入與取出的元素，其中需包含推入（push）和取出（pop）函數，最後要輸出堆疊中所有元素。
-建立堆疊類別
-/// &lt;summary&gt; /// 以陣列模擬堆疊的類別 /// &lt;/summary&gt; class StackArray { // 宣告陣列  private int[] stack; // 指向堆疊頂端的索引  private int top; /// &lt;summary&gt;  /// 建構子  /// &lt;/summary&gt;  /// &lt;param name=&#34;stack_size&#34;&gt;堆疊大小&lt;/param&gt;  public StackArray(int size) { // 建立陣列  stack = new int[size]; top = -1; } /// &lt;summary&gt;  /// 判斷堆疊是否為空  /// &lt;/summary&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool Empty() { if (top == -1) return true; else return false; } /// &lt;summary&gt;  /// 推入資料到頂端的方法  /// &lt;/summary&gt;  /// &lt;param name=&#34;data&#34;&gt;&lt;/param&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool Push(int data) { // 判斷堆疊頂端的索引是否大於陣列大小  if (top &gt;= stack....</p>
-  </section>
-  <footer class="entry-footer">July 2, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—陣列實作堆疊" href="https://fakestandard.github.io/algorithm/algorithm-22-stackarray/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】資料結構—陣列（Array）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【4/11 閱讀紀錄】
-選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
-Start 此篇紀錄記錄陣列定義及應用，其餘常見的資料結構如下
- 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  陣列（Array） 陣列是一種靜態資料結構，由相同名稱和相同資料型態的集合，使用連續記憶體作為儲存空間，陣列有提供索引功能，用來表示從記憶體起始位置的第幾個位置。
-靜態資料結構在編譯時，就必須配置記憶體空間給變數，所以初期就需宣告變數的固定空間，容易造成記憶體浪費。
-操作 CRUD 等功能時也各有優缺點，首先是設計時相當容易，因索引功能使得讀取和修改元素的時間都固定，但在刪除和加入資料時就必須移動大量資料，例如刪除陣列中某個元素，必須將被刪除元素後方記憶體的資料都往前移動。
-陣列運用可分為一維陣列、二維陣列或多維陣列，一維陣列可想像成一條線，二維陣列則為一個平面，三維陣列（多維陣列）就會是 3D 立體，以此類推。
-使用一維陣列尋找和儲存 1~num 之間的所有質數
-const int num = 300; // true: 質數 false: 非質數 bool[] prime = new bool[num]; // 將 0,1 配置為非質數 prime[0] = false; prime[1] = false; int m = 2; int n = 2; // 找出 1~num 之間所有質數 while (m &lt; num) { prime[m] = IsPrime(m); m&#43;&#43;; } int c = 0; int count = 0; // 列印所有質數 for (int i = 0; i &lt; num; i&#43;&#43;) { if (prime[i]) { if (c == 10) { Console....</p>
-  </section>
-  <footer class="entry-footer">April 26, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—陣列（Array）" href="https://fakestandard.github.io/algorithm/algorithm-3-array/"></a>
 </article>
     </main>
     <footer class="footer">

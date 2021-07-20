@@ -176,6 +176,28 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】搜尋演算法—費氏搜尋法（Fibonacci Search）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/31 閱讀紀錄】
+搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
+依據資料量大小而言，搜尋可分為兩種
+ 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
+ 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
+Start 常見的搜尋演算法
+ 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  費氏搜尋演算法（Fibonacci Search） 費氏搜尋演算法又稱費伯納搜尋法，Fibonacci 還有其他譯名如斐波那契數列、費氏數列等等，該數列非常特別，對於大自然而言，整個自然界都存在這個的定律，它是一個神奇的黃金比例；對於數學而言，只不過是個公式—每個值是前兩項的總和，但是，每個值除以前一項的商數，都近似於 1.618…
+OK. 我們也不能偏離主題太遠，不過 1.618 這個數字會存放於筆者內心的深處，近期受疫情的肆虐，筆者拾起達文西密碼，拜本書之賜，重新認識斐波那契數列這個「上帝之數」。
+費氏級數如同先前所說，每個值都是前兩項的加總，故其公式為
+雖然每個值都是前兩項的加總，其中並不包含第零個元素和第一個元素，第零個元素定義為 0，第一個元素定義為 1，從這兩個元素開始，每個值才是前兩項的總和，故該數列會是 0,1,1,2,3,5,8,13,21,34,55,89,144...
+費氏樹列以遞迴程式碼表現方式為
+static int Fibonacci(int value) { if (value == 0) return 0; else if (value == 1) return 1; else return Fibonacci(value - 1) &#43; Fibonacci(value - 2); } 了解費氏級數後，就來認識費氏搜尋數，所謂費氏搜尋數就是以費氏數列的特性，所建立的二元數，其建立原則如下...</p>
+  </section>
+  <footer class="entry-footer">June 30, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—費氏搜尋法（Fibonacci Search）" href="https://fakestandard.github.io/algorithm/algorithm-21-fibonaccisearch/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】搜尋演算法—內插搜尋法（Interpolation Search）</h2>
   </header>
   <section class="entry-content">
@@ -357,30 +379,6 @@ Step 3 取得第四個元素 [50]，與上次結果進行比對，並插入適�
   </section>
   <footer class="entry-footer">June 7, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—插入排序法（Insert Sort）" href="https://fakestandard.github.io/algorithm/algorithm-12-insertsort/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—選擇排序法（Selection Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【4/29 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  選擇排序法（Selection Sort） 選擇排序法顧名思義是以選擇的概念來進行排序，也算是枚舉法的應用，原理為反覆從未排序的數列中取出最小元素，加入到另一個數列中，達到排序的結果。
-選擇排序可以由大到小排序，將最大值放到第一位置；或是由小到大排序，將最大值放到最後一個位置。
-透過選擇排序法，對 [30] [20] [40] [50] [10] 該數列進行排序，目標結果為由小到大排列
-Step 1 首先進行第一次掃描，找到數列中最小值，直接與第一個元素交換
-初始序列 [30] [20] [40] [50] [10]
-結果序列 [10] [20] [40] [50] [30]
-Step 2 進行第二次掃描，排除第一個元素，從第二個位置開始找起，找到最小值，與第二個位置元素交換，因為 [20] 是此次搜尋中最小值，其結果位置不變
-上次結果 [10] [20] [40] [50] [30]
-結果序列 [10] [20] [40] [50] [30]...</p>
-  </section>
-  <footer class="entry-footer">June 3, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—選擇排序法（Selection Sort）" href="https://fakestandard.github.io/algorithm/algorithm-11-selectionsort/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
