@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linked List Insert on How can I help</title>
+    <link>https://fakestandard.github.io/tags/linked-list-insert/</link>
+    <description>Recent content in Linked List Insert on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Sat, 24 Jul 2021 10:30:28 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/linked-list-insert/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】鏈結串列應用—單向串列插入節點與連結兩串列演算法</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-33-linkedlistinsertandconcatenation/</link>
+      <pubDate>Sat, 24 Jul 2021 10:30:28 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-33-linkedlistinsertandconcatenation/</guid>
+      <description>【5/27 閱讀紀錄】
+根據先前文章介紹的鏈結串列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 以單向的鏈結串列來說，欲插入新節點到現有的串列，有三種位置可以插入
+  插入於第一個節點之前
+新節點成為串列的首節點，作法是將新節點的指標指向串列原來的第一個節點，再把串列的指標首指向新節點
+  插入於最後一個節點之後
+新節點成為串列的末節點，只需要將串列的最後一個節點指標指向新節點，新節點再指向 NULL 即可
+  插入於串列中間的位置
+假設插入於 A.B 節點之間，將 A 節點的指標指向新節點，新節點的指標再指向 B 節點即可
+  實作串列插入節點程式碼，先建立節點類別，類別內包含資料欄與指標欄，每當新節點建立時，新節點資料欄必須帶有值，而指標欄先指向 NULL，等待後續將指標指向特定節點作業。
+/// &amp;lt;summary&amp;gt; /// 節點類別 /// &amp;lt;/summary&amp;gt; class Node { // 資料欄  public int data; // 指標欄  public Node next; /// &amp;lt;summary&amp;gt;  /// 帶有一個資料的建構子  /// &amp;lt;/summary&amp;gt;  /// &amp;lt;param name=&amp;#34;data&amp;#34;&amp;gt;&amp;lt;/param&amp;gt;  public Node(int data) { this.data = data; this.</description>
+    </item>
+    
+  </channel>
+</rss>

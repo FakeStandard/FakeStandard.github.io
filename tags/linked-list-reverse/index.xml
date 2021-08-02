@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linked List Reverse on How can I help</title>
+    <link>https://fakestandard.github.io/tags/linked-list-reverse/</link>
+    <description>Recent content in Linked List Reverse on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Thu, 29 Jul 2021 14:03:26 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/linked-list-reverse/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】鏈結串列應用—單向串列反轉演算法</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-35-linkedlistreverse/</link>
+      <pubDate>Thu, 29 Jul 2021 14:03:26 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-35-linkedlistreverse/</guid>
+      <description>【5/27 閱讀紀錄】
+根據先前文章介紹的鏈結串列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 學會串列插入、刪除和連結的基本功之後，這篇要來思考如何反轉串列？反轉串列顧名思義就是將串列內的元素都顛倒過來，最後形成頂端節點變成末端節點，而末端節點成為頂端節點，但是串列指標只能知道下一個節點的位置，無法得知上一個節點，那該如何做？這就需要一點小技巧，直接實作程式碼
+/// &amp;lt;summary&amp;gt; /// 節點類別 /// &amp;lt;/summary&amp;gt; class Node { public int data; public Node next; public Node(int data) { this.data = data; this.next = null; } } /// &amp;lt;summary&amp;gt; /// 鏈結串列類別 /// &amp;lt;/summary&amp;gt; class LinkedList { public Node first; public Node last; public bool IsEmpty() { return first == null; } public void Print() { Node current = first; while (current != null) { Write($&amp;#34;[{current.</description>
+    </item>
+    
+  </channel>
+</rss>

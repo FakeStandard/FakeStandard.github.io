@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Linked List Delete on How can I help</title>
+    <link>https://fakestandard.github.io/tags/linked-list-delete/</link>
+    <description>Recent content in Linked List Delete on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 26 Jul 2021 13:11:33 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/linked-list-delete/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】鏈結串列應用—單向串列刪除節點演算法</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-34-linkedlistdelete/</link>
+      <pubDate>Mon, 26 Jul 2021 13:11:33 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-34-linkedlistdelete/</guid>
+      <description>【5/27 閱讀紀錄】
+根據先前文章介紹的鏈結串列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 以單向的鏈結串列來說，欲串列中的節點，可刪除的位置與插入節點相同會有三種
+  刪除串列的第一個節點
+第一個節點刪除後，第二個節點會成為頂端節點，只需將頂端節點指給第二個節點
+  刪除串列的最後一個節點
+最後一個節點刪除後，倒數第二個節點會成為末端節點，只需將末端節點指標只給倒數第二個節點
+  從串列中刪除其中一個中間節點
+將欲刪除節點的前一個節點指標，指給欲刪除節點的下一個節點即可
+  實作串列刪除節點程式碼，先建立節點類別，類別內包含資料欄與指標欄，每當新節點建立時，新節點資料欄必須帶有值，而指標欄先指向 NULL，等待後續將指標指向特定節點作業。
+/// &amp;lt;summary&amp;gt; /// 節點類別 /// &amp;lt;/summary&amp;gt; class Node { // 資料欄  public int data; // 指標欄  public Node next; /// &amp;lt;summary&amp;gt;  /// 帶有一個資料的建構子  /// &amp;lt;/summary&amp;gt;  /// &amp;lt;param name=&amp;#34;data&amp;#34;&amp;gt;&amp;lt;/param&amp;gt;  public Node(int data) { this.data = data; this.next = null; } } 建立鏈結串列類別，串列類別需包含頂端節點和末端節點屬性，類別內再建立一個輸出當前串列的方法，以及判斷當前陣列是否為空，若沒有頂端節點則該串列為空。另外再建立兩個方法，一個是 Insert 用於插入新節點，一個是 Delete 用於刪除節點，下一步將實作這兩個方法。</description>
+    </item>
+    
+  </channel>
+</rss>

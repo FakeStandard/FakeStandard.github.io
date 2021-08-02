@@ -2,34 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://fakestandard.github.io/tags/algorithm/</loc>
-    <lastmod>2021-07-20T12:15:10+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/categories/algorithm/</loc>
-    <lastmod>2021-07-20T12:15:10+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/algorithm/</loc>
-    <lastmod>2021-07-20T12:15:10+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/array/</loc>
-    <lastmod>2021-07-20T12:15:10+08:00</lastmod>
-  </url><url>
     <loc>https://fakestandard.github.io/categories/</loc>
-    <lastmod>2021-07-20T12:15:10+08:00</lastmod>
+    <lastmod>2021-07-31T16:27:02+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/tags/csharp/</loc>
-    <lastmod>2021-07-20T12:15:10+08:00</lastmod>
+    <loc>https://fakestandard.github.io/tags/collection/</loc>
+    <lastmod>2021-07-31T16:27:02+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/generic/</loc>
+    <lastmod>2021-07-31T16:27:02+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/</loc>
-    <lastmod>2021-07-20T12:15:10+08:00</lastmod>
+    <lastmod>2021-07-31T16:27:02+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/oop/</loc>
+    <lastmod>2021-07-31T16:27:02+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/oop/</loc>
+    <lastmod>2021-07-31T16:27:02+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/post/</loc>
+    <lastmod>2021-07-31T16:27:02+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/</loc>
+    <lastmod>2021-07-31T16:27:02+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/post/oop/oop-5-collection-and-generic/</loc>
+    <lastmod>2021-07-31T16:27:02+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/algorithm/</loc>
+    <lastmod>2021-07-29T14:03:26+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/algorithm/</loc>
+    <lastmod>2021-07-29T14:03:26+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/</loc>
+    <lastmod>2021-07-29T14:03:26+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/csharp/</loc>
+    <lastmod>2021-07-29T14:03:26+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/linked-list/</loc>
+    <lastmod>2021-07-29T14:03:26+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/linked-list-reverse/</loc>
+    <lastmod>2021-07-29T14:03:26+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/algorithm-35-linkedlistreverse/</loc>
+    <lastmod>2021-07-29T14:03:26+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/linked-list-delete/</loc>
+    <lastmod>2021-07-26T13:11:33+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/algorithm-34-linkedlistdelete/</loc>
+    <lastmod>2021-07-26T13:11:33+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/linked-list-concatenation/</loc>
+    <lastmod>2021-07-24T10:30:28+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/linked-list-insert/</loc>
+    <lastmod>2021-07-24T10:30:28+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/algorithm-33-linkedlistinsertandconcatenation/</loc>
+    <lastmod>2021-07-24T10:30:28+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/array/</loc>
+    <lastmod>2021-07-22T09:11:29+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/polynomial/</loc>
+    <lastmod>2021-07-22T09:11:29+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/algorithm-32-polynomial/</loc>
+    <lastmod>2021-07-22T09:11:29+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/matrix/</loc>
     <lastmod>2021-07-20T12:15:10+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/sparse-matrix/</loc>
-    <lastmod>2021-07-20T12:15:10+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/</loc>
     <lastmod>2021-07-20T12:15:10+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/algorithm/algorithm-31-matrixsparse/</loc>
@@ -81,15 +129,6 @@
     <lastmod>2021-07-08T15:24:41+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/interface/</loc>
-    <lastmod>2021-07-08T15:24:41+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/oop/</loc>
-    <lastmod>2021-07-08T15:24:41+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/categories/oop/</loc>
-    <lastmod>2021-07-08T15:24:41+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/post/</loc>
     <lastmod>2021-07-08T15:24:41+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/refactoring/</loc>
@@ -388,9 +427,6 @@
   </url><url>
     <loc>https://fakestandard.github.io/post/dotnet/dotnet-5-closedxmlsimple/</loc>
     <lastmod>2021-05-08T10:28:02+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/linked-list/</loc>
-    <lastmod>2021-04-30T16:09:07+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/algorithm/algorithm-4-linkedlist/</loc>
     <lastmod>2021-04-30T16:09:07+08:00</lastmod>

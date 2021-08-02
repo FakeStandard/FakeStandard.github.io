@@ -122,7 +122,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -158,6 +158,84 @@
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
   <h1>Algorithm</h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】鏈結串列應用—單向串列反轉演算法</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/27 閱讀紀錄】
+根據先前文章介紹的鏈結串列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 學會串列插入、刪除和連結的基本功之後，這篇要來思考如何反轉串列？反轉串列顧名思義就是將串列內的元素都顛倒過來，最後形成頂端節點變成末端節點，而末端節點成為頂端節點，但是串列指標只能知道下一個節點的位置，無法得知上一個節點，那該如何做？這就需要一點小技巧，直接實作程式碼
+/// &lt;summary&gt; /// 節點類別 /// &lt;/summary&gt; class Node { public int data; public Node next; public Node(int data) { this.data = data; this.next = null; } } /// &lt;summary&gt; /// 鏈結串列類別 /// &lt;/summary&gt; class LinkedList { public Node first; public Node last; public bool IsEmpty() { return first == null; } public void Print() { Node current = first; while (current != null) { Write($&#34;[{current....</p>
+  </section>
+  <footer class="entry-footer">July 29, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】鏈結串列應用—單向串列反轉演算法" href="https://fakestandard.github.io/algorithm/algorithm-35-linkedlistreverse/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】鏈結串列應用—單向串列刪除節點演算法</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/27 閱讀紀錄】
+根據先前文章介紹的鏈結串列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 以單向的鏈結串列來說，欲串列中的節點，可刪除的位置與插入節點相同會有三種
+  刪除串列的第一個節點
+第一個節點刪除後，第二個節點會成為頂端節點，只需將頂端節點指給第二個節點
+  刪除串列的最後一個節點
+最後一個節點刪除後，倒數第二個節點會成為末端節點，只需將末端節點指標只給倒數第二個節點
+  從串列中刪除其中一個中間節點
+將欲刪除節點的前一個節點指標，指給欲刪除節點的下一個節點即可
+  實作串列刪除節點程式碼，先建立節點類別，類別內包含資料欄與指標欄，每當新節點建立時，新節點資料欄必須帶有值，而指標欄先指向 NULL，等待後續將指標指向特定節點作業。
+/// &lt;summary&gt; /// 節點類別 /// &lt;/summary&gt; class Node { // 資料欄  public int data; // 指標欄  public Node next; /// &lt;summary&gt;  /// 帶有一個資料的建構子  /// &lt;/summary&gt;  /// &lt;param name=&#34;data&#34;&gt;&lt;/param&gt;  public Node(int data) { this.data = data; this.next = null; } } 建立鏈結串列類別，串列類別需包含頂端節點和末端節點屬性，類別內再建立一個輸出當前串列的方法，以及判斷當前陣列是否為空，若沒有頂端節點則該串列為空。另外再建立兩個方法，一個是 Insert 用於插入新節點，一個是 Delete 用於刪除節點，下一步將實作這兩個方法。...</p>
+  </section>
+  <footer class="entry-footer">July 26, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】鏈結串列應用—單向串列刪除節點演算法" href="https://fakestandard.github.io/algorithm/algorithm-34-linkedlistdelete/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】鏈結串列應用—單向串列插入節點與連結兩串列演算法</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/27 閱讀紀錄】
+根據先前文章介紹的鏈結串列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 以單向的鏈結串列來說，欲插入新節點到現有的串列，有三種位置可以插入
+  插入於第一個節點之前
+新節點成為串列的首節點，作法是將新節點的指標指向串列原來的第一個節點，再把串列的指標首指向新節點
+  插入於最後一個節點之後
+新節點成為串列的末節點，只需要將串列的最後一個節點指標指向新節點，新節點再指向 NULL 即可
+  插入於串列中間的位置
+假設插入於 A.B 節點之間，將 A 節點的指標指向新節點，新節點的指標再指向 B 節點即可
+  實作串列插入節點程式碼，先建立節點類別，類別內包含資料欄與指標欄，每當新節點建立時，新節點資料欄必須帶有值，而指標欄先指向 NULL，等待後續將指標指向特定節點作業。
+/// &lt;summary&gt; /// 節點類別 /// &lt;/summary&gt; class Node { // 資料欄  public int data; // 指標欄  public Node next; /// &lt;summary&gt;  /// 帶有一個資料的建構子  /// &lt;/summary&gt;  /// &lt;param name=&#34;data&#34;&gt;&lt;/param&gt;  public Node(int data) { this.data = data; this....</p>
+  </section>
+  <footer class="entry-footer">July 24, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】鏈結串列應用—單向串列插入節點與連結兩串列演算法" href="https://fakestandard.github.io/algorithm/algorithm-33-linkedlistinsertandconcatenation/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】陣列應用—多項式陣列表示法</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/26 閱讀紀錄】
+根據先前文章介紹的陣列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 多項式在數學中是相當重要的表現方式，先複習一下多項式
+以上面的公式來看，我們可以稱 P(x) 是一個 n 次多項式，n 代表該多項式中最大的指數。那麼如何用資料結構的陣列來表示多項式？其實很簡單，方法有兩種
+  使用一個 n&#43;2 大小的一維陣列來存放多項式相關的數值，首先陣列的第一個位置儲存 n，後續的位置儲存各指數相對應的係數。舉例 以上述公式來看，n 是最大指數 4，故陣列大小 n&#43;2 是 6，陣列第一個位置儲存 4，往後陸續儲存相對應的係數 A = { 4, 3, 5, 0, 6, 3 }
+ 此種方法的優點是在運算過程較方便設計，缺點則是可能會造成空間浪費，在多項式的係數多數為零的情況下，則明顯有空間浪費的疑慮，如下公式。    使用 2m&#43;1 大小的一維陣列來存放指數和係數，m 表示該多項式不為零的項目，首先陣列第一個位置儲存 m，後續位置依序存放項目相對應的係數和指數，例如 以上述公式來看，m 為 4，故陣列大小 2m&#43;1 為 9，將第一個位置存放 4，接著依序存放相對應係數和指數 A = { 9, 3, 4, 5, 3, 6, 1, 3, 0 }
+ 此方法的優點改善了不必要的記憶體空間浪費，缺點則是設計演算法時會較為複雜，優點與缺點則是與第一種方式完全相反。
+   接著使用上述兩種方法來設計兩多項式的加法運算，多項式分別為...</p>
+  </section>
+  <footer class="entry-footer">July 22, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】陣列應用—多項式陣列表示法" href="https://fakestandard.github.io/algorithm/algorithm-32-polynomial/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
@@ -267,87 +345,6 @@ static int front = -1; static int rear = -1; static int max = 10; static int val
   </section>
   <footer class="entry-footer">July 11, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】佇列應用—陣列實作佇列" href="https://fakestandard.github.io/algorithm/algorithm-26-queuearray/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】堆疊應用—八皇后經典謎題</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/16 閱讀紀錄】
-根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
-程式碼已放上 GitHub
-Start 八皇后謎題也是經典中的經典，該問題以西洋棋作為背景，如何在 8x8 的棋盤上擺放八個皇后，使任一皇后都無法吃掉其他皇后，屬於堆疊常見的應用實例。
-西洋棋皇后擺放的規則為：因皇后可在一步內，不限格數的直行、橫行或斜線前行，若同一條線上同時有兩個皇后，則舊皇后可吃掉新來皇后，所以，皇后間不可處於同一個縱向、橫向或斜線（跟數獨的概念相似）
-首先會先放置一個皇后，接著依據第一個皇后的位置，在不被吃掉的情況下，繼續放置第二個皇后、第三個皇后…直到放置某個新皇后時，都會被先前的皇后吃掉，此時，就必須變更前一個皇后放置的位置，在不被先前的皇后吃掉之情形下，找到第二個可以放置的位置，在繼續擺放新皇后；若在前一個擺放的皇后，也沒有新的位置可以擺放（都會被吃掉的情況），就在將前前皇后拿起，尋找新的可以擺放的位置，以此類推。
-由上述可知，在放置新皇后或是拿起舊皇后的動作，是以堆疊的概念進行，而當新皇后無法擺放時，將舊皇后拿起尋找新的位置，是以回溯的概念進行。
-本書程式碼範例
-class Program { static void Main(string[] args) { number = 0; DecidePosition(0); ReadKey(); Console.ReadLine(); } static int TRUE = 1, FALSE = 0, EIGHT = 8; // 存放八個皇后的列位置  static int[] queen = new int[EIGHT]; // 計算共有幾組解答  static int number = 0; /// &lt;summary&gt;  /// 按下 Enter 鍵要執行方法  /// &lt;/summary&gt;  public static void PressEnter() { char ch; Write(&#34;\n\n&#34;); Write(&#34;按下 Enter 鍵繼續....</p>
-  </section>
-  <footer class="entry-footer">July 10, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—八皇后經典謎題" href="https://fakestandard.github.io/algorithm/algorithm-25-eightqueens/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】堆疊應用—經典河內塔</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/16 閱讀紀錄】
-根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
-程式碼已放上 GitHub
-Start 這篇紀錄經典的智力遊戲—河內塔，使用遞迴式和堆疊概念來解決問題的經典範例。
-河內塔的問題描述如下：在古老的印度神廟中，有三個木樁，在第一個木樁上，有數量和大小不同的圓盤，由大到小堆疊，最大的圓盤放在最下面，最小的圓盤在最上面，天神希望將第一個木樁的圓盤，全部移動到第三個木樁。
-搬動時必須要遵守規則下列規則
- 直徑較小的圓盤只能置於直徑大的圓盤上，比如直徑三的圓盤可以放置在直徑四或直徑五的上方 圓盤可以任意由一個木樁移動到其他木樁上，共有三個木樁可使用 每次只能移動一個圓盤，只能從最上方的圓盤開始移動（與堆疊相同）  【解析】
-假設 n 為圓盤數量，逐步解析情境
-  n = 1
-當圓盤只有一個時，直接從第一個木樁移動到地三個木樁，完成天神願望。
-  n = 2
-當圓盤為兩個時，由上往下數，將第一個圓盤移動到第二個木樁，接著將第二個圓盤移動到第三個木樁，第一個圓盤從第二個木樁移動到第三個木樁，完成天神願望。
-在這裡可以得到一個小結論
- 圓盤移動的次數為 (2^2)-1 = 3 次，即 2 的平方-1 次 圓盤移動的次序為 1→2→1 木樁移動的次序為 1→2、1→3、2→3    n = 3
-當圓盤為三個時，由上往下數
- 第一個圓盤移動到第三個木樁 第二個圓盤移動到第二個木樁 第一個圓盤從第三個木樁移至第二個木樁，此時第二個木樁有兩個圓盤 第三個圓盤移動到第三個木樁 第一個圓盤從第二個木樁移動到第一個木樁 第二個圓盤從第二個木樁移動到第三個木樁 最後，將第一個圓盤從第一個木樁移動到第三個木樁  完成天神願望（懶得畫圖，請讀者發揮想像力…）
-此情境得出以下結論
- 圓盤移動的次數為 2^3-1 = 7 次，即 2 的次方-1 次 圓盤移動的次序為 1→2→1→3→1→2→1 木樁移動的次序為 1→3、1→2、3→2、1→3、2→1、2→3、1→3    【結論】...</p>
-  </section>
-  <footer class="entry-footer">July 7, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—經典河內塔" href="https://fakestandard.github.io/algorithm/algorithm-24-towerofhanoi/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】堆疊應用—串列實作堆疊</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/17 閱讀紀錄】
-根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
-程式碼已放上 GitHub
-Start 使用串列製作堆疊的好處是可以隨時動態改變串列長度，缺點則是設計較為複雜。相較於使用陣列製作堆疊設計上較為簡易，缺點則是陣列大小需事先宣告，無法動態改變。
-利用串列結構模擬堆疊工作運算，使用迴圈控制推入或取出的元素，其中需包含推入（push）和取出（pop）函數，最後要輸出堆疊中所有元素。
-宣告一個鏈結串列節點的類別
-/// &lt;summary&gt; /// 鏈結串列節點的類別 /// &lt;/summary&gt; class Node { public int data; public Node next; public Node(int data) { this.data = data; this.next = null; } } 宣告串列模擬堆疊的類別，其中包含推入和取出的方法
-/// &lt;summary&gt; /// 以串列模擬的堆疊 /// &lt;/summary&gt; class StackByLink { /// &lt;summary&gt;  /// 指向堆疊頂端的指標  /// &lt;/summary&gt;  public Node front; /// &lt;summary&gt;  /// 指向堆疊末端的指標  /// &lt;/summary&gt;  public Node rear; /// &lt;summary&gt;  /// 判斷堆別是否為空的方法  /// &lt;/summary&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool IsEmpty() { return front == null; } /// &lt;summary&gt;  /// 輸出堆疊內容  /// &lt;/summary&gt;  public void Display() { Node current = front; while (current !...</p>
-  </section>
-  <footer class="entry-footer">July 5, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—串列實作堆疊" href="https://fakestandard.github.io/algorithm/algorithm-23-stacklist/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】堆疊應用—陣列實作堆疊</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/16 閱讀紀錄】
-根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
-程式碼已放上 GitHub
-Start 利用陣列結構模擬堆疊工作運算，且使用迴圈控制推入與取出的元素，其中需包含推入（push）和取出（pop）函數，最後要輸出堆疊中所有元素。
-建立堆疊類別
-/// &lt;summary&gt; /// 以陣列模擬堆疊的類別 /// &lt;/summary&gt; class StackArray { // 宣告陣列  private int[] stack; // 指向堆疊頂端的索引  private int top; /// &lt;summary&gt;  /// 建構子  /// &lt;/summary&gt;  /// &lt;param name=&#34;stack_size&#34;&gt;堆疊大小&lt;/param&gt;  public StackArray(int size) { // 建立陣列  stack = new int[size]; top = -1; } /// &lt;summary&gt;  /// 判斷堆疊是否為空  /// &lt;/summary&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool Empty() { if (top == -1) return true; else return false; } /// &lt;summary&gt;  /// 推入資料到頂端的方法  /// &lt;/summary&gt;  /// &lt;param name=&#34;data&#34;&gt;&lt;/param&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool Push(int data) { // 判斷堆疊頂端的索引是否大於陣列大小  if (top &gt;= stack....</p>
-  </section>
-  <footer class="entry-footer">July 2, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—陣列實作堆疊" href="https://fakestandard.github.io/algorithm/algorithm-22-stackarray/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

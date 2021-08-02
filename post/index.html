@@ -137,8 +137,8 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
-                    <span>Archive</span>
+                <a href="https://fakestandard.github.io/post/" title="Archive">
+                    <span class="active">Archive</span>
                 </a>
             </li>
             <li>
@@ -173,6 +173,23 @@
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a></div>
   <h1>Posts</h1>
 </header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>【OOP】集合與泛型（Collection and Generic）</h2>
+  </header>
+  <section class="entry-content">
+    <p>Start 接續先前物件導向的紀錄，此篇會著重於
+ 集合（Collection） 泛型（Generic）  集合（Collection） 在介紹三大特性時使用CareerBasic類別的物件陣列，且設置陣列長度為 6，雖然陣列的優點，在記憶體中連續儲存，可以快速地走訪元素，但缺點就是設置長度，必須先知道需要設置多少的長度才夠使用，但若保險的使用把長度設的過大，又會造成記憶體的浪費，設的過小又造成溢出，還有陣列在兩元素間加入元素也較困難。
+所以.Net Framework提供用於儲存和檢索專用的類別，統稱為集合。這些類別提供對堆疊、佇列、列比和雜湊表的支持，大多數集合實現了相同的介面：IList，IList介面定義了許多方法，讓類別去實現。
+馬上來看最常使用的 ArrayList，命名空間為 System.Collections;
+// 宣告集合，也可以直接宣告 ArrayList career; IList career; // 實體化集合物件，無須指定大小 career = new ArrayList(); // 調用 IList 的 Add 方法 career.Add(new Swordman(&#34;離人劍&#34;)); career.Add(new Thief()); career.Add(new Acolyte()); career.Add(new Acolyte(&#34;補不完&#34;)); // 取得集合內元素個數 Console.WriteLine(career.Count.ToString()); // 走訪集合 foreach (CareerBasic item in career) { Console.WriteLine(item.PassiveSkill()); } Console.WriteLine(&#34;=============================&#34;); // 移除集合內指定元素 career.RemoveAt(3); // 再走訪一次 foreach (CareerBasic item in career) { Console.WriteLine(item.PassiveSkill()); } 在調用集合的Add方法時，參數的型別是object，不像陣列已經預先指定資料類型，而在這個範例裡類別本身就是object，假如是其他型別就會有個效能問題。
+ArrayList存放值類型的資料時，需要將值類型裝箱為Object物件，使用集合元素時還要執行拆箱，這就帶來了效能耗損，因為在裝箱和拆箱的過程中需要進行大量的運算，當使用集合時也消耗了資源和時間。
+裝箱（boxing）—把值類型打包到Object參考類型的一個實體中...</p>
+  </section>
+  <footer class="entry-footer">July 31, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【OOP】集合與泛型（Collection and Generic）" href="https://fakestandard.github.io/post/oop/oop-5-collection-and-generic/"></a>
+</article>
 
 <article class="post-entry"> 
   <header class="entry-header">
@@ -329,23 +346,6 @@ Step 4 執行查詢指令查看結果訊息
   </section>
   <footer class="entry-footer">May 14, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【MSSQL】顯示 SQL 執行指令的時間" href="https://fakestandard.github.io/post/mssql/mssql-2-setstatisticstime/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>【.NET】使用 NPOI 匯入 Excel</h2>
-  </header>
-  <section class="entry-content">
-    <p>在網站開發時，總會遇到匯出 EXCEL 的需求，除了匯出之外，偶爾也會遇到匯入 EXCEL 這種懶人需求。
-為何是懶人需求呢？通常使用者可以透過 UI 介面來維護資料，包括 CRUD 等功能，所以 Excel 資料會先透過前端介面在將資料傳遞到資料庫儲存。而匯入的方式，可以一次傳遞多筆資料，並且直達資料庫，過程中不需要使用 UI 介面逐筆輸入，非常省時又省力。
-註：此篇使用 ASP.NET Core 5 實作
-Start 首先到 NuGet 下載 NPOI 套件並安裝到專案中
-建立 ImportController.cs
-public class ImportController : Controller { public IActionResult Index() { return View(); } } 建立 Index.cshtml
-&lt;h2&gt;Import&lt;/h2&gt; @using (Html.BeginForm(&#34;Upload&#34;, &#34;Import&#34;, FormMethod.Post, new { enctype = &#34;multipart/form-data&#34; })) { &lt;input type=&#34;file&#34; class=&#34;form-control&#34; name=&#34;file&#34; /&gt; &lt;button type=&#34;submit&#34; class=&#34;btn btn-primary&#34;&gt;Upload&lt;/button&gt; } 在 Controller 中新增一個接收 HttpPost 的 ActionResult Upload，除了返回頁面之外，沒有任何代碼。...</p>
-  </section>
-  <footer class="entry-footer">May 11, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET】使用 NPOI 匯入 Excel" href="https://fakestandard.github.io/post/dotnet/dotnet-7-npoi-import/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

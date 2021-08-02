@@ -122,7 +122,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -158,6 +158,76 @@
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
   <h1>CSharp</h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【OOP】物件導向特性—封裝、繼承、多型</h2>
+  </header>
+  <section class="entry-content">
+    <p>Start 說到物件導向就不能不知道OOP的三大特性—封裝、繼承、多型。
+ 建議閱讀本篇前先閱讀前篇「基礎概念」，在實例及解說上，若前篇已講解過，則此篇不再重複說明
+ 封裝（Encapsulation） 每個物件都包含進行操作時所需要的所有資訊，物件不必依賴其他物件來完成自己的操作，將方法、欄位、屬性和邏輯包裝在類別內，透過類別的實體來實現，外部物件無法了解物件的內部細節，有種隱藏起來的概念，外部對資料的操作也只能透過已經定義的介面，用一段簡白的話來說，對事只了解他的外在，無需理解內部構造，即為封裝。
+封裝的好處
+ 良好的封裝能減少耦合（Coupling） 可自由修改類別內部的實現 類別具有清晰的對外界面  所以在設計 Swordman 類別時即為封裝，將自己的屬性及方法包裝起來，供給自己使用，不依賴他人。
+static void Main(string[] args) { Swordman swordman = new Swordman(); } /// &lt;summary&gt; /// 封裝類別 /// &lt;/summary&gt; class Swordman { // Field  // ...  // Property  // ...  // Method  // ... } 繼承（Inheritance） 繼承很字面的意思，那有幾個特性須知道，子類別繼承父類別時，子類別擁有父類別 pirvate 以外的屬性和方法，子類別也可擁有自己的屬性和方法。最後，子類別可以用自己的方式實現父類別的功能，即方法重載。
+原本有 Swordman 的類別，現在增加一個 Thief 類別，與 Swordman 擁有相同的屬性和方法。
+/// &lt;summary&gt; /// 盜賊類別 /// &lt;/summary&gt; class Thief { private string name = string....</p>
+  </section>
+  <footer class="entry-footer">June 22, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【OOP】物件導向特性—封裝、繼承、多型" href="https://fakestandard.github.io/post/oop/oop-2-oop-feature/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】排序演算法—堆積樹排序法（Heap Tree Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/18 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  堆積樹排序法（Heap Tree Sort） 堆積樹排序法是選擇排序法的改良版，它可以減少選擇排序法的排序次數，進而減少排序時間。樹是一種資料結構，而堆積樹是一顆二元樹，二元樹的定義的定義為每個父節點最多只能有兩個子節點，而堆積樹是一種特殊的二元樹，父節點若小於子節點，稱為最小堆積（Min heap），父節點偌大於子節點，稱為最大堆積（Max heap）。
+假設有一陣列，陣列資料分別為
+                索引 A[0] A[1] A[2] A[3] A[4] A[5] A[6] A[7]   數值 69 81 30 38 9 2 47 61    將此陣列用二元樹表示，每個節點第一個數字為索引，第二個為數值...</p>
+  </section>
+  <footer class="entry-footer">June 21, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—堆積樹排序法（Heap Tree Sort）" href="https://fakestandard.github.io/algorithm/algorithm-17-heaptreesort/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】排序演算法—基數排序法（Radix Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/20 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  基數排序法（Radix Sort） 基數排序法與其他的排序法不太相同，不需要進行比較交換的動作，它是透過分配的方式進行排序。主要的分配的方向有兩種，其一是有效鍵優先（Most Significant Digit First, MSD），以及無效鍵優先（Least Significant Digit First, LSD），MSD 是從最左邊的位數開始比較，LSD 則是從最右邊開始比較，該怎麼說呢？馬上來看範例
+LSD 以 LSD 方式對一數列 59 95 7 34 60 168 171 259 372 45 進行比較
+Step 1 將每個元素依照「個位數」放到相對應的串列中
+                 0 1 2 3 4 5 6 7 8 9   60 171 372  34 95  7 168 59        45    259    將分配的結果合併 60 171 372 34 95 45 7 168 59 259...</p>
+  </section>
+  <footer class="entry-footer">June 18, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—基數排序法（Radix Sort）" href="https://fakestandard.github.io/algorithm/algorithm-16-radixsort/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【.NET Core】組態設定 Configuration</h2>
+  </header>
+  <section class="entry-content">
+    <p>【ASP.NET Core 5】
+Start .NET Framework 的組態通常在 app.config 或 web.config 中設定，在 .NET Core 不再使用過往讀取單一檔案方法，它使用一個或多個 Configuration Provider 來提供多種設定組態的方式。
+預設組態 應用程式在 Program.cs 預設產生 Host.CreateDefaultBuilder(args) 程式碼，CreateDefaultBuilder 會依照下列 Provider 的順序提供應用程式預設組態
+ ChainedConfigurationProvider appsettings.json appsettings.Environment.json Environment Variables configuration provider Command-line configuration provider  使用下列程式碼，依新增順序來顯示 Configuration Provider
+private IConfigurationRoot ConfigRoot; public HomeController(IConfiguration configRoot) { ConfigRoot = (IConfigurationRoot)configRoot; } public ContentResult OnGet() { string str = &#34;&#34;; foreach (var provider in ConfigRoot.Providers.ToList()) { str &#43;= provider.ToString() &#43; &#34;\n&#34;; } return Content(str); } 結果與前述說明的順序相同...</p>
+  </section>
+  <footer class="entry-footer">June 17, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET Core】組態設定 Configuration" href="https://fakestandard.github.io/netcore/netcore5-6-configuration/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
@@ -275,89 +345,6 @@ Step 3 取得第四個元素 [50]，與上次結果進行比對，並插入適�
   </section>
   <footer class="entry-footer">June 7, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—插入排序法（Insert Sort）" href="https://fakestandard.github.io/algorithm/algorithm-12-insertsort/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET Core】靜態檔案 Static Files</h2>
-  </header>
-  <section class="entry-content">
-    <p>【ASP.NET Core 5】
-靜態檔案是 HTML、css、image、js 等資源檔案，過去 .NET Framework 可直接被存取，在 ASP.NET Core 中，已不能直接被瀏覽，對於存取有特定的限制。
-Start 首先，先了解 Content root 以及 Web root，硬翻成中文為內容根目錄 &amp; Web 根目錄。
-Content root（內容根目錄） Content root 預設為專案的根目錄，包含
- 裝載應用程式的可執行檔 .exe 組成應用程式的已編譯元件 .dll 應用程式所使用的內容檔案  Razor(.cshtml、.razor) 設定檔(.json、.xml) 資料檔案(.db)   Web 根目錄(Web root)  Web root（Web 根目錄） Web root 為公共靜態資源的基本路徑，預設路徑為 {content root}/wwwroot
- 樣式 .css JavaScript .js 影像檔 .png、.jpg  建立一個專案，在方案總管中找到 wwwroot，可看到預設已建立 css、js、lib 資料夾，使用路徑 https://localhost:5000/css/site.css 嘗試讀取 ~/css/site.css 該檔案， 可直接瀏覽檔案內容。
-測試自行建立的資料夾是否能存取，在 wwwroot 目錄下建立 images 資料夾以自定義靜態檔案路徑，並放置一張影像檔在該目錄下，嘗試使用 URL https://localhost:5000/images/MyImages....</p>
-  </section>
-  <footer class="entry-footer">June 6, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET Core】靜態檔案 Static Files" href="https://fakestandard.github.io/netcore/netcore5-4-staticfiles/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—選擇排序法（Selection Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【4/29 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  選擇排序法（Selection Sort） 選擇排序法顧名思義是以選擇的概念來進行排序，也算是枚舉法的應用，原理為反覆從未排序的數列中取出最小元素，加入到另一個數列中，達到排序的結果。
-選擇排序可以由大到小排序，將最大值放到第一位置；或是由小到大排序，將最大值放到最後一個位置。
-透過選擇排序法，對 [30] [20] [40] [50] [10] 該數列進行排序，目標結果為由小到大排列
-Step 1 首先進行第一次掃描，找到數列中最小值，直接與第一個元素交換
-初始序列 [30] [20] [40] [50] [10]
-結果序列 [10] [20] [40] [50] [30]
-Step 2 進行第二次掃描，排除第一個元素，從第二個位置開始找起，找到最小值，與第二個位置元素交換，因為 [20] 是此次搜尋中最小值，其結果位置不變
-上次結果 [10] [20] [40] [50] [30]
-結果序列 [10] [20] [40] [50] [30]...</p>
-  </section>
-  <footer class="entry-footer">June 3, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—選擇排序法（Selection Sort）" href="https://fakestandard.github.io/algorithm/algorithm-11-selectionsort/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—氣泡排序法（Bubble Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【4/29 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  氣泡排序法（Bubble Sort） 氣泡排序法可稱為交換排序法，其構思為觀察水中氣泡變化而成，甚至可稱為冒泡排序等類似名稱。
-其原理為從第一個元素開始，比較相鄰元素的大小，如大小順序有誤，就將其對調，再與下一個元素進行比較，彷彿氣泡逐漸冒出水面上的概念，使用該方法掃描過一次後，就可以確保最後一個元素是位於正確的位置，進行第二次掃描，就能確認第二個元素的正確位置，逐步進行直到所有元素排序完成。
-使用白話一點的說法，逐一拆解每一個步驟，首先有一個序列，初始的狀態和順序為 [30] [20] [40] [50] [10]，目標將此序列由小到大排列，變成 [10] [20] [30] [40] [50]
-我們透過氣泡排序法進行排序，步驟解析如下
-Step 1 首先進行第一次掃描，會先拿到第一個元素 [30]，接著與相鄰的元素 [20] 進行比較，如果第二個元素小於地一個元素，就進行位置交換。
-初始序列 [30] [20] [40] [50] [10]
-結果序列 [20] [30] [40] [50] [10]
-Step 2 依然拿著 [30] 這個元素，繼續與相鄰的元素比較，因為該元素已經調換到第二個元素的位置，所以下一個相鄰的元素會是 [40]，接著進行比較，經比較後兩個元素順序不變，依然維持下列結果
-結果序列 [20] [30] [40] [50] [10]...</p>
-  </section>
-  <footer class="entry-footer">June 1, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—氣泡排序法（Bubble Sort）" href="https://fakestandard.github.io/algorithm/algorithm-10-bubblesort/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET Core】中介軟體 Middleware</h2>
-  </header>
-  <section class="entry-content">
-    <p>【ASP.NET Core 5】
-ASP.NET Core 引入一個新概念稱為中介軟體（Middleware），Middleware 會在 ASP.NET Core 應用程式中的每個請求上執行。
-過去 ASP.NET 中 HttpHandlers 和 HttpModules 在 ASP.NET Core 已不復存在，更準確地說，它們已成為 Request Pipeline 的一部分，Middleware 類似於 HttpHandlers、HttpModules，都需要在每個請求中進行配置及執行。
-Start Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以選擇是否將請求傳遞到管線中的下一個組件，也可以在下一個組件中的前後執行工作。
-通常 ASP.NET Core Web 應用程式中有許多 Middleware，它可以是 Framework provided 的中介軟體，也可以通過 NuGet 添加，甚至可以自行定義 Middleware。我們可以在請求管道中設置中介軟體的執行順序，每個中介軟體都會新增或修改 Http 請求，且可選擇將控制權傳遞給下一個中介軟體。
-請求委派用於建構請求管道，請求委派會處理每個 Http 請求。該句的原文是這樣
- Request delegates are used to build the request pipeline. The request delegates handle each HTTP request.
- Request delegates 使用 Run、Map 和 Use 三種擴充方法來配置。單個請求委派可以指定嵌入式（in-line）匿名方法，稱為嵌入式中介軟體，也可以在重複使用的類別中進行定義。這些可重用的類別和嵌入式匿名方法就是 middleware ，也稱之為 middleware components。在請求管道中的每個中介軟體元件負責調用 Pipeline 中的下一個元件，或對管線執行最少運算，當中介軟體短路時（short-circult），會阻止接下來的中介軟體處理請求，稱之為終端中介軟體 terminal middleware。...</p>
-  </section>
-  <footer class="entry-footer">May 31, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET Core】中介軟體 Middleware" href="https://fakestandard.github.io/netcore/netcore5-3-middleware/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

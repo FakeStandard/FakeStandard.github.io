@@ -6,7 +6,22 @@
     <description>Recent content in OOP on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Thu, 08 Jul 2021 15:24:41 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/oop/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 31 Jul 2021 16:27:02 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/oop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【OOP】集合與泛型（Collection and Generic）</title>
+      <link>https://fakestandard.github.io/post/oop/oop-5-collection-and-generic/</link>
+      <pubDate>Sat, 31 Jul 2021 16:27:02 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/oop/oop-5-collection-and-generic/</guid>
+      <description>Start 接續先前物件導向的紀錄，此篇會著重於
+ 集合（Collection） 泛型（Generic）  集合（Collection） 在介紹三大特性時使用CareerBasic類別的物件陣列，且設置陣列長度為 6，雖然陣列的優點，在記憶體中連續儲存，可以快速地走訪元素，但缺點就是設置長度，必須先知道需要設置多少的長度才夠使用，但若保險的使用把長度設的過大，又會造成記憶體的浪費，設的過小又造成溢出，還有陣列在兩元素間加入元素也較困難。
+所以.Net Framework提供用於儲存和檢索專用的類別，統稱為集合。這些類別提供對堆疊、佇列、列比和雜湊表的支持，大多數集合實現了相同的介面：IList，IList介面定義了許多方法，讓類別去實現。
+馬上來看最常使用的 ArrayList，命名空間為 System.Collections;
+// 宣告集合，也可以直接宣告 ArrayList career; IList career; // 實體化集合物件，無須指定大小 career = new ArrayList(); // 調用 IList 的 Add 方法 career.Add(new Swordman(&amp;#34;離人劍&amp;#34;)); career.Add(new Thief()); career.Add(new Acolyte()); career.Add(new Acolyte(&amp;#34;補不完&amp;#34;)); // 取得集合內元素個數 Console.WriteLine(career.Count.ToString()); // 走訪集合 foreach (CareerBasic item in career) { Console.WriteLine(item.PassiveSkill()); } Console.WriteLine(&amp;#34;=============================&amp;#34;); // 移除集合內指定元素 career.RemoveAt(3); // 再走訪一次 foreach (CareerBasic item in career) { Console.WriteLine(item.PassiveSkill()); } 在調用集合的Add方法時，參數的型別是object，不像陣列已經預先指定資料類型，而在這個範例裡類別本身就是object，假如是其他型別就會有個效能問題。
+ArrayList存放值類型的資料時，需要將值類型裝箱為Object物件，使用集合元素時還要執行拆箱，這就帶來了效能耗損，因為在裝箱和拆箱的過程中需要進行大量的運算，當使用集合時也消耗了資源和時間。
+裝箱（boxing）—把值類型打包到Object參考類型的一個實體中</description>
+    </item>
+    
     <item>
       <title>【OOP】重構、抽象和介面（Refactoring、Abstract and Interface）</title>
       <link>https://fakestandard.github.io/post/oop/oop-4-refactoring-abstract-interface/</link>

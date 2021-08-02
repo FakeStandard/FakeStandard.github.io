@@ -122,7 +122,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -158,6 +158,65 @@
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
   <h1>Linked List</h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】鏈結串列應用—單向串列反轉演算法</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/27 閱讀紀錄】
+根據先前文章介紹的鏈結串列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 學會串列插入、刪除和連結的基本功之後，這篇要來思考如何反轉串列？反轉串列顧名思義就是將串列內的元素都顛倒過來，最後形成頂端節點變成末端節點，而末端節點成為頂端節點，但是串列指標只能知道下一個節點的位置，無法得知上一個節點，那該如何做？這就需要一點小技巧，直接實作程式碼
+/// &lt;summary&gt; /// 節點類別 /// &lt;/summary&gt; class Node { public int data; public Node next; public Node(int data) { this.data = data; this.next = null; } } /// &lt;summary&gt; /// 鏈結串列類別 /// &lt;/summary&gt; class LinkedList { public Node first; public Node last; public bool IsEmpty() { return first == null; } public void Print() { Node current = first; while (current != null) { Write($&#34;[{current....</p>
+  </section>
+  <footer class="entry-footer">July 29, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】鏈結串列應用—單向串列反轉演算法" href="https://fakestandard.github.io/algorithm/algorithm-35-linkedlistreverse/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】鏈結串列應用—單向串列刪除節點演算法</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/27 閱讀紀錄】
+根據先前文章介紹的鏈結串列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 以單向的鏈結串列來說，欲串列中的節點，可刪除的位置與插入節點相同會有三種
+  刪除串列的第一個節點
+第一個節點刪除後，第二個節點會成為頂端節點，只需將頂端節點指給第二個節點
+  刪除串列的最後一個節點
+最後一個節點刪除後，倒數第二個節點會成為末端節點，只需將末端節點指標只給倒數第二個節點
+  從串列中刪除其中一個中間節點
+將欲刪除節點的前一個節點指標，指給欲刪除節點的下一個節點即可
+  實作串列刪除節點程式碼，先建立節點類別，類別內包含資料欄與指標欄，每當新節點建立時，新節點資料欄必須帶有值，而指標欄先指向 NULL，等待後續將指標指向特定節點作業。
+/// &lt;summary&gt; /// 節點類別 /// &lt;/summary&gt; class Node { // 資料欄  public int data; // 指標欄  public Node next; /// &lt;summary&gt;  /// 帶有一個資料的建構子  /// &lt;/summary&gt;  /// &lt;param name=&#34;data&#34;&gt;&lt;/param&gt;  public Node(int data) { this.data = data; this.next = null; } } 建立鏈結串列類別，串列類別需包含頂端節點和末端節點屬性，類別內再建立一個輸出當前串列的方法，以及判斷當前陣列是否為空，若沒有頂端節點則該串列為空。另外再建立兩個方法，一個是 Insert 用於插入新節點，一個是 Delete 用於刪除節點，下一步將實作這兩個方法。...</p>
+  </section>
+  <footer class="entry-footer">July 26, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】鏈結串列應用—單向串列刪除節點演算法" href="https://fakestandard.github.io/algorithm/algorithm-34-linkedlistdelete/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】鏈結串列應用—單向串列插入節點與連結兩串列演算法</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/27 閱讀紀錄】
+根據先前文章介紹的鏈結串列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 以單向的鏈結串列來說，欲插入新節點到現有的串列，有三種位置可以插入
+  插入於第一個節點之前
+新節點成為串列的首節點，作法是將新節點的指標指向串列原來的第一個節點，再把串列的指標首指向新節點
+  插入於最後一個節點之後
+新節點成為串列的末節點，只需要將串列的最後一個節點指標指向新節點，新節點再指向 NULL 即可
+  插入於串列中間的位置
+假設插入於 A.B 節點之間，將 A 節點的指標指向新節點，新節點的指標再指向 B 節點即可
+  實作串列插入節點程式碼，先建立節點類別，類別內包含資料欄與指標欄，每當新節點建立時，新節點資料欄必須帶有值，而指標欄先指向 NULL，等待後續將指標指向特定節點作業。
+/// &lt;summary&gt; /// 節點類別 /// &lt;/summary&gt; class Node { // 資料欄  public int data; // 指標欄  public Node next; /// &lt;summary&gt;  /// 帶有一個資料的建構子  /// &lt;/summary&gt;  /// &lt;param name=&#34;data&#34;&gt;&lt;/param&gt;  public Node(int data) { this.data = data; this....</p>
+  </section>
+  <footer class="entry-footer">July 24, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】鏈結串列應用—單向串列插入節點與連結兩串列演算法" href="https://fakestandard.github.io/algorithm/algorithm-33-linkedlistinsertandconcatenation/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
