@@ -122,7 +122,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/post/" title="Archive">
+                <a href="https://fakestandard.github.io/archives/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -158,6 +158,33 @@
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
   <h1>Array</h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】樹的應用—陣列實作二元樹</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/27 閱讀紀錄】
+根據先前文章介紹的樹，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 二元樹建立的規則有以下特點
+ 可以是空集合，但若不是空集合，則節點一定要有一個鍵值 每一個樹根的值須大於左子樹的值 每一個樹根的值須小於右子樹的值 樹的每個節點值都不同 左右子樹也是二元搜尋樹  二元樹有兩種表示方法，分別是
+ 陣列 串列  這篇只紀錄如何以陣列來表示二元樹，假設有一顆樹，如下
+該如何使用陣列來表示？
+首先，我們可以先想像這是一顆完整二元樹，從樹根開始，依序由左到右、上到下編號，對於空的樹葉依然給它編號，但元素依然為空，如下
+準備一個一維陣列，陣列大小為完滿二元樹的最大編號加一，以上圖來說最大編號是 15，其陣列大小為 15&#43;1，因為陣列首將不放任何元素，如下
+依照前述的編號，將編號的樹葉值填入相對應的陣列位置
+如此一來就完成使用陣列表示樹的方法，不過這個例子不能是一顆二元樹，因為它並不符合上述的定義，樹根的值須大於左子樹的值以及樹根的值須小於右子樹的值。
+為了要讓它成為一顆符合定義個二元樹，先把這顆樹的值都取出來，存放於一個陣列中
+將陣列首作為樹根，並依照上述整理出的陣列，將陣列首放入完整二元樹的樹根，再依序將往後的值分別放入左右子樹，數值較樹根小的放左子樹，數值較樹根大的放右子樹。若比較完後，遇到左或右子樹的位置已有值，則往下一個階層進續比較，直到有樹葉為空可以擺放值。如下
+繼續將剩下的陣列元素，逐一放入完整二元樹中，其放置過程中必須符合樹根的值須大於左子樹的值以及樹根的值須小於右子樹的值。最後完成一顆符合規定的二元樹（例子又沒開好QQ）
+接著為二元樹編上編號，再將完滿二元樹轉換成陣列表示法，大功造成！
+實作程式碼時間，以一開始的樹為例，用一維陣列儲存起來 A = { 12, 46, 10, 23, 11, 30, 7, 31 }，按照二元樹的定義，形成一顆以陣列表示的完整二元樹
+static void Main(string[] args) { int i, j; // 原始陣列  int[] data = { 12, 46, 10, 23, 11, 30, 7, 31 }; int[] btree = new int[32]; for (i = 0; i &lt; btree....</p>
+  </section>
+  <footer class="entry-footer">August 2, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】樹的應用—陣列實作二元樹" href="https://fakestandard.github.io/algorithm/algorithm-36-arrayimplementationoftree/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">

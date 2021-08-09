@@ -6,7 +6,88 @@
     <description>Recent content in Tags on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 31 Jul 2021 16:27:02 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Aug 2021 09:58:38 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algorithm</title>
+      <link>https://fakestandard.github.io/tags/algorithm/</link>
+      <pubDate>Mon, 09 Aug 2021 09:58:38 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Binary Tree Traversal</title>
+      <link>https://fakestandard.github.io/tags/binary-tree-traversal/</link>
+      <pubDate>Mon, 09 Aug 2021 09:58:38 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/binary-tree-traversal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSharp</title>
+      <link>https://fakestandard.github.io/tags/csharp/</link>
+      <pubDate>Mon, 09 Aug 2021 09:58:38 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tree</title>
+      <link>https://fakestandard.github.io/tags/tree/</link>
+      <pubDate>Mon, 09 Aug 2021 09:58:38 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/tree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Delegate</title>
+      <link>https://fakestandard.github.io/tags/delegate/</link>
+      <pubDate>Sat, 07 Aug 2021 16:43:36 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/delegate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Event</title>
+      <link>https://fakestandard.github.io/tags/event/</link>
+      <pubDate>Sat, 07 Aug 2021 16:43:36 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/event/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OOP</title>
+      <link>https://fakestandard.github.io/tags/oop/</link>
+      <pubDate>Sat, 07 Aug 2021 16:43:36 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/oop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linked List</title>
+      <link>https://fakestandard.github.io/tags/linked-list/</link>
+      <pubDate>Thu, 05 Aug 2021 20:54:11 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/linked-list/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Array</title>
+      <link>https://fakestandard.github.io/tags/array/</link>
+      <pubDate>Mon, 02 Aug 2021 16:11:37 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/array/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Collection</title>
       <link>https://fakestandard.github.io/tags/collection/</link>
@@ -22,42 +103,6 @@
       <pubDate>Sat, 31 Jul 2021 16:27:02 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/generic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>OOP</title>
-      <link>https://fakestandard.github.io/tags/oop/</link>
-      <pubDate>Sat, 31 Jul 2021 16:27:02 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/oop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Algorithm</title>
-      <link>https://fakestandard.github.io/tags/algorithm/</link>
-      <pubDate>Thu, 29 Jul 2021 14:03:26 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/algorithm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CSharp</title>
-      <link>https://fakestandard.github.io/tags/csharp/</link>
-      <pubDate>Thu, 29 Jul 2021 14:03:26 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/csharp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Linked List</title>
-      <link>https://fakestandard.github.io/tags/linked-list/</link>
-      <pubDate>Thu, 29 Jul 2021 14:03:26 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/linked-list/</guid>
       <description></description>
     </item>
     
@@ -94,15 +139,6 @@
       <pubDate>Sat, 24 Jul 2021 10:30:28 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/linked-list-insert/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Array</title>
-      <link>https://fakestandard.github.io/tags/array/</link>
-      <pubDate>Thu, 22 Jul 2021 09:11:29 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/array/</guid>
       <description></description>
     </item>
     
@@ -571,15 +607,6 @@
       <pubDate>Wed, 26 May 2021 09:27:51 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/graph/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tree</title>
-      <link>https://fakestandard.github.io/tags/tree/</link>
-      <pubDate>Mon, 24 May 2021 09:54:38 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/tree/</guid>
       <description></description>
     </item>
     

@@ -2,8 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://fakestandard.github.io/tags/algorithm/</loc>
+    <lastmod>2021-08-09T09:58:38+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/algorithm/</loc>
+    <lastmod>2021-08-09T09:58:38+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/</loc>
+    <lastmod>2021-08-09T09:58:38+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/binary-tree-traversal/</loc>
+    <lastmod>2021-08-09T09:58:38+08:00</lastmod>
+  </url><url>
     <loc>https://fakestandard.github.io/categories/</loc>
-    <lastmod>2021-07-31T16:27:02+08:00</lastmod>
+    <lastmod>2021-08-09T09:58:38+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/csharp/</loc>
+    <lastmod>2021-08-09T09:58:38+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/</loc>
+    <lastmod>2021-08-09T09:58:38+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/</loc>
+    <lastmod>2021-08-09T09:58:38+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/tree/</loc>
+    <lastmod>2021-08-09T09:58:38+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/algorithm-38-binarytreetraversal/</loc>
+    <lastmod>2021-08-09T09:58:38+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/delegate/</loc>
+    <lastmod>2021-08-07T16:43:36+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/event/</loc>
+    <lastmod>2021-08-07T16:43:36+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/oop/</loc>
+    <lastmod>2021-08-07T16:43:36+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/categories/oop/</loc>
+    <lastmod>2021-08-07T16:43:36+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/post/</loc>
+    <lastmod>2021-08-07T16:43:36+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/post/oop/oop-6-delegate-and-event/</loc>
+    <lastmod>2021-08-07T16:43:36+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/linked-list/</loc>
+    <lastmod>2021-08-05T20:54:11+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/algorithm-37-linkedlistimplementationoftree/</loc>
+    <lastmod>2021-08-05T20:54:11+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/array/</loc>
+    <lastmod>2021-08-02T16:11:37+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/algorithm-36-arrayimplementationoftree/</loc>
+    <lastmod>2021-08-02T16:11:37+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/collection/</loc>
     <lastmod>2021-07-31T16:27:02+08:00</lastmod>
@@ -11,38 +68,8 @@
     <loc>https://fakestandard.github.io/tags/generic/</loc>
     <lastmod>2021-07-31T16:27:02+08:00</lastmod>
   </url><url>
-    <loc>https://fakestandard.github.io/</loc>
-    <lastmod>2021-07-31T16:27:02+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/oop/</loc>
-    <lastmod>2021-07-31T16:27:02+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/categories/oop/</loc>
-    <lastmod>2021-07-31T16:27:02+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/post/</loc>
-    <lastmod>2021-07-31T16:27:02+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/</loc>
-    <lastmod>2021-07-31T16:27:02+08:00</lastmod>
-  </url><url>
     <loc>https://fakestandard.github.io/post/oop/oop-5-collection-and-generic/</loc>
     <lastmod>2021-07-31T16:27:02+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/algorithm/</loc>
-    <lastmod>2021-07-29T14:03:26+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/categories/algorithm/</loc>
-    <lastmod>2021-07-29T14:03:26+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/algorithm/</loc>
-    <lastmod>2021-07-29T14:03:26+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/csharp/</loc>
-    <lastmod>2021-07-29T14:03:26+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/linked-list/</loc>
-    <lastmod>2021-07-29T14:03:26+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/linked-list-reverse/</loc>
     <lastmod>2021-07-29T14:03:26+08:00</lastmod>
@@ -64,9 +91,6 @@
   </url><url>
     <loc>https://fakestandard.github.io/algorithm/algorithm-33-linkedlistinsertandconcatenation/</loc>
     <lastmod>2021-07-24T10:30:28+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/array/</loc>
-    <lastmod>2021-07-22T09:11:29+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/polynomial/</loc>
     <lastmod>2021-07-22T09:11:29+08:00</lastmod>
@@ -349,9 +373,6 @@
   </url><url>
     <loc>https://fakestandard.github.io/algorithm/algorithm-8-graph/</loc>
     <lastmod>2021-05-26T09:27:51+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/tree/</loc>
-    <lastmod>2021-05-24T09:54:38+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/algorithm/algorithm-7-tree/</loc>
     <lastmod>2021-05-24T09:54:38+08:00</lastmod>

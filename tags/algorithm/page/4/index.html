@@ -122,7 +122,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/post/" title="Archive">
+                <a href="https://fakestandard.github.io/archives/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -158,6 +158,75 @@
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
   <h1>Algorithm</h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】資料結構—圖形（Graph）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/25 閱讀紀錄】
+選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
+Start 此篇紀錄記錄圖形定義及應用，其餘常見的資料結構如下
+ 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  圖形（Graph） 圖形理論是由一位瑞士數學家所想出的一種資料結構，是比樹狀結構更複雜的非線性結構，許多問題都可以轉換成圖形資料結構，因此，圖形資料結構被廣泛應用於程式的實作，在所有資料結構中的應用也最為廣泛。
+例如在網路的地圖上搜尋兩點之間的最短路徑，可以將地點轉換成圖形中的頂點，地點與地點之間的距離轉換成邊，最後使用最短路徑的演算法，即可以找出最短路徑。
+圖的定義是由**頂點（Vertice）和邊（Edge）**所組成的集合，邊是連結圖形中的兩個頂點，可以有循環，也可以不跟其他頂點相連，通常以 G=(V,E) 來定義一個圖形
+ G：圖（Graph） V：所有頂點（Vertice）的集合 E：所有邊（Edge）的集合  圖形的種類有兩種，分別是無向圖形和有向圖形
+無向圖形（Undirected Graph） 無向圖形的邊只代表頂點之間是相連，不會標示方向箭頭，可以說是不具有方向性，無向圖以 (V1,V2) 來表示，例如 (V1,V2) 與 (V2,V1) 表示相同的邊。
+以上圖來說
+V = {A,B,C,D,E} E = {(A,B),(A,C),(B,D),(B,E),(C,D),(C,E)} 有向圖形（Directed Graph） 有向圖形的每個邊都具有方向性，以 &lt;V1,V2&gt; 來表示，若無向圖是不具方向性，那麼有向圖就是具有方向性的，V1 是指尾端，V2 是指頂端，&lt;V1,V2&gt; 則代表著由 V1 尾端指向 V2 頂端。例如 &lt;V1,V2&gt; 和 &lt;V2,V1&gt; 表示兩個不同方向的邊。
+以上圖來說，與無向圖形的範例圖差異在於，該圖的邊是具有方向性箭頭，表示方式如下
+V = {A,B,C,D,E} E = {&lt;A,B&gt;,&lt;A,C&gt;,&lt;B,D&gt;,&lt;C,D&gt;,&lt;E,B&gt;,&lt;E,C&gt;} 相關專有名詞   頂點（Vertice）...</p>
+  </section>
+  <footer class="entry-footer">May 26, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—圖形（Graph）" href="https://fakestandard.github.io/algorithm/algorithm-8-graph/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】資料結構—樹（Tree）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/17 閱讀紀錄】
+選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
+Start 此篇紀錄記錄樹定義及應用，其餘常見的資料結構如下
+ 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  樹（Tree） 樹狀結構是一種階層架構的非線性結構，在生活中應用相當廣泛，舉凡組織架構、族譜、賽程，甚至在電腦中的作業系統、DBMS 和檔案管理系統都是樹狀結構的衍生運用。
+上圖為樹狀結構的示例，它的名稱由來是取自於樹的象徵，在上圖中，看起來是一個上下顛倒樹，其根部在上方，是資料的開頭，而下方的資料稱為葉子。
+對於合法的樹來說，節點間可以互相連結，但不能形成無出口的迴圈，例如下圖就是一個不合法的樹狀結構，因為在 H 節點與 C 節點形成了無出口的迴圈。
+樹的概念是由一個或一個以上的節點（Node）所組成，而樹根稱為根節點（Root），樹根下的樹枝，稱為子節點（Children），每個子節點都會有向上一個樹根，稱為父節點（Parent）
+樹的基本術語有許多種，利用上圖的樹狀圖一一解說
+  根節點（Root）
+先前已有大概解說過，一棵樹的樹根（即開頭）會被視為根節點，更準確地說是沒有父節點的節點是根節點。例如 A 是根節點
+  葉節點（Leaf）或終點節點（Terminal Nodes）
+節點沒有往下的子節點，稱為葉節點。例如 K、L、G 都是葉節點
+  非終端節點（Nonterminal Nodes）
+除了樹葉（葉節點）以外的節點都是非終端節點。例如 B、E、H
+  子節點（Children）
+每個節點連結的下層節點稱為子節點。例如 A 的子節點有 B、C、D
+  父節點（Parent）
+每個節點連結的上層節點稱為父節點。例如 H、I、J 的父節點為 D，G 的父節點為 C
+  祖先節點（Ancestor）
+指某個節點從自己本身到根節點之間的路徑，該路徑上所經過的所有節點皆是祖先節點。例如 M 的祖先為 A、D、H，F 的祖先為 A、B。...</p>
+  </section>
+  <footer class="entry-footer">May 24, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—樹（Tree）" href="https://fakestandard.github.io/algorithm/algorithm-7-tree/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】資料結構—佇列（Queue）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/16 閱讀紀錄】
+選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
+Start 此篇紀錄記錄佇列定義及應用，其餘常見的資料結構如下
+ 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  佇列（Queue） 佇列是一種抽象型資料結構（Abstract Data Type, ADT），它的所有動作是由不同的兩端執行，並且具有先進先出的特性（First In, First Out: FIFO）。
+佇列基本運算具備以下五種工作定義
+   Action Description     create 建立空佇列   add 將資料加入佇列的末端，返回新佇列   delete 刪除佇列頂端的資料，返回新佇列   front 傳回佇列頂端的值   empty 判斷佇列是否為空集合，是回傳 Ture，反之    生活中有許多佇列的應用，例如排隊，假設現在有一個排隊買票的隊伍，欲買票就要從隊伍的最後方加入，然而原本在隊伍的第一個人，因為先排隊的關係，它可以先買到票，然後離開隊伍；在排隊的案例可以知道，先排隊的人，可以先買到票，並且從隊伍的頂端離開，後排隊的人，必須從隊伍的尾端加入，當隊伍前面的人都買票離開，才會輪到他買票，而且加入和離開隊伍的動作是從不同的兩端進行，此概念符合了先進先出的特性，也就是佇列的應用。
+Note  堆疊（Stack）：後進先出（Last In, First Out: LIFO） 佇列（Queue）：先進先出（First In, First Out: FIFO）  Reference 【圖說演算法 C#】</p>
+  </section>
+  <footer class="entry-footer">May 21, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—佇列（Queue）" href="https://fakestandard.github.io/algorithm/algorithm-6-queue/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">

@@ -122,7 +122,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/post/" title="Archive">
+                <a href="https://fakestandard.github.io/archives/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -158,6 +158,32 @@
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
   <h1>Linked List</h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】樹的應用—串列實作二元樹</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/27 閱讀紀錄】
+根據先前文章介紹的樹，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 二元樹建立的規則有以下特點
+ 可以是空集合，但若不是空集合，則節點一定要有一個鍵值 每一個樹根的值須大於左子樹的值 每一個樹根的值須小於右子樹的值 樹的每個節點值都不同 左右子樹也是二元搜尋樹  二元樹有兩種表示方法，分別是
+ 陣列 串列  這篇只紀錄如何以串列來表示二元樹，假設有一顆樹，如下
+該如何使用串列來表示？
+使用鏈結串列來表示二元樹的優點，是在新增和刪除節點時非常容易，缺點則是不容易找到父節點。在使用陣列儲存歪斜樹時，會造成許多的空間被浪費，對於歪斜樹來說，使用串列儲存較為節省空間。
+根據上一篇的慘痛經驗，這篇偷偷將樹的值改了一個，讓樹高只維持在 4，上一篇做到 5 層，可真是毅力與耐力的考驗。
+首先，先了解一下要如何使用串列來表示二元樹，在先前學過的串列，都具有一個資料欄和指標欄，指標欄存放著下一個節點的記憶體位置，作為節點與節點之間的連結，透過指標的特性，我們將指標欄設置為兩個，分別為左指標與右指標，左指標存放左子樹的節點位址，右指標存放右子樹的節點位址，如下圖所示
+使用一個陣列先將樹的節點值儲存起來
+將陣列首作為樹根，並依照上述整理出的陣列，將陣列首放入完整二元樹的樹根，再依序將往後的值分別放入左右子樹，數值較樹根小的放左子樹，數值較樹根大的放右子樹。若比較完後，遇到左或右子樹的位置已有值，則往下一個階層進續比較，直到有樹葉為空可以擺放值。
+在使用串列表示二元樹時，也必須符合二元樹的定義，樹根的值須大於左子樹的值以及樹根的值須小於右子樹的值，最後以串列表示的方式如下
+實作程式碼時間，以一開始的樹為例，用一維陣列儲存起來 A = { 12, 46, 31, 23, 11, 30, 7, 10 }，按照二元樹的定義，形成一顆以串列表示的完整二元樹。
+先建立樹節點類別
+/// &lt;summary&gt; /// 樹節點類別 /// &lt;/summary&gt; class TreeNode { // 值  public int data; // 左子樹  public TreeNode leftNode; // 右子樹  public TreeNode rightNode; public TreeNode(int value) { this....</p>
+  </section>
+  <footer class="entry-footer">August 5, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】樹的應用—串列實作二元樹" href="https://fakestandard.github.io/algorithm/algorithm-37-linkedlistimplementationoftree/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">

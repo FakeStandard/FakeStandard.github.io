@@ -122,7 +122,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/post/" title="Archive">
+                <a href="https://fakestandard.github.io/archives/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -158,6 +158,56 @@
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
   <h1>Algorithm</h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】佇列應用—雙向佇列（Deques）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/30 閱讀紀錄】
+根據先前文章介紹的佇列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 雙向佇列的全名是 Double-ends Queues，縮寫為 Deques。雙向佇列與一般說的佇列不太相同，不過也很容易理解，它是一種前後兩端都可以輸入或輸出資料的有序串列。
+雙向佇列至少有以下工作行為
+   Method Description     IsEmpty 檢查雙向佇列是否為空   PushFront 將資料從頂端推入，其大小加一   PushRear 將資料從末端推入，其大小加一   PopFront 將資料從頂端推出，其大小減一   PopRear 將資料從末端推出，其大小減一   PeekFront 存取頂端的資料，不改變其大小   PeekRear 存取末端的資料，不改變其大小    而雙向佇列依其應用還可分為多種存取模式，較常見的雙向佇列有
+ 輸入限制性雙佇列（Input Restricted Deque） - 限制存入資料只能在其中一端進行，取出資料則可在兩端執行 輸出限制性雙佇列（Output Restricted Deque） - 限制取出資料只能在其中一端進行，輸入資料則可在兩端執行  以串列結構實作雙向佇列程式碼，建立節點類別、雙向佇列串列結構類別，以及佇列相關方法（推入推出方法在下一步實作）
+/// &lt;summary&gt; /// 節點類別 /// &lt;/summary&gt; class Node { public int data; public Node next; public Node(int data) { this....</p>
+  </section>
+  <footer class="entry-footer">July 15, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】佇列應用—雙向佇列（Deques）" href="https://fakestandard.github.io/algorithm/algorithm-28-deques/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】佇列應用—串列實作佇列</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/20 閱讀紀錄】
+根據先前文章介紹的佇列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 利用串列結構模擬佇列工作，使用指標及相關方法實作佇列。
+建立鏈結串列的節點類別
+/// &lt;summary&gt; /// 鏈結串列節點類別 /// &lt;/summary&gt; class QueueNode { public int data; public QueueNode next; public QueueNode(int data) { this.data = data; next = null; } } 建立使用串列節點模擬佇列的類別，其中包含 Enqueue 和 Dequeue 方法。
+/// &lt;summary&gt; /// 串列模擬佇列類別 /// &lt;/summary&gt; class QueueByLink { // 前端指標  public QueueNode front; // 末端指標  public QueueNode rear; public QueueByLink() { front = null; rear = null; } /// &lt;summary&gt;  /// 加入資料到佇列  /// &lt;/summary&gt;  /// &lt;param name=&#34;value&#34;&gt;&lt;/param&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool Enqueue(int value) { // 建立新節點  QueueNode node = new QueueNode(value); // 檢查是否為空佇列  if (rear == null) front = node; else rear....</p>
+  </section>
+  <footer class="entry-footer">July 12, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】佇列應用—串列實作佇列" href="https://fakestandard.github.io/algorithm/algorithm-27-queuelist/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】佇列應用—陣列實作佇列</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/20 閱讀紀錄】
+根據先前文章介紹的佇列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 利用陣列簡單地時做佇列應用，宣告一個大小為 10 的佇列 queue[10]，設置 front 和 rear 作為頭尾的指標且預設為 -1。
+static int front = -1; static int rear = -1; static int max = 10; static int val; static int[] queue = new int[max]; static void Main(string[] args) { int choice = 0; while (rear &lt; max - 1 &amp;&amp; choice != 3) { Write(&#34;請輸入 \n[1] 新增一個資料 \n[2] 取出資料 \n[3] 結束 :&#34;); choice = int.Parse(Console.ReadLine()); switch (choice) { case 1: Write(&#34;請輸入要新增的數值:&#34;); val = int....</p>
+  </section>
+  <footer class="entry-footer">July 11, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】佇列應用—陣列實作佇列" href="https://fakestandard.github.io/algorithm/algorithm-26-queuearray/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
@@ -303,64 +353,6 @@ Start 常見的搜尋演算法
   </section>
   <footer class="entry-footer">June 25, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—二分搜尋法（Binary Search）" href="https://fakestandard.github.io/algorithm/algorithm-19-binarysearch/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】搜尋演算法—循序搜尋法（Sequential Search）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/21 閱讀紀錄】
-搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
-依據資料量大小而言，搜尋可分為兩種
- 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
- 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
-Start 常見的搜尋演算法
- 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  循序搜尋演算法（Sequential Search） 循序搜尋法又稱線性搜尋法（Linear Search），它的原理是走訪所有的資料，不論資料順序從頭到尾逐次搜尋，也不需要在搜尋前對資料做任何處理或排序，在沒有重複資料下，找到資料就中止搜尋，是一種最簡單的排序法。
-它的缺點是搜尋速度較慢，因為對資料從頭到尾的訪問，最好的情況就是一次就找到，只進行一次比較；最壞的情況則是第 n 次才找到，則進行了 n 次比較。所以在數列長度很大時，循序搜尋法則不太適合使用，它通常適用於對檔案小的資料進行搜尋。
-假設有一數列 10 20 30 40 50，欲從數列中找到鍵值 30，透過循序搜尋法，從頭到尾走訪，第一個先找到 10 進行比較，不符合條件，繼續找尋到第二個 20，依然不符合條件，找尋到第三個鍵值，經比對後符合條件，此時演算法中止。
-利用上面的數列來看，最佳的情況是第一次搜尋就符合條件，然後中止搜尋，只進行了一次比較，例如欲搜尋鍵值 10，即是最佳情況；最壞的情況就是從頭走訪到尾，直到搜尋到最後一個鍵值才符合條件，或數列中都沒有符合條件的鍵值，假設數列長度為 n，則需進行 n 次比較，例如欲搜尋鍵值 50 或不存在數列中的鍵值 60，即是最差情況。
-演算法分析  最差的情況下，時間複雜度為 O(n) 平均情況下，需要 (n&#43;1)/2 次的比較  實際撰寫程式碼 亂數產生 1-150 之間的 100 個整數，並實作循序搜尋法的過程...</p>
-  </section>
-  <footer class="entry-footer">June 23, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—循序搜尋法（Sequential Search）" href="https://fakestandard.github.io/algorithm/algorithm-18-sequentialsearch/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—堆積樹排序法（Heap Tree Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/18 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  堆積樹排序法（Heap Tree Sort） 堆積樹排序法是選擇排序法的改良版，它可以減少選擇排序法的排序次數，進而減少排序時間。樹是一種資料結構，而堆積樹是一顆二元樹，二元樹的定義的定義為每個父節點最多只能有兩個子節點，而堆積樹是一種特殊的二元樹，父節點若小於子節點，稱為最小堆積（Min heap），父節點偌大於子節點，稱為最大堆積（Max heap）。
-假設有一陣列，陣列資料分別為
-                索引 A[0] A[1] A[2] A[3] A[4] A[5] A[6] A[7]   數值 69 81 30 38 9 2 47 61    將此陣列用二元樹表示，每個節點第一個數字為索引，第二個為數值...</p>
-  </section>
-  <footer class="entry-footer">June 21, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—堆積樹排序法（Heap Tree Sort）" href="https://fakestandard.github.io/algorithm/algorithm-17-heaptreesort/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—基數排序法（Radix Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/20 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  基數排序法（Radix Sort） 基數排序法與其他的排序法不太相同，不需要進行比較交換的動作，它是透過分配的方式進行排序。主要的分配的方向有兩種，其一是有效鍵優先（Most Significant Digit First, MSD），以及無效鍵優先（Least Significant Digit First, LSD），MSD 是從最左邊的位數開始比較，LSD 則是從最右邊開始比較，該怎麼說呢？馬上來看範例
-LSD 以 LSD 方式對一數列 59 95 7 34 60 168 171 259 372 45 進行比較
-Step 1 將每個元素依照「個位數」放到相對應的串列中
-                 0 1 2 3 4 5 6 7 8 9   60 171 372  34 95  7 168 59        45    259    將分配的結果合併 60 171 372 34 95 45 7 168 59 259...</p>
-  </section>
-  <footer class="entry-footer">June 18, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—基數排序法（Radix Sort）" href="https://fakestandard.github.io/algorithm/algorithm-16-radixsort/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

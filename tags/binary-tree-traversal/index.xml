@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Binary Tree Traversal on How can I help</title>
+    <link>https://fakestandard.github.io/tags/binary-tree-traversal/</link>
+    <description>Recent content in Binary Tree Traversal on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 09 Aug 2021 09:58:38 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/binary-tree-traversal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】樹的應用—二元樹走訪</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-38-binarytreetraversal/</link>
+      <pubDate>Mon, 09 Aug 2021 09:58:38 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-38-binarytreetraversal/</guid>
+      <description>【5/28 閱讀紀錄】
+根據先前文章介紹的樹，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 對於線性結構的陣列和串列而言，只能執行單向的走訪，如從頭到尾或反向走訪，而二元樹的走訪即是訪問樹中所有節點一次，並且在走訪後，將樹中的資料傳換成線性關係。
+二元樹走訪方式有三種，以樹根訪問的順序作為區分，分別是
+ 前序走訪（Preorder Traversal）：樹根→左子樹→右子樹 中序走訪（Inorder Traversal）：左子樹→樹根→右子樹 後序走訪（Postorder Traversal）：左子樹→右子樹→樹根  從上可以明顯知道，先訪問樹根的稱為前序走訪，後訪問樹根稱為後續走訪，而樹根訪問順序在中間稱為中序走訪，非常的好記。
+前序走訪 前序走訪的順序是由上往下進行訪問，從樹根開始，接著往左方移動走訪左子樹，若無法再繼續前進時，則往右方移動訪問右子樹，重複此步驟直到訪問完成。
+以上圖為例，訪問的順序是 A→B→D→F→G→H→I→E→C
+中序走訪 中序走訪的順序，是從樹根左側開始向下移動，直到無法移動時，追蹤此節點，再往右側移動，若右側無法再移動時，則返回上層父節點，重複左中右的順序進行訪問。
+以上圖為例，訪問的順序是 F→D→H→G→I→B→E→A→C
+後序走訪 後序走訪的順序，從左子樹開始，接著在往右子樹，最後訪問樹根，因樹根是最後訪問，訪問的方向是由下往上，與前序稍微不同的感覺。
+以上圖為例，訪問的順序是 F→H→I→G→D→E→B→C→A
+實作程式碼時間，分別為三種走訪方式設計方法，讓以串列表示的二元樹，可以分別輸出前序、中序和後序走訪的結果
+建立樹的節點類別
+/// &amp;lt;summary&amp;gt; /// 樹節點類別 /// &amp;lt;/summary&amp;gt; class TreeNode { public int data; public TreeNode left; public TreeNode right; public TreeNode(int value) { this.data = value; this.left = null; this.right = null; } } 建立二元樹的類別，其中前序、中序和後續走訪方法在下一步實作
+/// &amp;lt;summary&amp;gt; /// 二元樹類別 /// &amp;lt;/summary&amp;gt; class BinaryTree { public TreeNode root; public BinaryTree(int[] array) { for (int i = 0; i &amp;lt; array.</description>
+    </item>
+    
+  </channel>
+</rss>

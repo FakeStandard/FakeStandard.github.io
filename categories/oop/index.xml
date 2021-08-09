@@ -6,7 +6,23 @@
     <description>Recent content in OOP on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 31 Jul 2021 16:27:02 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/oop/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 07 Aug 2021 16:43:36 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/categories/oop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【OOP】委託與事件（Delegate and Event）</title>
+      <link>https://fakestandard.github.io/post/oop/oop-6-delegate-and-event/</link>
+      <pubDate>Sat, 07 Aug 2021 16:43:36 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/oop/oop-6-delegate-and-event/</guid>
+      <description>Start 接續先前物件導向的紀錄，此篇會紀錄
+ 委託（Delegate） 事件（Event）  委託（Delegate） 委託是對函數的封裝，可以當作給方法的特徵去指定一個名稱，而委託為一種參考方法的類型，一旦委託分配了方法，委託將與該方法具有完全相同的行為。委託使用 delegate 關鍵字宣告。
+事件（Event） 事件則是委託的一種特殊形式，當發生有意義的事情時，事件物件會去處理通知的過程。所以在發生其他類別或物件關注的事情時，類別或物件可透過事件去通知它們。事件使用 event 關鍵字宣告。
+假設Swordman為隊長，Thief和Acolyte為隊員，當隊長發現打不過怪物時，選擇逃跑，隊員也跟著逃跑，使用委託和事件，來讓隊員知道什麼時候要跑。
+在Swordman宣告委託和事件並加入逃跑方法
+// 宣告委託 LeaderRunEventHandler public delegate void LeaderRunEventHandler(); // 宣告事件 Run，事件類型是委託 LeaderRunEventHandler public event LeaderRunEventHandler LeaderRun; public void Run() { Console.WriteLine(&amp;#34;隊長：快跑！&amp;#34;); if (LeaderRun != null) { // 表示執行 Run 方法時，如果 LeaderRun 有註冊事件，則執行 LeaderRun  LeaderRun(); } } 在Thief和Acolyte加入逃跑方法
+// 逃跑方法 public void Run() { Console.WriteLine(name + &amp;#34;：隊長跑了！快跑！&amp;#34;); } 將隊員逃跑的方法註冊到隊長的委託中
+Swordman swordman = new Swordman(); Thief thief = new Thief(); Acolyte acolyte = new Acolyte(); // 註冊事件到委託中 swordman.</description>
+    </item>
+    
     <item>
       <title>【OOP】集合與泛型（Collection and Generic）</title>
       <link>https://fakestandard.github.io/post/oop/oop-5-collection-and-generic/</link>
