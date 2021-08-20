@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Binary Tree Delete | How can I help</title>
+<meta name="keywords" content="" />
+<meta name="description" content="不專業代碼">
+<meta name="author" content="Polar Bear">
+<link rel="canonical" href="https://fakestandard.github.io/tags/binary-tree-delete/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.d1b405b7c6bf1b09aebca33eb6e2d8bd070113d119bdfa2715c32f6408f9fbee.css" integrity="sha256-0bQFt8a/GwmuvKM&#43;tuLYvQcBE9EZvfonFcMvZAj5&#43;&#43;4=" rel="preload stylesheet" as="style">
+
+
+<script data-ad-client="ca-pub-4877674098686024" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<meta name="google-site-verification" content="iCWzIE4kN0sAVM_Slr-q8E5zIT2Qfs-IxUuxhpFVD94" />
+
+
+
+
+
+
+
+<link rel="icon" href="https://fakestandard.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://fakestandard.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://fakestandard.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://fakestandard.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.81.0" />
+<link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/tags/binary-tree-delete/index.xml">
+<meta property="og:title" content="Binary Tree Delete" />
+<meta property="og:description" content="不專業代碼" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://fakestandard.github.io/tags/binary-tree-delete/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Binary Tree Delete"/>
+<meta name="twitter:description" content="不專業代碼"/>
+
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://fakestandard.github.io/" accesskey="h" title="How can I help (Alt + H)">How can I help</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/algorithm/" title="Algorithm">
+                    <span>Algorithm</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/netcore/" title=".NET Core">
+                    <span>.NET Core</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
+  <h1>Binary Tree Delete</h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】樹的應用—二元排序樹（Binary Sort Tree）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/28 閱讀紀錄】
+根據先前文章介紹的樹，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 二元排序樹在先前的文章都已經有實作過，一顆符合規定的二元樹，也就是二元排序樹，必須符合以下規則
+ 第一個輸入的值作為二元樹的樹根 逐一將後續的資料與樹根進行比較，大於樹根的資料放置右子樹，小於樹根的資料放置左子樹，以遞迴的方式進行比較，直到資料找到一個空節點可以放置。  假設有一陣列 12, 46, 10, 23, 11, 30, 7, 21，欲對此陣列建立二元排序樹，先將地一個元素作為樹根
+接著取得第二個元素，與樹根作比較，因元素 46 大於樹根 12，故放置於右子樹
+繼續取得第三個元素，與樹根作比較，因元素 10 小於樹根 12，故放置於左子樹
+取得第四個元素，與樹根作比較，元素 23 大於樹根 12，故放置於右子樹，但右子樹已經存在 46 這個節點，所以繼續將元素 23 與右子樹根節點 46 進行比較，最後元素 23 小於 46，故放置於左子樹中。
+使用此方式繼續將所有資料在樹中進行比較，欲到已被佔位的節點，就繼續比較，最後形成一顆二元排序樹。
+實作程式碼的部分也相當簡單，先前也實作過很多遍，透過遞迴的方式進行比較，值到有空節點為止。
+/// &lt;summary&gt; /// 樹節點類別 /// &lt;/summary&gt; class TreeNode { public int data; public TreeNode left; public TreeNode right; public TreeNode(int value) { this.data = value; this.left = null; this....</p>
+  </section>
+  <footer class="entry-footer">August 20, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】樹的應用—二元排序樹（Binary Sort Tree）" href="https://fakestandard.github.io/algorithm/algorithm-41-binarysorttree/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】樹的應用—二元樹插入與刪除節點</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/28 閱讀紀錄】
+根據先前文章介紹的樹，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 這篇文章會紀錄節點插入與刪除的原理與應用
+節點插入 在二元樹中節點插入非常簡單，利用先前學到的走訪與搜尋，先對二元樹進行走訪搜尋，若搜尋時發現樹中已存在相同值，則節點插入失敗，若樹中沒有找到值，才執行節點插入。
+依據先前實作過的樹，逐一建立樹節點類別、二元樹類別，二元樹類別中至少需具有新增節點方法與搜尋節點方法，方能執行節點插入。在類別中額外添加前序走訪方法，供後續輸出二元樹節點使用。
+/// &lt;summary&gt; /// 樹節點類別 /// &lt;/summary&gt; class TreeNode { public int data; public TreeNode left; public TreeNode right; public TreeNode(int value) { this.data = value; this.left = null; this.right = null; } } /// &lt;summary&gt; /// 二元樹類別 /// &lt;/summary&gt; class BinaryTree { public TreeNode root; public BinaryTree(int[] array) { for (int i = 0; i &lt; array.Length; i&#43;&#43;) AddNode(array[i]); } public void AddNode(int value) { if (root == null) { root = new TreeNode(value); return; } TreeNode current = root; while (true) { if (value &gt; current....</p>
+  </section>
+  <footer class="entry-footer">August 17, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】樹的應用—二元樹插入與刪除節點" href="https://fakestandard.github.io/algorithm/algorithm-40-binarytreeinsertanddelete/"></a>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://fakestandard.github.io/">How can I help</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

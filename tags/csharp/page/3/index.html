@@ -161,6 +161,69 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】搜尋演算法—費氏搜尋法（Fibonacci Search）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/31 閱讀紀錄】
+搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
+依據資料量大小而言，搜尋可分為兩種
+ 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
+ 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
+Start 常見的搜尋演算法
+ 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  費氏搜尋演算法（Fibonacci Search） 費氏搜尋演算法又稱費伯納搜尋法，Fibonacci 還有其他譯名如斐波那契數列、費氏數列等等，該數列非常特別，對於大自然而言，整個自然界都存在這個的定律，它是一個神奇的黃金比例；對於數學而言，只不過是個公式—每個值是前兩項的總和，但是，每個值除以前一項的商數，都近似於 1.618…
+OK. 我們也不能偏離主題太遠，不過 1.618 這個數字會存放於筆者內心的深處，近期受疫情的肆虐，筆者拾起達文西密碼，拜本書之賜，重新認識斐波那契數列這個「上帝之數」。
+費氏級數如同先前所說，每個值都是前兩項的加總，故其公式為
+雖然每個值都是前兩項的加總，其中並不包含第零個元素和第一個元素，第零個元素定義為 0，第一個元素定義為 1，從這兩個元素開始，每個值才是前兩項的總和，故該數列會是 0,1,1,2,3,5,8,13,21,34,55,89,144...
+費氏樹列以遞迴程式碼表現方式為
+static int Fibonacci(int value) { if (value == 0) return 0; else if (value == 1) return 1; else return Fibonacci(value - 1) &#43; Fibonacci(value - 2); } 了解費氏級數後，就來認識費氏搜尋數，所謂費氏搜尋數就是以費氏數列的特性，所建立的二元數，其建立原則如下...</p>
+  </section>
+  <footer class="entry-footer">June 30, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—費氏搜尋法（Fibonacci Search）" href="https://fakestandard.github.io/algorithm/algorithm-21-fibonaccisearch/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【OOP】物件導向設計的五大原則</h2>
+  </header>
+  <section class="entry-content">
+    <p>Start 前篇講解 OOP 的特性卻還沒介紹基本原則，馬上來惡補一下內功心法。
+物件導向設計五大原則「SOLID」由羅伯特·C·馬丁在21世紀早期提出，SOLID分別為單一功能原則、開閉原則、里氏替換原則、介面隔離原則、依賴反轉原則。
+了解物件導向基本原則及特性，透過不斷練習和思考就可寫出閱讀性、維護性、擴充性高的程式碼，然而開發易維護與擴展的系統也變得不難。
+單一職責（Single Responsibility Principle） 對一個類別來說，應該只有一個引起他變化的理由，意為一個類別應只專注做一件事，當類別需要做兩件以上的工作時，就承擔了過多的職責，一旦需變更代碼，耦合度會比一件工作還要高，而當發生錯誤時很難快速定位錯誤原因，間接導致程式碼可閱讀性降低。
+開放封閉（Open-Closed Principle） 增加新的代碼來擴充系統，而非修改原本已存在的代碼來擴充新功能。所以在設計類別時對擴充保持開放及對修改保持封閉。若面對需求變化時，有無法封閉的變化，此時就須建立抽象點來隔離那些變化。
+里氏替換（Liskov Substitution Principle） 子類別必須可以替換父類別而不影響程式架構。若使用繼承，子類別實作的行為必須與父類別或介面所定義的行為一致，且子類別可完全取代父類別。
+介面隔離（Interface Segregation Principle） 抽取相同的功能形成介面，再讓各類別去實作。即針對不同類別開放對應需求的介面，需抽換時只需實作介面類別即可，大量降低耦合度。
+依賴反轉（Dependency Inversion Principle） 高階模組不應依賴低階模組，兩者都應依賴在抽象概念上；抽象概念不依賴細節，而細節依賴在抽象概念。模組之間若太過耦合，很容易出現修改A又被迫修改B的情況，若依賴抽象則兩只只要關注自己本身即可。
+Reference 【大話設計模式】</p>
+  </section>
+  <footer class="entry-footer">June 29, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【OOP】物件導向設計的五大原則" href="https://fakestandard.github.io/post/oop/oop-3-oop-principles/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】搜尋演算法—內插搜尋法（Interpolation Search）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/21 閱讀紀錄】
+搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
+依據資料量大小而言，搜尋可分為兩種
+ 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
+ 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
+Start 常見的搜尋演算法
+ 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  內插搜尋演算法（Interpolation Search） 內插搜尋法又稱插補搜尋法，是二分搜尋法的改良版，主要是針對以排序的資料進行搜尋，與二分法相同。其原理為透過斜率公式預測資料的所在位置，再以二分法逐漸逼近。
+參考斜率公式說明
+實作公式
+Mid = left &#43; ((key-data[left]) * (right - left) / (data[right] - data[left])) 演算法分析  資料需事先排序 資料分佈越平均，搜尋速度越快。時間複雜度取決於資料分佈情況，平均會優於 O(logn)  實際撰寫程式碼 亂數產生 1-150 之間的 100 個整數，並實作內插搜尋法的過程
+建立靜態陣列物件及內插搜尋方法
+// 建立靜態陣列物件 static int[] data = new int[100]; static int Interpolation(int val) { int mid; // 中間值  int left = 0; // 左邊極限  int right = data....</p>
+  </section>
+  <footer class="entry-footer">June 28, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—內插搜尋法（Interpolation Search）" href="https://fakestandard.github.io/algorithm/algorithm-20-interpolationsearch/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】搜尋演算法—二分搜尋法（Binary Search）</h2>
   </header>
   <section class="entry-content">
@@ -286,60 +349,6 @@ private IConfigurationRoot ConfigRoot; public HomeController(IConfiguration conf
   </section>
   <footer class="entry-footer">June 17, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【.NET Core】組態設定 Configuration" href="https://fakestandard.github.io/netcore/netcore5-6-configuration/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—合併排序法（Merge Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/18 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  合併排序法（Merge Sort） 合併排序法的原理是將兩個或兩個以上的數列，經由合併的方式組合成一個排序好的數列。
-步驟非常好理解，如下
- 將 N 個長度為 1 的鍵值合併成 N/2 個長度為 2 的鍵值 將 N/2 個長度為 2 的鍵值，合併成 N/4 個長度為 4 的鍵值 將 N/4 個長度為 4 的鍵值，合併成 N/8 個長度為 8 的鍵值 重複地將鍵值合併，直到合併成一個長度為 N 的鍵值為止  使用一個未排序陣列解說步驟，目標是由小到大排序，陣列如下 38 16 41 72 52 98 63 25...</p>
-  </section>
-  <footer class="entry-footer">June 16, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—合併排序法（Merge Sort）" href="https://fakestandard.github.io/algorithm/algorithm-15-mergesort/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—快速排序法（Quick Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/17 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  快速排序法（Quick Sort） 快速排序法又稱分割交換排序法，也是目前公認最佳的排序法，原理為使用分治法的方式，從資料中找到一個虛擬中間值，依此中間值將資料分為兩部分，將小於中間值的資料放到左邊，反之，大於中間值放到右邊，以同樣的方式處理左右兩邊資料，直到排序完成。
-其步驟如下
- 將第一個資料作為中間值 K 從左至右找出大於 K 的第一值作為 I 從右向左找到小於 K 的第一個值作為 J 如果 I &gt; J，則 I 與 J 互換，然後回到第二步驟 若在尋找的過程中 I 與 J 有相遇，則 K 與 J 互換，接著以 K 作為基準點分割成左右兩部分，重複步驟一到步驟五，直到排序完成。  演示有一序列需要排序，數值為 1~8，將第一個值作為 K
-               6 8 1 4 5 3 7 2   K           從左右兩邊開始分別找出 I 與 J，左邊找大於 K 值作為 I，右邊找小於 K 值作為 J...</p>
-  </section>
-  <footer class="entry-footer">June 13, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—快速排序法（Quick Sort）" href="https://fakestandard.github.io/algorithm/algorithm-14-quicksort/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET Core】記錄 Logging</h2>
-  </header>
-  <section class="entry-content">
-    <p>【ASP.NET Core 5】
-過去在記錄 Log 時，會使用第三方套件來記錄，在 .NET Core 預設就已經將 Logger 注入到 DI 容器，直接使用 ILogger 介面來執行。
-Start 此篇會紀錄的部分有以下
- Logging Provider Create Logs Log Level Log EventID Log Message Log Exceptions Configure Logging  Logging Provider Logging Provider 會儲存記錄檔，但 Console 顯示記錄的提供者除外。
-在 Program.cs 調用 CreateDefaultBuilder 會新增下列記錄提供者
- Console Debug EventSource EventLog: Windows only  欲 override 由 Host.CreateDefaultBuilder 設置的 logging provider 集合，可呼叫 ClearProviders 移除所有 ILoggerProvider 實例，再加入需要的記錄提供者。
-public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host....</p>
-  </section>
-  <footer class="entry-footer">June 11, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET Core】記錄 Logging" href="https://fakestandard.github.io/netcore/netcore5-5-logging/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

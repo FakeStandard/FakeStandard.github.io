@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Binary Search Tree on How can I help</title>
+    <link>https://fakestandard.github.io/tags/binary-search-tree/</link>
+    <description>Recent content in Binary Search Tree on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 13 Aug 2021 11:31:52 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/binary-search-tree/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】樹的應用—二元搜尋樹</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-39-binarysearchtree/</link>
+      <pubDate>Fri, 13 Aug 2021 11:31:52 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-39-binarysearchtree/</guid>
+      <description>【5/28 閱讀紀錄】
+根據先前文章介紹的樹，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 二元搜尋樹其實就是在樹中搜尋指定的值，只是二元搜尋樹必須符合以下特性
+ 可以是空集合，若非空集合，則節點上必須有一個鍵值 每個樹根的值須大於左子樹的值 每個樹根的值必須小於右子樹的值 左右子樹也同是二元搜尋樹 樹的每個節點值都不相同  那要如何搜尋？其實很簡單，只需在二元樹中比較樹節點值和欲搜尋的值，依序由左子樹→樹根→右子樹的順序進行走訪，直到找到值或搜尋完畢為止。
+實作程式碼，先建立樹節點類別
+/// &amp;lt;summary&amp;gt; /// 樹節點類別 /// &amp;lt;/summary&amp;gt; class TreeNode { public int data; public TreeNode left; public TreeNode right; public TreeNode(int value) { this.data = value; this.left = null; this.right = null; } } 建立二元樹類別，下一步實作搜尋方法
+/// &amp;lt;summary&amp;gt; /// 二元樹類別 /// &amp;lt;/summary&amp;gt; class BinaryTree { public TreeNode root; public BinaryTree(int[] array) { for (int i = 0; i &amp;lt; array.</description>
+    </item>
+    
+  </channel>
+</rss>

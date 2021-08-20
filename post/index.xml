@@ -6,7 +6,21 @@
     <description>Recent content in Posts on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Sat, 07 Aug 2021 16:43:36 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Aug 2021 16:53:59 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【OOP】sender 和 e 是什麼？</title>
+      <link>https://fakestandard.github.io/post/oop/oop-7-sender-and-e/</link>
+      <pubDate>Thu, 12 Aug 2021 16:53:59 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/post/oop/oop-7-sender-and-e/</guid>
+      <description>Start 接續先前物件導向的紀錄，建議先閱讀「委託和事件」，因為會延伸委託和事件裡的範例。
+在寫 .Net Framework 或 Web 程式時，很常看到 IDE 產生的事件參數，其中 (object sender, EventArgs e) 裡的sender和e到底是什麼意思？有什麼用處？
+首先先建立LeaderRunEventArgs類別，並繼承EventArgs
+// 繼承 EventArgs public class LeaderRunEventArgs : EventArgs { private string name; public string Name { get { return name; } set { name = value; } } } EventArgs是包含事件資料的類別之基礎類別，作用為在事件觸發時傳遞資料用的。所以當 LeaderRun事件觸發時，LeaderRunEventArgs裡的屬性 Name 為需要傳遞的物件。
+改寫 Swordman 類別
+// 宣告委託 LeaderRunEventHandler，加入兩個參數 public delegate void LeaderRunEventHandler(object sender, LeaderRunEventArgs e); // 宣告事件 Run，事件類型是委託 LeaderRunEventHandler public event LeaderRunEventHandler LeaderRun; public void Run() { Console.</description>
+    </item>
+    
     <item>
       <title>【OOP】委託與事件（Delegate and Event）</title>
       <link>https://fakestandard.github.io/post/oop/oop-6-delegate-and-event/</link>

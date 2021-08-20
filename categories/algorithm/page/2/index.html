@@ -161,6 +161,66 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】陣列應用—稀疏矩陣演算法</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/26 閱讀紀錄】
+根據先前文章介紹的陣列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 從數學角度來說，矩陣 m*n 的形式在電腦中可以利用二維陣列表示，而矩陣的相關運算與應用，也都是以陣列結構來解決。矩陣可應用於 3D 圖學中，用來表示模型資料的投影、擴大、縮小、平移、偏斜或旋轉等運算，在深度學習中也常遇到大量使用矩陣運算來提高效率。
+接下來會透過陣列結構來演示稀疏矩陣演算法
+稀疏矩陣 稀疏矩陣的定義是在一個矩陣中，有大部分的元素是 0，例如
+在上述矩陣中，若以二維陣列來儲存，十分浪費記憶體空間，此時改進的方法就是利用三項式（3-tuple）的資料結構，來壓縮稀疏矩陣，以減少記憶體空間。
+三項式的儲存方式，首先 A(0,1) 儲存稀疏矩陣的列數，A(0,2) 儲存稀疏矩陣的的行數，A(0,3) 則儲存稀疏矩陣非零的項目個數，接著依序將非零的項目以 A(i,j,item-value) 的方式儲存，如下
+實際演練程式碼，將一稀疏矩陣利用三項式壓縮
+先建立輸出矩陣方法
+/// &lt;summary&gt; /// 輸出矩陣 /// &lt;/summary&gt; /// &lt;param name=&#34;matrix&#34;&gt;&lt;/param&gt; static void Print(ref int[,] matrix) { int i; int j; for (i = 0; i &lt; matrix.GetLength(0); i&#43;&#43;) { for (j = 0; j &lt; matrix.GetLength(1); j&#43;&#43;) Write(matrix[i, j] &#43; &#34;\t&#34;); WriteLine(); } } 在 Main 方法中直接執行壓縮...</p>
+  </section>
+  <footer class="entry-footer">July 20, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】陣列應用—稀疏矩陣演算法" href="https://fakestandard.github.io/algorithm/algorithm-31-matrixsparse/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】陣列應用—轉置矩陣演算法</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/26 閱讀紀錄】
+根據先前文章介紹的陣列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 從數學角度來說，矩陣 m*n 的形式在電腦中可以利用二維陣列表示，而矩陣的相關運算與應用，也都是以陣列結構來解決。矩陣可應用於 3D 圖學中，用來表示模型資料的投影、擴大、縮小、平移、偏斜或旋轉等運算，在深度學習中也常遇到大量使用矩陣運算來提高效率。
+接下來會透過陣列結構來演示轉置矩陣演算法
+轉置矩陣 轉置矩陣非常好理解，就是將原矩陣的行座標元素與列座標元素互相對調，例如
+可得結論
+程式碼實現，先輸出矩陣方法
+/// &lt;summary&gt; /// 輸出矩陣 /// &lt;/summary&gt; /// &lt;param name=&#34;matrix&#34;&gt;&lt;/param&gt; static void Print(ref int[,] matrix) { int i; int j; for (i = 0; i &lt; matrix.GetLength(0); i&#43;&#43;) { for (j = 0; j &lt; matrix.GetLength(1); j&#43;&#43;) Write(matrix[i, j] &#43; &#34;\t&#34;); WriteLine(); } } 轉置矩陣方法
+/// &lt;summary&gt; /// 轉置矩陣方法 /// &lt;/summary&gt; /// &lt;param name=&#34;A&#34;&gt;&lt;/param&gt; /// &lt;param name=&#34;B&#34;&gt;&lt;/param&gt; /// &lt;param name=&#34;C&#34;&gt;&lt;/param&gt; static void Matrix_Transpose(ref int[,] A, ref int[,] At) { int i, j; for (i = 0; i &lt; A....</p>
+  </section>
+  <footer class="entry-footer">July 18, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】陣列應用—轉置矩陣演算法" href="https://fakestandard.github.io/algorithm/algorithm-30-matrixtranspose/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】陣列應用—矩陣相加與相乘演算法</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/26 閱讀紀錄】
+根據先前文章介紹的陣列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 從數學角度來說，矩陣 m*n 的形式在電腦中可以利用二維陣列表示，而矩陣的相關運算與應用，也都是以陣列結構來解決。矩陣可應用於 3D 圖學中，用來表示模型資料的投影、擴大、縮小、平移、偏斜或旋轉等運算，在深度學習中也常遇到大量使用矩陣運算來提高效率。
+接下來會透過陣列結構來演示以下兩種演算法
+ 矩陣相加 矩陣相乘  矩陣相加 矩陣相加與相減的前提是兩矩陣的陣列數與行數必須相同，相加或相減後的陣列數與行數也必須相等，所以矩陣相加與相減的特性相同。
+實際演練下列兩矩陣 A.B 相加之後得到 C 矩陣
+建立靜態變數與輸出矩陣方法
+static int ROWS = 3; static int COLS = 3; /// &lt;summary&gt; /// 輸出矩陣 /// &lt;/summary&gt; /// &lt;param name=&#34;matrix&#34;&gt;&lt;/param&gt; static void Print(ref int[,] matrix) { int i; int j; for (i = 0; i &lt; ROWS; i&#43;&#43;) { for (j = 0; j &lt; COLS; j&#43;&#43;) Write(matrix[i, j] &#43; &#34;\t&#34;); WriteLine(); } } 建立矩陣相加方法...</p>
+  </section>
+  <footer class="entry-footer">July 17, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】陣列應用—矩陣相加與相乘演算法" href="https://fakestandard.github.io/algorithm/algorithm-29-matrixaddadnmultiply/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】佇列應用—雙向佇列（Deques）</h2>
   </header>
   <section class="entry-content">
@@ -288,71 +348,6 @@ Start 利用陣列結構模擬堆疊工作運算，且使用迴圈控制推入�
   </section>
   <footer class="entry-footer">July 2, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—陣列實作堆疊" href="https://fakestandard.github.io/algorithm/algorithm-22-stackarray/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】搜尋演算法—費氏搜尋法（Fibonacci Search）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/31 閱讀紀錄】
-搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
-依據資料量大小而言，搜尋可分為兩種
- 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
- 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
-Start 常見的搜尋演算法
- 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  費氏搜尋演算法（Fibonacci Search） 費氏搜尋演算法又稱費伯納搜尋法，Fibonacci 還有其他譯名如斐波那契數列、費氏數列等等，該數列非常特別，對於大自然而言，整個自然界都存在這個的定律，它是一個神奇的黃金比例；對於數學而言，只不過是個公式—每個值是前兩項的總和，但是，每個值除以前一項的商數，都近似於 1.618…
-OK. 我們也不能偏離主題太遠，不過 1.618 這個數字會存放於筆者內心的深處，近期受疫情的肆虐，筆者拾起達文西密碼，拜本書之賜，重新認識斐波那契數列這個「上帝之數」。
-費氏級數如同先前所說，每個值都是前兩項的加總，故其公式為
-雖然每個值都是前兩項的加總，其中並不包含第零個元素和第一個元素，第零個元素定義為 0，第一個元素定義為 1，從這兩個元素開始，每個值才是前兩項的總和，故該數列會是 0,1,1,2,3,5,8,13,21,34,55,89,144...
-費氏樹列以遞迴程式碼表現方式為
-static int Fibonacci(int value) { if (value == 0) return 0; else if (value == 1) return 1; else return Fibonacci(value - 1) &#43; Fibonacci(value - 2); } 了解費氏級數後，就來認識費氏搜尋數，所謂費氏搜尋數就是以費氏數列的特性，所建立的二元數，其建立原則如下...</p>
-  </section>
-  <footer class="entry-footer">June 30, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—費氏搜尋法（Fibonacci Search）" href="https://fakestandard.github.io/algorithm/algorithm-21-fibonaccisearch/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】搜尋演算法—內插搜尋法（Interpolation Search）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/21 閱讀紀錄】
-搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
-依據資料量大小而言，搜尋可分為兩種
- 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
- 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
-Start 常見的搜尋演算法
- 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  內插搜尋演算法（Interpolation Search） 內插搜尋法又稱插補搜尋法，是二分搜尋法的改良版，主要是針對以排序的資料進行搜尋，與二分法相同。其原理為透過斜率公式預測資料的所在位置，再以二分法逐漸逼近。
-參考斜率公式說明
-實作公式
-Mid = left &#43; ((key-data[left]) * (right - left) / (data[right] - data[left])) 演算法分析  資料需事先排序 資料分佈越平均，搜尋速度越快。時間複雜度取決於資料分佈情況，平均會優於 O(logn)  實際撰寫程式碼 亂數產生 1-150 之間的 100 個整數，並實作內插搜尋法的過程
-建立靜態陣列物件及內插搜尋方法
-// 建立靜態陣列物件 static int[] data = new int[100]; static int Interpolation(int val) { int mid; // 中間值  int left = 0; // 左邊極限  int right = data....</p>
-  </section>
-  <footer class="entry-footer">June 28, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—內插搜尋法（Interpolation Search）" href="https://fakestandard.github.io/algorithm/algorithm-20-interpolationsearch/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】搜尋演算法—二分搜尋法（Binary Search）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/21 閱讀紀錄】
-搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
-依據資料量大小而言，搜尋可分為兩種
- 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
- 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
-Start 常見的搜尋演算法
- 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  二分搜尋演算法（Binary Search） 二分搜尋法是對已排序的資料進行搜尋，其原理是將資料分割成兩等份，對鍵值與分割的中間值進行比較大小，依照比較的結果，來確認要找的資料是在前半段或者後半段，反覆地分割比較，直到找到資料或無法再分割確定不存在為止，經由上述可知，未排序的資料不適用二分法。
-假設有一數列由小到大排序 10 20 30 40 50 60 70 80 90，欲找尋鍵值 30，利用二分法進行第一次分割，得到中間值為 50，將鍵值 30 與中間值 50 進行比較，得鍵值小於中間值，確定要找尋的資料在前半段 10 20 30 40 50，在對前半段進行第二次分隔，得到中間值 30，將鍵值與中間值進行比較，結果為真，即搜尋中止。
-演算法分析  時間複雜度為 O(logn) 必須事先排序，且資料量必須能載入到記憶體中執行 適用於不需增刪的靜態資料  實際撰寫程式碼 亂數產生 1-150 之間的 100 個整數，並實作二分搜尋法的過程
-建立靜態陣列物件及二分搜尋方法
-// 建立靜態陣列物件 static int[] data = new int[100]; /// &lt;summary&gt; /// 二分搜尋方法 /// &lt;/summary&gt; /// &lt;param name=&#34;val&#34;&gt;&lt;/param&gt; /// &lt;returns&gt;&lt;/returns&gt; static int BinarySearch(int val) { int mid; // 中間值  int left = 0; // 左邊極限  int right = data....</p>
-  </section>
-  <footer class="entry-footer">June 25, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—二分搜尋法（Binary Search）" href="https://fakestandard.github.io/algorithm/algorithm-19-binarysearch/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

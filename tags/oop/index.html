@@ -161,6 +161,22 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【OOP】sender 和 e 是什麼？</h2>
+  </header>
+  <section class="entry-content">
+    <p>Start 接續先前物件導向的紀錄，建議先閱讀「委託和事件」，因為會延伸委託和事件裡的範例。
+在寫 .Net Framework 或 Web 程式時，很常看到 IDE 產生的事件參數，其中 (object sender, EventArgs e) 裡的sender和e到底是什麼意思？有什麼用處？
+首先先建立LeaderRunEventArgs類別，並繼承EventArgs
+// 繼承 EventArgs public class LeaderRunEventArgs : EventArgs { private string name; public string Name { get { return name; } set { name = value; } } } EventArgs是包含事件資料的類別之基礎類別，作用為在事件觸發時傳遞資料用的。所以當 LeaderRun事件觸發時，LeaderRunEventArgs裡的屬性 Name 為需要傳遞的物件。
+改寫 Swordman 類別
+// 宣告委託 LeaderRunEventHandler，加入兩個參數 public delegate void LeaderRunEventHandler(object sender, LeaderRunEventArgs e); // 宣告事件 Run，事件類型是委託 LeaderRunEventHandler public event LeaderRunEventHandler LeaderRun; public void Run() { Console....</p>
+  </section>
+  <footer class="entry-footer">August 12, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【OOP】sender 和 e 是什麼？" href="https://fakestandard.github.io/post/oop/oop-7-sender-and-e/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【OOP】委託與事件（Delegate and Event）</h2>
   </header>
   <section class="entry-content">

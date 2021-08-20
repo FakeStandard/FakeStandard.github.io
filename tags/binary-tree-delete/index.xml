@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Binary Tree Delete on How can I help</title>
+    <link>https://fakestandard.github.io/tags/binary-tree-delete/</link>
+    <description>Recent content in Binary Tree Delete on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 20 Aug 2021 09:15:15 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/binary-tree-delete/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】樹的應用—二元排序樹（Binary Sort Tree）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-41-binarysorttree/</link>
+      <pubDate>Fri, 20 Aug 2021 09:15:15 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-41-binarysorttree/</guid>
+      <description>【5/28 閱讀紀錄】
+根據先前文章介紹的樹，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 二元排序樹在先前的文章都已經有實作過，一顆符合規定的二元樹，也就是二元排序樹，必須符合以下規則
+ 第一個輸入的值作為二元樹的樹根 逐一將後續的資料與樹根進行比較，大於樹根的資料放置右子樹，小於樹根的資料放置左子樹，以遞迴的方式進行比較，直到資料找到一個空節點可以放置。  假設有一陣列 12, 46, 10, 23, 11, 30, 7, 21，欲對此陣列建立二元排序樹，先將地一個元素作為樹根
+接著取得第二個元素，與樹根作比較，因元素 46 大於樹根 12，故放置於右子樹
+繼續取得第三個元素，與樹根作比較，因元素 10 小於樹根 12，故放置於左子樹
+取得第四個元素，與樹根作比較，元素 23 大於樹根 12，故放置於右子樹，但右子樹已經存在 46 這個節點，所以繼續將元素 23 與右子樹根節點 46 進行比較，最後元素 23 小於 46，故放置於左子樹中。
+使用此方式繼續將所有資料在樹中進行比較，欲到已被佔位的節點，就繼續比較，最後形成一顆二元排序樹。
+實作程式碼的部分也相當簡單，先前也實作過很多遍，透過遞迴的方式進行比較，值到有空節點為止。
+/// &amp;lt;summary&amp;gt; /// 樹節點類別 /// &amp;lt;/summary&amp;gt; class TreeNode { public int data; public TreeNode left; public TreeNode right; public TreeNode(int value) { this.data = value; this.left = null; this.</description>
+    </item>
+    
+    <item>
+      <title>【Algorithm】樹的應用—二元樹插入與刪除節點</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-40-binarytreeinsertanddelete/</link>
+      <pubDate>Tue, 17 Aug 2021 12:10:26 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-40-binarytreeinsertanddelete/</guid>
+      <description>【5/28 閱讀紀錄】
+根據先前文章介紹的樹，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 這篇文章會紀錄節點插入與刪除的原理與應用
+節點插入 在二元樹中節點插入非常簡單，利用先前學到的走訪與搜尋，先對二元樹進行走訪搜尋，若搜尋時發現樹中已存在相同值，則節點插入失敗，若樹中沒有找到值，才執行節點插入。
+依據先前實作過的樹，逐一建立樹節點類別、二元樹類別，二元樹類別中至少需具有新增節點方法與搜尋節點方法，方能執行節點插入。在類別中額外添加前序走訪方法，供後續輸出二元樹節點使用。
+/// &amp;lt;summary&amp;gt; /// 樹節點類別 /// &amp;lt;/summary&amp;gt; class TreeNode { public int data; public TreeNode left; public TreeNode right; public TreeNode(int value) { this.data = value; this.left = null; this.right = null; } } /// &amp;lt;summary&amp;gt; /// 二元樹類別 /// &amp;lt;/summary&amp;gt; class BinaryTree { public TreeNode root; public BinaryTree(int[] array) { for (int i = 0; i &amp;lt; array.Length; i++) AddNode(array[i]); } public void AddNode(int value) { if (root == null) { root = new TreeNode(value); return; } TreeNode current = root; while (true) { if (value &amp;gt; current.</description>
+    </item>
+    
+  </channel>
+</rss>

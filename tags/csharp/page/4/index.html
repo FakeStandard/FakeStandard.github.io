@@ -161,6 +161,60 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】排序演算法—合併排序法（Merge Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/18 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  合併排序法（Merge Sort） 合併排序法的原理是將兩個或兩個以上的數列，經由合併的方式組合成一個排序好的數列。
+步驟非常好理解，如下
+ 將 N 個長度為 1 的鍵值合併成 N/2 個長度為 2 的鍵值 將 N/2 個長度為 2 的鍵值，合併成 N/4 個長度為 4 的鍵值 將 N/4 個長度為 4 的鍵值，合併成 N/8 個長度為 8 的鍵值 重複地將鍵值合併，直到合併成一個長度為 N 的鍵值為止  使用一個未排序陣列解說步驟，目標是由小到大排序，陣列如下 38 16 41 72 52 98 63 25...</p>
+  </section>
+  <footer class="entry-footer">June 16, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—合併排序法（Merge Sort）" href="https://fakestandard.github.io/algorithm/algorithm-15-mergesort/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】排序演算法—快速排序法（Quick Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/17 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  快速排序法（Quick Sort） 快速排序法又稱分割交換排序法，也是目前公認最佳的排序法，原理為使用分治法的方式，從資料中找到一個虛擬中間值，依此中間值將資料分為兩部分，將小於中間值的資料放到左邊，反之，大於中間值放到右邊，以同樣的方式處理左右兩邊資料，直到排序完成。
+其步驟如下
+ 將第一個資料作為中間值 K 從左至右找出大於 K 的第一值作為 I 從右向左找到小於 K 的第一個值作為 J 如果 I &gt; J，則 I 與 J 互換，然後回到第二步驟 若在尋找的過程中 I 與 J 有相遇，則 K 與 J 互換，接著以 K 作為基準點分割成左右兩部分，重複步驟一到步驟五，直到排序完成。  演示有一序列需要排序，數值為 1~8，將第一個值作為 K
+               6 8 1 4 5 3 7 2   K           從左右兩邊開始分別找出 I 與 J，左邊找大於 K 值作為 I，右邊找小於 K 值作為 J...</p>
+  </section>
+  <footer class="entry-footer">June 13, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—快速排序法（Quick Sort）" href="https://fakestandard.github.io/algorithm/algorithm-14-quicksort/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【.NET Core】記錄 Logging</h2>
+  </header>
+  <section class="entry-content">
+    <p>【ASP.NET Core 5】
+過去在記錄 Log 時，會使用第三方套件來記錄，在 .NET Core 預設就已經將 Logger 注入到 DI 容器，直接使用 ILogger 介面來執行。
+Start 此篇會紀錄的部分有以下
+ Logging Provider Create Logs Log Level Log EventID Log Message Log Exceptions Configure Logging  Logging Provider Logging Provider 會儲存記錄檔，但 Console 顯示記錄的提供者除外。
+在 Program.cs 調用 CreateDefaultBuilder 會新增下列記錄提供者
+ Console Debug EventSource EventLog: Windows only  欲 override 由 Host.CreateDefaultBuilder 設置的 logging provider 集合，可呼叫 ClearProviders 移除所有 ILoggerProvider 實例，再加入需要的記錄提供者。
+public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host....</p>
+  </section>
+  <footer class="entry-footer">June 11, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET Core】記錄 Logging" href="https://fakestandard.github.io/netcore/netcore5-5-logging/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【OOP】物件導向基礎概念（Object Oriented Programming）</h2>
   </header>
   <section class="entry-content">
@@ -304,69 +358,6 @@ Start Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以�
   </section>
   <footer class="entry-footer">May 31, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【.NET Core】中介軟體 Middleware" href="https://fakestandard.github.io/netcore/netcore5-3-middleware/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】資料結構—雜湊表（Hash Table）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/24 閱讀紀錄】
-選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
-Start 此篇紀錄記錄雜湊表定義及應用，其餘常見的資料結構如下
- 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  雜湊表（Hash Table） 雜湊是一種電腦對資料的處理方式，它通過某種特定的雜湊函數應用，將鍵值轉換成相對應的資料儲存位址，形成一種快速存取與搜尋資料的資料結構—雜湊表，而雜湊表是一種儲存紀錄的連續記憶體。
-相關專有名詞  雜湊函數（Hashing Function）
-將未經雜湊的資料，透過特定的計算公式，轉換成對應的資料儲存位址，計算後的結果必須隨著明文改變而改變。 雜湊值（Hash Code）
-原始資料經由雜湊函數計算的結果，稱為雜湊值，且雜湊值為不可逆。不可逆的意思是，轉換後的結果無法反推原來的資料，只能由 A 變成 B，無法從 B 找回 A，例如將蘋果透過果汁機打成蘋果汁，蘋果就是原始資料，果汁機是雜湊函數，蘋果汁是雜湊值，我們無法將蘋果汁再透過果汁機變回蘋果，這就是不可逆。 桶（Bucket）
-雜湊表中儲存資料的位置，每個位置對應唯一的位址（Bucket Address） 槽（Slot）
-每一筆紀錄可能包含多個欄位，Slot 指的就是 Bucket 的欄位 碰撞（Collision）
-兩筆不同的資料，經雜湊函數運算後，對應到相同位址時，稱為碰撞 溢位（Overflow）
-資料經過雜湊函數運算後，對應的 Bucket 已滿，則會使 Bucket 發生溢位 雜湊表（Hash Table）
-儲存紀錄的連續記憶體，它類似於資料表的索引表格，可將 Column 和 Row 看待成 Slot 與 Bucket 完美雜湊（Perfect Hashing）
-指沒有發生碰撞，也沒有發生溢位的雜湊函數  雜湊應用 雜湊通常應用於加密或驗證，但雜湊不等於加密，加密不等於雜湊。其應用有身份證字號是透過公式來驗證是否合法，或者是 MD5 密碼雜湊函式，將使用者的 password 經由 MD5 產生雜湊值，再將雜湊值儲存於資料庫中，等下次使用者登入時，將輸入的密碼經由 MD5 運算，將其結果與資料庫中儲存的雜湊值進行比對即可。...</p>
-  </section>
-  <footer class="entry-footer">May 29, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—雜湊表（Hash Table）" href="https://fakestandard.github.io/algorithm/algorithm-9-hashtable/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET】使用 C# 操作檔案 I/O 與檔案系統（二）</h2>
-  </header>
-  <section class="entry-content">
-    <p>在 .NET 框架中，命名空間System.IO已經提供多種檔案操作類別，用於對資料檔案和資料流的讀寫。談到檔案系統，要先知道兩個東西
- 檔案（File） 流（Stream）  檔案是在硬碟或光碟機等媒體上可永久儲存資料的有序集合，它是一種進行資料讀寫操作的基本物件，通常按照樹狀目錄結構進行組織，每個檔案皆有檔名、所在路徑、建立時間、訪問許可權等屬性。
-流是位元組序列的抽象概念，例如檔案、輸入/輸出裝置、處理程序間的通訊管道（an inter-process communication pipe）或 TCP/IP 通訊端。資料流包含讀取、寫入以及支援搜尋三種基本作業。
-Start 流（Stream）為所有資料流的基礎類別，繼承該類別的資料流常見的有
- FileStream StreamReader StreamWriter MemoryStream  FileStream FileStream可以用來讀取、寫入、開啟和關閉檔案系統上的檔案，或操縱其他與檔案相關的檔案處理系統。該類別主要是要操作位元組陣列， Stream 類別則直接操作字元，是兩者較不同的地方。
-文字讀起來沒感覺，直接使用FileStream來讀寫二進位制檔案。
-先建立一個含有文字內容的文字檔，透過FileStream開啟該文字檔，除了讀取出二進位制內容，也順便將 binary 轉換為字元打印出來。
-/// &lt;summary&gt; /// 使用 FileStream 讀取檔案 /// &lt;/summary&gt; public static void FileStreamRead() { string path = @&#34;D:\Test.txt&#34;; // 建立 FileStream 並實例化  // 開啟或建立指定路徑檔案，訪問權限唯讀  FileStream fs = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read); // 讀取 binary 檔案  byte[] array = new byte[fs....</p>
-  </section>
-  <footer class="entry-footer">May 27, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET】使用 C# 操作檔案 I/O 與檔案系統（二）" href="https://fakestandard.github.io/post/dotnet/dotnet-9-filesystemandfileio-two/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】資料結構—圖形（Graph）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/25 閱讀紀錄】
-選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
-Start 此篇紀錄記錄圖形定義及應用，其餘常見的資料結構如下
- 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  圖形（Graph） 圖形理論是由一位瑞士數學家所想出的一種資料結構，是比樹狀結構更複雜的非線性結構，許多問題都可以轉換成圖形資料結構，因此，圖形資料結構被廣泛應用於程式的實作，在所有資料結構中的應用也最為廣泛。
-例如在網路的地圖上搜尋兩點之間的最短路徑，可以將地點轉換成圖形中的頂點，地點與地點之間的距離轉換成邊，最後使用最短路徑的演算法，即可以找出最短路徑。
-圖的定義是由**頂點（Vertice）和邊（Edge）**所組成的集合，邊是連結圖形中的兩個頂點，可以有循環，也可以不跟其他頂點相連，通常以 G=(V,E) 來定義一個圖形
- G：圖（Graph） V：所有頂點（Vertice）的集合 E：所有邊（Edge）的集合  圖形的種類有兩種，分別是無向圖形和有向圖形
-無向圖形（Undirected Graph） 無向圖形的邊只代表頂點之間是相連，不會標示方向箭頭，可以說是不具有方向性，無向圖以 (V1,V2) 來表示，例如 (V1,V2) 與 (V2,V1) 表示相同的邊。
-以上圖來說
-V = {A,B,C,D,E} E = {(A,B),(A,C),(B,D),(B,E),(C,D),(C,E)} 有向圖形（Directed Graph） 有向圖形的每個邊都具有方向性，以 &lt;V1,V2&gt; 來表示，若無向圖是不具方向性，那麼有向圖就是具有方向性的，V1 是指尾端，V2 是指頂端，&lt;V1,V2&gt; 則代表著由 V1 尾端指向 V2 頂端。例如 &lt;V1,V2&gt; 和 &lt;V2,V1&gt; 表示兩個不同方向的邊。
-以上圖來說，與無向圖形的範例圖差異在於，該圖的邊是具有方向性箭頭，表示方式如下
-V = {A,B,C,D,E} E = {&lt;A,B&gt;,&lt;A,C&gt;,&lt;B,D&gt;,&lt;C,D&gt;,&lt;E,B&gt;,&lt;E,C&gt;} 相關專有名詞   頂點（Vertice）...</p>
-  </section>
-  <footer class="entry-footer">May 26, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—圖形（Graph）" href="https://fakestandard.github.io/algorithm/algorithm-8-graph/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
