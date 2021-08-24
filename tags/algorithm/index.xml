@@ -6,7 +6,27 @@
     <description>Recent content in Algorithm on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 20 Aug 2021 09:15:15 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Aug 2021 19:23:02 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】樹的應用—二元運算樹（Binary Expression Tree）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-42-binaryexpressiontree/</link>
+      <pubDate>Mon, 23 Aug 2021 19:23:02 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-42-binaryexpressiontree/</guid>
+      <description>【6/7 閱讀紀錄】
+根據先前文章介紹的樹，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 二元樹應用範圍還可包含運算式間的轉換，我們可以把一個四則運算，使用二元樹來表示，再依二元樹的特性進行前中後序的走訪，即二元運算樹（Binary Expression Tree）
+書中表示建立方法有以下二種規則
+  考慮算術式中運算子的結合性與優先權，再適當地加上括號，其中樹葉一定是運算元，內部節點一定是運算子 再由最內層的括號逐步向外，利用運算子當樹根，左邊運算元當左子樹，右邊運算元當右子樹，其中優先權最低的運算子作為此二元運算樹的樹根   以 ((7+8)/5)*(4+9-3) 運算式為例，先建立二元運算樹
+接著分別求出此運算式的前中後序表示法
+前序（Prefix） 又稱波蘭表示法（Polish notation），上述例子利用前序走訪表示為 */+785+4-93
+中序（Infix） 對於中序表示法而言，運算元是二元樹的葉節點，運算子是非終端節點，其表示法也是一般的運算式。以中序走訪表示為 ((7+8)/5)*(4+9-3)
+後序（Postfix） 又稱逆波蘭表示法（Reverse Polish notation），上述例子利用後序走訪表示為 78+5/493-+*
+利用鏈結串列實作二元運算樹之運算，先建立節點和二元樹類別
+/// &amp;lt;summary&amp;gt; /// 節點類別 /// &amp;lt;/summary&amp;gt; class TreeNode { public int val; public TreeNode leftNode; public TreeNode rightNode; public TreeNode(int val) { this.val = val; this.leftNode = null; this.rightNode = null; } } /// &amp;lt;summary&amp;gt; /// 二元搜尋樹類別 /// &amp;lt;/summary&amp;gt; class BinarySearchTree { public TreeNode root; public BinarySearchTree() { root = null; } public BinarySearchTree(int[] data) { for (int i = 0; i &amp;lt; data.</description>
+    </item>
+    
     <item>
       <title>【Algorithm】樹的應用—二元排序樹（Binary Sort Tree）</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-41-binarysorttree/</link>

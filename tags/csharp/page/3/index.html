@@ -161,6 +161,22 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>【Algorithm】堆疊應用—陣列實作堆疊</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/16 閱讀紀錄】
+根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 利用陣列結構模擬堆疊工作運算，且使用迴圈控制推入與取出的元素，其中需包含推入（push）和取出（pop）函數，最後要輸出堆疊中所有元素。
+建立堆疊類別
+/// &lt;summary&gt; /// 以陣列模擬堆疊的類別 /// &lt;/summary&gt; class StackArray { // 宣告陣列  private int[] stack; // 指向堆疊頂端的索引  private int top; /// &lt;summary&gt;  /// 建構子  /// &lt;/summary&gt;  /// &lt;param name=&#34;stack_size&#34;&gt;堆疊大小&lt;/param&gt;  public StackArray(int size) { // 建立陣列  stack = new int[size]; top = -1; } /// &lt;summary&gt;  /// 判斷堆疊是否為空  /// &lt;/summary&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool Empty() { if (top == -1) return true; else return false; } /// &lt;summary&gt;  /// 推入資料到頂端的方法  /// &lt;/summary&gt;  /// &lt;param name=&#34;data&#34;&gt;&lt;/param&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool Push(int data) { // 判斷堆疊頂端的索引是否大於陣列大小  if (top &gt;= stack....</p>
+  </section>
+  <footer class="entry-footer">July 2, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—陣列實作堆疊" href="https://fakestandard.github.io/algorithm/algorithm-22-stackarray/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>【Algorithm】搜尋演算法—費氏搜尋法（Fibonacci Search）</h2>
   </header>
   <section class="entry-content">
@@ -334,21 +350,6 @@ Step 1 將每個元素依照「個位數」放到相對應的串列中
   </section>
   <footer class="entry-footer">June 18, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—基數排序法（Radix Sort）" href="https://fakestandard.github.io/algorithm/algorithm-16-radixsort/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET Core】組態設定 Configuration</h2>
-  </header>
-  <section class="entry-content">
-    <p>【ASP.NET Core 5】
-Start .NET Framework 的組態通常在 app.config 或 web.config 中設定，在 .NET Core 不再使用過往讀取單一檔案方法，它使用一個或多個 Configuration Provider 來提供多種設定組態的方式。
-預設組態 應用程式在 Program.cs 預設產生 Host.CreateDefaultBuilder(args) 程式碼，CreateDefaultBuilder 會依照下列 Provider 的順序提供應用程式預設組態
- ChainedConfigurationProvider appsettings.json appsettings.Environment.json Environment Variables configuration provider Command-line configuration provider  使用下列程式碼，依新增順序來顯示 Configuration Provider
-private IConfigurationRoot ConfigRoot; public HomeController(IConfiguration configRoot) { ConfigRoot = (IConfigurationRoot)configRoot; } public ContentResult OnGet() { string str = &#34;&#34;; foreach (var provider in ConfigRoot.Providers.ToList()) { str &#43;= provider.ToString() &#43; &#34;\n&#34;; } return Content(str); } 結果與前述說明的順序相同...</p>
-  </section>
-  <footer class="entry-footer">June 17, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET Core】組態設定 Configuration" href="https://fakestandard.github.io/netcore/netcore5-6-configuration/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

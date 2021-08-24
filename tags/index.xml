@@ -6,13 +6,40 @@
     <description>Recent content in Tags on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Fri, 20 Aug 2021 09:15:15 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 Aug 2021 19:23:02 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Algorithm</title>
       <link>https://fakestandard.github.io/tags/algorithm/</link>
-      <pubDate>Fri, 20 Aug 2021 09:15:15 +0800</pubDate>
+      <pubDate>Mon, 23 Aug 2021 19:23:02 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Binary Expression Test</title>
+      <link>https://fakestandard.github.io/tags/binary-expression-test/</link>
+      <pubDate>Mon, 23 Aug 2021 19:23:02 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/binary-expression-test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSharp</title>
+      <link>https://fakestandard.github.io/tags/csharp/</link>
+      <pubDate>Mon, 23 Aug 2021 19:23:02 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tree</title>
+      <link>https://fakestandard.github.io/tags/tree/</link>
+      <pubDate>Mon, 23 Aug 2021 19:23:02 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/tags/tree/</guid>
       <description></description>
     </item>
     
@@ -31,24 +58,6 @@
       <pubDate>Fri, 20 Aug 2021 09:15:15 +0800</pubDate>
       
       <guid>https://fakestandard.github.io/tags/binary-tree-insert/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CSharp</title>
-      <link>https://fakestandard.github.io/tags/csharp/</link>
-      <pubDate>Fri, 20 Aug 2021 09:15:15 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/csharp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tree</title>
-      <link>https://fakestandard.github.io/tags/tree/</link>
-      <pubDate>Fri, 20 Aug 2021 09:15:15 +0800</pubDate>
-      
-      <guid>https://fakestandard.github.io/tags/tree/</guid>
       <description></description>
     </item>
     
