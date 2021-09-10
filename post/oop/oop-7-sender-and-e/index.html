@@ -38,7 +38,7 @@
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【OOP】sender 和 e 是什麼？" />
 <meta property="og:description" content="Start 接續先前物件導向的紀錄，建議先閱讀「委託和事件」，因為會延伸委託和事件裡的範例。
 在寫 .Net Framework 或 Web 程式時，很常看到 IDE 產生的事件參數，其中 (object sender, EventArgs e) 裡的sender和e到底是什麼意思？有什麼用處？
@@ -194,7 +194,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -241,7 +241,7 @@
 <p>接續先前物件導向的紀錄，建議先閱讀「委託和事件」，因為會延伸委託和事件裡的範例。</p>
 <p>在寫 .Net Framework 或 Web 程式時，很常看到 IDE 產生的事件參數，其中 <strong><code>(object sender, EventArgs e)</code></strong> 裡的<code>sender</code>和<code>e</code>到底是什麼意思？有什麼用處？</p>
 <p>首先先建立<code>LeaderRunEventArgs</code>類別，並繼承<code>EventArgs</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 繼承 EventArgs
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 繼承 EventArgs
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LeaderRunEventArgs</span> : EventArgs
 {
     <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> name;
@@ -253,7 +253,7 @@
 }
 </code></pre></div><p><code>EventArgs</code>是包含事件資料的類別之基礎類別，作用為在事件觸發時傳遞資料用的。所以當 <code>LeaderRun</code>事件觸發時，<code>LeaderRunEventArgs</code>裡的屬性 Name 為需要傳遞的物件。</p>
 <p>改寫 Swordman 類別</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 宣告委託 LeaderRunEventHandler，加入兩個參數
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 宣告委託 LeaderRunEventHandler，加入兩個參數
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">delegate</span> <span style="color:#66d9ef">void</span> LeaderRunEventHandler(<span style="color:#66d9ef">object</span> sender, LeaderRunEventArgs e);
 
 <span style="color:#75715e">// 宣告事件 Run，事件類型是委託 LeaderRunEventHandler
@@ -277,7 +277,7 @@
 }
 </code></pre></div><p>由上可得知，<code>object sender</code>是傳遞發送通知的物件，<code>EventArgs</code>是包含事件數據的類別。</p>
 <p>現在隊員們擁有了隊長傳遞過來的資訊，就可以直接使用這些資訊來完整程式碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 增加兩個參數
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 增加兩個參數
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Run(<span style="color:#66d9ef">object</span> sender, LeaderRunEventArgs args)
 {
     Console.WriteLine(name + <span style="color:#e6db74">&#34;：&#34;</span> + args.Name + <span style="color:#e6db74">&#34;隊長跑了！快跑！&#34;</span>);

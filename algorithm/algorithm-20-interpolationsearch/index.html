@@ -44,7 +44,7 @@ Mid = left &#43; ((key-data[left]) * (right - left) / (data[right] - data[left])
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【Algorithm】搜尋演算法—內插搜尋法（Interpolation Search）" />
 <meta property="og:description" content="【5/21 閱讀紀錄】
 搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
@@ -212,7 +212,7 @@ Mid = left &#43; ((key-data[left]) * (right - left) / (data[right] - data[left])
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -280,7 +280,7 @@ Mid = left &#43; ((key-data[left]) * (right - left) / (data[right] - data[left])
 <p>內插搜尋法又稱插補搜尋法，是二分搜尋法的改良版，主要是針對以排序的資料進行搜尋，與二分法相同。其原理為透過斜率公式預測資料的所在位置，再以二分法逐漸逼近。</p>
 <p><a href="https://ithelp.ithome.com.tw/articles/10250803">參考斜率公式說明</a></p>
 <p>實作公式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Mid = left + ((key-data[left]) * (right - left) / (data[right] - data[left])) 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">Mid = left + ((key-data[left]) * (right - left) / (data[right] - data[left])) 
 </code></pre></div><h2 id="演算法分析">演算法分析<a hidden class="anchor" aria-hidden="true" href="#演算法分析">#</a></h2>
 <ul>
 <li>資料需事先排序</li>
@@ -289,7 +289,7 @@ Mid = left &#43; ((key-data[left]) * (right - left) / (data[right] - data[left])
 <h2 id="實際撰寫程式碼">實際撰寫程式碼<a hidden class="anchor" aria-hidden="true" href="#實際撰寫程式碼">#</a></h2>
 <p>亂數產生 1-150 之間的 100 個整數，並實作內插搜尋法的過程</p>
 <p>建立靜態陣列物件及內插搜尋方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立靜態陣列物件
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立靜態陣列物件
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span>[] data = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">100</span>];
 
 <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> Interpolation(<span style="color:#66d9ef">int</span> val)
@@ -319,7 +319,7 @@ Mid = left &#43; ((key-data[left]) * (right - left) / (data[right] - data[left])
     <span style="color:#66d9ef">return</span> -<span style="color:#ae81ff">1</span>;
 }
 </code></pre></div><p>Main 方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
 {
     <span style="color:#66d9ef">int</span> i, j;
     <span style="color:#66d9ef">int</span> val = <span style="color:#ae81ff">0</span>;

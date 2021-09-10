@@ -3,30 +3,60 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://fakestandard.github.io/tags/algorithm/</loc>
-    <lastmod>2021-08-23T19:23:02+08:00</lastmod>
+    <lastmod>2021-09-09T12:09:06+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/categories/algorithm/</loc>
-    <lastmod>2021-08-23T19:23:02+08:00</lastmod>
+    <lastmod>2021-09-09T12:09:06+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/algorithm/</loc>
-    <lastmod>2021-08-23T19:23:02+08:00</lastmod>
-  </url><url>
-    <loc>https://fakestandard.github.io/tags/binary-expression-test/</loc>
-    <lastmod>2021-08-23T19:23:02+08:00</lastmod>
+    <lastmod>2021-09-09T12:09:06+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/categories/</loc>
-    <lastmod>2021-08-23T19:23:02+08:00</lastmod>
+    <lastmod>2021-09-09T12:09:06+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/csharp/</loc>
-    <lastmod>2021-08-23T19:23:02+08:00</lastmod>
+    <lastmod>2021-09-09T12:09:06+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/hash/</loc>
+    <lastmod>2021-09-09T12:09:06+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/hash-algorithm/</loc>
+    <lastmod>2021-09-09T12:09:06+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/</loc>
-    <lastmod>2021-08-23T19:23:02+08:00</lastmod>
+    <lastmod>2021-09-09T12:09:06+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/</loc>
-    <lastmod>2021-08-23T19:23:02+08:00</lastmod>
+    <lastmod>2021-09-09T12:09:06+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/algorithm-47-hashcollisionandoverflow/</loc>
+    <lastmod>2021-09-09T12:09:06+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/algorithm-46-hashalgorithm/</loc>
+    <lastmod>2021-09-06T12:08:35+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/security-algorithm/</loc>
+    <lastmod>2021-09-02T12:08:16+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/algorithm-45-securityalgorithm/</loc>
+    <lastmod>2021-09-02T12:08:16+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/balanced-binary-tree/</loc>
+    <lastmod>2021-08-30T20:55:37+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/tags/tree/</loc>
+    <lastmod>2021-08-30T20:55:37+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/algorithm-44-balancedbinarytree/</loc>
+    <lastmod>2021-08-30T20:55:37+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/threaded-binary-tree/</loc>
+    <lastmod>2021-08-27T20:55:18+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/algorithm/algorithm-43-threadedbinarytree/</loc>
+    <lastmod>2021-08-27T20:55:18+08:00</lastmod>
+  </url><url>
+    <loc>https://fakestandard.github.io/tags/binary-expression-test/</loc>
     <lastmod>2021-08-23T19:23:02+08:00</lastmod>
   </url><url>
     <loc>https://fakestandard.github.io/algorithm/algorithm-42-binaryexpressiontree/</loc>

@@ -31,7 +31,7 @@
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/tags/algorithm/index.xml">
 <meta property="og:title" content="Algorithm" />
 <meta property="og:description" content="不專業代碼" />
@@ -122,7 +122,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -158,6 +158,118 @@
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
   <h1>Algorithm</h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】樹的應用—串列實作二元樹</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/27 閱讀紀錄】
+根據先前文章介紹的樹，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 二元樹建立的規則有以下特點
+ 可以是空集合，但若不是空集合，則節點一定要有一個鍵值 每一個樹根的值須大於左子樹的值 每一個樹根的值須小於右子樹的值 樹的每個節點值都不同 左右子樹也是二元搜尋樹  二元樹有兩種表示方法，分別是
+ 陣列 串列  這篇只紀錄如何以串列來表示二元樹，假設有一顆樹，如下
+該如何使用串列來表示？
+使用鏈結串列來表示二元樹的優點，是在新增和刪除節點時非常容易，缺點則是不容易找到父節點。在使用陣列儲存歪斜樹時，會造成許多的空間被浪費，對於歪斜樹來說，使用串列儲存較為節省空間。
+根據上一篇的慘痛經驗，這篇偷偷將樹的值改了一個，讓樹高只維持在 4，上一篇做到 5 層，可真是毅力與耐力的考驗。
+首先，先了解一下要如何使用串列來表示二元樹，在先前學過的串列，都具有一個資料欄和指標欄，指標欄存放著下一個節點的記憶體位置，作為節點與節點之間的連結，透過指標的特性，我們將指標欄設置為兩個，分別為左指標與右指標，左指標存放左子樹的節點位址，右指標存放右子樹的節點位址，如下圖所示
+使用一個陣列先將樹的節點值儲存起來
+將陣列首作為樹根，並依照上述整理出的陣列，將陣列首放入完整二元樹的樹根，再依序將往後的值分別放入左右子樹，數值較樹根小的放左子樹，數值較樹根大的放右子樹。若比較完後，遇到左或右子樹的位置已有值，則往下一個階層進續比較，直到有樹葉為空可以擺放值。
+在使用串列表示二元樹時，也必須符合二元樹的定義，樹根的值須大於左子樹的值以及樹根的值須小於右子樹的值，最後以串列表示的方式如下
+實作程式碼時間，以一開始的樹為例，用一維陣列儲存起來 A = { 12, 46, 31, 23, 11, 30, 7, 10 }，按照二元樹的定義，形成一顆以串列表示的完整二元樹。
+先建立樹節點類別
+/// &lt;summary&gt; /// 樹節點類別 /// &lt;/summary&gt; class TreeNode { // 值  public int data; // 左子樹  public TreeNode leftNode; // 右子樹  public TreeNode rightNode; public TreeNode(int value) { this....</p>
+  </section>
+  <footer class="entry-footer">August 5, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】樹的應用—串列實作二元樹" href="https://fakestandard.github.io/algorithm/algorithm-37-linkedlistimplementationoftree/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】樹的應用—陣列實作二元樹</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/27 閱讀紀錄】
+根據先前文章介紹的樹，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 二元樹建立的規則有以下特點
+ 可以是空集合，但若不是空集合，則節點一定要有一個鍵值 每一個樹根的值須大於左子樹的值 每一個樹根的值須小於右子樹的值 樹的每個節點值都不同 左右子樹也是二元搜尋樹  二元樹有兩種表示方法，分別是
+ 陣列 串列  這篇只紀錄如何以陣列來表示二元樹，假設有一顆樹，如下
+該如何使用陣列來表示？
+首先，我們可以先想像這是一顆完整二元樹，從樹根開始，依序由左到右、上到下編號，對於空的樹葉依然給它編號，但元素依然為空，如下
+準備一個一維陣列，陣列大小為完滿二元樹的最大編號加一，以上圖來說最大編號是 15，其陣列大小為 15&#43;1，因為陣列首將不放任何元素，如下
+依照前述的編號，將編號的樹葉值填入相對應的陣列位置
+如此一來就完成使用陣列表示樹的方法，不過這個例子不能是一顆二元樹，因為它並不符合上述的定義，樹根的值須大於左子樹的值以及樹根的值須小於右子樹的值。
+為了要讓它成為一顆符合定義個二元樹，先把這顆樹的值都取出來，存放於一個陣列中
+將陣列首作為樹根，並依照上述整理出的陣列，將陣列首放入完整二元樹的樹根，再依序將往後的值分別放入左右子樹，數值較樹根小的放左子樹，數值較樹根大的放右子樹。若比較完後，遇到左或右子樹的位置已有值，則往下一個階層進續比較，直到有樹葉為空可以擺放值。如下
+繼續將剩下的陣列元素，逐一放入完整二元樹中，其放置過程中必須符合樹根的值須大於左子樹的值以及樹根的值須小於右子樹的值。最後完成一顆符合規定的二元樹（例子又沒開好QQ）
+接著為二元樹編上編號，再將完滿二元樹轉換成陣列表示法，大功造成！
+實作程式碼時間，以一開始的樹為例，用一維陣列儲存起來 A = { 12, 46, 10, 23, 11, 30, 7, 31 }，按照二元樹的定義，形成一顆以陣列表示的完整二元樹
+static void Main(string[] args) { int i, j; // 原始陣列  int[] data = { 12, 46, 10, 23, 11, 30, 7, 31 }; int[] btree = new int[32]; for (i = 0; i &lt; btree....</p>
+  </section>
+  <footer class="entry-footer">August 2, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】樹的應用—陣列實作二元樹" href="https://fakestandard.github.io/algorithm/algorithm-36-arrayimplementationoftree/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】鏈結串列應用—單向串列反轉演算法</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/27 閱讀紀錄】
+根據先前文章介紹的鏈結串列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 學會串列插入、刪除和連結的基本功之後，這篇要來思考如何反轉串列？反轉串列顧名思義就是將串列內的元素都顛倒過來，最後形成頂端節點變成末端節點，而末端節點成為頂端節點，但是串列指標只能知道下一個節點的位置，無法得知上一個節點，那該如何做？這就需要一點小技巧，直接實作程式碼
+/// &lt;summary&gt; /// 節點類別 /// &lt;/summary&gt; class Node { public int data; public Node next; public Node(int data) { this.data = data; this.next = null; } } /// &lt;summary&gt; /// 鏈結串列類別 /// &lt;/summary&gt; class LinkedList { public Node first; public Node last; public bool IsEmpty() { return first == null; } public void Print() { Node current = first; while (current != null) { Write($&#34;[{current....</p>
+  </section>
+  <footer class="entry-footer">July 29, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】鏈結串列應用—單向串列反轉演算法" href="https://fakestandard.github.io/algorithm/algorithm-35-linkedlistreverse/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】鏈結串列應用—單向串列刪除節點演算法</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/27 閱讀紀錄】
+根據先前文章介紹的鏈結串列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 以單向的鏈結串列來說，欲串列中的節點，可刪除的位置與插入節點相同會有三種
+  刪除串列的第一個節點
+第一個節點刪除後，第二個節點會成為頂端節點，只需將頂端節點指給第二個節點
+  刪除串列的最後一個節點
+最後一個節點刪除後，倒數第二個節點會成為末端節點，只需將末端節點指標只給倒數第二個節點
+  從串列中刪除其中一個中間節點
+將欲刪除節點的前一個節點指標，指給欲刪除節點的下一個節點即可
+  實作串列刪除節點程式碼，先建立節點類別，類別內包含資料欄與指標欄，每當新節點建立時，新節點資料欄必須帶有值，而指標欄先指向 NULL，等待後續將指標指向特定節點作業。
+/// &lt;summary&gt; /// 節點類別 /// &lt;/summary&gt; class Node { // 資料欄  public int data; // 指標欄  public Node next; /// &lt;summary&gt;  /// 帶有一個資料的建構子  /// &lt;/summary&gt;  /// &lt;param name=&#34;data&#34;&gt;&lt;/param&gt;  public Node(int data) { this.data = data; this.next = null; } } 建立鏈結串列類別，串列類別需包含頂端節點和末端節點屬性，類別內再建立一個輸出當前串列的方法，以及判斷當前陣列是否為空，若沒有頂端節點則該串列為空。另外再建立兩個方法，一個是 Insert 用於插入新節點，一個是 Delete 用於刪除節點，下一步將實作這兩個方法。...</p>
+  </section>
+  <footer class="entry-footer">July 26, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】鏈結串列應用—單向串列刪除節點演算法" href="https://fakestandard.github.io/algorithm/algorithm-34-linkedlistdelete/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】鏈結串列應用—單向串列插入節點與連結兩串列演算法</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/27 閱讀紀錄】
+根據先前文章介紹的鏈結串列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 以單向的鏈結串列來說，欲插入新節點到現有的串列，有三種位置可以插入
+  插入於第一個節點之前
+新節點成為串列的首節點，作法是將新節點的指標指向串列原來的第一個節點，再把串列的指標首指向新節點
+  插入於最後一個節點之後
+新節點成為串列的末節點，只需要將串列的最後一個節點指標指向新節點，新節點再指向 NULL 即可
+  插入於串列中間的位置
+假設插入於 A.B 節點之間，將 A 節點的指標指向新節點，新節點的指標再指向 B 節點即可
+  實作串列插入節點程式碼，先建立節點類別，類別內包含資料欄與指標欄，每當新節點建立時，新節點資料欄必須帶有值，而指標欄先指向 NULL，等待後續將指標指向特定節點作業。
+/// &lt;summary&gt; /// 節點類別 /// &lt;/summary&gt; class Node { // 資料欄  public int data; // 指標欄  public Node next; /// &lt;summary&gt;  /// 帶有一個資料的建構子  /// &lt;/summary&gt;  /// &lt;param name=&#34;data&#34;&gt;&lt;/param&gt;  public Node(int data) { this.data = data; this....</p>
+  </section>
+  <footer class="entry-footer">July 24, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】鏈結串列應用—單向串列插入節點與連結兩串列演算法" href="https://fakestandard.github.io/algorithm/algorithm-33-linkedlistinsertandconcatenation/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
@@ -254,103 +366,6 @@ Start 雙向佇列的全名是 Double-ends Queues，縮寫為 Deques。雙向佇
   </section>
   <footer class="entry-footer">July 15, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】佇列應用—雙向佇列（Deques）" href="https://fakestandard.github.io/algorithm/algorithm-28-deques/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】佇列應用—串列實作佇列</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/20 閱讀紀錄】
-根據先前文章介紹的佇列，此篇實際運用它們實作一個應用。
-程式碼已放上 GitHub
-Start 利用串列結構模擬佇列工作，使用指標及相關方法實作佇列。
-建立鏈結串列的節點類別
-/// &lt;summary&gt; /// 鏈結串列節點類別 /// &lt;/summary&gt; class QueueNode { public int data; public QueueNode next; public QueueNode(int data) { this.data = data; next = null; } } 建立使用串列節點模擬佇列的類別，其中包含 Enqueue 和 Dequeue 方法。
-/// &lt;summary&gt; /// 串列模擬佇列類別 /// &lt;/summary&gt; class QueueByLink { // 前端指標  public QueueNode front; // 末端指標  public QueueNode rear; public QueueByLink() { front = null; rear = null; } /// &lt;summary&gt;  /// 加入資料到佇列  /// &lt;/summary&gt;  /// &lt;param name=&#34;value&#34;&gt;&lt;/param&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool Enqueue(int value) { // 建立新節點  QueueNode node = new QueueNode(value); // 檢查是否為空佇列  if (rear == null) front = node; else rear....</p>
-  </section>
-  <footer class="entry-footer">July 12, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】佇列應用—串列實作佇列" href="https://fakestandard.github.io/algorithm/algorithm-27-queuelist/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】佇列應用—陣列實作佇列</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/20 閱讀紀錄】
-根據先前文章介紹的佇列，此篇實際運用它們實作一個應用。
-程式碼已放上 GitHub
-Start 利用陣列簡單地時做佇列應用，宣告一個大小為 10 的佇列 queue[10]，設置 front 和 rear 作為頭尾的指標且預設為 -1。
-static int front = -1; static int rear = -1; static int max = 10; static int val; static int[] queue = new int[max]; static void Main(string[] args) { int choice = 0; while (rear &lt; max - 1 &amp;&amp; choice != 3) { Write(&#34;請輸入 \n[1] 新增一個資料 \n[2] 取出資料 \n[3] 結束 :&#34;); choice = int.Parse(Console.ReadLine()); switch (choice) { case 1: Write(&#34;請輸入要新增的數值:&#34;); val = int....</p>
-  </section>
-  <footer class="entry-footer">July 11, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】佇列應用—陣列實作佇列" href="https://fakestandard.github.io/algorithm/algorithm-26-queuearray/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】堆疊應用—八皇后經典謎題</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/16 閱讀紀錄】
-根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
-程式碼已放上 GitHub
-Start 八皇后謎題也是經典中的經典，該問題以西洋棋作為背景，如何在 8x8 的棋盤上擺放八個皇后，使任一皇后都無法吃掉其他皇后，屬於堆疊常見的應用實例。
-西洋棋皇后擺放的規則為：因皇后可在一步內，不限格數的直行、橫行或斜線前行，若同一條線上同時有兩個皇后，則舊皇后可吃掉新來皇后，所以，皇后間不可處於同一個縱向、橫向或斜線（跟數獨的概念相似）
-首先會先放置一個皇后，接著依據第一個皇后的位置，在不被吃掉的情況下，繼續放置第二個皇后、第三個皇后…直到放置某個新皇后時，都會被先前的皇后吃掉，此時，就必須變更前一個皇后放置的位置，在不被先前的皇后吃掉之情形下，找到第二個可以放置的位置，在繼續擺放新皇后；若在前一個擺放的皇后，也沒有新的位置可以擺放（都會被吃掉的情況），就在將前前皇后拿起，尋找新的可以擺放的位置，以此類推。
-由上述可知，在放置新皇后或是拿起舊皇后的動作，是以堆疊的概念進行，而當新皇后無法擺放時，將舊皇后拿起尋找新的位置，是以回溯的概念進行。
-本書程式碼範例
-class Program { static void Main(string[] args) { number = 0; DecidePosition(0); ReadKey(); Console.ReadLine(); } static int TRUE = 1, FALSE = 0, EIGHT = 8; // 存放八個皇后的列位置  static int[] queen = new int[EIGHT]; // 計算共有幾組解答  static int number = 0; /// &lt;summary&gt;  /// 按下 Enter 鍵要執行方法  /// &lt;/summary&gt;  public static void PressEnter() { char ch; Write(&#34;\n\n&#34;); Write(&#34;按下 Enter 鍵繼續....</p>
-  </section>
-  <footer class="entry-footer">July 10, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—八皇后經典謎題" href="https://fakestandard.github.io/algorithm/algorithm-25-eightqueens/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】堆疊應用—經典河內塔</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/16 閱讀紀錄】
-根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
-程式碼已放上 GitHub
-Start 這篇紀錄經典的智力遊戲—河內塔，使用遞迴式和堆疊概念來解決問題的經典範例。
-河內塔的問題描述如下：在古老的印度神廟中，有三個木樁，在第一個木樁上，有數量和大小不同的圓盤，由大到小堆疊，最大的圓盤放在最下面，最小的圓盤在最上面，天神希望將第一個木樁的圓盤，全部移動到第三個木樁。
-搬動時必須要遵守規則下列規則
- 直徑較小的圓盤只能置於直徑大的圓盤上，比如直徑三的圓盤可以放置在直徑四或直徑五的上方 圓盤可以任意由一個木樁移動到其他木樁上，共有三個木樁可使用 每次只能移動一個圓盤，只能從最上方的圓盤開始移動（與堆疊相同）  【解析】
-假設 n 為圓盤數量，逐步解析情境
-  n = 1
-當圓盤只有一個時，直接從第一個木樁移動到地三個木樁，完成天神願望。
-  n = 2
-當圓盤為兩個時，由上往下數，將第一個圓盤移動到第二個木樁，接著將第二個圓盤移動到第三個木樁，第一個圓盤從第二個木樁移動到第三個木樁，完成天神願望。
-在這裡可以得到一個小結論
- 圓盤移動的次數為 (2^2)-1 = 3 次，即 2 的平方-1 次 圓盤移動的次序為 1→2→1 木樁移動的次序為 1→2、1→3、2→3    n = 3
-當圓盤為三個時，由上往下數
- 第一個圓盤移動到第三個木樁 第二個圓盤移動到第二個木樁 第一個圓盤從第三個木樁移至第二個木樁，此時第二個木樁有兩個圓盤 第三個圓盤移動到第三個木樁 第一個圓盤從第二個木樁移動到第一個木樁 第二個圓盤從第二個木樁移動到第三個木樁 最後，將第一個圓盤從第一個木樁移動到第三個木樁  完成天神願望（懶得畫圖，請讀者發揮想像力…）
-此情境得出以下結論
- 圓盤移動的次數為 2^3-1 = 7 次，即 2 的次方-1 次 圓盤移動的次序為 1→2→1→3→1→2→1 木樁移動的次序為 1→3、1→2、3→2、1→3、2→1、2→3、1→3    【結論】...</p>
-  </section>
-  <footer class="entry-footer">July 7, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—經典河內塔" href="https://fakestandard.github.io/algorithm/algorithm-24-towerofhanoi/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】堆疊應用—串列實作堆疊</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/17 閱讀紀錄】
-根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
-程式碼已放上 GitHub
-Start 使用串列製作堆疊的好處是可以隨時動態改變串列長度，缺點則是設計較為複雜。相較於使用陣列製作堆疊設計上較為簡易，缺點則是陣列大小需事先宣告，無法動態改變。
-利用串列結構模擬堆疊工作運算，使用迴圈控制推入或取出的元素，其中需包含推入（push）和取出（pop）函數，最後要輸出堆疊中所有元素。
-宣告一個鏈結串列節點的類別
-/// &lt;summary&gt; /// 鏈結串列節點的類別 /// &lt;/summary&gt; class Node { public int data; public Node next; public Node(int data) { this.data = data; this.next = null; } } 宣告串列模擬堆疊的類別，其中包含推入和取出的方法
-/// &lt;summary&gt; /// 以串列模擬的堆疊 /// &lt;/summary&gt; class StackByLink { /// &lt;summary&gt;  /// 指向堆疊頂端的指標  /// &lt;/summary&gt;  public Node front; /// &lt;summary&gt;  /// 指向堆疊末端的指標  /// &lt;/summary&gt;  public Node rear; /// &lt;summary&gt;  /// 判斷堆別是否為空的方法  /// &lt;/summary&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool IsEmpty() { return front == null; } /// &lt;summary&gt;  /// 輸出堆疊內容  /// &lt;/summary&gt;  public void Display() { Node current = front; while (current !...</p>
-  </section>
-  <footer class="entry-footer">July 5, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—串列實作堆疊" href="https://fakestandard.github.io/algorithm/algorithm-23-stacklist/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

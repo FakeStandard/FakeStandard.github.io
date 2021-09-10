@@ -44,7 +44,7 @@ Start 以單向的鏈結串列來說，欲插入新節點到現有的串列，�
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【Algorithm】鏈結串列應用—單向串列插入節點與連結兩串列演算法" />
 <meta property="og:description" content="【5/27 閱讀紀錄】
 根據先前文章介紹的鏈結串列，此篇實際運用它們實作一個應用。
@@ -212,7 +212,7 @@ Start 以單向的鏈結串列來說，欲插入新節點到現有的串列，�
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -281,7 +281,7 @@ Start 以單向的鏈結串列來說，欲插入新節點到現有的串列，�
 </li>
 </ol>
 <p>實作串列插入節點程式碼，先建立節點類別，類別內包含資料欄與指標欄，每當新節點建立時，新節點資料欄必須帶有值，而指標欄先指向 NULL，等待後續將指標指向特定節點作業。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 節點類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Node</span>
@@ -303,7 +303,7 @@ Start 以單向的鏈結串列來說，欲插入新節點到現有的串列，�
     }
 }
 </code></pre></div><p>建立鏈結串列類別，串列類別需包含頂端節點和末端節點屬性，類別內再建立一個輸出當前串列的方法，以及判斷當前陣列是否為空，若沒有頂端節點則該串列為空。另外再建立兩個方法，一個是 <code>Concatenate</code> 用於將兩個串列串接起來，一個是 <code>Insert</code> 用於插入新節點，下一步將實作這兩個方法。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 鏈結串列類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LinkedList</span>
@@ -361,7 +361,7 @@ Start 以單向的鏈結串列來說，欲插入新節點到現有的串列，�
 }
 </code></pre></div><h3 id="實作-insert">實作 Insert<a hidden class="anchor" aria-hidden="true" href="#實作-insert">#</a></h3>
 <p>實作將新節點插入到當前串列中，並且判斷欲插入位置是在首端、末端還是中間，在執行相關插入動作。因此書上這部分的程式碼邏輯有誤，筆者稍微修改成正確邏輯。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 插入新節點方法
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e">/// &lt;param name=&#34;ptr&#34;&gt;&lt;/param&gt;
@@ -416,7 +416,7 @@ Start 以單向的鏈結串列來說，欲插入新節點到現有的串列，�
     }
 }
 </code></pre></div><p>在 Main 方法中實際調用 <code>Insert</code> 方法，且對三種插入位置進行測試</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
 {
     <span style="color:#75715e">// 建立鏈結串列
 </span><span style="color:#75715e"></span>    LinkedList list1 = <span style="color:#66d9ef">new</span> LinkedList();
@@ -454,7 +454,7 @@ Start 以單向的鏈結串列來說，欲插入新節點到現有的串列，�
 </p>
 <h3 id="實作-concatenation">實作 Concatenation<a hidden class="anchor" aria-hidden="true" href="#實作-concatenation">#</a></h3>
 <p>接著實作將兩個鏈結串列串接起來的方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 串接兩個鏈結串列
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e">/// &lt;param name=&#34;node1&#34;&gt;&lt;/param&gt;
@@ -476,7 +476,7 @@ Start 以單向的鏈結串列來說，欲插入新節點到現有的串列，�
     <span style="color:#66d9ef">return</span> list1;
 }
 </code></pre></div><p>在 Main 方法調用串接方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立第二個串列
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立第二個串列
 </span><span style="color:#75715e"></span>LinkedList list2 = <span style="color:#66d9ef">new</span> LinkedList();
 Node node9 = <span style="color:#66d9ef">new</span> Node(<span style="color:#ae81ff">9</span>);
 Node node8 = <span style="color:#66d9ef">new</span> Node(<span style="color:#ae81ff">8</span>);

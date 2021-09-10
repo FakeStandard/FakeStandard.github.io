@@ -41,7 +41,7 @@ Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【.NET】打造 Blazor ToDoList" />
 <meta property="og:description" content="Prerequisites .NET 5.0 SDK 或之後的版本
 Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
@@ -203,7 +203,7 @@ Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -270,7 +270,7 @@ Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
 </p>
 <h2 id="將-todo-元件添加到導航列">將 Todo 元件添加到導航列<a hidden class="anchor" aria-hidden="true" href="#將-todo-元件添加到導航列">#</a></h2>
 <p>開啟 <code>Pages/Todo.razor</code> 添加相對應的 URL <code>@page &quot;/todo&quot;</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">@page &#34;/todo&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">@page &#34;/todo&#34;
 
 &lt;<span style="color:#f92672">h3</span>&gt;Todo&lt;/<span style="color:#f92672">h3</span>&gt;
 
@@ -278,7 +278,7 @@ Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
 
 }
 </code></pre></div><p>開啟 <code>Shared/NavMenu.razor</code>，此 razor 為應用程式其中一個版面配置，可避免應用程式中使用重複的元件，在此配置中添加以下代碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav flex-column&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav flex-column&#34;</span>&gt;
 
     ...
 
@@ -290,14 +290,14 @@ Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
 &lt;/<span style="color:#f92672">ul</span>&gt;
 </code></pre></div><h2 id="建立-todoitem-類別">建立 TodoItem 類別<a hidden class="anchor" aria-hidden="true" href="#建立-todoitem-類別">#</a></h2>
 <p>在專案目錄下建立 <code>/TodoList/TodoItem.cs</code> 類別，以保存待辦清單集合</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoItem</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TodoItem</span>
 {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Title { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">bool</span> IsDone { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 }
 </code></pre></div><h2 id="在-ui-渲染清單">在 UI 渲染清單<a hidden class="anchor" aria-hidden="true" href="#在-ui-渲染清單">#</a></h2>
 <p>在 <code>Pages/Todo.razor</code> 變更下列代碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">@page &#34;/todo&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">@page &#34;/todo&#34;
 
 &lt;<span style="color:#f92672">h3</span>&gt;Todo&lt;/<span style="color:#f92672">h3</span>&gt;
 
@@ -308,14 +308,14 @@ Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
         &lt;<span style="color:#f92672">li</span>&gt;@todo.Title&lt;/<span style="color:#f92672">li</span>&gt;
     }
 &lt;/<span style="color:#f92672">ul</span>&gt;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">@code {
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">@code {
     <span style="color:#75715e">// 建立 todo 清單集合
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> IList&lt;TodoItem&gt; todos = <span style="color:#66d9ef">new</span> List&lt;TodoItem&gt;();
 }
 </code></pre></div><p>此時還不會有任何清單呈現，因為在 <code>todos</code> 集合中尚未添加項目。</p>
 <h2 id="添加新增功能">添加新增功能<a hidden class="anchor" aria-hidden="true" href="#添加新增功能">#</a></h2>
 <p>繼續在 <code>Pages/Todo.razor</code> 新增文字輸入框及按鈕</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ul</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">ul</span>&gt;
     ...
 &lt;/<span style="color:#f92672">ul</span>&gt;
 
@@ -323,7 +323,7 @@ Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
 &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Something todo&#34;</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">bind</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;newTodo&#34;</span>/&gt;
 &lt;<span style="color:#f92672">button</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;AddTodo&#34;</span>&gt;Add todo&lt;/<span style="color:#f92672">button</span>&gt;
 </code></pre></div><p>在 <code>@code</code> 區塊內加入一個與文字輸入框綁定的 <code>string</code>，以及按下 <code>Add Todo</code> 按鈕後呼叫的 <code>AddTodo</code> 方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">@code {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">@code {
 
     ...
 
@@ -350,7 +350,7 @@ Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
 <li>每個清單項目前添加核取方塊 <code>checkbox</code> ，供使用者紀錄已完成項目</li>
 <li>每個清單項目的文字輸入框設定為可編輯</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--走訪 todo 集合，添加清單標記--&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--走訪 todo 集合，添加清單標記--&gt;</span>
 @foreach(var todo in todos)
 {
     &lt;<span style="color:#f92672">li</span>&gt;
@@ -361,7 +361,7 @@ Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
 }
 </code></pre></div><h2 id="標題顯示未完成項目數量">標題顯示未完成項目數量<a hidden class="anchor" aria-hidden="true" href="#標題顯示未完成項目數量">#</a></h2>
 <p>更新 <code>&lt;h3&gt;</code> 標頭為可計算未完成項目的數量</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h3</span>&gt;Todo (@todos.Count(todo =&gt; !todo.IsDone))&lt;/<span style="color:#f92672">h3</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h3</span>&gt;Todo (@todos.Count(todo =&gt; !todo.IsDone))&lt;/<span style="color:#f92672">h3</span>&gt;
 </code></pre></div><h2 id="done">Done<a hidden class="anchor" aria-hidden="true" href="#done">#</a></h2>
 <p>啟動本地瀏覽，享受成品！</p>
 <p><img loading="lazy" src="/images/NetCore_Blazor/BlazorToDoList005.png" alt=""  />
@@ -370,15 +370,15 @@ Start 使用 VS 2019 建立 Blazor，跟隨官網文件 Step by step。
 <p>前面建立專案時是使用 IDE 介面，這裡補充一下如何使用指令來建立專案。</p>
 <h2 id="建立-blazor-專案">建立 Blazor 專案<a hidden class="anchor" aria-hidden="true" href="#建立-blazor-專案">#</a></h2>
 <p>先 <code>CD</code> 到欲建立資料夾的目錄，使用下列指令來建立 Blazor 專案，執行完後會看到該目錄下已建立 <code>TodoList</code> 資料夾</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet new blazorserver -o TodoList
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet new blazorserver -o TodoList
 </code></pre></div><p>將當前目錄更換到 <code>TodoList</code> 資料夾</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd TodoList
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ cd TodoList
 </code></pre></div><h2 id="新增-razor-component">新增 Razor Component<a hidden class="anchor" aria-hidden="true" href="#新增-razor-component">#</a></h2>
 <p><code>-n</code> 為建立元件的名稱， <code>-o</code> 為輸出的位置，下列該指令會在 <code>Pages</code> 資料夾下建立一個 <code>Todo.razor</code> 的元件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet new razorcomponent -n Todo -o Pages
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet new razorcomponent -n Todo -o Pages
 </code></pre></div><p>到目前為止已經建立一個 Blazor 專案，並為專案內建立 Razor 元件，接下來的程式碼修改如同上述操作，這邊就不再重複介紹。</p>
 <p>完成後使用下列代碼來<strong>啟用本地伺服器瀏覽</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet watch run
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet watch run
 </code></pre></div><h1 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h1>
 <p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/tutorials/build-a-blazor-app?view=aspnetcore-5.0">Build a Blazor todo list app</a></p>
 

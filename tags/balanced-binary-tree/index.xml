@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Balanced Binary Tree on How can I help</title>
+    <link>https://fakestandard.github.io/tags/balanced-binary-tree/</link>
+    <description>Recent content in Balanced Binary Tree on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Mon, 30 Aug 2021 20:55:37 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/balanced-binary-tree/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】樹的應用—平衡樹（Balanced Binary Tree）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-44-balancedbinarytree/</link>
+      <pubDate>Mon, 30 Aug 2021 20:55:37 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-44-balancedbinarytree/</guid>
+      <description>Start Reference 【圖說演算法 C#】</description>
+    </item>
+    
+  </channel>
+</rss>

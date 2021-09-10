@@ -41,7 +41,7 @@ SELECT OrderID FROM [Northwind].[dbo].[Orders] WHERE EmployeeID = 4 OR EmployeeI
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【MSSQL】如何改善 SQL 常見的效能問題" />
 <meta property="og:description" content="Start 一直以來筆者在寫 SQL 語法時從不考量效能問題，以為效能調教是等到發生後由高手們來解題，輪不到我們這種小咖來煩惱，殊不知我們這種咖小也可以提前優化效能！所以這篇要來紀錄 SQL 一些常見的效能問題，比如應該避免使用哪些語法，為何要避免使用？在筆者有限的能力下也會盡量寫 Lab 觀察數據。
 查詢優化 同樣的查詢結果會有不同寫法，但哪些寫法是比較好的？其實查詢時，應該要避免全表掃描（Full Table Scan）
@@ -203,7 +203,7 @@ SELECT OrderID FROM [Northwind].[dbo].[Orders] WHERE EmployeeID = 4 OR EmployeeI
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -256,7 +256,7 @@ SELECT OrderID FROM [Northwind].[dbo].[Orders] WHERE EmployeeID = 4 OR EmployeeI
 <ul>
 <li>
 <p><strong>避免使用 <code>NULL</code></strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> OrderID <span style="color:#66d9ef">FROM</span> A <span style="color:#66d9ef">WHERE</span> ProductID <span style="color:#66d9ef">IS</span> <span style="color:#66d9ef">NULL</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> OrderID <span style="color:#66d9ef">FROM</span> A <span style="color:#66d9ef">WHERE</span> ProductID <span style="color:#66d9ef">IS</span> <span style="color:#66d9ef">NULL</span>
 
 <span style="color:#75715e">-- 應改為
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> OrderID <span style="color:#66d9ef">FROM</span> A <span style="color:#66d9ef">WHERE</span> ProductID <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
@@ -266,7 +266,7 @@ SELECT OrderID FROM [Northwind].[dbo].[Orders] WHERE EmployeeID = 4 OR EmployeeI
 </li>
 <li>
 <p><strong>避免使用 <code>or</code> 來連接條件</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> OrderID
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> OrderID
 <span style="color:#66d9ef">FROM</span> [Northwind].[dbo].[Orders]
 <span style="color:#66d9ef">WHERE</span> EmployeeID <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span> <span style="color:#66d9ef">OR</span> EmployeeID <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
 
@@ -281,7 +281,7 @@ SELECT OrderID FROM [Northwind].[dbo].[Orders] WHERE EmployeeID = 4 OR EmployeeI
 </code></pre></div></li>
 <li>
 <p><strong>避免使用 <code>IN</code> 或 <code>NOT IN</code></strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> OrderID
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> OrderID
 <span style="color:#66d9ef">FROM</span> [Northwind].[dbo].[Orders]
 <span style="color:#66d9ef">WHERE</span> EmployeeID <span style="color:#66d9ef">IN</span> (<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>)
 
@@ -292,7 +292,7 @@ SELECT OrderID FROM [Northwind].[dbo].[Orders] WHERE EmployeeID = 4 OR EmployeeI
 </code></pre></div></li>
 <li>
 <p><strong>使用 <code>EXISTS</code> 來代替 <code>IN</code></strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ID <span style="color:#66d9ef">FROM</span> A <span style="color:#66d9ef">WHERE</span> ID <span style="color:#66d9ef">IN</span> (<span style="color:#66d9ef">SELECT</span> ID <span style="color:#66d9ef">FROM</span> B)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ID <span style="color:#66d9ef">FROM</span> A <span style="color:#66d9ef">WHERE</span> ID <span style="color:#66d9ef">IN</span> (<span style="color:#66d9ef">SELECT</span> ID <span style="color:#66d9ef">FROM</span> B)
 
 <span style="color:#75715e">-- 將 IN 替換成 EXISTS 語句
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> ID <span style="color:#66d9ef">FROM</span> A <span style="color:#66d9ef">WHERE</span> ID <span style="color:#66d9ef">EXISTS</span> (<span style="color:#66d9ef">SELECT</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">FROM</span> B <span style="color:#66d9ef">WHERE</span> NUM <span style="color:#f92672">=</span> A.NUM)
@@ -305,14 +305,14 @@ SELECT OrderID FROM [Northwind].[dbo].[Orders] WHERE EmployeeID = 4 OR EmployeeI
 </li>
 <li>
 <p><strong>避免在子句對欄位進行運算</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ID <span style="color:#66d9ef">FROM</span> A <span style="color:#66d9ef">WHERE</span> NUM<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ID <span style="color:#66d9ef">FROM</span> A <span style="color:#66d9ef">WHERE</span> NUM<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>
 
 <span style="color:#75715e">-- 應更改為
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> ID <span style="color:#66d9ef">FROM</span> A <span style="color:#66d9ef">WHERE</span> NUM <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>
 </code></pre></div></li>
 <li>
 <p><strong>避免在子句對欄位進行函數操作</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ID <span style="color:#66d9ef">FROM</span> A <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">SUBSTRING</span>(ProductName, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>)<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;abc&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> ID <span style="color:#66d9ef">FROM</span> A <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">SUBSTRING</span>(ProductName, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>)<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;abc&#39;</span>
 <span style="color:#66d9ef">SELECT</span> ID <span style="color:#66d9ef">FROM</span> A <span style="color:#66d9ef">WHERE</span> DATEDIFF(<span style="color:#66d9ef">DAY</span>, CreateDate, <span style="color:#e6db74">&#39;2021-03-26&#39;</span>) <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 
 <span style="color:#75715e">-- 應更改為
@@ -347,7 +347,7 @@ SELECT OrderID FROM [Northwind].[dbo].[Orders] WHERE EmployeeID = 4 OR EmployeeI
 </li>
 <li>
 <p>能用 <code>DISTINCT</code> 就不用 <code>GROUP BY</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> OrderID <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">Order</span> <span style="color:#66d9ef">WHERE</span> UnitPrice <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span> <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> OrderID
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> OrderID <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">Order</span> <span style="color:#66d9ef">WHERE</span> UnitPrice <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span> <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> OrderID
 
 <span style="color:#75715e">-- 應改為
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">DISTINCT</span> OrderID <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">Order</span> <span style="color:#66d9ef">WHERE</span> UnitPrice <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">10</span>

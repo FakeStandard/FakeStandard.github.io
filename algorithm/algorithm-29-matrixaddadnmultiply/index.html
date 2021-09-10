@@ -41,7 +41,7 @@ static int ROWS = 3; static int COLS = 3; /// &lt;summary&gt; /// 輸出矩陣 /
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【Algorithm】陣列應用—矩陣相加與相乘演算法" />
 <meta property="og:description" content="【5/26 閱讀紀錄】
 根據先前文章介紹的陣列，此篇實際運用它們實作一個應用。
@@ -203,7 +203,7 @@ static int ROWS = 3; static int COLS = 3; /// &lt;summary&gt; /// 輸出矩陣 /
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -266,7 +266,7 @@ static int ROWS = 3; static int COLS = 3; /// &lt;summary&gt; /// 輸出矩陣 /
 <p><img loading="lazy" src="/images/Algorithm/Algorithm043.png" alt=""  />
 </p>
 <p>建立靜態變數與輸出矩陣方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> ROWS = <span style="color:#ae81ff">3</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> ROWS = <span style="color:#ae81ff">3</span>;
 <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> COLS = <span style="color:#ae81ff">3</span>;
 
 <span style="color:#75715e">/// &lt;summary&gt;
@@ -286,7 +286,7 @@ static int ROWS = 3; static int COLS = 3; /// &lt;summary&gt; /// 輸出矩陣 /
     }
 }
 </code></pre></div><p>建立矩陣相加方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 矩陣相加方法
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e">/// &lt;param name=&#34;A&#34;&gt;&lt;/param&gt;
@@ -304,7 +304,7 @@ static int ROWS = 3; static int COLS = 3; /// &lt;summary&gt; /// 輸出矩陣 /
     }
 }
 </code></pre></div><p>在 Main 方法中執行</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
 {
     <span style="color:#75715e">// 宣告並建立 A.B 兩矩陣
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>[,] A = {
@@ -358,7 +358,7 @@ static int ROWS = 3; static int COLS = 3; /// &lt;summary&gt; /// 輸出矩陣 /
 <p><img loading="lazy" src="/images/Algorithm/Algorithm050.png" alt=""  />
 </p>
 <p>利用程式碼實作矩陣相乘，一樣先建立靜態變數與輸出矩陣方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> ROWS = <span style="color:#ae81ff">3</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> ROWS = <span style="color:#ae81ff">3</span>;
 <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> COLS = <span style="color:#ae81ff">3</span>;
 
 <span style="color:#75715e">/// &lt;summary&gt;
@@ -378,7 +378,7 @@ static int ROWS = 3; static int COLS = 3; /// &lt;summary&gt; /// 輸出矩陣 /
     }
 }
 </code></pre></div><p>建立矩陣相乘方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 矩陣相乘方法
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e">/// &lt;param name=&#34;A&#34;&gt;&lt;/param&gt;
@@ -403,7 +403,7 @@ static int ROWS = 3; static int COLS = 3; /// &lt;summary&gt; /// 輸出矩陣 /
     }
 }
 </code></pre></div><p>在 Main 方法執行</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
 {
     <span style="color:#75715e">// 宣告並建立 A.B 兩矩陣
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>[,] A = {

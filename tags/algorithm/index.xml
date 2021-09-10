@@ -6,7 +6,99 @@
     <description>Recent content in Algorithm on How can I help</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-tw</language>
-    <lastBuildDate>Mon, 23 Aug 2021 19:23:02 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 09 Sep 2021 12:09:06 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】雜湊應用—碰撞與溢位處理</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-47-hashcollisionandoverflow/</link>
+      <pubDate>Thu, 09 Sep 2021 12:09:06 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-47-hashcollisionandoverflow/</guid>
+      <description>【5/25 閱讀紀錄】
+根據先前文章介紹的雜湊，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 當要把資料放到某個 Bucket 時，若該 Bucket 已滿，則會發生溢位（Overflow）；另一種情況是，不同資料經雜湊函數運算後，得到相同的位址，則發生碰撞（Collision）。
+當溢位及碰撞發生時，通常會透過下列四種演算法處理
+ 線性探測法 平方探測法 再雜湊 鏈結串列  線性探測法 當兩資料經雜湊函數運算後，得到相同雜湊值，則發生碰撞，此時透過線性探測法，以線性的方式往後尋找空的位置，一旦有空的位置就把資料放進去，直到找到空位，或儲存空間位址皆存滿為止。線性探測法通常把雜湊位置視為環狀結構，比如說，當雜湊值是儲存空間的最後一個位置，以線性探測法往下搜尋空位，第一個搜尋的位置會是儲存空間的第一個，所以儲存空間會是以環狀的方式進行探索。
+不過線性探測法因簡易所以有先天的缺陷，若資料鍵值容易聚集在一起，要尋找空位就要尋找很久。但還是要實作一下代碼，使用除法雜湊函數取得雜湊值，以線性探測法來儲存資料。
+建立靜態變數與陣列
+static int INDEX = 17; static int MAX = 13; // 建立資料雜湊最大元素 static int?[] index = new int?[INDEX]; // 建立陣列儲存空間 static int[] data = new int[MAX]; 建立相關方法
+/// &amp;lt;summary&amp;gt; /// 亂樹建立資料 /// &amp;lt;/summary&amp;gt; static void CreateData() { int i; Random r = new Random(); for (i = 0; i &amp;lt; MAX; i++) data[i] = r.</description>
+    </item>
+    
+    <item>
+      <title>【Algorithm】雜湊應用—雜湊演算法</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-46-hashalgorithm/</link>
+      <pubDate>Mon, 06 Sep 2021 12:08:35 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-46-hashalgorithm/</guid>
+      <description>【5/24 閱讀紀錄】
+根據先前文章介紹的雜湊，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 雜湊法是利用雜湊函數來計算鍵值所對應的位址，進而建立雜湊表。
+常見的雜湊函數有四種
+ 除法 中間平方法 折疊法 數位分析法  除法 除法是最簡單的雜湊演算法，原理是將資料除以某個常數（通常會選擇質數），取其餘數作為索引，在將資料儲存於索引相對應的位址。
+公式是 H(key) = key mod B
+假設一陣列大小為 7，欲將 12, 65, 70, 99, 67 這五個值經由雜湊法，放入相對應的位置，因陣列大小為 7，故將 B 帶入質數 7 進行雜湊，得到結果會界於 0-6 之間以符合陣列大小，如 H(12) = 12 mod 7 = 5，最後可得雜湊表如下
+中間平方法 中間平方法是將資料自己做平方，再取中間的某段數字做為索引。
+假設一陣列的位址空間大小為 100，欲將 12, 65, 70, 99, 67 五個值經由雜湊法，放入相對應的位址。首先，先將每個資料平方，就是資料與自己相乘，可得 144, 4225, 4900, 9801, 4489，分別取得這五個值的百位數及十分數，分別為 14, 22, 90, 80, 48，將得到的索引鍵值分別放入原先的對應值，即
+f(14) = 12 f(22) = 65 f(90) = 70 f(80) = 99 f(67) = 48 折疊法 折疊法是先將資料轉換成一串數字，再將數字拆成數個部分，最後再將它們相加得到 Bucket Address。折疊法區分為以下兩種</description>
+    </item>
+    
+    <item>
+      <title>【Algorithm】雜湊應用—安全性演算法</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-45-securityalgorithm/</link>
+      <pubDate>Thu, 02 Sep 2021 12:08:16 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-45-securityalgorithm/</guid>
+      <description>【5/24 閱讀紀錄】
+根據先前文章介紹的雜湊，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 網路目前已經非常普及，在網路的世界裡有大量的資料再進行傳輸，但在傳輸的過程中，有些資訊可以被公開共享，有些則屬於機密資料，不得被竊取或是破壞，例如交易。
+對於 資訊安全（Information Security） 來說，必須具備以下四種特性
+ 秘密性（Confidentiality）
+當資料在網路上傳遞時，必須確保資料傳遞時不會被竊取，進而洩漏資料內容，除了被授權者之外，資料皆必須保密。 完整性（Integrity）
+當資料送達時，必須保證資料沒有被竄改，如果訊息被竄改，收訊端在接收時會立刻知道資料是否完整。 認證性（Authentication）
+當傳送方送出資訊時，必須能確認傳送者的身分是否經過認證，如未經認證就是假冒傳送方，將無法傳送資料，例如持卡人、發卡行、支付閘道都必須申請憑證進行身分識別。 不可否認性（Non-repudiation）
+表示保證者無法否認完成過的資料傳送行為的一種機制，指無法否認傳送或接收訊息的行為，例如轉出金錢不可否認未轉出過，有金額轉入也不可否認未收到。  資料加密 基於資訊安全，必須對欲傳遞的資料進行加密，方能確保在網路傳輸時不會被有心人士攔截瀏覽，因此我們可以利用事先定義好的演算法、運算式或編碼方式，將資料轉換成不具任何意義的數據，其處理的過程就是 「加密」（Encrypt） ，反之，要將不具任何意義的數據，轉換成原始資料，該過程稱為 「解密」（Decrypt） ，在加密前的原始資料我們稱為 「明文」（Plaintext） ，經加密後得到的結果數據 「密文」（Cipher text），在加解密的過程中，有一個 金鑰（Key） 機制，傳送者將明文透過金鑰進行加密，再丟到網路上傳輸，接收者透過網路接收到密文，將密文以金鑰解密得到明文，此過程即是標準加解密的流程。
+在基礎密碼學中，有兩種加解密方式，分別是「對稱加密」和「非對稱加密」
+對稱式加密（Symmetric Encryption） 對稱式加密的運作方式，是由傳送者利用金鑰將資料加密後，再加以傳送，而接收方收到訊息後，再用金鑰解密，就能看到訊息內容。
+此方法非常簡易，傳送方與接收方彼此共用同一把金鑰，在第一次傳送時會夾帶金鑰一起傳送出去，使接收方可以利用金鑰進行解密，但是此方法也較為不安全，它最大的弱點就是，若再第一次傳送時，被有心人士從中攔截，且複製一把金鑰，再將資料繼續傳遞給接收方，那之後傳遞的資料都會被輕易破解。
+常見的對稱加密演算法有 DES（Data Encryption Standard, 資料加密標準）、Triple DES、IDEA（International Data Encryption Algorithm, 國際資料加密演算法）等。
+非對稱式加密（Asymmetric Encryption） 非對稱式加密比對稱式加密來的安全，以目前來說，使用上較為普遍，對金融界而言也是最安全的加密系統。
+其原理是每個使用者都擁有一對（pair）金鑰，分別為公開金鑰（Public Key）和私密金鑰（Private Key），該對金鑰分別用來加密及解密，公開金鑰可以被廣泛流傳，私密金鑰則必須被妥善保存，當資料被一把金鑰加密時，必須以另一把進行解密，金鑰的加解密並非一定是公鑰加密私鑰解密，也可以是公鑰解密私鑰加密。
+其運作方式，起初傳送方與接收方將彼此的公鑰傳送給對方，當傳送方要傳送資料時，就用接收方的公鑰進行加密，接收方收到訊息時，再用自己的私鑰進行解密；反之，接收方欲傳遞資料給傳送方，須使用傳送方的公鑰進行加密，傳送方收到資料後，再使用自己的私鑰進行解密動作。
+如此一來，即便在傳遞公鑰的過程中，被有心人士攔截複製，沒有私鑰也無法解密資料。
+常見的非對稱式加密 RSA，雖然加解密的速度比對稱式加密慢，其原理是隨機選出兩個超大的質數 p &amp;amp; q，利用兩質數作為加密與解密的金鑰，金鑰的長度約 40 位元到 1024 位元之間，所以要短時間內破解 RSA 幾乎是不可能，是一種十分安全的演算法，在電子商務交易市場中被廣泛使用。
+認證 在資料傳輸的過程中，為了避免使用者發送資料後不認帳（否認有傳遞），或有人冒用使用者名義進行資料傳遞，衍生出第三種加密方式—對資料進行認證工作。
+其運作方式為，起初雙方傳遞公鑰給對方，傳送方使用接收方的公鑰加密，再使用自己的私鑰進行第二次加密，接收方收到資料後，先用傳送方的公鑰解密，再使用自己的私鑰進行解密，若解密成功，即能確保訊息傳遞的私密性。</description>
+    </item>
+    
+    <item>
+      <title>【Algorithm】樹的應用—平衡樹（Balanced Binary Tree）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-44-balancedbinarytree/</link>
+      <pubDate>Mon, 30 Aug 2021 20:55:37 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-44-balancedbinarytree/</guid>
+      <description>Start Reference 【圖說演算法 C#】</description>
+    </item>
+    
+    <item>
+      <title>【Algorithm】樹的應用—引線二元樹（Threaded Binary Tree）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-43-threadedbinarytree/</link>
+      <pubDate>Fri, 27 Aug 2021 20:55:18 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-43-threadedbinarytree/</guid>
+      <description>【6/9 閱讀紀錄】
+根據先前文章介紹的樹，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 一般來說，一個 n 節點的二元樹，共有 2n 個 LINK 欄位，實際上使用的數量只有 n-1 個鏈結，另外 n+1 個都是空鏈結，等於有 n+1 個空間被浪費，而引線二元樹就是將這些空鏈結加以利用，再指到其他節點，這些鏈結就稱為引線，其樹稱為引線二元樹（Threaded Binary Tree）。
+將二元樹轉換成引線二元樹的第一步，先將二元樹以中序走訪方式將資料排出，接著找出所有節點的空指標，再將節點的空指標指向其左、右相鄰的節點，即使用引線取代指向 Null 的指標。
+引線二元樹的資料結構
+ LBit：左控制位元 LChild：左子樹指標 Data：節點資料 RChild：右子樹指標 RBit：右控制位元  引線二元樹會用一個額外的 Bit，以判斷指標內容是 Link 還是 Thread
+ LBit = 1, LChild 是正常指標 LBit = 0, LChild 是引線 RBit = 1, RChild 是正常指標 RBit = 0, RChild 是引線  所以在定義引線二元樹的節點類別時，會比一般二元樹多了左、右控制位元兩屬性
+/// &amp;lt;summary&amp;gt; /// 引線二元樹節點類別 /// &amp;lt;/summary&amp;gt; public class ThreadNode { public int data; public int lbit; public int rbit; public ThreadNode leftNode; public ThreadNode rightNode; public ThreadNode(int data) { this.</description>
+    </item>
+    
     <item>
       <title>【Algorithm】樹的應用—二元運算樹（Binary Expression Tree）</title>
       <link>https://fakestandard.github.io/algorithm/algorithm-42-binaryexpressiontree/</link>

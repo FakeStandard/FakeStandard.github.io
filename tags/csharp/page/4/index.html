@@ -31,7 +31,7 @@
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/tags/csharp/index.xml">
 <meta property="og:title" content="CSharp" />
 <meta property="og:description" content="不專業代碼" />
@@ -122,7 +122,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -158,6 +158,99 @@
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
   <h1>CSharp</h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【.NET Core】環境變數 Environments</h2>
+  </header>
+  <section class="entry-content">
+    <p>【ASP.NET Core 5】
+Start ASP.NET Core 會根據執行階段的環境變數，來設定應用程式的行為。如開發環境、測試環境及正式環境的組態設定會不太相同，使用的資料庫也會不同。
+Environment Variable 預設的三種環境
+ Development 開發環境 Staging 暫存(測試)環境 Production 正式環境  環境名稱由系統變數 ASPNETCORE_ENVIRONMENT 的內容值而來，該變數可在 launchSettings.json 作變更。
+開啟 launchSettings.json，在 profiles 節點找到 IIS Express\..\environmentVariables 的 ASPNETCORE_ENVIRONMENT，將原本的 Development 變更為 Production。
+&#34;profiles&#34;: { &#34;IIS Express&#34;: { &#34;commandName&#34;: &#34;IISExpress&#34;, &#34;launchBrowser&#34;: true, &#34;environmentVariables&#34;: { &#34;ASPNETCORE_ENVIRONMENT&#34;: &#34;Production&#34; } } } 開啟 Startup.cs，Configure 方法已注入 IWebHostEnvironment，在方法內使用下列程式碼判斷環境變數內容值
+public void Configure(IApplicationBuilder app, IWebHostEnvironment env) { if (env.IsProduction()) // 假設是生產環境  { app.Run(async (context) =&gt; { await context....</p>
+  </section>
+  <footer class="entry-footer">June 24, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET Core】環境變數 Environments" href="https://fakestandard.github.io/netcore/netcore5-7-environments/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】搜尋演算法—循序搜尋法（Sequential Search）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/21 閱讀紀錄】
+搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
+依據資料量大小而言，搜尋可分為兩種
+ 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
+ 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
+Start 常見的搜尋演算法
+ 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  循序搜尋演算法（Sequential Search） 循序搜尋法又稱線性搜尋法（Linear Search），它的原理是走訪所有的資料，不論資料順序從頭到尾逐次搜尋，也不需要在搜尋前對資料做任何處理或排序，在沒有重複資料下，找到資料就中止搜尋，是一種最簡單的排序法。
+它的缺點是搜尋速度較慢，因為對資料從頭到尾的訪問，最好的情況就是一次就找到，只進行一次比較；最壞的情況則是第 n 次才找到，則進行了 n 次比較。所以在數列長度很大時，循序搜尋法則不太適合使用，它通常適用於對檔案小的資料進行搜尋。
+假設有一數列 10 20 30 40 50，欲從數列中找到鍵值 30，透過循序搜尋法，從頭到尾走訪，第一個先找到 10 進行比較，不符合條件，繼續找尋到第二個 20，依然不符合條件，找尋到第三個鍵值，經比對後符合條件，此時演算法中止。
+利用上面的數列來看，最佳的情況是第一次搜尋就符合條件，然後中止搜尋，只進行了一次比較，例如欲搜尋鍵值 10，即是最佳情況；最壞的情況就是從頭走訪到尾，直到搜尋到最後一個鍵值才符合條件，或數列中都沒有符合條件的鍵值，假設數列長度為 n，則需進行 n 次比較，例如欲搜尋鍵值 50 或不存在數列中的鍵值 60，即是最差情況。
+演算法分析  最差的情況下，時間複雜度為 O(n) 平均情況下，需要 (n&#43;1)/2 次的比較  實際撰寫程式碼 亂數產生 1-150 之間的 100 個整數，並實作循序搜尋法的過程...</p>
+  </section>
+  <footer class="entry-footer">June 23, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—循序搜尋法（Sequential Search）" href="https://fakestandard.github.io/algorithm/algorithm-18-sequentialsearch/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【OOP】物件導向特性—封裝、繼承、多型</h2>
+  </header>
+  <section class="entry-content">
+    <p>Start 說到物件導向就不能不知道OOP的三大特性—封裝、繼承、多型。
+ 建議閱讀本篇前先閱讀前篇「基礎概念」，在實例及解說上，若前篇已講解過，則此篇不再重複說明
+ 封裝（Encapsulation） 每個物件都包含進行操作時所需要的所有資訊，物件不必依賴其他物件來完成自己的操作，將方法、欄位、屬性和邏輯包裝在類別內，透過類別的實體來實現，外部物件無法了解物件的內部細節，有種隱藏起來的概念，外部對資料的操作也只能透過已經定義的介面，用一段簡白的話來說，對事只了解他的外在，無需理解內部構造，即為封裝。
+封裝的好處
+ 良好的封裝能減少耦合（Coupling） 可自由修改類別內部的實現 類別具有清晰的對外界面  所以在設計 Swordman 類別時即為封裝，將自己的屬性及方法包裝起來，供給自己使用，不依賴他人。
+static void Main(string[] args) { Swordman swordman = new Swordman(); } /// &lt;summary&gt; /// 封裝類別 /// &lt;/summary&gt; class Swordman { // Field  // ...  // Property  // ...  // Method  // ... } 繼承（Inheritance） 繼承很字面的意思，那有幾個特性須知道，子類別繼承父類別時，子類別擁有父類別 pirvate 以外的屬性和方法，子類別也可擁有自己的屬性和方法。最後，子類別可以用自己的方式實現父類別的功能，即方法重載。
+原本有 Swordman 的類別，現在增加一個 Thief 類別，與 Swordman 擁有相同的屬性和方法。
+/// &lt;summary&gt; /// 盜賊類別 /// &lt;/summary&gt; class Thief { private string name = string....</p>
+  </section>
+  <footer class="entry-footer">June 22, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【OOP】物件導向特性—封裝、繼承、多型" href="https://fakestandard.github.io/post/oop/oop-2-oop-feature/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】排序演算法—堆積樹排序法（Heap Tree Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/18 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  堆積樹排序法（Heap Tree Sort） 堆積樹排序法是選擇排序法的改良版，它可以減少選擇排序法的排序次數，進而減少排序時間。樹是一種資料結構，而堆積樹是一顆二元樹，二元樹的定義的定義為每個父節點最多只能有兩個子節點，而堆積樹是一種特殊的二元樹，父節點若小於子節點，稱為最小堆積（Min heap），父節點偌大於子節點，稱為最大堆積（Max heap）。
+假設有一陣列，陣列資料分別為
+                索引 A[0] A[1] A[2] A[3] A[4] A[5] A[6] A[7]   數值 69 81 30 38 9 2 47 61    將此陣列用二元樹表示，每個節點第一個數字為索引，第二個為數值...</p>
+  </section>
+  <footer class="entry-footer">June 21, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—堆積樹排序法（Heap Tree Sort）" href="https://fakestandard.github.io/algorithm/algorithm-17-heaptreesort/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】排序演算法—基數排序法（Radix Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/20 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  基數排序法（Radix Sort） 基數排序法與其他的排序法不太相同，不需要進行比較交換的動作，它是透過分配的方式進行排序。主要的分配的方向有兩種，其一是有效鍵優先（Most Significant Digit First, MSD），以及無效鍵優先（Least Significant Digit First, LSD），MSD 是從最左邊的位數開始比較，LSD 則是從最右邊開始比較，該怎麼說呢？馬上來看範例
+LSD 以 LSD 方式對一數列 59 95 7 34 60 168 171 259 372 45 進行比較
+Step 1 將每個元素依照「個位數」放到相對應的串列中
+                 0 1 2 3 4 5 6 7 8 9   60 171 372  34 95  7 168 59        45    259    將分配的結果合併 60 171 372 34 95 45 7 168 59 259...</p>
+  </section>
+  <footer class="entry-footer">June 18, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—基數排序法（Radix Sort）" href="https://fakestandard.github.io/algorithm/algorithm-16-radixsort/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
@@ -243,118 +336,6 @@ public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host....</p>
   </section>
   <footer class="entry-footer">June 10, 2021&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【OOP】物件導向基礎概念（Object Oriented Programming）" href="https://fakestandard.github.io/post/oop/oop-1-object-oriented-programming/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—謝耳排序法（Shell Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/2 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  謝耳排序法（Shell Sort） 在插入排序法中，若大部分資料已經排序完成，該排序法會相當有效率，而謝耳排序法可以看作是一種使插入排序法減少資料搬移次數的衍伸排序法。
-其原理為將資料區分成特定間隔的區塊，以插入排序法對區塊內資料進行排序，再漸漸減少間隔的距離。
-舉例，有一陣列為 [50] [60] [10] [30] [20] [80] [40] [70]，以劃分數為 2，將資料分成四等份 (8/2)，得到下列區塊組合 (50,20)(60,80)(10,40)(30,70)，規則為第一個數與第五個數為一組，第二個數與第六個數為一組，以此類推。
-接著透過插入排序法，對區塊內的資料做排序，使其成為 (20,50)(60,80)(10,40)(30,70)，排序完後，解散區塊組合，還原成原數列 [20] [60] [10] [30] [50] [80] [40] [70]
-繼續縮小間隔為 (8/2)/2，得到下列區塊組合 (20,10,50,40)(60,30,80,70)，其規則為第一、三、五、七個數字為一組，二、四、六、八為一組，一樣以插入排序法對區塊內資料做排序，得結果為 (10,20,40,50)(30,60,70,80)，解散組合區塊，還原成原數列 [10] [30] [20] [60] [40] [70] [50] [80]
-進行第三次排序，縮小間隔為 ((8/2)/2)/2，如此一來變成對每一個元素進行排序，直接使用插入排序法得結果為 [10] [20] [30] [40] [50] [60] [70] [80]...</p>
-  </section>
-  <footer class="entry-footer">June 9, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—謝耳排序法（Shell Sort）" href="https://fakestandard.github.io/algorithm/algorithm-13-shellsort/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—插入排序法（Insert Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【4/29 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  插入排序法（Insert Sort） 插入排序法原理是將陣列中的元素，逐一與已經排序好的資料作比較，例如前兩個元素已經排序好，再將第三個元素與這兩個元素作比較，插入到適當的位置，接著將第四個元素，與前三個已排序好的元素進行比較，再插入到適當位置，重複此步驟，直到排序完成為止。
-透過插入排序法，一樣對 [30] [20] [40] [50] [10] 該數列進行排序，目標結果為由小到大排列
-Step 1 首先第一個元素 [30] 定義為已排序，取得第二個元素 [20]，與第一個元素進行比較，插入到適當位置
-初始已排序序列 [30]
-插入後結果序列 [20] [30]
-Step 2 取得第三個元素 [40]，與上次結果進行比對，並插入適當位置
-初始已排序序列 [20] [30]
-插入後結果序列 [20] [30] [40]
-Step 3 取得第四個元素 [50]，與上次結果進行比對，並插入適當位置
-初始已排序序列 [20] [30] [40]
-插入後結果序列 [20] [30] [40] [50]...</p>
-  </section>
-  <footer class="entry-footer">June 7, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—插入排序法（Insert Sort）" href="https://fakestandard.github.io/algorithm/algorithm-12-insertsort/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET Core】靜態檔案 Static Files</h2>
-  </header>
-  <section class="entry-content">
-    <p>【ASP.NET Core 5】
-靜態檔案是 HTML、css、image、js 等資源檔案，過去 .NET Framework 可直接被存取，在 ASP.NET Core 中，已不能直接被瀏覽，對於存取有特定的限制。
-Start 首先，先了解 Content root 以及 Web root，硬翻成中文為內容根目錄 &amp; Web 根目錄。
-Content root（內容根目錄） Content root 預設為專案的根目錄，包含
- 裝載應用程式的可執行檔 .exe 組成應用程式的已編譯元件 .dll 應用程式所使用的內容檔案  Razor(.cshtml、.razor) 設定檔(.json、.xml) 資料檔案(.db)   Web 根目錄(Web root)  Web root（Web 根目錄） Web root 為公共靜態資源的基本路徑，預設路徑為 {content root}/wwwroot
- 樣式 .css JavaScript .js 影像檔 .png、.jpg  建立一個專案，在方案總管中找到 wwwroot，可看到預設已建立 css、js、lib 資料夾，使用路徑 https://localhost:5000/css/site.css 嘗試讀取 ~/css/site.css 該檔案， 可直接瀏覽檔案內容。
-測試自行建立的資料夾是否能存取，在 wwwroot 目錄下建立 images 資料夾以自定義靜態檔案路徑，並放置一張影像檔在該目錄下，嘗試使用 URL https://localhost:5000/images/MyImages....</p>
-  </section>
-  <footer class="entry-footer">June 6, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET Core】靜態檔案 Static Files" href="https://fakestandard.github.io/netcore/netcore5-4-staticfiles/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—選擇排序法（Selection Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【4/29 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  選擇排序法（Selection Sort） 選擇排序法顧名思義是以選擇的概念來進行排序，也算是枚舉法的應用，原理為反覆從未排序的數列中取出最小元素，加入到另一個數列中，達到排序的結果。
-選擇排序可以由大到小排序，將最大值放到第一位置；或是由小到大排序，將最大值放到最後一個位置。
-透過選擇排序法，對 [30] [20] [40] [50] [10] 該數列進行排序，目標結果為由小到大排列
-Step 1 首先進行第一次掃描，找到數列中最小值，直接與第一個元素交換
-初始序列 [30] [20] [40] [50] [10]
-結果序列 [10] [20] [40] [50] [30]
-Step 2 進行第二次掃描，排除第一個元素，從第二個位置開始找起，找到最小值，與第二個位置元素交換，因為 [20] 是此次搜尋中最小值，其結果位置不變
-上次結果 [10] [20] [40] [50] [30]
-結果序列 [10] [20] [40] [50] [30]...</p>
-  </section>
-  <footer class="entry-footer">June 3, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—選擇排序法（Selection Sort）" href="https://fakestandard.github.io/algorithm/algorithm-11-selectionsort/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—氣泡排序法（Bubble Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【4/29 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  氣泡排序法（Bubble Sort） 氣泡排序法可稱為交換排序法，其構思為觀察水中氣泡變化而成，甚至可稱為冒泡排序等類似名稱。
-其原理為從第一個元素開始，比較相鄰元素的大小，如大小順序有誤，就將其對調，再與下一個元素進行比較，彷彿氣泡逐漸冒出水面上的概念，使用該方法掃描過一次後，就可以確保最後一個元素是位於正確的位置，進行第二次掃描，就能確認第二個元素的正確位置，逐步進行直到所有元素排序完成。
-使用白話一點的說法，逐一拆解每一個步驟，首先有一個序列，初始的狀態和順序為 [30] [20] [40] [50] [10]，目標將此序列由小到大排列，變成 [10] [20] [30] [40] [50]
-我們透過氣泡排序法進行排序，步驟解析如下
-Step 1 首先進行第一次掃描，會先拿到第一個元素 [30]，接著與相鄰的元素 [20] 進行比較，如果第二個元素小於地一個元素，就進行位置交換。
-初始序列 [30] [20] [40] [50] [10]
-結果序列 [20] [30] [40] [50] [10]
-Step 2 依然拿著 [30] 這個元素，繼續與相鄰的元素比較，因為該元素已經調換到第二個元素的位置，所以下一個相鄰的元素會是 [40]，接著進行比較，經比較後兩個元素順序不變，依然維持下列結果
-結果序列 [20] [30] [40] [50] [10]...</p>
-  </section>
-  <footer class="entry-footer">June 1, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—氣泡排序法（Bubble Sort）" href="https://fakestandard.github.io/algorithm/algorithm-10-bubblesort/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -40,7 +40,7 @@ static void Main(string[] args) { Swordman swordman = new Swordman(); } /// &lt;
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【OOP】物件導向特性—封裝、繼承、多型" />
 <meta property="og:description" content="Start 說到物件導向就不能不知道OOP的三大特性—封裝、繼承、多型。
  建議閱讀本篇前先閱讀前篇「基礎概念」，在實例及解說上，若前篇已講解過，則此篇不再重複說明
@@ -200,7 +200,7 @@ static void Main(string[] args) { Swordman swordman = new Swordman(); } /// &lt;
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -257,7 +257,7 @@ static void Main(string[] args) { Swordman swordman = new Swordman(); } /// &lt;
 <li>類別具有清晰的對外界面</li>
 </ul>
 <p>所以在設計 <code>Swordman</code> 類別時即為封裝，將自己的屬性及方法包裝起來，供給自己使用，不依賴他人。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
 {
     Swordman swordman = <span style="color:#66d9ef">new</span> Swordman();
 }
@@ -279,7 +279,7 @@ static void Main(string[] args) { Swordman swordman = new Swordman(); } /// &lt;
 </code></pre></div><h3 id="繼承inheritance">繼承（Inheritance）<a hidden class="anchor" aria-hidden="true" href="#繼承inheritance">#</a></h3>
 <p>繼承很字面的意思，那有幾個特性須知道，子類別繼承父類別時，子類別擁有父類別 <code>pirvate</code> 以外的屬性和方法，子類別也可擁有自己的屬性和方法。最後，子類別可以用自己的方式實現父類別的功能，即方法重載。</p>
 <p>原本有 <code>Swordman</code> 的類別，現在增加一個 <code>Thief</code> 類別，與 <code>Swordman</code> 擁有相同的屬性和方法。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 盜賊類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Thief</span>
@@ -315,7 +315,7 @@ static void Main(string[] args) { Swordman swordman = new Swordman(); } /// &lt;
 }
 </code></pre></div><p>剛建立的 <code>Thief</code> 與先前建立的 <code>Swordman</code> 皆為職業，我們可以創建一個 <code>CareerBasic</code> 作為父類別，把職業會有的屬性或方法放到 <code>CareerBasic</code> 類別，讓 <code>Thief</code> 與 <code>Swordman</code> 繼承 <code>CareerBasic</code>，這樣一來子類別就擁有父類別的屬性和方法，而不用寫相似的代碼在各個職業裡。</p>
 <p>接著我們讓類別們各司其職。建立 <code>CareerBasic</code> 類別且先不寫任何代碼。將 <code>Thief</code> 與 <code>Swordman</code> 相同的程式碼移至 <code>CareerBasic</code> 下。前面提到子類別擁有父類別 <code>private</code> 以外的屬性和方法，所以子類別想繼承原本 <code>private</code> 的屬性或方法時，但父類別又不想公開屬性或方法給外部使用，此時就需要設為 <code>protected</code> 層級，僅供給子類別使用。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 職業基礎類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CareerBasic</span>
@@ -372,7 +372,7 @@ static void Main(string[] args) { Swordman swordman = new Swordman(); } /// &lt;
     }
 }
 </code></pre></div><p>以 <code>Thief</code> 為例，讓 <code>Thief</code> 繼承 <code>CareerBasic</code> 使其擁有父類別的屬性、方法、欄位、事件和索引指示器…等，在對自己做調整，來實現父類別的功能。要注意的地方是建構式不能被繼承，只能被調用，使用 「<code>base</code>」 關鍵字調用父類別。來看看繼承 <code>CareerBasic</code> 後的 <code>Thief</code> 內部還剩下什麼…</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 繼承格式寫法為 =&gt; 子類別 : 父類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Thief</span> : CareerBasic
@@ -393,7 +393,7 @@ static void Main(string[] args) { Swordman swordman = new Swordman(); } /// &lt;
 </p>
 <p>看到 <code>thief</code> 有 <code>Attack()</code> 方法和 <code>Count</code> 屬性，真的有繼承父類的屬性和方法，這樣筆者就放心了，有多少財產就要繼承多少（笑）</p>
 <p>原本在 <code>Thief</code> 空建構式是繼承父類別的，現在希望 <code>Thief</code> 實體化時不使用父類別建構式，<code>Thief</code> 初始化時的 <code>name</code> 設置為<code>兩把刀</code>，既然不一樣的名字那就不能寫在父類別，這時就可使用方法重載，讓子類別重寫父類別的功能。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 盜賊
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Thief</span> : CareerBasic
@@ -415,7 +415,7 @@ static void Main(string[] args) { Swordman swordman = new Swordman(); } /// &lt;
 <h3 id="多型polymorphism">多型（Polymorphism）<a hidden class="anchor" aria-hidden="true" href="#多型polymorphism">#</a></h3>
 <p>多型的定義是具有兩個或兩個以上名稱相同的方法，且可以傳入不同個數的參數或是型態，利用參數個數和型態，來呼叫到對應的方法。多型包含「<strong>多載（Overloading）</strong>」及「<strong>複寫（Overriding）</strong>」，前面有介紹過多載（方法重載），來說說複寫吧！若子類別要實作父類別的成員，則須將父類別成員宣告成 <code>Virtral</code>，子類別使用時則使用關鍵字 <code>Override</code> 來取代父類別實作。</p>
 <p>假設每個職業都有一個被動技能，每個職業被動技能的名稱不一樣，每次釋放被動技能時會根據不同職業而返回不同名稱，但他們都有釋放的動作，所以釋放這個動作就可以放在父類別，而名稱放在子類別透過子類別實現自己的名稱。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 父類別加入虛擬方法，讓子類別可以複寫
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e">/// &lt;returns&gt;&lt;/returns&gt;
@@ -424,7 +424,7 @@ static void Main(string[] args) { Swordman swordman = new Swordman(); } /// &lt;
     <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34; 使出被動技能： &#34;</span>;
 }
 </code></pre></div><p><code>Thief</code> 及 <code>Swordman</code> 分別複寫 <code>PassiveSkill</code> 方法。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// Thief 複寫 父類別方法
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// Thief 複寫 父類別方法
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">string</span> PassiveSkill()
 {
     <span style="color:#66d9ef">return</span> name + <span style="color:#66d9ef">base</span>.PassiveSkill() + <span style="color:#e6db74">&#34;二刀連擊&#34;</span>;

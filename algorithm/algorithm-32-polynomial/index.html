@@ -41,7 +41,7 @@ Start 多項式在數學中是相當重要的表現方式，先複習一下多�
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【Algorithm】陣列應用—多項式陣列表示法" />
 <meta property="og:description" content="【5/26 閱讀紀錄】
 根據先前文章介紹的陣列，此篇實際運用它們實作一個應用。
@@ -203,7 +203,7 @@ Start 多項式在數學中是相當重要的表現方式，先複習一下多�
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -280,7 +280,7 @@ Start 多項式在數學中是相當重要的表現方式，先複習一下多�
 <p><img loading="lazy" src="/images/Algorithm/Algorithm038.png" alt=""  />
 </p>
 <p>先建立共用輸出多項式方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 輸出多項式
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> PrintPoly(<span style="color:#66d9ef">ref</span> <span style="color:#66d9ef">int</span>[] polyA, <span style="color:#66d9ef">ref</span> <span style="color:#66d9ef">int</span>[] polyB, <span style="color:#66d9ef">int</span> num)
@@ -298,7 +298,7 @@ Start 多項式在數學中是相當重要的表現方式，先複習一下多�
     }
 }
 </code></pre></div><p>建立對方法一的輸出方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// (方法一)輸出副程式
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> PrintSub(<span style="color:#66d9ef">ref</span> <span style="color:#66d9ef">int</span>[] poly)
@@ -329,7 +329,7 @@ Start 多項式在數學中是相當重要的表現方式，先複習一下多�
     WriteLine();
 }
 </code></pre></div><p>對第一種表示方式撰寫方法，接著在 Main 方法中呼叫該方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 方法一
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> MethodOne()
@@ -357,7 +357,7 @@ Start 多項式在數學中是相當重要的表現方式，先複習一下多�
 <p><img loading="lazy" src="/images/Algorithm/Algorithm039.png" alt=""  />
 </p>
 <p>建立對方法二的輸出方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// (方法二)輸出副程式
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e">/// &lt;param name=&#34;poly&#34;&gt;&lt;/param&gt;
@@ -383,7 +383,7 @@ Start 多項式在數學中是相當重要的表現方式，先複習一下多�
     WriteLine();
 }
 </code></pre></div><p>對第二種表示方式撰寫方法，接著在 Main 方法中呼叫該方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 方法二
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> MethodTwo()
@@ -439,7 +439,7 @@ Start 多項式在數學中是相當重要的表現方式，先複習一下多�
     PrintSubTwo(<span style="color:#66d9ef">ref</span> result);
 }
 </code></pre></div><p>Main 方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
 {
     <span style="color:#75715e">// 第一種方法
 </span><span style="color:#75715e"></span>    WriteLine(<span style="color:#e6db74">&#34;========== Method One ==========\n&#34;</span>);

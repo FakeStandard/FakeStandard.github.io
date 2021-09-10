@@ -37,7 +37,7 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】">
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【.NET】適合初心者的 .NET Core MVC 實作" />
 <meta property="og:description" content="此篇會照著官方文件 Step by step 從中學習 Web 應用程式之 MVC，過程中會了解如何建立 Web 應用程式、新增及 Scaffold 模型、使用資料庫、資料的 CRUD、新增搜尋和驗證，最後會完成一個有關電影清單的應用程式。
 UI 的介紹會以 IDE 為主，除 UI 外也會介紹 dotnet 指令。
@@ -191,7 +191,7 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -269,11 +269,11 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
 <h3 id="command-shell">Command Shell<a hidden class="anchor" aria-hidden="true" href="#command-shell">#</a></h3>
 <p>開啟終端機或 VS Code 終端機，切換到欲新增專案的目錄</p>
 <p>在當前目錄建立新的 ASP.NET Core MVC 專案</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet new mvc -o MvcMovie
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet new mvc -o MvcMovie
 </code></pre></div><p>如果是使用 VS Code，下列指令可在 VS Code 直接載入 <code>MvcMovie.csproj</code> 專案檔</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ code -r MvcMovie
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ code -r MvcMovie
 </code></pre></div><p>信任 Https 開發憑證</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet dev-certs https --trust
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet dev-certs https --trust
 </code></pre></div><p>接著同上述執行 <code>Ctrl + F5</code> 啟動應用程式，詳細內容請往回參考。</p>
 <h2 id="新增控制器controller">新增控制器（Controller）<a hidden class="anchor" aria-hidden="true" href="#新增控制器controller">#</a></h2>
 <p>在方案總管中，對 Controllers 資料夾執行右鍵→選擇加入→控制器。</p>
@@ -298,7 +298,7 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
 </p>
 <h3 id="變更檢視及版面配置">變更檢視及版面配置<a hidden class="anchor" aria-hidden="true" href="#變更檢視及版面配置">#</a></h3>
 <p>打開剛剛建立的 View 修改代碼以變更呈現內容</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--index.cshtml--&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--index.cshtml--&gt;</span>
 @{
     ViewData[&#34;Title&#34;] = &#34;Index&#34;;
 }
@@ -307,7 +307,7 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
 
 &lt;<span style="color:#f92672">p</span>&gt;Hello from our View Template!&lt;/<span style="color:#f92672">p</span>&gt;
 </code></pre></div><p>在版面配置中添加 HelloWorld Controller 的導航配置，開啟 <code>Views/Shared/_Layout.cshtml</code> 找到配置導航的位置添加以下代碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-collapse collapse d-sm-inline-flex justify-content-between&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-collapse collapse d-sm-inline-flex justify-content-between&#34;</span>&gt;
     &lt;<span style="color:#f92672">ul</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;navbar-nav flex-grow-1&#34;</span>&gt;
         
         ...
@@ -334,7 +334,7 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
 <p>這些自行建立的類別被稱為 <strong>POCO</strong>（Plain Old CLR Objects），因為它們只定義儲存在資料庫中的資料屬性，對 EF Core 不具有任何相依性。</p>
 <h3 id="建立類別">建立類別<a hidden class="anchor" aria-hidden="true" href="#建立類別">#</a></h3>
 <p>在 Models 資料夾執行右鍵→選擇加入→類別，將類別命名為 <code>Movie.cs</code>，在類別內添加下列代碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">using</span> System;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">using</span> System;
 <span style="color:#66d9ef">using</span> System.ComponentModel.DataAnnotations;
 
 <span style="color:#66d9ef">namespace</span> CoreMVCMovieList.Models
@@ -352,13 +352,13 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
 }
 </code></pre></div><h2 id="新增-nuget-套件">新增 NuGet 套件<a hidden class="anchor" aria-hidden="true" href="#新增-nuget-套件">#</a></h2>
 <p>在 ASP.NET Core 中欲使用 Entity Framework Core 需安裝 <code>Microsfot.EntityFrameworkCore</code> Package，使用下列指令來安裝套件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet add package Microsoft.EntityFrameworkCore
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ dotnet add package Microsoft.EntityFrameworkCore
 </code></pre></div><p>EF 通常都是搭配 SQL Server，開啟<strong>套件管理器主控台</strong>，執行下列指令，以添加 EF Core SQL Server Provider</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Install-Package Microsoft.EntityFrameworkCore.SqlServer
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Install-Package Microsoft.EntityFrameworkCore.SqlServer
 </code></pre></div><h2 id="建立-dbcontext">建立 DbContext<a hidden class="anchor" aria-hidden="true" href="#建立-dbcontext">#</a></h2>
 <p><code>DbContext</code> 類別為 EF Core 與資料庫的溝通橋樑，在專案下建立 <code>MvcMovieContext.cs</code> 類別，並繼承 <code>DbContext</code> 類別以定義與資料庫的溝通行為，同時建立 <code>DbSet&lt;Movie&gt;</code>　實體集（Entity Set）。</p>
 <p>在 Entity Framework 下，通常實體集（Entity Set）對應於資料表，實體（Entity）對應於資料表中的資料列，EF Core 會自動幫我們轉換實體集與實體的部分。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">using</span> CoreMVCMovieList.Models;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">using</span> CoreMVCMovieList.Models;
 <span style="color:#66d9ef">using</span> Microsoft.EntityFrameworkCore;
 
 <span style="color:#66d9ef">namespace</span> CoreMVCMovieList
@@ -374,7 +374,7 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
 </code></pre></div><h2 id="新增-connectionstring">新增 ConnectionString<a hidden class="anchor" aria-hidden="true" href="#新增-connectionstring">#</a></h2>
 <p>以往應用程式有 <code>app.config</code> 可以設定，Web 則有 <code>web.config</code> 可以設置連線字串，在 .Net Core 下 <code>.config</code> 配置文件已經消失，改成使用 JSON 格式的 <code>appsettings.json</code> 配置相關設定。</p>
 <p>添加 ConnectionString 節點的代碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
   <span style="color:#f92672">&#34;Logging&#34;</span>: {
     <span style="color:#f92672">&#34;LogLevel&#34;</span>: {
       <span style="color:#f92672">&#34;Default&#34;</span>: <span style="color:#e6db74">&#34;Information&#34;</span>,
@@ -389,10 +389,10 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
 }
 </code></pre></div><h2 id="註冊-dbcontext">註冊 DbContext<a hidden class="anchor" aria-hidden="true" href="#註冊-dbcontext">#</a></h2>
 <p>ASP.NET Core 建構於相依性注入（Dependency Injection, DI）概念，所有服務必須在應用程式啟動期間向 DI 進行註冊，透過建構函數提供服務給需要服務的元件（如 Razor Page），開啟 <code>Startup.cs</code> 向 DI 容器註冊 DbContext。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 添加引用
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 添加引用
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> MvcMovie.Data;
 <span style="color:#66d9ef">using</span> Microsoft.EntityFrameworkCore;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services)
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services)
 {
     services.AddControllersWithViews();
 
@@ -419,19 +419,19 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
 <h2 id="進行初始移轉initial-migration">進行初始移轉（Initial Migration）<a hidden class="anchor" aria-hidden="true" href="#進行初始移轉initial-migration">#</a></h2>
 <p>使用 EF Core 的遷移功能來建立資料庫，Migration 可建立和更新與資料模型相符的資料庫。在套件管理器主控台輸入下列命令</p>
 <p>產生 <code>/{timestamp}_InitialCreate.cs</code> 遷移檔案，因為是第一次移轉，所以產生的類別會以 <code>MvcMovieContext</code> 類別的資料庫結構為基礎。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Add-Migration InitialCreate
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Add-Migration InitialCreate
 </code></pre></div><p>此命令會執行 <code>Migrations/{time-stamp}_InitialCreate.cs</code> 檔案中的 <code>Up</code> 方法，以建立資料庫。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Update-Database
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Update-Database
 </code></pre></div><p>此時可以啟動應用程式操作新增、刪除、修改等方法，可以發現在執行 CRUD 時都會使用到資料庫，因為在建立 <code>MoviesController.cs</code> 時，已經添加下列的建構函式，然而先前在 DI 容器中已註冊 <code>MvcMovieContext</code>，所以在 Controller 的建構子就可透過 DI 來取得 Context 實例。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> MvcMovieContext _context;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> MvcMovieContext <span style="color:#ae81ff">_</span>context;
 
 <span style="color:#66d9ef">public</span> MoviesController(MvcMovieContext context)
 {
-    _context = context;
+    <span style="color:#ae81ff">_</span>context = context;
 }
 </code></pre></div><h2 id="植入資料以初始資料庫">植入資料以初始資料庫<a hidden class="anchor" aria-hidden="true" href="#植入資料以初始資料庫">#</a></h2>
 <p>在 Models 資料夾下建立 <code>SeedData.cs</code> 類別，在類別內添加下列代碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SeedData</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SeedData</span>
 {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Initialize(IServiceProvider serviceProvider)
     {
@@ -483,14 +483,14 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
     }
 }
 </code></pre></div><p>其中這段代表植入資料前，先判斷資料庫中是否已經資料，沒有資料才初始化資料，有的話直接返回，不新增任何資料。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// Look for any movies.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// Look for any movies.
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> (context.Movie.Any())
 {
     <span style="color:#75715e">// DB has been seeded
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span>;
 }
 </code></pre></div><p>開啟 <code>Program.cs</code> 新增初始設定，將 Main 方法內的原始代碼替換成下列代碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
 {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
     {
@@ -522,7 +522,7 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
 </code></pre></div><p>啟動應用程式，查看上述的設定，資料庫在有資料的情況下，不做新增資料的動作，將所有資料刪除使得資料庫資料為零，這時再啟動應用程式會發現，資料庫會新增預設的資料。</p>
 <h2 id="使用資料註釋-data-annotations">使用資料註釋 Data Annotations<a hidden class="anchor" aria-hidden="true" href="#使用資料註釋-data-annotations">#</a></h2>
 <p>目前清單的標題列上顯示的是 Model 的名稱，使用 Data Annotations 來變更顯示名稱。開啟 <code>Models/Movie.cs</code> 替換成下列代碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 需引用的命名空間
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 需引用的命名空間
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.ComponentModel.DataAnnotations;
 <span style="color:#66d9ef">using</span> System.ComponentModel.DataAnnotations.Schema;
 
@@ -553,7 +553,7 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
 <p>目前的清單沒有搜尋引擎，當資料量一多，一頁頁的翻找會很耗時，接下來我們要新增一個搜尋引擎，讓使用者可以搜尋「電影名稱」、「類型」以快速查找。</p>
 <h3 id="搜尋電影名稱">搜尋電影名稱<a hidden class="anchor" aria-hidden="true" href="#搜尋電影名稱">#</a></h3>
 <p>開啟 <code>Vies/Movies/Index.cshtml</code> 添加下列 <code>&lt;form&gt;...&lt;/form&gt;</code> 代碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">p</span>&gt;
     &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">asp-action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Create&#34;</span>&gt;Create New&lt;/<span style="color:#f92672">a</span>&gt;
 &lt;/<span style="color:#f92672">p</span>&gt;
 
@@ -570,11 +570,11 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
     &lt;<span style="color:#f92672">thead</span>&gt;
     ...
 </code></pre></div><p>開啟 <code>MoviesController.cs</code> 變更 <code>Index</code> 動作方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#a6e22e">[HttpGet]</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#a6e22e">[HttpGet]</span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;IActionResult&gt; Index(<span style="color:#66d9ef">string</span> searchString)
 {
     <span style="color:#75715e">// LINQ 查詢
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> movies = <span style="color:#66d9ef">from</span> m <span style="color:#66d9ef">in</span> _context.Movie
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> movies = <span style="color:#66d9ef">from</span> m <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">_</span>context.Movie
                     <span style="color:#66d9ef">select</span> m;
 
     <span style="color:#66d9ef">if</span> (!String.IsNullOrEmpty(searchString))
@@ -589,7 +589,7 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
 </p>
 <h3 id="搜尋類型">搜尋類型<a hidden class="anchor" aria-hidden="true" href="#搜尋類型">#</a></h3>
 <p>搜尋類型要以下拉選單的方式呈現，因此先新增 <code>ViewModels</code> 資料夾，再資料夾下新增 <code>MovieGenerViewModel.cs</code> 類別</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MovieGenerViewModel</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MovieGenerViewModel</span>
 {
     <span style="color:#66d9ef">public</span> List&lt;Movie&gt; Movies { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
     <span style="color:#66d9ef">public</span> SelectList Genres { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
@@ -597,9 +597,9 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> SearchString { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 }
 </code></pre></div><p>進一步修改剛剛的 <code>MoviesController.cs</code> 的 <code>Index</code> 方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;IActionResult&gt; Index(<span style="color:#66d9ef">string</span> movieGenre, <span style="color:#66d9ef">string</span> searchString)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;IActionResult&gt; Index(<span style="color:#66d9ef">string</span> movieGenre, <span style="color:#66d9ef">string</span> searchString)
 {
-    <span style="color:#66d9ef">var</span> movies = <span style="color:#66d9ef">from</span> m <span style="color:#66d9ef">in</span> _context.Movie
+    <span style="color:#66d9ef">var</span> movies = <span style="color:#66d9ef">from</span> m <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">_</span>context.Movie
                     <span style="color:#66d9ef">select</span> m;
 
     <span style="color:#66d9ef">if</span> (!String.IsNullOrEmpty(searchString))
@@ -613,7 +613,7 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
     }
 
     <span style="color:#75715e">// LINQ 取類型資料
-</span><span style="color:#75715e"></span>    IQueryable&lt;<span style="color:#66d9ef">string</span>&gt; genreQuery = <span style="color:#66d9ef">from</span> m <span style="color:#66d9ef">in</span> _context.Movie
+</span><span style="color:#75715e"></span>    IQueryable&lt;<span style="color:#66d9ef">string</span>&gt; genreQuery = <span style="color:#66d9ef">from</span> m <span style="color:#66d9ef">in</span> <span style="color:#ae81ff">_</span>context.Movie
                                     <span style="color:#66d9ef">orderby</span> m.Genre
                                     <span style="color:#66d9ef">select</span> m.Genre;
 
@@ -626,7 +626,7 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
     <span style="color:#66d9ef">return</span> View(movieGenreVM);
 }
 </code></pre></div><p>更新 <code>Views/Movies/Index.cshtml</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--將原本傳入的 Model 替換成 MovieGenerViewModel--&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--將原本傳入的 Model 替換成 MovieGenerViewModel--&gt;</span>
 @model CoreMVCMovieList.ViewModels.MovieGenerViewModel
 
 ...
@@ -684,7 +684,7 @@ Visual Studio IDE 建立 【ASP.NET Core Web 應用程式】"/>
 </p>
 <h2 id="新增資料驗證">新增資料驗證<a hidden class="anchor" aria-hidden="true" href="#新增資料驗證">#</a></h2>
 <p>使用 <code>DataAnnotations</code> Namespace 提供的的驗證屬性，套用到類別或屬性中，開啟 <code>Movie</code> 類別，將 <code>Required</code>、<code>StringLength</code>、<code>RegularExpression</code>、<code>Range</code> 添加到各個屬性上</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Movie</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Movie</span>
 {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Id { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 <span style="color:#a6e22e">

@@ -40,7 +40,7 @@ Start 使用串列製作堆疊的好處是可以隨時動態改變串列長度�
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【Algorithm】堆疊應用—串列實作堆疊" />
 <meta property="og:description" content="【5/17 閱讀紀錄】
 根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
@@ -200,7 +200,7 @@ Start 使用串列製作堆疊的好處是可以隨時動態改變串列長度�
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -250,7 +250,7 @@ Start 使用串列製作堆疊的好處是可以隨時動態改變串列長度�
 <p>使用串列製作堆疊的好處是可以隨時動態改變串列長度，缺點則是設計較為複雜。相較於使用陣列製作堆疊設計上較為簡易，缺點則是陣列大小需事先宣告，無法動態改變。</p>
 <p>利用串列結構模擬堆疊工作運算，使用迴圈控制推入或取出的元素，其中需包含推入（push）和取出（pop）函數，最後要輸出堆疊中所有元素。</p>
 <p>宣告一個鏈結串列節點的類別</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 鏈結串列節點的類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Node</span>
@@ -264,7 +264,7 @@ Start 使用串列製作堆疊的好處是可以隨時動態改變串列長度�
     }
 }
 </code></pre></div><p>宣告串列模擬堆疊的類別，其中包含推入和取出的方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 以串列模擬的堆疊
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StackByLink</span>
@@ -356,7 +356,7 @@ Start 使用串列製作堆疊的好處是可以隨時動態改變串列長度�
     }
 }
 </code></pre></div><p>Main 方法代碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
 {
     StackByLink stack = <span style="color:#66d9ef">new</span> StackByLink();
 
@@ -397,7 +397,7 @@ Start 使用串列製作堆疊的好處是可以隨時動態改變串列長度�
 }
 </code></pre></div><h1 id="note">Note<a hidden class="anchor" aria-hidden="true" href="#note">#</a></h1>
 <p>在加入資料的 <code>Insert</code> 方法中，<code>else</code> 的部分有點疑惑，實際走到 <code>rear.next = newNode</code> 後，<code>front</code> 最後的節點也添加了新的節點，筆者以為會是 <code>front.next = newNode</code> 去更新 <code>front</code> 串列，結果卻不是，這裡值得在思考，先記錄一下問題。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 從堆疊頂端加入資料
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e">/// &lt;param name=&#34;data&#34;&gt;&lt;/param&gt;

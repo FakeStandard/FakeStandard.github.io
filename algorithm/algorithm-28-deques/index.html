@@ -40,7 +40,7 @@ Start 雙向佇列的全名是 Double-ends Queues，縮寫為 Deques。雙向佇
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【Algorithm】佇列應用—雙向佇列（Deques）" />
 <meta property="og:description" content="【5/30 閱讀紀錄】
 根據先前文章介紹的佇列，此篇實際運用它們實作一個應用。
@@ -200,7 +200,7 @@ Start 雙向佇列的全名是 Double-ends Queues，縮寫為 Deques。雙向佇
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -295,7 +295,7 @@ Start 雙向佇列的全名是 Double-ends Queues，縮寫為 Deques。雙向佇
 <li><strong>輸出限制性雙佇列（Output Restricted Deque）</strong> - 限制<strong>取出資料</strong>只能在其中一端進行，輸入資料則可在兩端執行</li>
 </ul>
 <p>以串列結構實作雙向佇列程式碼，建立節點類別、雙向佇列串列結構類別，以及佇列相關方法（推入推出方法在下一步實作）</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 節點類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Node</span>
@@ -392,7 +392,7 @@ Start 雙向佇列的全名是 Double-ends Queues，縮寫為 Deques。雙向佇
 </span><span style="color:#75715e"></span>    }
 }
 </code></pre></div><h3 id="實作從頂端推入資料">實作從頂端推入資料<a hidden class="anchor" aria-hidden="true" href="#實作從頂端推入資料">#</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 從頂端推入資料
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e">/// &lt;param name=&#34;data&#34;&gt;&lt;/param&gt;
@@ -414,7 +414,7 @@ Start 雙向佇列的全名是 Double-ends Queues，縮寫為 Deques。雙向佇
     }
 }
 </code></pre></div><h3 id="實作從末端推入資料">實作從末端推入資料<a hidden class="anchor" aria-hidden="true" href="#實作從末端推入資料">#</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 從末端推入資料
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e">/// &lt;param name=&#34;data&#34;&gt;&lt;/param&gt;
@@ -439,7 +439,7 @@ Start 雙向佇列的全名是 Double-ends Queues，縮寫為 Deques。雙向佇
     }
 }
 </code></pre></div><h3 id="實作從頂端取出資料">實作從頂端取出資料<a hidden class="anchor" aria-hidden="true" href="#實作從頂端取出資料">#</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 從頂端取出資料
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> PopFront()
@@ -449,7 +449,7 @@ Start 雙向佇列的全名是 Double-ends Queues，縮寫為 Deques。雙向佇
     front = front.next;
 }
 </code></pre></div><h3 id="實作從末端取出資料">實作從末端取出資料<a hidden class="anchor" aria-hidden="true" href="#實作從末端取出資料">#</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 從末端取出資料
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> PopRear()
@@ -464,7 +464,7 @@ Start 雙向佇列的全名是 Double-ends Queues，縮寫為 Deques。雙向佇
     rear = current;
 }
 </code></pre></div><p>在 Main 方法實際調用方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
 {
     LinkedListDeques deques = <span style="color:#66d9ef">new</span> LinkedListDeques();
 

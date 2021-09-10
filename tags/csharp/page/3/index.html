@@ -31,7 +31,7 @@
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/tags/csharp/index.xml">
 <meta property="og:title" content="CSharp" />
 <meta property="og:description" content="不專業代碼" />
@@ -122,7 +122,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -158,6 +158,103 @@
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
   <h1>CSharp</h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】佇列應用—串列實作佇列</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/20 閱讀紀錄】
+根據先前文章介紹的佇列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 利用串列結構模擬佇列工作，使用指標及相關方法實作佇列。
+建立鏈結串列的節點類別
+/// &lt;summary&gt; /// 鏈結串列節點類別 /// &lt;/summary&gt; class QueueNode { public int data; public QueueNode next; public QueueNode(int data) { this.data = data; next = null; } } 建立使用串列節點模擬佇列的類別，其中包含 Enqueue 和 Dequeue 方法。
+/// &lt;summary&gt; /// 串列模擬佇列類別 /// &lt;/summary&gt; class QueueByLink { // 前端指標  public QueueNode front; // 末端指標  public QueueNode rear; public QueueByLink() { front = null; rear = null; } /// &lt;summary&gt;  /// 加入資料到佇列  /// &lt;/summary&gt;  /// &lt;param name=&#34;value&#34;&gt;&lt;/param&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool Enqueue(int value) { // 建立新節點  QueueNode node = new QueueNode(value); // 檢查是否為空佇列  if (rear == null) front = node; else rear....</p>
+  </section>
+  <footer class="entry-footer">July 12, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】佇列應用—串列實作佇列" href="https://fakestandard.github.io/algorithm/algorithm-27-queuelist/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】佇列應用—陣列實作佇列</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/20 閱讀紀錄】
+根據先前文章介紹的佇列，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 利用陣列簡單地時做佇列應用，宣告一個大小為 10 的佇列 queue[10]，設置 front 和 rear 作為頭尾的指標且預設為 -1。
+static int front = -1; static int rear = -1; static int max = 10; static int val; static int[] queue = new int[max]; static void Main(string[] args) { int choice = 0; while (rear &lt; max - 1 &amp;&amp; choice != 3) { Write(&#34;請輸入 \n[1] 新增一個資料 \n[2] 取出資料 \n[3] 結束 :&#34;); choice = int.Parse(Console.ReadLine()); switch (choice) { case 1: Write(&#34;請輸入要新增的數值:&#34;); val = int....</p>
+  </section>
+  <footer class="entry-footer">July 11, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】佇列應用—陣列實作佇列" href="https://fakestandard.github.io/algorithm/algorithm-26-queuearray/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】堆疊應用—八皇后經典謎題</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/16 閱讀紀錄】
+根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 八皇后謎題也是經典中的經典，該問題以西洋棋作為背景，如何在 8x8 的棋盤上擺放八個皇后，使任一皇后都無法吃掉其他皇后，屬於堆疊常見的應用實例。
+西洋棋皇后擺放的規則為：因皇后可在一步內，不限格數的直行、橫行或斜線前行，若同一條線上同時有兩個皇后，則舊皇后可吃掉新來皇后，所以，皇后間不可處於同一個縱向、橫向或斜線（跟數獨的概念相似）
+首先會先放置一個皇后，接著依據第一個皇后的位置，在不被吃掉的情況下，繼續放置第二個皇后、第三個皇后…直到放置某個新皇后時，都會被先前的皇后吃掉，此時，就必須變更前一個皇后放置的位置，在不被先前的皇后吃掉之情形下，找到第二個可以放置的位置，在繼續擺放新皇后；若在前一個擺放的皇后，也沒有新的位置可以擺放（都會被吃掉的情況），就在將前前皇后拿起，尋找新的可以擺放的位置，以此類推。
+由上述可知，在放置新皇后或是拿起舊皇后的動作，是以堆疊的概念進行，而當新皇后無法擺放時，將舊皇后拿起尋找新的位置，是以回溯的概念進行。
+本書程式碼範例
+class Program { static void Main(string[] args) { number = 0; DecidePosition(0); ReadKey(); Console.ReadLine(); } static int TRUE = 1, FALSE = 0, EIGHT = 8; // 存放八個皇后的列位置  static int[] queen = new int[EIGHT]; // 計算共有幾組解答  static int number = 0; /// &lt;summary&gt;  /// 按下 Enter 鍵要執行方法  /// &lt;/summary&gt;  public static void PressEnter() { char ch; Write(&#34;\n\n&#34;); Write(&#34;按下 Enter 鍵繼續....</p>
+  </section>
+  <footer class="entry-footer">July 10, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—八皇后經典謎題" href="https://fakestandard.github.io/algorithm/algorithm-25-eightqueens/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】堆疊應用—經典河內塔</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/16 閱讀紀錄】
+根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 這篇紀錄經典的智力遊戲—河內塔，使用遞迴式和堆疊概念來解決問題的經典範例。
+河內塔的問題描述如下：在古老的印度神廟中，有三個木樁，在第一個木樁上，有數量和大小不同的圓盤，由大到小堆疊，最大的圓盤放在最下面，最小的圓盤在最上面，天神希望將第一個木樁的圓盤，全部移動到第三個木樁。
+搬動時必須要遵守規則下列規則
+ 直徑較小的圓盤只能置於直徑大的圓盤上，比如直徑三的圓盤可以放置在直徑四或直徑五的上方 圓盤可以任意由一個木樁移動到其他木樁上，共有三個木樁可使用 每次只能移動一個圓盤，只能從最上方的圓盤開始移動（與堆疊相同）  【解析】
+假設 n 為圓盤數量，逐步解析情境
+  n = 1
+當圓盤只有一個時，直接從第一個木樁移動到地三個木樁，完成天神願望。
+  n = 2
+當圓盤為兩個時，由上往下數，將第一個圓盤移動到第二個木樁，接著將第二個圓盤移動到第三個木樁，第一個圓盤從第二個木樁移動到第三個木樁，完成天神願望。
+在這裡可以得到一個小結論
+ 圓盤移動的次數為 (2^2)-1 = 3 次，即 2 的平方-1 次 圓盤移動的次序為 1→2→1 木樁移動的次序為 1→2、1→3、2→3    n = 3
+當圓盤為三個時，由上往下數
+ 第一個圓盤移動到第三個木樁 第二個圓盤移動到第二個木樁 第一個圓盤從第三個木樁移至第二個木樁，此時第二個木樁有兩個圓盤 第三個圓盤移動到第三個木樁 第一個圓盤從第二個木樁移動到第一個木樁 第二個圓盤從第二個木樁移動到第三個木樁 最後，將第一個圓盤從第一個木樁移動到第三個木樁  完成天神願望（懶得畫圖，請讀者發揮想像力…）
+此情境得出以下結論
+ 圓盤移動的次數為 2^3-1 = 7 次，即 2 的次方-1 次 圓盤移動的次序為 1→2→1→3→1→2→1 木樁移動的次序為 1→3、1→2、3→2、1→3、2→1、2→3、1→3    【結論】...</p>
+  </section>
+  <footer class="entry-footer">July 7, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—經典河內塔" href="https://fakestandard.github.io/algorithm/algorithm-24-towerofhanoi/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】堆疊應用—串列實作堆疊</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/17 閱讀紀錄】
+根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 使用串列製作堆疊的好處是可以隨時動態改變串列長度，缺點則是設計較為複雜。相較於使用陣列製作堆疊設計上較為簡易，缺點則是陣列大小需事先宣告，無法動態改變。
+利用串列結構模擬堆疊工作運算，使用迴圈控制推入或取出的元素，其中需包含推入（push）和取出（pop）函數，最後要輸出堆疊中所有元素。
+宣告一個鏈結串列節點的類別
+/// &lt;summary&gt; /// 鏈結串列節點的類別 /// &lt;/summary&gt; class Node { public int data; public Node next; public Node(int data) { this.data = data; this.next = null; } } 宣告串列模擬堆疊的類別，其中包含推入和取出的方法
+/// &lt;summary&gt; /// 以串列模擬的堆疊 /// &lt;/summary&gt; class StackByLink { /// &lt;summary&gt;  /// 指向堆疊頂端的指標  /// &lt;/summary&gt;  public Node front; /// &lt;summary&gt;  /// 指向堆疊末端的指標  /// &lt;/summary&gt;  public Node rear; /// &lt;summary&gt;  /// 判斷堆別是否為空的方法  /// &lt;/summary&gt;  /// &lt;returns&gt;&lt;/returns&gt;  public bool IsEmpty() { return front == null; } /// &lt;summary&gt;  /// 輸出堆疊內容  /// &lt;/summary&gt;  public void Display() { Node current = front; while (current !...</p>
+  </section>
+  <footer class="entry-footer">July 5, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】堆疊應用—串列實作堆疊" href="https://fakestandard.github.io/algorithm/algorithm-23-stacklist/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
@@ -257,99 +354,6 @@ Start 常見的搜尋演算法
   </section>
   <footer class="entry-footer">June 25, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—二分搜尋法（Binary Search）" href="https://fakestandard.github.io/algorithm/algorithm-19-binarysearch/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET Core】環境變數 Environments</h2>
-  </header>
-  <section class="entry-content">
-    <p>【ASP.NET Core 5】
-Start ASP.NET Core 會根據執行階段的環境變數，來設定應用程式的行為。如開發環境、測試環境及正式環境的組態設定會不太相同，使用的資料庫也會不同。
-Environment Variable 預設的三種環境
- Development 開發環境 Staging 暫存(測試)環境 Production 正式環境  環境名稱由系統變數 ASPNETCORE_ENVIRONMENT 的內容值而來，該變數可在 launchSettings.json 作變更。
-開啟 launchSettings.json，在 profiles 節點找到 IIS Express\..\environmentVariables 的 ASPNETCORE_ENVIRONMENT，將原本的 Development 變更為 Production。
-&#34;profiles&#34;: { &#34;IIS Express&#34;: { &#34;commandName&#34;: &#34;IISExpress&#34;, &#34;launchBrowser&#34;: true, &#34;environmentVariables&#34;: { &#34;ASPNETCORE_ENVIRONMENT&#34;: &#34;Production&#34; } } } 開啟 Startup.cs，Configure 方法已注入 IWebHostEnvironment，在方法內使用下列程式碼判斷環境變數內容值
-public void Configure(IApplicationBuilder app, IWebHostEnvironment env) { if (env.IsProduction()) // 假設是生產環境  { app.Run(async (context) =&gt; { await context....</p>
-  </section>
-  <footer class="entry-footer">June 24, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET Core】環境變數 Environments" href="https://fakestandard.github.io/netcore/netcore5-7-environments/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】搜尋演算法—循序搜尋法（Sequential Search）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/21 閱讀紀錄】
-搜尋屬於相當典型的演算法，在資料處理的過程中，用最短的時間內搜尋到所需要的資料，是一個相當重要的議題，其中與進行的方式和選擇的資料結構有很大的關聯。
-依據資料量大小而言，搜尋可分為兩種
- 內部搜尋：資料量小的檔案，可以一次載入到記憶體進行搜尋 外部搜尋：資料量大的檔案，無法全部載入到記憶體中，須將檔案加以組織化，再儲存於硬碟中，搜尋時須循著檔案組織性來達成  依據搜尋過程時，被搜尋的資料是否有異動，可分為兩種
- 靜態搜尋（Static Search）：資料搜尋的過程中，資料不會有增加、刪除或更新等行為 動態搜尋（Dynamic Search）：在資料搜尋的過程中，資料會經常性的增加、刪除或更新  程式碼已放上 GitHub
-Start 常見的搜尋演算法
- 循序搜尋演算法（Sequential Search） 二分搜尋演算法（Binary Search） 內插搜尋演算法（Interpolation Search） 費氏搜尋演算法（Fibonacci Search）  循序搜尋演算法（Sequential Search） 循序搜尋法又稱線性搜尋法（Linear Search），它的原理是走訪所有的資料，不論資料順序從頭到尾逐次搜尋，也不需要在搜尋前對資料做任何處理或排序，在沒有重複資料下，找到資料就中止搜尋，是一種最簡單的排序法。
-它的缺點是搜尋速度較慢，因為對資料從頭到尾的訪問，最好的情況就是一次就找到，只進行一次比較；最壞的情況則是第 n 次才找到，則進行了 n 次比較。所以在數列長度很大時，循序搜尋法則不太適合使用，它通常適用於對檔案小的資料進行搜尋。
-假設有一數列 10 20 30 40 50，欲從數列中找到鍵值 30，透過循序搜尋法，從頭到尾走訪，第一個先找到 10 進行比較，不符合條件，繼續找尋到第二個 20，依然不符合條件，找尋到第三個鍵值，經比對後符合條件，此時演算法中止。
-利用上面的數列來看，最佳的情況是第一次搜尋就符合條件，然後中止搜尋，只進行了一次比較，例如欲搜尋鍵值 10，即是最佳情況；最壞的情況就是從頭走訪到尾，直到搜尋到最後一個鍵值才符合條件，或數列中都沒有符合條件的鍵值，假設數列長度為 n，則需進行 n 次比較，例如欲搜尋鍵值 50 或不存在數列中的鍵值 60，即是最差情況。
-演算法分析  最差的情況下，時間複雜度為 O(n) 平均情況下，需要 (n&#43;1)/2 次的比較  實際撰寫程式碼 亂數產生 1-150 之間的 100 個整數，並實作循序搜尋法的過程...</p>
-  </section>
-  <footer class="entry-footer">June 23, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】搜尋演算法—循序搜尋法（Sequential Search）" href="https://fakestandard.github.io/algorithm/algorithm-18-sequentialsearch/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【OOP】物件導向特性—封裝、繼承、多型</h2>
-  </header>
-  <section class="entry-content">
-    <p>Start 說到物件導向就不能不知道OOP的三大特性—封裝、繼承、多型。
- 建議閱讀本篇前先閱讀前篇「基礎概念」，在實例及解說上，若前篇已講解過，則此篇不再重複說明
- 封裝（Encapsulation） 每個物件都包含進行操作時所需要的所有資訊，物件不必依賴其他物件來完成自己的操作，將方法、欄位、屬性和邏輯包裝在類別內，透過類別的實體來實現，外部物件無法了解物件的內部細節，有種隱藏起來的概念，外部對資料的操作也只能透過已經定義的介面，用一段簡白的話來說，對事只了解他的外在，無需理解內部構造，即為封裝。
-封裝的好處
- 良好的封裝能減少耦合（Coupling） 可自由修改類別內部的實現 類別具有清晰的對外界面  所以在設計 Swordman 類別時即為封裝，將自己的屬性及方法包裝起來，供給自己使用，不依賴他人。
-static void Main(string[] args) { Swordman swordman = new Swordman(); } /// &lt;summary&gt; /// 封裝類別 /// &lt;/summary&gt; class Swordman { // Field  // ...  // Property  // ...  // Method  // ... } 繼承（Inheritance） 繼承很字面的意思，那有幾個特性須知道，子類別繼承父類別時，子類別擁有父類別 pirvate 以外的屬性和方法，子類別也可擁有自己的屬性和方法。最後，子類別可以用自己的方式實現父類別的功能，即方法重載。
-原本有 Swordman 的類別，現在增加一個 Thief 類別，與 Swordman 擁有相同的屬性和方法。
-/// &lt;summary&gt; /// 盜賊類別 /// &lt;/summary&gt; class Thief { private string name = string....</p>
-  </section>
-  <footer class="entry-footer">June 22, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【OOP】物件導向特性—封裝、繼承、多型" href="https://fakestandard.github.io/post/oop/oop-2-oop-feature/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—堆積樹排序法（Heap Tree Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/18 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  堆積樹排序法（Heap Tree Sort） 堆積樹排序法是選擇排序法的改良版，它可以減少選擇排序法的排序次數，進而減少排序時間。樹是一種資料結構，而堆積樹是一顆二元樹，二元樹的定義的定義為每個父節點最多只能有兩個子節點，而堆積樹是一種特殊的二元樹，父節點若小於子節點，稱為最小堆積（Min heap），父節點偌大於子節點，稱為最大堆積（Max heap）。
-假設有一陣列，陣列資料分別為
-                索引 A[0] A[1] A[2] A[3] A[4] A[5] A[6] A[7]   數值 69 81 30 38 9 2 47 61    將此陣列用二元樹表示，每個節點第一個數字為索引，第二個為數值...</p>
-  </section>
-  <footer class="entry-footer">June 21, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—堆積樹排序法（Heap Tree Sort）" href="https://fakestandard.github.io/algorithm/algorithm-17-heaptreesort/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】排序演算法—基數排序法（Radix Sort）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/20 閱讀紀錄】
-排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
-經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
-程式碼已放上 GitHub
-Start 常見的排序演算法
- 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  基數排序法（Radix Sort） 基數排序法與其他的排序法不太相同，不需要進行比較交換的動作，它是透過分配的方式進行排序。主要的分配的方向有兩種，其一是有效鍵優先（Most Significant Digit First, MSD），以及無效鍵優先（Least Significant Digit First, LSD），MSD 是從最左邊的位數開始比較，LSD 則是從最右邊開始比較，該怎麼說呢？馬上來看範例
-LSD 以 LSD 方式對一數列 59 95 7 34 60 168 171 259 372 45 進行比較
-Step 1 將每個元素依照「個位數」放到相對應的串列中
-                 0 1 2 3 4 5 6 7 8 9   60 171 372  34 95  7 168 59        45    259    將分配的結果合併 60 171 372 34 95 45 7 168 59 259...</p>
-  </section>
-  <footer class="entry-footer">June 18, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—基數排序法（Radix Sort）" href="https://fakestandard.github.io/algorithm/algorithm-16-radixsort/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

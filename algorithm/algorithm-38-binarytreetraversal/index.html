@@ -48,7 +48,7 @@ Start 對於線性結構的陣列和串列而言，只能執行單向的走訪�
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【Algorithm】樹的應用—二元樹走訪" />
 <meta property="og:description" content="【5/28 閱讀紀錄】
 根據先前文章介紹的樹，此篇實際運用它們實作一個應用。
@@ -224,7 +224,7 @@ Start 對於線性結構的陣列和串列而言，只能執行單向的走訪�
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -296,7 +296,7 @@ Start 對於線性結構的陣列和串列而言，只能執行單向的走訪�
 <p>以上圖為例，訪問的順序是 F→H→I→G→D→E→B→C→A</p>
 <p>實作程式碼時間，分別為三種走訪方式設計方法，讓以串列表示的二元樹，可以分別輸出前序、中序和後序走訪的結果</p>
 <p>建立樹的節點類別</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 樹節點類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TreeNode</span>
@@ -313,7 +313,7 @@ Start 對於線性結構的陣列和串列而言，只能執行單向的走訪�
     }
 }
 </code></pre></div><p>建立二元樹的類別，其中前序、中序和後續走訪方法在下一步實作</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 二元樹類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BinaryTree</span>
@@ -388,7 +388,7 @@ Start 對於線性結構的陣列和串列而言，只能執行單向的走訪�
 </span><span style="color:#75715e"></span>    }
 }
 </code></pre></div><p>走訪的演算法是利用遞迴的方式來進行，而三種走訪方式大同小異，繼續實作走訪方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 前序走訪
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e">/// &lt;param name=&#34;node&#34;&gt;&lt;/param&gt;
@@ -430,7 +430,7 @@ Start 對於線性結構的陣列和串列而言，只能執行單向的走訪�
 </span><span style="color:#75715e"></span>    }
 }
 </code></pre></div><p>在 Main 方法中調用方法進行走訪</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
 {
     <span style="color:#75715e">// 原始資料
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>[] data = { <span style="color:#ae81ff">12</span>, <span style="color:#ae81ff">46</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">23</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">21</span> };

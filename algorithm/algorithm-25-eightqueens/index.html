@@ -41,7 +41,7 @@ class Program { static void Main(string[] args) { number = 0; DecidePosition(0);
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【Algorithm】堆疊應用—八皇后經典謎題" />
 <meta property="og:description" content="【5/16 閱讀紀錄】
 根據先前文章介紹的堆疊，此篇實際運用它們實作一個應用。
@@ -203,7 +203,7 @@ class Program { static void Main(string[] args) { number = 0; DecidePosition(0);
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -255,7 +255,7 @@ class Program { static void Main(string[] args) { number = 0; DecidePosition(0);
 <p>首先會先放置一個皇后，接著依據第一個皇后的位置，在不被吃掉的情況下，繼續放置第二個皇后、第三個皇后…直到放置某個新皇后時，都會被先前的皇后吃掉，此時，就必須變更前一個皇后放置的位置，在不被先前的皇后吃掉之情形下，找到第二個可以放置的位置，在繼續擺放新皇后；若在前一個擺放的皇后，也沒有新的位置可以擺放（都會被吃掉的情況），就在將前前皇后拿起，尋找新的可以擺放的位置，以此類推。</p>
 <p>由上述可知，在放置新皇后或是拿起舊皇后的動作，是以堆疊的概念進行，而當新皇后無法擺放時，將舊皇后拿起尋找新的位置，是以回溯的概念進行。</p>
 <p>本書程式碼範例</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
 {
     <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
     {

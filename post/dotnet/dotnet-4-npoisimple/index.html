@@ -37,7 +37,7 @@ Start 首先到 NuGet 套件添加 NPOI Package
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【.NET】使用 NPOI 匯出 Excel 的基本應用" />
 <meta property="og:description" content="開發應用程式或網頁時總是會遇到匯出 Excel 的需求，常見的如匯出報表。然而在眾多匯出 Excel 的套件中，這篇選擇以 NPOI 作為介紹匯出的基本應用和觀念，資料則選擇現成的北風資料庫，這邊就不另外建立資料物件。
 代碼存放於 GitHub
@@ -191,7 +191,7 @@ Start 首先到 NuGet 套件添加 NPOI Package
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -241,7 +241,7 @@ Start 首先到 NuGet 套件添加 NPOI Package
 <p><img loading="lazy" src="/images/ExportExcel/NPOI/NPOI001.png" alt=""  />
 </p>
 <p>建立一個資料庫連線的方法，將 Orders 資料表的資料全部讀到 DataTable</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 資料庫連線方法
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> DataTable Connect()
@@ -271,7 +271,7 @@ Start 首先到 NuGet 套件添加 NPOI Package
     <span style="color:#66d9ef">return</span> dt;
 }
 </code></pre></div><p>引用命名空間</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">using</span> NPOI;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">using</span> NPOI;
 <span style="color:#66d9ef">using</span> NPOI.SS.UserModel;
 <span style="color:#66d9ef">using</span> NPOI.XSSF.UserModel;
 <span style="color:#66d9ef">using</span> NPOI.HSSF.UserModel;
@@ -281,7 +281,7 @@ Start 首先到 NuGet 套件添加 NPOI Package
 <li><code>DataTable</code> ：要匯出的資料</li>
 <li><code>path</code> ：要匯出的目的地路徑</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 匯出 Excel 簡易方法
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e">/// &lt;param name=&#34;dt&#34;&gt;要匯出的資料&lt;/param&gt;
@@ -402,13 +402,13 @@ Start 首先到 NuGet 套件添加 NPOI Package
 <h3 id="欄寬和行高">欄寬和行高<a hidden class="anchor" aria-hidden="true" href="#欄寬和行高">#</a></h3>
 <p>設置欄寬大小 <code>sheet.SetColumnWidth(0, 20 * 256);</code></p>
 <p>自動調整欄寬</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">for</span> (i = <span style="color:#ae81ff">0</span>; i &lt; dt.Columns.Count; i++)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">for</span> (i = <span style="color:#ae81ff">0</span>; i &lt; dt.Columns.Count; i++)
 {
     sheet.AutoSizeColumn(i);
 }
 </code></pre></div><p>設置行高 <code>sheet.GetRow(0).Height = 30 * 20;</code></p>
 <h3 id="合併儲存格">合併儲存格<a hidden class="anchor" aria-hidden="true" href="#合併儲存格">#</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">CellRangeAddress region = <span style="color:#66d9ef">new</span> CellRangeAddress(fRow, lRow, fCol, lCol);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">CellRangeAddress region = <span style="color:#66d9ef">new</span> CellRangeAddress(fRow, lRow, fCol, lCol);
 sheet.AddMergedRegion(region);
 </code></pre></div><ul>
 <li>fRow：開始的資料行</li>
@@ -418,7 +418,7 @@ sheet.AddMergedRegion(region);
 </ul>
 <h3 id="儲存格樣式">儲存格樣式<a hidden class="anchor" aria-hidden="true" href="#儲存格樣式">#</a></h3>
 <p>先建立 XSSFCellStyle 物件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"> XSSFCellStyle style = (XSSFCellStyle)wb.CreateCellStyle();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"> XSSFCellStyle style = (XSSFCellStyle)wb.CreateCellStyle();
 </code></pre></div><p>多行文字(自動換行) <code>style.WrapText = true;</code></p>
 <p>文字水平置中 <code>style.Alignment = HorizontalAlignment.Center;</code></p>
 <p>文字垂直置中 <code>style.VerticalAlignment = VerticalAlignment.Center;</code></p>
@@ -439,13 +439,13 @@ sheet.AddMergedRegion(region);
 <li>右 <code>style.RightBorderColor = new XSSFColor(Color.Purple).Index;</code></li>
 </ul>
 <p>最後將自定義 Style 賦給單元格</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">for</span> (i = <span style="color:#ae81ff">1</span>; i &lt; dt.Columns.Count; i++)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">for</span> (i = <span style="color:#ae81ff">1</span>; i &lt; dt.Columns.Count; i++)
 {
     sheet.GetRow(<span style="color:#ae81ff">0</span>).GetCell(i).CellStyle = style;
 }
 </code></pre></div><h3 id="字體樣式">字體樣式<a hidden class="anchor" aria-hidden="true" href="#字體樣式">#</a></h3>
 <p>先建立 XSSFFont 物件</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">XSSFFont font = (XSSFFont)wb.CreateFont();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">XSSFFont font = (XSSFFont)wb.CreateFont();
 </code></pre></div><p>字體樣式 <code>font.FontName = &quot;Arial&quot;;</code></p>
 <p>字體顏色 <code>font.SetColor(new XSSFColor(Color.Blue));</code></p>
 <p>粗體 <code>font.IsBold = true;</code></p>
@@ -453,7 +453,7 @@ sheet.AddMergedRegion(region);
 <p>刪除線 <code>font.IsStrikeout = true;</code></p>
 <p>字體大小 <code>font.FontHeightInPoints = 20;</code></p>
 <p>最後將自定義 Font 賦給自定義 Style</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">style.SetFont(font);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">style.SetFont(font);
 </code></pre></div><h3 id="凍結窗格">凍結窗格<a hidden class="anchor" aria-hidden="true" href="#凍結窗格">#</a></h3>
 <p>凍結頂端列 <code>sheet.CreateFreezePane(0, 1, 0, 1);</code></p>
 <p>凍結左欄 <code>sheet.CreateFreezePane(1, 0, 1, 0);</code></p>

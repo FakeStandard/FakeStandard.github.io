@@ -39,7 +39,7 @@
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【C#】不規則陣列（Jagged Array）" />
 <meta property="og:description" content="最近在 LeetCode 刷題時，發現一個我不知道的東西—不規則陣列（Jagged Array）
 從古自今，筆者對於陣列的認知不外乎就是一維與多維陣列，然而在工作上也從未遇過不規則陣列的使用，導致近日在刷題時，曾一度懷疑自己的眼睛，這是不是打錯了？井底之蛙的我馬上跪拜古哥，結果在 C# 程式設計手冊發現了它的蹤影，廢話不多說，馬上來看！
@@ -197,7 +197,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -244,7 +244,7 @@
 <p>從古自今，筆者對於陣列的認知不外乎就是一維與多維陣列，然而在工作上也從未遇過不規則陣列的使用，導致近日在刷題時，曾一度懷疑自己的眼睛，這是不是打錯了？井底之蛙的我馬上跪拜古哥，結果在 <a href="https://docs.microsoft.com/zh-tw/previous-versions/2s05feca(v=vs.110)?redirectedfrom=MSDN">C# 程式設計手冊</a>發現了它的蹤影，廢話不多說，馬上來看！</p>
 <p>不規則陣列（Jagged Array）是陣列的一種，其陣列內的元素也是陣列，不規則陣列的元素可以具有不同維度及大小，也是與多維陣列明顯的差異之處。</p>
 <p>不規則陣列的宣告及初始化</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 不規則陣列的宣告方式
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 不規則陣列的宣告方式
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span>[][] array = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">5</span>][];
 
 <span style="color:#75715e">// 初始化元素
@@ -259,7 +259,7 @@ array[<span style="color:#ae81ff">1</span>] = <span style="color:#66d9ef">new</s
 array[<span style="color:#ae81ff">2</span>] = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[]{ <span style="color:#ae81ff">7</span> };
 </code></pre></div><p>從上述可知，多維陣列在同一維度下的元素大小必須相同，而不規則陣列的元素大小可以不同，不規則陣列內的元素是陣列，又稱為陣列中的陣列。</p>
 <p>我們也可以在宣告時直接初始化元素</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 宣告時直接初始化
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 宣告時直接初始化
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span>[][] array = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[][]
 {
     <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[]{ <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span> },
@@ -275,12 +275,12 @@ array[<span style="color:#ae81ff">2</span>] = <span style="color:#66d9ef">new</s
     <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[]{ <span style="color:#ae81ff">7</span> }
 };
 </code></pre></div><p>其指派值的方式與多維陣列相同</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 指派值 100 到第 [0] 個陣列的第 [1] 個元素
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 指派值 100 到第 [0] 個陣列的第 [1] 個元素
 </span><span style="color:#75715e"></span>array[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>] = <span style="color:#ae81ff">100</span>;
 <span style="color:#75715e">// 指派值 100 到第 [1] 個陣列的第 [2] 個元素
 </span><span style="color:#75715e"></span>array[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">2</span>] = <span style="color:#ae81ff">200</span>;
 </code></pre></div><p>以上介紹的是一維不規則陣列，其中皆包含一維陣列的元素。不規則陣列還可以使用混合的不規則陣列，比如說，宣告及初始化一維不規則陣列，其中包含三個大小不同的二維陣列元素。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 宣告及初始化
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 宣告及初始化
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span>[][,] array = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[<span style="color:#ae81ff">3</span>][,]
 {
     <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[,]{ {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>}, {<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>}},
@@ -295,7 +295,7 @@ Console.WriteLine(array[<span style="color:#ae81ff">0</span>][<span style="color
 </code></pre></div><p>以筆者目前的工作性質來說，較不容易使用到不規則陣列，若以遊戲方面來說，我想物品欄應可透過這種方式來存取。</p>
 <p>了解多維陣列與不規則陣列的差別後，還有一點很重要，多維陣列在分配空間上，所有元素的長度是固定大小，而不規則陣列的元素長度可以依需求分配，故不規則陣列對於空間利用優於多維陣列。</p>
 <p>實際以儲存 1-5 的數字來看，二維陣列對子元素的空間分配必須是相同長度，故在存放 5 後的空間位置須補上 0，此處就是一個未被利用的空間；不規則陣列對子元素的空間分配較彈性，可以完全依照需求長度進行配置，才不會造成空間浪費</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 二維陣列
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 二維陣列
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span>[,] arr1 = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[,]
 { 
     { <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span> },
@@ -309,7 +309,7 @@ Console.WriteLine(array[<span style="color:#ae81ff">0</span>][<span style="color
     <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[]{ <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span> }
 };
 </code></pre></div><p>使用迭代讀出所有元素方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 不規則陣列
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 不規則陣列
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span>[][] arr = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[][]
 {
     <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span>[]{ <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span> },
@@ -324,7 +324,7 @@ Console.WriteLine(array[<span style="color:#ae81ff">0</span>][<span style="color
     }
 }
 </code></pre></div><p>也可以使用 <code>SelectMany()</code> 讀取</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">var</span> item = arr.SelectMany(s =&gt; s);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">var</span> item = arr.SelectMany(s =&gt; s);
 
 <span style="color:#66d9ef">foreach</span> (<span style="color:#66d9ef">var</span> i <span style="color:#66d9ef">in</span> item)
 {

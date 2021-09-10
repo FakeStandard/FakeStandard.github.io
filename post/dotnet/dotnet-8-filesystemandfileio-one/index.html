@@ -40,7 +40,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【.NET】使用 C# 操作檔案 I/O 與檔案系統（一）" />
 <meta property="og:description" content="在 .NET 框架中，命名空間 System.IO 已經提供多種檔案操作類別，用於對資料檔案和資料流的讀寫。談到檔案系統，要先知道兩個東西
  檔案（File） 流（Stream）  檔案是在硬碟或光碟機等媒體上可永久儲存資料的有序集合，它是一種進行資料讀寫操作的基本物件，通常按照樹狀目錄結構進行組織，每個檔案皆有檔名、所在路徑、建立時間、訪問許可權等屬性。
@@ -200,7 +200,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -266,7 +266,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
 <p><code>File</code> 與 <code>FileInfo</code> 的區別在於 Info 類別需要實體化，而一般 <code>File</code> 是屬於靜態類別；<code>Directory</code> 與 <code>DirectoryInfo</code> 同理，<code>Directory</code> 是靜態類別，<code>DirectoryInfo</code> 需實體化類別。</p>
 <h2 id="fileinfo">FileInfo<a hidden class="anchor" aria-hidden="true" href="#fileinfo">#</a></h2>
 <p>使用 <code>FileInfo</code> 類別建立檔案，並且寫入資料</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 建立檔案並寫入資料
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> CreateFileByFileInfo()
@@ -292,7 +292,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
     Console.WriteLine(<span style="color:#e6db74">$&#34;完成檔案建立與寫入&#34;</span>);
 }
 </code></pre></div><p>在檔案開啟前，使用 <code>FileInfo</code> 判斷檔案是否存在</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 判斷檔案是否存在
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> IsFileByFileInfo()
@@ -314,7 +314,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
 </span><span style="color:#75715e"></span>    }
 }
 </code></pre></div><p>對檔案執行移動、複製或刪除</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 對檔案執行移動、複製或刪除
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> FileInfoAction()
@@ -344,7 +344,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
 </span><span style="color:#75715e"></span>    file.Delete();
 }
 </code></pre></div><p>讀取檔案內容</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 讀取檔案內容
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> ReadFileInfo()
@@ -366,7 +366,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
 }
 </code></pre></div><h2 id="file">File<a hidden class="anchor" aria-hidden="true" href="#file">#</a></h2>
 <p>使用 <code>File</code> 類別建立檔案，並且寫入資料</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 使用靜態類別建立檔案並寫入資料
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> CreateFileByFile()
@@ -394,7 +394,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
     Console.WriteLine(<span style="color:#e6db74">$&#34;完成檔案建立與寫入&#34;</span>);
 }
 </code></pre></div><p>在檔案開啟前，使用 <code>File</code> 判斷檔案是否存在</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 使用靜態類別檢查檔案是否存在
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> IsFileExists()
@@ -415,7 +415,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
 </span><span style="color:#75715e"></span>    }
 }
 </code></pre></div><p>使用靜態類別對檔案執行移動、複製或刪除</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 使用靜態類別對檔案執行移動、複製或刪除
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> FileAction()
@@ -440,7 +440,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
 </span><span style="color:#75715e"></span>    File.Delete(path);
 }
 </code></pre></div><p>使用靜態類別讀取檔案內容</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 使用靜態類別讀取檔案內容
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> ReadFile()
@@ -470,7 +470,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
     }
 }
 </code></pre></div><p>使用靜態類別寫入檔案內容</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 使用靜態類別寫入檔案內容
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> WriteFile()
@@ -490,7 +490,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
 }
 </code></pre></div><h2 id="directoryinfo">DirectoryInfo<a hidden class="anchor" aria-hidden="true" href="#directoryinfo">#</a></h2>
 <p>使用 <code>DirectoryInfo</code> 類別建立資料夾</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 建立資料夾
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> CreateFolderByDirectoryInfo()
@@ -504,7 +504,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
     Console.WriteLine(<span style="color:#e6db74">$&#34;父目錄: {info.Parent.FullName}&#34;</span>);
 }
 </code></pre></div><p>讀取目錄下所有資料夾與檔案</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 讀取目錄下所有資料夾與檔案
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> ReadFolderByDirectoryInfo()
@@ -524,7 +524,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
     }
 }
 </code></pre></div><p>檢查目錄是否存在</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 檢查目錄是否存在
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> IsFolderByDirectoryInfo()
@@ -543,7 +543,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
     }
 }
 </code></pre></div><p>刪除目錄資料夾</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 刪除目錄資料夾
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> DeleteFolderByDirectoryInfo()
@@ -561,7 +561,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
 </span><span style="color:#75715e"></span>}
 </code></pre></div><h2 id="directory">Directory<a hidden class="anchor" aria-hidden="true" href="#directory">#</a></h2>
 <p>使用 <code>Directory</code> 類別建立資料夾</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 使用靜態類別建立資料夾
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> CreateFolderByDirectory()
@@ -571,7 +571,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
     Directory.CreateDirectory(path);
 }
 </code></pre></div><p>使用靜態類別讀取目錄下所有資料夾與檔案，或只讀取資料夾或檔案其一</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 使用靜態類別讀取目錄下所有資料夾與檔案
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> ReadFolderByDirectory()
@@ -593,7 +593,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
     }
 }
 </code></pre></div><p>使用靜態類別檢查目錄是否存在</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 使用靜態類別檢查目錄是否存在
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> IsFolderByDirectory()
@@ -610,7 +610,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
     }
 }
 </code></pre></div><p>使用靜態類別刪除目錄資料夾</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 使用靜態類別刪除目錄資料夾
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> DeleteFolderByDirectory()
@@ -626,7 +626,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
 </span><span style="color:#75715e"></span>}
 </code></pre></div><h2 id="path">Path<a hidden class="anchor" aria-hidden="true" href="#path">#</a></h2>
 <p>使用 Path 取得虛擬路徑的完整路徑以及合併路徑</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// Path 類別簡單應用
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> PathInfo()
@@ -644,7 +644,7 @@ FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
 }
 </code></pre></div><h2 id="driveinfo">DriveInfo<a hidden class="anchor" aria-hidden="true" href="#driveinfo">#</a></h2>
 <p>使用 DriveInfo 類別取得所有磁碟機的相關資訊</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// DriveInfo 簡單應用
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> DriveInfoUse()

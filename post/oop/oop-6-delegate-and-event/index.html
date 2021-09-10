@@ -40,7 +40,7 @@ Swordman swordman = new Swordman(); Thief thief = new Thief(); Acolyte acolyte =
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【OOP】委託與事件（Delegate and Event）" />
 <meta property="og:description" content="Start 接續先前物件導向的紀錄，此篇會紀錄
  委託（Delegate） 事件（Event）  委託（Delegate） 委託是對函數的封裝，可以當作給方法的特徵去指定一個名稱，而委託為一種參考方法的類型，一旦委託分配了方法，委託將與該方法具有完全相同的行為。委託使用 delegate 關鍵字宣告。
@@ -200,7 +200,7 @@ Swordman swordman = new Swordman(); Thief thief = new Thief(); Acolyte acolyte =
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -255,7 +255,7 @@ Swordman swordman = new Swordman(); Thief thief = new Thief(); Acolyte acolyte =
 <p>事件則是委託的一種特殊形式，當發生有意義的事情時，事件物件會去處理通知的過程。所以在發生其他類別或物件關注的事情時，類別或物件可透過事件去通知它們。事件使用 <strong><code>event</code></strong> 關鍵字宣告。</p>
 <p>假設<code>Swordman</code>為隊長，<code>Thief</code>和<code>Acolyte</code>為隊員，當隊長發現打不過怪物時，選擇逃跑，隊員也跟著逃跑，使用委託和事件，來讓隊員知道什麼時候要跑。</p>
 <p>在<code>Swordman</code>宣告委託和事件並加入逃跑方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 宣告委託 LeaderRunEventHandler
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 宣告委託 LeaderRunEventHandler
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">delegate</span> <span style="color:#66d9ef">void</span> LeaderRunEventHandler();
 
 <span style="color:#75715e">// 宣告事件 Run，事件類型是委託 LeaderRunEventHandler
@@ -272,13 +272,13 @@ Swordman swordman = new Swordman(); Thief thief = new Thief(); Acolyte acolyte =
     }
 }
 </code></pre></div><p>在<code>Thief</code>和<code>Acolyte</code>加入逃跑方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 逃跑方法
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 逃跑方法
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Run()
 {
     Console.WriteLine(name + <span style="color:#e6db74">&#34;：隊長跑了！快跑！&#34;</span>);
 }
 </code></pre></div><p>將隊員逃跑的方法註冊到隊長的委託中</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">Swordman swordman = <span style="color:#66d9ef">new</span> Swordman();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">Swordman swordman = <span style="color:#66d9ef">new</span> Swordman();
 Thief thief = <span style="color:#66d9ef">new</span> Thief();
 Acolyte acolyte = <span style="color:#66d9ef">new</span> Acolyte();
 

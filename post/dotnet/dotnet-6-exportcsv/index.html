@@ -35,7 +35,7 @@ Model public class Employee { public int ID { get; set; } public string FirstNam
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【.NET】將資料匯出成 CSV" />
 <meta property="og:description" content="前篇在紀錄使用第三方套件來匯出 Excel，忽然看到匯出 csv 的方法，其實很簡單，就順便記錄一下。
 Start 按照前篇建立一個 .Net Core MVC 的專案，同樣地建立 Model、Controller 及 View，讓畫面呈現一個 Employee 的列表，將按鈕名稱改為 csv Export，相關代碼如下
@@ -185,7 +185,7 @@ Model public class Employee { public int ID { get; set; } public string FirstNam
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -232,7 +232,7 @@ Model public class Employee { public int ID { get; set; } public string FirstNam
 <h1 id="start">Start<a hidden class="anchor" aria-hidden="true" href="#start">#</a></h1>
 <p>按照前篇建立一個 .Net Core MVC 的專案，同樣地建立 Model、Controller 及 View，讓畫面呈現一個 Employee 的列表，將按鈕名稱改為 <code>csv Export</code>，相關代碼如下</p>
 <h3 id="model">Model<a hidden class="anchor" aria-hidden="true" href="#model">#</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Employee</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Employee</span>
 {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> ID { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> FirstName { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
@@ -241,7 +241,7 @@ Model public class Employee { public int ID { get; set; } public string FirstNam
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> City { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 }
 </code></pre></div><h3 id="controller">Controller<a hidden class="anchor" aria-hidden="true" href="#controller">#</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmployeeController</span> : Controller
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmployeeController</span> : Controller
 {
     <span style="color:#66d9ef">private</span> List&lt;Employee&gt; employees;
 
@@ -269,7 +269,7 @@ Model public class Employee { public int ID { get; set; } public string FirstNam
     }
 }
 </code></pre></div><h3 id="view">View<a hidden class="anchor" aria-hidden="true" href="#view">#</a></h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">@model IEnumerable&lt;<span style="color:#f92672">Export_ClosedXML.Models.Employee</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">@model IEnumerable&lt;<span style="color:#f92672">Export_ClosedXML.Models.Employee</span>&gt;
 
 @{
     ViewData[&#34;Title&#34;] = &#34;Index&#34;;
@@ -324,7 +324,7 @@ Model public class Employee { public int ID { get; set; } public string FirstNam
 &lt;/<span style="color:#f92672">table</span>&gt;
 </code></pre></div><p>OK. 前置作業準備完成。</p>
 <p>接著在 <code>EmployeeController</code> 添加一個 <code>csvExport</code> 的 Action，在動作方法內撰寫匯出的代碼，特別注意 ContentType 的部分是 <code>text/csv</code>，收工！</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 匯出 csv
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e">/// &lt;returns&gt;&lt;/returns&gt;

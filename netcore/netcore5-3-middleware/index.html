@@ -40,7 +40,7 @@ Start Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以�
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【.NET Core】中介軟體 Middleware" />
 <meta property="og:description" content="【ASP.NET Core 5】
 ASP.NET Core 引入一個新概念稱為中介軟體（Middleware），Middleware 會在 ASP.NET Core 應用程式中的每個請求上執行。
@@ -200,7 +200,7 @@ Start Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以�
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -249,7 +249,7 @@ Start Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以�
 <h1 id="start">Start<a hidden class="anchor" aria-hidden="true" href="#start">#</a></h1>
 <p>Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以選擇是否將請求傳遞到管線中的下一個組件，也可以在下一個組件中的前後執行工作。</p>
 <p>通常 ASP.NET Core Web 應用程式中有許多 Middleware，它可以是 Framework provided 的中介軟體，也可以通過 NuGet 添加，甚至可以自行定義 Middleware。我們可以在請求管道中設置中介軟體的執行順序，每個中介軟體都會新增或修改 Http 請求，且可選擇將控制權傳遞給下一個中介軟體。</p>
-<p><img loading="lazy" src="../../images/NetCore/NetCore003.png" alt="取自微軟官網"  title="取自微軟官網"  />
+<p><img loading="lazy" src="/images/NetCore/NetCore003.png" alt="取自微軟官網"  title="取自微軟官網"  />
 </p>
 <p>請求委派用於建構請求管道，請求委派會處理每個 Http 請求。該句的原文是這樣</p>
 <blockquote>
@@ -259,7 +259,7 @@ Start Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以�
 <p>最簡單的 ASP.NET Core 應用程式可以設置一個處理所有請求的請求委派，該情況不包括實際的請求管道，取而代之的是，系統會調用單一匿名函數來回應每個 HTTP 請求。</p>
 <h2 id="apprun">app.Run()<a hidden class="anchor" aria-hidden="true" href="#apprun">#</a></h2>
 <p>在 <code>Startup</code> 的 <code>Configure</code> 註冊 Middleware，將 <code>app.Run()</code> 註冊在最前面即第一個。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
     app.Run(<span style="color:#66d9ef">async</span> context =&gt;
     {
@@ -270,7 +270,7 @@ Start Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以�
 </span><span style="color:#75715e"></span>}
 </code></pre></div><p>設立中斷點，啟動應用程式，可以發現 <code>Run</code> 是最後一個執行，在 <code>Run</code> 後註冊的中介軟體都未執行，也就是說一般情況下 <code>Run</code> 必須註冊於最後，要使用的 Middleware 必須在 <code>Run</code> 之前註冊完成。</p>
 <p>再添加一個 <code>Run</code> 委派，等於目前註冊了兩個中介軟體，像這樣</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
     app.Run(<span style="color:#66d9ef">async</span> context =&gt;
     {
@@ -286,7 +286,7 @@ Start Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以�
 <h2 id="appuse">app.Use()<a hidden class="anchor" aria-hidden="true" href="#appuse">#</a></h2>
 <p>使用 <code>Use</code> 擴充方法來註冊 Middleware，也可以使用 <code>Use</code> 方法將多個請求委派鏈結再一起，<code>next</code> 代表 Pipeline 中的下個委派。通常可以在下一個委派前或後執行動作，你也可以不呼叫 <code>next</code> 參數來使 Pipeline 執行最少運算（short-circult）</p>
 <p>重新註冊 Middleware 如下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
     app.Use(<span style="color:#66d9ef">async</span> (context, next) =&gt;
     {
@@ -308,11 +308,11 @@ Start Middleware 是組成應用程式 Pipeline 的軟體，每個組件可以�
     });
 }
 </code></pre></div><p>觀察執行輸出如下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
 Second Middleware.
 Done. Hello World
 </code></pre></div><p>試試在使用 <code>next.Invoke</code> 之後繼續處理程式碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
     app.Use(<span style="color:#66d9ef">async</span> (context, next) =&gt;
     {
@@ -338,14 +338,14 @@ Done. Hello World
     });
 }
 </code></pre></div><p>觀察輸出結果</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
 Second Middleware.
 Done. Hello World
 Second Middleware After Invoke.
 First Middleware After Invoke.
 </code></pre></div><p>在 Pipeline 概念中資料的順序是先進後出（First In Last Out），所以 Middleware 註冊的順序非常重要。</p>
 <p>Middleware 也可以作為攔截使用，將第二個 <code>Use</code> 變更如下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">app.Use(<span style="color:#66d9ef">async</span> (context, next) =&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">app.Use(<span style="color:#66d9ef">async</span> (context, next) =&gt;
 {
     <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;Second Middleware.\n&#34;</span>);
 
@@ -355,7 +355,7 @@ First Middleware After Invoke.
     <span style="color:#66d9ef">await</span> context.Response.WriteAsync(<span style="color:#e6db74">&#34;Second Middleware After Invoke.\n&#34;</span>);
 });
 </code></pre></div><p>觀察輸出結果，發現在第二個 <code>Use</code> 中封裝未能往後面的 Pipeline 傳送。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
 Second Middleware.
 Second Middleware After Invoke.
 First Middleware After Invoke.
@@ -363,7 +363,7 @@ First Middleware After Invoke.
 <p><code>Map</code> 擴展方法用於約定分支管道，上述我們直接定義固定的管道，在應用程式作中時，都必須遵循此 Pipeline，而 <code>Map</code> 可以根據請求路徑來分配要作用的 Pipeline，當匹配成功分支會被執行。</p>
 <p>簡單來說，根據不同 URL 指向不同 Pipeline。</p>
 <p>在 <code>Configure</code> 方法內使用 <code>Map</code>，也可以建立靜態方法 <code>HandleMapTest</code>，方法內使用 <code>Map</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> HandleMapTest(IApplicationBuilder app)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> HandleMapTest(IApplicationBuilder app)
 {
     app.Run(<span style="color:#66d9ef">async</span> context =&gt;
     {
@@ -416,17 +416,17 @@ First Middleware After Invoke.
     });
 }
 </code></pre></div><p>運行應用程式觀察輸出結果，當前路徑 <code>https://localhost:44323/</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
 Second Middleware.
 Done. Hello World
 Second Middleware After Invoke.
 First Middleware After Invoke.
 </code></pre></div><p>路徑指向 <code>https://localhost:44323/map</code> 輸出結果</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
 Map Test Done.
 First Middleware After Invoke.
 </code></pre></div><p>路徑指向 <code>https://localhost:44323/middleware</code> 輸出結果</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">First Middleware.
 Second Middleware.
 Third Middleware.
 Done Third.

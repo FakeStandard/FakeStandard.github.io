@@ -39,7 +39,7 @@ public class ImportController : Controller { public IActionResult Index() { retu
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【.NET】使用 NPOI 匯入 Excel" />
 <meta property="og:description" content="在網站開發時，總會遇到匯出 EXCEL 的需求，除了匯出之外，偶爾也會遇到匯入 EXCEL 這種懶人需求。
 為何是懶人需求呢？通常使用者可以透過 UI 介面來維護資料，包括 CRUD 等功能，所以 Excel 資料會先透過前端介面在將資料傳遞到資料庫儲存。而匯入的方式，可以一次傳遞多筆資料，並且直達資料庫，過程中不需要使用 UI 介面逐筆輸入，非常省時又省力。
@@ -197,7 +197,7 @@ public class ImportController : Controller { public IActionResult Index() { retu
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -248,7 +248,7 @@ public class ImportController : Controller { public IActionResult Index() { retu
 <p><img loading="lazy" src="/images/NetCore/NetCore010.png" alt=""  />
 </p>
 <p>建立 <code>ImportController.cs</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ImportController</span> : Controller
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ImportController</span> : Controller
 {
     <span style="color:#66d9ef">public</span> IActionResult Index()
     {
@@ -256,7 +256,7 @@ public class ImportController : Controller { public IActionResult Index() { retu
     }
 }
 </code></pre></div><p>建立 <code>Index.cshtml</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h2</span>&gt;Import&lt;/<span style="color:#f92672">h2</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">h2</span>&gt;Import&lt;/<span style="color:#f92672">h2</span>&gt;
 
 @using (Html.BeginForm(&#34;Upload&#34;, &#34;Import&#34;, FormMethod.Post, new { enctype = &#34;multipart/form-data&#34; }))
 {
@@ -264,7 +264,7 @@ public class ImportController : Controller { public IActionResult Index() { retu
     &lt;<span style="color:#f92672">button</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;submit&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;btn btn-primary&#34;</span>&gt;Upload&lt;/<span style="color:#f92672">button</span>&gt;
 }
 </code></pre></div><p>在 Controller 中新增一個接收 HttpPost 的 ActionResult <code>Upload</code>，除了返回頁面之外，沒有任何代碼。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 上傳 Excel 方法
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e">/// &lt;returns&gt;&lt;/returns&gt;
@@ -274,7 +274,7 @@ public class ImportController : Controller { public IActionResult Index() { retu
     <span style="color:#66d9ef">return</span> View(<span style="color:#e6db74">&#34;Index&#34;</span>);
 }
 </code></pre></div><p>建立以副檔名來判斷要使用的 Workbook 實例私有方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 判斷副檔名以取得 Workbook 實例，直接讀取檔案內容
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e">/// &lt;param name=&#34;extension&#34;&gt;&lt;/param&gt;
@@ -297,7 +297,7 @@ public class ImportController : Controller { public IActionResult Index() { retu
     }
 }
 </code></pre></div><p>回到 <code>Upload</code> 方法撰寫讀取資料程式碼，最後，將讀到的資料作處理或解析，在把整理好的資料存入資料庫，這邊就不撰寫程式碼。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 上傳 Excel 方法
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e">/// &lt;returns&gt;&lt;/returns&gt;

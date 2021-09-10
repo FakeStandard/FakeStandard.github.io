@@ -41,7 +41,7 @@ Step 1 將每個元素依照「個位數」放到相對應的串列中
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【Algorithm】排序演算法—基數排序法（Radix Sort）" />
 <meta property="og:description" content="【5/20 閱讀紀錄】
 排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
@@ -203,7 +203,7 @@ Step 1 將每個元素依照「個位數」放到相對應的串列中
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -500,7 +500,7 @@ Step 1 將每個元素依照「個位數」放到相對應的串列中
 <h2 id="實際撰寫程式碼">實際撰寫程式碼<a hidden class="anchor" aria-hidden="true" href="#實際撰寫程式碼">#</a></h2>
 <p>使用者自行輸入一個陣列大小，在透過基數排序法進行排序</p>
 <p>先宣告靜態變數，以及隨機產生陣列和輸出方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> size;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> size;
 <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span>[] arr;
 
 <span style="color:#75715e">/// &lt;summary&gt;
@@ -526,7 +526,7 @@ Step 1 將每個元素依照「個位數」放到相對應的串列中
     WriteLine();
 }
 </code></pre></div><p>建立基數排序方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 基數排序
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Radix()

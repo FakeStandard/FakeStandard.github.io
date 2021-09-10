@@ -40,7 +40,7 @@ Solution 有三種解決方案
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【.NET】西元年與民國年相互轉換" />
 <meta property="og:description" content="這篇想記錄一下老掉牙的問題，是關於時間格式的「西元年」和「民國年」的愛恨糾葛。
 一般電腦在安裝作業系統時預設會是西元年，而有些人習慣看民國年，這些人就從設定的「地區與語言」中，將行事曆變更為中華民國曆，這些人對日期看順眼了，卻為開發人員種下一個應該要懂得基本常識。
@@ -200,7 +200,7 @@ Solution 有三種解決方案
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -259,7 +259,7 @@ Solution 有三種解決方案
 <ul>
 <li><code>System.Globalization</code></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">DateTime dateTime = <span style="color:#66d9ef">new</span> DateTime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">29</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">DateTime dateTime = <span style="color:#66d9ef">new</span> DateTime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">29</span>);
 
 TaiwanCalendar tc = <span style="color:#66d9ef">new</span> TaiwanCalendar();
 <span style="color:#66d9ef">int</span> year = tc.GetYear(dateTime);
@@ -271,7 +271,7 @@ TaiwanCalendar tc = <span style="color:#66d9ef">new</span> TaiwanCalendar();
 Console.WriteLine(newDateTime);
 </code></pre></div><h2 id="建立擴充方法">建立擴充方法<a hidden class="anchor" aria-hidden="true" href="#建立擴充方法">#</a></h2>
 <p>先撰寫一個擴展方法，需要使用時直接調用擴充方法，無須每次都撰寫相同代碼。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 靜態擴展類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DateTimeExtend</span>
@@ -299,7 +299,7 @@ Console.WriteLine(newDateTime);
 <li><code>System.Globalization</code></li>
 <li><code>System.Threading</code></li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 指定 zh-TW
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 指定 zh-TW
 </span><span style="color:#75715e"></span>CultureInfo culture = <span style="color:#66d9ef">new</span> CultureInfo(<span style="color:#e6db74">&#34;zh-TW&#34;</span>);
 
 <span style="color:#75715e">// 西曆
@@ -320,7 +320,7 @@ Console.WriteLine(DateTime.Now.ToShortDateString());
 <p>在做轉換時，只需建立欲轉換的物件並指給 Culture，最後在將自訂的 Culture 指給執行緒使用，即可達到效果。</p>
 <h1 id="note">Note<a hidden class="anchor" aria-hidden="true" href="#note">#</a></h1>
 <p>如何取得 <code>DateTime</code> 型別的日期部分？</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">DateTime dateTime = <span style="color:#66d9ef">new</span> DateTime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">29</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">DateTime dateTime = <span style="color:#66d9ef">new</span> DateTime(<span style="color:#ae81ff">2020</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">29</span>);
 Console.WriteLine(dateTime.Date);
 </code></pre></div><p>使用 <code>Date</code> 屬性，結案！</p>
 <h1 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h1>

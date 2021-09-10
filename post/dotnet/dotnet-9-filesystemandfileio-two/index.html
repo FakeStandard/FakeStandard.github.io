@@ -40,7 +40,7 @@ Start 流（Stream）為所有資料流的基礎類別，繼承該類別的資�
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【.NET】使用 C# 操作檔案 I/O 與檔案系統（二）" />
 <meta property="og:description" content="在 .NET 框架中，命名空間System.IO已經提供多種檔案操作類別，用於對資料檔案和資料流的讀寫。談到檔案系統，要先知道兩個東西
  檔案（File） 流（Stream）  檔案是在硬碟或光碟機等媒體上可永久儲存資料的有序集合，它是一種進行資料讀寫操作的基本物件，通常按照樹狀目錄結構進行組織，每個檔案皆有檔名、所在路徑、建立時間、訪問許可權等屬性。
@@ -200,7 +200,7 @@ Start 流（Stream）為所有資料流的基礎類別，繼承該類別的資�
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -262,7 +262,7 @@ Start 流（Stream）為所有資料流的基礎類別，繼承該類別的資�
 <p><code>FileStream</code>可以用來讀取、寫入、開啟和關閉檔案系統上的檔案，或操縱其他與檔案相關的檔案處理系統。該類別主要是要操作位元組陣列， Stream 類別則直接操作字元，是兩者較不同的地方。</p>
 <p>文字讀起來沒感覺，直接使用<code>FileStream</code>來讀寫二進位制檔案。</p>
 <p>先建立一個含有文字內容的文字檔，透過<code>FileStream</code>開啟該文字檔，除了讀取出二進位制內容，也順便將 binary 轉換為字元打印出來。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 使用 FileStream 讀取檔案
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> FileStreamRead()
@@ -297,7 +297,7 @@ Start 流（Stream）為所有資料流的基礎類別，繼承該類別的資�
 </span><span style="color:#75715e"></span>    fs.Dispose();
 }
 </code></pre></div><p>使用上述方法成功讀取事先建立的文字檔，接著再使用<code>FileStream</code>來寫入內容到檔案，最後呼叫<code>FileStreamRead</code>方法讀取檔案內容。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 使用 FileStream 寫入檔案
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> FileStreamWrite()
@@ -331,7 +331,7 @@ Start 流（Stream）為所有資料流的基礎類別，繼承該類別的資�
 }
 </code></pre></div><h2 id="streamreader">StreamReader<a hidden class="anchor" aria-hidden="true" href="#streamreader">#</a></h2>
 <p>使用<code>StreamReader</code>無須擔心檔案編碼方式，可直接讀取檔案文字內容，不用轉換成位元組陣列或從位元組陣列轉換為字元，讀出結果直接是字元。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 使用 StreamReader 讀取檔案
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> UseStreamReader()
@@ -356,11 +356,11 @@ Start 流（Stream）為所有資料流的基礎類別，繼承該類別的資�
 }
 </code></pre></div><p>根據上述代碼可以讀出檔案的文字內容，但若依照程式碼邏輯，使用<code>ReadLine()</code>和<code>ReadToEnd()</code>應該會讀取兩次，實際上卻只有輸出一次？</p>
 <p>原因是先使用<code>ReadLine()</code>進行第一次讀取，此時檔案流的指標已經讀到結尾，再進行任何讀取方法時，對檔案流來說已經是最末端，沒有讀到任何資料，所以什麼都沒有，此時需手動將指標位置移回至檔案流的起始位置，在進行讀取動作，方能成功輸出兩次。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 將流的指標返回到初始位置
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 將流的指標返回到初始位置
 </span><span style="color:#75715e"></span>sr.BaseStream.Position = <span style="color:#ae81ff">0</span>;
 </code></pre></div><h2 id="streamwriter">StreamWriter<a hidden class="anchor" aria-hidden="true" href="#streamwriter">#</a></h2>
 <p>使用<code>StreamWriter</code>類別寫入檔案非常簡單，馬上來看</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 使用 StreamWriter 寫入檔案
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> UseStreamWrite()
@@ -385,7 +385,7 @@ Start 流（Stream）為所有資料流的基礎類別，繼承該類別的資�
 <p><code>MemoryStream</code>可稱為記憶體流，顧名思義是為系統記憶體提供讀寫操作，而上述的<code>FileStream</code>、<code>StreamWriter</code>和<code>StreamReader</code>類別則是對永續性儲存裝置進行讀寫。</p>
 <p>使用預設的無參數建構函式實例化記憶體流，然後使用<code>Write</code>方法寫入，隨著位元組資料的寫入會自動調整大小。而<code>MemoryStream</code>類別還封裝一個位元組陣列，該構造函式使用一個<code>byte[]</code>作為傳遞參數，但是該陣列長度無法在調整，也無法透過<code>Write</code>方法寫入時自動調整。</p>
 <p>實體化記憶體流物件時，會建立一塊連續的記憶體區域，我們可稱該區域為<strong>緩衝區</strong>也就是 Buffer，也可以將緩衝區看作為一個陣列，每個陣列元素可存放一個位元組資料。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 操作記憶體流
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> UseMemoryStream()

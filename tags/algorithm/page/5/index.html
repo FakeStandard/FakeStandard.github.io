@@ -31,7 +31,7 @@
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/tags/algorithm/index.xml">
 <meta property="og:title" content="Algorithm" />
 <meta property="og:description" content="不專業代碼" />
@@ -122,7 +122,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -158,6 +158,111 @@
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
   <h1>Algorithm</h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】資料結構—樹（Tree）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/17 閱讀紀錄】
+選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
+Start 此篇紀錄記錄樹定義及應用，其餘常見的資料結構如下
+ 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  樹（Tree） 樹狀結構是一種階層架構的非線性結構，在生活中應用相當廣泛，舉凡組織架構、族譜、賽程，甚至在電腦中的作業系統、DBMS 和檔案管理系統都是樹狀結構的衍生運用。
+上圖為樹狀結構的示例，它的名稱由來是取自於樹的象徵，在上圖中，看起來是一個上下顛倒樹，其根部在上方，是資料的開頭，而下方的資料稱為葉子。
+對於合法的樹來說，節點間可以互相連結，但不能形成無出口的迴圈，例如下圖就是一個不合法的樹狀結構，因為在 H 節點與 C 節點形成了無出口的迴圈。
+樹的概念是由一個或一個以上的節點（Node）所組成，而樹根稱為根節點（Root），樹根下的樹枝，稱為子節點（Children），每個子節點都會有向上一個樹根，稱為父節點（Parent）
+樹的基本術語有許多種，利用上圖的樹狀圖一一解說
+  根節點（Root）
+先前已有大概解說過，一棵樹的樹根（即開頭）會被視為根節點，更準確地說是沒有父節點的節點是根節點。例如 A 是根節點
+  葉節點（Leaf）或終點節點（Terminal Nodes）
+節點沒有往下的子節點，稱為葉節點。例如 K、L、G 都是葉節點
+  非終端節點（Nonterminal Nodes）
+除了樹葉（葉節點）以外的節點都是非終端節點。例如 B、E、H
+  子節點（Children）
+每個節點連結的下層節點稱為子節點。例如 A 的子節點有 B、C、D
+  父節點（Parent）
+每個節點連結的上層節點稱為父節點。例如 H、I、J 的父節點為 D，G 的父節點為 C
+  祖先節點（Ancestor）
+指某個節點從自己本身到根節點之間的路徑，該路徑上所經過的所有節點皆是祖先節點。例如 M 的祖先為 A、D、H，F 的祖先為 A、B。...</p>
+  </section>
+  <footer class="entry-footer">May 24, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—樹（Tree）" href="https://fakestandard.github.io/algorithm/algorithm-7-tree/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】資料結構—佇列（Queue）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/16 閱讀紀錄】
+選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
+Start 此篇紀錄記錄佇列定義及應用，其餘常見的資料結構如下
+ 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  佇列（Queue） 佇列是一種抽象型資料結構（Abstract Data Type, ADT），它的所有動作是由不同的兩端執行，並且具有先進先出的特性（First In, First Out: FIFO）。
+佇列基本運算具備以下五種工作定義
+   Action Description     create 建立空佇列   add 將資料加入佇列的末端，返回新佇列   delete 刪除佇列頂端的資料，返回新佇列   front 傳回佇列頂端的值   empty 判斷佇列是否為空集合，是回傳 Ture，反之    生活中有許多佇列的應用，例如排隊，假設現在有一個排隊買票的隊伍，欲買票就要從隊伍的最後方加入，然而原本在隊伍的第一個人，因為先排隊的關係，它可以先買到票，然後離開隊伍；在排隊的案例可以知道，先排隊的人，可以先買到票，並且從隊伍的頂端離開，後排隊的人，必須從隊伍的尾端加入，當隊伍前面的人都買票離開，才會輪到他買票，而且加入和離開隊伍的動作是從不同的兩端進行，此概念符合了先進先出的特性，也就是佇列的應用。
+Note  堆疊（Stack）：後進先出（Last In, First Out: LIFO） 佇列（Queue）：先進先出（First In, First Out: FIFO）  Reference 【圖說演算法 C#】</p>
+  </section>
+  <footer class="entry-footer">May 21, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—佇列（Queue）" href="https://fakestandard.github.io/algorithm/algorithm-6-queue/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】資料結構—堆疊（Stack）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/16 閱讀紀錄】
+選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
+Start 此篇紀錄記錄堆疊定義及應用，其餘常見的資料結構如下
+ 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  堆疊（Stack） 堆疊是一種抽象型資料結構（Abstract Data Type, ADT），是由一群相同資料型別的組合，所有動作均在頂端執行，具有後進先出（Last In, First Out: LIFO）的特性。
+堆疊基本運算具備以下五種工作定義
+   Action Description     create 建立一個空堆疊   push 存放頂端資料，並傳回新堆疊   pop 刪除頂端資料，並傳回新堆疊   isEmpty 判斷堆疊是否為空堆疊，是回傳 Ture，反之   full 判斷堆疊是否已滿，是回傳 True，反之    堆疊非常好理解，生活中也有很多堆疊的應用，假設要收拾餐桌上的餐盤，需要將它們一一疊起，先放第一個餐盤，再將第二個餐盤放到第一個餐盤上方，接著再將第三個餐盤放到第二個餐盤上方，以該例來看，第一個餐盤就是第一個放入堆疊中，而第三個是最後一個放入堆疊中，此時欲取得第二餐盤，就需要先將第三個放入的餐盤拿起，意思是，需要先將頂端的先拿起，才能在往下拿起，該例證明後進先出的特性，並且所有動作都是由頂端執行，從頂端加入，從頂端刪除，即是堆疊的概念。
+Note  堆疊（Stack）：後進先出（Last In, First Out: LIFO） 佇列（Queue）：先進先出（First In, First Out: FIFO）  Reference 【圖說演算法 C#】</p>
+  </section>
+  <footer class="entry-footer">May 19, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—堆疊（Stack）" href="https://fakestandard.github.io/algorithm/algorithm-5-stack/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】資料結構—鏈結串列（Linked List）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【4/14 閱讀紀錄】
+選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
+Start 此篇紀錄記錄鏈結串列定義及應用，其餘常見的資料結構如下
+ 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  鏈結串列（Linked List） 串列是由許多相同資料型態的項目，依照特定順序排列而成的線性串列，在記憶體中儲存方式是不連續且隨機，當資料插入時只需向系統取得一塊記憶體，將資料存放於該記憶體後，把該記憶體與上一個節點的記憶體連結起來，刪除時只需將資料刪除後，把記憶體釋放空間出來並交還給系統，再將下一塊記憶體與上一塊記憶體連結起來即可，無須像陣列一樣移動大量資料。
+在動態配置記憶體空間時，最常使用的是單向鏈結串列，基本上由兩個欄位組成
+ 資料欄 指標欄  資料欄顧名思義為儲存資料的欄位，串列的重點精華在於指標欄，指標欄是用來紀錄下一塊元素的記憶體位置，所以第一塊記憶體的指標欄會記錄第二個元素的記憶體所在位置，第二個指標欄紀錄第三個元素的記憶體位置，以此類推，在單向串列裡第一個節點的指標欄稱為「串列指標首」，最後一個節點稱為「串列指標尾」，依照前面對指標欄的描述，串列指標尾的指標欄會儲存 Null，因為已經沒有下一個節點可讀取。
+日常生活中也有許多類似串列的抽象應用，例如火車，假設今日乘客較多，當前的車廂數量已無法滿足乘載量，需增加一節車廂，我們只需將車廂掛在火車的最後面，使該車廂成為最後一節車廂，新增有如這樣的操作方式。假設第三節車廂折舊年限已到，需要將該節車廂撤下，我們只需將第三節車廂移除，再將第二節車廂掛到第四節車廂，火車就能一如往常的運作，刪除有如該操作模式。
+對 CRUD 所有操作來說，因為串列只能得知下一個元素的記憶體位置，沒有像陣列一樣擁有索引功能，可隨心的指向記憶體位置，所以在進行 CRUD 操作時都必須對整個串列進行走訪。
+Note 特性
+ 記憶體空間配置的儲存方式為不連續且隨機  優點
+ 刪除或插入資料無須移動大量資料  缺點
+ 讀取和修改速度相對慢，因要對整個串列進行走訪  Reference 【圖說演算法 C#】</p>
+  </section>
+  <footer class="entry-footer">April 30, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—鏈結串列（Linked List）" href="https://fakestandard.github.io/algorithm/algorithm-4-linkedlist/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】資料結構—陣列（Array）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【4/11 閱讀紀錄】
+選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
+Start 此篇紀錄記錄陣列定義及應用，其餘常見的資料結構如下
+ 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  陣列（Array） 陣列是一種靜態資料結構，由相同名稱和相同資料型態的集合，使用連續記憶體作為儲存空間，陣列有提供索引功能，用來表示從記憶體起始位置的第幾個位置。
+靜態資料結構在編譯時，就必須配置記憶體空間給變數，所以初期就需宣告變數的固定空間，容易造成記憶體浪費。
+操作 CRUD 等功能時也各有優缺點，首先是設計時相當容易，因索引功能使得讀取和修改元素的時間都固定，但在刪除和加入資料時就必須移動大量資料，例如刪除陣列中某個元素，必須將被刪除元素後方記憶體的資料都往前移動。
+陣列運用可分為一維陣列、二維陣列或多維陣列，一維陣列可想像成一條線，二維陣列則為一個平面，三維陣列（多維陣列）就會是 3D 立體，以此類推。
+使用一維陣列尋找和儲存 1~num 之間的所有質數
+const int num = 300; // true: 質數 false: 非質數 bool[] prime = new bool[num]; // 將 0,1 配置為非質數 prime[0] = false; prime[1] = false; int m = 2; int n = 2; // 找出 1~num 之間所有質數 while (m &lt; num) { prime[m] = IsPrime(m); m&#43;&#43;; } int c = 0; int count = 0; // 列印所有質數 for (int i = 0; i &lt; num; i&#43;&#43;) { if (prime[i]) { if (c == 10) { Console....</p>
+  </section>
+  <footer class="entry-footer">April 26, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—陣列（Array）" href="https://fakestandard.github.io/algorithm/algorithm-3-array/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">

@@ -44,7 +44,7 @@ Start 二元樹應用範圍還可包含運算式間的轉換，我們可以把�
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【Algorithm】樹的應用—二元運算樹（Binary Expression Tree）" />
 <meta property="og:description" content="【6/7 閱讀紀錄】
 根據先前文章介紹的樹，此篇實際運用它們實作一個應用。
@@ -212,7 +212,7 @@ Start 二元樹應用範圍還可包含運算式間的轉換，我們可以把�
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -278,7 +278,7 @@ Start 二元樹應用範圍還可包含運算式間的轉換，我們可以把�
 <h3 id="後序postfix">後序（Postfix）<a hidden class="anchor" aria-hidden="true" href="#後序postfix">#</a></h3>
 <p>又稱逆波蘭表示法（Reverse Polish notation），上述例子利用後序走訪表示為 <code>78+5/493-+*</code></p>
 <p>利用鏈結串列實作二元運算樹之運算，先建立節點和二元樹類別</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 節點類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TreeNode</span>
@@ -351,7 +351,7 @@ Start 二元樹應用範圍還可包含運算式間的轉換，我們可以把�
     }
 }
 </code></pre></div><p>接著建立二元運算樹類別</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 二元運算樹類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExpressionTree</span> : BinarySearchTree
@@ -460,7 +460,7 @@ Start 二元樹應用範圍還可包含運算式間的轉換，我們可以把�
     }
 }
 </code></pre></div><p>Main 方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
 {
     <span style="color:#66d9ef">char</span>[] info1 = { <span style="color:#e6db74">&#39; &#39;</span>, <span style="color:#e6db74">&#39;+&#39;</span>, <span style="color:#e6db74">&#39;*&#39;</span>, <span style="color:#e6db74">&#39;%&#39;</span>, <span style="color:#e6db74">&#39;6&#39;</span>, <span style="color:#e6db74">&#39;3&#39;</span>, <span style="color:#e6db74">&#39;9&#39;</span>, <span style="color:#e6db74">&#39;5&#39;</span> };
     <span style="color:#66d9ef">char</span>[] info2 = { <span style="color:#e6db74">&#39; &#39;</span>, <span style="color:#e6db74">&#39;+&#39;</span>, <span style="color:#e6db74">&#39;+&#39;</span>, <span style="color:#e6db74">&#39;+&#39;</span>, <span style="color:#e6db74">&#39;*&#39;</span>, <span style="color:#e6db74">&#39;%&#39;</span>, <span style="color:#e6db74">&#39;/&#39;</span>, <span style="color:#e6db74">&#39;*&#39;</span>, <span style="color:#e6db74">&#39;1&#39;</span>, <span style="color:#e6db74">&#39;2&#39;</span>, <span style="color:#e6db74">&#39;3&#39;</span>, <span style="color:#e6db74">&#39;2&#39;</span>, <span style="color:#e6db74">&#39;6&#39;</span>, <span style="color:#e6db74">&#39;3&#39;</span>, <span style="color:#e6db74">&#39;2&#39;</span>, <span style="color:#e6db74">&#39;2&#39;</span> };

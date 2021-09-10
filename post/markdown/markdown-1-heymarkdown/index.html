@@ -40,7 +40,7 @@
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【Markdown】筆記神器" />
 <meta property="og:description" content="前言 Markdown 易讀易寫，學一次就會，許久不用也不會忘。
 應用 目前越來越多服務支援 Markdown 編寫，而每個環境能接受的語法略有不同，以下則介紹通用的使用方式。
@@ -200,7 +200,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -249,7 +249,7 @@
 <p>目前越來越多服務支援 Markdown 編寫，而每個環境能接受的語法略有不同，以下則介紹通用的使用方式。</p>
 <h2 id="標題">標題<a hidden class="anchor" aria-hidden="true" href="#標題">#</a></h2>
 <p>標題分為六個層級（有些環境只接受三個層級），標題以 <code>#</code> 符號為主，數量越多層級越低，反之則越高</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown"># 標題一
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown"># 標題一
 <span style="color:#75715e">## 標題二
 </span><span style="color:#75715e">### 標題三
 </span><span style="color:#75715e">#### 標題四
@@ -263,35 +263,35 @@
 <p>文字可使用粗體、斜體以強調字詞，分別使用 <code>*</code> 和 <code>_</code> 符號包圍，且必須有頭有尾，意即用什麼符號開啟標籤，就要用什麼符號結束。</p>
 <h3 id="斜體">斜體<a hidden class="anchor" aria-hidden="true" href="#斜體">#</a></h3>
 <p>使用 <code>*</code> 或 <code>_</code> 包圍文字，被包圍的文字會被轉換成 <code>&lt;em&gt;</code> 標籤包圍</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">*Single asterisks*
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">*Single asterisks*
 
 <span style="font-style:italic">_Single underscores_</span>
 </code></pre></div><p><img loading="lazy" src="/images/markdown/markdownImage002.jpg" alt="Italic"  title="Italic"  />
 </p>
 <h3 id="粗體">粗體<a hidden class="anchor" aria-hidden="true" href="#粗體">#</a></h3>
 <p>一樣使用 <code>*</code> 和 <code>_</code> 標記，與斜體不同的地方為一次需使用兩個標記，最後轉換成 <code>&lt;strong&gt;</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">**Double asterisks**
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">**Double asterisks**
 
 <span style="font-weight:bold">__Double underscores__</span>
 </code></pre></div><p><img loading="lazy" src="/images/markdown/markdownImage003.jpg" alt="Blod"  title="Blod"  />
 </p>
 <h3 id="粗斜體">粗斜體<a hidden class="anchor" aria-hidden="true" href="#粗斜體">#</a></h3>
 <p>根據上面兩個格式衍伸，粗斜體直接使用三個 <code>*</code> 或 <code>_</code> 即可呈現</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">***Bold italic***
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">***Bold italic***
 
 <span style="font-weight:bold">___Bold italic___</span>
 </code></pre></div><p><img loading="lazy" src="/images/markdown/markdownImage004.jpg" alt="BoldItalic"  title="Bold &amp; Italic"  />
 </p>
 <h2 id="文字段落">文字段落<a hidden class="anchor" aria-hidden="true" href="#文字段落">#</a></h2>
 <p>一般撰寫未添加任何標記符號時，該區塊文字即為<strong>文字段落區塊</strong>，當區塊文字與區塊文字之間使用 <code>Enter</code> 鍵換行，會形成兩個段落，段落與段落之間會明顯地保留一行空白，且轉換成 HTML 對應的 <code>&lt;p&gt;</code>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">This is the first paragraph.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">This is the first paragraph.
 
 This is the second paragraph.
 </code></pre></div><p><img loading="lazy" src="/images/markdown/markdownImage005.jpg" alt="Paragraph"  title="Paragraph"  />
 </p>
 <h2 id="清單">清單<a hidden class="anchor" aria-hidden="true" href="#清單">#</a></h2>
 <p>分為無序清單及有序清單兩種，無序清單使用 <code>*</code> 、 <code>+</code> 或 <code>-</code> 作為清單標記，有序清單使用數字接著一個英文句點做為清單標記</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown"><span style="color:#66d9ef">*</span> Red
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown"><span style="color:#66d9ef">*</span> Red
 <span style="color:#66d9ef">*</span> Green
 <span style="color:#66d9ef">*</span> Blue
 
@@ -309,7 +309,7 @@ This is the second paragraph.
 </code></pre></div><p><img loading="lazy" src="/images/markdown/markdownImage006.jpg" alt="List"  title="List"  />
 </p>
 <p>上面無序清單和有序清單所產生的 HTML 標記分別為</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!--無序清單--&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML"><span style="color:#75715e">&lt;!--無序清單--&gt;</span>
 &lt;<span style="color:#f92672">ul</span>&gt;
   &lt;<span style="color:#f92672">li</span>&gt;Red&lt;/<span style="color:#f92672">li</span>&gt;
   &lt;<span style="color:#f92672">li</span>&gt;Green&lt;/<span style="color:#f92672">li</span>&gt;
@@ -323,7 +323,7 @@ This is the second paragraph.
   &lt;<span style="color:#f92672">li</span>&gt;Candy&lt;/<span style="color:#f92672">li</span>&gt;
 &lt;/<span style="color:#f92672">ol</span>&gt;
 </code></pre></div><p>若要使用多層級清單，可在下一層級使用一個縮排或是兩個半形空白</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown"><span style="color:#66d9ef">-</span> Red
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown"><span style="color:#66d9ef">-</span> Red
 <span style="color:#66d9ef">-</span> Green
 <span style="color:#66d9ef">-</span> Blue
   <span style="color:#66d9ef">-</span> Sub red
@@ -333,20 +333,20 @@ This is the second paragraph.
 </p>
 <h2 id="checkbox">CheckBox<a hidden class="anchor" aria-hidden="true" href="#checkbox">#</a></h2>
 <p>CheckBox 常用於待辦事項或確認項目，使用 <code>-[]</code> 符號放到項目開頭，中括號內有 x 代表被選取。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown"><span style="color:#66d9ef">- [x]</span> This is a complete item
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown"><span style="color:#66d9ef">- [x]</span> This is a complete item
 <span style="color:#66d9ef">- [ ]</span> This is an incomplete item
 </code></pre></div><p><img loading="lazy" src="/images/markdown/markdownImage016.jpg" alt="CheckBox"  title="CheckBox"  />
 </p>
 <h2 id="分隔線">分隔線<a hidden class="anchor" aria-hidden="true" href="#分隔線">#</a></h2>
 <p>在一行內使用三個或以上的 <code>*</code>、<code>-</code>、<code>_</code> 來建立分隔線，符號內不可有其他東西，但可以在符號內插入空白。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">***
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">***
 ---
 ___
 </code></pre></div><p>效果
 <img loading="lazy" src="/images/markdown/markdownImage008.jpg" alt="Divider"  title="Divider"  />
 </p>
 <p>下列寫法都可建立分隔線</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">********
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">********
 <span style="font-style:italic">* *</span> *
 ----------
 <span style="color:#66d9ef">-</span> - -
@@ -357,7 +357,7 @@ ___
 <li>一對中括號，放置圖片的替代文字</li>
 <li>一對小括號，放置圖片的路徑或網址，另外還可選擇性的添加 prompt，當滑鼠停留在圖片上時，會自動顯示這段文字，並使用雙引號包住。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">![<span style="color:#f92672">Text</span>](<span style="color:#a6e22e">/path/image.jpg</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">![<span style="color:#f92672">Text</span>](<span style="color:#a6e22e">/path/image.jpg</span>)
 
 ![<span style="color:#f92672">Text</span>](<span style="color:#a6e22e">/path/image.jpg &#34;title&#34;</span>)
 </code></pre></div><blockquote>
@@ -369,13 +369,13 @@ ___
 <li>一個中括號，放置連結文字</li>
 <li>一個小括號，放置連結路徑或網址，一樣可使用雙引號來添加 prompt 文字</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">[<span style="color:#f92672">Github</span>](<span style="color:#a6e22e">https://fakestandard.github.io &#34;my github&#34;</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">[<span style="color:#f92672">Github</span>](<span style="color:#a6e22e">https://fakestandard.github.io &#34;my github&#34;</span>)
 </code></pre></div><p>效果
 <img loading="lazy" src="/images/markdown/markdownImage009.jpg" alt="Link"  title="Divider"  />
 </p>
 <h2 id="自動連結">自動連結<a hidden class="anchor" aria-hidden="true" href="#自動連結">#</a></h2>
 <p>Markdown 使用一組括號 <code>&lt;</code> <code>&gt;</code> 支援較簡易的連結，如網址或信箱。與連結不同之處就是自動連結不產出連結文字。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">&lt;<span style="color:#f92672">https:</span><span style="color:#960050;background-color:#1e0010">//</span><span style="color:#a6e22e">fakestandard</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">github</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">io</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">&lt;<span style="color:#f92672">https:</span><span style="color:#960050;background-color:#1e0010">//</span><span style="color:#a6e22e">fakestandard</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">github</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">io</span>&gt;
 </code></pre></div><p>效果
 <img loading="lazy" src="/images/markdown/markdownImage010.jpg" alt="AutoLink"  title="AutoLink"  />
 </p>
@@ -386,7 +386,7 @@ ___
 <li>靠左對齊的寫法是添加 <code>:</code> 在左側，如 <code>:---</code>，同理靠右對齊為在右側添加冒號 <code>---:</code></li>
 <li>置中對齊呈現的方式為在兩側都添加冒號 <code>:--:</code>。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">| Plugin | README |
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">| Plugin | README |
 | ------ | ------ |
 | Dropbox | [plugins/dropbox/README.md][PlDb] |
 | GitHub | [plugins/github/README.md][PlGh] |
@@ -403,7 +403,7 @@ ___
 <li>如果想在程式碼內插入反引號，可以使用兩個反引號來開啟和結束程式碼</li>
 </ol>
 <p>Example</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">Use the <span style="color:#e6db74">`print()`</span> function
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">Use the <span style="color:#e6db74">`print()`</span> function
 
 ``There is a literal backtick (`) here.``
 
@@ -415,7 +415,7 @@ A single backtick in a code span: `` <span style="color:#e6db74">` ``
 </p>
 <h2 id="程式碼區塊">程式碼區塊<a hidden class="anchor" aria-hidden="true" href="#程式碼區塊">#</a></h2>
 <p>要標記多行的程式碼，可簡單的使用 4 個空白或一個 tab 縮排即可</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">Here is an example of AppleScript:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">Here is an example of AppleScript:
 
     tell application &#34;Foo&#34;
         beep
@@ -424,12 +424,12 @@ A single backtick in a code span: `` <span style="color:#e6db74">` ``
 <p><img loading="lazy" src="/images/markdown/markdownImage014.jpg" alt="CodeBlock"  title="CodeBlock"  />
 </p>
 <p>也可連續使用三個反引號 <code>```</code> 把程式碼包起來，並在首行的三個反引號後面加上該段程式碼的語言，就可輸出 Highlight 效果，例如 <code>```html</code>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer&#34;</span>&gt;
     &amp;copy; 2004 Foo Corporation
 &lt;/<span style="color:#f92672">div</span>&gt;
 </code></pre></div><h2 id="區塊引言">區塊引言<a hidden class="anchor" aria-hidden="true" href="#區塊引言">#</a></h2>
 <p>Markdown 使用 email 形式的 blockquotes，在每行前面加上 <code>&gt;</code>，區塊引言與清單一樣可以有階層，只要根據階層加上不同數量的 <code>&gt;</code> 即可完成</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown"><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">This is the first quoting.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown"><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">This is the first quoting.
 </span><span style="font-style:italic"></span><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">This is the second quoting.
 </span><span style="font-style:italic"></span><span style="color:#66d9ef">
 </span><span style="color:#66d9ef">&gt; </span><span style="font-style:italic">This is the first level of quoting.
@@ -445,12 +445,12 @@ A single backtick in a code span: `` <span style="color:#e6db74">` ``
 <dd>故人西辭黃鶴樓，煙花三月下揚州。
 孤帆遠影碧山盡，唯見長江天際流。</dd>
 </dl>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">黃鶴樓送孟浩然之廣陵
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">黃鶴樓送孟浩然之廣陵
 : 故人西辭黃鶴樓，煙花三月下揚州。
 孤帆遠影碧山盡，唯見長江天際流。
 </code></pre></div><h2 id="跳脫字元">跳脫字元<a hidden class="anchor" aria-hidden="true" href="#跳脫字元">#</a></h2>
 <p>前面介紹那麼多格式所使用的符號，若要將這些符號呈現出來，而非作為有意義的符號使用，可使用反斜線 <code>\</code> 來插入普通的符號。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">\\   反斜線
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Markdown" data-lang="Markdown">\\   反斜線
 \`   反引號
 \*   星號
 \_   底線

@@ -31,7 +31,7 @@
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/tags/csharp/index.xml">
 <meta property="og:title" content="CSharp" />
 <meta property="og:description" content="不專業代碼" />
@@ -122,7 +122,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -158,6 +158,118 @@
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
   <h1>CSharp</h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】排序演算法—謝耳排序法（Shell Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/2 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  謝耳排序法（Shell Sort） 在插入排序法中，若大部分資料已經排序完成，該排序法會相當有效率，而謝耳排序法可以看作是一種使插入排序法減少資料搬移次數的衍伸排序法。
+其原理為將資料區分成特定間隔的區塊，以插入排序法對區塊內資料進行排序，再漸漸減少間隔的距離。
+舉例，有一陣列為 [50] [60] [10] [30] [20] [80] [40] [70]，以劃分數為 2，將資料分成四等份 (8/2)，得到下列區塊組合 (50,20)(60,80)(10,40)(30,70)，規則為第一個數與第五個數為一組，第二個數與第六個數為一組，以此類推。
+接著透過插入排序法，對區塊內的資料做排序，使其成為 (20,50)(60,80)(10,40)(30,70)，排序完後，解散區塊組合，還原成原數列 [20] [60] [10] [30] [50] [80] [40] [70]
+繼續縮小間隔為 (8/2)/2，得到下列區塊組合 (20,10,50,40)(60,30,80,70)，其規則為第一、三、五、七個數字為一組，二、四、六、八為一組，一樣以插入排序法對區塊內資料做排序，得結果為 (10,20,40,50)(30,60,70,80)，解散組合區塊，還原成原數列 [10] [30] [20] [60] [40] [70] [50] [80]
+進行第三次排序，縮小間隔為 ((8/2)/2)/2，如此一來變成對每一個元素進行排序，直接使用插入排序法得結果為 [10] [20] [30] [40] [50] [60] [70] [80]...</p>
+  </section>
+  <footer class="entry-footer">June 9, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—謝耳排序法（Shell Sort）" href="https://fakestandard.github.io/algorithm/algorithm-13-shellsort/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】排序演算法—插入排序法（Insert Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【4/29 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  插入排序法（Insert Sort） 插入排序法原理是將陣列中的元素，逐一與已經排序好的資料作比較，例如前兩個元素已經排序好，再將第三個元素與這兩個元素作比較，插入到適當的位置，接著將第四個元素，與前三個已排序好的元素進行比較，再插入到適當位置，重複此步驟，直到排序完成為止。
+透過插入排序法，一樣對 [30] [20] [40] [50] [10] 該數列進行排序，目標結果為由小到大排列
+Step 1 首先第一個元素 [30] 定義為已排序，取得第二個元素 [20]，與第一個元素進行比較，插入到適當位置
+初始已排序序列 [30]
+插入後結果序列 [20] [30]
+Step 2 取得第三個元素 [40]，與上次結果進行比對，並插入適當位置
+初始已排序序列 [20] [30]
+插入後結果序列 [20] [30] [40]
+Step 3 取得第四個元素 [50]，與上次結果進行比對，並插入適當位置
+初始已排序序列 [20] [30] [40]
+插入後結果序列 [20] [30] [40] [50]...</p>
+  </section>
+  <footer class="entry-footer">June 7, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—插入排序法（Insert Sort）" href="https://fakestandard.github.io/algorithm/algorithm-12-insertsort/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【.NET Core】靜態檔案 Static Files</h2>
+  </header>
+  <section class="entry-content">
+    <p>【ASP.NET Core 5】
+靜態檔案是 HTML、css、image、js 等資源檔案，過去 .NET Framework 可直接被存取，在 ASP.NET Core 中，已不能直接被瀏覽，對於存取有特定的限制。
+Start 首先，先了解 Content root 以及 Web root，硬翻成中文為內容根目錄 &amp; Web 根目錄。
+Content root（內容根目錄） Content root 預設為專案的根目錄，包含
+ 裝載應用程式的可執行檔 .exe 組成應用程式的已編譯元件 .dll 應用程式所使用的內容檔案  Razor(.cshtml、.razor) 設定檔(.json、.xml) 資料檔案(.db)   Web 根目錄(Web root)  Web root（Web 根目錄） Web root 為公共靜態資源的基本路徑，預設路徑為 {content root}/wwwroot
+ 樣式 .css JavaScript .js 影像檔 .png、.jpg  建立一個專案，在方案總管中找到 wwwroot，可看到預設已建立 css、js、lib 資料夾，使用路徑 https://localhost:5000/css/site.css 嘗試讀取 ~/css/site.css 該檔案， 可直接瀏覽檔案內容。
+測試自行建立的資料夾是否能存取，在 wwwroot 目錄下建立 images 資料夾以自定義靜態檔案路徑，並放置一張影像檔在該目錄下，嘗試使用 URL https://localhost:5000/images/MyImages....</p>
+  </section>
+  <footer class="entry-footer">June 6, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【.NET Core】靜態檔案 Static Files" href="https://fakestandard.github.io/netcore/netcore5-4-staticfiles/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】排序演算法—選擇排序法（Selection Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【4/29 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  選擇排序法（Selection Sort） 選擇排序法顧名思義是以選擇的概念來進行排序，也算是枚舉法的應用，原理為反覆從未排序的數列中取出最小元素，加入到另一個數列中，達到排序的結果。
+選擇排序可以由大到小排序，將最大值放到第一位置；或是由小到大排序，將最大值放到最後一個位置。
+透過選擇排序法，對 [30] [20] [40] [50] [10] 該數列進行排序，目標結果為由小到大排列
+Step 1 首先進行第一次掃描，找到數列中最小值，直接與第一個元素交換
+初始序列 [30] [20] [40] [50] [10]
+結果序列 [10] [20] [40] [50] [30]
+Step 2 進行第二次掃描，排除第一個元素，從第二個位置開始找起，找到最小值，與第二個位置元素交換，因為 [20] 是此次搜尋中最小值，其結果位置不變
+上次結果 [10] [20] [40] [50] [30]
+結果序列 [10] [20] [40] [50] [30]...</p>
+  </section>
+  <footer class="entry-footer">June 3, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—選擇排序法（Selection Sort）" href="https://fakestandard.github.io/algorithm/algorithm-11-selectionsort/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】排序演算法—氣泡排序法（Bubble Sort）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【4/29 閱讀紀錄】
+排序（Sorting）功能對於資訊領域而言，是一項非常重要且普通的工作。將一群資料按照特定規則重新排序，使其具有遞增或遞減的次序關係。
+經由排序過的資料，會較容易閱讀，也利於統計及整理，甚至大幅減少資料搜尋的時間，進而提升資料參考價值。
+程式碼已放上 GitHub
+Start 常見的排序演算法
+ 氣泡排序法（Bubble Sort） 選擇排序法（Selection Sort） 插入排序法（Insert Sort） 謝耳排序法（Shell Sort） 快速排序法（Quick Sort） 合併排序法（Merge Sort） 基數排序法（Radix Sort） 堆積樹排序法（Heap Tree Sort）  氣泡排序法（Bubble Sort） 氣泡排序法可稱為交換排序法，其構思為觀察水中氣泡變化而成，甚至可稱為冒泡排序等類似名稱。
+其原理為從第一個元素開始，比較相鄰元素的大小，如大小順序有誤，就將其對調，再與下一個元素進行比較，彷彿氣泡逐漸冒出水面上的概念，使用該方法掃描過一次後，就可以確保最後一個元素是位於正確的位置，進行第二次掃描，就能確認第二個元素的正確位置，逐步進行直到所有元素排序完成。
+使用白話一點的說法，逐一拆解每一個步驟，首先有一個序列，初始的狀態和順序為 [30] [20] [40] [50] [10]，目標將此序列由小到大排列，變成 [10] [20] [30] [40] [50]
+我們透過氣泡排序法進行排序，步驟解析如下
+Step 1 首先進行第一次掃描，會先拿到第一個元素 [30]，接著與相鄰的元素 [20] 進行比較，如果第二個元素小於地一個元素，就進行位置交換。
+初始序列 [30] [20] [40] [50] [10]
+結果序列 [20] [30] [40] [50] [10]
+Step 2 依然拿著 [30] 這個元素，繼續與相鄰的元素比較，因為該元素已經調換到第二個元素的位置，所以下一個相鄰的元素會是 [40]，接著進行比較，經比較後兩個元素順序不變，依然維持下列結果
+結果序列 [20] [30] [40] [50] [10]...</p>
+  </section>
+  <footer class="entry-footer">June 1, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】排序演算法—氣泡排序法（Bubble Sort）" href="https://fakestandard.github.io/algorithm/algorithm-10-bubblesort/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
@@ -268,89 +380,6 @@ Start 此篇紀錄記錄樹定義及應用，其餘常見的資料結構如下
   </section>
   <footer class="entry-footer">May 24, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
   <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—樹（Tree）" href="https://fakestandard.github.io/algorithm/algorithm-7-tree/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】資料結構—佇列（Queue）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/16 閱讀紀錄】
-選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
-Start 此篇紀錄記錄佇列定義及應用，其餘常見的資料結構如下
- 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  佇列（Queue） 佇列是一種抽象型資料結構（Abstract Data Type, ADT），它的所有動作是由不同的兩端執行，並且具有先進先出的特性（First In, First Out: FIFO）。
-佇列基本運算具備以下五種工作定義
-   Action Description     create 建立空佇列   add 將資料加入佇列的末端，返回新佇列   delete 刪除佇列頂端的資料，返回新佇列   front 傳回佇列頂端的值   empty 判斷佇列是否為空集合，是回傳 Ture，反之    生活中有許多佇列的應用，例如排隊，假設現在有一個排隊買票的隊伍，欲買票就要從隊伍的最後方加入，然而原本在隊伍的第一個人，因為先排隊的關係，它可以先買到票，然後離開隊伍；在排隊的案例可以知道，先排隊的人，可以先買到票，並且從隊伍的頂端離開，後排隊的人，必須從隊伍的尾端加入，當隊伍前面的人都買票離開，才會輪到他買票，而且加入和離開隊伍的動作是從不同的兩端進行，此概念符合了先進先出的特性，也就是佇列的應用。
-Note  堆疊（Stack）：後進先出（Last In, First Out: LIFO） 佇列（Queue）：先進先出（First In, First Out: FIFO）  Reference 【圖說演算法 C#】</p>
-  </section>
-  <footer class="entry-footer">May 21, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—佇列（Queue）" href="https://fakestandard.github.io/algorithm/algorithm-6-queue/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET Core】相依性注入 Dependency Injection</h2>
-  </header>
-  <section class="entry-content">
-    <p>【ASP.NET Core 5】
-如果要問 ASP.NET Core 最精華的部份是什麼，必定是 DI 無誤。
-Start 相依性是另一個物件所依賴的物件。
-建立 MyDependency 類別，內含一個無返回值的 WriteMessage 方法
-public class MyDependency { public void WriteMessage(string message) { Console.WriteLine($&#34;Message:{message}&#34;); } } 再建一個 MyClass 類別，類別內建立 MyDependency 實例，在 MyClass 內實作無返回值的 Get 方法，該方法內調用 MyDependency 實例的 WriteMessage 方法。
-public class MyClass { private readonly MyDependency _myDependency = new MyDependency(); public void Get() { _myDependency.WriteMessage(&#34;MyClass get a message&#34;); } } 到目前為止程式是沒什麼問題，在未使用 DI 前，我們絕大部分都是這麼做，MyClass 物件直接依賴於 MyDependency 物件，彼此之間有著很強的相依性，也存在著一些問題。舉例來說，若要以不同實作替代 MyDependency，MyClass 必須修改此類別，再來該實作也難以進行單元測試。...</p>
-  </section>
-  <footer class="entry-footer">May 20, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET Core】相依性注入 Dependency Injection" href="https://fakestandard.github.io/netcore/netcore5-2-dependencyinjection/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【Algorithm】資料結構—堆疊（Stack）</h2>
-  </header>
-  <section class="entry-content">
-    <p>【5/16 閱讀紀錄】
-選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
-Start 此篇紀錄記錄堆疊定義及應用，其餘常見的資料結構如下
- 陣列（Array） 鏈結串列（Linked List） 堆疊（Stack） 佇列（Queue） 樹（Tree） 圖形（Graph） 雜湊表（Hash Table）  堆疊（Stack） 堆疊是一種抽象型資料結構（Abstract Data Type, ADT），是由一群相同資料型別的組合，所有動作均在頂端執行，具有後進先出（Last In, First Out: LIFO）的特性。
-堆疊基本運算具備以下五種工作定義
-   Action Description     create 建立一個空堆疊   push 存放頂端資料，並傳回新堆疊   pop 刪除頂端資料，並傳回新堆疊   isEmpty 判斷堆疊是否為空堆疊，是回傳 Ture，反之   full 判斷堆疊是否已滿，是回傳 True，反之    堆疊非常好理解，生活中也有很多堆疊的應用，假設要收拾餐桌上的餐盤，需要將它們一一疊起，先放第一個餐盤，再將第二個餐盤放到第一個餐盤上方，接著再將第三個餐盤放到第二個餐盤上方，以該例來看，第一個餐盤就是第一個放入堆疊中，而第三個是最後一個放入堆疊中，此時欲取得第二餐盤，就需要先將第三個放入的餐盤拿起，意思是，需要先將頂端的先拿起，才能在往下拿起，該例證明後進先出的特性，並且所有動作都是由頂端執行，從頂端加入，從頂端刪除，即是堆疊的概念。
-Note  堆疊（Stack）：後進先出（Last In, First Out: LIFO） 佇列（Queue）：先進先出（First In, First Out: FIFO）  Reference 【圖說演算法 C#】</p>
-  </section>
-  <footer class="entry-footer">May 19, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【Algorithm】資料結構—堆疊（Stack）" href="https://fakestandard.github.io/algorithm/algorithm-5-stack/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET】使用 C# 操作檔案 I/O 與檔案系統（一）</h2>
-  </header>
-  <section class="entry-content">
-    <p>在 .NET 框架中，命名空間 System.IO 已經提供多種檔案操作類別，用於對資料檔案和資料流的讀寫。談到檔案系統，要先知道兩個東西
- 檔案（File） 流（Stream）  檔案是在硬碟或光碟機等媒體上可永久儲存資料的有序集合，它是一種進行資料讀寫操作的基本物件，通常按照樹狀目錄結構進行組織，每個檔案皆有檔名、所在路徑、建立時間、訪問許可權等屬性。
-流是位元組序列的抽象概念，例如檔案、輸入/輸出裝置、處理程序間的通訊管道（an inter-process communication pipe）或 TCP/IP 通訊端。資料流包含讀取、寫入以及支援搜尋三種基本作業。
-Start FileSystemInfo 類別是檔案系統類別的基礎類別，繼承該類別的子類別有
- File - 負責檔案系統中的檔案，屬靜態類別 FileInfo - 負責檔案系統中的檔案 Directory - 負責檔案系統中的資料夾，屬靜態類別 DirectoryInfo - 負責檔案系統中的資料夾  另外還有位於 System.IO 命名空間下其餘相關的類別
- Path - 負責檔案系統中的路徑 DriveInfo - 負責磁碟機資訊的訪問  File 與 FileInfo 的區別在於 Info 類別需要實體化，而一般 File 是屬於靜態類別；Directory 與 DirectoryInfo 同理，Directory 是靜態類別，DirectoryInfo 需實體化類別。
-FileInfo 使用 FileInfo 類別建立檔案，並且寫入資料
-/// &lt;summary&gt; /// 建立檔案並寫入資料 /// &lt;/summary&gt; public static void CreateFileByFileInfo() { // 實體化 FileInfo 並指予路徑  FileInfo file = new FileInfo(@&#34;D:\Test....</p>
-  </section>
-  <footer class="entry-footer">May 18, 2021&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET】使用 C# 操作檔案 I/O 與檔案系統（一）" href="https://fakestandard.github.io/post/dotnet/dotnet-8-filesystemandfileio-one/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>【.NET Core】Application Startup Class</h2>
-  </header>
-  <section class="entry-content">
-    <p>【ASP.NET Core 5】
-在 .NET Core 出現的 Startup 類別非常重要，該類別用來配置應用程式的「服務」和「請求管道」，由它的名稱可知，在應用程式啟動時該類別首先被執行，它與傳統應用程式內的 Global.asax 相似。
-Start 開啟 Program 類別找到 Main 方法，這裡即是程式的進入點（Entry point），與 Console 專案的啟動方式相同都是 Program.Main，再從程式進入點將網站實例化，該方法配置 Host 時使用了 UserStartup&lt;T&gt; 方法，其中泛型 &lt;T&gt; 預設為 Startup
-public class Program { public static void Main(string[] args) { CreateHostBuilder(args).Build().Run(); } public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host.CreateDefaultBuilder(args) .ConfigureWebHostDefaults(webBuilder =&gt; { // 配置啟動類別位置  webBuilder.UseStartup&lt;Startup&gt;(); }); } 該類別依照 ASP.NET Core 慣例命名為 Startup，顧名思義為啟動類別，但是，我們也可以為該類別指定任何名稱，且在 UseStratup&lt;T&gt; 的泛型更換為指定後的名稱即可。如下將該類別命名為 MyStartup，配置啟動類別的位置也要替換為新類名。
-public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host....</p>
-  </section>
-  <footer class="entry-footer">May 13, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
-  <a class="entry-link" aria-label="post link to 【.NET Core】Application Startup Class" href="https://fakestandard.github.io/netcore/netcore5-1-startupclass/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

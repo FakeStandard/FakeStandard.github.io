@@ -39,7 +39,7 @@ public class EmployeeController : Controller { private List&lt;Employee&gt; empl
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【.NET】使用 ClosedXML 實現匯出 Excel 功能" />
 <meta property="og:description" content="開發應用程式或網頁時一定會遇到匯出 Excel 功能，而匯出的 Libaray 除了微軟原生的程式庫之外，還可以使用第三方的程式庫，先前已有介紹過使用 NPOI 套件，有興趣可參考傳送門。
 這篇則會介紹如何使用 ClosedXML 簡易的匯出，代碼已存放於 GitHub
@@ -197,7 +197,7 @@ public class EmployeeController : Controller { private List&lt;Employee&gt; empl
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -249,7 +249,7 @@ public class EmployeeController : Controller { private List&lt;Employee&gt; empl
 </p>
 <h3 id="model">Model<a hidden class="anchor" aria-hidden="true" href="#model">#</a></h3>
 <p>建立資料模型</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Employee</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Employee</span>
 {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> ID { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> FirstName { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
@@ -259,7 +259,7 @@ public class EmployeeController : Controller { private List&lt;Employee&gt; empl
 }
 </code></pre></div><h3 id="controller">Controller<a hidden class="anchor" aria-hidden="true" href="#controller">#</a></h3>
 <p>建立控制項和產生資料</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmployeeController</span> : Controller
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EmployeeController</span> : Controller
 {
     <span style="color:#66d9ef">private</span> List&lt;Employee&gt; employees;
 
@@ -288,7 +288,7 @@ public class EmployeeController : Controller { private List&lt;Employee&gt; empl
 }
 </code></pre></div><h3 id="view">View<a hidden class="anchor" aria-hidden="true" href="#view">#</a></h3>
 <p>在視圖渲染資料，且添加 Export 按鈕</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Html" data-lang="Html">@model IEnumerable&lt;<span style="color:#f92672">Export_ClosedXML.Models.Employee</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Html" data-lang="Html">@model IEnumerable&lt;<span style="color:#f92672">Export_ClosedXML.Models.Employee</span>&gt;
 
 @{
     ViewData[&#34;Title&#34;] = &#34;Index&#34;;
@@ -343,7 +343,7 @@ public class EmployeeController : Controller { private List&lt;Employee&gt; empl
 &lt;/<span style="color:#f92672">table</span>&gt;
 </code></pre></div><p>截至目前為止資料的前置作業已完成，為了不做資料庫設定，這邊直接快速產生資料並呈現。</p>
 <p>下一步為匯出按鈕建立一個具有 <code>HttpPost</code> 的 <code>Export</code> 動作方法，記得引用命名空間 <code>using ClosedXML.Excel;</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 匯出 Excel
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e">/// &lt;returns&gt;&lt;/returns&gt;

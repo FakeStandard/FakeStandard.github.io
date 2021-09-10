@@ -39,7 +39,7 @@ string binary = &#34;1110&#34;; // 二進位轉十進位, 第二個參數為 bas
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【C#】位移運算元 &lt;&lt; 和 &gt;&gt;" />
 <meta property="og:description" content="昨天在刷 LeetCode 時，發現解題方式可以使用位移運算元，雖然筆者早就看過這個運算元，卻沒實際了解過，也趁這個機會快速了解位移運算元是個什麼樣的概念。
 首先，筆者遇到的題型非常簡單，將二進位制轉換為十進位制，如將二進位 1110 轉換成十進位，得解為 14，在 C# 中可直接使用 Convert 來實現進位之間的轉換
@@ -197,7 +197,7 @@ string binary = &#34;1110&#34;; // 二進位轉十進位, 第二個參數為 bas
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -242,7 +242,7 @@ string binary = &#34;1110&#34;; // 二進位轉十進位, 第二個參數為 bas
   </header> 
   <div class="post-content"><p>昨天在刷 LeetCode 時，發現解題方式可以使用位移運算元，雖然筆者早就看過這個運算元，卻沒實際了解過，也趁這個機會快速了解位移運算元是個什麼樣的概念。</p>
 <p>首先，筆者遇到的題型非常簡單，將二進位制轉換為十進位制，如將二進位 <code>1110</code> 轉換成十進位，得解為 <code>14</code>，在 C# 中可直接使用 <code>Convert</code> 來實現進位之間的轉換</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">string</span> binary = <span style="color:#e6db74">&#34;1110&#34;</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">string</span> binary = <span style="color:#e6db74">&#34;1110&#34;</span>;
 
 <span style="color:#75715e">// 二進位轉十進位, 第二個參數為 base
 </span><span style="color:#75715e"></span>Convert.ToInt32(binary, <span style="color:#ae81ff">2</span>);
@@ -260,7 +260,7 @@ string binary = &#34;1110&#34;; // 二進位轉十進位, 第二個參數為 bas
 <li>右位移一個位元的表示方式為 <code>num &gt;&gt; 1</code></li>
 </ul>
 <p>實際使用程式碼測試，先宣告一個整數變數 <code>num</code>，因為該變數是以十進位表示之，故筆者特意註解 <code>num</code> 二進位的表示方式，接著透過位移運算元，向左搬移一位，最後得十進位的結果。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 十進位 14, 二進位 1110
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 十進位 14, 二進位 1110
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> num = <span style="color:#ae81ff">14</span>;
 
 <span style="color:#75715e">// 向左位移 1 位
@@ -269,7 +269,7 @@ string binary = &#34;1110&#34;; // 二進位轉十進位, 第二個參數為 bas
 <span style="color:#75715e">// 得到十進位 28, 二進位 11100
 </span><span style="color:#75715e"></span>Console.Write(num);
 </code></pre></div><p>試試看右位移一個位元</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 十進位 14, 二進位 1110
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 十進位 14, 二進位 1110
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> num = <span style="color:#ae81ff">14</span>;
 
 <span style="color:#75715e">// 向左位移 1 位
@@ -282,7 +282,7 @@ string binary = &#34;1110&#34;; // 二進位轉十進位, 第二個參數為 bas
 </blockquote>
 <p>如果我們向左位移一個位元，其結果會是原本的兩倍，若向右位移一位，其結果會是原本的一半。</p>
 <p>有這麼神奇的事？試試看一次位移兩個位元會發生什麼事</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">int</span> num = <span style="color:#ae81ff">20</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">int</span> num = <span style="color:#ae81ff">20</span>;
 
 <span style="color:#75715e">// 80
 </span><span style="color:#75715e"></span>Console.WriteLine(num &lt;&lt; <span style="color:#ae81ff">2</span>);

@@ -41,7 +41,7 @@ const int num = 300; // true: 質數 false: 非質數 bool[] prime = new bool[nu
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【Algorithm】資料結構—陣列（Array）" />
 <meta property="og:description" content="【4/11 閱讀紀錄】
 選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
@@ -203,7 +203,7 @@ const int num = 300; // true: 質數 false: 非質數 bool[] prime = new bool[nu
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -267,7 +267,7 @@ const int num = 300; // true: 質數 false: 非質數 bool[] prime = new bool[nu
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>使用一維陣列尋找和儲存 1~num 之間的所有質數</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> num = <span style="color:#ae81ff">300</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> num = <span style="color:#ae81ff">300</span>;
 
 <span style="color:#75715e">// true: 質數 false: 非質數
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span>[] prime = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">bool</span>[num];
@@ -310,7 +310,7 @@ prime[<span style="color:#ae81ff">1</span>] = <span style="color:#66d9ef">false<
 Console.WriteLine();
 Console.WriteLine(<span style="color:#e6db74">$&#34;總共 {count} 個質數&#34;</span>);
 </code></pre></div><p>使用先前判斷質數的方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">bool</span> IsPrime(<span style="color:#66d9ef">int</span> n)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">bool</span> IsPrime(<span style="color:#66d9ef">int</span> n)
 {
     <span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">2</span>;
 
@@ -325,7 +325,7 @@ Console.WriteLine(<span style="color:#e6db74">$&#34;總共 {count} 個質數&#34
     <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;
 }
 </code></pre></div><p>書籍撰寫代碼參考</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> MAX = <span style="color:#ae81ff">300</span>;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> MAX = <span style="color:#ae81ff">300</span>;
 <span style="color:#66d9ef">bool</span>[] prime = <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">bool</span>[MAX];
 prime[<span style="color:#ae81ff">0</span>] = <span style="color:#66d9ef">true</span>;
 prime[<span style="color:#ae81ff">1</span>] = <span style="color:#66d9ef">true</span>;

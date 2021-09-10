@@ -39,7 +39,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env) { if (en
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【.NET Core】環境變數 Environments" />
 <meta property="og:description" content="【ASP.NET Core 5】
 Start ASP.NET Core 會根據執行階段的環境變數，來設定應用程式的行為。如開發環境、測試環境及正式環境的組態設定會不太相同，使用的資料庫也會不同。
@@ -197,7 +197,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env) { if (en
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -252,7 +252,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env) { if (en
 </ul>
 <p>環境名稱由系統變數 <code>ASPNETCORE_ENVIRONMENT</code> 的內容值而來，該變數可在 <code>launchSettings.json</code> 作變更。</p>
 <p>開啟 <code>launchSettings.json</code>，在 <code>profiles</code> 節點找到 <code>IIS Express\..\environmentVariables</code> 的 <code>ASPNETCORE_ENVIRONMENT</code>，將原本的 Development 變更為 Production。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#e6db74">&#34;profiles&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#e6db74">&#34;profiles&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
     <span style="color:#f92672">&#34;IIS Express&#34;</span>: {
         <span style="color:#f92672">&#34;commandName&#34;</span>: <span style="color:#e6db74">&#34;IISExpress&#34;</span>,
         <span style="color:#f92672">&#34;launchBrowser&#34;</span>: <span style="color:#66d9ef">true</span>,
@@ -262,7 +262,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env) { if (en
     }
 }
 </code></pre></div><p>開啟 <code>Startup.cs</code>，<code>Configure</code> 方法已注入 <code>IWebHostEnvironment</code>，在方法內使用下列程式碼判斷環境變數內容值</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
     <span style="color:#66d9ef">if</span> (env.IsProduction()) <span style="color:#75715e">// 假設是生產環境
 </span><span style="color:#75715e"></span>    {
@@ -301,7 +301,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env) { if (en
     }
 }
 </code></pre></div><p>網站啟動後，因 <code>IWebHostEnvironment</code> 會從系統變數 <code>ASPNETCORE_ENVIRONMENT</code> 取得內容值，填入至 <code>EnvironmentName</code> 屬性，上述範例經實際測試可得以下結果</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">EnvironmentName: Production
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">EnvironmentName: Production
 IsProduction: True
 </code></pre></div><p>環境變數可由 <code>launchSettings.json</code> 變更，實際專案相關設定 UI 位置為</p>
 <p><strong>專案</strong> -&gt; <strong>屬性</strong> -&gt; <strong>偵錯</strong></p>
@@ -317,7 +317,7 @@ IsProduction: True
 <li>Project 啟動 Kestrel</li>
 </ul>
 <p>嘗試將 <code>IIS Express</code> 設置為生產環境，<code>Project Name</code> 設置為開發環境</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#e6db74">&#34;profiles&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#e6db74">&#34;profiles&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> {
     <span style="color:#f92672">&#34;IIS Express&#34;</span>: {
         <span style="color:#f92672">&#34;commandName&#34;</span>: <span style="color:#e6db74">&#34;IISExpress&#34;</span>,
         <span style="color:#f92672">&#34;launchBrowser&#34;</span>: <span style="color:#66d9ef">true</span>,
@@ -339,7 +339,7 @@ IsProduction: True
 <p><img loading="lazy" src="/images/NetCore/NetCore008.png" alt=""  />
 </p>
 <p>兩者運行結果分別為</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[IIS Express]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">[IIS Express]
 EnvironmentName: Production
 IsProduction: True
 

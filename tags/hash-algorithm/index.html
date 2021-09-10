@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Hash Algorithm | How can I help</title>
+<meta name="keywords" content="" />
+<meta name="description" content="不專業代碼">
+<meta name="author" content="Polar Bear">
+<link rel="canonical" href="https://fakestandard.github.io/tags/hash-algorithm/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.d1b405b7c6bf1b09aebca33eb6e2d8bd070113d119bdfa2715c32f6408f9fbee.css" integrity="sha256-0bQFt8a/GwmuvKM&#43;tuLYvQcBE9EZvfonFcMvZAj5&#43;&#43;4=" rel="preload stylesheet" as="style">
+
+
+<script data-ad-client="ca-pub-4877674098686024" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+<meta name="google-site-verification" content="iCWzIE4kN0sAVM_Slr-q8E5zIT2Qfs-IxUuxhpFVD94" />
+
+
+
+
+
+
+
+<link rel="icon" href="https://fakestandard.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://fakestandard.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://fakestandard.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://fakestandard.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="generator" content="Hugo 0.88.1" />
+<link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/tags/hash-algorithm/index.xml">
+<meta property="og:title" content="Hash Algorithm" />
+<meta property="og:description" content="不專業代碼" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://fakestandard.github.io/tags/hash-algorithm/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Hash Algorithm"/>
+<meta name="twitter:description" content="不專業代碼"/>
+
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+<noscript>
+    <style type="text/css">
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: #1d1e20;
+                --entry: #2e2e33;
+                --primary: rgba(255, 255, 255, 0.84);
+                --secondary: rgba(255, 255, 255, 0.56);
+                --tertiary: rgba(255, 255, 255, 0.16);
+                --content: rgba(255, 255, 255, 0.74);
+                --hljs-bg: #2e2e33;
+                --code-bg: #37383e;
+                --border: #333;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://fakestandard.github.io/" accesskey="h" title="How can I help (Alt + H)">How can I help</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://fakestandard.github.io/post/" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/algorithm/" title="Algorithm">
+                    <span>Algorithm</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/netcore/" title=".NET Core">
+                    <span>.NET Core</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/categories/" title="Categories">
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://fakestandard.github.io/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
+  <h1>Hash Algorithm</h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】雜湊應用—碰撞與溢位處理</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/25 閱讀紀錄】
+根據先前文章介紹的雜湊，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 當要把資料放到某個 Bucket 時，若該 Bucket 已滿，則會發生溢位（Overflow）；另一種情況是，不同資料經雜湊函數運算後，得到相同的位址，則發生碰撞（Collision）。
+當溢位及碰撞發生時，通常會透過下列四種演算法處理
+ 線性探測法 平方探測法 再雜湊 鏈結串列  線性探測法 當兩資料經雜湊函數運算後，得到相同雜湊值，則發生碰撞，此時透過線性探測法，以線性的方式往後尋找空的位置，一旦有空的位置就把資料放進去，直到找到空位，或儲存空間位址皆存滿為止。線性探測法通常把雜湊位置視為環狀結構，比如說，當雜湊值是儲存空間的最後一個位置，以線性探測法往下搜尋空位，第一個搜尋的位置會是儲存空間的第一個，所以儲存空間會是以環狀的方式進行探索。
+不過線性探測法因簡易所以有先天的缺陷，若資料鍵值容易聚集在一起，要尋找空位就要尋找很久。但還是要實作一下代碼，使用除法雜湊函數取得雜湊值，以線性探測法來儲存資料。
+建立靜態變數與陣列
+static int INDEX = 17; static int MAX = 13; // 建立資料雜湊最大元素 static int?[] index = new int?[INDEX]; // 建立陣列儲存空間 static int[] data = new int[MAX]; 建立相關方法
+/// &lt;summary&gt; /// 亂樹建立資料 /// &lt;/summary&gt; static void CreateData() { int i; Random r = new Random(); for (i = 0; i &lt; MAX; i&#43;&#43;) data[i] = r....</p>
+  </section>
+  <footer class="entry-footer">September 9, 2021&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】雜湊應用—碰撞與溢位處理" href="https://fakestandard.github.io/algorithm/algorithm-47-hashcollisionandoverflow/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】雜湊應用—雜湊演算法</h2>
+  </header>
+  <section class="entry-content">
+    <p>【5/24 閱讀紀錄】
+根據先前文章介紹的雜湊，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 雜湊法是利用雜湊函數來計算鍵值所對應的位址，進而建立雜湊表。
+常見的雜湊函數有四種
+ 除法 中間平方法 折疊法 數位分析法  除法 除法是最簡單的雜湊演算法，原理是將資料除以某個常數（通常會選擇質數），取其餘數作為索引，在將資料儲存於索引相對應的位址。
+公式是 H(key) = key mod B
+假設一陣列大小為 7，欲將 12, 65, 70, 99, 67 這五個值經由雜湊法，放入相對應的位置，因陣列大小為 7，故將 B 帶入質數 7 進行雜湊，得到結果會界於 0-6 之間以符合陣列大小，如 H(12) = 12 mod 7 = 5，最後可得雜湊表如下
+中間平方法 中間平方法是將資料自己做平方，再取中間的某段數字做為索引。
+假設一陣列的位址空間大小為 100，欲將 12, 65, 70, 99, 67 五個值經由雜湊法，放入相對應的位址。首先，先將每個資料平方，就是資料與自己相乘，可得 144, 4225, 4900, 9801, 4489，分別取得這五個值的百位數及十分數，分別為 14, 22, 90, 80, 48，將得到的索引鍵值分別放入原先的對應值，即
+f(14) = 12 f(22) = 65 f(90) = 70 f(80) = 99 f(67) = 48 折疊法 折疊法是先將資料轉換成一串數字，再將數字拆成數個部分，最後再將它們相加得到 Bucket Address。折疊法區分為以下兩種...</p>
+  </section>
+  <footer class="entry-footer">September 6, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】雜湊應用—雜湊演算法" href="https://fakestandard.github.io/algorithm/algorithm-46-hashalgorithm/"></a>
+</article>
+    </main>
+    <footer class="footer">
+    <span>&copy; 2021 <a href="https://fakestandard.github.io/">How can I help</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)">
+    <button class="top-link" id="top-link" type="button" accesskey="g">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+            <path d="M12 6H0l6-6z" />
+        </svg>
+    </button>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+    menu.onscroll = function () {
+        localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

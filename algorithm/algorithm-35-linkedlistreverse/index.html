@@ -37,7 +37,7 @@ Start 學會串列插入、刪除和連結的基本功之後，這篇要來思�
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【Algorithm】鏈結串列應用—單向串列反轉演算法" />
 <meta property="og:description" content="【5/27 閱讀紀錄】
 根據先前文章介紹的鏈結串列，此篇實際運用它們實作一個應用。
@@ -191,7 +191,7 @@ Start 學會串列插入、刪除和連結的基本功之後，這篇要來思�
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -239,7 +239,7 @@ Start 學會串列插入、刪除和連結的基本功之後，這篇要來思�
 <p>程式碼已放上 <a href="https://github.com/FakeStandard/Algorithm">GitHub</a></p>
 <h1 id="start">Start<a hidden class="anchor" aria-hidden="true" href="#start">#</a></h1>
 <p>學會串列插入、刪除和連結的基本功之後，這篇要來思考如何反轉串列？反轉串列顧名思義就是將串列內的元素都顛倒過來，最後形成頂端節點變成末端節點，而末端節點成為頂端節點，但是串列指標只能知道下一個節點的位置，無法得知上一個節點，那該如何做？這就需要一點小技巧，直接實作程式碼</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 節點類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Node</span>
@@ -325,7 +325,7 @@ Start 學會串列插入、刪除和連結的基本功之後，這篇要來思�
     }
 }
 </code></pre></div><p>在 Main 方法實際調用輸出方法與反轉輸出方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
 {
     LinkedList list1 = <span style="color:#66d9ef">new</span> LinkedList();
     list1.Insert(<span style="color:#ae81ff">1</span>);

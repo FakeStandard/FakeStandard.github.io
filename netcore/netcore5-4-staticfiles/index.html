@@ -39,7 +39,7 @@ Content root（內容根目錄） Content root 預設為專案的根目錄，包
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【.NET Core】靜態檔案 Static Files" />
 <meta property="og:description" content="【ASP.NET Core 5】
 靜態檔案是 HTML、css、image、js 等資源檔案，過去 .NET Framework 可直接被存取，在 ASP.NET Core 中，已不能直接被瀏覽，對於存取有特定的限制。
@@ -197,7 +197,7 @@ Content root（內容根目錄） Content root 預設為專案的根目錄，包
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -273,7 +273,7 @@ Content root（內容根目錄） Content root 預設為專案的根目錄，包
 <blockquote>
 <p>若測試結果不相同，請嘗試清理瀏覽器快取。</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
     {
         <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
         {
@@ -291,7 +291,7 @@ Content root（內容根目錄） Content root 預設為專案的根目錄，包
     }
 </code></pre></div><h2 id="註冊-usestaticfiles-middleware">註冊 UseStaticFiles Middleware<a hidden class="anchor" aria-hidden="true" href="#註冊-usestaticfiles-middleware">#</a></h2>
 <p>專案在預設情況下，已經在 <code>Startup.cs</code> 註冊靜態檔案中介軟體，在 <code>Configure</code> 方法中可以找到 <code>app.UseStaticFiles()</code>，該段即為用來啟用靜態檔案中介軟體的服務，嘗試將此段註解，實際測試 URL <code>https://localhost:5000/public/MyImages.jpg</code>，得到的結果是無法存取預設的靜態檔案 <code>wwwroot</code>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
     ...
     <span style="color:#75715e">// 啟用靜態檔案
@@ -316,7 +316,7 @@ Content root（內容根目錄） Content root 預設為專案的根目錄，包
 </li>
 </ul>
 <p>我們可以藉由設定靜態檔案中介軟體來存取檔案，先啟用存取 <code>wwwroot</code> 目錄之服務，再啟用存取其他目錄之服務。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 需要引用的命名空間
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 需要引用的命名空間
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> System.IO;
 <span style="color:#66d9ef">using</span> Microsoft.Extensions.FileProviders;
 
@@ -359,12 +359,12 @@ Content root（內容根目錄） Content root 預設為專案的根目錄，包
 <li><code>UseDefaultFiles</code> 是嘗試請求預設檔案</li>
 <li><code>UseStaticFiles</code> 是回傳請求檔案</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 先啟用
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 先啟用
 </span><span style="color:#75715e"></span>app.UseDefaultFiles();
 <span style="color:#75715e">// 後啟用
 </span><span style="color:#75715e"></span>app.UseStaticFiles();
 </code></pre></div><p>除了上述預設頁面，還可以自訂預設頁面，使用 <code>DefaultFilesOptions</code> 物件來自定義預設頁面，代碼如下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">var</span> options = <span style="color:#66d9ef">new</span> DefaultFilesOptions();
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">var</span> options = <span style="color:#66d9ef">new</span> DefaultFilesOptions();
 <span style="color:#75715e">// 清空原本預設頁面
 </span><span style="color:#75715e"></span>options.DefaultFileNames.Clear();
 <span style="color:#75715e">// 添加自定義預設頁面
@@ -377,7 +377,7 @@ app.UseStaticFiles();
 <p>如果是想添加自訂的預設頁面，但不想將原先定義的四個預設頁面清除，在上述代碼中將 <code>options.DefaultFileNames.Clear()</code> 拿掉即可。</p>
 <h2 id="瀏覽目錄">瀏覽目錄<a hidden class="anchor" aria-hidden="true" href="#瀏覽目錄">#</a></h2>
 <p>瀏覽目錄允許在指定的路徑中列出目錄，基於安全性的考量，預設會停用瀏覽目錄，但可以透過 <code>AddDirectoryBrowser</code> 及 <code>UseDirectoryBrowser</code> 來註冊及啟用該服務。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services)
 {
     <span style="color:#75715e">// 註冊瀏覽目錄服務
 </span><span style="color:#75715e"></span>    services.AddDirectoryBrowser();
@@ -393,10 +393,10 @@ app.UseStaticFiles();
     ...
 }
 </code></pre></div><p>在空建構子的情況下，預設啟用的目錄為 <code>wwwroot</code>，例如跳轉到 <code>https://localhost:5000/lib/</code>，會列出 <code>/wwwroot/lib</code> 目錄下的所有檔案。</p>
-<p><img loading="lazy" src="../../images/NetCore/NetCore004.png" alt=""  />
+<p><img loading="lazy" src="/images/NetCore/NetCore004.png" alt=""  />
 </p>
 <p>若欲啟用瀏覽指定路徑的目錄，要先使用靜態檔案中介軟體來啟用存取檔案服務，接著再啟用瀏覽目錄服務。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services)
 {
     <span style="color:#75715e">// 註冊瀏覽目錄服務
 </span><span style="color:#75715e"></span>    services.AddDirectoryBrowser();
@@ -423,7 +423,7 @@ app.UseStaticFiles();
 </code></pre></div><h2 id="usefileserver">UseFileServer<a hidden class="anchor" aria-hidden="true" href="#usefileserver">#</a></h2>
 <p>先前介紹停用檔案存取的限制，以及開啟瀏覽目錄，<code>UseFileServer</code> 方法結合了 <code>UseStaticFiles</code>、<code>UseDefaultFiles</code>，也可以選擇性的結合 <code>UseDirectoryBrowser</code>。</p>
 <p>直接使用 <code>UseFileServer</code> 來啟用檔案服務，等同於使用 <code>UseDefaultFiles</code> 和 <code>UseStaticFiles</code>。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
     <span style="color:#75715e">// 啟用檔案服務
 </span><span style="color:#75715e"></span>    app.UseFileServer();
@@ -433,9 +433,9 @@ app.UseStaticFiles();
 </span><span style="color:#75715e"></span>    <span style="color:#75715e">// app.UseStaticFiles();
 </span><span style="color:#75715e"></span>}
 </code></pre></div><p>帶入參數 <code>enableDirectoryBrowsin: true</code> 來啟用瀏覽目錄、啟用存取靜態檔案以及預設檔案，預設頁面會更換為列出 <code>wwwroot</code> 目錄</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">app.UseFileServer(enableDirectoryBrowsing: <span style="color:#66d9ef">true</span>);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp">app.UseFileServer(enableDirectoryBrowsing: <span style="color:#66d9ef">true</span>);
 </code></pre></div><p>上面目標是 <code>wwwroot</code> 目錄，欲指定其他目錄，代碼如下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {
     app.UseFileServer(<span style="color:#66d9ef">new</span> FileServerOptions
     {
@@ -446,7 +446,7 @@ app.UseStaticFiles();
     });
 }
 </code></pre></div><p>官方寫說若 <code>EnabledDirectoryBrowsing</code> 的 value 為 true 時，需要調用 <code>AddDirectoryBrowser()</code>，在這裡筆者沒有註冊該服務依然可以啟用目錄，若無法瀏覽目錄的朋友，可以試著在 <code>ConfigureServices</code> 註冊該服務，看是否有效果。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services)
 {
     <span style="color:#75715e">// 註冊瀏覽目錄服務
 </span><span style="color:#75715e"></span>    services.AddDirectoryBrowser();

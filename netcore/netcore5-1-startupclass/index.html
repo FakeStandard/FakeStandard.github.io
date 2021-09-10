@@ -37,7 +37,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host.">
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【.NET Core】Application Startup Class" />
 <meta property="og:description" content="【ASP.NET Core 5】
 在 .NET Core 出現的 Startup 類別非常重要，該類別用來配置應用程式的「服務」和「請求管道」，由它的名稱可知，在應用程式啟動時該類別首先被執行，它與傳統應用程式內的 Global.asax 相似。
@@ -191,7 +191,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host."/>
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -238,7 +238,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host."/>
 <p>在 .NET Core 出現的 <code>Startup</code> 類別非常重要，該類別用來配置應用程式的「服務」和「請求管道」，由它的名稱可知，在應用程式啟動時該類別首先被執行，它與傳統應用程式內的 <code>Global.asax</code> 相似。</p>
 <h1 id="start">Start<a hidden class="anchor" aria-hidden="true" href="#start">#</a></h1>
 <p>開啟 <code>Program</code> 類別找到 <code>Main</code> 方法，這裡即是程式的進入點（Entry point），與 Console 專案的啟動方式相同都是 <code>Program.Main</code>，再從程式進入點將網站實例化，該方法配置 Host 時使用了 <code>UserStartup&lt;T&gt;</code> 方法，其中泛型 <code>&lt;T&gt;</code> 預設為 <code>Startup</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Program</span>
 {
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
     {
@@ -254,7 +254,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host."/>
             });
 }
 </code></pre></div><p>該類別依照 ASP.NET Core 慣例命名為 <code>Startup</code>，顧名思義為啟動類別，但是，我們也可以為該類別指定任何名稱，且在 <code>UseStratup&lt;T&gt;</code> 的泛型更換為指定後的名稱即可。如下將該類別命名為 <code>MyStartup</code>，配置啟動類別的位置也要替換為新類名。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> IHostBuilder CreateHostBuilder(<span style="color:#66d9ef">string</span>[] args) =&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> IHostBuilder CreateHostBuilder(<span style="color:#66d9ef">string</span>[] args) =&gt;
     Host.CreateDefaultBuilder(args)
         .ConfigureWebHostDefaults(webBuilder =&gt;
         {
@@ -269,7 +269,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host."/>
 <h2 id="configureservices">ConfigureServices<a hidden class="anchor" aria-hidden="true" href="#configureservices">#</a></h2>
 <p>ASP.NET Core 有個重要的觀念為依賴注入，或稱相依性注入也行，依賴注入全名為 Dependency Injection，簡稱為 DI，該依賴注入模式大量地在 ASP.NET Core 架構中使用，它包含內建的控制反轉 IoC 容器，該容器使用建構函數提供依賴對象。</p>
 <p>在 <code>ConfigureServices</code> 方法中註冊依賴類別，之後就可在應用程式中的任何位置隨心所欲地使用，ASP.NET Core 稱依賴類別為服務（Service），後續有提到服務時指的就是依賴類別。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// This method gets called by the runtime.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// This method gets called by the runtime.
 </span><span style="color:#75715e">// Use this method to add services to the container.
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services)
 {
@@ -284,7 +284,7 @@ public static IHostBuilder CreateHostBuilder(string[] args) =&gt; Host."/>
 <li>ILoggerFactory</li>
 </ul>
 <p>這些服務是由內建 IoC 容器注入的框架服務，運行時，在 <code>Configure</code> 方法之前調用 <code>ConfigureServices</code> 方法，如此一來便可在 IoC 容器中註冊自定義服務，並在 <code>Configure</code> 中使用。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// This method gets called by the runtime.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// This method gets called by the runtime.
 </span><span style="color:#75715e">// Use this method to configure the HTTP request pipeline.
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
 {

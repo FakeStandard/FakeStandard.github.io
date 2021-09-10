@@ -44,7 +44,7 @@ V = {A,B,C,D,E} E = {&lt;A,B&gt;,&lt;A,C&gt;,&lt;B,D&gt;,&lt;C,D&gt;,&lt;E,B&gt;
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【Algorithm】資料結構—圖形（Graph）" />
 <meta property="og:description" content="【5/25 閱讀紀錄】
 選擇適當的資料結構供程式應用，讓演算法發揮最大效能，端看資料結構的選擇。
@@ -212,7 +212,7 @@ V = {A,B,C,D,E} E = {&lt;A,B&gt;,&lt;A,C&gt;,&lt;B,D&gt;,&lt;C,D&gt;,&lt;E,B&gt;
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -283,14 +283,14 @@ V = {A,B,C,D,E} E = {&lt;A,B&gt;,&lt;A,C&gt;,&lt;B,D&gt;,&lt;C,D&gt;,&lt;E,B&gt;
 <p><img loading="lazy" src="/images/Algorithm/Algorithm029.png" alt=""  />
 </p>
 <p>以上圖來說</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">V = {A,B,C,D,E}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">V = {A,B,C,D,E}
 E = {(A,B),(A,C),(B,D),(B,E),(C,D),(C,E)}
 </code></pre></div><h3 id="有向圖形directed-graph">有向圖形（Directed Graph）<a hidden class="anchor" aria-hidden="true" href="#有向圖形directed-graph">#</a></h3>
 <p>有向圖形的每個邊都具有方向性，以 <code>&lt;V1,V2&gt;</code> 來表示，若無向圖是不具方向性，那麼有向圖就是具有方向性的，<code>V1</code> 是指尾端，<code>V2</code> 是指頂端，<code>&lt;V1,V2&gt;</code> 則代表著由 <code>V1</code> 尾端指向 <code>V2</code> 頂端。例如 <code>&lt;V1,V2&gt;</code> 和 <code>&lt;V2,V1&gt;</code> 表示兩個不同方向的邊。</p>
 <p><img loading="lazy" src="/images/Algorithm/Algorithm030.png" alt=""  />
 </p>
 <p>以上圖來說，與無向圖形的範例圖差異在於，該圖的邊是具有方向性箭頭，表示方式如下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">V = {A,B,C,D,E}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">V = {A,B,C,D,E}
 E = {&lt;A,B&gt;,&lt;A,C&gt;,&lt;B,D&gt;,&lt;C,D&gt;,&lt;E,B&gt;,&lt;E,C&gt;}
 </code></pre></div><h3 id="相關專有名詞">相關專有名詞<a hidden class="anchor" aria-hidden="true" href="#相關專有名詞">#</a></h3>
 <ul>

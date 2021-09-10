@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Threaded Binary Tree on How can I help</title>
+    <link>https://fakestandard.github.io/tags/threaded-binary-tree/</link>
+    <description>Recent content in Threaded Binary Tree on How can I help</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Fri, 27 Aug 2021 20:55:18 +0800</lastBuildDate><atom:link href="https://fakestandard.github.io/tags/threaded-binary-tree/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>【Algorithm】樹的應用—引線二元樹（Threaded Binary Tree）</title>
+      <link>https://fakestandard.github.io/algorithm/algorithm-43-threadedbinarytree/</link>
+      <pubDate>Fri, 27 Aug 2021 20:55:18 +0800</pubDate>
+      
+      <guid>https://fakestandard.github.io/algorithm/algorithm-43-threadedbinarytree/</guid>
+      <description>【6/9 閱讀紀錄】
+根據先前文章介紹的樹，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 一般來說，一個 n 節點的二元樹，共有 2n 個 LINK 欄位，實際上使用的數量只有 n-1 個鏈結，另外 n+1 個都是空鏈結，等於有 n+1 個空間被浪費，而引線二元樹就是將這些空鏈結加以利用，再指到其他節點，這些鏈結就稱為引線，其樹稱為引線二元樹（Threaded Binary Tree）。
+將二元樹轉換成引線二元樹的第一步，先將二元樹以中序走訪方式將資料排出，接著找出所有節點的空指標，再將節點的空指標指向其左、右相鄰的節點，即使用引線取代指向 Null 的指標。
+引線二元樹的資料結構
+ LBit：左控制位元 LChild：左子樹指標 Data：節點資料 RChild：右子樹指標 RBit：右控制位元  引線二元樹會用一個額外的 Bit，以判斷指標內容是 Link 還是 Thread
+ LBit = 1, LChild 是正常指標 LBit = 0, LChild 是引線 RBit = 1, RChild 是正常指標 RBit = 0, RChild 是引線  所以在定義引線二元樹的節點類別時，會比一般二元樹多了左、右控制位元兩屬性
+/// &amp;lt;summary&amp;gt; /// 引線二元樹節點類別 /// &amp;lt;/summary&amp;gt; public class ThreadNode { public int data; public int lbit; public int rbit; public ThreadNode leftNode; public ThreadNode rightNode; public ThreadNode(int data) { this.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -37,7 +37,7 @@
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【OOP】重構、抽象和介面（Refactoring、Abstract and Interface）" />
 <meta property="og:description" content="Start 接續先前物件導向的紀錄，此篇會著重於下列三部份
  重構（Refactoring） 抽象（Abstract） 介面（Interface）  重構（Refactoring） 重構的概念是將原本重複的地方改寫，使程式碼更精簡且更好維護。
@@ -191,7 +191,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -244,7 +244,7 @@
 <h3 id="重構refactoring">重構（Refactoring）<a hidden class="anchor" aria-hidden="true" href="#重構refactoring">#</a></h3>
 <p>重構的概念是將原本重複的地方改寫，使程式碼更精簡且更好維護。</p>
 <p>接續前篇的範例，定義一個父類別 <code>CareerBasic</code>，該父類別內有一個虛擬方法可以讓子類別複寫。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 職業基礎類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CareerBasic</span>
@@ -261,7 +261,7 @@
     }
 }
 </code></pre></div><p>定義兩個子類別分別為 <code>Swordman</code> 和 <code>Thief</code>，並繼承 <code>CareerBasic</code> 類別，使其成為父類別。在子類別裡，分別複寫父類別方法 <code>PassiveSkill()</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 盜賊類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Thief</span> : CareerBasic
@@ -290,7 +290,7 @@
 }
 </code></pre></div><p>從子類別中可以發現 <code>PassiveSkill()</code> 該方法除了技能名稱不一樣之外，其它都一樣。接著我們欲透過重構的概念—<strong>將其它一樣的地方抽取出來放到父類別下，讓子類別只在乎自己的技能名稱</strong>，對子類別內的 <code>PassiveSkill()</code> 方法進行重構。</p>
 <p>首先，在父類別中添加一個取得技能名稱的方法 <code>GetSkillName()</code>，且提供子類別進行複寫，接著將父類別 <code>PassiveSkill()</code> 改為普通公共方法，該方法內調用 <code>GetSkillName()</code> 方法以獲取技能名稱。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 職業基礎類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CareerBasic</span>
@@ -316,7 +316,7 @@
     }
 }
 </code></pre></div><p>最後，分別讓子類別複寫父類別的<code>GetSkillName()</code>虛擬方法，並提供自己的技能名稱。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 盜賊類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Thief</span> : CareerBasic
@@ -352,7 +352,7 @@
 </ol>
 <p>所以抽象類別通常代表一個抽象方法，它提供一個繼承的出發點；在以繼承關係形成的等級結構裡，樹葉節點應是具體類別，樹枝節點應是抽象類別。在 C# 中欲將類別或方法宣告為抽象時，需使用 <strong><code>abstract</code></strong> 關鍵字。</p>
 <p>假想<code>CareerBasic</code>不能為具體類別，它其實是抽象類別，而盜賊才足夠讓職業類別實體。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 加上 abstract 為抽象類別
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 加上 abstract 為抽象類別
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">abstract</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CareerBasic</span>
 {
     ...
@@ -364,7 +364,7 @@
 <p>把隱式公共方法和屬性組合起來，封裝特定功能的集合稱為介面。介面可以支援多個類別，一個類別也可支援多個介面，類別一旦實現介面，則類別就可支援介面內所有屬性和成員，且類別也必須實現介面中所有方法和屬性。宣告時需注意不允許提供介面中任何成員的執行方法。</p>
 <p>介面宣告的關鍵字為 <strong><code>interface</code></strong>，宣告的命名規範必須在第一個字母加上大寫<code>I</code>，介面中的方法或屬性前面不能有修飾子或方法沒有方法體。</p>
 <p>建立一個服事類別<code>Acolyte</code>，需繼承 <code>CareerBasic</code> 父類別。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// 服事類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Acolyte</span> : CareerBasic
@@ -377,14 +377,14 @@
     }
 }
 </code></pre></div><p>因 <code>Acolyte</code> 的職業性質具有自動回血技能，而 <code>Swordman</code> 和 <code>Thief</code> 沒有該技能也不能擁有該技能，故得建立一個<code>IPoint</code>介面，讓擁有該技能的職業來實現介面類別。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 IPoint 介面
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 IPoint 介面
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">interface</span> IPoint
 {
     <span style="color:#75715e">// 建立 Recovery 方法，傳入數值參數，回傳字串
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">string</span> Recovery(<span style="color:#66d9ef">int</span> num);
 }
 </code></pre></div><p>讓 <code>Acolyte</code> 擁有該介面的方法，讓類別實現介面來支援該介面成員。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 實現 IPonit 介面（使用逗號）
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 實現 IPonit 介面（使用逗號）
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Acolyte</span> : CareerBasic, IPoint
 {
     ...

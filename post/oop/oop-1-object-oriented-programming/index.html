@@ -39,7 +39,7 @@
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <meta property="og:title" content="【OOP】物件導向基礎概念（Object Oriented Programming）" />
 <meta property="og:description" content="Start 物件導向（Object-Oriented Programming），意為針對物件進行程式設計。而學習設計模式前必須先了解物件導向設計，不然難以體會設計模式的魅力。
 接下來我們會知道
@@ -197,7 +197,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -255,7 +255,7 @@
 </ul>
 <h3 id="類別class">類別（Class）<a hidden class="anchor" aria-hidden="true" href="#類別class">#</a></h3>
 <p>類別是具有相同「<strong>屬性（Attribute）</strong>」和 「<strong>功能（Method）</strong>」的物件之抽象集合。在 C# 中定義<strong>類別</strong>的關鍵字為 <code>class</code>，類別命名規則為第一個字母為大寫，多個單字命名時各個首字母為大寫。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
 {
     <span style="color:#75715e">// 建立公開的攻擊方法使外部可以呼叫，修飾詞用 public
@@ -266,7 +266,7 @@
 }
 </code></pre></div><h3 id="物件object">物件（Object）<a hidden class="anchor" aria-hidden="true" href="#物件object">#</a></h3>
 <p>物件是一個獨立的實體，實體裡包含許多資料，資料彼此之間不會互相影響，每個皆為獨立的資料。物件與類別的關係，最簡單易懂又不抽象的解釋為—物件是類別的實體。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 宣告一個Swordman 物件，物件名為 swordman
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 宣告一個Swordman 物件，物件名為 swordman
 </span><span style="color:#75715e"></span>Swordman swordman;
 
 <span style="color:#75715e">// 先前建立的 Swordman 類別
@@ -279,11 +279,11 @@
 </blockquote>
 <h3 id="實體instance">實體（Instance）<a hidden class="anchor" aria-hidden="true" href="#實體instance">#</a></h3>
 <p>實體就是一個真實的物件。實體化是建立物件的過程，使用 <code>new</code> 關鍵字建立。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 實體化 swordman 物件
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 實體化 swordman 物件
 </span><span style="color:#75715e"></span>swordman = <span style="color:#66d9ef">new</span> Swordman();
 </code></pre></div><p>綜合上述介紹的類別、物件和實體，實際演練一次程式碼並觀察結果。
 在 <code>Swordman</code> 有一個公開的 <code>Attack</code> 方法，當物件被實體化後，未來就能一直呼叫該方法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
 {
     <span style="color:#75715e">// 簡化建立與實體化物件的程式碼
 </span><span style="color:#75715e"></span>    <span style="color:#75715e">// 將 Swordman 類別實體化
@@ -312,7 +312,7 @@
 <p>建構式又稱<strong>建構函式</strong>或<strong>建構子</strong>，建構式是對類別初始化的函數，建構式與類別同名，無返回值也不需要 <code>void</code>，在使用關鍵字 <code>new</code> 時調用。在未定義建構式時編譯器會<strong>自動產生空的建構式</strong>。</p>
 <p>根據上述例子，在實體化 swordman 物件時，<code>new</code> 後面的 <code>Swordman()</code> 就是建構式，而建立 Swordman 類別時未定義建構子，所以編譯器自動產生空的 Constructor 讓 swordman 成功實體化。</p>
 <p>以上述的 Swordman 類別來說，編譯器產生的空建構子如下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
 {
     <span style="color:#75715e">// 空的建構子
@@ -325,7 +325,7 @@
 }
 </code></pre></div><p>所以，如果不需要改變空的建構子時，就可以不必撰寫空建構子的程式碼，讓編譯器在編譯時自動產生即可。</p>
 <p>實際演練：利用建構式來給 swordman 增加 Name，在 Swordman 類別裡加入 <code>name</code> 私有變數及帶有一個參數的建構子</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 定義私有變數 name
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 定義私有變數 name
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> name;
 
 <span style="color:#75715e">// 建立帶有參數 name 的建構子
@@ -338,7 +338,7 @@
 <p><img loading="lazy" src="/images/OOP/OOP-002.png" alt=""  />
 </p>
 <p>此時必須給予相對應的參數，讓物件能成功實體化。給 swordman 一個瀟灑的 ID，將 <code>Attack()</code> 方法返回值添加上私有變數。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 使用自行定義的建構子實體化物件
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 使用自行定義的建構子實體化物件
 </span><span style="color:#75715e"></span>Swordman swordman = <span style="color:#66d9ef">new</span> Swordman(<span style="color:#e6db74">&#34;離人劍&#34;</span>);
 
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
@@ -359,7 +359,7 @@
 <h3 id="多載overloading">多載（Overloading）<a hidden class="anchor" aria-hidden="true" href="#多載overloading">#</a></h3>
 <p>多載意即<strong>方法重載</strong>，多載為可同時建立<strong>同名的函數（Function）</strong>，函數須使用不同的參數類型或不同個數。筆者不習慣用函數，因為會有點偏向於數學，筆者通常會稱函數為方法。</p>
 <p>假設不想取名就直接實體化物件，就必須再建立一個不帶參數的建構式，與原本的建構式共存，就是方法重載，如下</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
 {
     <span style="color:#75715e">// 定義私有變數 name
@@ -383,7 +383,7 @@
 }
 </code></pre></div><p>以上述的例子來說，該類別同時擁有兩個同名稱的建構子 Swordman，一個是沒有帶參數，一個帶有 string 參數，他們是可以同時存在的，因為符合參數個數不同的特性。方法重載通常可以用於，在不改變原有方法的基礎上，以達擴展功能目的。當然不只建構子可以方法重載，一般建立的方法也可以使用多載。</p>
 <p>實際演練</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 宣告物件並實體化物件
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 宣告物件並實體化物件
 </span><span style="color:#75715e"></span>Swordman swordman1 = <span style="color:#66d9ef">new</span> Swordman();
 Swordman swordman2 = <span style="color:#66d9ef">new</span> Swordman(<span style="color:#e6db74">&#34;離人劍&#34;</span>);
 
@@ -395,7 +395,7 @@ Console.WriteLine(swordman2.Attack());
 </p>
 <h3 id="欄位field">欄位（Field）<a hidden class="anchor" aria-hidden="true" href="#欄位field">#</a></h3>
 <p>欄位用來儲存類別要滿足設計所需的資料，簡化為儲存資料的意思，通常為私有的類別變數，只能供類別內部使用的變數，一般命名規則通常開頭字母為小寫。比方 Swordman 類別裡定義的私有變數 name 即為欄位，僅供內部使用，而外部無法調用，必須給予 <code>private</code>修飾詞。例如先前定義的私有變數 name。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
 {
     <span style="color:#75715e">// 定義私有變數 name
@@ -405,7 +405,7 @@ Console.WriteLine(swordman2.Attack());
 }
 </code></pre></div><h3 id="屬性property">屬性（Property）<a hidden class="anchor" aria-hidden="true" href="#屬性property">#</a></h3>
 <p>屬性為類別的一個欄位（看起來有點詭異），通常是給外部調用，所以外部可以存取屬性，屬性的命名規則通常開頭字母為大寫，下面範例看起來與欄位區別不大，不過隨著後面的介紹與使用，欄位與屬性的定義會越來越清晰。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
 {
     <span style="color:#75715e">// 定義公開屬性供外部存取
@@ -417,7 +417,7 @@ Console.WriteLine(swordman2.Attack());
 </code></pre></div><h3 id="修飾詞modifiers">修飾詞（Modifiers）<a hidden class="anchor" aria-hidden="true" href="#修飾詞modifiers">#</a></h3>
 <p>屬性有兩個方法 <code>get</code>和<code>set</code>，<code>get</code> 存取器（或存取子）返回與宣告屬性相同的資料類型，即調用時可取得內部欄位的值或參考；<code>set</code> 存取器調用屬性時，可以給內部的欄位或參考賦值，其中有個隱式參數為 <code>value</code>，即從外部進來的值。</p>
 <p>先看公開屬性加上 <code>get</code> 與 <code>set</code> 存取子的「<strong>自動實作屬性</strong>」作法</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 建立 Swordman 類別
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
 {
     <span style="color:#75715e">// 定義公開屬性供外部存取，使用自動實作屬性
@@ -426,7 +426,7 @@ Console.WriteLine(swordman2.Attack());
     ...
 }
 </code></pre></div><p>使用 <code>get</code> 與 <code>set</code> 來存取欄位，隱藏實際要做的事情，達到「<strong>資料封裝</strong>」的效果</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 定義私有欄位
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 定義私有欄位
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> count;
 
 <span style="color:#75715e">// 定義公開屬性供外部存取
@@ -448,10 +448,10 @@ Console.WriteLine(swordman2.Attack());
 <p><strong>In C# 3.0 and later, auto-implemented properties make property-declaration more concise when no additional logic is required in the property accessors.</strong></p>
 </blockquote>
 <p>另外補充 C# 6.0 更新版中增加了<strong>初始化</strong>自動實作屬性功能</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 初始化自動實作屬性
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 初始化自動實作屬性
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Count { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; } = <span style="color:#ae81ff">10</span>;
 </code></pre></div><p>屬性只想做唯讀或是唯寫，不加修飾詞即可，比如</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 只能讀取
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 只能讀取
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Count 
 {
     <span style="color:#75715e">// 只有 get 存取子
@@ -471,7 +471,7 @@ Console.WriteLine(swordman2.Attack());
     } 
 }
 </code></pre></div><p>或者將公開存取宣告為私有</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 定義公開屬性供外部存取
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">// 定義公開屬性供外部存取
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Count
 {
     <span style="color:#66d9ef">get</span>
@@ -489,7 +489,7 @@ Console.WriteLine(swordman2.Attack());
 </p>
 <p>認識了這麼多名詞，最後把上面提到的欄位、屬性和修飾詞實際演練。</p>
 <p>先建立 Swordman 類別</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#75715e">/// &lt;summary&gt;
 </span><span style="color:#75715e">/// Swordman 類別
 </span><span style="color:#75715e">/// &lt;/summary&gt;
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Swordman</span>
@@ -574,7 +574,7 @@ Console.WriteLine(swordman2.Attack());
     }
 }
 </code></pre></div><p>在 Main 方法中，宣告且實體化類別物件，接著調用公開方法，以及設置公開屬性</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-CSharp" data-lang="CSharp"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Main(<span style="color:#66d9ef">string</span>[] args)
 {
     <span style="color:#75715e">// 宣告名為離人劍的 swordman 物件並實體化
 </span><span style="color:#75715e"></span>    Swordman swordman = <span style="color:#66d9ef">new</span> Swordman(<span style="color:#e6db74">&#34;離人劍&#34;</span>);

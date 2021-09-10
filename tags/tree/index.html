@@ -31,7 +31,7 @@
 <link rel="mask-icon" href="https://fakestandard.github.io/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 <link rel="alternate" type="application/rss+xml" href="https://fakestandard.github.io/tags/tree/index.xml">
 <meta property="og:title" content="Tree" />
 <meta property="og:description" content="不專業代碼" />
@@ -122,7 +122,7 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://fakestandard.github.io/archives/" title="Archive">
+                <a href="https://fakestandard.github.io/post/" title="Archive">
                     <span>Archive</span>
                 </a>
             </li>
@@ -158,6 +158,36 @@
 <header class="page-header"><div class="breadcrumbs"><a href="https://fakestandard.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://fakestandard.github.io/tags/">Tags</a></div>
   <h1>Tree</h1>
 </header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】樹的應用—平衡樹（Balanced Binary Tree）</h2>
+  </header>
+  <section class="entry-content">
+    <p>Start Reference 【圖說演算法 C#】</p>
+  </section>
+  <footer class="entry-footer">August 30, 2021&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】樹的應用—平衡樹（Balanced Binary Tree）" href="https://fakestandard.github.io/algorithm/algorithm-44-balancedbinarytree/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>【Algorithm】樹的應用—引線二元樹（Threaded Binary Tree）</h2>
+  </header>
+  <section class="entry-content">
+    <p>【6/9 閱讀紀錄】
+根據先前文章介紹的樹，此篇實際運用它們實作一個應用。
+程式碼已放上 GitHub
+Start 一般來說，一個 n 節點的二元樹，共有 2n 個 LINK 欄位，實際上使用的數量只有 n-1 個鏈結，另外 n&#43;1 個都是空鏈結，等於有 n&#43;1 個空間被浪費，而引線二元樹就是將這些空鏈結加以利用，再指到其他節點，這些鏈結就稱為引線，其樹稱為引線二元樹（Threaded Binary Tree）。
+將二元樹轉換成引線二元樹的第一步，先將二元樹以中序走訪方式將資料排出，接著找出所有節點的空指標，再將節點的空指標指向其左、右相鄰的節點，即使用引線取代指向 Null 的指標。
+引線二元樹的資料結構
+ LBit：左控制位元 LChild：左子樹指標 Data：節點資料 RChild：右子樹指標 RBit：右控制位元  引線二元樹會用一個額外的 Bit，以判斷指標內容是 Link 還是 Thread
+ LBit = 1, LChild 是正常指標 LBit = 0, LChild 是引線 RBit = 1, RChild 是正常指標 RBit = 0, RChild 是引線  所以在定義引線二元樹的節點類別時，會比一般二元樹多了左、右控制位元兩屬性
+/// &lt;summary&gt; /// 引線二元樹節點類別 /// &lt;/summary&gt; public class ThreadNode { public int data; public int lbit; public int rbit; public ThreadNode leftNode; public ThreadNode rightNode; public ThreadNode(int data) { this....</p>
+  </section>
+  <footer class="entry-footer">August 27, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Polar Bear</footer>
+  <a class="entry-link" aria-label="post link to 【Algorithm】樹的應用—引線二元樹（Threaded Binary Tree）" href="https://fakestandard.github.io/algorithm/algorithm-43-threadedbinarytree/"></a>
+</article>
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
